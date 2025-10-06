@@ -1,0 +1,702 @@
+[
+  {
+    "id": "1",
+    "italian": "ciao",
+    "chinese": "你好/再见",
+    "english": "hello/bye",
+    "pronunciation": "ˈtʃaːo",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Ciao! Come stai? - 你好!你好吗?",
+      "Ciao, ci vediamo domani! - 再见,明天见!"
+    ]
+  },
+  {
+    "id": "2",
+    "italian": "grazie",
+    "chinese": "谢谢",
+    "english": "thank you",
+    "pronunciation": "ˈɡrattsje",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Grazie mille! - 非常感谢!",
+      "Grazie per il tuo aiuto. - 谢谢你的帮助。"
+    ]
+  },
+  {
+    "id": "3",
+    "italian": "prego",
+    "chinese": "不客气/请",
+    "english": "you're welcome/please",
+    "pronunciation": "ˈpreɡo",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Grazie! - Prego! - 谢谢! - 不客气!",
+      "Prego, si accomodi. - 请坐。"
+    ]
+  },
+  {
+    "id": "4",
+    "italian": "buongiorno",
+    "chinese": "早上好/你好",
+    "english": "good morning/good day",
+    "pronunciation": "bwonˈdʒorno",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Buongiorno, signora! - 早上好,女士!",
+      "Buongiorno a tutti! - 大家好!"
+    ]
+  },
+  {
+    "id": "5",
+    "italian": "buonasera",
+    "chinese": "晚上好",
+    "english": "good evening",
+    "pronunciation": "bwonaˈseːra",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Buonasera! Come va? - 晚上好!怎么样?",
+      "Buonasera, piacere di conoscerti. - 晚上好,很高兴认识你。"
+    ]
+  },
+  {
+    "id": "6",
+    "italian": "buonanotte",
+    "chinese": "晚安",
+    "english": "good night",
+    "pronunciation": "bwonaˈnɔtte",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Buonanotte, dormi bene! - 晚安,睡个好觉!",
+      "Buonanotte a tutti. - 大家晚安。"
+    ]
+  },
+  {
+    "id": "7",
+    "italian": "scusa",
+    "chinese": "对不起/不好意思",
+    "english": "excuse me/sorry",
+    "pronunciation": "ˈskuːza",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Scusa, non ho capito. - 不好意思,我没听懂。",
+      "Scusa il ritardo. - 抱歉迟到了。"
+    ]
+  },
+  {
+    "id": "8",
+    "italian": "per favore",
+    "chinese": "请",
+    "english": "please",
+    "pronunciation": "per faˈvoːre",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Un caffè, per favore. - 请给我一杯咖啡。",
+      "Puoi aiutarmi, per favore? - 你能帮我吗,拜托?"
+    ]
+  },
+  {
+    "id": "9",
+    "italian": "sì",
+    "chinese": "是的",
+    "english": "yes",
+    "pronunciation": "si",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Sì, certo! - 是的,当然!",
+      "Sì, sono d'accordo. - 是的,我同意。"
+    ]
+  },
+  {
+    "id": "10",
+    "italian": "no",
+    "chinese": "不",
+    "english": "no",
+    "pronunciation": "nɔ",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "No, grazie. - 不用了,谢谢。",
+      "No, non posso. - 不,我不能。"
+    ]
+  },
+  {
+    "id": "11",
+    "italian": "pizza",
+    "chinese": "披萨",
+    "english": "pizza",
+    "pronunciation": "ˈpittsa",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Vorrei una pizza margherita. - 我想要一个玛格丽特披萨。",
+      "La pizza italiana è deliziosa! - 意大利披萨很美味!"
+    ]
+  },
+  {
+    "id": "12",
+    "italian": "pasta",
+    "chinese": "意大利面",
+    "english": "pasta",
+    "pronunciation": "ˈpasta",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Mi piace molto la pasta. - 我很喜欢意大利面。",
+      "Pasta al pomodoro, per favore. - 请给我番茄意大利面。"
+    ]
+  },
+  {
+    "id": "13",
+    "italian": "caffè",
+    "chinese": "咖啡",
+    "english": "coffee",
+    "pronunciation": "kafˈfɛ",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Un caffè espresso, per favore. - 请给我一杯浓缩咖啡。",
+      "Prendo un caffè ogni mattina. - 我每天早上喝一杯咖啡。"
+    ]
+  },
+  {
+    "id": "14",
+    "italian": "acqua",
+    "chinese": "水",
+    "english": "water",
+    "pronunciation": "ˈakkwa",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Acqua naturale o frizzante? - 要普通水还是气泡水?",
+      "Vorrei un bicchiere d'acqua. - 我想要一杯水。"
+    ]
+  },
+  {
+    "id": "15",
+    "italian": "vino",
+    "chinese": "葡萄酒",
+    "english": "wine",
+    "pronunciation": "ˈviːno",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Il vino rosso italiano è famoso. - 意大利红酒很有名。",
+      "Un bicchiere di vino bianco, per favore. - 请给我一杯白葡萄酒。"
+    ]
+  },
+  {
+    "id": "16",
+    "italian": "pane",
+    "chinese": "面包",
+    "english": "bread",
+    "pronunciation": "ˈpaːne",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Vorrei del pane fresco. - 我想要新鲜的面包。",
+      "Il pane italiano è molto buono. - 意大利面包很好吃。"
+    ]
+  },
+  {
+    "id": "17",
+    "italian": "gelato",
+    "chinese": "冰淇淋",
+    "english": "ice cream",
+    "pronunciation": "dʒeˈlaːto",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Mi piace molto il gelato. - 我很喜欢冰淇淋。",
+      "Un gelato al cioccolato, per favore. - 请给我一个巧克力冰淇淋。"
+    ]
+  },
+  {
+    "id": "18",
+    "italian": "treno",
+    "chinese": "火车",
+    "english": "train",
+    "pronunciation": "ˈtrɛːno",
+    "category": "旅游出行",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Prendo il treno alle otto. - 我八点坐火车。",
+      "Il treno per Roma parte tra dieci minuti. - 去罗马的火车十分钟后出发。"
+    ]
+  },
+  {
+    "id": "19",
+    "italian": "aereo",
+    "chinese": "飞机",
+    "english": "airplane",
+    "pronunciation": "aˈɛːreo",
+    "category": "旅游出行",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "L'aereo parte domani mattina. - 飞机明天早上起飞。",
+      "Viaggio in aereo per Milano. - 我坐飞机去米兰。"
+    ]
+  },
+  {
+    "id": "20",
+    "italian": "autobus",
+    "chinese": "公交车",
+    "english": "bus",
+    "pronunciation": "auˈtɔːbus",
+    "category": "旅游出行",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Prendo l'autobus numero 5. - 我坐5路公交车。",
+      "L'autobus arriva ogni dieci minuti. - 公交车每十分钟一班。"
+    ]
+  },
+  {
+    "id": "21",
+    "italian": "stazione",
+    "chinese": "车站",
+    "english": "station",
+    "pronunciation": "statˈtsjoːne",
+    "category": "旅游出行",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "La stazione è vicina. - 车站很近。",
+      "Dov'è la stazione dei treni? - 火车站在哪里?"
+    ]
+  },
+  {
+    "id": "22",
+    "italian": "biglietto",
+    "chinese": "票",
+    "english": "ticket",
+    "pronunciation": "biʎˈʎetto",
+    "category": "旅游出行",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Vorrei un biglietto per Firenze. - 我想买一张去佛罗伦萨的票。",
+      "Quanto costa il biglietto? - 票多少钱?"
+    ]
+  },
+  {
+    "id": "23",
+    "italian": "famiglia",
+    "chinese": "家庭",
+    "english": "family",
+    "pronunciation": "faˈmiʎʎa",
+    "category": "家庭生活",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "La mia famiglia è molto grande. - 我的家庭很大。",
+      "Amo la mia famiglia. - 我爱我的家人。"
+    ]
+  },
+  {
+    "id": "24",
+    "italian": "casa",
+    "chinese": "家/房子",
+    "english": "house/home",
+    "pronunciation": "ˈkaːsa",
+    "category": "家庭生活",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Torno a casa alle sei. - 我六点回家。",
+      "La mia casa è vicino al mare. - 我的房子靠近海边。"
+    ]
+  },
+  {
+    "id": "25",
+    "italian": "madre",
+    "chinese": "母亲",
+    "english": "mother",
+    "pronunciation": "ˈmaːdre",
+    "category": "家庭生活",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Mia madre cucina molto bene. - 我妈妈做饭很好吃。",
+      "Chiamo mia madre ogni giorno. - 我每天给我妈妈打电话。"
+    ]
+  },
+  {
+    "id": "26",
+    "italian": "padre",
+    "chinese": "父亲",
+    "english": "father",
+    "pronunciation": "ˈpaːdre",
+    "category": "家庭生活",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Mio padre lavora in ufficio. - 我爸爸在办公室工作。",
+      "Vado al cinema con mio padre. - 我和我爸爸去看电影。"
+    ]
+  },
+  {
+    "id": "27",
+    "italian": "libro",
+    "chinese": "书",
+    "english": "book",
+    "pronunciation": "ˈliːbro",
+    "category": "工作学习",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Leggo un libro interessante. - 我在读一本有趣的书。",
+      "Ho comprato un nuovo libro. - 我买了一本新书。"
+    ]
+  },
+  {
+    "id": "28",
+    "italian": "scuola",
+    "chinese": "学校",
+    "english": "school",
+    "pronunciation": "ˈskwɔːla",
+    "category": "工作学习",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Vado a scuola ogni giorno. - 我每天去学校。",
+      "La scuola inizia alle otto. - 学校八点开始。"
+    ]
+  },
+  {
+    "id": "29",
+    "italian": "studente",
+    "chinese": "学生",
+    "english": "student",
+    "pronunciation": "stuˈdɛnte",
+    "category": "工作学习",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Sono uno studente di italiano. - 我是一个意大利语学生。",
+      "Gli studenti studiano molto. - 学生们学习很努力。"
+    ]
+  },
+  {
+    "id": "30",
+    "italian": "lavoro",
+    "chinese": "工作",
+    "english": "work/job",
+    "pronunciation": "laˈvoːro",
+    "category": "工作学习",
+    "level": "A1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Vado al lavoro in macchina. - 我开车去上班。",
+      "Il mio lavoro è interessante. - 我的工作很有趣。"
+    ]
+  },
+  {
+    "id": "31",
+    "italian": "amico",
+    "chinese": "朋友",
+    "english": "friend",
+    "pronunciation": "aˈmiːko",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Lui è il mio migliore amico. - 他是我最好的朋友。",
+      "Esco con i miei amici. - 我和我的朋友们出去。"
+    ]
+  },
+  {
+    "id": "32",
+    "italian": "amore",
+    "chinese": "爱/爱情",
+    "english": "love",
+    "pronunciation": "aˈmoːre",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Ti amo, amore mio! - 我爱你,我的爱!",
+      "L'amore è importante. - 爱很重要。"
+    ]
+  },
+  {
+    "id": "33",
+    "italian": "bello",
+    "chinese": "美丽的/漂亮的",
+    "english": "beautiful/nice",
+    "pronunciation": "ˈbɛllo",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Che bel paesaggio! - 多美的风景啊!",
+      "È una bella giornata. - 今天天气真好。"
+    ]
+  },
+  {
+    "id": "34",
+    "italian": "felice",
+    "chinese": "快乐的/幸福的",
+    "english": "happy",
+    "pronunciation": "feˈliːtʃe",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Sono molto felice oggi. - 我今天很开心。",
+      "Ti auguro una vita felice. - 祝你生活幸福。"
+    ]
+  },
+  {
+    "id": "35",
+    "italian": "tempo",
+    "chinese": "时间/天气",
+    "english": "time/weather",
+    "pronunciation": "ˈtɛmpo",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Non ho tempo adesso. - 我现在没时间。",
+      "Che bel tempo oggi! - 今天天气真好!"
+    ]
+  },
+  {
+    "id": "36",
+    "italian": "ristorante",
+    "chinese": "餐厅",
+    "english": "restaurant",
+    "pronunciation": "ristoˈrante",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Andiamo al ristorante stasera. - 我们今晚去餐厅。",
+      "Questo ristorante è molto buono. - 这个餐厅很不错。"
+    ]
+  },
+  {
+    "id": "37",
+    "italian": "prenotazione",
+    "chinese": "预订",
+    "english": "reservation",
+    "pronunciation": "prenotatˈtsjoːne",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Ho fatto una prenotazione per due persone. - 我预订了两个人的位置。",
+      "Vorrei confermare la prenotazione. - 我想确认预订。"
+    ]
+  },
+  {
+    "id": "38",
+    "italian": "ospedale",
+    "chinese": "医院",
+    "english": "hospital",
+    "pronunciation": "ospeˈdaːle",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Devo andare all'ospedale. - 我必须去医院。",
+      "L'ospedale è aperto 24 ore. - 医院24小时营业。"
+    ]
+  },
+  {
+    "id": "39",
+    "italian": "medico",
+    "chinese": "医生",
+    "english": "doctor",
+    "pronunciation": "ˈmɛːdiko",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Devo vedere il medico. - 我需要看医生。",
+      "Il medico mi ha dato una ricetta. - 医生给了我一个处方。"
+    ]
+  },
+  {
+    "id": "40",
+    "italian": "calcio",
+    "chinese": "足球",
+    "english": "soccer/football",
+    "pronunciation": "ˈkaltʃo",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Mi piace giocare a calcio. - 我喜欢踢足球。",
+      "Guardo la partita di calcio. - 我看足球比赛。"
+    ]
+  },
+  {
+    "id": "41",
+    "italian": "museo",
+    "chinese": "博物馆",
+    "english": "museum",
+    "pronunciation": "muˈzɛːo",
+    "category": "文化艺术",
+    "level": "B1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Visitiamo il museo domani. - 我们明天参观博物馆。",
+      "Il museo è chiuso il lunedì. - 博物馆周一关闭。"
+    ]
+  },
+  {
+    "id": "42",
+    "italian": "riunione",
+    "chinese": "会议",
+    "english": "meeting",
+    "pronunciation": "riunˈjoːne",
+    "category": "商务交流",
+    "level": "B1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Ho una riunione alle tre. - 我三点有个会议。",
+      "La riunione è stata molto produttiva. - 会议非常有成效。"
+    ]
+  },
+  {
+    "id": "43",
+    "italian": "contratto",
+    "chinese": "合同",
+    "english": "contract",
+    "pronunciation": "konˈtratto",
+    "category": "商务交流",
+    "level": "B1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Dobbiamo firmare il contratto. - 我们必须签合同。",
+      "Il contratto è valido per un anno. - 合同有效期为一年。"
+    ]
+  },
+  {
+    "id": "44",
+    "italian": "opportunità",
+    "chinese": "机会",
+    "english": "opportunity",
+    "pronunciation": "opportuniˈta",
+    "category": "商务交流",
+    "level": "B2",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Questa è una grande opportunità. - 这是一个很好的机会。",
+      "Non perdere questa opportunità. - 不要错过这个机会。"
+    ]
+  },
+  {
+    "id": "45",
+    "italian": "competenza",
+    "chinese": "能力/专长",
+    "english": "competence/skill",
+    "pronunciation": "kompeˈtɛntsa",
+    "category": "商务交流",
+    "level": "B2",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Ha molte competenze professionali. - 他有很多专业技能。",
+      "Le sue competenze sono eccellenti. - 他的能力非常出色。"
+    ]
+  },
+  {
+    "id": "46",
+    "italian": "straordinario",
+    "chinese": "非凡的/加班",
+    "english": "extraordinary/overtime",
+    "pronunciation": "straoɾdiˈnaːrjo",
+    "category": "商务交流",
+    "level": "C1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Devo fare lo straordinario oggi. - 我今天要加班。",
+      "È un risultato straordinario. - 这是一个非凡的成果。"
+    ]
+  },
+  {
+    "id": "47",
+    "italian": "consolidare",
+    "chinese": "巩固/加强",
+    "english": "to consolidate",
+    "pronunciation": "konsoliˈdare",
+    "category": "商务交流",
+    "level": "C1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Dobbiamo consolidare la nostra posizione. - 我们必须巩固我们的地位。",
+      "Vogliamo consolidare il rapporto con i clienti. - 我们想加强与客户的关系。"
+    ]
+  },
+  {
+    "id": "48",
+    "italian": "discernimento",
+    "chinese": "洞察力/判断力",
+    "english": "discernment",
+    "pronunciation": "diʃerniˈmento",
+    "category": "商务交流",
+    "level": "C2",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Serve discernimento in questa situazione. - 这种情况需要判断力。",
+      "Il suo discernimento è notevole. - 他的洞察力很显著。"
+    ]
+  },
+  {
+    "id": "49",
+    "italian": "paradigma",
+    "chinese": "范式/典范",
+    "english": "paradigm",
+    "pronunciation": "paraˈdiɡma",
+    "category": "商务交流",
+    "level": "C2",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "Un nuovo paradigma di business. - 一个新的商业范式。",
+      "Dobbiamo cambiare il nostro paradigma. - 我们必须改变我们的范式。"
+    ]
+  },
+  {
+    "id": "50",
+    "italian": "resilienza",
+    "chinese": "韧性/复原力",
+    "english": "resilience",
+    "pronunciation": "reziˈljɛntsa",
+    "category": "日常用语",
+    "level": "C1",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "examples": [
+      "La resilienza è importante nella vita. - 韧性在生活中很重要。",
+      "Mostra grande resilienza di fronte alle difficoltà. - 面对困难表现出极大的韧性。"
+    ]
+  }
+]
