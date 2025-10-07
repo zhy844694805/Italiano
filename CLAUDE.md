@@ -4,7 +4,36 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is an Italian language learning Flutter application (意大利语学习应用) with features for vocabulary learning, grammar practice, and user progress tracking. The app uses a spaced repetition algorithm to optimize learning and stores all progress in a local SQLite database.
+This is an Italian language learning Flutter application (意大利语学习应用) with comprehensive features for vocabulary and grammar learning. The app uses a scientifically-proven spaced repetition algorithm to optimize long-term retention and stores all progress in a local SQLite database.
+
+### Key Features
+1. **Learn New Words** - Smart filtering shows only unstudied words (163 total available)
+   - Badge on home screen shows count of new words
+   - Interactive flashcard interface with swipe gestures
+   - Automatic progress tracking
+
+2. **Review System** - Intelligent spaced repetition based on learning history
+   - Shows words due for review based on algorithm
+   - Review reminders appear on home screen
+   - Tracks accuracy and updates review schedule
+
+3. **Vocabulary Browser** - Complete word list with powerful filtering
+   - Search by Italian, Chinese, or English
+   - Filter by level (A1-C2) and category
+   - Sort by mastery level or recent study
+   - Detailed word information sheets
+
+4. **Grammar Lessons** - Interactive grammar teaching with exercises
+   - 6 grammar points covering fundamentals
+   - Rules, examples, and practice exercises
+   - Immediate feedback on exercise answers
+   - Progress tracking per grammar point
+
+5. **Progress Tracking** - Comprehensive statistics and analytics
+   - Mastery calculation for each word
+   - Study streaks and daily goals
+   - Favorite words bookmarking
+   - All data persisted locally with SQLite
 
 ## Commands
 
@@ -39,11 +68,25 @@ This is an Italian language learning Flutter application (意大利语学习应�
 
 ### State Management
 Uses **Riverpod** (`flutter_riverpod`) as the state management solution:
-- Providers are defined in `lib/shared/providers/vocabulary_provider.dart`
-- `VocabularyService` loads words from JSON assets (`assets/data/sample_words.json`)
-- `LearningProgressNotifier` (StateNotifier) manages user progress with automatic database persistence
-- `LearningRecordRepository` handles all database operations
-- Use `ConsumerWidget` or `ConsumerStatefulWidget` for widgets that need to watch providers
+
+**Vocabulary Providers** (`lib/shared/providers/vocabulary_provider.dart`):
+- `allWordsProvider` - Loads all words from JSON
+- `newWordsProvider` - Filters unstudied words (no learning record)
+- `wordsToReviewProvider` - Words due for review based on `nextReviewDate`
+- `wordsByLevelProvider` - Filter by CEFR level
+- `wordsByCategoryProvider` - Filter by category
+- `learningProgressProvider` - StateNotifier managing learning records with auto-save to database
+- `vocabularyServiceProvider` - Service for loading vocabulary data
+
+**Grammar Providers** (`lib/shared/providers/grammar_provider.dart`):
+- `allGrammarProvider` - Loads all grammar points from JSON
+- `grammarByCategoryProvider` - Filter by category
+- `grammarByLevelProvider` - Filter by level
+- `grammarProgressProvider` - StateNotifier tracking study progress and exercise results
+- `grammarCategoriesProvider` - Auto-extracts unique categories
+- `grammarServiceProvider` - Service for loading grammar data
+
+Use `ConsumerWidget` or `ConsumerStatefulWidget` for widgets that need to watch providers
 
 ### Data Persistence
 SQLite database managed through:
@@ -91,7 +134,7 @@ Implemented in `vocabulary_provider.dart:_calculateNextReviewDate()`:
   - `reviewFactor = min(reviewCount / 10, 1.0)`
 
 ### Vocabulary Learning System
-Complete card-based learning flow:
+Complete card-based learning flow with three modes:
 
 1. **FlipCard** (`lib/shared/widgets/flip_card.dart`)
    - 3D Y-axis rotation animation
@@ -107,17 +150,80 @@ Complete card-based learning flow:
    - Integrates FlipCard for tap-to-flip functionality
 
 3. **VocabularyLearningScreen** (`lib/features/vocabulary/vocabulary_learning_screen.dart`)
+   - **Two modes**:
+     - `newWordsOnly: true` - Only unstudied words (filtered by `newWordsProvider`)
+     - `newWordsOnly: false` - All words
    - Card stack with visual depth (scaled background card)
    - Real-time progress bar and statistics
    - Swipe callbacks trigger `recordWordStudied()` → auto-saves to database
    - Completion screen with learning summary
    - SnackBar feedback for each action
+   - Empty state: Shows celebration when all new words learned
 
-4. **AudioPlayerService** (`lib/core/services/audio_player_service.dart`)
+4. **VocabularyReviewScreen** (`lib/features/vocabulary/vocabulary_review_screen.dart`)
+   - Smart review system based on spaced repetition
+   - Loads words due for review via `wordsToReviewProvider`
+   - Real-time statistics: correct/incorrect count, accuracy percentage
+   - Same card interface as learning screen
+   - Updates `nextReviewDate` after each review
+   - Empty state: Congratulations when no words need review
+
+5. **VocabularyListScreen** (`lib/features/vocabulary/vocabulary_list_screen.dart`)
+   - Comprehensive word browser with search, filter, and sort
+   - **Search**: Real-time filtering by Italian, Chinese, or English text
+   - **Filters**: Level (A1-C2), Category, Favorites toggle
+   - **Sort**: Default order, Mastery (low to high), Recently studied
+   - Word cards display mastery progress bar and learning statistics
+   - Tap word for detailed modal sheet with full info and examples
+   - Accessible via bottom navigation "词汇" tab
+   - **Null Safety Note**: Use Builder pattern when accessing nullable LearningRecord properties to avoid type promotion issues
+
+6. **AudioPlayerService** (`lib/core/services/audio_player_service.dart`)
    - Based on `just_audio` package
    - Plays local assets: `assets/audio/words/{wordId}.mp3`
    - Supports network URLs and playback controls
    - TTS integration placeholder for future
+
+### Grammar Learning System
+Comprehensive grammar teaching with interactive exercises:
+
+1. **Grammar Data Models** (`lib/shared/models/grammar.dart`)
+   - `GrammarPoint` - Main grammar lesson with title, category, level, description
+   - `GrammarRule` - Individual grammar rules with title, content, and bullet points
+   - `GrammarExample` - Example sentences in Italian/Chinese/English with highlights
+   - `GrammarExercise` - Practice exercises (fill_blank, choice, translation)
+   - `GrammarProgress` - Tracks completion, exercise results, favorites
+
+2. **GrammarListScreen** (`lib/features/grammar/grammar_list_screen.dart`)
+   - Category tabs: 时态, 冠词, 代词, 名词, 介词
+   - Level filtering (A1-C2)
+   - Grammar cards show: level badge, category, completion status, favorite button
+   - Progress indicator for exercises completed
+   - Click to open detail screen
+
+3. **GrammarDetailScreen** (`lib/features/grammar/grammar_detail_screen.dart`)
+   - Three tabs: Rules, Examples, Exercises
+   - **Rules Tab**: Numbered rules with bullet points, color-coded presentation
+   - **Examples Tab**: Bilingual examples with grammar highlights
+   - **Exercises Tab**: Interactive practice with immediate feedback
+     - Fill-in-the-blank questions
+     - Multiple choice questions
+     - Shows correct/incorrect with explanations
+     - Progress tracking per grammar point
+   - Mark as completed functionality
+   - Favorite toggle
+
+4. **Grammar Providers** (`lib/shared/providers/grammar_provider.dart`)
+   - `allGrammarProvider` - Loads all grammar points from JSON
+   - `grammarByCategoryProvider` - Filter by category
+   - `grammarByLevelProvider` - Filter by CEFR level
+   - `grammarProgressProvider` - Tracks study progress and exercise results
+   - `grammarCategoriesProvider` - Auto-extracts unique categories
+
+5. **Grammar Data** (`assets/data/sample_grammar.json`)
+   - 6 grammar points covering A1-A2 fundamentals
+   - Topics: Present tense, Articles, Pronouns, Gender/Number, Past tense, Prepositions
+   - Each with detailed rules, examples, and practice exercises
 
 ### Project Structure
 ```
@@ -132,18 +238,26 @@ lib/
 │   ├── theme/              # Material 3 theme configuration
 │   └── utils/              # Utility functions
 ├── features/               # Feature-based organization
-│   ├── home/               # Home screen with quick actions
+│   ├── home/               # Home screen with quick actions & review reminders
 │   ├── vocabulary/         # Vocabulary learning screens
 │   │   ├── vocabulary_screen.dart
-│   │   └── vocabulary_learning_screen.dart
-│   ├── grammar/            # Grammar lessons (placeholder)
+│   │   ├── vocabulary_learning_screen.dart    # Supports newWordsOnly mode
+│   │   ├── vocabulary_review_screen.dart      # Smart review with SRS
+│   │   └── vocabulary_list_screen.dart        # Browse, search, filter
+│   ├── grammar/            # Grammar lessons with exercises
+│   │   ├── grammar_list_screen.dart
+│   │   └── grammar_detail_screen.dart
 │   ├── practice/           # Practice quizzes (placeholder)
 │   ├── profile/            # User profile (placeholder)
 │   └── test/               # Development test screens
 │       └── persistence_test_screen.dart
 └── shared/
-    ├── models/             # Data models (Word, LearningRecord)
+    ├── models/             # Data models
+    │   ├── word.dart       # Word, LearningRecord
+    │   └── grammar.dart    # GrammarPoint, GrammarRule, GrammarExample, etc.
     ├── providers/          # Riverpod state providers
+    │   ├── vocabulary_provider.dart    # Word loading, learning progress
+    │   └── grammar_provider.dart       # Grammar loading, progress tracking
     └── widgets/            # Reusable UI components
         ├── flip_card.dart
         ├── swipeable_word_card.dart
@@ -160,12 +274,19 @@ Italian flag-inspired color scheme in `lib/core/theme/app_theme.dart`:
 - Rounded corners: 16dp cards, 12dp buttons
 - Both light and dark themes defined (light theme active)
 
-### Data Source
-Vocabulary loaded from `assets/data/sample_words.json`:
-- JSON array of word objects
+### Data Sources
+
+**Vocabulary** (`assets/data/sample_words.json`):
+- **163 words** covering all CEFR levels
 - Fields: id, italian, chinese, english, pronunciation, category, level, examples, audioUrl, imageUrl, createdAt
-- CEFR levels: A1, A2, B1, B2, C1, C2
-- Categories: 日常用语, 食物, 交通, etc.
+- **Level distribution**: A1 (83), A2 (43), B1 (20), B2 (12), C1 (3), C2 (2)
+- **Categories**: 日常用语 (47), 食物餐饮 (21), 商务交流 (21), 旅游出行 (18), 家庭生活 (16), 工作学习 (15), 文化艺术 (9), 娱乐运动 (8), 健康医疗 (8)
+
+**Grammar** (`assets/data/sample_grammar.json`):
+- **6 grammar points** (A1-A2 level)
+- Categories: 时态, 冠词, 代词, 名词, 介词
+- Each includes: rules, examples, practice exercises
+- Topics: Present tense, Articles, Personal pronouns, Gender/Number, Past tense, Prepositions
 
 ### Audio Integration
 - Audio files expected at: `assets/audio/words/{wordId}.mp3`
@@ -213,3 +334,22 @@ Indexes on: nextReviewDate, isFavorite
 - Add test learning records and verify database persistence
 - Clear all data for fresh testing
 - View real-time statistics
+
+### Common Dart Null Safety Patterns
+When working with nullable properties from database models:
+```dart
+// ❌ WRONG - Type promotion doesn't work on public properties
+if (record != null) {
+  Text('${record.reviewCount}')  // Error: Property potentially null
+}
+
+// ✅ CORRECT - Use Builder with local variable
+if (record != null) {
+  Builder(
+    builder: (context) {
+      final rec = record!;  // Capture non-null value
+      return Text('${rec.reviewCount}');  // Works!
+    },
+  )
+}
+```

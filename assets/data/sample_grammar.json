@@ -1,0 +1,416 @@
+[
+  {
+    "id": "presente_indicativo",
+    "title": "直陈式现在时 (Presente Indicativo)",
+    "category": "时态",
+    "level": "A1",
+    "description": "直陈式现在时是意大利语最基础的时态，用于描述现在正在发生的动作、习惯性动作或普遍真理。",
+    "rules": [
+      {
+        "title": "规则动词变位",
+        "content": "意大利语动词分为三类：-are, -ere, -ire 结尾的动词。每类动词有固定的变位规则。",
+        "points": [
+          "-are 动词（如 parlare）：parlo, parli, parla, parliamo, parlate, parlano",
+          "-ere 动词（如 credere）：credo, credi, crede, crediamo, credete, credono",
+          "-ire 动词（如 dormire）：dormo, dormi, dorme, dormiamo, dormite, dormono"
+        ]
+      },
+      {
+        "title": "常用不规则动词",
+        "content": "一些常用动词的变位不遵循规则，需要单独记忆。",
+        "points": [
+          "essere（是）：sono, sei, è, siamo, siete, sono",
+          "avere（有）：ho, hai, ha, abbiamo, avete, hanno",
+          "fare（做）：faccio, fai, fa, facciamo, fate, fanno",
+          "andare（去）：vado, vai, va, andiamo, andate, vanno"
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "italian": "Io parlo italiano ogni giorno.",
+        "chinese": "我每天说意大利语。",
+        "english": "I speak Italian every day.",
+        "highlight": "parlo"
+      },
+      {
+        "italian": "Maria è una studentessa.",
+        "chinese": "玛丽亚是一名学生。",
+        "english": "Maria is a student.",
+        "highlight": "è"
+      },
+      {
+        "italian": "Noi andiamo al cinema stasera.",
+        "chinese": "我们今晚去看电影。",
+        "english": "We go to the cinema tonight.",
+        "highlight": "andiamo"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex_presente_1",
+        "type": "fill_blank",
+        "question": "Io ____ (parlare) italiano.",
+        "answer": "parlo",
+        "explanation": "第一人称单数，-are动词去掉-are加-o"
+      },
+      {
+        "id": "ex_presente_2",
+        "type": "choice",
+        "question": "Maria ____ molto bene.",
+        "options": ["canta", "canti", "cantare", "canto"],
+        "answer": "canta",
+        "explanation": "第三人称单数，-are动词变位为-a"
+      },
+      {
+        "id": "ex_presente_3",
+        "type": "choice",
+        "question": "Noi ____ (essere) studenti.",
+        "options": ["sono", "siamo", "siete", "sei"],
+        "answer": "siamo",
+        "explanation": "第一人称复数，essere的变位是siamo"
+      }
+    ],
+    "createdAt": "2025-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "articoli",
+    "title": "冠词 (Articoli)",
+    "category": "冠词",
+    "level": "A1",
+    "description": "意大利语冠词分为定冠词和不定冠词，需要根据名词的性、数以及开头字母选择合适的形式。",
+    "rules": [
+      {
+        "title": "定冠词 (Articoli Determinativi)",
+        "content": "用于指代特定的人或物。",
+        "points": [
+          "阳性单数：il（辅音前）, lo（s+辅音/z/gn/ps前）, l'（元音前）",
+          "阴性单数：la（辅音前）, l'（元音前）",
+          "阳性复数：i（辅音前）, gli（s+辅音/z/gn/ps/元音前）",
+          "阴性复数：le"
+        ]
+      },
+      {
+        "title": "不定冠词 (Articoli Indeterminativi)",
+        "content": "用于指代不特定的人或物，只有单数形式。",
+        "points": [
+          "阳性：un（辅音/元音前）, uno（s+辅音/z/gn/ps前）",
+          "阴性：una（辅音前）, un'（元音前）"
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "italian": "Il libro è interessante.",
+        "chinese": "这本书很有趣。",
+        "english": "The book is interesting.",
+        "highlight": "Il"
+      },
+      {
+        "italian": "Ho un'amica italiana.",
+        "chinese": "我有一个意大利朋友（女性）。",
+        "english": "I have an Italian friend.",
+        "highlight": "un'amica"
+      },
+      {
+        "italian": "Gli studenti studiano molto.",
+        "chinese": "学生们学习很努力。",
+        "english": "The students study a lot.",
+        "highlight": "Gli"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex_articoli_1",
+        "type": "choice",
+        "question": "____ libro (阳性单数)",
+        "options": ["il", "lo", "la", "i"],
+        "answer": "il",
+        "explanation": "libro是阳性单数名词，以辅音l开头，用il"
+      },
+      {
+        "id": "ex_articoli_2",
+        "type": "choice",
+        "question": "____ studente (阳性单数，s+辅音开头)",
+        "options": ["il", "lo", "un", "uno"],
+        "answer": "lo",
+        "explanation": "studente以s+t（辅音）开头，用lo"
+      },
+      {
+        "id": "ex_articoli_3",
+        "type": "fill_blank",
+        "question": "____ casa (阴性单数)",
+        "answer": "la",
+        "explanation": "casa是阴性单数名词，以辅音c开头，用la"
+      }
+    ],
+    "createdAt": "2025-01-02T00:00:00.000Z"
+  },
+  {
+    "id": "pronomi_personali",
+    "title": "人称代词 (Pronomi Personali)",
+    "category": "代词",
+    "level": "A1",
+    "description": "人称代词用于替代名词，避免重复。包括主格代词和宾格代词。",
+    "rules": [
+      {
+        "title": "主格代词 (Soggetto)",
+        "content": "用作句子的主语。",
+        "points": [
+          "单数：io (我), tu (你), lui/lei (他/她), Lei (您)",
+          "复数：noi (我们), voi (你们), loro (他们)"
+        ]
+      },
+      {
+        "title": "直接宾格代词",
+        "content": "直接接受动作的对象。",
+        "points": [
+          "单数：mi (我), ti (你), lo/la (他/她/它)",
+          "复数：ci (我们), vi (你们), li/le (他们/她们)"
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "italian": "Io parlo italiano, tu parli inglese.",
+        "chinese": "我说意大利语，你说英语。",
+        "english": "I speak Italian, you speak English.",
+        "highlight": "Io, tu"
+      },
+      {
+        "italian": "Maria mi chiama ogni giorno.",
+        "chinese": "玛丽亚每天给我打电话。",
+        "english": "Maria calls me every day.",
+        "highlight": "mi"
+      },
+      {
+        "italian": "Noi li vediamo domani.",
+        "chinese": "我们明天见他们。",
+        "english": "We see them tomorrow.",
+        "highlight": "li"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex_pronomi_1",
+        "type": "choice",
+        "question": "____ sono italiano. (我)",
+        "options": ["Io", "Tu", "Lui", "Noi"],
+        "answer": "Io",
+        "explanation": "第一人称单数主格代词是Io"
+      },
+      {
+        "id": "ex_pronomi_2",
+        "type": "fill_blank",
+        "question": "Maria ____ vede. (看见我)",
+        "answer": "mi",
+        "explanation": "第一人称单数直接宾格代词是mi"
+      }
+    ],
+    "createdAt": "2025-01-03T00:00:00.000Z"
+  },
+  {
+    "id": "genere_numero",
+    "title": "名词的性和数 (Genere e Numero)",
+    "category": "名词",
+    "level": "A1",
+    "description": "意大利语名词有阳性和阴性之分，并有单数和复数形式。形容词需要与名词保持性数一致。",
+    "rules": [
+      {
+        "title": "名词的性",
+        "content": "大多数名词的性可以从词尾判断。",
+        "points": [
+          "-o 结尾通常是阳性：libro (书), ragazzo (男孩)",
+          "-a 结尾通常是阴性：casa (房子), ragazza (女孩)",
+          "-e 结尾可能是阳性或阴性，需要记忆"
+        ]
+      },
+      {
+        "title": "名词的复数",
+        "content": "复数形式通过改变词尾构成。",
+        "points": [
+          "阳性 -o → -i：libro → libri",
+          "阴性 -a → -e：casa → case",
+          "-e → -i（阳性和阴性）：studente → studenti"
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "italian": "Il ragazzo alto.",
+        "chinese": "高个子男孩。",
+        "english": "The tall boy.",
+        "highlight": "ragazzo alto"
+      },
+      {
+        "italian": "Le case belle.",
+        "chinese": "漂亮的房子们。",
+        "english": "The beautiful houses.",
+        "highlight": "case belle"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex_genere_1",
+        "type": "choice",
+        "question": "libro 的复数形式是？",
+        "options": ["libre", "libri", "libra", "libro"],
+        "answer": "libri",
+        "explanation": "阳性-o结尾的名词，复数变为-i"
+      },
+      {
+        "id": "ex_genere_2",
+        "type": "choice",
+        "question": "ragazza 的复数形式是？",
+        "options": ["ragazzi", "ragazze", "ragazzas", "ragazza"],
+        "answer": "ragazze",
+        "explanation": "阴性-a结尾的名词，复数变为-e"
+      }
+    ],
+    "createdAt": "2025-01-04T00:00:00.000Z"
+  },
+  {
+    "id": "passato_prossimo",
+    "title": "近过去时 (Passato Prossimo)",
+    "category": "时态",
+    "level": "A2",
+    "description": "近过去时用于描述已经完成的动作，相当于英语的现在完成时。由助动词（essere或avere）+ 过去分词构成。",
+    "rules": [
+      {
+        "title": "助动词的选择",
+        "content": "大多数动词使用avere，表示位移或状态变化的动词使用essere。",
+        "points": [
+          "使用 avere：parlare (说), mangiare (吃), leggere (读)",
+          "使用 essere：andare (去), venire (来), nascere (出生), morire (死)"
+        ]
+      },
+      {
+        "title": "过去分词的构成",
+        "content": "规则动词的过去分词有固定模式。",
+        "points": [
+          "-are → -ato：parlare → parlato",
+          "-ere → -uto：credere → creduto",
+          "-ire → -ito：dormire → dormito"
+        ]
+      },
+      {
+        "title": "性数一致",
+        "content": "使用essere作助动词时，过去分词需要与主语保持性数一致。",
+        "points": [
+          "Maria è andata (阴性单数)",
+          "I ragazzi sono andati (阳性复数)",
+          "Le ragazze sono andate (阴性复数)"
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "italian": "Ho mangiato una pizza.",
+        "chinese": "我吃了一个披萨。",
+        "english": "I have eaten a pizza.",
+        "highlight": "Ho mangiato"
+      },
+      {
+        "italian": "Maria è andata al cinema.",
+        "chinese": "玛丽亚去了电影院。",
+        "english": "Maria has gone to the cinema.",
+        "highlight": "è andata"
+      },
+      {
+        "italian": "Siamo partiti alle otto.",
+        "chinese": "我们八点出发了。",
+        "english": "We left at eight.",
+        "highlight": "Siamo partiti"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex_passato_1",
+        "type": "fill_blank",
+        "question": "Io ____ (mangiare) la pasta.",
+        "answer": "ho mangiato",
+        "explanation": "mangiare使用助动词avere，过去分词是mangiato"
+      },
+      {
+        "id": "ex_passato_2",
+        "type": "choice",
+        "question": "Maria ____ a Roma.",
+        "options": ["ha andato", "è andata", "ha andata", "è andato"],
+        "answer": "è andata",
+        "explanation": "andare使用essere，且需要性数一致（阴性单数）"
+      }
+    ],
+    "createdAt": "2025-01-05T00:00:00.000Z"
+  },
+  {
+    "id": "preposizioni",
+    "title": "介词 (Preposizioni)",
+    "category": "介词",
+    "level": "A2",
+    "description": "介词用于连接词语，表示时间、地点、方式等关系。意大利语介词可以单独使用或与冠词结合形成缩合介词。",
+    "rules": [
+      {
+        "title": "基本介词",
+        "content": "常用的简单介词。",
+        "points": [
+          "di (的，关于)",
+          "a (到，在)",
+          "da (从，由)",
+          "in (在...里)",
+          "con (和)",
+          "su (在...上)",
+          "per (为了，通过)",
+          "tra/fra (在...之间)"
+        ]
+      },
+      {
+        "title": "缩合介词",
+        "content": "介词与定冠词结合形成缩合形式。",
+        "points": [
+          "di + il = del, di + la = della",
+          "a + il = al, a + la = alla",
+          "da + il = dal, da + la = dalla",
+          "in + il = nel, in + la = nella"
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "italian": "Vado al cinema.",
+        "chinese": "我去电影院。",
+        "english": "I go to the cinema.",
+        "highlight": "al"
+      },
+      {
+        "italian": "Il libro della professoressa.",
+        "chinese": "教授的书。",
+        "english": "The professor's book.",
+        "highlight": "della"
+      },
+      {
+        "italian": "Abito in Italia.",
+        "chinese": "我住在意大利。",
+        "english": "I live in Italy.",
+        "highlight": "in"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex_prep_1",
+        "type": "choice",
+        "question": "Vado ____ cinema. (a + il)",
+        "options": ["al", "del", "nel", "sul"],
+        "answer": "al",
+        "explanation": "a + il = al"
+      },
+      {
+        "id": "ex_prep_2",
+        "type": "fill_blank",
+        "question": "Il libro ____ studente. (di + lo)",
+        "answer": "dello",
+        "explanation": "di + lo = dello"
+      }
+    ],
+    "createdAt": "2025-01-06T00:00:00.000Z"
+  }
+]

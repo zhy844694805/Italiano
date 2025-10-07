@@ -183,3 +183,23 @@ final learningProgressProvider = StateNotifierProvider<LearningProgressNotifier,
   final repository = ref.watch(learningRecordRepositoryProvider);
   return LearningProgressNotifier(repository);
 });
+
+// Provider for words that need review
+final wordsToReviewProvider = FutureProvider<List<Word>>((ref) async {
+  final allWords = await ref.watch(allWordsProvider.future);
+  final progressNotifier = ref.watch(learningProgressProvider.notifier);
+  final wordIdsToReview = await progressNotifier.getWordsToReview();
+
+  // 过滤出需要复习的单词
+  return allWords.where((word) => wordIdsToReview.contains(word.id)).toList();
+});
+
+// Provider for new/unstudied words
+final newWordsProvider = FutureProvider<List<Word>>((ref) async {
+  final allWords = await ref.watch(allWordsProvider.future);
+  final learningProgress = ref.watch(learningProgressProvider);
+  final studiedWordIds = learningProgress.keys.toSet();
+
+  // 过滤出未学习的单词
+  return allWords.where((word) => !studiedWordIds.contains(word.id)).toList();
+});

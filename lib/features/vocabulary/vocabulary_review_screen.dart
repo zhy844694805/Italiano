@@ -5,41 +5,31 @@ import '../../shared/widgets/swipeable_word_card.dart';
 import '../../shared/providers/vocabulary_provider.dart';
 import '../../core/services/audio_player_service.dart';
 
-class VocabularyLearningScreen extends ConsumerStatefulWidget {
-  final String? level;
-  final String? category;
-  final bool newWordsOnly; // 只学习新词
-
-  const VocabularyLearningScreen({
-    super.key,
-    this.level,
-    this.category,
-    this.newWordsOnly = false,
-  });
+class VocabularyReviewScreen extends ConsumerStatefulWidget {
+  const VocabularyReviewScreen({super.key});
 
   @override
-  ConsumerState<VocabularyLearningScreen> createState() => _VocabularyLearningScreenState();
+  ConsumerState<VocabularyReviewScreen> createState() => _VocabularyReviewScreenState();
 }
 
-class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScreen> {
+class _VocabularyReviewScreenState extends ConsumerState<VocabularyReviewScreen> {
   int _currentIndex = 0;
   final List<Word> _remainingWords = [];
   bool _isInitialized = false;
+  int _correctCount = 0;
+  int _incorrectCount = 0;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
 
-    // 根据模式选择不同的Provider
-    final wordsAsync = widget.newWordsOnly
-        ? ref.watch(newWordsProvider)
-        : ref.watch(allWordsProvider);
+    final wordsToReviewAsync = ref.watch(wordsToReviewProvider);
 
     return Scaffold(
       backgroundColor: colorScheme.surfaceContainerHighest,
       appBar: AppBar(
-        title: Text(widget.newWordsOnly ? '学习新词' : '学习单词'),
+        title: const Text('复习单词'),
         backgroundColor: colorScheme.surfaceContainerHighest,
         elevation: 0,
         actions: [
@@ -49,13 +39,15 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
             onPressed: () {
               setState(() {
                 _currentIndex = 0;
+                _correctCount = 0;
+                _incorrectCount = 0;
                 _isInitialized = false;
               });
             },
           ),
         ],
       ),
-      body: wordsAsync.when(
+      body: wordsToReviewAsync.when(
         loading: () => const Center(
           child: CircularProgressIndicator(),
         ),
@@ -80,37 +72,7 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
         ),
         data: (words) {
           if (words.isEmpty) {
-            return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    widget.newWordsOnly ? Icons.check_circle_outline : Icons.library_books,
-                    size: 64,
-                    color: colorScheme.primary,
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    widget.newWordsOnly ? '🎉 太棒了！' : '暂无单词',
-                    style: theme.textTheme.headlineMedium,
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    widget.newWordsOnly
-                        ? '所有单词都已学习过了'
-                        : '请先添加一些单词数据',
-                  ),
-                  if (widget.newWordsOnly) ...[
-                    const SizedBox(height: 24),
-                    ElevatedButton.icon(
-                      onPressed: () => Navigator.pop(context),
-                      icon: const Icon(Icons.arrow_back),
-                      label: const Text('返回首页'),
-                    ),
-                  ],
-                ],
-              ),
-            );
+            return _buildNoReviewScreen();
           }
 
           // 初始化剩余单词列表
@@ -133,8 +95,8 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
                 // 进度条
                 _buildProgressBar(theme, colorScheme, words.length, progress),
 
-                // 统计信息
-                _buildStats(theme, colorScheme, words.length),
+                // 复习统计
+                _buildReviewStats(theme, colorScheme),
 
                 const SizedBox(height: 20),
 
@@ -147,7 +109,7 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
                 Padding(
                   padding: const EdgeInsets.all(16),
                   child: Text(
-                    '点击卡片翻转 | 左滑不认识 | 右滑认识',
+                    '点击卡片翻转 | 左滑不记得 | 右滑记得',
                     style: theme.textTheme.bodyMedium?.copyWith(
                       color: colorScheme.onSurface.withValues(alpha: 0.6),
                     ),
@@ -172,7 +134,7 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                '已学习 $_currentIndex / $total',
+                '已复习 $_currentIndex / $total',
                 style: theme.textTheme.titleMedium?.copyWith(
                   color: colorScheme.onSurface,
                   fontWeight: FontWeight.w600,
@@ -181,7 +143,7 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
               Text(
                 '剩余 ${_remainingWords.length}',
                 style: theme.textTheme.titleMedium?.copyWith(
-                  color: colorScheme.primary,
+                  color: colorScheme.secondary,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -194,7 +156,7 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
               value: progress,
               minHeight: 10,
               backgroundColor: colorScheme.surfaceContainerHighest,
-              color: colorScheme.primary,
+              color: colorScheme.secondary,
             ),
           ),
         ],
@@ -202,43 +164,35 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
     );
   }
 
-  Widget _buildStats(ThemeData theme, ColorScheme colorScheme, int total) {
-    final progressNotifier = ref.watch(learningProgressProvider.notifier);
-
-    return FutureBuilder<Map<String, dynamic>>(
-      future: progressNotifier.getStatistics(),
-      builder: (context, snapshot) {
-        if (!snapshot.hasData) return const SizedBox();
-
-        final stats = snapshot.data!;
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
-          child: Row(
-            children: [
-              _buildStatCard(
-                icon: Icons.star,
-                label: '掌握度',
-                value: '${(stats['averageMastery'] * 100).toStringAsFixed(0)}%',
-                color: colorScheme.tertiary,
-              ),
-              const SizedBox(width: 12),
-              _buildStatCard(
-                icon: Icons.favorite,
-                label: '收藏',
-                value: '${stats['favoriteWords']}',
-                color: Colors.red,
-              ),
-              const SizedBox(width: 12),
-              _buildStatCard(
-                icon: Icons.repeat,
-                label: '待复习',
-                value: '${stats['wordsToReview']}',
-                color: colorScheme.secondary,
-              ),
-            ],
+  Widget _buildReviewStats(ThemeData theme, ColorScheme colorScheme) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Row(
+        children: [
+          _buildStatCard(
+            icon: Icons.check_circle,
+            label: '记得',
+            value: '$_correctCount',
+            color: Colors.green,
           ),
-        );
-      },
+          const SizedBox(width: 12),
+          _buildStatCard(
+            icon: Icons.cancel,
+            label: '不记得',
+            value: '$_incorrectCount',
+            color: Colors.orange,
+          ),
+          const SizedBox(width: 12),
+          _buildStatCard(
+            icon: Icons.percent,
+            label: '正确率',
+            value: _currentIndex == 0
+                ? '0%'
+                : '${((_correctCount / _currentIndex) * 100).toStringAsFixed(0)}%',
+            color: colorScheme.primary,
+          ),
+        ],
+      ),
     );
   }
 
@@ -312,11 +266,9 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
               word: currentWord,
               showAudioButton: true,
               onAudioTap: () async {
-                // 尝试播放音频，如果没有音频文件则忽略错误
                 try {
                   await audioService.playWordPronunciation(currentWord.id);
                 } catch (e) {
-                  // 音频文件不存在，静默处理
                   print('Audio not available for word: ${currentWord.id}');
                 }
               },
@@ -329,32 +281,36 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
     );
   }
 
-  void _handleSwipe(Word word, bool correct) async {
+  void _handleSwipe(Word word, bool remembered) async {
     // 记录学习进度
-    await ref.read(learningProgressProvider.notifier).recordWordStudied(word, correct);
+    await ref.read(learningProgressProvider.notifier).recordWordStudied(word, remembered);
 
     setState(() {
       _currentIndex++;
       _remainingWords.removeAt(0);
+      if (remembered) {
+        _correctCount++;
+      } else {
+        _incorrectCount++;
+      }
     });
 
     // 显示提示
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(correct ? '✓ 认识！继续加油' : '✗ 不认识，稍后会再次复习'),
+          content: Text(remembered ? '✓ 记得！下次复习时间已更新' : '✗ 不记得，1小时后再次复习'),
           duration: const Duration(milliseconds: 800),
           behavior: SnackBarBehavior.floating,
-          backgroundColor: correct ? Colors.green : Colors.orange,
+          backgroundColor: remembered ? Colors.green : Colors.orange,
         ),
       );
     }
   }
 
-  Widget _buildCompletionScreen(int total) {
+  Widget _buildNoReviewScreen() {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
-    final progressNotifier = ref.watch(learningProgressProvider.notifier);
 
     return Center(
       child: Padding(
@@ -369,7 +325,7 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
                 shape: BoxShape.circle,
               ),
               child: Icon(
-                Icons.celebration,
+                Icons.check_circle_outline,
                 size: 80,
                 color: colorScheme.primary,
               ),
@@ -384,7 +340,69 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
             ),
             const SizedBox(height: 16),
             Text(
-              '你已经完成了 $total 个单词的学习',
+              '暂时没有需要复习的单词',
+              style: theme.textTheme.titleLarge?.copyWith(
+                color: colorScheme.onSurface,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 8),
+            Text(
+              '继续学习新单词，或者稍后再来复习吧',
+              style: theme.textTheme.bodyMedium?.copyWith(
+                color: colorScheme.onSurface.withValues(alpha: 0.7),
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 40),
+            ElevatedButton.icon(
+              onPressed: () => Navigator.pop(context),
+              icon: const Icon(Icons.arrow_back),
+              label: const Text('返回首页'),
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCompletionScreen(int total) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+    final accuracy = _currentIndex == 0 ? 0.0 : (_correctCount / _currentIndex);
+
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(32),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(32),
+              decoration: BoxDecoration(
+                color: colorScheme.secondaryContainer,
+                shape: BoxShape.circle,
+              ),
+              child: Icon(
+                Icons.emoji_events,
+                size: 80,
+                color: colorScheme.secondary,
+              ),
+            ),
+            const SizedBox(height: 32),
+            Text(
+              '🎊 复习完成！',
+              style: theme.textTheme.displayMedium?.copyWith(
+                color: colorScheme.secondary,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 16),
+            Text(
+              '你已经完成了 $total 个单词的复习',
               style: theme.textTheme.titleLarge?.copyWith(
                 color: colorScheme.onSurface,
               ),
@@ -392,31 +410,21 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
             ),
             const SizedBox(height: 40),
 
-            // 统计摘要
-            FutureBuilder<Map<String, dynamic>>(
-              future: progressNotifier.getStatistics(),
-              builder: (context, snapshot) {
-                if (!snapshot.hasData) {
-                  return const CircularProgressIndicator();
-                }
-
-                final stats = snapshot.data!;
-                return Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(24),
-                    child: Column(
-                      children: [
-                        Text('学习统计', style: theme.textTheme.titleLarge),
-                        const SizedBox(height: 16),
-                        _buildStatRow('总学习单词', '${stats['totalWords']}'),
-                        _buildStatRow('平均掌握度', '${(stats['averageMastery'] * 100).toStringAsFixed(1)}%'),
-                        _buildStatRow('收藏单词', '${stats['favoriteWords']}'),
-                        _buildStatRow('待复习单词', '${stats['wordsToReview']}'),
-                      ],
-                    ),
-                  ),
-                );
-              },
+            // 复习统计摘要
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  children: [
+                    Text('复习成绩', style: theme.textTheme.titleLarge),
+                    const SizedBox(height: 16),
+                    _buildStatRow('复习单词数', '$total'),
+                    _buildStatRow('记得', '$_correctCount'),
+                    _buildStatRow('不记得', '$_incorrectCount'),
+                    _buildStatRow('正确率', '${(accuracy * 100).toStringAsFixed(1)}%'),
+                  ],
+                ),
+              ),
             ),
 
             const SizedBox(height: 40),
@@ -439,11 +447,13 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
                     onPressed: () {
                       setState(() {
                         _currentIndex = 0;
+                        _correctCount = 0;
+                        _incorrectCount = 0;
                         _isInitialized = false;
                       });
                     },
                     icon: const Icon(Icons.refresh),
-                    label: const Text('重新学习'),
+                    label: const Text('再次复习'),
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 16),
                     ),

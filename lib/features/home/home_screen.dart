@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../test/persistence_test_screen.dart';
 import '../vocabulary/vocabulary_learning_screen.dart';
 import '../vocabulary/vocabulary_list_screen.dart';
+import '../vocabulary/vocabulary_review_screen.dart';
+import '../grammar/grammar_list_screen.dart';
+import '../../shared/providers/vocabulary_provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -68,13 +72,15 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 // 首页
-class HomePage extends StatelessWidget {
+class HomePage extends ConsumerWidget {
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
+    final wordsToReviewAsync = ref.watch(wordsToReviewProvider);
+    final newWordsAsync = ref.watch(newWordsProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -166,6 +172,80 @@ class HomePage extends StatelessWidget {
 
               const SizedBox(height: 24),
 
+              // 复习提醒卡片
+              wordsToReviewAsync.when(
+                data: (wordsToReview) {
+                  if (wordsToReview.isNotEmpty) {
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 16),
+                      child: Card(
+                        color: colorScheme.secondaryContainer,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const VocabularyReviewScreen(),
+                              ),
+                            );
+                          },
+                          borderRadius: BorderRadius.circular(16),
+                          child: Padding(
+                            padding: const EdgeInsets.all(16),
+                            child: Row(
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.all(12),
+                                  decoration: BoxDecoration(
+                                    color: colorScheme.secondary,
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  child: Icon(
+                                    Icons.alarm,
+                                    color: colorScheme.onSecondary,
+                                    size: 28,
+                                  ),
+                                ),
+                                const SizedBox(width: 16),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        '复习提醒',
+                                        style: theme.textTheme.titleMedium?.copyWith(
+                                          fontWeight: FontWeight.bold,
+                                          color: colorScheme.onSecondaryContainer,
+                                        ),
+                                      ),
+                                      const SizedBox(height: 4),
+                                      Text(
+                                        '${wordsToReview.length} 个单词等待复习',
+                                        style: theme.textTheme.bodyMedium?.copyWith(
+                                          color: colorScheme.onSecondaryContainer,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: colorScheme.onSecondaryContainer,
+                                  size: 20,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  }
+                  return const SizedBox.shrink();
+                },
+                loading: () => const SizedBox.shrink(),
+                error: (_, __) => const SizedBox.shrink(),
+              ),
+
               // 快速开始
               Text(
                 '快速开始',
@@ -181,18 +261,53 @@ class HomePage extends StatelessWidget {
                 crossAxisSpacing: 12,
                 childAspectRatio: 1.3,
                 children: [
-                  _QuickActionCard(
-                    icon: Icons.book,
-                    title: '学习新词',
-                    color: colorScheme.primary,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const VocabularyLearningScreen(),
-                        ),
-                      );
-                    },
+                  newWordsAsync.when(
+                    data: (newWords) => _QuickActionCardWithBadge(
+                      icon: Icons.book,
+                      title: '学习新词',
+                      color: colorScheme.primary,
+                      badge: newWords.isNotEmpty ? '${newWords.length}' : null,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const VocabularyLearningScreen(
+                              newWordsOnly: true,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                    loading: () => _QuickActionCard(
+                      icon: Icons.book,
+                      title: '学习新词',
+                      color: colorScheme.primary,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const VocabularyLearningScreen(
+                              newWordsOnly: true,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                    error: (_, __) => _QuickActionCard(
+                      icon: Icons.book,
+                      title: '学习新词',
+                      color: colorScheme.primary,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const VocabularyLearningScreen(
+                              newWordsOnly: true,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                   _QuickActionCard(
                     icon: Icons.repeat,
@@ -202,7 +317,7 @@ class HomePage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const VocabularyLearningScreen(),
+                          builder: (context) => const VocabularyReviewScreen(),
                         ),
                       );
                     },
@@ -349,6 +464,93 @@ class _QuickActionCard extends StatelessWidget {
   }
 }
 
+// 带徽章的快捷操作卡片
+class _QuickActionCardWithBadge extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final Color color;
+  final VoidCallback onTap;
+  final String? badge;
+
+  const _QuickActionCardWithBadge({
+    required this.icon,
+    required this.title,
+    required this.color,
+    required this.onTap,
+    this.badge,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(16),
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: color.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Icon(
+                      icon,
+                      color: color,
+                      size: 32,
+                    ),
+                  ),
+                  if (badge != null)
+                    Positioned(
+                      right: -8,
+                      top: -8,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        constraints: const BoxConstraints(
+                          minWidth: 20,
+                          minHeight: 20,
+                        ),
+                        child: Text(
+                          badge!,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+              const SizedBox(height: 12),
+              Text(
+                title,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 // 词汇页面 - 使用词汇列表
 class VocabularyPage extends StatelessWidget {
   const VocabularyPage({super.key});
@@ -359,16 +561,13 @@ class VocabularyPage extends StatelessWidget {
   }
 }
 
-// 语法页面占位符
+// 语法页面 - 使用语法列表
 class GrammarPage extends StatelessWidget {
   const GrammarPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('语法课程')),
-      body: const Center(child: Text('语法课程页面')),
-    );
+    return const GrammarListScreen();
   }
 }
 
