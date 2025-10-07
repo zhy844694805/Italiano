@@ -5,6 +5,7 @@ import '../vocabulary/vocabulary_learning_screen.dart';
 import '../vocabulary/vocabulary_list_screen.dart';
 import '../vocabulary/vocabulary_review_screen.dart';
 import '../grammar/grammar_list_screen.dart';
+import '../conversation/conversation_scenario_screen.dart';
 import '../../shared/providers/vocabulary_provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -323,10 +324,17 @@ class HomePage extends ConsumerWidget {
                     },
                   ),
                   _QuickActionCard(
-                    icon: Icons.headphones,
-                    title: '听力练习',
-                    color: colorScheme.tertiary,
-                    onTap: () {},
+                    icon: Icons.chat_bubble_outline,
+                    title: 'AI 对话',
+                    color: Colors.deepPurple,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ConversationScenarioScreen(),
+                        ),
+                      );
+                    },
                   ),
                   _QuickActionCard(
                     icon: Icons.quiz,

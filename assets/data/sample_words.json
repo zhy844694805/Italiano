@@ -4898,5 +4898,3505 @@
       "Ti ringrazio. - 我感谢你。",
       "Voglio ringraziarti. - 我想感谢你。"
     ]
+  },
+  {
+    "id": "351",
+    "italian": "prenotare",
+    "chinese": "预订",
+    "english": "to book/reserve",
+    "pronunciation": "prenoˈtaːre",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Vorrei prenotare un tavolo. - 我想预订一张桌子。",
+      "Ho prenotato l'hotel online. - 我在线预订了酒店。"
+    ]
+  },
+  {
+    "id": "352",
+    "italian": "biglietto",
+    "chinese": "票",
+    "english": "ticket",
+    "pronunciation": "biʎˈʎetto",
+    "category": "旅游出行",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Dove posso comprare i biglietti? - 我在哪里可以买票？",
+      "Il biglietto costa 5 euro. - 票价5欧元。"
+    ]
+  },
+  {
+    "id": "353",
+    "italian": "fermata",
+    "chinese": "站点",
+    "english": "stop",
+    "pronunciation": "ferˈmaːta",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Qual è la prossima fermata? - 下一站是哪里？",
+      "Scendo alla fermata centrale. - 我在中心站下车。"
+    ]
+  },
+  {
+    "id": "354",
+    "italian": "autobus",
+    "chinese": "公交车",
+    "english": "bus",
+    "pronunciation": "ˈautobus",
+    "category": "旅游出行",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "L'autobus è in ritardo. - 公交车晚点了。",
+      "Prendo l'autobus ogni giorno. - 我每天坐公交车。"
+    ]
+  },
+  {
+    "id": "355",
+    "italian": "treno",
+    "chinese": "火车",
+    "english": "train",
+    "pronunciation": "ˈtrɛːno",
+    "category": "旅游出行",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Il treno parte alle 9. - 火车9点出发。",
+      "Viaggiamo in treno. - 我们坐火车旅行。"
+    ]
+  },
+  {
+    "id": "356",
+    "italian": "aereo",
+    "chinese": "飞机",
+    "english": "airplane",
+    "pronunciation": "aˈɛːreo",
+    "category": "旅游出行",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "L'aereo atterra tra poco. - 飞机马上降落。",
+      "Preferisco viaggiare in aereo. - 我更喜欢坐飞机旅行。"
+    ]
+  },
+  {
+    "id": "357",
+    "italian": "bagaglio",
+    "chinese": "行李",
+    "english": "luggage",
+    "pronunciation": "baˈɡaʎʎo",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Dove posso ritirare i bagagli? - 我在哪里可以取行李？",
+      "Il mio bagaglio è troppo pesante. - 我的行李太重了。"
+    ]
+  },
+  {
+    "id": "358",
+    "italian": "passaporto",
+    "chinese": "护照",
+    "english": "passport",
+    "pronunciation": "passaˈpɔrto",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Ho dimenticato il passaporto. - 我忘了带护照。",
+      "Mostrami il tuo passaporto. - 给我看看你的护照。"
+    ]
+  },
+  {
+    "id": "359",
+    "italian": "valigia",
+    "chinese": "行李箱",
+    "english": "suitcase",
+    "pronunciation": "vaˈliːdʒa",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Devo fare la valigia. - 我需要打包行李。",
+      "La mia valigia è rossa. - 我的行李箱是红色的。"
+    ]
+  },
+  {
+    "id": "360",
+    "italian": "direzione",
+    "chinese": "方向",
+    "english": "direction",
+    "pronunciation": "diretˈtsjoːne",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "In quale direzione devo andare? - 我应该往哪个方向走？",
+      "Vai in quella direzione. - 往那个方向走。"
+    ]
+  },
+  {
+    "id": "361",
+    "italian": "strada",
+    "chinese": "街道",
+    "english": "street/road",
+    "pronunciation": "ˈstraːda",
+    "category": "旅游出行",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Abito in questa strada. - 我住在这条街。",
+      "La strada è affollata. - 街道很拥挤。"
+    ]
+  },
+  {
+    "id": "362",
+    "italian": "piazza",
+    "chinese": "广场",
+    "english": "square",
+    "pronunciation": "ˈpjattsa",
+    "category": "旅游出行",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Ci vediamo in piazza. - 我们在广场见。",
+      "La piazza è bellissima. - 广场非常美丽。"
+    ]
+  },
+  {
+    "id": "363",
+    "italian": "mappa",
+    "chinese": "地图",
+    "english": "map",
+    "pronunciation": "ˈmappa",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Hai una mappa della città? - 你有城市地图吗？",
+      "Consulto la mappa sul telefono. - 我在手机上查看地图。"
+    ]
+  },
+  {
+    "id": "364",
+    "italian": "turista",
+    "chinese": "游客",
+    "english": "tourist",
+    "pronunciation": "tuˈrista",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Sono un turista straniero. - 我是外国游客。",
+      "Ci sono molti turisti qui. - 这里有很多游客。"
+    ]
+  },
+  {
+    "id": "365",
+    "italian": "guida",
+    "chinese": "导游/指南",
+    "english": "guide",
+    "pronunciation": "ˈɡwiːda",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "La guida ci spiega la storia. - 导游给我们讲解历史。",
+      "Ho comprato una guida turistica. - 我买了一本旅游指南。"
+    ]
+  },
+  {
+    "id": "366",
+    "italian": "medico",
+    "chinese": "医生",
+    "english": "doctor",
+    "pronunciation": "ˈmɛːdiko",
+    "category": "健康医疗",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Devo andare dal medico. - 我需要去看医生。",
+      "Il medico mi ha visitato. - 医生给我做了检查。"
+    ]
+  },
+  {
+    "id": "367",
+    "italian": "ospedale",
+    "chinese": "医院",
+    "english": "hospital",
+    "pronunciation": "ospeˈdaːle",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "È ricoverato in ospedale. - 他在医院住院。",
+      "L'ospedale è vicino. - 医院很近。"
+    ]
+  },
+  {
+    "id": "368",
+    "italian": "farmacia",
+    "chinese": "药店",
+    "english": "pharmacy",
+    "pronunciation": "farmaˈtʃiːa",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Dov'è la farmacia più vicina? - 最近的药店在哪里？",
+      "Compro le medicine in farmacia. - 我在药店买药。"
+    ]
+  },
+  {
+    "id": "369",
+    "italian": "medicina",
+    "chinese": "药/医学",
+    "english": "medicine",
+    "pronunciation": "mediˈtʃiːna",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Prendo la medicina ogni giorno. - 我每天吃药。",
+      "Studia medicina all'università. - 他在大学学医学。"
+    ]
+  },
+  {
+    "id": "370",
+    "italian": "malato",
+    "chinese": "生病的",
+    "english": "sick/ill",
+    "pronunciation": "maˈlaːto",
+    "category": "健康医疗",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Mi sento malato. - 我觉得不舒服。",
+      "Mio figlio è malato. - 我儿子生病了。"
+    ]
+  },
+  {
+    "id": "371",
+    "italian": "dolore",
+    "chinese": "疼痛",
+    "english": "pain",
+    "pronunciation": "doˈloːre",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Ho un forte dolore alla testa. - 我头很痛。",
+      "Il dolore è insopportabile. - 疼痛难以忍受。"
+    ]
+  },
+  {
+    "id": "372",
+    "italian": "febbre",
+    "chinese": "发烧",
+    "english": "fever",
+    "pronunciation": "ˈfɛbbre",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Ho la febbre alta. - 我发高烧。",
+      "La febbre è passata. - 烧退了。"
+    ]
+  },
+  {
+    "id": "373",
+    "italian": "tosse",
+    "chinese": "咳嗽",
+    "english": "cough",
+    "pronunciation": "ˈtosse",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Ho una tosse persistente. - 我持续咳嗽。",
+      "La tosse non mi passa. - 我的咳嗽好不了。"
+    ]
+  },
+  {
+    "id": "374",
+    "italian": "raffreddore",
+    "chinese": "感冒",
+    "english": "cold",
+    "pronunciation": "raffredˈdoːre",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Ho preso un raffreddore. - 我感冒了。",
+      "Il raffreddore è molto comune. - 感冒很常见。"
+    ]
+  },
+  {
+    "id": "375",
+    "italian": "appuntamento",
+    "chinese": "预约/约会",
+    "english": "appointment",
+    "pronunciation": "appuntaˈmento",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Ho un appuntamento dal dentista. - 我有牙医预约。",
+      "Vorrei fissare un appuntamento. - 我想预约。"
+    ]
+  },
+  {
+    "id": "376",
+    "italian": "sintomo",
+    "chinese": "症状",
+    "english": "symptom",
+    "pronunciation": "ˈsintomo",
+    "category": "健康医疗",
+    "level": "B1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Quali sono i sintomi? - 症状是什么？",
+      "I sintomi sono lievi. - 症状很轻微。"
+    ]
+  },
+  {
+    "id": "377",
+    "italian": "ricetta",
+    "chinese": "处方/食谱",
+    "english": "prescription/recipe",
+    "pronunciation": "riˈtʃetta",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Il medico mi ha dato una ricetta. - 医生给了我一张处方。",
+      "Questa è la ricetta per la torta. - 这是蛋糕的食谱。"
+    ]
+  },
+  {
+    "id": "378",
+    "italian": "banca",
+    "chinese": "银行",
+    "english": "bank",
+    "pronunciation": "ˈbaŋka",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Vado in banca domani. - 我明天去银行。",
+      "La banca è aperta? - 银行开门了吗？"
+    ]
+  },
+  {
+    "id": "379",
+    "italian": "conto",
+    "chinese": "账户/账单",
+    "english": "account/bill",
+    "pronunciation": "ˈkonto",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Vorrei aprire un conto. - 我想开一个账户。",
+      "Il conto, per favore. - 请结账。"
+    ]
+  },
+  {
+    "id": "380",
+    "italian": "carta",
+    "chinese": "卡/纸",
+    "english": "card/paper",
+    "pronunciation": "ˈkarta",
+    "category": "商务交流",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Pago con la carta. - 我用卡支付。",
+      "Ho bisogno di carta e penna. - 我需要纸和笔。"
+    ]
+  },
+  {
+    "id": "381",
+    "italian": "contanti",
+    "chinese": "现金",
+    "english": "cash",
+    "pronunciation": "konˈtanti",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Accettate i contanti? - 你们接受现金吗？",
+      "Pago in contanti. - 我付现金。"
+    ]
+  },
+  {
+    "id": "382",
+    "italian": "firma",
+    "chinese": "签名",
+    "english": "signature",
+    "pronunciation": "ˈfirma",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Metta la sua firma qui. - 请在这里签名。",
+      "La firma è illeggibile. - 签名难以辨认。"
+    ]
+  },
+  {
+    "id": "383",
+    "italian": "contratto",
+    "chinese": "合同",
+    "english": "contract",
+    "pronunciation": "konˈtratto",
+    "category": "商务交流",
+    "level": "B1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Ho firmato il contratto. - 我签了合同。",
+      "Leggi bene il contratto. - 仔细阅读合同。"
+    ]
+  },
+  {
+    "id": "384",
+    "italian": "ufficio",
+    "chinese": "办公室",
+    "english": "office",
+    "pronunciation": "ufˈfiːtʃo",
+    "category": "商务交流",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Lavoro in ufficio. - 我在办公室工作。",
+      "L'ufficio è al terzo piano. - 办公室在三楼。"
+    ]
+  },
+  {
+    "id": "385",
+    "italian": "collega",
+    "chinese": "同事",
+    "english": "colleague",
+    "pronunciation": "kolˈlɛːɡa",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "È il mio collega. - 他是我的同事。",
+      "I miei colleghi sono simpatici. - 我的同事们很友好。"
+    ]
+  },
+  {
+    "id": "386",
+    "italian": "capo",
+    "chinese": "老板/头儿",
+    "english": "boss/head",
+    "pronunciation": "ˈkaːpo",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Il mio capo è molto esigente. - 我的老板要求很高。",
+      "Parlo con il capo domani. - 我明天和老板谈。"
+    ]
+  },
+  {
+    "id": "387",
+    "italian": "riunione",
+    "chinese": "会议",
+    "english": "meeting",
+    "pronunciation": "riunˈjoːne",
+    "category": "商务交流",
+    "level": "B1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Ho una riunione alle 10. - 我10点有个会议。",
+      "La riunione è stata rinviata. - 会议被推迟了。"
+    ]
+  },
+  {
+    "id": "388",
+    "italian": "progetto",
+    "chinese": "项目",
+    "english": "project",
+    "pronunciation": "proˈdʒɛtto",
+    "category": "商务交流",
+    "level": "B1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Lavoro a un nuovo progetto. - 我在做一个新项目。",
+      "Il progetto è quasi finito. - 项目快完成了。"
+    ]
+  },
+  {
+    "id": "389",
+    "italian": "stipendio",
+    "chinese": "工资",
+    "english": "salary",
+    "pronunciation": "stiˈpɛndjo",
+    "category": "商务交流",
+    "level": "B1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Lo stipendio è buono. - 工资不错。",
+      "Ricevo lo stipendio alla fine del mese. - 我在月底收到工资。"
+    ]
+  },
+  {
+    "id": "390",
+    "italian": "museo",
+    "chinese": "博物馆",
+    "english": "museum",
+    "pronunciation": "muˈzɛːo",
+    "category": "文化艺术",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Visitiamo il museo domani. - 我们明天参观博物馆。",
+      "Il museo è chiuso il lunedì. - 博物馆周一闭馆。"
+    ]
+  },
+  {
+    "id": "391",
+    "italian": "teatro",
+    "chinese": "剧院",
+    "english": "theater",
+    "pronunciation": "teˈaːtro",
+    "category": "文化艺术",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Andiamo a teatro stasera. - 我们今晚去看戏。",
+      "Lo spettacolo a teatro era bellissimo. - 剧院的演出非常精彩。"
+    ]
+  },
+  {
+    "id": "392",
+    "italian": "cinema",
+    "chinese": "电影院",
+    "english": "cinema",
+    "pronunciation": "ˈtʃiːnema",
+    "category": "文化艺术",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Andiamo al cinema? - 我们去看电影吗？",
+      "Che film c'è al cinema? - 电影院在放什么电影？"
+    ]
+  },
+  {
+    "id": "393",
+    "italian": "mostra",
+    "chinese": "展览",
+    "english": "exhibition",
+    "pronunciation": "ˈmɔstra",
+    "category": "文化艺术",
+    "level": "B1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "C'è una mostra d'arte moderna. - 有一个现代艺术展。",
+      "La mostra è molto interessante. - 展览非常有趣。"
+    ]
+  },
+  {
+    "id": "394",
+    "italian": "quadro",
+    "chinese": "画/图画",
+    "english": "painting/picture",
+    "pronunciation": "ˈkwaːdro",
+    "category": "文化艺术",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Questo quadro è bellissimo. - 这幅画很美。",
+      "Ho comprato un quadro per casa. - 我买了一幅画挂在家里。"
+    ]
+  },
+  {
+    "id": "395",
+    "italian": "artista",
+    "chinese": "艺术家",
+    "english": "artist",
+    "pronunciation": "arˈtista",
+    "category": "文化艺术",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "È un artista famoso. - 他是一位著名艺术家。",
+      "Gli artisti espongono le loro opere. - 艺术家们展示他们的作品。"
+    ]
+  },
+  {
+    "id": "396",
+    "italian": "concerto",
+    "chinese": "音乐会",
+    "english": "concert",
+    "pronunciation": "konˈtʃɛrto",
+    "category": "文化艺术",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Vado al concerto di musica classica. - 我去听古典音乐会。",
+      "Il concerto inizia alle 20. - 音乐会8点开始。"
+    ]
+  },
+  {
+    "id": "397",
+    "italian": "canzone",
+    "chinese": "歌曲",
+    "english": "song",
+    "pronunciation": "kanˈtsoːne",
+    "category": "文化艺术",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Mi piace questa canzone. - 我喜欢这首歌。",
+      "Canta una canzone italiana. - 唱一首意大利歌。"
+    ]
+  },
+  {
+    "id": "398",
+    "italian": "strumento",
+    "chinese": "乐器/工具",
+    "english": "instrument/tool",
+    "pronunciation": "struˈmento",
+    "category": "文化艺术",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Suono uno strumento musicale. - 我演奏一种乐器。",
+      "Questo è uno strumento utile. - 这是一个有用的工具。"
+    ]
+  },
+  {
+    "id": "399",
+    "italian": "sport",
+    "chinese": "运动",
+    "english": "sport",
+    "pronunciation": "spɔrt",
+    "category": "娱乐运动",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Fai sport? - 你做运动吗？",
+      "Lo sport fa bene alla salute. - 运动有益健康。"
+    ]
+  },
+  {
+    "id": "400",
+    "italian": "calcio",
+    "chinese": "足球",
+    "english": "soccer/football",
+    "pronunciation": "ˈkaltʃo",
+    "category": "娱乐运动",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Gioco a calcio ogni domenica. - 我每周日踢足球。",
+      "Il calcio è lo sport più popolare. - 足球是最受欢迎的运动。"
+    ]
+  },
+  {
+    "id": "401",
+    "italian": "nuoto",
+    "chinese": "游泳",
+    "english": "swimming",
+    "pronunciation": "ˈnwɔːto",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Vado in piscina a fare nuoto. - 我去游泳池游泳。",
+      "Il nuoto è un ottimo esercizio. - 游泳是很好的锻炼。"
+    ]
+  },
+  {
+    "id": "402",
+    "italian": "palestra",
+    "chinese": "健身房",
+    "english": "gym",
+    "pronunciation": "paˈlɛstra",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Vado in palestra tre volte a settimana. - 我一周去三次健身房。",
+      "La palestra è nuova. - 健身房是新的。"
+    ]
+  },
+  {
+    "id": "403",
+    "italian": "partita",
+    "chinese": "比赛",
+    "english": "match/game",
+    "pronunciation": "parˈtiːta",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Guardo la partita in TV. - 我在电视上看比赛。",
+      "Chi ha vinto la partita? - 谁赢了比赛？"
+    ]
+  },
+  {
+    "id": "404",
+    "italian": "squadra",
+    "chinese": "队伍/团队",
+    "english": "team",
+    "pronunciation": "ˈskwaːdra",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "La mia squadra ha vinto. - 我的队伍赢了。",
+      "Lavoriamo in squadra. - 我们团队合作。"
+    ]
+  },
+  {
+    "id": "405",
+    "italian": "correre",
+    "chinese": "跑步",
+    "english": "to run",
+    "pronunciation": "ˈkorrere",
+    "category": "娱乐运动",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Mi piace correre al parco. - 我喜欢在公园跑步。",
+      "Corro ogni mattina. - 我每天早上跑步。"
+    ]
+  },
+  {
+    "id": "406",
+    "italian": "vincere",
+    "chinese": "赢/获胜",
+    "english": "to win",
+    "pronunciation": "ˈvintʃere",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Voglio vincere la gara. - 我想赢得比赛。",
+      "Ha vinto il primo premio. - 他赢得了一等奖。"
+    ]
+  },
+  {
+    "id": "407",
+    "italian": "perdere",
+    "chinese": "输/丢失",
+    "english": "to lose",
+    "pronunciation": "ˈpɛrdere",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Abbiamo perso la partita. - 我们输了比赛。",
+      "Ho perso le chiavi. - 我丢了钥匙。"
+    ]
+  },
+  {
+    "id": "408",
+    "italian": "allenamento",
+    "chinese": "训练",
+    "english": "training",
+    "pronunciation": "allenaˈmento",
+    "category": "娱乐运动",
+    "level": "B1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Ho l'allenamento oggi. - 我今天有训练。",
+      "L'allenamento è molto intenso. - 训练非常密集。"
+    ]
+  },
+  {
+    "id": "409",
+    "italian": "giardino",
+    "chinese": "花园",
+    "english": "garden",
+    "pronunciation": "dʒarˈdiːno",
+    "category": "家庭生活",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Il giardino è molto bello. - 花园很美。",
+      "Lavoro in giardino. - 我在花园里工作。"
+    ]
+  },
+  {
+    "id": "410",
+    "italian": "fiore",
+    "chinese": "花",
+    "english": "flower",
+    "pronunciation": "ˈfjoːre",
+    "category": "家庭生活",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Questi fiori sono bellissimi. - 这些花很美。",
+      "Ho comprato dei fiori. - 我买了一些花。"
+    ]
+  },
+  {
+    "id": "411",
+    "italian": "pianta",
+    "chinese": "植物",
+    "english": "plant",
+    "pronunciation": "ˈpjanta",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Innaffio le piante. - 我给植物浇水。",
+      "Ho molte piante in casa. - 我家里有很多植物。"
+    ]
+  },
+  {
+    "id": "412",
+    "italian": "albero",
+    "chinese": "树",
+    "english": "tree",
+    "pronunciation": "ˈalbero",
+    "category": "家庭生活",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "L'albero è alto. - 这棵树很高。",
+      "Sotto l'albero c'è ombra. - 树下有阴凉。"
+    ]
+  },
+  {
+    "id": "413",
+    "italian": "animale",
+    "chinese": "动物",
+    "english": "animal",
+    "pronunciation": "aniˈmaːle",
+    "category": "家庭生活",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Amo gli animali. - 我喜欢动物。",
+      "Che animale è? - 这是什么动物？"
+    ]
+  },
+  {
+    "id": "414",
+    "italian": "cane",
+    "chinese": "狗",
+    "english": "dog",
+    "pronunciation": "ˈkaːne",
+    "category": "家庭生活",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Ho un cane. - 我有一只狗。",
+      "Il cane abbaia. - 狗在叫。"
+    ]
+  },
+  {
+    "id": "415",
+    "italian": "gatto",
+    "chinese": "猫",
+    "english": "cat",
+    "pronunciation": "ˈɡatto",
+    "category": "家庭生活",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Il gatto dorme sul divano. - 猫在沙发上睡觉。",
+      "Mi piacciono i gatti. - 我喜欢猫。"
+    ]
+  },
+  {
+    "id": "416",
+    "italian": "pulire",
+    "chinese": "打扫/清洁",
+    "english": "to clean",
+    "pronunciation": "puˈliːre",
+    "category": "家庭生活",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Devo pulire la casa. - 我需要打扫房子。",
+      "Pulisco i vetri. - 我擦玻璃。"
+    ]
+  },
+  {
+    "id": "417",
+    "italian": "lavare",
+    "chinese": "洗",
+    "english": "to wash",
+    "pronunciation": "laˈvaːre",
+    "category": "家庭生活",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Lavo i piatti. - 我洗盘子。",
+      "Devo lavare i vestiti. - 我需要洗衣服。"
+    ]
+  },
+  {
+    "id": "418",
+    "italian": "stirare",
+    "chinese": "熨烫",
+    "english": "to iron",
+    "pronunciation": "stiˈraːre",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Stiro le camicie. - 我熨衬衫。",
+      "Non mi piace stirare. - 我不喜欢熨衣服。"
+    ]
+  },
+  {
+    "id": "419",
+    "italian": "cucinare",
+    "chinese": "烹饪",
+    "english": "to cook",
+    "pronunciation": "kutʃiˈnaːre",
+    "category": "家庭生活",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Mi piace cucinare. - 我喜欢烹饪。",
+      "Cucino la pasta. - 我做意大利面。"
+    ]
+  },
+  {
+    "id": "420",
+    "italian": "comprare",
+    "chinese": "买",
+    "english": "to buy",
+    "pronunciation": "komˈpraːre",
+    "category": "商务交流",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Voglio comprare un libro. - 我想买一本书。",
+      "Ho comprato del pane. - 我买了面包。"
+    ]
+  },
+  {
+    "id": "421",
+    "italian": "vendere",
+    "chinese": "卖",
+    "english": "to sell",
+    "pronunciation": "ˈvɛndere",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Vendo la mia macchina. - 我卖我的车。",
+      "Questo negozio vende libri. - 这家店卖书。"
+    ]
+  },
+  {
+    "id": "422",
+    "italian": "prezzo",
+    "chinese": "价格",
+    "english": "price",
+    "pronunciation": "ˈprɛttso",
+    "category": "商务交流",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Qual è il prezzo? - 价格是多少？",
+      "Il prezzo è troppo alto. - 价格太高了。"
+    ]
+  },
+  {
+    "id": "423",
+    "italian": "sconto",
+    "chinese": "折扣",
+    "english": "discount",
+    "pronunciation": "ˈskonto",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "C'è uno sconto del 20%. - 有20%的折扣。",
+      "Posso avere uno sconto? - 我能有折扣吗？"
+    ]
+  },
+  {
+    "id": "424",
+    "italian": "offerta",
+    "chinese": "优惠/报价",
+    "english": "offer/deal",
+    "pronunciation": "ofˈfɛrta",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "È un'ottima offerta. - 这是一个很好的优惠。",
+      "Accetto la tua offerta. - 我接受你的报价。"
+    ]
+  },
+  {
+    "id": "425",
+    "italian": "cliente",
+    "chinese": "客户/顾客",
+    "english": "customer/client",
+    "pronunciation": "kliˈɛnte",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Il cliente ha sempre ragione. - 顾客永远是对的。",
+      "Abbiamo molti clienti. - 我们有很多客户。"
+    ]
+  },
+  {
+    "id": "426",
+    "italian": "servizio",
+    "chinese": "服务",
+    "english": "service",
+    "pronunciation": "serˈvittsjo",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Il servizio è eccellente. - 服务很棒。",
+      "Questo ristorante ha un buon servizio. - 这家餐厅服务很好。"
+    ]
+  },
+  {
+    "id": "427",
+    "italian": "qualità",
+    "chinese": "质量",
+    "english": "quality",
+    "pronunciation": "kwaliˈta",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "La qualità è ottima. - 质量很好。",
+      "Cerco prodotti di qualità. - 我寻找优质产品。"
+    ]
+  },
+  {
+    "id": "428",
+    "italian": "mercato",
+    "chinese": "市场",
+    "english": "market",
+    "pronunciation": "merˈkaːto",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Vado al mercato ogni sabato. - 我每周六去市场。",
+      "Il mercato è affollato. - 市场很拥挤。"
+    ]
+  },
+  {
+    "id": "429",
+    "italian": "negozio",
+    "chinese": "商店",
+    "english": "shop/store",
+    "pronunciation": "neˈɡɔttsjo",
+    "category": "商务交流",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Il negozio è aperto. - 商店开门了。",
+      "C'è un negozio qui vicino. - 附近有一家商店。"
+    ]
+  },
+  {
+    "id": "430",
+    "italian": "centro commerciale",
+    "chinese": "购物中心",
+    "english": "shopping mall",
+    "pronunciation": "ˈtʃɛntro kommerˈtʃaːle",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Vado al centro commerciale. - 我去购物中心。",
+      "Il centro commerciale è enorme. - 购物中心很大。"
+    ]
+  },
+  {
+    "id": "431",
+    "italian": "temperatura",
+    "chinese": "温度",
+    "english": "temperature",
+    "pronunciation": "temperatuːra",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "La temperatura è alta. - 温度很高。",
+      "Che temperatura c'è oggi? - 今天温度是多少？"
+    ]
+  },
+  {
+    "id": "432",
+    "italian": "clima",
+    "chinese": "气候",
+    "english": "climate",
+    "pronunciation": "ˈkliːma",
+    "category": "日常用语",
+    "level": "B1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Il clima è mite. - 气候温和。",
+      "Mi piace il clima mediterraneo. - 我喜欢地中海气候。"
+    ]
+  },
+  {
+    "id": "433",
+    "italian": "nuvola",
+    "chinese": "云",
+    "english": "cloud",
+    "pronunciation": "ˈnuːvola",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Ci sono molte nuvole. - 有很多云。",
+      "Il cielo è coperto di nuvole. - 天空布满云。"
+    ]
+  },
+  {
+    "id": "434",
+    "italian": "vento",
+    "chinese": "风",
+    "english": "wind",
+    "pronunciation": "ˈvɛnto",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "C'è molto vento oggi. - 今天风很大。",
+      "Il vento è freddo. - 风很冷。"
+    ]
+  },
+  {
+    "id": "435",
+    "italian": "nebbia",
+    "chinese": "雾",
+    "english": "fog",
+    "pronunciation": "ˈnɛbbja",
+    "category": "日常用语",
+    "level": "B1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "C'è molta nebbia stamattina. - 今天早上雾很大。",
+      "Non vedo niente con questa nebbia. - 这么大雾我什么都看不见。"
+    ]
+  },
+  {
+    "id": "436",
+    "italian": "stagione",
+    "chinese": "季节",
+    "english": "season",
+    "pronunciation": "staˈdʒoːne",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Qual è la tua stagione preferita? - 你最喜欢哪个季节？",
+      "Ogni stagione ha il suo fascino. - 每个季节都有其魅力。"
+    ]
+  },
+  {
+    "id": "437",
+    "italian": "primavera",
+    "chinese": "春天",
+    "english": "spring",
+    "pronunciation": "primaˈveːra",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "In primavera fa caldo. - 春天天气暖和。",
+      "I fiori sbocciano in primavera. - 春天花儿盛开。"
+    ]
+  },
+  {
+    "id": "438",
+    "italian": "estate",
+    "chinese": "夏天",
+    "english": "summer",
+    "pronunciation": "eˈstaːte",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "L'estate è molto calda. - 夏天非常热。",
+      "Vado al mare in estate. - 我夏天去海边。"
+    ]
+  },
+  {
+    "id": "439",
+    "italian": "autunno",
+    "chinese": "秋天",
+    "english": "autumn/fall",
+    "pronunciation": "auˈtunno",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "In autunno cadono le foglie. - 秋天树叶掉落。",
+      "L'autunno è la mia stagione preferita. - 秋天是我最喜欢的季节。"
+    ]
+  },
+  {
+    "id": "440",
+    "italian": "inverno",
+    "chinese": "冬天",
+    "english": "winter",
+    "pronunciation": "inˈvɛrno",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "In inverno fa freddo. - 冬天很冷。",
+      "Nevica spesso in inverno. - 冬天经常下雪。"
+    ]
+  },
+  {
+    "id": "441",
+    "italian": "problema",
+    "chinese": "问题",
+    "english": "problem",
+    "pronunciation": "proˈblɛːma",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Ho un problema. - 我有一个问题。",
+      "Risolviamo il problema insieme. - 我们一起解决问题。"
+    ]
+  },
+  {
+    "id": "442",
+    "italian": "soluzione",
+    "chinese": "解决方案",
+    "english": "solution",
+    "pronunciation": "solutˈtsjoːne",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Cerchiamo una soluzione. - 我们寻找一个解决方案。",
+      "Questa è la migliore soluzione. - 这是最好的解决方案。"
+    ]
+  },
+  {
+    "id": "443",
+    "italian": "risposta",
+    "chinese": "回答/答案",
+    "english": "answer/reply",
+    "pronunciation": "risˈposta",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Qual è la risposta corretta? - 正确答案是什么？",
+      "Aspetto la tua risposta. - 我等待你的回复。"
+    ]
+  },
+  {
+    "id": "444",
+    "italian": "domanda",
+    "chinese": "问题/请求",
+    "english": "question/request",
+    "pronunciation": "doˈmanda",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Ho una domanda. - 我有一个问题。",
+      "Posso fare una domanda? - 我可以问一个问题吗？"
+    ]
+  },
+  {
+    "id": "445",
+    "italian": "spiegare",
+    "chinese": "解释",
+    "english": "to explain",
+    "pronunciation": "spjeˈɡaːre",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Puoi spiegare meglio? - 你能解释得更清楚吗？",
+      "Il professore spiega la lezione. - 教授讲解课程。"
+    ]
+  },
+  {
+    "id": "446",
+    "italian": "capire",
+    "chinese": "理解/明白",
+    "english": "to understand",
+    "pronunciation": "kaˈpiːre",
+    "category": "工作学习",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Non capisco. - 我不明白。",
+      "Hai capito? - 你明白了吗？"
+    ]
+  },
+  {
+    "id": "447",
+    "italian": "imparare",
+    "chinese": "学习",
+    "english": "to learn",
+    "pronunciation": "impaˈraːre",
+    "category": "工作学习",
+    "level": "A1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Imparo l'italiano. - 我学习意大利语。",
+      "È facile da imparare. - 这很容易学。"
+    ]
+  },
+  {
+    "id": "448",
+    "italian": "insegnare",
+    "chinese": "教",
+    "english": "to teach",
+    "pronunciation": "inseɲˈɲaːre",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Insegno italiano. - 我教意大利语。",
+      "Mi insegni questa canzone? - 你能教我这首歌吗？"
+    ]
+  },
+  {
+    "id": "449",
+    "italian": "esame",
+    "chinese": "考试",
+    "english": "exam",
+    "pronunciation": "eˈzaːme",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Ho un esame domani. - 我明天有考试。",
+      "L'esame era difficile. - 考试很难。"
+    ]
+  },
+  {
+    "id": "450",
+    "italian": "diploma",
+    "chinese": "文凭",
+    "english": "diploma",
+    "pronunciation": "diˈplɔːma",
+    "category": "工作学习",
+    "level": "B1",
+    "createdAt": "2024-01-21T00:00:00.000Z",
+    "examples": [
+      "Ho ottenuto il diploma. - 我获得了文凭。",
+      "Questo è il mio diploma di laurea. - 这是我的学位文凭。"
+    ]
+  },
+  {
+    "id": "451",
+    "italian": "colazione",
+    "chinese": "早餐",
+    "english": "breakfast",
+    "pronunciation": "kolatˈtsjoːne",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Faccio colazione alle 8. - 我8点吃早餐。",
+      "La colazione è inclusa? - 早餐包含在内吗？"
+    ]
+  },
+  {
+    "id": "452",
+    "italian": "pranzo",
+    "chinese": "午餐",
+    "english": "lunch",
+    "pronunciation": "ˈprantso",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "A che ora pranziamo? - 我们几点吃午饭？",
+      "Il pranzo è pronto. - 午餐准备好了。"
+    ]
+  },
+  {
+    "id": "453",
+    "italian": "cena",
+    "chinese": "晚餐",
+    "english": "dinner",
+    "pronunciation": "ˈtʃeːna",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Preparo la cena. - 我准备晚餐。",
+      "Vuoi cenare con me? - 你想和我一起吃晚餐吗？"
+    ]
+  },
+  {
+    "id": "454",
+    "italian": "pasto",
+    "chinese": "餐/一顿饭",
+    "english": "meal",
+    "pronunciation": "ˈpasto",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Tre pasti al giorno. - 一天三餐。",
+      "Il pasto era delizioso. - 这顿饭很美味。"
+    ]
+  },
+  {
+    "id": "455",
+    "italian": "piatto",
+    "chinese": "盘子/菜肴",
+    "english": "plate/dish",
+    "pronunciation": "ˈpjatto",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Questo piatto è ottimo. - 这道菜很好吃。",
+      "Lavo i piatti. - 我洗盘子。"
+    ]
+  },
+  {
+    "id": "456",
+    "italian": "cucchiaio",
+    "chinese": "勺子",
+    "english": "spoon",
+    "pronunciation": "kukˈkjaːjo",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Mi serve un cucchiaio. - 我需要一把勺子。",
+      "Mescola con il cucchiaio. - 用勺子搅拌。"
+    ]
+  },
+  {
+    "id": "457",
+    "italian": "forchetta",
+    "chinese": "叉子",
+    "english": "fork",
+    "pronunciation": "forˈketta",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "La forchetta è sulla tavola. - 叉子在桌上。",
+      "Uso la forchetta per mangiare. - 我用叉子吃饭。"
+    ]
+  },
+  {
+    "id": "458",
+    "italian": "coltello",
+    "chinese": "刀",
+    "english": "knife",
+    "pronunciation": "kolˈtɛllo",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Taglio con il coltello. - 我用刀切。",
+      "Il coltello è affilato. - 刀很锋利。"
+    ]
+  },
+  {
+    "id": "459",
+    "italian": "bicchiere",
+    "chinese": "杯子",
+    "english": "glass",
+    "pronunciation": "bikˈkjɛːre",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Un bicchiere d'acqua, per favore. - 请给我一杯水。",
+      "Il bicchiere è pieno. - 杯子是满的。"
+    ]
+  },
+  {
+    "id": "460",
+    "italian": "tazza",
+    "chinese": "茶杯/马克杯",
+    "english": "cup",
+    "pronunciation": "ˈtattsa",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Una tazza di caffè. - 一杯咖啡。",
+      "La tazza è rotta. - 杯子破了。"
+    ]
+  },
+  {
+    "id": "461",
+    "italian": "bottiglia",
+    "chinese": "瓶子",
+    "english": "bottle",
+    "pronunciation": "botˈtiʎʎa",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Una bottiglia di vino. - 一瓶葡萄酒。",
+      "La bottiglia è vuota. - 瓶子是空的。"
+    ]
+  },
+  {
+    "id": "462",
+    "italian": "dolce",
+    "chinese": "甜的/甜点",
+    "english": "sweet/dessert",
+    "pronunciation": "ˈdoltʃe",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Mi piace il dolce. - 我喜欢甜食。",
+      "Questo è troppo dolce. - 这太甜了。"
+    ]
+  },
+  {
+    "id": "463",
+    "italian": "salato",
+    "chinese": "咸的",
+    "english": "salty",
+    "pronunciation": "saˈlaːto",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "È troppo salato. - 太咸了。",
+      "Mi piace il cibo salato. - 我喜欢咸的食物。"
+    ]
+  },
+  {
+    "id": "464",
+    "italian": "amaro",
+    "chinese": "苦的",
+    "english": "bitter",
+    "pronunciation": "aˈmaːro",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Il caffè è amaro. - 咖啡是苦的。",
+      "Ha un sapore amaro. - 它有苦味。"
+    ]
+  },
+  {
+    "id": "465",
+    "italian": "piccante",
+    "chinese": "辣的",
+    "english": "spicy",
+    "pronunciation": "pikˈkante",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Ti piace il cibo piccante? - 你喜欢辣的食物吗？",
+      "Questo è molto piccante. - 这很辣。"
+    ]
+  },
+  {
+    "id": "466",
+    "italian": "fresco",
+    "chinese": "新鲜的",
+    "english": "fresh",
+    "pronunciation": "ˈfresko",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Il pesce è fresco. - 鱼很新鲜。",
+      "Fa fresco oggi. - 今天很凉爽。"
+    ]
+  },
+  {
+    "id": "467",
+    "italian": "verdura",
+    "chinese": "蔬菜",
+    "english": "vegetable",
+    "pronunciation": "verˈduːra",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Mangio molta verdura. - 我吃很多蔬菜。",
+      "La verdura fa bene. - 蔬菜有益健康。"
+    ]
+  },
+  {
+    "id": "468",
+    "italian": "insalata",
+    "chinese": "沙拉",
+    "english": "salad",
+    "pronunciation": "insaˈlaːta",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Vorrei un'insalata. - 我想要一份沙拉。",
+      "L'insalata è fresca. - 沙拉很新鲜。"
+    ]
+  },
+  {
+    "id": "469",
+    "italian": "minestra",
+    "chinese": "汤",
+    "english": "soup",
+    "pronunciation": "miˈnestra",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "La minestra è calda. - 汤很热。",
+      "Prendo una minestra. - 我要一份汤。"
+    ]
+  },
+  {
+    "id": "470",
+    "italian": "secondo",
+    "chinese": "主菜",
+    "english": "main dish",
+    "pronunciation": "seˈkondo",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Come secondo prendo il pesce. - 主菜我要鱼。",
+      "Il secondo è pronto. - 主菜准备好了。"
+    ]
+  },
+  {
+    "id": "471",
+    "italian": "contorno",
+    "chinese": "配菜",
+    "english": "side dish",
+    "pronunciation": "konˈtorno",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Quale contorno vuoi? - 你要什么配菜？",
+      "Vorrei le patate come contorno. - 我想要土豆作为配菜。"
+    ]
+  },
+  {
+    "id": "472",
+    "italian": "olio",
+    "chinese": "油",
+    "english": "oil",
+    "pronunciation": "ˈɔːljo",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "L'olio d'oliva è buono. - 橄榄油很好。",
+      "Aggiungi un po' d'olio. - 加一点油。"
+    ]
+  },
+  {
+    "id": "473",
+    "italian": "aceto",
+    "chinese": "醋",
+    "english": "vinegar",
+    "pronunciation": "aˈtʃeːto",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Un po' di olio e aceto. - 一点油和醋。",
+      "L'aceto balsamico è tipico. - 香醋是典型的。"
+    ]
+  },
+  {
+    "id": "474",
+    "italian": "sale",
+    "chinese": "盐",
+    "english": "salt",
+    "pronunciation": "ˈsaːle",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Passa il sale, per favore. - 请递给我盐。",
+      "C'è troppo sale. - 盐太多了。"
+    ]
+  },
+  {
+    "id": "475",
+    "italian": "pepe",
+    "chinese": "胡椒",
+    "english": "pepper",
+    "pronunciation": "ˈpeːpe",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Mi piace il pepe nero. - 我喜欢黑胡椒。",
+      "Aggiungi del pepe. - 加一些胡椒。"
+    ]
+  },
+  {
+    "id": "476",
+    "italian": "zucchero",
+    "chinese": "糖",
+    "english": "sugar",
+    "pronunciation": "ˈdzukkero",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Vuoi lo zucchero nel caffè? - 你咖啡要加糖吗？",
+      "Non uso zucchero. - 我不用糖。"
+    ]
+  },
+  {
+    "id": "477",
+    "italian": "burro",
+    "chinese": "黄油",
+    "english": "butter",
+    "pronunciation": "ˈburro",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Il pane con il burro. - 面包配黄油。",
+      "Il burro è nel frigo. - 黄油在冰箱里。"
+    ]
+  },
+  {
+    "id": "478",
+    "italian": "marmellata",
+    "chinese": "果酱",
+    "english": "jam",
+    "pronunciation": "marmelˈlaːta",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "La marmellata di fragole. - 草莓果酱。",
+      "Spalmo la marmellata sul pane. - 我在面包上涂果酱。"
+    ]
+  },
+  {
+    "id": "479",
+    "italian": "miele",
+    "chinese": "蜂蜜",
+    "english": "honey",
+    "pronunciation": "ˈmjɛːle",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Il miele è dolce. - 蜂蜜是甜的。",
+      "Aggiungi un cucchiaio di miele. - 加一勺蜂蜜。"
+    ]
+  },
+  {
+    "id": "480",
+    "italian": "uovo",
+    "chinese": "鸡蛋",
+    "english": "egg",
+    "pronunciation": "ˈwɔːvo",
+    "category": "食物餐饮",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Vorrei due uova. - 我要两个鸡蛋。",
+      "L'uovo è fresco. - 鸡蛋很新鲜。"
+    ]
+  },
+  {
+    "id": "481",
+    "italian": "numero",
+    "chinese": "号码",
+    "english": "number",
+    "pronunciation": "ˈnuːmero",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Qual è il tuo numero di telefono? - 你的电话号码是多少？",
+      "Il numero della casa. - 房屋号码。"
+    ]
+  },
+  {
+    "id": "482",
+    "italian": "indirizzo",
+    "chinese": "地址",
+    "english": "address",
+    "pronunciation": "indiˈrittso",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Qual è il tuo indirizzo? - 你的地址是什么？",
+      "Scrivi l'indirizzo qui. - 在这里写地址。"
+    ]
+  },
+  {
+    "id": "483",
+    "italian": "telefono",
+    "chinese": "电话",
+    "english": "telephone",
+    "pronunciation": "teˈlɛːfono",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Il telefono squilla. - 电话在响。",
+      "Posso usare il telefono? - 我可以用电话吗？"
+    ]
+  },
+  {
+    "id": "484",
+    "italian": "cellulare",
+    "chinese": "手机",
+    "english": "mobile phone",
+    "pronunciation": "tʃelluˈlaːre",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Ho dimenticato il cellulare. - 我忘了手机。",
+      "Il mio cellulare è scarico. - 我的手机没电了。"
+    ]
+  },
+  {
+    "id": "485",
+    "italian": "computer",
+    "chinese": "电脑",
+    "english": "computer",
+    "pronunciation": "komˈpjuter",
+    "category": "工作学习",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Il computer è acceso. - 电脑开着。",
+      "Lavoro al computer. - 我在电脑上工作。"
+    ]
+  },
+  {
+    "id": "486",
+    "italian": "internet",
+    "chinese": "互联网",
+    "english": "internet",
+    "pronunciation": "ˈinternet",
+    "category": "工作学习",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Cerco su internet. - 我在网上搜索。",
+      "C'è internet qui? - 这里有网吗？"
+    ]
+  },
+  {
+    "id": "487",
+    "italian": "email",
+    "chinese": "电子邮件",
+    "english": "email",
+    "pronunciation": "iˈmeil",
+    "category": "工作学习",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Ti mando un'email. - 我给你发邮件。",
+      "Controlla la tua email. - 检查你的邮件。"
+    ]
+  },
+  {
+    "id": "488",
+    "italian": "messaggio",
+    "chinese": "消息",
+    "english": "message",
+    "pronunciation": "mesˈsaddʒo",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Ho ricevuto un messaggio. - 我收到一条消息。",
+      "Mandami un messaggio. - 给我发条消息。"
+    ]
+  },
+  {
+    "id": "489",
+    "italian": "chiamare",
+    "chinese": "打电话",
+    "english": "to call",
+    "pronunciation": "kjaˈmaːre",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Ti chiamo dopo. - 我稍后给你打电话。",
+      "Come ti chiami? - 你叫什么名字？"
+    ]
+  },
+  {
+    "id": "490",
+    "italian": "rispondere",
+    "chinese": "回答",
+    "english": "to answer",
+    "pronunciation": "risˈpondere",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Rispondi al telefono. - 接电话。",
+      "Non so come rispondere. - 我不知道怎么回答。"
+    ]
+  },
+  {
+    "id": "491",
+    "italian": "ascoltare",
+    "chinese": "听",
+    "english": "to listen",
+    "pronunciation": "askolˈtaːre",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Ascolto la musica. - 我听音乐。",
+      "Ascoltami! - 听我说！"
+    ]
+  },
+  {
+    "id": "492",
+    "italian": "guardare",
+    "chinese": "看",
+    "english": "to watch",
+    "pronunciation": "ɡwarˈdaːre",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Guardo la TV. - 我看电视。",
+      "Guardami! - 看着我！"
+    ]
+  },
+  {
+    "id": "493",
+    "italian": "vedere",
+    "chinese": "看见",
+    "english": "to see",
+    "pronunciation": "veˈdeːre",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Vedo un gatto. - 我看见一只猫。",
+      "Non vedo bene. - 我看不清。"
+    ]
+  },
+  {
+    "id": "494",
+    "italian": "sentire",
+    "chinese": "听到/感觉",
+    "english": "to hear/feel",
+    "pronunciation": "senˈtiːre",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Sento un rumore. - 我听到一个声音。",
+      "Come ti senti? - 你感觉怎么样？"
+    ]
+  },
+  {
+    "id": "495",
+    "italian": "odore",
+    "chinese": "气味",
+    "english": "smell",
+    "pronunciation": "oˈdoːre",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Che buon odore! - 好香啊！",
+      "C'è uno strano odore. - 有一股奇怪的气味。"
+    ]
+  },
+  {
+    "id": "496",
+    "italian": "sapore",
+    "chinese": "味道",
+    "english": "taste",
+    "pronunciation": "saˈpoːre",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Che sapore ha? - 它是什么味道？",
+      "Ha un buon sapore. - 味道很好。"
+    ]
+  },
+  {
+    "id": "497",
+    "italian": "colore",
+    "chinese": "颜色",
+    "english": "color",
+    "pronunciation": "koˈloːre",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Che colore preferisci? - 你喜欢什么颜色？",
+      "Il mio colore preferito è il blu. - 我最喜欢的颜色是蓝色。"
+    ]
+  },
+  {
+    "id": "498",
+    "italian": "rosso",
+    "chinese": "红色",
+    "english": "red",
+    "pronunciation": "ˈrosso",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "La mela è rossa. - 苹果是红色的。",
+      "Mi piace il rosso. - 我喜欢红色。"
+    ]
+  },
+  {
+    "id": "499",
+    "italian": "blu",
+    "chinese": "蓝色",
+    "english": "blue",
+    "pronunciation": "blu",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Il cielo è blu. - 天空是蓝色的。",
+      "Una camicia blu. - 一件蓝色衬衫。"
+    ]
+  },
+  {
+    "id": "500",
+    "italian": "verde",
+    "chinese": "绿色",
+    "english": "green",
+    "pronunciation": "ˈverde",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "L'erba è verde. - 草是绿色的。",
+      "Un vestito verde. - 一件绿色的裙子。"
+    ]
+  },
+  {
+    "id": "501",
+    "italian": "giallo",
+    "chinese": "黄色",
+    "english": "yellow",
+    "pronunciation": "ˈdʒallo",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Il sole è giallo. - 太阳是黄色的。",
+      "I limoni sono gialli. - 柠檬是黄色的。"
+    ]
+  },
+  {
+    "id": "502",
+    "italian": "nero",
+    "chinese": "黑色",
+    "english": "black",
+    "pronunciation": "ˈneːro",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Un gatto nero. - 一只黑猫。",
+      "Caffè nero. - 黑咖啡。"
+    ]
+  },
+  {
+    "id": "503",
+    "italian": "bianco",
+    "chinese": "白色",
+    "english": "white",
+    "pronunciation": "ˈbjaŋko",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "La neve è bianca. - 雪是白色的。",
+      "Una casa bianca. - 一座白色的房子。"
+    ]
+  },
+  {
+    "id": "504",
+    "italian": "grigio",
+    "chinese": "灰色",
+    "english": "gray",
+    "pronunciation": "ˈɡriːdʒo",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Un cielo grigio. - 灰色的天空。",
+      "Pantaloni grigi. - 灰色裤子。"
+    ]
+  },
+  {
+    "id": "505",
+    "italian": "marrone",
+    "chinese": "棕色",
+    "english": "brown",
+    "pronunciation": "marˈroːne",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Occhi marroni. - 棕色的眼睛。",
+      "Una borsa marrone. - 一个棕色的包。"
+    ]
+  },
+  {
+    "id": "506",
+    "italian": "arancione",
+    "chinese": "橙色",
+    "english": "orange",
+    "pronunciation": "aranˈtʃoːne",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Un'arancia arancione. - 一个橙色的橙子。",
+      "Il tramonto è arancione. - 日落是橙色的。"
+    ]
+  },
+  {
+    "id": "507",
+    "italian": "rosa",
+    "chinese": "粉色",
+    "english": "pink",
+    "pronunciation": "ˈrɔːza",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Una maglietta rosa. - 一件粉色T恤。",
+      "I fiori rosa. - 粉色的花。"
+    ]
+  },
+  {
+    "id": "508",
+    "italian": "viola",
+    "chinese": "紫色",
+    "english": "purple",
+    "pronunciation": "ˈvjɔːla",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Un fiore viola. - 一朵紫色的花。",
+      "Mi piace il viola. - 我喜欢紫色。"
+    ]
+  },
+  {
+    "id": "509",
+    "italian": "grande",
+    "chinese": "大的",
+    "english": "big",
+    "pronunciation": "ˈɡrande",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Una casa grande. - 一座大房子。",
+      "È troppo grande. - 太大了。"
+    ]
+  },
+  {
+    "id": "510",
+    "italian": "piccolo",
+    "chinese": "小的",
+    "english": "small",
+    "pronunciation": "ˈpikkolo",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Un cane piccolo. - 一只小狗。",
+      "La stanza è piccola. - 房间很小。"
+    ]
+  },
+  {
+    "id": "511",
+    "italian": "alto",
+    "chinese": "高的",
+    "english": "tall",
+    "pronunciation": "ˈalto",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Un uomo alto. - 一个高个子男人。",
+      "La montagna è alta. - 山很高。"
+    ]
+  },
+  {
+    "id": "512",
+    "italian": "basso",
+    "chinese": "矮的",
+    "english": "short",
+    "pronunciation": "ˈbasso",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Un tavolo basso. - 一张矮桌子。",
+      "È basso di statura. - 他个子矮。"
+    ]
+  },
+  {
+    "id": "513",
+    "italian": "lungo",
+    "chinese": "长的",
+    "english": "long",
+    "pronunciation": "ˈluŋɡo",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Capelli lunghi. - 长头发。",
+      "Una strada lunga. - 一条长路。"
+    ]
+  },
+  {
+    "id": "514",
+    "italian": "corto",
+    "chinese": "短的",
+    "english": "short",
+    "pronunciation": "ˈkɔrto",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Capelli corti. - 短头发。",
+      "Una gonna corta. - 一条短裙。"
+    ]
+  },
+  {
+    "id": "515",
+    "italian": "largo",
+    "chinese": "宽的",
+    "english": "wide",
+    "pronunciation": "ˈlarɡo",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Una strada larga. - 一条宽街道。",
+      "Il letto è largo. - 床很宽。"
+    ]
+  },
+  {
+    "id": "516",
+    "italian": "stretto",
+    "chinese": "窄的",
+    "english": "narrow",
+    "pronunciation": "ˈstretto",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Una strada stretta. - 一条窄街。",
+      "I pantaloni sono stretti. - 裤子很紧。"
+    ]
+  },
+  {
+    "id": "517",
+    "italian": "pesante",
+    "chinese": "重的",
+    "english": "heavy",
+    "pronunciation": "peˈzante",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "La valigia è pesante. - 行李箱很重。",
+      "Questo è troppo pesante. - 这太重了。"
+    ]
+  },
+  {
+    "id": "518",
+    "italian": "leggero",
+    "chinese": "轻的",
+    "english": "light",
+    "pronunciation": "ledˈdʒɛːro",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Una piuma è leggera. - 羽毛很轻。",
+      "Un pasto leggero. - 清淡的一餐。"
+    ]
+  },
+  {
+    "id": "519",
+    "italian": "forte",
+    "chinese": "强壮的",
+    "english": "strong",
+    "pronunciation": "ˈfɔrte",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "È molto forte. - 他很强壮。",
+      "Un vento forte. - 强风。"
+    ]
+  },
+  {
+    "id": "520",
+    "italian": "debole",
+    "chinese": "虚弱的",
+    "english": "weak",
+    "pronunciation": "ˈdɛːbole",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Mi sento debole. - 我感觉虚弱。",
+      "Una luce debole. - 微弱的光线。"
+    ]
+  },
+  {
+    "id": "521",
+    "italian": "veloce",
+    "chinese": "快的",
+    "english": "fast",
+    "pronunciation": "veˈloːtʃe",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Una macchina veloce. - 一辆快车。",
+      "Cammina veloce. - 走快点。"
+    ]
+  },
+  {
+    "id": "522",
+    "italian": "lento",
+    "chinese": "慢的",
+    "english": "slow",
+    "pronunciation": "ˈlɛnto",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Sei troppo lento. - 你太慢了。",
+      "Un treno lento. - 一列慢车。"
+    ]
+  },
+  {
+    "id": "523",
+    "italian": "facile",
+    "chinese": "容易的",
+    "english": "easy",
+    "pronunciation": "ˈfaːtʃile",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "È molto facile. - 这很容易。",
+      "Un esercizio facile. - 一个简单的练习。"
+    ]
+  },
+  {
+    "id": "524",
+    "italian": "difficile",
+    "chinese": "困难的",
+    "english": "difficult",
+    "pronunciation": "difˈfiːtʃile",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "L'esame è difficile. - 考试很难。",
+      "Non è difficile. - 这不难。"
+    ]
+  },
+  {
+    "id": "525",
+    "italian": "possibile",
+    "chinese": "可能的",
+    "english": "possible",
+    "pronunciation": "posˈsiːbile",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "È possibile? - 这可能吗？",
+      "Tutto è possibile. - 一切皆有可能。"
+    ]
+  },
+  {
+    "id": "526",
+    "italian": "impossibile",
+    "chinese": "不可能的",
+    "english": "impossible",
+    "pronunciation": "imposˈsiːbile",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "È impossibile! - 这不可能！",
+      "Una missione impossibile. - 一个不可能的任务。"
+    ]
+  },
+  {
+    "id": "527",
+    "italian": "importante",
+    "chinese": "重要的",
+    "english": "important",
+    "pronunciation": "imporˈtante",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "È molto importante. - 这很重要。",
+      "Una decisione importante. - 一个重要的决定。"
+    ]
+  },
+  {
+    "id": "528",
+    "italian": "interessante",
+    "chinese": "有趣的",
+    "english": "interesting",
+    "pronunciation": "interessˈsante",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Un libro interessante. - 一本有趣的书。",
+      "La storia è interessante. - 故事很有趣。"
+    ]
+  },
+  {
+    "id": "529",
+    "italian": "noioso",
+    "chinese": "无聊的",
+    "english": "boring",
+    "pronunciation": "noˈjoːzo",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Il film è noioso. - 电影很无聊。",
+      "Una lezione noiosa. - 一堂无聊的课。"
+    ]
+  },
+  {
+    "id": "530",
+    "italian": "divertente",
+    "chinese": "有趣的",
+    "english": "fun",
+    "pronunciation": "diverˈtente",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Una festa divertente. - 一个有趣的派对。",
+      "È molto divertente. - 这很好玩。"
+    ]
+  },
+  {
+    "id": "531",
+    "italian": "strano",
+    "chinese": "奇怪的",
+    "english": "strange",
+    "pronunciation": "ˈstraːno",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Che strano! - 真奇怪！",
+      "Un comportamento strano. - 奇怪的行为。"
+    ]
+  },
+  {
+    "id": "532",
+    "italian": "normale",
+    "chinese": "正常的",
+    "english": "normal",
+    "pronunciation": "norˈmaːle",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "È tutto normale. - 一切正常。",
+      "Una vita normale. - 正常的生活。"
+    ]
+  },
+  {
+    "id": "533",
+    "italian": "speciale",
+    "chinese": "特别的",
+    "english": "special",
+    "pronunciation": "speˈtʃaːle",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Un giorno speciale. - 特别的一天。",
+      "Offerta speciale. - 特价优惠。"
+    ]
+  },
+  {
+    "id": "534",
+    "italian": "sicuro",
+    "chinese": "确定的",
+    "english": "sure",
+    "pronunciation": "siˈkuːro",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Sei sicuro? - 你确定吗？",
+      "È un posto sicuro. - 这是一个安全的地方。"
+    ]
+  },
+  {
+    "id": "535",
+    "italian": "pericoloso",
+    "chinese": "危险的",
+    "english": "dangerous",
+    "pronunciation": "perikoˈloːzo",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "È pericoloso! - 很危险！",
+      "Una situazione pericolosa. - 危险的情况。"
+    ]
+  },
+  {
+    "id": "536",
+    "italian": "vicino",
+    "chinese": "近的",
+    "english": "near",
+    "pronunciation": "viˈtʃiːno",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "La fermata è vicina. - 车站很近。",
+      "Abito qui vicino. - 我住在附近。"
+    ]
+  },
+  {
+    "id": "537",
+    "italian": "lontano",
+    "chinese": "远的",
+    "english": "far",
+    "pronunciation": "lonˈtaːno",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "È molto lontano. - 很远。",
+      "Vivo lontano da qui. - 我住得离这里很远。"
+    ]
+  },
+  {
+    "id": "538",
+    "italian": "davanti",
+    "chinese": "前面",
+    "english": "in front",
+    "pronunciation": "daˈvanti",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Davanti alla casa. - 在房子前面。",
+      "Siediti davanti. - 坐在前面。"
+    ]
+  },
+  {
+    "id": "539",
+    "italian": "dietro",
+    "chinese": "后面",
+    "english": "behind",
+    "pronunciation": "ˈdjɛːtro",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Dietro la porta. - 在门后面。",
+      "Cammina dietro di me. - 走在我后面。"
+    ]
+  },
+  {
+    "id": "540",
+    "italian": "sopra",
+    "chinese": "上面",
+    "english": "above",
+    "pronunciation": "ˈsoːpra",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Sopra il tavolo. - 在桌子上面。",
+      "Al piano di sopra. - 在楼上。"
+    ]
+  },
+  {
+    "id": "541",
+    "italian": "sotto",
+    "chinese": "下面",
+    "english": "under",
+    "pronunciation": "ˈsotto",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Sotto il letto. - 在床下面。",
+      "Al piano di sotto. - 在楼下。"
+    ]
+  },
+  {
+    "id": "542",
+    "italian": "dentro",
+    "chinese": "里面",
+    "english": "inside",
+    "pronunciation": "ˈdentro",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Dentro la scatola. - 在盒子里面。",
+      "Vieni dentro. - 进来。"
+    ]
+  },
+  {
+    "id": "543",
+    "italian": "fuori",
+    "chinese": "外面",
+    "english": "outside",
+    "pronunciation": "ˈfwɔːri",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Fuori dalla casa. - 在房子外面。",
+      "Andiamo fuori. - 我们出去。"
+    ]
+  },
+  {
+    "id": "544",
+    "italian": "accanto",
+    "chinese": "旁边",
+    "english": "next to",
+    "pronunciation": "akˈkanto",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Accanto alla banca. - 在银行旁边。",
+      "Siediti accanto a me. - 坐在我旁边。"
+    ]
+  },
+  {
+    "id": "545",
+    "italian": "tra",
+    "chinese": "之间",
+    "english": "between",
+    "pronunciation": "tra",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Tra la casa e la scuola. - 在家和学校之间。",
+      "Tra cinque minuti. - 五分钟后。"
+    ]
+  },
+  {
+    "id": "546",
+    "italian": "contro",
+    "chinese": "反对",
+    "english": "against",
+    "pronunciation": "ˈkontro",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Contro il muro. - 靠着墙。",
+      "Sono contro questa idea. - 我反对这个主意。"
+    ]
+  },
+  {
+    "id": "547",
+    "italian": "verso",
+    "chinese": "朝向",
+    "english": "towards",
+    "pronunciation": "ˈvɛrso",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Verso casa. - 朝家的方向。",
+      "Verso le otto. - 大约8点。"
+    ]
+  },
+  {
+    "id": "548",
+    "italian": "attraverso",
+    "chinese": "穿过",
+    "english": "through",
+    "pronunciation": "attraˈvɛrso",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Attraverso il parco. - 穿过公园。",
+      "Guardo attraverso la finestra. - 我透过窗户看。"
+    ]
+  },
+  {
+    "id": "549",
+    "italian": "finalmente",
+    "chinese": "终于",
+    "english": "finally",
+    "pronunciation": "finalˈmente",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Finalmente sei arrivato! - 你终于到了！",
+      "Finalmente è finito. - 终于结束了。"
+    ]
+  },
+  {
+    "id": "550",
+    "italian": "ancora",
+    "chinese": "还",
+    "english": "still",
+    "pronunciation": "aŋˈkoːra",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Sei ancora qui? - 你还在这里？",
+      "Non ancora. - 还没有。"
+    ]
+  },
+  {
+    "id": "551",
+    "italian": "già",
+    "chinese": "已经",
+    "english": "already",
+    "pronunciation": "dʒa",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Ho già mangiato. - 我已经吃过了。",
+      "Sei già pronto? - 你已经准备好了吗？"
+    ]
+  },
+  {
+    "id": "552",
+    "italian": "subito",
+    "chinese": "马上",
+    "english": "immediately",
+    "pronunciation": "ˈsuːbito",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Vengo subito. - 我马上来。",
+      "Fallo subito! - 马上做！"
+    ]
+  },
+  {
+    "id": "553",
+    "italian": "presto",
+    "chinese": "早/快",
+    "english": "early/soon",
+    "pronunciation": "ˈprɛsto",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "È troppo presto. - 太早了。",
+      "A presto! - 回头见！"
+    ]
+  },
+  {
+    "id": "554",
+    "italian": "tardi",
+    "chinese": "晚",
+    "english": "late",
+    "pronunciation": "ˈtardi",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "È troppo tardi. - 太晚了。",
+      "Arrivo tardi. - 我迟到了。"
+    ]
+  },
+  {
+    "id": "555",
+    "italian": "sempre",
+    "chinese": "总是",
+    "english": "always",
+    "pronunciation": "ˈsempre",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Sei sempre puntuale. - 你总是很准时。",
+      "Per sempre. - 永远。"
+    ]
+  },
+  {
+    "id": "556",
+    "italian": "mai",
+    "chinese": "从不",
+    "english": "never",
+    "pronunciation": "mai",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Non ci vado mai. - 我从不去那里。",
+      "Sei mai stato in Italia? - 你去过意大利吗？"
+    ]
+  },
+  {
+    "id": "557",
+    "italian": "spesso",
+    "chinese": "经常",
+    "english": "often",
+    "pronunciation": "ˈspesso",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Vado spesso al cinema. - 我经常去电影院。",
+      "Capita spesso. - 经常发生。"
+    ]
+  },
+  {
+    "id": "558",
+    "italian": "raramente",
+    "chinese": "很少",
+    "english": "rarely",
+    "pronunciation": "raraˈmente",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Raramente mangio carne. - 我很少吃肉。",
+      "Succede raramente. - 很少发生。"
+    ]
+  },
+  {
+    "id": "559",
+    "italian": "qualche volta",
+    "chinese": "有时候",
+    "english": "sometimes",
+    "pronunciation": "ˈkwalke ˈvɔlta",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Qualche volta vado a correre. - 我有时候去跑步。",
+      "Ci vediamo qualche volta. - 我们有时候见面。"
+    ]
+  },
+  {
+    "id": "560",
+    "italian": "forse",
+    "chinese": "也许",
+    "english": "maybe",
+    "pronunciation": "ˈforse",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Forse domani. - 也许明天。",
+      "Forse hai ragione. - 也许你是对的。"
+    ]
+  },
+  {
+    "id": "561",
+    "italian": "certamente",
+    "chinese": "当然",
+    "english": "certainly",
+    "pronunciation": "tʃertaˈmente",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Certamente! - 当然！",
+      "Verrò certamente. - 我当然会来。"
+    ]
+  },
+  {
+    "id": "562",
+    "italian": "probabilmente",
+    "chinese": "大概",
+    "english": "probably",
+    "pronunciation": "probabilˈmente",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Probabilmente pioverà. - 可能会下雨。",
+      "Arriverà probabilmente domani. - 他大概明天到。"
+    ]
+  },
+  {
+    "id": "563",
+    "italian": "veramente",
+    "chinese": "真的",
+    "english": "really",
+    "pronunciation": "veraˈmente",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Veramente? - 真的吗？",
+      "È veramente bello. - 真的很美。"
+    ]
+  },
+  {
+    "id": "564",
+    "italian": "naturalmente",
+    "chinese": "自然地",
+    "english": "naturally",
+    "pronunciation": "naturalˈmente",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Naturalmente! - 当然！",
+      "Succede naturalmente. - 自然发生。"
+    ]
+  },
+  {
+    "id": "565",
+    "italian": "esattamente",
+    "chinese": "确切地",
+    "english": "exactly",
+    "pronunciation": "ezattaˈmente",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Esattamente! - 正是！",
+      "Cosa esattamente? - 确切地说是什么？"
+    ]
+  },
+  {
+    "id": "566",
+    "italian": "solamente",
+    "chinese": "仅仅",
+    "english": "only",
+    "pronunciation": "solaˈmente",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Solamente due euro. - 只要两欧元。",
+      "Voglio solamente aiutare. - 我只是想帮忙。"
+    ]
+  },
+  {
+    "id": "567",
+    "italian": "abbastanza",
+    "chinese": "足够",
+    "english": "enough",
+    "pronunciation": "abbasˈtantsa",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "È abbastanza grande. - 够大了。",
+      "Abbastanza bene. - 相当好。"
+    ]
+  },
+  {
+    "id": "568",
+    "italian": "troppo",
+    "chinese": "太",
+    "english": "too much",
+    "pronunciation": "ˈtroppo",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "È troppo caro. - 太贵了。",
+      "Mangi troppo. - 你吃得太多了。"
+    ]
+  },
+  {
+    "id": "569",
+    "italian": "poco",
+    "chinese": "少",
+    "english": "little",
+    "pronunciation": "ˈpɔːko",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Un po' di zucchero. - 一点糖。",
+      "Mangio poco. - 我吃得少。"
+    ]
+  },
+  {
+    "id": "570",
+    "italian": "molto",
+    "chinese": "很",
+    "english": "very",
+    "pronunciation": "ˈmolto",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Molto bene! - 非常好！",
+      "Ti amo molto. - 我非常爱你。"
+    ]
+  },
+  {
+    "id": "571",
+    "italian": "tanto",
+    "chinese": "这么多",
+    "english": "so much",
+    "pronunciation": "ˈtanto",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Grazie tante! - 非常感谢！",
+      "Non è tanto difficile. - 没那么难。"
+    ]
+  },
+  {
+    "id": "572",
+    "italian": "quasi",
+    "chinese": "几乎",
+    "english": "almost",
+    "pronunciation": "ˈkwaːzi",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "È quasi pronto. - 几乎准备好了。",
+      "Quasi tutti. - 几乎所有人。"
+    ]
+  },
+  {
+    "id": "573",
+    "italian": "insieme",
+    "chinese": "一起",
+    "english": "together",
+    "pronunciation": "inˈsjɛːme",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Andiamo insieme. - 我们一起去。",
+      "Lavoriamo insieme. - 我们一起工作。"
+    ]
+  },
+  {
+    "id": "574",
+    "italian": "solo",
+    "chinese": "单独",
+    "english": "alone",
+    "pronunciation": "ˈsoːlo",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Vivo da solo. - 我独自生活。",
+      "Solo tu. - 只有你。"
+    ]
+  },
+  {
+    "id": "575",
+    "italian": "anche",
+    "chinese": "也",
+    "english": "also",
+    "pronunciation": "ˈaŋke",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Anch'io! - 我也是！",
+      "Voglio anche questo. - 我也要这个。"
+    ]
+  },
+  {
+    "id": "576",
+    "italian": "invece",
+    "chinese": "相反",
+    "english": "instead",
+    "pronunciation": "inˈveːtʃe",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Invece di studiare. - 不学习反而。",
+      "Io invece penso... - 而我却认为..."
+    ]
+  },
+  {
+    "id": "577",
+    "italian": "allora",
+    "chinese": "那么",
+    "english": "then",
+    "pronunciation": "alˈloːra",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Allora andiamo! - 那么我们走吧！",
+      "E allora? - 那又怎样？"
+    ]
+  },
+  {
+    "id": "578",
+    "italian": "quindi",
+    "chinese": "因此",
+    "english": "therefore",
+    "pronunciation": "ˈkwindi",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Quindi è vero. - 因此这是真的。",
+      "Non so, quindi aspetto. - 我不知道，所以我等待。"
+    ]
+  },
+  {
+    "id": "579",
+    "italian": "però",
+    "chinese": "但是",
+    "english": "however",
+    "pronunciation": "peˈrɔ",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "È bello, però caro. - 很漂亮，但是贵。",
+      "Capisco, però... - 我明白，但是..."
+    ]
+  },
+  {
+    "id": "580",
+    "italian": "perché",
+    "chinese": "为什么",
+    "english": "why",
+    "pronunciation": "perˈke",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Perché non vieni? - 你为什么不来？",
+      "Perché sono stanco. - 因为我累了。"
+    ]
+  },
+  {
+    "id": "581",
+    "italian": "quando",
+    "chinese": "什么时候",
+    "english": "when",
+    "pronunciation": "ˈkwando",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Quando parti? - 你什么时候出发？",
+      "Quando arrivo, ti chiamo. - 当我到达时，我给你打电话。"
+    ]
+  },
+  {
+    "id": "582",
+    "italian": "dove",
+    "chinese": "哪里",
+    "english": "where",
+    "pronunciation": "ˈdoːve",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Dove vai? - 你去哪里？",
+      "Dove abiti? - 你住在哪里？"
+    ]
+  },
+  {
+    "id": "583",
+    "italian": "come",
+    "chinese": "怎么",
+    "english": "how",
+    "pronunciation": "ˈkoːme",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Come stai? - 你好吗？",
+      "Come si dice? - 怎么说？"
+    ]
+  },
+  {
+    "id": "584",
+    "italian": "cosa",
+    "chinese": "什么",
+    "english": "what",
+    "pronunciation": "ˈkɔːza",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Cosa fai? - 你在做什么？",
+      "Cosa vuoi? - 你想要什么？"
+    ]
+  },
+  {
+    "id": "585",
+    "italian": "chi",
+    "chinese": "谁",
+    "english": "who",
+    "pronunciation": "ki",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Chi sei? - 你是谁？",
+      "Chi viene? - 谁来？"
+    ]
+  },
+  {
+    "id": "586",
+    "italian": "quale",
+    "chinese": "哪个",
+    "english": "which",
+    "pronunciation": "ˈkwaːle",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Quale preferisci? - 你更喜欢哪个？",
+      "Quale libro? - 哪本书？"
+    ]
+  },
+  {
+    "id": "587",
+    "italian": "quanto",
+    "chinese": "多少",
+    "english": "how much",
+    "pronunciation": "ˈkwanto",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Quanto costa? - 多少钱？",
+      "Quanto tempo? - 多长时间？"
+    ]
+  },
+  {
+    "id": "588",
+    "italian": "niente",
+    "chinese": "没什么",
+    "english": "nothing",
+    "pronunciation": "ˈnjɛnte",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Non c'è niente. - 什么都没有。",
+      "Niente di speciale. - 没什么特别的。"
+    ]
+  },
+  {
+    "id": "589",
+    "italian": "tutto",
+    "chinese": "全部",
+    "english": "everything",
+    "pronunciation": "ˈtutto",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Va tutto bene. - 一切都好。",
+      "Tutti i giorni. - 每天。"
+    ]
+  },
+  {
+    "id": "590",
+    "italian": "qualcuno",
+    "chinese": "某人",
+    "english": "someone",
+    "pronunciation": "kwalˈkuːno",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "C'è qualcuno? - 有人吗？",
+      "Qualcuno lo sa. - 有人知道。"
+    ]
+  },
+  {
+    "id": "591",
+    "italian": "nessuno",
+    "chinese": "没有人",
+    "english": "nobody",
+    "pronunciation": "nesˈsuːno",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Non c'è nessuno. - 没有人。",
+      "Nessuno lo sa. - 没人知道。"
+    ]
+  },
+  {
+    "id": "592",
+    "italian": "qualcosa",
+    "chinese": "某事",
+    "english": "something",
+    "pronunciation": "kwalˈkɔːza",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Vuoi qualcosa? - 你想要什么吗？",
+      "C'è qualcosa di nuovo. - 有新的东西。"
+    ]
+  },
+  {
+    "id": "593",
+    "italian": "ognuno",
+    "chinese": "每个人",
+    "english": "everyone",
+    "pronunciation": "oɲˈɲuːno",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Ognuno ha il suo. - 每个人都有自己的。",
+      "Per ognuno di voi. - 给你们每个人。"
+    ]
+  },
+  {
+    "id": "594",
+    "italian": "stesso",
+    "chinese": "同样的",
+    "english": "same",
+    "pronunciation": "ˈstesso",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "La stessa cosa. - 同样的事情。",
+      "Io stesso. - 我自己。"
+    ]
+  },
+  {
+    "id": "595",
+    "italian": "altro",
+    "chinese": "其他的",
+    "english": "other",
+    "pronunciation": "ˈaltro",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Un altro caffè. - 再来一杯咖啡。",
+      "Gli altri amici. - 其他朋友。"
+    ]
+  },
+  {
+    "id": "596",
+    "italian": "ogni",
+    "chinese": "每个",
+    "english": "every",
+    "pronunciation": "ˈɔɲɲi",
+    "category": "日常用语",
+    "level": "A1",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Ogni giorno. - 每天。",
+      "Ogni persona. - 每个人。"
+    ]
+  },
+  {
+    "id": "597",
+    "italian": "alcuni",
+    "chinese": "一些",
+    "english": "some",
+    "pronunciation": "alˈkuːni",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Alcuni amici. - 一些朋友。",
+      "In alcuni casi. - 在一些情况下。"
+    ]
+  },
+  {
+    "id": "598",
+    "italian": "parecchi",
+    "chinese": "好几个",
+    "english": "several",
+    "pronunciation": "paˈrekkji",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Parecchi giorni. - 好几天。",
+      "Parecchie persone. - 相当多的人。"
+    ]
+  },
+  {
+    "id": "599",
+    "italian": "proprio",
+    "chinese": "正好",
+    "english": "just",
+    "pronunciation": "ˈprɔːprjo",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Proprio così. - 正是如此。",
+      "Proprio qui. - 就在这里。"
+    ]
+  },
+  {
+    "id": "600",
+    "italian": "nulla",
+    "chinese": "无/没有",
+    "english": "nothing",
+    "pronunciation": "ˈnulla",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2024-01-22T00:00:00.000Z",
+    "examples": [
+      "Non serve a nulla. - 没有用。",
+      "Nulla di importante. - 没什么重要的。"
+    ]
   }
 ]

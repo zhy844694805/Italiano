@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is an Italian language learning Flutter application (意大利语学习应用) with comprehensive features for vocabulary and grammar learning. The app uses a scientifically-proven spaced repetition algorithm to optimize long-term retention and stores all progress in a local SQLite database.
 
 ### Key Features
-1. **Learn New Words** - Smart filtering shows only unstudied words (163 total available)
+1. **Learn New Words** - Smart filtering shows only unstudied words (600 total available)
    - Badge on home screen shows count of new words
    - Interactive flashcard interface with swipe gestures
    - Automatic progress tracking
@@ -29,7 +29,14 @@ This is an Italian language learning Flutter application (意大利语学习应�
    - Immediate feedback on exercise answers
    - Progress tracking per grammar point
 
-5. **Progress Tracking** - Comprehensive statistics and analytics
+5. **AI Conversation Partner** - Real-time conversation practice with AI
+   - 6 scenario-based conversations (restaurant, airport, shopping, doctor, interview, friend)
+   - AI role-playing with natural language responses
+   - Real-time grammar correction and explanations
+   - Level-adaptive difficulty (A1-C2 CEFR levels)
+   - DeepSeek API integration for conversational AI
+
+6. **Progress Tracking** - Comprehensive statistics and analytics
    - Mastery calculation for each word
    - Study streaks and daily goals
    - Favorite words bookmarking
@@ -86,6 +93,14 @@ Uses **Riverpod** (`flutter_riverpod`) as the state management solution:
 - `grammarCategoriesProvider` - Auto-extracts unique categories
 - `grammarServiceProvider` - Service for loading grammar data
 
+**Conversation Providers** (`lib/shared/providers/conversation_provider.dart`):
+- `deepSeekServiceProvider` - Singleton DeepSeek API service with credentials
+- `conversationProvider` - StateNotifierProvider.family for scenario-specific conversation state
+  - Each scenario maintains independent conversation history
+  - Manages messages, loading state, errors, user level
+  - Auto-initializes with AI greeting message
+  - Handles real-time grammar correction parsing
+
 Use `ConsumerWidget` or `ConsumerStatefulWidget` for widgets that need to watch providers
 
 ### Data Persistence
@@ -103,7 +118,8 @@ SQLite database managed through:
 - Learning flow: `HomeScreen` → `VocabularyLearningScreen`
 
 ### Data Models
-Located in `lib/shared/models/word.dart`:
+
+**Vocabulary Models** (`lib/shared/models/word.dart`):
 - `Word` - Vocabulary word with:
   - Multilingual support: Italian, Chinese, English
   - IPA pronunciation notation
@@ -117,6 +133,31 @@ Located in `lib/shared/models/word.dart`:
   - Mastery level (0.0-1.0 calculated score)
   - Next review date (spaced repetition)
   - Favorite flag
+
+**Conversation Models** (`lib/shared/models/conversation.dart`):
+- `ConversationScenario` - Scenario definition with:
+  - Italian and Chinese names
+  - Description and difficulty level
+  - Icon representation
+  - 6 predefined scenarios: restaurant, airport, shopping, doctor, interview, friend
+
+- `AIRole` - AI character definition:
+  - Role name in Italian and Chinese
+  - System prompt defining AI behavior and personality
+  - Generated from ConversationScenario
+
+- `ConversationMessage` - Chat message with:
+  - Content text
+  - User/AI flag
+  - Timestamp
+  - Optional translation
+  - Optional grammar corrections array
+
+- `GrammarCorrection` - Grammar error correction:
+  - Original incorrect text
+  - Corrected text
+  - Explanation in Chinese
+  - Error type classification
 
 ### Spaced Repetition Algorithm
 Implemented in `vocabulary_provider.dart:_calculateNextReviewDate()`:
@@ -225,6 +266,77 @@ Comprehensive grammar teaching with interactive exercises:
    - Topics: Present tense, Articles, Pronouns, Gender/Number, Past tense, Prepositions
    - Each with detailed rules, examples, and practice exercises
 
+### AI Conversation System
+Real-time conversation practice with intelligent AI partner powered by DeepSeek API:
+
+1. **DeepSeek API Service** (`lib/core/services/deepseek_service.dart`)
+   - OpenAI-compatible chat completion endpoint
+   - API Configuration:
+     - Base URL: `https://api.deepseek.com`
+     - Model: `deepseek-chat`
+     - Timeouts: 30s connect, 60s receive
+   - Features:
+     - Level-adaptive system prompts (A1-C2)
+     - Conversation history management
+     - Grammar correction parsing with regex
+     - Error handling with retry logic
+
+2. **Conversation State Management** (`lib/shared/providers/conversation_provider.dart`)
+   - `ConversationNotifier` - StateNotifier managing chat state:
+     - Message history (user + AI)
+     - Loading states during API calls
+     - Error state with user-friendly messages
+     - User level setting (affects AI difficulty)
+   - `conversationProvider` - Family provider for scenario-specific state
+     - Each scenario has independent conversation
+     - Auto-initialization with AI greeting
+   - `deepSeekServiceProvider` - Singleton API service
+
+3. **ConversationScenarioScreen** (`lib/features/conversation/conversation_scenario_screen.dart`)
+   - Grid view of 6 conversation scenarios
+   - Scenario cards display:
+     - Icon and level badge (A1-C2)
+     - Italian/Chinese scenario names
+     - Description text
+     - Color-coded level indicators
+   - Click to start conversation with selected scenario
+
+4. **AIConversationScreen** (`lib/features/conversation/ai_conversation_screen.dart`)
+   - Main chat interface with:
+     - Message bubbles (user: blue, AI: gray)
+     - Avatar icons for user/AI distinction
+     - Timestamp for each message
+     - Auto-scroll to latest message
+   - **Grammar Correction Display**:
+     - Orange cards with lightbulb icon
+     - Format: "错误" → "正确" - 解释
+     - Appears below user messages when errors detected
+   - **Controls**:
+     - Level selector (A1-C2) in app bar
+     - Reset conversation button
+     - Text input with send button
+     - Loading indicator during AI response
+   - **Error Handling**:
+     - Red banner for API errors
+     - Dismissible error messages
+     - Retry capability
+
+5. **Grammar Correction System**
+   - AI responses include corrections in format:
+     ```
+     [CORREZIONE: "incorrect" → "correct" - explanation in Chinese]
+     ```
+   - Regex-based parsing extracts corrections
+   - Multiple corrections per message supported
+   - Corrections displayed separately from message content
+
+6. **Level-Adaptive Prompts**
+   System prompts adjust AI behavior based on user level:
+   - **A1/A2**: Simple vocabulary, present tense, short sentences
+   - **B1/B2**: Common phrases, past/future tenses, medium complexity
+   - **C1/C2**: Advanced vocabulary, subjunctive mood, complex structures
+   - All levels receive grammar corrections in Chinese
+
 ### Project Structure
 ```
 lib/
@@ -234,7 +346,9 @@ lib/
 │   │   ├── database_service.dart
 │   │   └── learning_record_repository.dart
 │   ├── router/             # GoRouter configuration
-│   ├── services/           # Singleton services (audio, etc.)
+│   ├── services/           # Singleton services
+│   │   ├── audio_player_service.dart    # Audio playback
+│   │   └── deepseek_service.dart        # DeepSeek API integration
 │   ├── theme/              # Material 3 theme configuration
 │   └── utils/              # Utility functions
 ├── features/               # Feature-based organization
@@ -247,6 +361,9 @@ lib/
 │   ├── grammar/            # Grammar lessons with exercises
 │   │   ├── grammar_list_screen.dart
 │   │   └── grammar_detail_screen.dart
+│   ├── conversation/       # AI conversation practice
+│   │   ├── conversation_scenario_screen.dart  # Scenario selection
+│   │   └── ai_conversation_screen.dart        # Chat interface
 │   ├── practice/           # Practice quizzes (placeholder)
 │   ├── profile/            # User profile (placeholder)
 │   └── test/               # Development test screens
@@ -254,10 +371,12 @@ lib/
 └── shared/
     ├── models/             # Data models
     │   ├── word.dart       # Word, LearningRecord
-    │   └── grammar.dart    # GrammarPoint, GrammarRule, GrammarExample, etc.
+    │   ├── grammar.dart    # GrammarPoint, GrammarRule, GrammarExample, etc.
+    │   └── conversation.dart    # ConversationScenario, AIRole, ConversationMessage
     ├── providers/          # Riverpod state providers
-    │   ├── vocabulary_provider.dart    # Word loading, learning progress
-    │   └── grammar_provider.dart       # Grammar loading, progress tracking
+    │   ├── vocabulary_provider.dart      # Word loading, learning progress
+    │   ├── grammar_provider.dart         # Grammar loading, progress tracking
+    │   └── conversation_provider.dart    # Conversation state, DeepSeek API
     └── widgets/            # Reusable UI components
         ├── flip_card.dart
         ├── swipeable_word_card.dart
@@ -277,10 +396,16 @@ Italian flag-inspired color scheme in `lib/core/theme/app_theme.dart`:
 ### Data Sources
 
 **Vocabulary** (`assets/data/sample_words.json`):
-- **163 words** covering all CEFR levels
+- **600 words** covering all CEFR levels (expanded from original 163)
 - Fields: id, italian, chinese, english, pronunciation, category, level, examples, audioUrl, imageUrl, createdAt
-- **Level distribution**: A1 (83), A2 (43), B1 (20), B2 (12), C1 (3), C2 (2)
-- **Categories**: 日常用语 (47), 食物餐饮 (21), 商务交流 (21), 旅游出行 (18), 家庭生活 (16), 工作学习 (15), 文化艺术 (9), 娱乐运动 (8), 健康医疗 (8)
+- **Level distribution**: Comprehensive coverage from A1 to C2
+  - Strong focus on A1-A2 beginner vocabulary
+  - Progressive difficulty to advanced C1-C2 levels
+- **Categories**:
+  - Core: 日常用语, 食物餐饮, 商务交流, 旅游出行, 家庭生活, 工作学习
+  - Expanded: 文化艺术, 娱乐运动, 健康医疗, 通讯科技, 颜色, 形容词
+  - Functional: 方位词, 时间副词, 疑问词, 代词
+- **Vocabulary Expansion**: Use `add_vocabulary.py` script for bulk additions
 
 **Grammar** (`assets/data/sample_grammar.json`):
 - **6 grammar points** (A1-A2 level)
@@ -300,22 +425,46 @@ Italian flag-inspired color scheme in `lib/core/theme/app_theme.dart`:
 - `sqflite` (^2.4.1) - SQLite database for learning progress persistence
 - `shared_preferences` (^2.3.3) - Key-value storage
 - `just_audio` (^0.9.42) / `audioplayers` (^6.1.0) - Audio playback
-- `dio` (^5.7.0) - HTTP client for future API calls
+- `dio` (^5.7.0) - HTTP client for DeepSeek API and future API calls
 - `intl` (^0.20.1) - Internationalization utilities
+
+## DeepSeek API Configuration
+The app uses DeepSeek's conversational AI for language practice:
+- **API Key**: Stored in `conversation_provider.dart`
+- **Base URL**: `https://api.deepseek.com`
+- **Model**: `deepseek-chat`
+- **Endpoint**: `/chat/completions` (OpenAI-compatible)
+- **Rate Limits**: Follow DeepSeek's standard rate limits
+- **Error Handling**: Network errors, timeout errors, API errors gracefully handled with user feedback
 
 ## Important Implementation Notes
 
 ### Adding New Vocabulary
-1. Add word entries to `assets/data/sample_words.json`
-2. Follow existing JSON structure with all required fields
-3. Optionally add audio files to `assets/audio/words/{wordId}.mp3`
-4. Run `flutter pub get` if adding new assets
+1. **Manual Addition**:
+   - Add word entries to `assets/data/sample_words.json`
+   - Follow existing JSON structure with all required fields
+   - Optionally add audio files to `assets/audio/words/{wordId}.mp3`
+   - Run `flutter pub get` if adding new assets
+
+2. **Bulk Addition** (for large datasets):
+   - Use `add_vocabulary.py` Python script
+   - Script validates JSON structure and maintains formatting
+   - Automatically assigns sequential IDs
+   - Example usage: Add 100+ words programmatically
 
 ### Extending Learning Features
 - Learning progress auto-saves after every `recordWordStudied()` call
 - Access statistics via `LearningProgressNotifier.getStatistics()`
 - Query words due for review: `getWordsToReview()`
 - All database operations are async - use `await`
+
+### Working with AI Conversations
+- Each conversation scenario has independent state (via `.family` provider)
+- Conversation history is maintained in memory (not persisted to database yet)
+- Grammar corrections are parsed from AI response using regex pattern
+- To add new scenarios: Update `ConversationScenario.all` in `conversation.dart`
+- To modify AI behavior: Edit system prompts in `AIRole.fromScenario()`
+- Level changes apply immediately to next message (no reset required)
 
 ### Database Schema
 Table: `learning_records`
