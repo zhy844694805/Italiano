@@ -407,16 +407,28 @@ Italian flag-inspired color scheme in `lib/core/theme/app_theme.dart`:
 ### Data Sources
 
 **Vocabulary** (`assets/data/sample_words.json`):
-- **799 words** covering all CEFR levels
+- **1219 words** covering all CEFR levels ✅ (Exceeds A2 CEFR requirement of 1000-1200 words)
 - Fields: id, italian, chinese, english, pronunciation, category, level, examples, audioUrl, imageUrl, createdAt
 - **Level distribution**:
-  - A1: 392 words
-  - A2: 360 words (supports A2 mid-level learning)
+  - A1: 392 words (100% coverage)
+  - A2: 780 words (exceeds CEFR A2 standard) ✅
   - B1-C2: 47 words
-- **Categories**:
-  - Core: 日常用语, 食物餐饮, 商务交流, 旅游出行, 家庭生活, 工作学习
-  - Expanded: 文化艺术, 娱乐运动, 健康医疗, 通讯科技, 颜色, 形容词
-  - Functional: 方位词, 时间副词, 疑问词, 代词
+- **A2 Categories** (top 10):
+  - 日常用语: 287 words (daily expressions, verbs, states)
+  - 形容词: 141 words (descriptive, personality, quality adjectives)
+  - 家庭生活: 84 words (home items, appliances, daily routines)
+  - 旅游出行: 54 words (travel, places, city facilities)
+  - 健康医疗: 42 words (body parts, health conditions)
+  - 时间副词: 38 words (frequency, temporal expressions)
+  - 食物餐饮: 36 words (food, cooking, dining)
+  - 商务交流: 33 words (shopping, business, transactions)
+  - 工作学习: 29 words (study, work, cognition)
+  - 娱乐运动: 17 words (sports, entertainment)
+- **Recent Expansion (2025)**: Added 420 A2 core words:
+  - 80 daily action verbs (basic movements, communication, activities)
+  - 70 emotional & cognitive verbs (feelings, mental states)
+  - 120 adjectives & adverbs (personality, appearance, frequency)
+  - 150 lifestyle vocabulary (home, clothing, body, weather, city)
 - **Vocabulary Expansion**: Use Python scripts for bulk additions (50-100 words at a time)
 
 **Grammar** (`assets/data/sample_grammar.json`):

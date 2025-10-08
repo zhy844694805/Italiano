@@ -11383,5 +11383,5885 @@
       }
     ],
     "id": "799"
+  },
+  {
+    "id": "800",
+    "italian": "alzarsi",
+    "chinese": "起床，站起来",
+    "english": "to get up",
+    "pronunciation": "alˈtsarsi",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853595Z",
+    "examples": [
+      "Io alzarsi. - 我起床。",
+      "Ti piace alzarsi? - 你喜欢起床吗？"
+    ]
+  },
+  {
+    "id": "801",
+    "italian": "svegliarsi",
+    "chinese": "醒来",
+    "english": "to wake up",
+    "pronunciation": "zveʎˈʎarsi",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853603Z",
+    "examples": [
+      "Io svegliarsi. - 我醒来。",
+      "Ti piace svegliarsi? - 你喜欢醒来吗？"
+    ]
+  },
+  {
+    "id": "802",
+    "italian": "lavarsi",
+    "chinese": "洗漱",
+    "english": "to wash oneself",
+    "pronunciation": "laˈvarsi",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853604Z",
+    "examples": [
+      "Io lavarsi. - 我洗漱。",
+      "Ti piace lavarsi? - 你喜欢洗漱吗？"
+    ]
+  },
+  {
+    "id": "803",
+    "italian": "vestirsi",
+    "chinese": "穿衣",
+    "english": "to get dressed",
+    "pronunciation": "vesˈtirsi",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853606Z",
+    "examples": [
+      "Io vestirsi. - 我穿衣。",
+      "Ti piace vestirsi? - 你喜欢穿衣吗？"
+    ]
+  },
+  {
+    "id": "804",
+    "italian": "preparare",
+    "chinese": "准备",
+    "english": "to prepare",
+    "pronunciation": "prepaˈrare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853607Z",
+    "examples": [
+      "Io preparare. - 我准备。",
+      "Ti piace preparare? - 你喜欢准备吗？"
+    ]
+  },
+  {
+    "id": "805",
+    "italian": "uscire",
+    "chinese": "出去",
+    "english": "to go out",
+    "pronunciation": "uˈʃire",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853608Z",
+    "examples": [
+      "Io uscire. - 我出去。",
+      "Ti piace uscire? - 你喜欢出去吗？"
+    ]
+  },
+  {
+    "id": "806",
+    "italian": "entrare",
+    "chinese": "进入",
+    "english": "to enter",
+    "pronunciation": "enˈtrare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853610Z",
+    "examples": [
+      "Io entrare. - 我进入。",
+      "Ti piace entrare? - 你喜欢进入吗？"
+    ]
+  },
+  {
+    "id": "807",
+    "italian": "tornare",
+    "chinese": "回来，返回",
+    "english": "to return",
+    "pronunciation": "torˈnare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853611Z",
+    "examples": [
+      "Io tornare. - 我回来。",
+      "Ti piace tornare? - 你喜欢回来吗？"
+    ]
+  },
+  {
+    "id": "808",
+    "italian": "riposare",
+    "chinese": "休息",
+    "english": "to rest",
+    "pronunciation": "ripoˈzare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853612Z",
+    "examples": [
+      "Io riposare. - 我休息。",
+      "Ti piace riposare? - 你喜欢休息吗？"
+    ]
+  },
+  {
+    "id": "809",
+    "italian": "rilassarsi",
+    "chinese": "放松",
+    "english": "to relax",
+    "pronunciation": "rilasˈsarsi",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853613Z",
+    "examples": [
+      "Io rilassarsi. - 我放松。",
+      "Ti piace rilassarsi? - 你喜欢放松吗？"
+    ]
+  },
+  {
+    "id": "810",
+    "italian": "camminare",
+    "chinese": "走路",
+    "english": "to walk",
+    "pronunciation": "kammiˈnare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853615Z",
+    "examples": [
+      "Io camminare. - 我走路。",
+      "Ti piace camminare? - 你喜欢走路吗？"
+    ]
+  },
+  {
+    "id": "811",
+    "italian": "correre",
+    "chinese": "跑",
+    "english": "to run",
+    "pronunciation": "ˈkorrere",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853616Z",
+    "examples": [
+      "Io correre. - 我跑。",
+      "Ti piace correre? - 你喜欢跑吗？"
+    ]
+  },
+  {
+    "id": "812",
+    "italian": "saltare",
+    "chinese": "跳",
+    "english": "to jump",
+    "pronunciation": "salˈtare",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853617Z",
+    "examples": [
+      "Io saltare. - 我跳。",
+      "Ti piace saltare? - 你喜欢跳吗？"
+    ]
+  },
+  {
+    "id": "813",
+    "italian": "nuotare",
+    "chinese": "游泳",
+    "english": "to swim",
+    "pronunciation": "nwoˈtare",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853618Z",
+    "examples": [
+      "Io nuotare. - 我游泳。",
+      "Ti piace nuotare? - 你喜欢游泳吗？"
+    ]
+  },
+  {
+    "id": "814",
+    "italian": "guidare",
+    "chinese": "开车",
+    "english": "to drive",
+    "pronunciation": "gwiˈdare",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853620Z",
+    "examples": [
+      "Io guidare. - 我开车。",
+      "Ti piace guidare? - 你喜欢开车吗？"
+    ]
+  },
+  {
+    "id": "815",
+    "italian": "fermare",
+    "chinese": "停止",
+    "english": "to stop",
+    "pronunciation": "ferˈmare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853621Z",
+    "examples": [
+      "Io fermare. - 我停止。",
+      "Ti piace fermare? - 你喜欢停止吗？"
+    ]
+  },
+  {
+    "id": "816",
+    "italian": "aspettare",
+    "chinese": "等待",
+    "english": "to wait",
+    "pronunciation": "aspetˈtare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853622Z",
+    "examples": [
+      "Io aspettare. - 我等待。",
+      "Ti piace aspettare? - 你喜欢等待吗？"
+    ]
+  },
+  {
+    "id": "817",
+    "italian": "cercare",
+    "chinese": "寻找",
+    "english": "to search",
+    "pronunciation": "tʃerˈkare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853623Z",
+    "examples": [
+      "Io cercare. - 我寻找。",
+      "Ti piace cercare? - 你喜欢寻找吗？"
+    ]
+  },
+  {
+    "id": "818",
+    "italian": "trovare",
+    "chinese": "找到",
+    "english": "to find",
+    "pronunciation": "troˈvare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853624Z",
+    "examples": [
+      "Io trovare. - 我找到。",
+      "Ti piace trovare? - 你喜欢找到吗？"
+    ]
+  },
+  {
+    "id": "819",
+    "italian": "perdere",
+    "chinese": "丢失，失去",
+    "english": "to lose",
+    "pronunciation": "ˈperdere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853625Z",
+    "examples": [
+      "Io perdere. - 我丢失。",
+      "Ti piace perdere? - 你喜欢丢失吗？"
+    ]
+  },
+  {
+    "id": "820",
+    "italian": "parlare",
+    "chinese": "说话",
+    "english": "to speak",
+    "pronunciation": "parˈlare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853627Z",
+    "examples": [
+      "Io parlare. - 我说话。",
+      "Ti piace parlare? - 你喜欢说话吗？"
+    ]
+  },
+  {
+    "id": "821",
+    "italian": "dire",
+    "chinese": "说，告诉",
+    "english": "to say",
+    "pronunciation": "ˈdire",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853628Z",
+    "examples": [
+      "Io dire. - 我说。",
+      "Ti piace dire? - 你喜欢说吗？"
+    ]
+  },
+  {
+    "id": "822",
+    "italian": "raccontare",
+    "chinese": "讲述",
+    "english": "to tell",
+    "pronunciation": "rakkonˈtare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853629Z",
+    "examples": [
+      "Io raccontare. - 我讲述。",
+      "Ti piace raccontare? - 你喜欢讲述吗？"
+    ]
+  },
+  {
+    "id": "823",
+    "italian": "spiegare",
+    "chinese": "解释",
+    "english": "to explain",
+    "pronunciation": "spjeˈɡare",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853631Z",
+    "examples": [
+      "Io spiegare. - 我解释。",
+      "Ti piace spiegare? - 你喜欢解释吗？"
+    ]
+  },
+  {
+    "id": "824",
+    "italian": "chiedere",
+    "chinese": "询问",
+    "english": "to ask",
+    "pronunciation": "ˈkjedere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853633Z",
+    "examples": [
+      "Io chiedere. - 我询问。",
+      "Ti piace chiedere? - 你喜欢询问吗？"
+    ]
+  },
+  {
+    "id": "825",
+    "italian": "rispondere",
+    "chinese": "回答",
+    "english": "to answer",
+    "pronunciation": "risˈpondere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853634Z",
+    "examples": [
+      "Io rispondere. - 我回答。",
+      "Ti piace rispondere? - 你喜欢回答吗？"
+    ]
+  },
+  {
+    "id": "826",
+    "italian": "chiamare",
+    "chinese": "叫，打电话",
+    "english": "to call",
+    "pronunciation": "kjaˈmare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853635Z",
+    "examples": [
+      "Io chiamare. - 我叫。",
+      "Ti piace chiamare? - 你喜欢叫吗？"
+    ]
+  },
+  {
+    "id": "827",
+    "italian": "ascoltare",
+    "chinese": "听",
+    "english": "to listen",
+    "pronunciation": "askolˈtare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853637Z",
+    "examples": [
+      "Io ascoltare. - 我听。",
+      "Ti piace ascoltare? - 你喜欢听吗？"
+    ]
+  },
+  {
+    "id": "828",
+    "italian": "sentire",
+    "chinese": "听到，感觉",
+    "english": "to hear/feel",
+    "pronunciation": "senˈtire",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853638Z",
+    "examples": [
+      "Io sentire. - 我听到。",
+      "Ti piace sentire? - 你喜欢听到吗？"
+    ]
+  },
+  {
+    "id": "829",
+    "italian": "vedere",
+    "chinese": "看见",
+    "english": "to see",
+    "pronunciation": "veˈdere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853639Z",
+    "examples": [
+      "Io vedere. - 我看见。",
+      "Ti piace vedere? - 你喜欢看见吗？"
+    ]
+  },
+  {
+    "id": "830",
+    "italian": "guardare",
+    "chinese": "看，观看",
+    "english": "to watch",
+    "pronunciation": "gwarˈdare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853640Z",
+    "examples": [
+      "Io guardare. - 我看。",
+      "Ti piace guardare? - 你喜欢看吗？"
+    ]
+  },
+  {
+    "id": "831",
+    "italian": "leggere",
+    "chinese": "读",
+    "english": "to read",
+    "pronunciation": "ˈleddʒere",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853642Z",
+    "examples": [
+      "Io leggere. - 我读。",
+      "Ti piace leggere? - 你喜欢读吗？"
+    ]
+  },
+  {
+    "id": "832",
+    "italian": "scrivere",
+    "chinese": "写",
+    "english": "to write",
+    "pronunciation": "ˈskrivere",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853643Z",
+    "examples": [
+      "Io scrivere. - 我写。",
+      "Ti piace scrivere? - 你喜欢写吗？"
+    ]
+  },
+  {
+    "id": "833",
+    "italian": "disegnare",
+    "chinese": "画",
+    "english": "to draw",
+    "pronunciation": "dizeɲˈɲare",
+    "category": "文化艺术",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853644Z",
+    "examples": [
+      "Io disegnare. - 我画。",
+      "Ti piace disegnare? - 你喜欢画吗？"
+    ]
+  },
+  {
+    "id": "834",
+    "italian": "cantare",
+    "chinese": "唱歌",
+    "english": "to sing",
+    "pronunciation": "kanˈtare",
+    "category": "文化艺术",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853645Z",
+    "examples": [
+      "Io cantare. - 我唱歌。",
+      "Ti piace cantare? - 你喜欢唱歌吗？"
+    ]
+  },
+  {
+    "id": "835",
+    "italian": "suonare",
+    "chinese": "演奏",
+    "english": "to play (instrument)",
+    "pronunciation": "swoˈnare",
+    "category": "文化艺术",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853647Z",
+    "examples": [
+      "Io suonare. - 我演奏。",
+      "Ti piace suonare? - 你喜欢演奏吗？"
+    ]
+  },
+  {
+    "id": "836",
+    "italian": "ballare",
+    "chinese": "跳舞",
+    "english": "to dance",
+    "pronunciation": "balˈlare",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853649Z",
+    "examples": [
+      "Io ballare. - 我跳舞。",
+      "Ti piace ballare? - 你喜欢跳舞吗？"
+    ]
+  },
+  {
+    "id": "837",
+    "italian": "ridere",
+    "chinese": "笑",
+    "english": "to laugh",
+    "pronunciation": "ˈridere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853650Z",
+    "examples": [
+      "Io ridere. - 我笑。",
+      "Ti piace ridere? - 你喜欢笑吗？"
+    ]
+  },
+  {
+    "id": "838",
+    "italian": "piangere",
+    "chinese": "哭",
+    "english": "to cry",
+    "pronunciation": "ˈpjandʒere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853651Z",
+    "examples": [
+      "Io piangere. - 我哭。",
+      "Ti piace piangere? - 你喜欢哭吗？"
+    ]
+  },
+  {
+    "id": "839",
+    "italian": "sorridere",
+    "chinese": "微笑",
+    "english": "to smile",
+    "pronunciation": "sorˈridere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853652Z",
+    "examples": [
+      "Io sorridere. - 我微笑。",
+      "Ti piace sorridere? - 你喜欢微笑吗？"
+    ]
+  },
+  {
+    "id": "840",
+    "italian": "mangiare",
+    "chinese": "吃",
+    "english": "to eat",
+    "pronunciation": "manˈdʒare",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853653Z",
+    "examples": [
+      "Io mangiare. - 我吃。",
+      "Ti piace mangiare? - 你喜欢吃吗？"
+    ]
+  },
+  {
+    "id": "841",
+    "italian": "bere",
+    "chinese": "喝",
+    "english": "to drink",
+    "pronunciation": "ˈbere",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853654Z",
+    "examples": [
+      "Io bere. - 我喝。",
+      "Ti piace bere? - 你喜欢喝吗？"
+    ]
+  },
+  {
+    "id": "842",
+    "italian": "cucinare",
+    "chinese": "做饭",
+    "english": "to cook",
+    "pronunciation": "kutʃiˈnare",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853656Z",
+    "examples": [
+      "Io cucinare. - 我做饭。",
+      "Ti piace cucinare? - 你喜欢做饭吗？"
+    ]
+  },
+  {
+    "id": "843",
+    "italian": "preparare",
+    "chinese": "准备",
+    "english": "to prepare",
+    "pronunciation": "prepaˈrare",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853657Z",
+    "examples": [
+      "Io preparare. - 我准备。",
+      "Ti piace preparare? - 你喜欢准备吗？"
+    ]
+  },
+  {
+    "id": "844",
+    "italian": "assaggiare",
+    "chinese": "品尝",
+    "english": "to taste",
+    "pronunciation": "assadˈdʒare",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853658Z",
+    "examples": [
+      "Io assaggiare. - 我品尝。",
+      "Ti piace assaggiare? - 你喜欢品尝吗？"
+    ]
+  },
+  {
+    "id": "845",
+    "italian": "ordinare",
+    "chinese": "点餐",
+    "english": "to order",
+    "pronunciation": "ordiˈnare",
+    "category": "食物餐饮",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853659Z",
+    "examples": [
+      "Io ordinare. - 我点餐。",
+      "Ti piace ordinare? - 你喜欢点餐吗？"
+    ]
+  },
+  {
+    "id": "846",
+    "italian": "pagare",
+    "chinese": "支付",
+    "english": "to pay",
+    "pronunciation": "paˈɡare",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853660Z",
+    "examples": [
+      "Io pagare. - 我支付。",
+      "Ti piace pagare? - 你喜欢支付吗？"
+    ]
+  },
+  {
+    "id": "847",
+    "italian": "comprare",
+    "chinese": "购买",
+    "english": "to buy",
+    "pronunciation": "komˈprare",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853662Z",
+    "examples": [
+      "Io comprare. - 我购买。",
+      "Ti piace comprare? - 你喜欢购买吗？"
+    ]
+  },
+  {
+    "id": "848",
+    "italian": "vendere",
+    "chinese": "出售",
+    "english": "to sell",
+    "pronunciation": "ˈvendere",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853663Z",
+    "examples": [
+      "Io vendere. - 我出售。",
+      "Ti piace vendere? - 你喜欢出售吗？"
+    ]
+  },
+  {
+    "id": "849",
+    "italian": "spendere",
+    "chinese": "花费",
+    "english": "to spend",
+    "pronunciation": "ˈspendere",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853664Z",
+    "examples": [
+      "Io spendere. - 我花费。",
+      "Ti piace spendere? - 你喜欢花费吗？"
+    ]
+  },
+  {
+    "id": "850",
+    "italian": "costare",
+    "chinese": "花费，值",
+    "english": "to cost",
+    "pronunciation": "kosˈtare",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853665Z",
+    "examples": [
+      "Io costare. - 我花费。",
+      "Ti piace costare? - 你喜欢花费吗？"
+    ]
+  },
+  {
+    "id": "851",
+    "italian": "risparmiare",
+    "chinese": "节省",
+    "english": "to save",
+    "pronunciation": "risparˈmjare",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853666Z",
+    "examples": [
+      "Io risparmiare. - 我节省。",
+      "Ti piace risparmiare? - 你喜欢节省吗？"
+    ]
+  },
+  {
+    "id": "852",
+    "italian": "pulire",
+    "chinese": "打扫",
+    "english": "to clean",
+    "pronunciation": "puˈlire",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853668Z",
+    "examples": [
+      "Io pulire. - 我打扫。",
+      "Ti piace pulire? - 你喜欢打扫吗？"
+    ]
+  },
+  {
+    "id": "853",
+    "italian": "lavare",
+    "chinese": "洗",
+    "english": "to wash",
+    "pronunciation": "laˈvare",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853669Z",
+    "examples": [
+      "Io lavare. - 我洗。",
+      "Ti piace lavare? - 你喜欢洗吗？"
+    ]
+  },
+  {
+    "id": "854",
+    "italian": "stirare",
+    "chinese": "熨烫",
+    "english": "to iron",
+    "pronunciation": "stiˈrare",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853670Z",
+    "examples": [
+      "Io stirare. - 我熨烫。",
+      "Ti piace stirare? - 你喜欢熨烫吗？"
+    ]
+  },
+  {
+    "id": "855",
+    "italian": "sistemare",
+    "chinese": "整理",
+    "english": "to tidy up",
+    "pronunciation": "sisteˈmare",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853671Z",
+    "examples": [
+      "Io sistemare. - 我整理。",
+      "Ti piace sistemare? - 你喜欢整理吗？"
+    ]
+  },
+  {
+    "id": "856",
+    "italian": "riparare",
+    "chinese": "修理",
+    "english": "to repair",
+    "pronunciation": "ripaˈrare",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853672Z",
+    "examples": [
+      "Io riparare. - 我修理。",
+      "Ti piace riparare? - 你喜欢修理吗？"
+    ]
+  },
+  {
+    "id": "857",
+    "italian": "rompere",
+    "chinese": "打破",
+    "english": "to break",
+    "pronunciation": "ˈrompere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853674Z",
+    "examples": [
+      "Io rompere. - 我打破。",
+      "Ti piace rompere? - 你喜欢打破吗？"
+    ]
+  },
+  {
+    "id": "858",
+    "italian": "aprire",
+    "chinese": "打开",
+    "english": "to open",
+    "pronunciation": "aˈprire",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853675Z",
+    "examples": [
+      "Io aprire. - 我打开。",
+      "Ti piace aprire? - 你喜欢打开吗？"
+    ]
+  },
+  {
+    "id": "859",
+    "italian": "chiudere",
+    "chinese": "关闭",
+    "english": "to close",
+    "pronunciation": "ˈkjudere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853676Z",
+    "examples": [
+      "Io chiudere. - 我关闭。",
+      "Ti piace chiudere? - 你喜欢关闭吗？"
+    ]
+  },
+  {
+    "id": "860",
+    "italian": "studiare",
+    "chinese": "学习",
+    "english": "to study",
+    "pronunciation": "stuˈdjare",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853677Z",
+    "examples": [
+      "Io studiare. - 我学习。",
+      "Ti piace studiare? - 你喜欢学习吗？"
+    ]
+  },
+  {
+    "id": "861",
+    "italian": "imparare",
+    "chinese": "学会",
+    "english": "to learn",
+    "pronunciation": "impaˈrare",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853678Z",
+    "examples": [
+      "Io imparare. - 我学会。",
+      "Ti piace imparare? - 你喜欢学会吗？"
+    ]
+  },
+  {
+    "id": "862",
+    "italian": "insegnare",
+    "chinese": "教",
+    "english": "to teach",
+    "pronunciation": "inseɲˈɲare",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853680Z",
+    "examples": [
+      "Io insegnare. - 我教。",
+      "Ti piace insegnare? - 你喜欢教吗？"
+    ]
+  },
+  {
+    "id": "863",
+    "italian": "capire",
+    "chinese": "理解",
+    "english": "to understand",
+    "pronunciation": "kaˈpire",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853682Z",
+    "examples": [
+      "Io capire. - 我理解。",
+      "Ti piace capire? - 你喜欢理解吗？"
+    ]
+  },
+  {
+    "id": "864",
+    "italian": "sapere",
+    "chinese": "知道",
+    "english": "to know",
+    "pronunciation": "saˈpere",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853683Z",
+    "examples": [
+      "Io sapere. - 我知道。",
+      "Ti piace sapere? - 你喜欢知道吗？"
+    ]
+  },
+  {
+    "id": "865",
+    "italian": "conoscere",
+    "chinese": "认识",
+    "english": "to know (person)",
+    "pronunciation": "koˈnoʃʃere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853684Z",
+    "examples": [
+      "Io conoscere. - 我认识。",
+      "Ti piace conoscere? - 你喜欢认识吗？"
+    ]
+  },
+  {
+    "id": "866",
+    "italian": "ricordare",
+    "chinese": "记得",
+    "english": "to remember",
+    "pronunciation": "rikorˈdare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853685Z",
+    "examples": [
+      "Io ricordare. - 我记得。",
+      "Ti piace ricordare? - 你喜欢记得吗？"
+    ]
+  },
+  {
+    "id": "867",
+    "italian": "dimenticare",
+    "chinese": "忘记",
+    "english": "to forget",
+    "pronunciation": "dimentiˈkare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853686Z",
+    "examples": [
+      "Io dimenticare. - 我忘记。",
+      "Ti piace dimenticare? - 你喜欢忘记吗？"
+    ]
+  },
+  {
+    "id": "868",
+    "italian": "pensare",
+    "chinese": "思考",
+    "english": "to think",
+    "pronunciation": "penˈsare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853688Z",
+    "examples": [
+      "Io pensare. - 我思考。",
+      "Ti piace pensare? - 你喜欢思考吗？"
+    ]
+  },
+  {
+    "id": "869",
+    "italian": "credere",
+    "chinese": "相信",
+    "english": "to believe",
+    "pronunciation": "ˈkredere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853689Z",
+    "examples": [
+      "Io credere. - 我相信。",
+      "Ti piace credere? - 你喜欢相信吗？"
+    ]
+  },
+  {
+    "id": "870",
+    "italian": "sperare",
+    "chinese": "希望",
+    "english": "to hope",
+    "pronunciation": "speˈrare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853690Z",
+    "examples": [
+      "Io sperare. - 我希望。",
+      "Ti piace sperare? - 你喜欢希望吗？"
+    ]
+  },
+  {
+    "id": "871",
+    "italian": "desiderare",
+    "chinese": "渴望",
+    "english": "to desire",
+    "pronunciation": "dezideˈrare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853691Z",
+    "examples": [
+      "Io desiderare. - 我渴望。",
+      "Ti piace desiderare? - 你喜欢渴望吗？"
+    ]
+  },
+  {
+    "id": "872",
+    "italian": "volere",
+    "chinese": "想要",
+    "english": "to want",
+    "pronunciation": "voˈlere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853692Z",
+    "examples": [
+      "Io volere. - 我想要。",
+      "Ti piace volere? - 你喜欢想要吗？"
+    ]
+  },
+  {
+    "id": "873",
+    "italian": "dovere",
+    "chinese": "必须",
+    "english": "must",
+    "pronunciation": "doˈvere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853693Z",
+    "examples": [
+      "Io dovere. - 我必须。",
+      "Ti piace dovere? - 你喜欢必须吗？"
+    ]
+  },
+  {
+    "id": "874",
+    "italian": "potere",
+    "chinese": "能够",
+    "english": "can",
+    "pronunciation": "poˈtere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853695Z",
+    "examples": [
+      "Io potere. - 我能够。",
+      "Ti piace potere? - 你喜欢能够吗？"
+    ]
+  },
+  {
+    "id": "875",
+    "italian": "lavorare",
+    "chinese": "工作",
+    "english": "to work",
+    "pronunciation": "lavoˈrare",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853696Z",
+    "examples": [
+      "Io lavorare. - 我工作。",
+      "Ti piace lavorare? - 你喜欢工作吗？"
+    ]
+  },
+  {
+    "id": "876",
+    "italian": "riuscire",
+    "chinese": "成功",
+    "english": "to succeed",
+    "pronunciation": "riuˈʃire",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853698Z",
+    "examples": [
+      "Io riuscire. - 我成功。",
+      "Ti piace riuscire? - 你喜欢成功吗？"
+    ]
+  },
+  {
+    "id": "877",
+    "italian": "provare",
+    "chinese": "尝试",
+    "english": "to try",
+    "pronunciation": "proˈvare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853699Z",
+    "examples": [
+      "Io provare. - 我尝试。",
+      "Ti piace provare? - 你喜欢尝试吗？"
+    ]
+  },
+  {
+    "id": "878",
+    "italian": "cominciare",
+    "chinese": "开始",
+    "english": "to begin",
+    "pronunciation": "kominˈtʃare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853700Z",
+    "examples": [
+      "Io cominciare. - 我开始。",
+      "Ti piace cominciare? - 你喜欢开始吗？"
+    ]
+  },
+  {
+    "id": "879",
+    "italian": "finire",
+    "chinese": "结束",
+    "english": "to finish",
+    "pronunciation": "fiˈnire",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:13:44.853701Z",
+    "examples": [
+      "Io finire. - 我结束。",
+      "Ti piace finire? - 你喜欢结束吗？"
+    ]
+  },
+  {
+    "id": "880",
+    "italian": "amare",
+    "chinese": "爱",
+    "english": "to love",
+    "pronunciation": "aˈmare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998376Z",
+    "examples": [
+      "Mi piace amare. - 我喜欢爱。",
+      "Non voglio amare. - 我不想爱。"
+    ]
+  },
+  {
+    "id": "881",
+    "italian": "odiare",
+    "chinese": "恨",
+    "english": "to hate",
+    "pronunciation": "oˈdjare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998383Z",
+    "examples": [
+      "Mi piace odiare. - 我喜欢恨。",
+      "Non voglio odiare. - 我不想恨。"
+    ]
+  },
+  {
+    "id": "882",
+    "italian": "piacere",
+    "chinese": "喜欢",
+    "english": "to like",
+    "pronunciation": "pjaˈtʃere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998385Z",
+    "examples": [
+      "Mi piace piacere. - 我喜欢喜欢。",
+      "Non voglio piacere. - 我不想喜欢。"
+    ]
+  },
+  {
+    "id": "883",
+    "italian": "preferire",
+    "chinese": "更喜欢",
+    "english": "to prefer",
+    "pronunciation": "preferiˈre",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998386Z",
+    "examples": [
+      "Mi piace preferire. - 我喜欢更喜欢。",
+      "Non voglio preferire. - 我不想更喜欢。"
+    ]
+  },
+  {
+    "id": "884",
+    "italian": "interessare",
+    "chinese": "感兴趣",
+    "english": "to interest",
+    "pronunciation": "interessaˈre",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998388Z",
+    "examples": [
+      "Mi piace interessare. - 我喜欢感兴趣。",
+      "Non voglio interessare. - 我不想感兴趣。"
+    ]
+  },
+  {
+    "id": "885",
+    "italian": "annoiare",
+    "chinese": "使厌烦",
+    "english": "to bore",
+    "pronunciation": "annoˈjare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998390Z",
+    "examples": [
+      "Mi piace annoiare. - 我喜欢使厌烦。",
+      "Non voglio annoiare. - 我不想使厌烦。"
+    ]
+  },
+  {
+    "id": "886",
+    "italian": "divertire",
+    "chinese": "使开心",
+    "english": "to amuse",
+    "pronunciation": "diverˈtire",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998391Z",
+    "examples": [
+      "Mi piace divertire. - 我喜欢使开心。",
+      "Non voglio divertire. - 我不想使开心。"
+    ]
+  },
+  {
+    "id": "887",
+    "italian": "divertirsi",
+    "chinese": "玩得开心",
+    "english": "to have fun",
+    "pronunciation": "diverˈtirsi",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998393Z",
+    "examples": [
+      "Mi piace divertirsi. - 我喜欢玩得开心。",
+      "Non voglio divertirsi. - 我不想玩得开心。"
+    ]
+  },
+  {
+    "id": "888",
+    "italian": "preoccupare",
+    "chinese": "担心",
+    "english": "to worry",
+    "pronunciation": "preokuˈpare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998394Z",
+    "examples": [
+      "Mi piace preoccupare. - 我喜欢担心。",
+      "Non voglio preoccupare. - 我不想担心。"
+    ]
+  },
+  {
+    "id": "889",
+    "italian": "spaventare",
+    "chinese": "使害怕",
+    "english": "to scare",
+    "pronunciation": "spavenˈtare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998395Z",
+    "examples": [
+      "Mi piace spaventare. - 我喜欢使害怕。",
+      "Non voglio spaventare. - 我不想使害怕。"
+    ]
+  },
+  {
+    "id": "890",
+    "italian": "sorprendere",
+    "chinese": "使惊讶",
+    "english": "to surprise",
+    "pronunciation": "sorˈprendere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998397Z",
+    "examples": [
+      "Mi piace sorprendere. - 我喜欢使惊讶。",
+      "Non voglio sorprendere. - 我不想使惊讶。"
+    ]
+  },
+  {
+    "id": "891",
+    "italian": "emozionare",
+    "chinese": "使激动",
+    "english": "to move emotionally",
+    "pronunciation": "emotsjoˈnare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998398Z",
+    "examples": [
+      "Mi piace emozionare. - 我喜欢使激动。",
+      "Non voglio emozionare. - 我不想使激动。"
+    ]
+  },
+  {
+    "id": "892",
+    "italian": "arrabbiare",
+    "chinese": "使生气",
+    "english": "to anger",
+    "pronunciation": "arrabˈbjare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998399Z",
+    "examples": [
+      "Mi piace arrabbiare. - 我喜欢使生气。",
+      "Non voglio arrabbiare. - 我不想使生气。"
+    ]
+  },
+  {
+    "id": "893",
+    "italian": "arrabbiarsi",
+    "chinese": "生气",
+    "english": "to get angry",
+    "pronunciation": "arrabˈbjarsi",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998400Z",
+    "examples": [
+      "Mi piace arrabbiarsi. - 我喜欢生气。",
+      "Non voglio arrabbiarsi. - 我不想生气。"
+    ]
+  },
+  {
+    "id": "894",
+    "italian": "calmare",
+    "chinese": "使平静",
+    "english": "to calm",
+    "pronunciation": "kalˈmare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998402Z",
+    "examples": [
+      "Mi piace calmare. - 我喜欢使平静。",
+      "Non voglio calmare. - 我不想使平静。"
+    ]
+  },
+  {
+    "id": "895",
+    "italian": "calmarsi",
+    "chinese": "平静下来",
+    "english": "to calm down",
+    "pronunciation": "kalˈmarsi",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998403Z",
+    "examples": [
+      "Mi piace calmarsi. - 我喜欢平静下来。",
+      "Non voglio calmarsi. - 我不想平静下来。"
+    ]
+  },
+  {
+    "id": "896",
+    "italian": "stancare",
+    "chinese": "使疲劳",
+    "english": "to tire",
+    "pronunciation": "stanˈkare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998404Z",
+    "examples": [
+      "Mi piace stancare. - 我喜欢使疲劳。",
+      "Non voglio stancare. - 我不想使疲劳。"
+    ]
+  },
+  {
+    "id": "897",
+    "italian": "stancarsi",
+    "chinese": "感到累",
+    "english": "to get tired",
+    "pronunciation": "stanˈkarsi",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998406Z",
+    "examples": [
+      "Mi piace stancarsi. - 我喜欢感到累。",
+      "Non voglio stancarsi. - 我不想感到累。"
+    ]
+  },
+  {
+    "id": "898",
+    "italian": "entusiasmare",
+    "chinese": "使热情",
+    "english": "to enthuse",
+    "pronunciation": "entuzjazˈmare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998407Z",
+    "examples": [
+      "Mi piace entusiasmare. - 我喜欢使热情。",
+      "Non voglio entusiasmare. - 我不想使热情。"
+    ]
+  },
+  {
+    "id": "899",
+    "italian": "deludere",
+    "chinese": "使失望",
+    "english": "to disappoint",
+    "pronunciation": "deˈludere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998408Z",
+    "examples": [
+      "Mi piace deludere. - 我喜欢使失望。",
+      "Non voglio deludere. - 我不想使失望。"
+    ]
+  },
+  {
+    "id": "900",
+    "italian": "impressionare",
+    "chinese": "给...留下深刻印象",
+    "english": "to impress",
+    "pronunciation": "impressjoˈnare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998410Z",
+    "examples": [
+      "Mi piace impressionare. - 我喜欢给...留下深刻印象。",
+      "Non voglio impressionare. - 我不想给...留下深刻印象。"
+    ]
+  },
+  {
+    "id": "901",
+    "italian": "offendere",
+    "chinese": "冒犯",
+    "english": "to offend",
+    "pronunciation": "ofˈfendere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998411Z",
+    "examples": [
+      "Mi piace offendere. - 我喜欢冒犯。",
+      "Non voglio offendere. - 我不想冒犯。"
+    ]
+  },
+  {
+    "id": "902",
+    "italian": "ringraziare",
+    "chinese": "感谢",
+    "english": "to thank",
+    "pronunciation": "riŋgratsˈjare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998412Z",
+    "examples": [
+      "Mi piace ringraziare. - 我喜欢感谢。",
+      "Non voglio ringraziare. - 我不想感谢。"
+    ]
+  },
+  {
+    "id": "903",
+    "italian": "scusare",
+    "chinese": "原谅",
+    "english": "to excuse",
+    "pronunciation": "skuˈzare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998413Z",
+    "examples": [
+      "Mi piace scusare. - 我喜欢原谅。",
+      "Non voglio scusare. - 我不想原谅。"
+    ]
+  },
+  {
+    "id": "904",
+    "italian": "scusarsi",
+    "chinese": "道歉",
+    "english": "to apologize",
+    "pronunciation": "skuˈzarsi",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998415Z",
+    "examples": [
+      "Mi piace scusarsi. - 我喜欢道歉。",
+      "Non voglio scusarsi. - 我不想道歉。"
+    ]
+  },
+  {
+    "id": "905",
+    "italian": "perdonare",
+    "chinese": "宽恕",
+    "english": "to forgive",
+    "pronunciation": "perdoˈnare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998417Z",
+    "examples": [
+      "Mi piace perdonare. - 我喜欢宽恕。",
+      "Non voglio perdonare. - 我不想宽恕。"
+    ]
+  },
+  {
+    "id": "906",
+    "italian": "complimentare",
+    "chinese": "称赞",
+    "english": "to compliment",
+    "pronunciation": "komplimentaˈre",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998418Z",
+    "examples": [
+      "Mi piace complimentare. - 我喜欢称赞。",
+      "Non voglio complimentare. - 我不想称赞。"
+    ]
+  },
+  {
+    "id": "907",
+    "italian": "criticare",
+    "chinese": "批评",
+    "english": "to criticize",
+    "pronunciation": "kritiˈkare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998420Z",
+    "examples": [
+      "Mi piace criticare. - 我喜欢批评。",
+      "Non voglio criticare. - 我不想批评。"
+    ]
+  },
+  {
+    "id": "908",
+    "italian": "lodare",
+    "chinese": "表扬",
+    "english": "to praise",
+    "pronunciation": "loˈdare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998421Z",
+    "examples": [
+      "Mi piace lodare. - 我喜欢表扬。",
+      "Non voglio lodare. - 我不想表扬。"
+    ]
+  },
+  {
+    "id": "909",
+    "italian": "incoraggiare",
+    "chinese": "鼓励",
+    "english": "to encourage",
+    "pronunciation": "inkoradˈdʒare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998422Z",
+    "examples": [
+      "Mi piace incoraggiare. - 我喜欢鼓励。",
+      "Non voglio incoraggiare. - 我不想鼓励。"
+    ]
+  },
+  {
+    "id": "910",
+    "italian": "consolare",
+    "chinese": "安慰",
+    "english": "to console",
+    "pronunciation": "konsoˈlare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998423Z",
+    "examples": [
+      "Mi piace consolare. - 我喜欢安慰。",
+      "Non voglio consolare. - 我不想安慰。"
+    ]
+  },
+  {
+    "id": "911",
+    "italian": "aiutare",
+    "chinese": "帮助",
+    "english": "to help",
+    "pronunciation": "ajuˈtare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998425Z",
+    "examples": [
+      "Mi piace aiutare. - 我喜欢帮助。",
+      "Non voglio aiutare. - 我不想帮助。"
+    ]
+  },
+  {
+    "id": "912",
+    "italian": "disturbare",
+    "chinese": "打扰",
+    "english": "to disturb",
+    "pronunciation": "disturˈbare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998426Z",
+    "examples": [
+      "Mi piace disturbare. - 我喜欢打扰。",
+      "Non voglio disturbare. - 我不想打扰。"
+    ]
+  },
+  {
+    "id": "913",
+    "italian": "rispettare",
+    "chinese": "尊重",
+    "english": "to respect",
+    "pronunciation": "rispetˈtare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998427Z",
+    "examples": [
+      "Mi piace rispettare. - 我喜欢尊重。",
+      "Non voglio rispettare. - 我不想尊重。"
+    ]
+  },
+  {
+    "id": "914",
+    "italian": "ammirare",
+    "chinese": "钦佩",
+    "english": "to admire",
+    "pronunciation": "ammiˈrare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998428Z",
+    "examples": [
+      "Mi piace ammirare. - 我喜欢钦佩。",
+      "Non voglio ammirare. - 我不想钦佩。"
+    ]
+  },
+  {
+    "id": "915",
+    "italian": "decidere",
+    "chinese": "决定",
+    "english": "to decide",
+    "pronunciation": "deˈtʃidere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998430Z",
+    "examples": [
+      "Mi piace decidere. - 我喜欢决定。",
+      "Non voglio decidere. - 我不想决定。"
+    ]
+  },
+  {
+    "id": "916",
+    "italian": "scegliere",
+    "chinese": "选择",
+    "english": "to choose",
+    "pronunciation": "ˈʃeʎʎere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998431Z",
+    "examples": [
+      "Mi piace scegliere. - 我喜欢选择。",
+      "Non voglio scegliere. - 我不想选择。"
+    ]
+  },
+  {
+    "id": "917",
+    "italian": "considerare",
+    "chinese": "考虑",
+    "english": "to consider",
+    "pronunciation": "konsideˈrare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998432Z",
+    "examples": [
+      "Mi piace considerare. - 我喜欢考虑。",
+      "Non voglio considerare. - 我不想考虑。"
+    ]
+  },
+  {
+    "id": "918",
+    "italian": "immaginare",
+    "chinese": "想象",
+    "english": "to imagine",
+    "pronunciation": "immadʒiˈnare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998433Z",
+    "examples": [
+      "Mi piace immaginare. - 我喜欢想象。",
+      "Non voglio immaginare. - 我不想想象。"
+    ]
+  },
+  {
+    "id": "919",
+    "italian": "sognare",
+    "chinese": "梦见，梦想",
+    "english": "to dream",
+    "pronunciation": "soɲˈɲare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998435Z",
+    "examples": [
+      "Mi piace sognare. - 我喜欢梦见。",
+      "Non voglio sognare. - 我不想梦见。"
+    ]
+  },
+  {
+    "id": "920",
+    "italian": "dubitare",
+    "chinese": "怀疑",
+    "english": "to doubt",
+    "pronunciation": "dubiˈtare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998436Z",
+    "examples": [
+      "Mi piace dubitare. - 我喜欢怀疑。",
+      "Non voglio dubitare. - 我不想怀疑。"
+    ]
+  },
+  {
+    "id": "921",
+    "italian": "fidarsi",
+    "chinese": "信任",
+    "english": "to trust",
+    "pronunciation": "fiˈdarsi",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998441Z",
+    "examples": [
+      "Mi piace fidarsi. - 我喜欢信任。",
+      "Non voglio fidarsi. - 我不想信任。"
+    ]
+  },
+  {
+    "id": "922",
+    "italian": "notare",
+    "chinese": "注意到",
+    "english": "to notice",
+    "pronunciation": "noˈtare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998442Z",
+    "examples": [
+      "Mi piace notare. - 我喜欢注意到。",
+      "Non voglio notare. - 我不想注意到。"
+    ]
+  },
+  {
+    "id": "923",
+    "italian": "accorgersi",
+    "chinese": "察觉",
+    "english": "to realize",
+    "pronunciation": "akˈkordʒersi",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998444Z",
+    "examples": [
+      "Mi piace accorgersi. - 我喜欢察觉。",
+      "Non voglio accorgersi. - 我不想察觉。"
+    ]
+  },
+  {
+    "id": "924",
+    "italian": "rendersi conto",
+    "chinese": "意识到",
+    "english": "to realize",
+    "pronunciation": "ˈrendersi ˈkonto",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998445Z",
+    "examples": [
+      "Mi piace rendersi. - 我喜欢意识到。",
+      "Non voglio rendersi. - 我不想意识到。"
+    ]
+  },
+  {
+    "id": "925",
+    "italian": "riconoscere",
+    "chinese": "认出",
+    "english": "to recognize",
+    "pronunciation": "rikoˈnoʃʃere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998447Z",
+    "examples": [
+      "Mi piace riconoscere. - 我喜欢认出。",
+      "Non voglio riconoscere. - 我不想认出。"
+    ]
+  },
+  {
+    "id": "926",
+    "italian": "confondere",
+    "chinese": "混淆",
+    "english": "to confuse",
+    "pronunciation": "konˈfondere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998448Z",
+    "examples": [
+      "Mi piace confondere. - 我喜欢混淆。",
+      "Non voglio confondere. - 我不想混淆。"
+    ]
+  },
+  {
+    "id": "927",
+    "italian": "sbagliare",
+    "chinese": "犯错",
+    "english": "to make a mistake",
+    "pronunciation": "zbaʎˈʎare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998449Z",
+    "examples": [
+      "Mi piace sbagliare. - 我喜欢犯错。",
+      "Non voglio sbagliare. - 我不想犯错。"
+    ]
+  },
+  {
+    "id": "928",
+    "italian": "correggere",
+    "chinese": "纠正",
+    "english": "to correct",
+    "pronunciation": "korˈreddʒere",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998450Z",
+    "examples": [
+      "Mi piace correggere. - 我喜欢纠正。",
+      "Non voglio correggere. - 我不想纠正。"
+    ]
+  },
+  {
+    "id": "929",
+    "italian": "migliorare",
+    "chinese": "改善",
+    "english": "to improve",
+    "pronunciation": "miʎʎoˈrare",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998452Z",
+    "examples": [
+      "Mi piace migliorare. - 我喜欢改善。",
+      "Non voglio migliorare. - 我不想改善。"
+    ]
+  },
+  {
+    "id": "930",
+    "italian": "peggiorare",
+    "chinese": "恶化",
+    "english": "to worsen",
+    "pronunciation": "peddʒoˈrare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998453Z",
+    "examples": [
+      "Mi piace peggiorare. - 我喜欢恶化。",
+      "Non voglio peggiorare. - 我不想恶化。"
+    ]
+  },
+  {
+    "id": "931",
+    "italian": "cambiare",
+    "chinese": "改变",
+    "english": "to change",
+    "pronunciation": "kamˈbjare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998454Z",
+    "examples": [
+      "Mi piace cambiare. - 我喜欢改变。",
+      "Non voglio cambiare. - 我不想改变。"
+    ]
+  },
+  {
+    "id": "932",
+    "italian": "modificare",
+    "chinese": "修改",
+    "english": "to modify",
+    "pronunciation": "modifiˈkare",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998455Z",
+    "examples": [
+      "Mi piace modificare. - 我喜欢修改。",
+      "Non voglio modificare. - 我不想修改。"
+    ]
+  },
+  {
+    "id": "933",
+    "italian": "trasformare",
+    "chinese": "转变",
+    "english": "to transform",
+    "pronunciation": "trasforˈmare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998457Z",
+    "examples": [
+      "Mi piace trasformare. - 我喜欢转变。",
+      "Non voglio trasformare. - 我不想转变。"
+    ]
+  },
+  {
+    "id": "934",
+    "italian": "sviluppare",
+    "chinese": "发展",
+    "english": "to develop",
+    "pronunciation": "zvilupˈpare",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998458Z",
+    "examples": [
+      "Mi piace sviluppare. - 我喜欢发展。",
+      "Non voglio sviluppare. - 我不想发展。"
+    ]
+  },
+  {
+    "id": "935",
+    "italian": "crescere",
+    "chinese": "成长",
+    "english": "to grow",
+    "pronunciation": "ˈkreʃʃere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998459Z",
+    "examples": [
+      "Mi piace crescere. - 我喜欢成长。",
+      "Non voglio crescere. - 我不想成长。"
+    ]
+  },
+  {
+    "id": "936",
+    "italian": "aumentare",
+    "chinese": "增加",
+    "english": "to increase",
+    "pronunciation": "aumenˈtare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998460Z",
+    "examples": [
+      "Mi piace aumentare. - 我喜欢增加。",
+      "Non voglio aumentare. - 我不想增加。"
+    ]
+  },
+  {
+    "id": "937",
+    "italian": "diminuire",
+    "chinese": "减少",
+    "english": "to decrease",
+    "pronunciation": "diminuˈire",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998462Z",
+    "examples": [
+      "Mi piace diminuire. - 我喜欢减少。",
+      "Non voglio diminuire. - 我不想减少。"
+    ]
+  },
+  {
+    "id": "938",
+    "italian": "ridurre",
+    "chinese": "减少",
+    "english": "to reduce",
+    "pronunciation": "riˈdurre",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998463Z",
+    "examples": [
+      "Mi piace ridurre. - 我喜欢减少。",
+      "Non voglio ridurre. - 我不想减少。"
+    ]
+  },
+  {
+    "id": "939",
+    "italian": "evitare",
+    "chinese": "避免",
+    "english": "to avoid",
+    "pronunciation": "eviˈtare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998464Z",
+    "examples": [
+      "Mi piace evitare. - 我喜欢避免。",
+      "Non voglio evitare. - 我不想避免。"
+    ]
+  },
+  {
+    "id": "940",
+    "italian": "permettere",
+    "chinese": "允许",
+    "english": "to allow",
+    "pronunciation": "perˈmettere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998465Z",
+    "examples": [
+      "Mi piace permettere. - 我喜欢允许。",
+      "Non voglio permettere. - 我不想允许。"
+    ]
+  },
+  {
+    "id": "941",
+    "italian": "vietare",
+    "chinese": "禁止",
+    "english": "to forbid",
+    "pronunciation": "vjeˈtare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998467Z",
+    "examples": [
+      "Mi piace vietare. - 我喜欢禁止。",
+      "Non voglio vietare. - 我不想禁止。"
+    ]
+  },
+  {
+    "id": "942",
+    "italian": "obbligare",
+    "chinese": "强迫",
+    "english": "to force",
+    "pronunciation": "obbliˈɡare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998468Z",
+    "examples": [
+      "Mi piace obbligare. - 我喜欢强迫。",
+      "Non voglio obbligare. - 我不想强迫。"
+    ]
+  },
+  {
+    "id": "943",
+    "italian": "consigliare",
+    "chinese": "建议",
+    "english": "to advise",
+    "pronunciation": "konsiʎˈʎare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998470Z",
+    "examples": [
+      "Mi piace consigliare. - 我喜欢建议。",
+      "Non voglio consigliare. - 我不想建议。"
+    ]
+  },
+  {
+    "id": "944",
+    "italian": "suggerire",
+    "chinese": "建议",
+    "english": "to suggest",
+    "pronunciation": "suddʒeˈrire",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998471Z",
+    "examples": [
+      "Mi piace suggerire. - 我喜欢建议。",
+      "Non voglio suggerire. - 我不想建议。"
+    ]
+  },
+  {
+    "id": "945",
+    "italian": "proporre",
+    "chinese": "提议",
+    "english": "to propose",
+    "pronunciation": "proˈporre",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998472Z",
+    "examples": [
+      "Mi piace proporre. - 我喜欢提议。",
+      "Non voglio proporre. - 我不想提议。"
+    ]
+  },
+  {
+    "id": "946",
+    "italian": "accettare",
+    "chinese": "接受",
+    "english": "to accept",
+    "pronunciation": "attʃetˈtare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998473Z",
+    "examples": [
+      "Mi piace accettare. - 我喜欢接受。",
+      "Non voglio accettare. - 我不想接受。"
+    ]
+  },
+  {
+    "id": "947",
+    "italian": "rifiutare",
+    "chinese": "拒绝",
+    "english": "to refuse",
+    "pronunciation": "rifiuˈtare",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998475Z",
+    "examples": [
+      "Mi piace rifiutare. - 我喜欢拒绝。",
+      "Non voglio rifiutare. - 我不想拒绝。"
+    ]
+  },
+  {
+    "id": "948",
+    "italian": "promettere",
+    "chinese": "承诺",
+    "english": "to promise",
+    "pronunciation": "proˈmettere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998476Z",
+    "examples": [
+      "Mi piace promettere. - 我喜欢承诺。",
+      "Non voglio promettere. - 我不想承诺。"
+    ]
+  },
+  {
+    "id": "949",
+    "italian": "mantenere",
+    "chinese": "保持",
+    "english": "to maintain",
+    "pronunciation": "manteˈnere",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:14:51.998477Z",
+    "examples": [
+      "Mi piace mantenere. - 我喜欢保持。",
+      "Non voglio mantenere. - 我不想保持。"
+    ]
+  },
+  {
+    "id": "950",
+    "italian": "simpatico",
+    "chinese": "友好的",
+    "english": "nice",
+    "pronunciation": "simˈpatiko",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369374Z",
+    "examples": [
+      "È molto simpatico. - 非常友好的。",
+      "Sembra simpatico. - 看起来友好的。"
+    ]
+  },
+  {
+    "id": "951",
+    "italian": "antipatico",
+    "chinese": "不友好的",
+    "english": "unpleasant",
+    "pronunciation": "antiˈpatiko",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369380Z",
+    "examples": [
+      "È molto antipatico. - 非常不友好的。",
+      "Sembra antipatico. - 看起来不友好的。"
+    ]
+  },
+  {
+    "id": "952",
+    "italian": "gentile",
+    "chinese": "温和的",
+    "english": "kind",
+    "pronunciation": "dʒenˈtile",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369382Z",
+    "examples": [
+      "È molto gentile. - 非常温和的。",
+      "Sembra gentile. - 看起来温和的。"
+    ]
+  },
+  {
+    "id": "953",
+    "italian": "educato",
+    "chinese": "有礼貌的",
+    "english": "polite",
+    "pronunciation": "eduˈkato",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369383Z",
+    "examples": [
+      "È molto educato. - 非常有礼貌的。",
+      "Sembra educato. - 看起来有礼貌的。"
+    ]
+  },
+  {
+    "id": "954",
+    "italian": "maleducato",
+    "chinese": "无礼的",
+    "english": "rude",
+    "pronunciation": "maleduˈkato",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369385Z",
+    "examples": [
+      "È molto maleducato. - 非常无礼的。",
+      "Sembra maleducato. - 看起来无礼的。"
+    ]
+  },
+  {
+    "id": "955",
+    "italian": "intelligente",
+    "chinese": "聪明的",
+    "english": "intelligent",
+    "pronunciation": "intellidʒˈdʒente",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369386Z",
+    "examples": [
+      "È molto intelligente. - 非常聪明的。",
+      "Sembra intelligente. - 看起来聪明的。"
+    ]
+  },
+  {
+    "id": "956",
+    "italian": "stupido",
+    "chinese": "愚蠢的",
+    "english": "stupid",
+    "pronunciation": "ˈstupido",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369387Z",
+    "examples": [
+      "È molto stupido. - 非常愚蠢的。",
+      "Sembra stupido. - 看起来愚蠢的。"
+    ]
+  },
+  {
+    "id": "957",
+    "italian": "coraggioso",
+    "chinese": "勇敢的",
+    "english": "brave",
+    "pronunciation": "koradˈdʒozo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369388Z",
+    "examples": [
+      "È molto coraggioso. - 非常勇敢的。",
+      "Sembra coraggioso. - 看起来勇敢的。"
+    ]
+  },
+  {
+    "id": "958",
+    "italian": "timido",
+    "chinese": "害羞的",
+    "english": "shy",
+    "pronunciation": "ˈtimido",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369389Z",
+    "examples": [
+      "È molto timido. - 非常害羞的。",
+      "Sembra timido. - 看起来害羞的。"
+    ]
+  },
+  {
+    "id": "959",
+    "italian": "orgoglioso",
+    "chinese": "骄傲的",
+    "english": "proud",
+    "pronunciation": "orɡoʎˈʎozo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369390Z",
+    "examples": [
+      "È molto orgoglioso. - 非常骄傲的。",
+      "Sembra orgoglioso. - 看起来骄傲的。"
+    ]
+  },
+  {
+    "id": "960",
+    "italian": "generoso",
+    "chinese": "慷慨的",
+    "english": "generous",
+    "pronunciation": "dʒeneˈrozo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369391Z",
+    "examples": [
+      "È molto generoso. - 非常慷慨的。",
+      "Sembra generoso. - 看起来慷慨的。"
+    ]
+  },
+  {
+    "id": "961",
+    "italian": "egoista",
+    "chinese": "自私的",
+    "english": "selfish",
+    "pronunciation": "eɡoˈista",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369393Z",
+    "examples": [
+      "È molto egoista. - 非常自私的。",
+      "Sembra egoista. - 看起来自私的。"
+    ]
+  },
+  {
+    "id": "962",
+    "italian": "onesto",
+    "chinese": "诚实的",
+    "english": "honest",
+    "pronunciation": "oˈnesto",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369394Z",
+    "examples": [
+      "È molto onesto. - 非常诚实的。",
+      "Sembra onesto. - 看起来诚实的。"
+    ]
+  },
+  {
+    "id": "963",
+    "italian": "disonesto",
+    "chinese": "不诚实的",
+    "english": "dishonest",
+    "pronunciation": "dizoˈnesto",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369395Z",
+    "examples": [
+      "È molto disonesto. - 非常不诚实的。",
+      "Sembra disonesto. - 看起来不诚实的。"
+    ]
+  },
+  {
+    "id": "964",
+    "italian": "sincero",
+    "chinese": "真诚的",
+    "english": "sincere",
+    "pronunciation": "sinˈtʃero",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369396Z",
+    "examples": [
+      "È molto sincero. - 非常真诚的。",
+      "Sembra sincero. - 看起来真诚的。"
+    ]
+  },
+  {
+    "id": "965",
+    "italian": "falso",
+    "chinese": "虚伪的",
+    "english": "false",
+    "pronunciation": "ˈfalso",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369397Z",
+    "examples": [
+      "È molto falso. - 非常虚伪的。",
+      "Sembra falso. - 看起来虚伪的。"
+    ]
+  },
+  {
+    "id": "966",
+    "italian": "paziente",
+    "chinese": "耐心的",
+    "english": "patient",
+    "pronunciation": "patˈtsjente",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369398Z",
+    "examples": [
+      "È molto paziente. - 非常耐心的。",
+      "Sembra paziente. - 看起来耐心的。"
+    ]
+  },
+  {
+    "id": "967",
+    "italian": "impaziente",
+    "chinese": "不耐烦的",
+    "english": "impatient",
+    "pronunciation": "impatˈtsjente",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369400Z",
+    "examples": [
+      "È molto impaziente. - 非常不耐烦的。",
+      "Sembra impaziente. - 看起来不耐烦的。"
+    ]
+  },
+  {
+    "id": "968",
+    "italian": "serio",
+    "chinese": "严肃的",
+    "english": "serious",
+    "pronunciation": "ˈserjo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369401Z",
+    "examples": [
+      "È molto serio. - 非常严肃的。",
+      "Sembra serio. - 看起来严肃的。"
+    ]
+  },
+  {
+    "id": "969",
+    "italian": "divertente",
+    "chinese": "有趣的",
+    "english": "fun",
+    "pronunciation": "diverˈtente",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369403Z",
+    "examples": [
+      "È molto divertente. - 非常有趣的。",
+      "Sembra divertente. - 看起来有趣的。"
+    ]
+  },
+  {
+    "id": "970",
+    "italian": "noioso",
+    "chinese": "无聊的",
+    "english": "boring",
+    "pronunciation": "noˈjozo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369404Z",
+    "examples": [
+      "È molto noioso. - 非常无聊的。",
+      "Sembra noioso. - 看起来无聊的。"
+    ]
+  },
+  {
+    "id": "971",
+    "italian": "interessante",
+    "chinese": "有意思的",
+    "english": "interesting",
+    "pronunciation": "interessˈsante",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369405Z",
+    "examples": [
+      "È molto interessante. - 非常有意思的。",
+      "Sembra interessante. - 看起来有意思的。"
+    ]
+  },
+  {
+    "id": "972",
+    "italian": "curioso",
+    "chinese": "好奇的",
+    "english": "curious",
+    "pronunciation": "kuˈrjozo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369407Z",
+    "examples": [
+      "È molto curioso. - 非常好奇的。",
+      "Sembra curioso. - 看起来好奇的。"
+    ]
+  },
+  {
+    "id": "973",
+    "italian": "pigro",
+    "chinese": "懒惰的",
+    "english": "lazy",
+    "pronunciation": "ˈpiɡro",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369408Z",
+    "examples": [
+      "È molto pigro. - 非常懒惰的。",
+      "Sembra pigro. - 看起来懒惰的。"
+    ]
+  },
+  {
+    "id": "974",
+    "italian": "attivo",
+    "chinese": "活跃的",
+    "english": "active",
+    "pronunciation": "atˈtivo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369409Z",
+    "examples": [
+      "È molto attivo. - 非常活跃的。",
+      "Sembra attivo. - 看起来活跃的。"
+    ]
+  },
+  {
+    "id": "975",
+    "italian": "calmo",
+    "chinese": "冷静的",
+    "english": "calm",
+    "pronunciation": "ˈkalmo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369410Z",
+    "examples": [
+      "È molto calmo. - 非常冷静的。",
+      "Sembra calmo. - 看起来冷静的。"
+    ]
+  },
+  {
+    "id": "976",
+    "italian": "nervoso",
+    "chinese": "紧张的",
+    "english": "nervous",
+    "pronunciation": "nerˈvozo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369411Z",
+    "examples": [
+      "È molto nervoso. - 非常紧张的。",
+      "Sembra nervoso. - 看起来紧张的。"
+    ]
+  },
+  {
+    "id": "977",
+    "italian": "tranquillo",
+    "chinese": "平静的",
+    "english": "quiet",
+    "pronunciation": "tranˈkwillo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369412Z",
+    "examples": [
+      "È molto tranquillo. - 非常平静的。",
+      "Sembra tranquillo. - 看起来平静的。"
+    ]
+  },
+  {
+    "id": "978",
+    "italian": "agitato",
+    "chinese": "焦躁的",
+    "english": "agitated",
+    "pronunciation": "adʒiˈtato",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369413Z",
+    "examples": [
+      "È molto agitato. - 非常焦躁的。",
+      "Sembra agitato. - 看起来焦躁的。"
+    ]
+  },
+  {
+    "id": "979",
+    "italian": "socievole",
+    "chinese": "善交际的",
+    "english": "sociable",
+    "pronunciation": "soˈtʃevole",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369415Z",
+    "examples": [
+      "È molto socievole. - 非常善交际的。",
+      "Sembra socievole. - 看起来善交际的。"
+    ]
+  },
+  {
+    "id": "980",
+    "italian": "bello",
+    "chinese": "美丽的",
+    "english": "beautiful",
+    "pronunciation": "ˈbɛllo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369416Z",
+    "examples": [
+      "È molto bello. - 非常美丽的。",
+      "Sembra bello. - 看起来美丽的。"
+    ]
+  },
+  {
+    "id": "981",
+    "italian": "brutto",
+    "chinese": "丑的",
+    "english": "ugly",
+    "pronunciation": "ˈbrutto",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369417Z",
+    "examples": [
+      "È molto brutto. - 非常丑的。",
+      "Sembra brutto. - 看起来丑的。"
+    ]
+  },
+  {
+    "id": "982",
+    "italian": "carino",
+    "chinese": "可爱的",
+    "english": "cute",
+    "pronunciation": "kaˈrino",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369418Z",
+    "examples": [
+      "È molto carino. - 非常可爱的。",
+      "Sembra carino. - 看起来可爱的。"
+    ]
+  },
+  {
+    "id": "983",
+    "italian": "elegante",
+    "chinese": "优雅的",
+    "english": "elegant",
+    "pronunciation": "eleˈɡante",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369419Z",
+    "examples": [
+      "È molto elegante. - 非常优雅的。",
+      "Sembra elegante. - 看起来优雅的。"
+    ]
+  },
+  {
+    "id": "984",
+    "italian": "alto",
+    "chinese": "高的",
+    "english": "tall",
+    "pronunciation": "ˈalto",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369420Z",
+    "examples": [
+      "È molto alto. - 非常高的。",
+      "Sembra alto. - 看起来高的。"
+    ]
+  },
+  {
+    "id": "985",
+    "italian": "basso",
+    "chinese": "矮的",
+    "english": "short",
+    "pronunciation": "ˈbasso",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369421Z",
+    "examples": [
+      "È molto basso. - 非常矮的。",
+      "Sembra basso. - 看起来矮的。"
+    ]
+  },
+  {
+    "id": "986",
+    "italian": "grasso",
+    "chinese": "胖的",
+    "english": "fat",
+    "pronunciation": "ˈɡrasso",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369422Z",
+    "examples": [
+      "È molto grasso. - 非常胖的。",
+      "Sembra grasso. - 看起来胖的。"
+    ]
+  },
+  {
+    "id": "987",
+    "italian": "magro",
+    "chinese": "瘦的",
+    "english": "thin",
+    "pronunciation": "ˈmaɡro",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369423Z",
+    "examples": [
+      "È molto magro. - 非常瘦的。",
+      "Sembra magro. - 看起来瘦的。"
+    ]
+  },
+  {
+    "id": "988",
+    "italian": "forte",
+    "chinese": "强壮的",
+    "english": "strong",
+    "pronunciation": "ˈfɔrte",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369425Z",
+    "examples": [
+      "È molto forte. - 非常强壮的。",
+      "Sembra forte. - 看起来强壮的。"
+    ]
+  },
+  {
+    "id": "989",
+    "italian": "debole",
+    "chinese": "虚弱的",
+    "english": "weak",
+    "pronunciation": "ˈdebole",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369427Z",
+    "examples": [
+      "È molto debole. - 非常虚弱的。",
+      "Sembra debole. - 看起来虚弱的。"
+    ]
+  },
+  {
+    "id": "990",
+    "italian": "giovane",
+    "chinese": "年轻的",
+    "english": "young",
+    "pronunciation": "ˈdʒovane",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369428Z",
+    "examples": [
+      "È molto giovane. - 非常年轻的。",
+      "Sembra giovane. - 看起来年轻的。"
+    ]
+  },
+  {
+    "id": "991",
+    "italian": "vecchio",
+    "chinese": "老的",
+    "english": "old",
+    "pronunciation": "ˈvekkjo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369429Z",
+    "examples": [
+      "È molto vecchio. - 非常老的。",
+      "Sembra vecchio. - 看起来老的。"
+    ]
+  },
+  {
+    "id": "992",
+    "italian": "nuovo",
+    "chinese": "新的",
+    "english": "new",
+    "pronunciation": "ˈnwɔvo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369430Z",
+    "examples": [
+      "È molto nuovo. - 非常新的。",
+      "Sembra nuovo. - 看起来新的。"
+    ]
+  },
+  {
+    "id": "993",
+    "italian": "moderno",
+    "chinese": "现代的",
+    "english": "modern",
+    "pronunciation": "moˈdɛrno",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369431Z",
+    "examples": [
+      "È molto moderno. - 非常现代的。",
+      "Sembra moderno. - 看起来现代的。"
+    ]
+  },
+  {
+    "id": "994",
+    "italian": "antico",
+    "chinese": "古老的",
+    "english": "ancient",
+    "pronunciation": "anˈtiko",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369432Z",
+    "examples": [
+      "È molto antico. - 非常古老的。",
+      "Sembra antico. - 看起来古老的。"
+    ]
+  },
+  {
+    "id": "995",
+    "italian": "pulito",
+    "chinese": "干净的",
+    "english": "clean",
+    "pronunciation": "puˈlito",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369433Z",
+    "examples": [
+      "È molto pulito. - 非常干净的。",
+      "Sembra pulito. - 看起来干净的。"
+    ]
+  },
+  {
+    "id": "996",
+    "italian": "sporco",
+    "chinese": "脏的",
+    "english": "dirty",
+    "pronunciation": "ˈsporko",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369434Z",
+    "examples": [
+      "È molto sporco. - 非常脏的。",
+      "Sembra sporco. - 看起来脏的。"
+    ]
+  },
+  {
+    "id": "997",
+    "italian": "ordinato",
+    "chinese": "整洁的",
+    "english": "tidy",
+    "pronunciation": "ordiˈnato",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369436Z",
+    "examples": [
+      "È molto ordinato. - 非常整洁的。",
+      "Sembra ordinato. - 看起来整洁的。"
+    ]
+  },
+  {
+    "id": "998",
+    "italian": "disordinato",
+    "chinese": "凌乱的",
+    "english": "messy",
+    "pronunciation": "dizordiˈnato",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369437Z",
+    "examples": [
+      "È molto disordinato. - 非常凌乱的。",
+      "Sembra disordinato. - 看起来凌乱的。"
+    ]
+  },
+  {
+    "id": "999",
+    "italian": "liscio",
+    "chinese": "光滑的",
+    "english": "smooth",
+    "pronunciation": "ˈliʃʃo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369438Z",
+    "examples": [
+      "È molto liscio. - 非常光滑的。",
+      "Sembra liscio. - 看起来光滑的。"
+    ]
+  },
+  {
+    "id": "1000",
+    "italian": "ruvido",
+    "chinese": "粗糙的",
+    "english": "rough",
+    "pronunciation": "ˈruvido",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369439Z",
+    "examples": [
+      "È molto ruvido. - 非常粗糙的。",
+      "Sembra ruvido. - 看起来粗糙的。"
+    ]
+  },
+  {
+    "id": "1001",
+    "italian": "morbido",
+    "chinese": "柔软的",
+    "english": "soft",
+    "pronunciation": "ˈmorbido",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369440Z",
+    "examples": [
+      "È molto morbido. - 非常柔软的。",
+      "Sembra morbido. - 看起来柔软的。"
+    ]
+  },
+  {
+    "id": "1002",
+    "italian": "duro",
+    "chinese": "坚硬的",
+    "english": "hard",
+    "pronunciation": "ˈduro",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369441Z",
+    "examples": [
+      "È molto duro. - 非常坚硬的。",
+      "Sembra duro. - 看起来坚硬的。"
+    ]
+  },
+  {
+    "id": "1003",
+    "italian": "leggero",
+    "chinese": "轻的",
+    "english": "light",
+    "pronunciation": "ledˈdʒero",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369442Z",
+    "examples": [
+      "È molto leggero. - 非常轻的。",
+      "Sembra leggero. - 看起来轻的。"
+    ]
+  },
+  {
+    "id": "1004",
+    "italian": "pesante",
+    "chinese": "重的",
+    "english": "heavy",
+    "pronunciation": "peˈzante",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369443Z",
+    "examples": [
+      "È molto pesante. - 非常重的。",
+      "Sembra pesante. - 看起来重的。"
+    ]
+  },
+  {
+    "id": "1005",
+    "italian": "felice",
+    "chinese": "快乐的",
+    "english": "happy",
+    "pronunciation": "feˈliʧe",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369445Z",
+    "examples": [
+      "È molto felice. - 非常快乐的。",
+      "Sembra felice. - 看起来快乐的。"
+    ]
+  },
+  {
+    "id": "1006",
+    "italian": "triste",
+    "chinese": "悲伤的",
+    "english": "sad",
+    "pronunciation": "ˈtriste",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369446Z",
+    "examples": [
+      "È molto triste. - 非常悲伤的。",
+      "Sembra triste. - 看起来悲伤的。"
+    ]
+  },
+  {
+    "id": "1007",
+    "italian": "contento",
+    "chinese": "满意的",
+    "english": "content",
+    "pronunciation": "konˈtento",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369448Z",
+    "examples": [
+      "È molto contento. - 非常满意的。",
+      "Sembra contento. - 看起来满意的。"
+    ]
+  },
+  {
+    "id": "1008",
+    "italian": "scontento",
+    "chinese": "不满的",
+    "english": "discontent",
+    "pronunciation": "skonˈtento",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369449Z",
+    "examples": [
+      "È molto scontento. - 非常不满的。",
+      "Sembra scontento. - 看起来不满的。"
+    ]
+  },
+  {
+    "id": "1009",
+    "italian": "soddisfatto",
+    "chinese": "满足的",
+    "english": "satisfied",
+    "pronunciation": "soddisˈfatto",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369450Z",
+    "examples": [
+      "È molto soddisfatto. - 非常满足的。",
+      "Sembra soddisfatto. - 看起来满足的。"
+    ]
+  },
+  {
+    "id": "1010",
+    "italian": "deluso",
+    "chinese": "失望的",
+    "english": "disappointed",
+    "pronunciation": "deˈluzo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369451Z",
+    "examples": [
+      "È molto deluso. - 非常失望的。",
+      "Sembra deluso. - 看起来失望的。"
+    ]
+  },
+  {
+    "id": "1011",
+    "italian": "stanco",
+    "chinese": "累的",
+    "english": "tired",
+    "pronunciation": "ˈstanko",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369452Z",
+    "examples": [
+      "È molto stanco. - 非常累的。",
+      "Sembra stanco. - 看起来累的。"
+    ]
+  },
+  {
+    "id": "1012",
+    "italian": "riposato",
+    "chinese": "休息好的",
+    "english": "rested",
+    "pronunciation": "ripoˈzato",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369453Z",
+    "examples": [
+      "È molto riposato. - 非常休息好的。",
+      "Sembra riposato. - 看起来休息好的。"
+    ]
+  },
+  {
+    "id": "1013",
+    "italian": "malato",
+    "chinese": "生病的",
+    "english": "sick",
+    "pronunciation": "maˈlato",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369454Z",
+    "examples": [
+      "È molto malato. - 非常生病的。",
+      "Sembra malato. - 看起来生病的。"
+    ]
+  },
+  {
+    "id": "1014",
+    "italian": "sano",
+    "chinese": "健康的",
+    "english": "healthy",
+    "pronunciation": "ˈsano",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369455Z",
+    "examples": [
+      "È molto sano. - 非常健康的。",
+      "Sembra sano. - 看起来健康的。"
+    ]
+  },
+  {
+    "id": "1015",
+    "italian": "libero",
+    "chinese": "自由的",
+    "english": "free",
+    "pronunciation": "ˈlibero",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369456Z",
+    "examples": [
+      "È molto libero. - 非常自由的。",
+      "Sembra libero. - 看起来自由的。"
+    ]
+  },
+  {
+    "id": "1016",
+    "italian": "occupato",
+    "chinese": "忙的",
+    "english": "busy",
+    "pronunciation": "okkuˈpato",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369458Z",
+    "examples": [
+      "È molto occupato. - 非常忙的。",
+      "Sembra occupato. - 看起来忙的。"
+    ]
+  },
+  {
+    "id": "1017",
+    "italian": "disponibile",
+    "chinese": "有空的",
+    "english": "available",
+    "pronunciation": "disponiˈbile",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369459Z",
+    "examples": [
+      "È molto disponibile. - 非常有空的。",
+      "Sembra disponibile. - 看起来有空的。"
+    ]
+  },
+  {
+    "id": "1018",
+    "italian": "pronto",
+    "chinese": "准备好的",
+    "english": "ready",
+    "pronunciation": "ˈpronto",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369460Z",
+    "examples": [
+      "È molto pronto. - 非常准备好的。",
+      "Sembra pronto. - 看起来准备好的。"
+    ]
+  },
+  {
+    "id": "1019",
+    "italian": "sicuro",
+    "chinese": "安全的",
+    "english": "safe",
+    "pronunciation": "siˈkuro",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369461Z",
+    "examples": [
+      "È molto sicuro. - 非常安全的。",
+      "Sembra sicuro. - 看起来安全的。"
+    ]
+  },
+  {
+    "id": "1020",
+    "italian": "pericoloso",
+    "chinese": "危险的",
+    "english": "dangerous",
+    "pronunciation": "perikoˈlozo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369462Z",
+    "examples": [
+      "È molto pericoloso. - 非常危险的。",
+      "Sembra pericoloso. - 看起来危险的。"
+    ]
+  },
+  {
+    "id": "1021",
+    "italian": "comodo",
+    "chinese": "舒适的",
+    "english": "comfortable",
+    "pronunciation": "ˈkomodo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369463Z",
+    "examples": [
+      "È molto comodo. - 非常舒适的。",
+      "Sembra comodo. - 看起来舒适的。"
+    ]
+  },
+  {
+    "id": "1022",
+    "italian": "scomodo",
+    "chinese": "不舒服的",
+    "english": "uncomfortable",
+    "pronunciation": "ˈskomodo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369464Z",
+    "examples": [
+      "È molto scomodo. - 非常不舒服的。",
+      "Sembra scomodo. - 看起来不舒服的。"
+    ]
+  },
+  {
+    "id": "1023",
+    "italian": "utile",
+    "chinese": "有用的",
+    "english": "useful",
+    "pronunciation": "ˈutile",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369466Z",
+    "examples": [
+      "È molto utile. - 非常有用的。",
+      "Sembra utile. - 看起来有用的。"
+    ]
+  },
+  {
+    "id": "1024",
+    "italian": "inutile",
+    "chinese": "无用的",
+    "english": "useless",
+    "pronunciation": "iˈnutile",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369468Z",
+    "examples": [
+      "È molto inutile. - 非常无用的。",
+      "Sembra inutile. - 看起来无用的。"
+    ]
+  },
+  {
+    "id": "1025",
+    "italian": "sempre",
+    "chinese": "总是",
+    "english": "always",
+    "pronunciation": "ˈsɛmpre",
+    "category": "时间副词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369469Z",
+    "examples": [
+      "È molto sempre. - 非常总是。",
+      "Sembra sempre. - 看起来总是。"
+    ]
+  },
+  {
+    "id": "1026",
+    "italian": "spesso",
+    "chinese": "经常",
+    "english": "often",
+    "pronunciation": "ˈspesso",
+    "category": "时间副词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369470Z",
+    "examples": [
+      "È molto spesso. - 非常经常。",
+      "Sembra spesso. - 看起来经常。"
+    ]
+  },
+  {
+    "id": "1027",
+    "italian": "qualche volta",
+    "chinese": "有时",
+    "english": "sometimes",
+    "pronunciation": "ˈkwalke ˈvolta",
+    "category": "时间副词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369471Z",
+    "examples": [
+      "È molto qualche volta. - 非常有时。",
+      "Sembra qualche volta. - 看起来有时。"
+    ]
+  },
+  {
+    "id": "1028",
+    "italian": "raramente",
+    "chinese": "很少",
+    "english": "rarely",
+    "pronunciation": "raraˈmente",
+    "category": "时间副词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369472Z",
+    "examples": [
+      "È molto raramente. - 非常很少。",
+      "Sembra raramente. - 看起来很少。"
+    ]
+  },
+  {
+    "id": "1029",
+    "italian": "mai",
+    "chinese": "从不",
+    "english": "never",
+    "pronunciation": "ˈmai",
+    "category": "时间副词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369473Z",
+    "examples": [
+      "È molto mai. - 非常从不。",
+      "Sembra mai. - 看起来从不。"
+    ]
+  },
+  {
+    "id": "1030",
+    "italian": "ancora",
+    "chinese": "还，仍然",
+    "english": "still",
+    "pronunciation": "aŋˈkora",
+    "category": "时间副词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369474Z",
+    "examples": [
+      "È molto ancora. - 非常还，仍然。",
+      "Sembra ancora. - 看起来还，仍然。"
+    ]
+  },
+  {
+    "id": "1031",
+    "italian": "già",
+    "chinese": "已经",
+    "english": "already",
+    "pronunciation": "ˈdʒa",
+    "category": "时间副词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369475Z",
+    "examples": [
+      "È molto già. - 非常已经。",
+      "Sembra già. - 看起来已经。"
+    ]
+  },
+  {
+    "id": "1032",
+    "italian": "subito",
+    "chinese": "立刻",
+    "english": "immediately",
+    "pronunciation": "ˈsubito",
+    "category": "时间副词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369476Z",
+    "examples": [
+      "È molto subito. - 非常立刻。",
+      "Sembra subito. - 看起来立刻。"
+    ]
+  },
+  {
+    "id": "1033",
+    "italian": "presto",
+    "chinese": "早，快",
+    "english": "early/soon",
+    "pronunciation": "ˈpresto",
+    "category": "时间副词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369478Z",
+    "examples": [
+      "È molto presto. - 非常早，快。",
+      "Sembra presto. - 看起来早，快。"
+    ]
+  },
+  {
+    "id": "1034",
+    "italian": "tardi",
+    "chinese": "晚",
+    "english": "late",
+    "pronunciation": "ˈtardi",
+    "category": "时间副词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369479Z",
+    "examples": [
+      "È molto tardi. - 非常晚。",
+      "Sembra tardi. - 看起来晚。"
+    ]
+  },
+  {
+    "id": "1035",
+    "italian": "recentemente",
+    "chinese": "最近",
+    "english": "recently",
+    "pronunciation": "retʃenteˈmente",
+    "category": "时间副词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369480Z",
+    "examples": [
+      "È molto recentemente. - 非常最近。",
+      "Sembra recentemente. - 看起来最近。"
+    ]
+  },
+  {
+    "id": "1036",
+    "italian": "ultimamente",
+    "chinese": "最近",
+    "english": "lately",
+    "pronunciation": "ultimaˈmente",
+    "category": "时间副词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369481Z",
+    "examples": [
+      "È molto ultimamente. - 非常最近。",
+      "Sembra ultimamente. - 看起来最近。"
+    ]
+  },
+  {
+    "id": "1037",
+    "italian": "finalmente",
+    "chinese": "终于",
+    "english": "finally",
+    "pronunciation": "finalˈmente",
+    "category": "时间副词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369482Z",
+    "examples": [
+      "È molto finalmente. - 非常终于。",
+      "Sembra finalmente. - 看起来终于。"
+    ]
+  },
+  {
+    "id": "1038",
+    "italian": "improvvisamente",
+    "chinese": "突然",
+    "english": "suddenly",
+    "pronunciation": "improvvizaˈmente",
+    "category": "时间副词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369483Z",
+    "examples": [
+      "È molto improvvisamente. - 非常突然。",
+      "Sembra improvvisamente. - 看起来突然。"
+    ]
+  },
+  {
+    "id": "1039",
+    "italian": "molto",
+    "chinese": "很，非常",
+    "english": "very",
+    "pronunciation": "ˈmolto",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369484Z",
+    "examples": [
+      "È molto molto. - 非常很，非常。",
+      "Sembra molto. - 看起来很，非常。"
+    ]
+  },
+  {
+    "id": "1040",
+    "italian": "poco",
+    "chinese": "少",
+    "english": "little",
+    "pronunciation": "ˈpɔko",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369485Z",
+    "examples": [
+      "È molto poco. - 非常少。",
+      "Sembra poco. - 看起来少。"
+    ]
+  },
+  {
+    "id": "1041",
+    "italian": "troppo",
+    "chinese": "太",
+    "english": "too much",
+    "pronunciation": "ˈtrɔppo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369487Z",
+    "examples": [
+      "È molto troppo. - 非常太。",
+      "Sembra troppo. - 看起来太。"
+    ]
+  },
+  {
+    "id": "1042",
+    "italian": "abbastanza",
+    "chinese": "足够",
+    "english": "enough",
+    "pronunciation": "abbasˈtantsa",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369488Z",
+    "examples": [
+      "È molto abbastanza. - 非常足够。",
+      "Sembra abbastanza. - 看起来足够。"
+    ]
+  },
+  {
+    "id": "1043",
+    "italian": "quasi",
+    "chinese": "几乎",
+    "english": "almost",
+    "pronunciation": "ˈkwazi",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369489Z",
+    "examples": [
+      "È molto quasi. - 非常几乎。",
+      "Sembra quasi. - 看起来几乎。"
+    ]
+  },
+  {
+    "id": "1044",
+    "italian": "completamente",
+    "chinese": "完全地",
+    "english": "completely",
+    "pronunciation": "kompletaˈmente",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369490Z",
+    "examples": [
+      "È molto completamente. - 非常完全地。",
+      "Sembra completamente. - 看起来完全地。"
+    ]
+  },
+  {
+    "id": "1045",
+    "italian": "assolutamente",
+    "chinese": "绝对地",
+    "english": "absolutely",
+    "pronunciation": "assolutaˈmente",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369492Z",
+    "examples": [
+      "È molto assolutamente. - 非常绝对地。",
+      "Sembra assolutamente. - 看起来绝对地。"
+    ]
+  },
+  {
+    "id": "1046",
+    "italian": "veramente",
+    "chinese": "真正地",
+    "english": "really",
+    "pronunciation": "veraˈmente",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369493Z",
+    "examples": [
+      "È molto veramente. - 非常真正地。",
+      "Sembra veramente. - 看起来真正地。"
+    ]
+  },
+  {
+    "id": "1047",
+    "italian": "probabilmente",
+    "chinese": "可能",
+    "english": "probably",
+    "pronunciation": "probabilˈmente",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369495Z",
+    "examples": [
+      "È molto probabilmente. - 非常可能。",
+      "Sembra probabilmente. - 看起来可能。"
+    ]
+  },
+  {
+    "id": "1048",
+    "italian": "certamente",
+    "chinese": "当然",
+    "english": "certainly",
+    "pronunciation": "tʃertaˈmente",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369496Z",
+    "examples": [
+      "È molto certamente. - 非常当然。",
+      "Sembra certamente. - 看起来当然。"
+    ]
+  },
+  {
+    "id": "1049",
+    "italian": "sicuramente",
+    "chinese": "肯定",
+    "english": "surely",
+    "pronunciation": "sikuraˈmente",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369497Z",
+    "examples": [
+      "È molto sicuramente. - 非常肯定。",
+      "Sembra sicuramente. - 看起来肯定。"
+    ]
+  },
+  {
+    "id": "1050",
+    "italian": "forse",
+    "chinese": "也许",
+    "english": "maybe",
+    "pronunciation": "ˈforse",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369498Z",
+    "examples": [
+      "È molto forse. - 非常也许。",
+      "Sembra forse. - 看起来也许。"
+    ]
+  },
+  {
+    "id": "1051",
+    "italian": "bene",
+    "chinese": "好",
+    "english": "well",
+    "pronunciation": "ˈbɛne",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369499Z",
+    "examples": [
+      "È molto bene. - 非常好。",
+      "Sembra bene. - 看起来好。"
+    ]
+  },
+  {
+    "id": "1052",
+    "italian": "male",
+    "chinese": "坏",
+    "english": "badly",
+    "pronunciation": "ˈmale",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369515Z",
+    "examples": [
+      "È molto male. - 非常坏。",
+      "Sembra male. - 看起来坏。"
+    ]
+  },
+  {
+    "id": "1053",
+    "italian": "meglio",
+    "chinese": "更好",
+    "english": "better",
+    "pronunciation": "ˈmeʎʎo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369516Z",
+    "examples": [
+      "È molto meglio. - 非常更好。",
+      "Sembra meglio. - 看起来更好。"
+    ]
+  },
+  {
+    "id": "1054",
+    "italian": "peggio",
+    "chinese": "更坏",
+    "english": "worse",
+    "pronunciation": "ˈpeddʒo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369517Z",
+    "examples": [
+      "È molto peggio. - 非常更坏。",
+      "Sembra peggio. - 看起来更坏。"
+    ]
+  },
+  {
+    "id": "1055",
+    "italian": "insieme",
+    "chinese": "一起",
+    "english": "together",
+    "pronunciation": "inˈsjeme",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369519Z",
+    "examples": [
+      "È molto insieme. - 非常一起。",
+      "Sembra insieme. - 看起来一起。"
+    ]
+  },
+  {
+    "id": "1056",
+    "italian": "separatamente",
+    "chinese": "分别地",
+    "english": "separately",
+    "pronunciation": "separataˈmente",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369520Z",
+    "examples": [
+      "È molto separatamente. - 非常分别地。",
+      "Sembra separatamente. - 看起来分别地。"
+    ]
+  },
+  {
+    "id": "1057",
+    "italian": "velocemente",
+    "chinese": "快速地",
+    "english": "quickly",
+    "pronunciation": "velotʃeˈmente",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369521Z",
+    "examples": [
+      "È molto velocemente. - 非常快速地。",
+      "Sembra velocemente. - 看起来快速地。"
+    ]
+  },
+  {
+    "id": "1058",
+    "italian": "lentamente",
+    "chinese": "慢慢地",
+    "english": "slowly",
+    "pronunciation": "lentaˈmente",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369523Z",
+    "examples": [
+      "È molto lentamente. - 非常慢慢地。",
+      "Sembra lentamente. - 看起来慢慢地。"
+    ]
+  },
+  {
+    "id": "1059",
+    "italian": "attentamente",
+    "chinese": "仔细地",
+    "english": "carefully",
+    "pronunciation": "attentaˈmente",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369524Z",
+    "examples": [
+      "È molto attentamente. - 非常仔细地。",
+      "Sembra attentamente. - 看起来仔细地。"
+    ]
+  },
+  {
+    "id": "1060",
+    "italian": "facilmente",
+    "chinese": "容易地",
+    "english": "easily",
+    "pronunciation": "fatʃilˈmente",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369525Z",
+    "examples": [
+      "È molto facilmente. - 非常容易地。",
+      "Sembra facilmente. - 看起来容易地。"
+    ]
+  },
+  {
+    "id": "1061",
+    "italian": "difficilmente",
+    "chinese": "困难地",
+    "english": "hardly",
+    "pronunciation": "diffitʃilˈmente",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369526Z",
+    "examples": [
+      "È molto difficilmente. - 非常困难地。",
+      "Sembra difficilmente. - 看起来困难地。"
+    ]
+  },
+  {
+    "id": "1062",
+    "italian": "normalmente",
+    "chinese": "通常",
+    "english": "normally",
+    "pronunciation": "normalˈmente",
+    "category": "时间副词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369527Z",
+    "examples": [
+      "È molto normalmente. - 非常通常。",
+      "Sembra normalmente. - 看起来通常。"
+    ]
+  },
+  {
+    "id": "1063",
+    "italian": "generalmente",
+    "chinese": "一般地",
+    "english": "generally",
+    "pronunciation": "dʒeneralˈmente",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369528Z",
+    "examples": [
+      "È molto generalmente. - 非常一般地。",
+      "Sembra generalmente. - 看起来一般地。"
+    ]
+  },
+  {
+    "id": "1064",
+    "italian": "specialmente",
+    "chinese": "特别地",
+    "english": "especially",
+    "pronunciation": "spetʃalˈmente",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369530Z",
+    "examples": [
+      "È molto specialmente. - 非常特别地。",
+      "Sembra specialmente. - 看起来特别地。"
+    ]
+  },
+  {
+    "id": "1065",
+    "italian": "particolarmente",
+    "chinese": "尤其",
+    "english": "particularly",
+    "pronunciation": "partikolarˈmente",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369531Z",
+    "examples": [
+      "È molto particolarmente. - 非常尤其。",
+      "Sembra particolarmente. - 看起来尤其。"
+    ]
+  },
+  {
+    "id": "1066",
+    "italian": "solamente",
+    "chinese": "仅仅",
+    "english": "only",
+    "pronunciation": "solaˈmente",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369532Z",
+    "examples": [
+      "È molto solamente. - 非常仅仅。",
+      "Sembra solamente. - 看起来仅仅。"
+    ]
+  },
+  {
+    "id": "1067",
+    "italian": "anche",
+    "chinese": "也",
+    "english": "also",
+    "pronunciation": "ˈaŋke",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369533Z",
+    "examples": [
+      "È molto anche. - 非常也。",
+      "Sembra anche. - 看起来也。"
+    ]
+  },
+  {
+    "id": "1068",
+    "italian": "nemmeno",
+    "chinese": "甚至不",
+    "english": "not even",
+    "pronunciation": "nemˈmeno",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369534Z",
+    "examples": [
+      "È molto nemmeno. - 非常甚至不。",
+      "Sembra nemmeno. - 看起来甚至不。"
+    ]
+  },
+  {
+    "id": "1069",
+    "italian": "perfino",
+    "chinese": "甚至",
+    "english": "even",
+    "pronunciation": "perˈfino",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:16:19.369535Z",
+    "examples": [
+      "È molto perfino. - 非常甚至。",
+      "Sembra perfino. - 看起来甚至。"
+    ]
+  },
+  {
+    "id": "1070",
+    "italian": "mobile",
+    "chinese": "家具",
+    "english": "furniture",
+    "pronunciation": "ˈmɔbile",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932689Z",
+    "examples": [
+      "Guarda mobile! - 看那个家具！",
+      "Mi piace mobile. - 我喜欢家具。"
+    ]
+  },
+  {
+    "id": "1071",
+    "italian": "divano",
+    "chinese": "沙发",
+    "english": "sofa",
+    "pronunciation": "diˈvano",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932698Z",
+    "examples": [
+      "Guarda divano! - 看那个沙发！",
+      "Mi piace divano. - 我喜欢沙发。"
+    ]
+  },
+  {
+    "id": "1072",
+    "italian": "poltrona",
+    "chinese": "扶手椅",
+    "english": "armchair",
+    "pronunciation": "polˈtrona",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932700Z",
+    "examples": [
+      "Guarda poltrona! - 看那个扶手椅！",
+      "Mi piace poltrona. - 我喜欢扶手椅。"
+    ]
+  },
+  {
+    "id": "1073",
+    "italian": "scrivania",
+    "chinese": "书桌",
+    "english": "desk",
+    "pronunciation": "skrivaˈnia",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932702Z",
+    "examples": [
+      "Guarda scrivania! - 看那个书桌！",
+      "Mi piace scrivania. - 我喜欢书桌。"
+    ]
+  },
+  {
+    "id": "1074",
+    "italian": "scaffale",
+    "chinese": "书架",
+    "english": "bookshelf",
+    "pronunciation": "skafˈfale",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932703Z",
+    "examples": [
+      "Guarda scaffale! - 看那个书架！",
+      "Mi piace scaffale. - 我喜欢书架。"
+    ]
+  },
+  {
+    "id": "1075",
+    "italian": "armadio",
+    "chinese": "衣柜",
+    "english": "wardrobe",
+    "pronunciation": "arˈmadjo",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932704Z",
+    "examples": [
+      "Guarda armadio! - 看那个衣柜！",
+      "Mi piace armadio. - 我喜欢衣柜。"
+    ]
+  },
+  {
+    "id": "1076",
+    "italian": "cassetto",
+    "chinese": "抽屉",
+    "english": "drawer",
+    "pronunciation": "kasˈsetto",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932705Z",
+    "examples": [
+      "Guarda cassetto! - 看那个抽屉！",
+      "Mi piace cassetto. - 我喜欢抽屉。"
+    ]
+  },
+  {
+    "id": "1077",
+    "italian": "specchio",
+    "chinese": "镜子",
+    "english": "mirror",
+    "pronunciation": "ˈspekkjo",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932706Z",
+    "examples": [
+      "Guarda specchio! - 看那个镜子！",
+      "Mi piace specchio. - 我喜欢镜子。"
+    ]
+  },
+  {
+    "id": "1078",
+    "italian": "tenda",
+    "chinese": "窗帘",
+    "english": "curtain",
+    "pronunciation": "ˈtenda",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932707Z",
+    "examples": [
+      "Guarda tenda! - 看那个窗帘！",
+      "Mi piace tenda. - 我喜欢窗帘。"
+    ]
+  },
+  {
+    "id": "1079",
+    "italian": "tappeto",
+    "chinese": "地毯",
+    "english": "carpet",
+    "pronunciation": "tapˈpeto",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932708Z",
+    "examples": [
+      "Guarda tappeto! - 看那个地毯！",
+      "Mi piace tappeto. - 我喜欢地毯。"
+    ]
+  },
+  {
+    "id": "1080",
+    "italian": "cuscino",
+    "chinese": "靠垫",
+    "english": "cushion",
+    "pronunciation": "kuʃˈʃino",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932710Z",
+    "examples": [
+      "Guarda cuscino! - 看那个靠垫！",
+      "Mi piace cuscino. - 我喜欢靠垫。"
+    ]
+  },
+  {
+    "id": "1081",
+    "italian": "coperta",
+    "chinese": "毯子",
+    "english": "blanket",
+    "pronunciation": "koˈperta",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932711Z",
+    "examples": [
+      "Guarda coperta! - 看那个毯子！",
+      "Mi piace coperta. - 我喜欢毯子。"
+    ]
+  },
+  {
+    "id": "1082",
+    "italian": "lenzuolo",
+    "chinese": "床单",
+    "english": "sheet",
+    "pronunciation": "lenˈtswɔlo",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932712Z",
+    "examples": [
+      "Guarda lenzuolo! - 看那个床单！",
+      "Mi piace lenzuolo. - 我喜欢床单。"
+    ]
+  },
+  {
+    "id": "1083",
+    "italian": "lampada",
+    "chinese": "台灯",
+    "english": "lamp",
+    "pronunciation": "ˈlampada",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932713Z",
+    "examples": [
+      "Guarda lampada! - 看那个台灯！",
+      "Mi piace lampada. - 我喜欢台灯。"
+    ]
+  },
+  {
+    "id": "1084",
+    "italian": "televisione",
+    "chinese": "电视",
+    "english": "television",
+    "pronunciation": "televiˈzjone",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932714Z",
+    "examples": [
+      "Guarda televisione! - 看那个电视！",
+      "Mi piace televisione. - 我喜欢电视。"
+    ]
+  },
+  {
+    "id": "1085",
+    "italian": "computer",
+    "chinese": "电脑",
+    "english": "computer",
+    "pronunciation": "komˈpjuter",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932715Z",
+    "examples": [
+      "Guarda computer! - 看那个电脑！",
+      "Mi piace computer. - 我喜欢电脑。"
+    ]
+  },
+  {
+    "id": "1086",
+    "italian": "orologio",
+    "chinese": "钟表",
+    "english": "clock",
+    "pronunciation": "oroˈlɔdʒo",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932716Z",
+    "examples": [
+      "Guarda orologio! - 看那个钟表！",
+      "Mi piace orologio. - 我喜欢钟表。"
+    ]
+  },
+  {
+    "id": "1087",
+    "italian": "quadro",
+    "chinese": "画",
+    "english": "painting",
+    "pronunciation": "ˈkwadro",
+    "category": "文化艺术",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932717Z",
+    "examples": [
+      "Guarda quadro! - 看那个画！",
+      "Mi piace quadro. - 我喜欢画。"
+    ]
+  },
+  {
+    "id": "1088",
+    "italian": "vaso",
+    "chinese": "花瓶",
+    "english": "vase",
+    "pronunciation": "ˈvazo",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932718Z",
+    "examples": [
+      "Guarda vaso! - 看那个花瓶！",
+      "Mi piace vaso. - 我喜欢花瓶。"
+    ]
+  },
+  {
+    "id": "1089",
+    "italian": "pianta",
+    "chinese": "植物",
+    "english": "plant",
+    "pronunciation": "ˈpjanta",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932719Z",
+    "examples": [
+      "Guarda pianta! - 看那个植物！",
+      "Mi piace pianta. - 我喜欢植物。"
+    ]
+  },
+  {
+    "id": "1090",
+    "italian": "elettrodomestico",
+    "chinese": "家用电器",
+    "english": "appliance",
+    "pronunciation": "elettrodoˈmestiko",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932721Z",
+    "examples": [
+      "Guarda elettrodomestico! - 看那个家用电器！",
+      "Mi piace elettrodomestico. - 我喜欢家用电器。"
+    ]
+  },
+  {
+    "id": "1091",
+    "italian": "frigorifero",
+    "chinese": "冰箱",
+    "english": "refrigerator",
+    "pronunciation": "friɡoˈrifero",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932723Z",
+    "examples": [
+      "Guarda frigorifero! - 看那个冰箱！",
+      "Mi piace frigorifero. - 我喜欢冰箱。"
+    ]
+  },
+  {
+    "id": "1092",
+    "italian": "forno",
+    "chinese": "烤箱",
+    "english": "oven",
+    "pronunciation": "ˈforno",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932724Z",
+    "examples": [
+      "Guarda forno! - 看那个烤箱！",
+      "Mi piace forno. - 我喜欢烤箱。"
+    ]
+  },
+  {
+    "id": "1093",
+    "italian": "microonde",
+    "chinese": "微波炉",
+    "english": "microwave",
+    "pronunciation": "mikroˈonde",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932725Z",
+    "examples": [
+      "Guarda microonde! - 看那个微波炉！",
+      "Mi piace microonde. - 我喜欢微波炉。"
+    ]
+  },
+  {
+    "id": "1094",
+    "italian": "lavatrice",
+    "chinese": "洗衣机",
+    "english": "washing machine",
+    "pronunciation": "lavaˈtriʧe",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932726Z",
+    "examples": [
+      "Guarda lavatrice! - 看那个洗衣机！",
+      "Mi piace lavatrice. - 我喜欢洗衣机。"
+    ]
+  },
+  {
+    "id": "1095",
+    "italian": "asciugatrice",
+    "chinese": "烘干机",
+    "english": "dryer",
+    "pronunciation": "aʃʃuɡaˈtriʧe",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932727Z",
+    "examples": [
+      "Guarda asciugatrice! - 看那个烘干机！",
+      "Mi piace asciugatrice. - 我喜欢烘干机。"
+    ]
+  },
+  {
+    "id": "1096",
+    "italian": "lavastoviglie",
+    "chinese": "洗碗机",
+    "english": "dishwasher",
+    "pronunciation": "lavaˈstoviʎʎe",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932728Z",
+    "examples": [
+      "Guarda lavastoviglie! - 看那个洗碗机！",
+      "Mi piace lavastoviglie. - 我喜欢洗碗机。"
+    ]
+  },
+  {
+    "id": "1097",
+    "italian": "aspirapolvere",
+    "chinese": "吸尘器",
+    "english": "vacuum cleaner",
+    "pronunciation": "aspiraˈpolvere",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932729Z",
+    "examples": [
+      "Guarda aspirapolvere! - 看那个吸尘器！",
+      "Mi piace aspirapolvere. - 我喜欢吸尘器。"
+    ]
+  },
+  {
+    "id": "1098",
+    "italian": "ferro da stiro",
+    "chinese": "熨斗",
+    "english": "iron",
+    "pronunciation": "ˈfɛrro da ˈstiro",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932730Z",
+    "examples": [
+      "Guarda ferro da stiro! - 看那个熨斗！",
+      "Mi piace ferro da stiro. - 我喜欢熨斗。"
+    ]
+  },
+  {
+    "id": "1099",
+    "italian": "scopa",
+    "chinese": "扫帚",
+    "english": "broom",
+    "pronunciation": "ˈskopa",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932731Z",
+    "examples": [
+      "Guarda scopa! - 看那个扫帚！",
+      "Mi piace scopa. - 我喜欢扫帚。"
+    ]
+  },
+  {
+    "id": "1100",
+    "italian": "secchio",
+    "chinese": "水桶",
+    "english": "bucket",
+    "pronunciation": "ˈsekkjo",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932733Z",
+    "examples": [
+      "Guarda secchio! - 看那个水桶！",
+      "Mi piace secchio. - 我喜欢水桶。"
+    ]
+  },
+  {
+    "id": "1101",
+    "italian": "spugna",
+    "chinese": "海绵",
+    "english": "sponge",
+    "pronunciation": "ˈspuɲɲa",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932734Z",
+    "examples": [
+      "Guarda spugna! - 看那个海绵！",
+      "Mi piace spugna. - 我喜欢海绵。"
+    ]
+  },
+  {
+    "id": "1102",
+    "italian": "detersivo",
+    "chinese": "洗涤剂",
+    "english": "detergent",
+    "pronunciation": "deterˈsivo",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932735Z",
+    "examples": [
+      "Guarda detersivo! - 看那个洗涤剂！",
+      "Mi piace detersivo. - 我喜欢洗涤剂。"
+    ]
+  },
+  {
+    "id": "1103",
+    "italian": "sapone",
+    "chinese": "肥皂",
+    "english": "soap",
+    "pronunciation": "saˈpone",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932736Z",
+    "examples": [
+      "Guarda sapone! - 看那个肥皂！",
+      "Mi piace sapone. - 我喜欢肥皂。"
+    ]
+  },
+  {
+    "id": "1104",
+    "italian": "shampoo",
+    "chinese": "洗发水",
+    "english": "shampoo",
+    "pronunciation": "ʃamˈpɔ",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932737Z",
+    "examples": [
+      "Guarda shampoo! - 看那个洗发水！",
+      "Mi piace shampoo. - 我喜欢洗发水。"
+    ]
+  },
+  {
+    "id": "1105",
+    "italian": "asciugamano",
+    "chinese": "毛巾",
+    "english": "towel",
+    "pronunciation": "aʃʃuɡaˈmano",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932738Z",
+    "examples": [
+      "Guarda asciugamano! - 看那个毛巾！",
+      "Mi piace asciugamano. - 我喜欢毛巾。"
+    ]
+  },
+  {
+    "id": "1106",
+    "italian": "spazzolino",
+    "chinese": "牙刷",
+    "english": "toothbrush",
+    "pronunciation": "spattsoˈlino",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932739Z",
+    "examples": [
+      "Guarda spazzolino! - 看那个牙刷！",
+      "Mi piace spazzolino. - 我喜欢牙刷。"
+    ]
+  },
+  {
+    "id": "1107",
+    "italian": "dentifricio",
+    "chinese": "牙膏",
+    "english": "toothpaste",
+    "pronunciation": "dentiˈfriʧo",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932741Z",
+    "examples": [
+      "Guarda dentifricio! - 看那个牙膏！",
+      "Mi piace dentifricio. - 我喜欢牙膏。"
+    ]
+  },
+  {
+    "id": "1108",
+    "italian": "pettine",
+    "chinese": "梳子",
+    "english": "comb",
+    "pronunciation": "ˈpettine",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932742Z",
+    "examples": [
+      "Guarda pettine! - 看那个梳子！",
+      "Mi piace pettine. - 我喜欢梳子。"
+    ]
+  },
+  {
+    "id": "1109",
+    "italian": "forbici",
+    "chinese": "剪刀",
+    "english": "scissors",
+    "pronunciation": "ˈforbiʧi",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932743Z",
+    "examples": [
+      "Guarda forbici! - 看那个剪刀！",
+      "Mi piace forbici. - 我喜欢剪刀。"
+    ]
+  },
+  {
+    "id": "1110",
+    "italian": "vestito",
+    "chinese": "连衣裙",
+    "english": "dress",
+    "pronunciation": "vesˈtito",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932746Z",
+    "examples": [
+      "Guarda vestito! - 看那个连衣裙！",
+      "Mi piace vestito. - 我喜欢连衣裙。"
+    ]
+  },
+  {
+    "id": "1111",
+    "italian": "gonna",
+    "chinese": "裙子",
+    "english": "skirt",
+    "pronunciation": "ˈɡonna",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932747Z",
+    "examples": [
+      "Guarda gonna! - 看那个裙子！",
+      "Mi piace gonna. - 我喜欢裙子。"
+    ]
+  },
+  {
+    "id": "1112",
+    "italian": "pantaloni",
+    "chinese": "裤子",
+    "english": "pants",
+    "pronunciation": "pantaˈloni",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932748Z",
+    "examples": [
+      "Guarda pantaloni! - 看那个裤子！",
+      "Mi piace pantaloni. - 我喜欢裤子。"
+    ]
+  },
+  {
+    "id": "1113",
+    "italian": "jeans",
+    "chinese": "牛仔裤",
+    "english": "jeans",
+    "pronunciation": "dʒins",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932749Z",
+    "examples": [
+      "Guarda jeans! - 看那个牛仔裤！",
+      "Mi piace jeans. - 我喜欢牛仔裤。"
+    ]
+  },
+  {
+    "id": "1114",
+    "italian": "maglietta",
+    "chinese": "T恤",
+    "english": "t-shirt",
+    "pronunciation": "maʎˈʎetta",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932750Z",
+    "examples": [
+      "Guarda maglietta! - 看那个T恤！",
+      "Mi piace maglietta. - 我喜欢T恤。"
+    ]
+  },
+  {
+    "id": "1115",
+    "italian": "camicia",
+    "chinese": "衬衫",
+    "english": "shirt",
+    "pronunciation": "kaˈmiʧa",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932752Z",
+    "examples": [
+      "Guarda camicia! - 看那个衬衫！",
+      "Mi piace camicia. - 我喜欢衬衫。"
+    ]
+  },
+  {
+    "id": "1116",
+    "italian": "maglione",
+    "chinese": "毛衣",
+    "english": "sweater",
+    "pronunciation": "maʎˈʎone",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932753Z",
+    "examples": [
+      "Guarda maglione! - 看那个毛衣！",
+      "Mi piace maglione. - 我喜欢毛衣。"
+    ]
+  },
+  {
+    "id": "1117",
+    "italian": "giacca",
+    "chinese": "夹克",
+    "english": "jacket",
+    "pronunciation": "ˈdʒakka",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932754Z",
+    "examples": [
+      "Guarda giacca! - 看那个夹克！",
+      "Mi piace giacca. - 我喜欢夹克。"
+    ]
+  },
+  {
+    "id": "1118",
+    "italian": "cappotto",
+    "chinese": "大衣",
+    "english": "coat",
+    "pronunciation": "kapˈpɔtto",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932755Z",
+    "examples": [
+      "Guarda cappotto! - 看那个大衣！",
+      "Mi piace cappotto. - 我喜欢大衣。"
+    ]
+  },
+  {
+    "id": "1119",
+    "italian": "impermeabile",
+    "chinese": "雨衣",
+    "english": "raincoat",
+    "pronunciation": "impermeˈabile",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932756Z",
+    "examples": [
+      "Guarda impermeabile! - 看那个雨衣！",
+      "Mi piace impermeabile. - 我喜欢雨衣。"
+    ]
+  },
+  {
+    "id": "1120",
+    "italian": "scarpe",
+    "chinese": "鞋子",
+    "english": "shoes",
+    "pronunciation": "ˈskarpe",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932757Z",
+    "examples": [
+      "Guarda scarpe! - 看那个鞋子！",
+      "Mi piace scarpe. - 我喜欢鞋子。"
+    ]
+  },
+  {
+    "id": "1121",
+    "italian": "stivali",
+    "chinese": "靴子",
+    "english": "boots",
+    "pronunciation": "stiˈvali",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932758Z",
+    "examples": [
+      "Guarda stivali! - 看那个靴子！",
+      "Mi piace stivali. - 我喜欢靴子。"
+    ]
+  },
+  {
+    "id": "1122",
+    "italian": "sandali",
+    "chinese": "凉鞋",
+    "english": "sandals",
+    "pronunciation": "ˈsandali",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932759Z",
+    "examples": [
+      "Guarda sandali! - 看那个凉鞋！",
+      "Mi piace sandali. - 我喜欢凉鞋。"
+    ]
+  },
+  {
+    "id": "1123",
+    "italian": "scarpe da ginnastica",
+    "chinese": "运动鞋",
+    "english": "sneakers",
+    "pronunciation": "ˈskarpe da dʒinˈnastika",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932760Z",
+    "examples": [
+      "Guarda scarpe da ginnastica! - 看那个运动鞋！",
+      "Mi piace scarpe da ginnastica. - 我喜欢运动鞋。"
+    ]
+  },
+  {
+    "id": "1124",
+    "italian": "calzini",
+    "chinese": "袜子",
+    "english": "socks",
+    "pronunciation": "kalˈtsini",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932761Z",
+    "examples": [
+      "Guarda calzini! - 看那个袜子！",
+      "Mi piace calzini. - 我喜欢袜子。"
+    ]
+  },
+  {
+    "id": "1125",
+    "italian": "cappello",
+    "chinese": "帽子",
+    "english": "hat",
+    "pronunciation": "kapˈpɛllo",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932763Z",
+    "examples": [
+      "Guarda cappello! - 看那个帽子！",
+      "Mi piace cappello. - 我喜欢帽子。"
+    ]
+  },
+  {
+    "id": "1126",
+    "italian": "berretto",
+    "chinese": "便帽",
+    "english": "cap",
+    "pronunciation": "berˈretto",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932764Z",
+    "examples": [
+      "Guarda berretto! - 看那个便帽！",
+      "Mi piace berretto. - 我喜欢便帽。"
+    ]
+  },
+  {
+    "id": "1127",
+    "italian": "sciarpa",
+    "chinese": "围巾",
+    "english": "scarf",
+    "pronunciation": "ˈʃarfa",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932765Z",
+    "examples": [
+      "Guarda sciarpa! - 看那个围巾！",
+      "Mi piace sciarpa. - 我喜欢围巾。"
+    ]
+  },
+  {
+    "id": "1128",
+    "italian": "guanti",
+    "chinese": "手套",
+    "english": "gloves",
+    "pronunciation": "ˈɡwanti",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932766Z",
+    "examples": [
+      "Guarda guanti! - 看那个手套！",
+      "Mi piace guanti. - 我喜欢手套。"
+    ]
+  },
+  {
+    "id": "1129",
+    "italian": "cintura",
+    "chinese": "腰带",
+    "english": "belt",
+    "pronunciation": "ʧinˈtura",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932767Z",
+    "examples": [
+      "Guarda cintura! - 看那个腰带！",
+      "Mi piace cintura. - 我喜欢腰带。"
+    ]
+  },
+  {
+    "id": "1130",
+    "italian": "cravatta",
+    "chinese": "领带",
+    "english": "tie",
+    "pronunciation": "kraˈvatta",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932769Z",
+    "examples": [
+      "Guarda cravatta! - 看那个领带！",
+      "Mi piace cravatta. - 我喜欢领带。"
+    ]
+  },
+  {
+    "id": "1131",
+    "italian": "occhiali",
+    "chinese": "眼镜",
+    "english": "glasses",
+    "pronunciation": "okˈkjali",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932770Z",
+    "examples": [
+      "Guarda occhiali! - 看那个眼镜！",
+      "Mi piace occhiali. - 我喜欢眼镜。"
+    ]
+  },
+  {
+    "id": "1132",
+    "italian": "occhiali da sole",
+    "chinese": "太阳镜",
+    "english": "sunglasses",
+    "pronunciation": "okˈkjali da ˈsole",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932771Z",
+    "examples": [
+      "Guarda occhiali da sole! - 看那个太阳镜！",
+      "Mi piace occhiali da sole. - 我喜欢太阳镜。"
+    ]
+  },
+  {
+    "id": "1133",
+    "italian": "orecchini",
+    "chinese": "耳环",
+    "english": "earrings",
+    "pronunciation": "orekˈkini",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932772Z",
+    "examples": [
+      "Guarda orecchini! - 看那个耳环！",
+      "Mi piace orecchini. - 我喜欢耳环。"
+    ]
+  },
+  {
+    "id": "1134",
+    "italian": "collana",
+    "chinese": "项链",
+    "english": "necklace",
+    "pronunciation": "kolˈlana",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932773Z",
+    "examples": [
+      "Guarda collana! - 看那个项链！",
+      "Mi piace collana. - 我喜欢项链。"
+    ]
+  },
+  {
+    "id": "1135",
+    "italian": "braccialetto",
+    "chinese": "手镯",
+    "english": "bracelet",
+    "pronunciation": "braʧʧaˈletto",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932774Z",
+    "examples": [
+      "Guarda braccialetto! - 看那个手镯！",
+      "Mi piace braccialetto. - 我喜欢手镯。"
+    ]
+  },
+  {
+    "id": "1136",
+    "italian": "anello",
+    "chinese": "戒指",
+    "english": "ring",
+    "pronunciation": "aˈnɛllo",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932775Z",
+    "examples": [
+      "Guarda anello! - 看那个戒指！",
+      "Mi piace anello. - 我喜欢戒指。"
+    ]
+  },
+  {
+    "id": "1137",
+    "italian": "borsa",
+    "chinese": "包",
+    "english": "bag",
+    "pronunciation": "ˈborsa",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932776Z",
+    "examples": [
+      "Guarda borsa! - 看那个包！",
+      "Mi piace borsa. - 我喜欢包。"
+    ]
+  },
+  {
+    "id": "1138",
+    "italian": "zaino",
+    "chinese": "背包",
+    "english": "backpack",
+    "pronunciation": "dzaˈino",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932778Z",
+    "examples": [
+      "Guarda zaino! - 看那个背包！",
+      "Mi piace zaino. - 我喜欢背包。"
+    ]
+  },
+  {
+    "id": "1139",
+    "italian": "portafoglio",
+    "chinese": "钱包",
+    "english": "wallet",
+    "pronunciation": "portaˈfɔʎʎo",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932779Z",
+    "examples": [
+      "Guarda portafoglio! - 看那个钱包！",
+      "Mi piace portafoglio. - 我喜欢钱包。"
+    ]
+  },
+  {
+    "id": "1140",
+    "italian": "corpo",
+    "chinese": "身体",
+    "english": "body",
+    "pronunciation": "ˈkɔrpo",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932780Z",
+    "examples": [
+      "Guarda corpo! - 看那个身体！",
+      "Mi piace corpo. - 我喜欢身体。"
+    ]
+  },
+  {
+    "id": "1141",
+    "italian": "testa",
+    "chinese": "头",
+    "english": "head",
+    "pronunciation": "ˈtɛsta",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932781Z",
+    "examples": [
+      "Guarda testa! - 看那个头！",
+      "Mi piace testa. - 我喜欢头。"
+    ]
+  },
+  {
+    "id": "1142",
+    "italian": "capelli",
+    "chinese": "头发",
+    "english": "hair",
+    "pronunciation": "kaˈpɛlli",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932782Z",
+    "examples": [
+      "Guarda capelli! - 看那个头发！",
+      "Mi piace capelli. - 我喜欢头发。"
+    ]
+  },
+  {
+    "id": "1143",
+    "italian": "viso",
+    "chinese": "脸",
+    "english": "face",
+    "pronunciation": "ˈvizo",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932783Z",
+    "examples": [
+      "Guarda viso! - 看那个脸！",
+      "Mi piace viso. - 我喜欢脸。"
+    ]
+  },
+  {
+    "id": "1144",
+    "italian": "fronte",
+    "chinese": "额头",
+    "english": "forehead",
+    "pronunciation": "ˈfronte",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932784Z",
+    "examples": [
+      "Guarda fronte! - 看那个额头！",
+      "Mi piace fronte. - 我喜欢额头。"
+    ]
+  },
+  {
+    "id": "1145",
+    "italian": "occhio",
+    "chinese": "眼睛",
+    "english": "eye",
+    "pronunciation": "ˈɔkkjo",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932785Z",
+    "examples": [
+      "Guarda occhio! - 看那个眼睛！",
+      "Mi piace occhio. - 我喜欢眼睛。"
+    ]
+  },
+  {
+    "id": "1146",
+    "italian": "sopracciglio",
+    "chinese": "眉毛",
+    "english": "eyebrow",
+    "pronunciation": "sopraʧˈʧiʎʎo",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932786Z",
+    "examples": [
+      "Guarda sopracciglio! - 看那个眉毛！",
+      "Mi piace sopracciglio. - 我喜欢眉毛。"
+    ]
+  },
+  {
+    "id": "1147",
+    "italian": "naso",
+    "chinese": "鼻子",
+    "english": "nose",
+    "pronunciation": "ˈnazo",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932787Z",
+    "examples": [
+      "Guarda naso! - 看那个鼻子！",
+      "Mi piace naso. - 我喜欢鼻子。"
+    ]
+  },
+  {
+    "id": "1148",
+    "italian": "orecchio",
+    "chinese": "耳朵",
+    "english": "ear",
+    "pronunciation": "oˈrekkjo",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932789Z",
+    "examples": [
+      "Guarda orecchio! - 看那个耳朵！",
+      "Mi piace orecchio. - 我喜欢耳朵。"
+    ]
+  },
+  {
+    "id": "1149",
+    "italian": "bocca",
+    "chinese": "嘴",
+    "english": "mouth",
+    "pronunciation": "ˈbokka",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932790Z",
+    "examples": [
+      "Guarda bocca! - 看那个嘴！",
+      "Mi piace bocca. - 我喜欢嘴。"
+    ]
+  },
+  {
+    "id": "1150",
+    "italian": "labbro",
+    "chinese": "嘴唇",
+    "english": "lip",
+    "pronunciation": "ˈlabbro",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932791Z",
+    "examples": [
+      "Guarda labbro! - 看那个嘴唇！",
+      "Mi piace labbro. - 我喜欢嘴唇。"
+    ]
+  },
+  {
+    "id": "1151",
+    "italian": "dente",
+    "chinese": "牙齿",
+    "english": "tooth",
+    "pronunciation": "ˈdɛnte",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932792Z",
+    "examples": [
+      "Guarda dente! - 看那个牙齿！",
+      "Mi piace dente. - 我喜欢牙齿。"
+    ]
+  },
+  {
+    "id": "1152",
+    "italian": "lingua",
+    "chinese": "舌头",
+    "english": "tongue",
+    "pronunciation": "ˈliŋɡwa",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932794Z",
+    "examples": [
+      "Guarda lingua! - 看那个舌头！",
+      "Mi piace lingua. - 我喜欢舌头。"
+    ]
+  },
+  {
+    "id": "1153",
+    "italian": "mento",
+    "chinese": "下巴",
+    "english": "chin",
+    "pronunciation": "ˈmento",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932795Z",
+    "examples": [
+      "Guarda mento! - 看那个下巴！",
+      "Mi piace mento. - 我喜欢下巴。"
+    ]
+  },
+  {
+    "id": "1154",
+    "italian": "collo",
+    "chinese": "脖子",
+    "english": "neck",
+    "pronunciation": "ˈkɔllo",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932796Z",
+    "examples": [
+      "Guarda collo! - 看那个脖子！",
+      "Mi piace collo. - 我喜欢脖子。"
+    ]
+  },
+  {
+    "id": "1155",
+    "italian": "spalla",
+    "chinese": "肩膀",
+    "english": "shoulder",
+    "pronunciation": "ˈspalla",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932797Z",
+    "examples": [
+      "Guarda spalla! - 看那个肩膀！",
+      "Mi piace spalla. - 我喜欢肩膀。"
+    ]
+  },
+  {
+    "id": "1156",
+    "italian": "braccio",
+    "chinese": "手臂",
+    "english": "arm",
+    "pronunciation": "ˈbraʧʧo",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932798Z",
+    "examples": [
+      "Guarda braccio! - 看那个手臂！",
+      "Mi piace braccio. - 我喜欢手臂。"
+    ]
+  },
+  {
+    "id": "1157",
+    "italian": "gomito",
+    "chinese": "肘部",
+    "english": "elbow",
+    "pronunciation": "ˈɡomito",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932799Z",
+    "examples": [
+      "Guarda gomito! - 看那个肘部！",
+      "Mi piace gomito. - 我喜欢肘部。"
+    ]
+  },
+  {
+    "id": "1158",
+    "italian": "polso",
+    "chinese": "手腕",
+    "english": "wrist",
+    "pronunciation": "ˈpolso",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932800Z",
+    "examples": [
+      "Guarda polso! - 看那个手腕！",
+      "Mi piace polso. - 我喜欢手腕。"
+    ]
+  },
+  {
+    "id": "1159",
+    "italian": "mano",
+    "chinese": "手",
+    "english": "hand",
+    "pronunciation": "ˈmano",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932801Z",
+    "examples": [
+      "Guarda mano! - 看那个手！",
+      "Mi piace mano. - 我喜欢手。"
+    ]
+  },
+  {
+    "id": "1160",
+    "italian": "dito",
+    "chinese": "手指",
+    "english": "finger",
+    "pronunciation": "ˈdito",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932802Z",
+    "examples": [
+      "Guarda dito! - 看那个手指！",
+      "Mi piace dito. - 我喜欢手指。"
+    ]
+  },
+  {
+    "id": "1161",
+    "italian": "petto",
+    "chinese": "胸部",
+    "english": "chest",
+    "pronunciation": "ˈpɛtto",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932803Z",
+    "examples": [
+      "Guarda petto! - 看那个胸部！",
+      "Mi piace petto. - 我喜欢胸部。"
+    ]
+  },
+  {
+    "id": "1162",
+    "italian": "schiena",
+    "chinese": "背部",
+    "english": "back",
+    "pronunciation": "ˈskjena",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932805Z",
+    "examples": [
+      "Guarda schiena! - 看那个背部！",
+      "Mi piace schiena. - 我喜欢背部。"
+    ]
+  },
+  {
+    "id": "1163",
+    "italian": "pancia",
+    "chinese": "肚子",
+    "english": "belly",
+    "pronunciation": "ˈpanʧa",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932806Z",
+    "examples": [
+      "Guarda pancia! - 看那个肚子！",
+      "Mi piace pancia. - 我喜欢肚子。"
+    ]
+  },
+  {
+    "id": "1164",
+    "italian": "gamba",
+    "chinese": "腿",
+    "english": "leg",
+    "pronunciation": "ˈɡamba",
+    "category": "健康医疗",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932807Z",
+    "examples": [
+      "Guarda gamba! - 看那个腿！",
+      "Mi piace gamba. - 我喜欢腿。"
+    ]
+  },
+  {
+    "id": "1165",
+    "italian": "tempo",
+    "chinese": "天气",
+    "english": "weather",
+    "pronunciation": "ˈtɛmpo",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932808Z",
+    "examples": [
+      "Guarda tempo! - 看那个天气！",
+      "Mi piace tempo. - 我喜欢天气。"
+    ]
+  },
+  {
+    "id": "1166",
+    "italian": "sole",
+    "chinese": "太阳",
+    "english": "sun",
+    "pronunciation": "ˈsole",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932809Z",
+    "examples": [
+      "Guarda sole! - 看那个太阳！",
+      "Mi piace sole. - 我喜欢太阳。"
+    ]
+  },
+  {
+    "id": "1167",
+    "italian": "luna",
+    "chinese": "月亮",
+    "english": "moon",
+    "pronunciation": "ˈluna",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932810Z",
+    "examples": [
+      "Guarda luna! - 看那个月亮！",
+      "Mi piace luna. - 我喜欢月亮。"
+    ]
+  },
+  {
+    "id": "1168",
+    "italian": "stella",
+    "chinese": "星星",
+    "english": "star",
+    "pronunciation": "ˈstɛlla",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932812Z",
+    "examples": [
+      "Guarda stella! - 看那个星星！",
+      "Mi piace stella. - 我喜欢星星。"
+    ]
+  },
+  {
+    "id": "1169",
+    "italian": "cielo",
+    "chinese": "天空",
+    "english": "sky",
+    "pronunciation": "ˈʧɛlo",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932813Z",
+    "examples": [
+      "Guarda cielo! - 看那个天空！",
+      "Mi piace cielo. - 我喜欢天空。"
+    ]
+  },
+  {
+    "id": "1170",
+    "italian": "nuvola",
+    "chinese": "云",
+    "english": "cloud",
+    "pronunciation": "ˈnuvola",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932814Z",
+    "examples": [
+      "Guarda nuvola! - 看那个云！",
+      "Mi piace nuvola. - 我喜欢云。"
+    ]
+  },
+  {
+    "id": "1171",
+    "italian": "pioggia",
+    "chinese": "雨",
+    "english": "rain",
+    "pronunciation": "ˈpjɔddʒa",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932815Z",
+    "examples": [
+      "Guarda pioggia! - 看那个雨！",
+      "Mi piace pioggia. - 我喜欢雨。"
+    ]
+  },
+  {
+    "id": "1172",
+    "italian": "neve",
+    "chinese": "雪",
+    "english": "snow",
+    "pronunciation": "ˈneve",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932816Z",
+    "examples": [
+      "Guarda neve! - 看那个雪！",
+      "Mi piace neve. - 我喜欢雪。"
+    ]
+  },
+  {
+    "id": "1173",
+    "italian": "nebbia",
+    "chinese": "雾",
+    "english": "fog",
+    "pronunciation": "ˈnɛbbja",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932817Z",
+    "examples": [
+      "Guarda nebbia! - 看那个雾！",
+      "Mi piace nebbia. - 我喜欢雾。"
+    ]
+  },
+  {
+    "id": "1174",
+    "italian": "vento",
+    "chinese": "风",
+    "english": "wind",
+    "pronunciation": "ˈvɛnto",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932818Z",
+    "examples": [
+      "Guarda vento! - 看那个风！",
+      "Mi piace vento. - 我喜欢风。"
+    ]
+  },
+  {
+    "id": "1175",
+    "italian": "temporale",
+    "chinese": "暴风雨",
+    "english": "storm",
+    "pronunciation": "tempoˈrale",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932819Z",
+    "examples": [
+      "Guarda temporale! - 看那个暴风雨！",
+      "Mi piace temporale. - 我喜欢暴风雨。"
+    ]
+  },
+  {
+    "id": "1176",
+    "italian": "tuono",
+    "chinese": "雷",
+    "english": "thunder",
+    "pronunciation": "ˈtwɔno",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932820Z",
+    "examples": [
+      "Guarda tuono! - 看那个雷！",
+      "Mi piace tuono. - 我喜欢雷。"
+    ]
+  },
+  {
+    "id": "1177",
+    "italian": "fulmine",
+    "chinese": "闪电",
+    "english": "lightning",
+    "pronunciation": "ˈfulmine",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932822Z",
+    "examples": [
+      "Guarda fulmine! - 看那个闪电！",
+      "Mi piace fulmine. - 我喜欢闪电。"
+    ]
+  },
+  {
+    "id": "1178",
+    "italian": "arcobaleno",
+    "chinese": "彩虹",
+    "english": "rainbow",
+    "pronunciation": "arkobaˈleno",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932823Z",
+    "examples": [
+      "Guarda arcobaleno! - 看那个彩虹！",
+      "Mi piace arcobaleno. - 我喜欢彩虹。"
+    ]
+  },
+  {
+    "id": "1179",
+    "italian": "temperatura",
+    "chinese": "温度",
+    "english": "temperature",
+    "pronunciation": "temperatˈtura",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932824Z",
+    "examples": [
+      "Guarda temperatura! - 看那个温度！",
+      "Mi piace temperatura. - 我喜欢温度。"
+    ]
+  },
+  {
+    "id": "1180",
+    "italian": "caldo",
+    "chinese": "热",
+    "english": "hot",
+    "pronunciation": "ˈkaldo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932825Z",
+    "examples": [
+      "Guarda caldo! - 看那个热！",
+      "Mi piace caldo. - 我喜欢热。"
+    ]
+  },
+  {
+    "id": "1181",
+    "italian": "freddo",
+    "chinese": "冷",
+    "english": "cold",
+    "pronunciation": "ˈfrɛddo",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932826Z",
+    "examples": [
+      "Guarda freddo! - 看那个冷！",
+      "Mi piace freddo. - 我喜欢冷。"
+    ]
+  },
+  {
+    "id": "1182",
+    "italian": "fresco",
+    "chinese": "凉爽",
+    "english": "cool",
+    "pronunciation": "ˈfrɛsko",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932827Z",
+    "examples": [
+      "Guarda fresco! - 看那个凉爽！",
+      "Mi piace fresco. - 我喜欢凉爽。"
+    ]
+  },
+  {
+    "id": "1183",
+    "italian": "umido",
+    "chinese": "潮湿",
+    "english": "humid",
+    "pronunciation": "ˈumido",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932828Z",
+    "examples": [
+      "Guarda umido! - 看那个潮湿！",
+      "Mi piace umido. - 我喜欢潮湿。"
+    ]
+  },
+  {
+    "id": "1184",
+    "italian": "secco",
+    "chinese": "干燥",
+    "english": "dry",
+    "pronunciation": "ˈsɛkko",
+    "category": "形容词",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932829Z",
+    "examples": [
+      "Guarda secco! - 看那个干燥！",
+      "Mi piace secco. - 我喜欢干燥。"
+    ]
+  },
+  {
+    "id": "1185",
+    "italian": "natura",
+    "chinese": "自然",
+    "english": "nature",
+    "pronunciation": "naˈtura",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932830Z",
+    "examples": [
+      "Guarda natura! - 看那个自然！",
+      "Mi piace natura. - 我喜欢自然。"
+    ]
+  },
+  {
+    "id": "1186",
+    "italian": "montagna",
+    "chinese": "山",
+    "english": "mountain",
+    "pronunciation": "monˈtaɲɲa",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932831Z",
+    "examples": [
+      "Guarda montagna! - 看那个山！",
+      "Mi piace montagna. - 我喜欢山。"
+    ]
+  },
+  {
+    "id": "1187",
+    "italian": "collina",
+    "chinese": "小山",
+    "english": "hill",
+    "pronunciation": "kolˈlina",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932833Z",
+    "examples": [
+      "Guarda collina! - 看那个小山！",
+      "Mi piace collina. - 我喜欢小山。"
+    ]
+  },
+  {
+    "id": "1188",
+    "italian": "valle",
+    "chinese": "山谷",
+    "english": "valley",
+    "pronunciation": "ˈvalle",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932835Z",
+    "examples": [
+      "Guarda valle! - 看那个山谷！",
+      "Mi piace valle. - 我喜欢山谷。"
+    ]
+  },
+  {
+    "id": "1189",
+    "italian": "fiume",
+    "chinese": "河流",
+    "english": "river",
+    "pronunciation": "ˈfjume",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932836Z",
+    "examples": [
+      "Guarda fiume! - 看那个河流！",
+      "Mi piace fiume. - 我喜欢河流。"
+    ]
+  },
+  {
+    "id": "1190",
+    "italian": "lago",
+    "chinese": "湖",
+    "english": "lake",
+    "pronunciation": "ˈlaɡo",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932837Z",
+    "examples": [
+      "Guarda lago! - 看那个湖！",
+      "Mi piace lago. - 我喜欢湖。"
+    ]
+  },
+  {
+    "id": "1191",
+    "italian": "mare",
+    "chinese": "海",
+    "english": "sea",
+    "pronunciation": "ˈmare",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932838Z",
+    "examples": [
+      "Guarda mare! - 看那个海！",
+      "Mi piace mare. - 我喜欢海。"
+    ]
+  },
+  {
+    "id": "1192",
+    "italian": "spiaggia",
+    "chinese": "海滩",
+    "english": "beach",
+    "pronunciation": "ˈspjaddʒa",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932839Z",
+    "examples": [
+      "Guarda spiaggia! - 看那个海滩！",
+      "Mi piace spiaggia. - 我喜欢海滩。"
+    ]
+  },
+  {
+    "id": "1193",
+    "italian": "bosco",
+    "chinese": "森林",
+    "english": "forest",
+    "pronunciation": "ˈbosko",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932840Z",
+    "examples": [
+      "Guarda bosco! - 看那个森林！",
+      "Mi piace bosco. - 我喜欢森林。"
+    ]
+  },
+  {
+    "id": "1194",
+    "italian": "albero",
+    "chinese": "树",
+    "english": "tree",
+    "pronunciation": "ˈalbero",
+    "category": "日常用语",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932841Z",
+    "examples": [
+      "Guarda albero! - 看那个树！",
+      "Mi piace albero. - 我喜欢树。"
+    ]
+  },
+  {
+    "id": "1195",
+    "italian": "città",
+    "chinese": "城市",
+    "english": "city",
+    "pronunciation": "ʧitˈta",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932842Z",
+    "examples": [
+      "Guarda città! - 看那个城市！",
+      "Mi piace città. - 我喜欢城市。"
+    ]
+  },
+  {
+    "id": "1196",
+    "italian": "paese",
+    "chinese": "乡镇",
+    "english": "town",
+    "pronunciation": "paˈeze",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932843Z",
+    "examples": [
+      "Guarda paese! - 看那个乡镇！",
+      "Mi piace paese. - 我喜欢乡镇。"
+    ]
+  },
+  {
+    "id": "1197",
+    "italian": "villaggio",
+    "chinese": "村庄",
+    "english": "village",
+    "pronunciation": "vilˈladdʒo",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932844Z",
+    "examples": [
+      "Guarda villaggio! - 看那个村庄！",
+      "Mi piace villaggio. - 我喜欢村庄。"
+    ]
+  },
+  {
+    "id": "1198",
+    "italian": "quartiere",
+    "chinese": "街区",
+    "english": "neighborhood",
+    "pronunciation": "kwarˈtjɛre",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932846Z",
+    "examples": [
+      "Guarda quartiere! - 看那个街区！",
+      "Mi piace quartiere. - 我喜欢街区。"
+    ]
+  },
+  {
+    "id": "1199",
+    "italian": "strada",
+    "chinese": "街道",
+    "english": "street",
+    "pronunciation": "ˈstrada",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932847Z",
+    "examples": [
+      "Guarda strada! - 看那个街道！",
+      "Mi piace strada. - 我喜欢街道。"
+    ]
+  },
+  {
+    "id": "1200",
+    "italian": "via",
+    "chinese": "路",
+    "english": "way",
+    "pronunciation": "ˈvia",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932848Z",
+    "examples": [
+      "Guarda via! - 看那个路！",
+      "Mi piace via. - 我喜欢路。"
+    ]
+  },
+  {
+    "id": "1201",
+    "italian": "viale",
+    "chinese": "大道",
+    "english": "avenue",
+    "pronunciation": "viˈale",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932849Z",
+    "examples": [
+      "Guarda viale! - 看那个大道！",
+      "Mi piace viale. - 我喜欢大道。"
+    ]
+  },
+  {
+    "id": "1202",
+    "italian": "piazza",
+    "chinese": "广场",
+    "english": "square",
+    "pronunciation": "ˈpjattsa",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932850Z",
+    "examples": [
+      "Guarda piazza! - 看那个广场！",
+      "Mi piace piazza. - 我喜欢广场。"
+    ]
+  },
+  {
+    "id": "1203",
+    "italian": "marciapiede",
+    "chinese": "人行道",
+    "english": "sidewalk",
+    "pronunciation": "marʧaˈpjɛde",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932851Z",
+    "examples": [
+      "Guarda marciapiede! - 看那个人行道！",
+      "Mi piace marciapiede. - 我喜欢人行道。"
+    ]
+  },
+  {
+    "id": "1204",
+    "italian": "incrocio",
+    "chinese": "十字路口",
+    "english": "intersection",
+    "pronunciation": "inˈkroʧo",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932852Z",
+    "examples": [
+      "Guarda incrocio! - 看那个十字路口！",
+      "Mi piace incrocio. - 我喜欢十字路口。"
+    ]
+  },
+  {
+    "id": "1205",
+    "italian": "semaforo",
+    "chinese": "红绿灯",
+    "english": "traffic light",
+    "pronunciation": "seˈmaforo",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932854Z",
+    "examples": [
+      "Guarda semaforo! - 看那个红绿灯！",
+      "Mi piace semaforo. - 我喜欢红绿灯。"
+    ]
+  },
+  {
+    "id": "1206",
+    "italian": "ponte",
+    "chinese": "桥",
+    "english": "bridge",
+    "pronunciation": "ˈponte",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932855Z",
+    "examples": [
+      "Guarda ponte! - 看那个桥！",
+      "Mi piace ponte. - 我喜欢桥。"
+    ]
+  },
+  {
+    "id": "1207",
+    "italian": "edificio",
+    "chinese": "建筑物",
+    "english": "building",
+    "pronunciation": "ediˈfiʧo",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932856Z",
+    "examples": [
+      "Guarda edificio! - 看那个建筑物！",
+      "Mi piace edificio. - 我喜欢建筑物。"
+    ]
+  },
+  {
+    "id": "1208",
+    "italian": "palazzo",
+    "chinese": "宫殿，大楼",
+    "english": "palace",
+    "pronunciation": "paˈlattso",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932857Z",
+    "examples": [
+      "Guarda palazzo! - 看那个宫殿，大楼！",
+      "Mi piace palazzo. - 我喜欢宫殿，大楼。"
+    ]
+  },
+  {
+    "id": "1209",
+    "italian": "chiesa",
+    "chinese": "教堂",
+    "english": "church",
+    "pronunciation": "ˈkjɛza",
+    "category": "文化艺术",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932859Z",
+    "examples": [
+      "Guarda chiesa! - 看那个教堂！",
+      "Mi piace chiesa. - 我喜欢教堂。"
+    ]
+  },
+  {
+    "id": "1210",
+    "italian": "museo",
+    "chinese": "博物馆",
+    "english": "museum",
+    "pronunciation": "muˈzɛo",
+    "category": "文化艺术",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932860Z",
+    "examples": [
+      "Guarda museo! - 看那个博物馆！",
+      "Mi piace museo. - 我喜欢博物馆。"
+    ]
+  },
+  {
+    "id": "1211",
+    "italian": "biblioteca",
+    "chinese": "图书馆",
+    "english": "library",
+    "pronunciation": "bibljotˈtɛka",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932861Z",
+    "examples": [
+      "Guarda biblioteca! - 看那个图书馆！",
+      "Mi piace biblioteca. - 我喜欢图书馆。"
+    ]
+  },
+  {
+    "id": "1212",
+    "italian": "parco",
+    "chinese": "公园",
+    "english": "park",
+    "pronunciation": "ˈparko",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932862Z",
+    "examples": [
+      "Guarda parco! - 看那个公园！",
+      "Mi piace parco. - 我喜欢公园。"
+    ]
+  },
+  {
+    "id": "1213",
+    "italian": "giardino",
+    "chinese": "花园",
+    "english": "garden",
+    "pronunciation": "dʒarˈdino",
+    "category": "家庭生活",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932863Z",
+    "examples": [
+      "Guarda giardino! - 看那个花园！",
+      "Mi piace giardino. - 我喜欢花园。"
+    ]
+  },
+  {
+    "id": "1214",
+    "italian": "fontana",
+    "chinese": "喷泉",
+    "english": "fountain",
+    "pronunciation": "fonˈtana",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932864Z",
+    "examples": [
+      "Guarda fontana! - 看那个喷泉！",
+      "Mi piace fontana. - 我喜欢喷泉。"
+    ]
+  },
+  {
+    "id": "1215",
+    "italian": "panchina",
+    "chinese": "长椅",
+    "english": "bench",
+    "pronunciation": "panˈkina",
+    "category": "旅游出行",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932865Z",
+    "examples": [
+      "Guarda panchina! - 看那个长椅！",
+      "Mi piace panchina. - 我喜欢长椅。"
+    ]
+  },
+  {
+    "id": "1216",
+    "italian": "negozio",
+    "chinese": "商店",
+    "english": "shop",
+    "pronunciation": "neˈɡɔtsjo",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932866Z",
+    "examples": [
+      "Guarda negozio! - 看那个商店！",
+      "Mi piace negozio. - 我喜欢商店。"
+    ]
+  },
+  {
+    "id": "1217",
+    "italian": "supermercato",
+    "chinese": "超市",
+    "english": "supermarket",
+    "pronunciation": "supermerˈkato",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932867Z",
+    "examples": [
+      "Guarda supermercato! - 看那个超市！",
+      "Mi piace supermercato. - 我喜欢超市。"
+    ]
+  },
+  {
+    "id": "1218",
+    "italian": "mercato",
+    "chinese": "市场",
+    "english": "market",
+    "pronunciation": "merˈkato",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932868Z",
+    "examples": [
+      "Guarda mercato! - 看那个市场！",
+      "Mi piace mercato. - 我喜欢市场。"
+    ]
+  },
+  {
+    "id": "1219",
+    "italian": "centro commerciale",
+    "chinese": "购物中心",
+    "english": "shopping mall",
+    "pronunciation": "ˈʧentro kommerˈʧale",
+    "category": "商务交流",
+    "level": "A2",
+    "createdAt": "2025-10-08T23:18:04.932870Z",
+    "examples": [
+      "Guarda centro commerciale! - 看那个购物中心！",
+      "Mi piace centro commerciale. - 我喜欢购物中心。"
+    ]
   }
 ]
