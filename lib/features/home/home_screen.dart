@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../test/persistence_test_screen.dart';
 import '../vocabulary/vocabulary_learning_screen.dart';
 import '../vocabulary/vocabulary_list_screen.dart';
 import '../vocabulary/vocabulary_review_screen.dart';
 import '../grammar/grammar_list_screen.dart';
 import '../conversation/conversation_scenario_screen.dart';
+import '../profile/profile_screen.dart';
 import '../../shared/providers/vocabulary_provider.dart';
+import '../../shared/providers/statistics_provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -82,23 +83,13 @@ class HomePage extends ConsumerWidget {
     final colorScheme = theme.colorScheme;
     final wordsToReviewAsync = ref.watch(wordsToReviewProvider);
     final newWordsAsync = ref.watch(newWordsProvider);
+    final statisticsAsync = ref.watch(statisticsProvider);
+    final todayStatsAsync = ref.watch(todayStatisticsProvider);
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Ciao! 👋'),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.science),
-            tooltip: '测试数据持久化',
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const PersistenceTestScreen(),
-                ),
-              );
-            },
-          ),
           IconButton(
             icon: const Icon(Icons.notifications_outlined),
             onPressed: () {},
@@ -142,9 +133,19 @@ class HomePage extends ConsumerWidget {
                                   style: theme.textTheme.bodyMedium,
                                 ),
                                 const SizedBox(height: 4),
-                                Text(
-                                  '7 天',
-                                  style: theme.textTheme.displaySmall,
+                                statisticsAsync.when(
+                                  data: (stats) => Text(
+                                    '${stats.studyStreak} 天',
+                                    style: theme.textTheme.displaySmall,
+                                  ),
+                                  loading: () => Text(
+                                    '0 天',
+                                    style: theme.textTheme.displaySmall,
+                                  ),
+                                  error: (_, __) => Text(
+                                    '0 天',
+                                    style: theme.textTheme.displaySmall,
+                                  ),
                                 ),
                               ],
                             ),
@@ -152,18 +153,69 @@ class HomePage extends ConsumerWidget {
                         ],
                       ),
                       const SizedBox(height: 20),
-                      Text(
-                        '今日目标: 15/20 个单词',
-                        style: theme.textTheme.bodyMedium,
-                      ),
-                      const SizedBox(height: 12),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: LinearProgressIndicator(
-                          value: 0.75,
-                          minHeight: 8,
-                          backgroundColor: colorScheme.surfaceContainerHighest,
-                          color: colorScheme.primary,
+                      todayStatsAsync.when(
+                        data: (todayStats) {
+                          final dailyGoal = 20;
+                          final wordsLearned = todayStats?.wordsLearned ?? 0;
+                          final progress = (wordsLearned / dailyGoal).clamp(0.0, 1.0);
+
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '今日目标: $wordsLearned/$dailyGoal 个单词',
+                                style: theme.textTheme.bodyMedium,
+                              ),
+                              const SizedBox(height: 12),
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(8),
+                                child: LinearProgressIndicator(
+                                  value: progress,
+                                  minHeight: 8,
+                                  backgroundColor: colorScheme.surfaceContainerHighest,
+                                  color: colorScheme.primary,
+                                ),
+                              ),
+                            ],
+                          );
+                        },
+                        loading: () => Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '今日目标: 0/20 个单词',
+                              style: theme.textTheme.bodyMedium,
+                            ),
+                            const SizedBox(height: 12),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: LinearProgressIndicator(
+                                value: 0,
+                                minHeight: 8,
+                                backgroundColor: colorScheme.surfaceContainerHighest,
+                                color: colorScheme.primary,
+                              ),
+                            ),
+                          ],
+                        ),
+                        error: (_, __) => Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '今日目标: 0/20 个单词',
+                              style: theme.textTheme.bodyMedium,
+                            ),
+                            const SizedBox(height: 12),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: LinearProgressIndicator(
+                                value: 0,
+                                minHeight: 8,
+                                backgroundColor: colorScheme.surfaceContainerHighest,
+                                color: colorScheme.primary,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -592,15 +644,12 @@ class PracticePage extends StatelessWidget {
   }
 }
 
-// 个人页面占位符
+// 个人页面 - 使用个人中心页面
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('我的')),
-      body: const Center(child: Text('个人中心页面')),
-    );
+    return const ProfileScreen();
   }
 }

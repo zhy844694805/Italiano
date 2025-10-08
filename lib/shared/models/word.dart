@@ -42,18 +42,29 @@ class Word {
   }
 
   factory Word.fromJson(Map<String, dynamic> json) {
+    // 安全解析examples字段
+    List<String> parseExamples(dynamic examplesData) {
+      if (examplesData == null) return [];
+      if (examplesData is List) {
+        return examplesData.map((e) => e.toString()).toList();
+      }
+      return [];
+    }
+
     return Word(
-      id: json['id'],
-      italian: json['italian'],
-      chinese: json['chinese'],
-      english: json['english'],
-      pronunciation: json['pronunciation'],
-      audioUrl: json['audioUrl'],
-      category: json['category'],
-      level: json['level'],
-      examples: List<String>.from(json['examples'] ?? []),
-      imageUrl: json['imageUrl'],
-      createdAt: DateTime.parse(json['createdAt']),
+      id: json['id']?.toString() ?? '',
+      italian: json['italian']?.toString() ?? '',
+      chinese: json['chinese']?.toString() ?? '',
+      english: json['english']?.toString(),
+      pronunciation: json['pronunciation']?.toString(),
+      audioUrl: json['audioUrl']?.toString(),
+      category: json['category']?.toString() ?? '',
+      level: json['level']?.toString() ?? 'A1',
+      examples: parseExamples(json['examples']),
+      imageUrl: json['imageUrl']?.toString(),
+      createdAt: json['createdAt'] != null
+          ? DateTime.tryParse(json['createdAt'].toString()) ?? DateTime.now()
+          : DateTime.now(),
     );
   }
 

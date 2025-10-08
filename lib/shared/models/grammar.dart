@@ -26,25 +26,29 @@ class GrammarPoint {
 
   factory GrammarPoint.fromJson(Map<String, dynamic> json) {
     return GrammarPoint(
-      id: json['id'] as String,
-      title: json['title'] as String,
-      category: json['category'] as String,
-      level: json['level'] as String,
-      description: json['description'] as String,
-      rules: (json['rules'] as List<dynamic>)
-          .map((r) => GrammarRule.fromJson(r as Map<String, dynamic>))
-          .toList(),
-      examples: (json['examples'] as List<dynamic>)
-          .map((e) => GrammarExample.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      exercises: json['exercises'] != null
+      id: json['id']?.toString() ?? '',
+      title: json['title']?.toString() ?? '',
+      category: json['category']?.toString() ?? '',
+      level: json['level']?.toString() ?? 'A1',
+      description: json['description']?.toString() ?? '',
+      rules: json['rules'] != null && json['rules'] is List
+          ? (json['rules'] as List<dynamic>)
+              .map((r) => GrammarRule.fromJson(r as Map<String, dynamic>))
+              .toList()
+          : [],
+      examples: json['examples'] != null && json['examples'] is List
+          ? (json['examples'] as List<dynamic>)
+              .map((e) => GrammarExample.fromJson(e as Map<String, dynamic>))
+              .toList()
+          : [],
+      exercises: json['exercises'] != null && json['exercises'] is List
           ? (json['exercises'] as List<dynamic>)
               .map((e) => GrammarExercise.fromJson(e as Map<String, dynamic>))
               .toList()
           : [],
-      imageUrl: json['imageUrl'] as String?,
+      imageUrl: json['imageUrl']?.toString(),
       createdAt: json['createdAt'] != null
-          ? DateTime.parse(json['createdAt'] as String)
+          ? DateTime.tryParse(json['createdAt'].toString()) ?? DateTime.now()
           : DateTime.now(),
     );
   }
@@ -79,10 +83,10 @@ class GrammarRule {
 
   factory GrammarRule.fromJson(Map<String, dynamic> json) {
     return GrammarRule(
-      title: json['title'] as String,
-      content: json['content'] as String,
-      points: json['points'] != null
-          ? (json['points'] as List<dynamic>).map((p) => p as String).toList()
+      title: json['title']?.toString() ?? '',
+      content: json['content']?.toString() ?? '',
+      points: json['points'] != null && json['points'] is List
+          ? (json['points'] as List<dynamic>).map((p) => p.toString()).toList()
           : null,
     );
   }
@@ -112,10 +116,10 @@ class GrammarExample {
 
   factory GrammarExample.fromJson(Map<String, dynamic> json) {
     return GrammarExample(
-      italian: json['italian'] as String,
-      chinese: json['chinese'] as String,
-      english: json['english'] as String?,
-      highlight: json['highlight'] as String?,
+      italian: json['italian']?.toString() ?? '',
+      chinese: json['chinese']?.toString() ?? '',
+      english: json['english']?.toString(),
+      highlight: json['highlight']?.toString(),
     );
   }
 
@@ -149,14 +153,14 @@ class GrammarExercise {
 
   factory GrammarExercise.fromJson(Map<String, dynamic> json) {
     return GrammarExercise(
-      id: json['id'] as String,
-      type: json['type'] as String,
-      question: json['question'] as String,
-      options: json['options'] != null
-          ? (json['options'] as List<dynamic>).map((o) => o as String).toList()
+      id: json['id']?.toString() ?? '',
+      type: json['type']?.toString() ?? '',
+      question: json['question']?.toString() ?? '',
+      options: json['options'] != null && json['options'] is List
+          ? (json['options'] as List<dynamic>).map((o) => o.toString()).toList()
           : null,
-      answer: json['answer'] as String,
-      explanation: json['explanation'] as String?,
+      answer: json['answer']?.toString() ?? '',
+      explanation: json['explanation']?.toString(),
     );
   }
 

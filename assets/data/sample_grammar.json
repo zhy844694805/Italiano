@@ -1319,5 +1319,531 @@
         "explanation": "genitori是复数，需要加冠词，用i miei"
       }
     ]
+  },
+  {
+    "id": "imperativo",
+    "title": "命令式 (Imperativo)",
+    "category": "时态",
+    "level": "A2",
+    "description": "命令式用于表达命令、请求、建议或禁止。意大利语的命令式分为非正式(tu, noi, voi)和正式(Lei, Loro)两种形式。",
+    "rules": [
+      {
+        "title": "非正式命令式 (tu形式)",
+        "content": "对朋友、家人使用的命令形式。规则动词的tu形式命令式：",
+        "points": [
+          "-are动词: 去掉-are，加-a (parlare → parla!)",
+          "-ere动词: 去掉-ere，加-i (prendere → prendi!)",
+          "-ire动词: 去掉-ire，加-i (dormire → dormi!)",
+          "常见不规则: essere→sii, avere→abbi, fare→fa'/fai, andare→va'/vai, dare→da'/dai"
+        ]
+      },
+      {
+        "title": "正式命令式 (Lei形式)",
+        "content": "对陌生人、长辈或正式场合使用，使用虚拟式现在时的第三人称单数形式：",
+        "points": [
+          "-are动词: 去掉-are，加-i (parlare → parli!)",
+          "-ere动词: 去掉-ere，加-a (prendere → prenda!)",
+          "-ire动词: 去掉-ire，加-a (dormire → dorma!)",
+          "常见不规则: essere→sia, avere→abbia, fare→faccia, andare→vada"
+        ]
+      },
+      {
+        "title": "复数命令式 (noi, voi形式)",
+        "content": "noi和voi的命令式与现在时形式相同：",
+        "points": [
+          "noi形式: parliamo! prendiamo! dormiamo! (让我们...吧！)",
+          "voi形式: parlate! prendete! dormite! (你们...！)",
+          "否定命令式(tu): non + infinitivo (Non parlare! 别说！)",
+          "否定命令式(Lei/voi): non + imperativo (Non parli! Non parlate!)"
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "italian": "Parla più piano, per favore!",
+        "chinese": "请说慢一点！",
+        "english": "Speak more slowly, please!",
+        "highlight": "Parla"
+      },
+      {
+        "italian": "Scusi, mi dica dove è la stazione.",
+        "chinese": "打扰一下，请告诉我车站在哪里。(正式)",
+        "english": "Excuse me, tell me where the station is. (formal)",
+        "highlight": "dica"
+      },
+      {
+        "italian": "Non preoccuparti, andrà tutto bene.",
+        "chinese": "别担心，一切都会好的。",
+        "english": "Don't worry, everything will be fine.",
+        "highlight": "preoccuparti"
+      },
+      {
+        "italian": "Andiamo al cinema stasera!",
+        "chinese": "今晚我们去看电影吧！",
+        "english": "Let's go to the cinema tonight!",
+        "highlight": "Andiamo"
+      },
+      {
+        "italian": "Fate attenzione quando attraversate la strada.",
+        "chinese": "过马路时要小心。",
+        "english": "Be careful when you cross the street.",
+        "highlight": "Fate"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex_imperativo_1",
+        "type": "fill_blank",
+        "question": "___ (ascoltare-tu) questa canzone, è bellissima!",
+        "answer": "Ascolta",
+        "explanation": "tu形式的命令式，-are动词去掉-are加-a"
+      },
+      {
+        "id": "ex_imperativo_2",
+        "type": "fill_blank",
+        "question": "___ (prendere-Lei) un caffè, signora?",
+        "answer": "Prenda",
+        "explanation": "Lei形式的正式命令式，-ere动词用虚拟式现在时"
+      },
+      {
+        "id": "ex_imperativo_3",
+        "type": "choice",
+        "question": "Non ___ (preoccuparsi-tu)!",
+        "options": [
+          "ti preoccupi",
+          "preoccuparti",
+          "ti preoccupare",
+          "preoccupati"
+        ],
+        "answer": "preoccuparti",
+        "explanation": "tu形式的否定命令式用non + 不定式"
+      },
+      {
+        "id": "ex_imperativo_4",
+        "type": "fill_blank",
+        "question": "___ (andare-noi) al mare questo weekend!",
+        "answer": "Andiamo",
+        "explanation": "noi形式的命令式与现在时相同，表示'让我们...'"
+      },
+      {
+        "id": "ex_imperativo_5",
+        "type": "choice",
+        "question": "___ (fare-tu) i compiti prima di uscire!",
+        "options": [
+          "Fai",
+          "Fa'",
+          "Fare",
+          "Faccia"
+        ],
+        "answer": "Fa'",
+        "explanation": "fare的tu形式命令式是fa'或fai"
+      },
+      {
+        "id": "ex_imperativo_6",
+        "type": "fill_blank",
+        "question": "___ (venire-voi) alla festa domani sera!",
+        "answer": "Venite",
+        "explanation": "voi形式的命令式与现在时相同"
+      },
+      {
+        "id": "ex_imperativo_7",
+        "type": "choice",
+        "question": "___ (essere-tu) sempre gentile con tutti!",
+        "options": [
+          "Sei",
+          "Sii",
+          "Sia",
+          "Essere"
+        ],
+        "answer": "Sii",
+        "explanation": "essere的tu形式命令式是不规则的sii"
+      },
+      {
+        "id": "ex_imperativo_8",
+        "type": "fill_blank",
+        "question": "Signore, ___ (avere) pazienza, per favore.",
+        "answer": "abbia",
+        "explanation": "Lei形式正式命令式，avere的虚拟式现在时"
+      },
+      {
+        "id": "ex_imperativo_9",
+        "type": "choice",
+        "question": "___ (parlare-voi) italiano in classe!",
+        "options": [
+          "Parlano",
+          "Parlate",
+          "Parlino",
+          "Parli"
+        ],
+        "answer": "Parlate",
+        "explanation": "voi形式的命令式，与现在时形式相同"
+      },
+      {
+        "id": "ex_imperativo_10",
+        "type": "fill_blank",
+        "question": "Non ___ (dimenticare-tu) di chiamarmi!",
+        "answer": "dimenticare",
+        "explanation": "tu形式否定命令式用non + 不定式"
+      }
+    ]
+  },
+  {
+    "id": "condizionale_semplice",
+    "title": "简单条件式 (Condizionale Semplice)",
+    "category": "时态",
+    "level": "A2",
+    "description": "简单条件式用于表达愿望、礼貌请求、建议、假设条件等。它相当于英语的'would'结构，是表达委婉语气的重要时态。",
+    "rules": [
+      {
+        "title": "规则动词变位",
+        "content": "条件式的词尾与将来时相似，-are动词先变为-er再加词尾。",
+        "points": [
+          "-are动词（如parlare）：parlerei, parleresti, parlerebbe, parleremmo, parlereste, parlerebbero",
+          "-ere动词（如prendere）：prenderei, prenderesti, prenderebbe, prenderemmo, prendereste, prenderebbero",
+          "-ire动词（如dormire）：dormirei, dormiresti, dormirebbe, dormiremmo, dormireste, dormirebbero"
+        ]
+      },
+      {
+        "title": "常用不规则动词",
+        "content": "与将来时一样，一些动词有不规则的词干。",
+        "points": [
+          "essere（是）：sarei, saresti, sarebbe, saremmo, sareste, sarebbero",
+          "avere（有）：avrei, avresti, avrebbe, avremmo, avreste, avrebbero",
+          "andare（去）：andrei, andresti, andrebbe, andremmo, andreste, andrebbero",
+          "fare（做）：farei, faresti, farebbe, faremmo, fareste, farebbero",
+          "venire（来）：verrei, verresti, verrebbe, verremmo, verreste, verrebbero",
+          "dovere（应该）：dovrei, dovresti, dovrebbe, dovremmo, dovreste, dovrebbero",
+          "potere（能够）：potrei, potresti, potrebbe, potremmo, potreste, potrebbero",
+          "volere（想要）：vorrei, vorresti, vorrebbe, vorremmo, vorreste, vorrebbero"
+        ]
+      },
+      {
+        "title": "主要用法",
+        "content": "简单条件式的常见使用场景。",
+        "points": [
+          "表达愿望：Vorrei un caffè (我想要一杯咖啡)",
+          "礼貌请求：Potresti aiutarmi? (你能帮我吗？)",
+          "提出建议：Dovresti studiare di più (你应该多学习)",
+          "假设条件：Con più soldi, comprerei una casa (如果有更多钱，我会买房子)",
+          "间接引语：Ha detto che verrebbe domani (他说他明天会来)"
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "italian": "Vorrei un bicchiere d'acqua, per favore.",
+        "chinese": "我想要一杯水，谢谢。",
+        "english": "I would like a glass of water, please.",
+        "highlight": "Vorrei"
+      },
+      {
+        "italian": "Potresti chiudere la finestra?",
+        "chinese": "你能关上窗户吗？",
+        "english": "Could you close the window?",
+        "highlight": "Potresti"
+      },
+      {
+        "italian": "Al posto tuo, non lo farei.",
+        "chinese": "如果我是你，我不会这么做。",
+        "english": "If I were you, I wouldn't do it.",
+        "highlight": "farei"
+      },
+      {
+        "italian": "Sarebbe bello andare in vacanza.",
+        "chinese": "去度假会很好。",
+        "english": "It would be nice to go on vacation.",
+        "highlight": "Sarebbe"
+      },
+      {
+        "italian": "Dovreste parlare con il professore.",
+        "chinese": "你们应该和教授谈谈。",
+        "english": "You should talk to the professor.",
+        "highlight": "Dovreste"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex_condizionale_1",
+        "type": "fill_blank",
+        "question": "Io ____ (volere) un caffè, per favore.",
+        "answer": "vorrei",
+        "explanation": "volere的条件式第一人称单数是vorrei，表达礼貌请求"
+      },
+      {
+        "id": "ex_condizionale_2",
+        "type": "choice",
+        "question": "Tu ____ (dovere) studiare di più.",
+        "options": [
+          "dovresti",
+          "dovrei",
+          "dovrebbe",
+          "dovremmo"
+        ],
+        "answer": "dovresti",
+        "explanation": "dovere的条件式第二人称单数是dovresti，表示建议"
+      },
+      {
+        "id": "ex_condizionale_3",
+        "type": "choice",
+        "question": "____ (potere-tu) aiutarmi?",
+        "options": [
+          "Potresti",
+          "Potrei",
+          "Potrebbe",
+          "Potrebbero"
+        ],
+        "answer": "Potresti",
+        "explanation": "potere的条件式第二人称单数，表示礼貌请求"
+      },
+      {
+        "id": "ex_condizionale_4",
+        "type": "fill_blank",
+        "question": "Noi ____ (andare) al cinema, ma è troppo tardi.",
+        "answer": "andremmo",
+        "explanation": "andare的条件式第一人称复数是andremmo"
+      },
+      {
+        "id": "ex_condizionale_5",
+        "type": "choice",
+        "question": "____ (essere) bello vedere il mare.",
+        "options": [
+          "Sarebbe",
+          "Sarei",
+          "Saresti",
+          "Sarebbero"
+        ],
+        "answer": "Sarebbe",
+        "explanation": "essere的条件式第三人称单数，表示愿望"
+      },
+      {
+        "id": "ex_condizionale_6",
+        "type": "fill_blank",
+        "question": "Maria ____ (venire) alla festa, ma è malata.",
+        "answer": "verrebbe",
+        "explanation": "venire的条件式第三人称单数是verrebbe"
+      },
+      {
+        "id": "ex_condizionale_7",
+        "type": "choice",
+        "question": "Voi ____ (parlare) con il direttore?",
+        "options": [
+          "parlereste",
+          "parlerebbero",
+          "parlerei",
+          "parleresti"
+        ],
+        "answer": "parlereste",
+        "explanation": "parlare的条件式第二人称复数是parlereste"
+      },
+      {
+        "id": "ex_condizionale_8",
+        "type": "fill_blank",
+        "question": "Con più tempo, io ____ (leggere) più libri.",
+        "answer": "leggerei",
+        "explanation": "leggere的条件式第一人称单数，表示假设"
+      },
+      {
+        "id": "ex_condizionale_9",
+        "type": "choice",
+        "question": "Loro ____ (preferire) restare a casa.",
+        "options": [
+          "preferirebbero",
+          "preferireste",
+          "preferirei",
+          "preferiresti"
+        ],
+        "answer": "preferirebbero",
+        "explanation": "preferire的条件式第三人称复数是preferirebbero"
+      },
+      {
+        "id": "ex_condizionale_10",
+        "type": "fill_blank",
+        "question": "Al posto tuo, io non lo ____ (fare).",
+        "answer": "farei",
+        "explanation": "fare的条件式第一人称单数，表示假设建议"
+      }
+    ]
+  },
+  {
+    "id": "pronomi_complemento",
+    "title": "直接和间接宾格代词 (Pronomi Diretti e Indiretti)",
+    "category": "代词",
+    "level": "A2",
+    "description": "宾格代词用于替代句子中的宾语，避免重复。直接宾格代词直接接受动作，间接宾格代词表示动作的对象或方向。",
+    "rules": [
+      {
+        "title": "直接宾格代词 (Pronomi Diretti)",
+        "content": "直接接受动作的代词，回答'什么'或'谁'的问题。",
+        "points": [
+          "单数：mi (我), ti (你), lo (他/它-阳), la (她/它-阴), La (您)",
+          "复数：ci (我们), vi (你们), li (他们-阳), le (她们/它们-阴)",
+          "位置：通常放在动词前 - Lo vedo (我看见他)",
+          "不定式时：附在不定式后，去掉-e - Voglio vederlo (我想见他)"
+        ]
+      },
+      {
+        "title": "间接宾格代词 (Pronomi Indiretti)",
+        "content": "表示动作的间接对象，回答'给谁'或'对谁'的问题。",
+        "points": [
+          "单数：mi (给我), ti (给你), gli (给他), le (给她), Le (给您)",
+          "复数：ci (给我们), vi (给你们), gli/loro (给他们)",
+          "常与动词连用：dare (给), dire (说), telefonare (打电话), parlare (说话)",
+          "例句：Gli telefono (我给他打电话), Le parlo (我对她说话)"
+        ]
+      },
+      {
+        "title": "近过去时中的位置",
+        "content": "在复合时态中，代词放在助动词前，过去分词需要与直接宾格代词保持性数一致。",
+        "points": [
+          "直接宾格：L'ho vista (我见过她) - vista与la一致",
+          "直接宾格：Li ho comprati (我买了它们-阳) - comprati与li一致",
+          "间接宾格：Gli ho telefonato (我给他打过电话) - 不需一致",
+          "间接宾格：Le ho parlato (我对她说过话) - 不需一致"
+        ]
+      },
+      {
+        "title": "双代词组合",
+        "content": "当直接和间接代词同时出现时，间接代词在前，且形式会变化。",
+        "points": [
+          "mi, ti, ci, vi + lo/la/li/le → me lo, te lo, ce lo, ve lo",
+          "gli, le + lo/la/li/le → glielo, gliela, glieli, gliele (连写)",
+          "例句：Me lo dai? (你给我它吗？), Glielo do (我给他/她它)"
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "italian": "Conosci Maria? Sì, la conosco bene.",
+        "chinese": "你认识玛丽亚吗？是的，我很了解她。",
+        "english": "Do you know Maria? Yes, I know her well.",
+        "highlight": "la conosco"
+      },
+      {
+        "italian": "Gli telefono ogni giorno.",
+        "chinese": "我每天给他打电话。",
+        "english": "I call him every day.",
+        "highlight": "Gli"
+      },
+      {
+        "italian": "Hai visto il film? Sì, l'ho visto ieri.",
+        "chinese": "你看过这部电影了吗？是的，我昨天看过了。",
+        "english": "Have you seen the movie? Yes, I saw it yesterday.",
+        "highlight": "l'ho visto"
+      },
+      {
+        "italian": "Le ho dato un regalo.",
+        "chinese": "我给了她一份礼物。",
+        "english": "I gave her a gift.",
+        "highlight": "Le ho dato"
+      },
+      {
+        "italian": "Puoi darmi il libro? - Te lo do subito.",
+        "chinese": "你能给我这本书吗？- 我马上给你。",
+        "english": "Can you give me the book? - I'll give it to you right away.",
+        "highlight": "Te lo do"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex_pronomi_compl_1",
+        "type": "choice",
+        "question": "Conosci Marco? Sì, ____ conosco.",
+        "options": [
+          "lo",
+          "la",
+          "gli",
+          "le"
+        ],
+        "answer": "lo",
+        "explanation": "Marco是阳性，用直接宾格代词lo"
+      },
+      {
+        "id": "ex_pronomi_compl_2",
+        "type": "fill_blank",
+        "question": "Vedo Maria ogni giorno. ____ vedo al bar.",
+        "answer": "La",
+        "explanation": "Maria是阴性，用直接宾格代词la"
+      },
+      {
+        "id": "ex_pronomi_compl_3",
+        "type": "choice",
+        "question": "____ telefono a Paolo domani. (给他打电话)",
+        "options": [
+          "Gli",
+          "Lo",
+          "Le",
+          "Li"
+        ],
+        "answer": "Gli",
+        "explanation": "telefonare用间接宾格，阳性单数用gli"
+      },
+      {
+        "id": "ex_pronomi_compl_4",
+        "type": "fill_blank",
+        "question": "Parlo con Anna. ____ parlo ogni sera.",
+        "answer": "Le",
+        "explanation": "parlare con用间接宾格，阴性单数用le"
+      },
+      {
+        "id": "ex_pronomi_compl_5",
+        "type": "choice",
+        "question": "Hai visto il film? Sì, ____ ho visto.",
+        "options": [
+          "l'",
+          "gli",
+          "le",
+          "lo"
+        ],
+        "answer": "l'",
+        "explanation": "film是阳性，在ho前用l'(lo的缩略)"
+      },
+      {
+        "id": "ex_pronomi_compl_6",
+        "type": "fill_blank",
+        "question": "Ho comprato le scarpe. ____ ho comprate ieri.",
+        "answer": "Le",
+        "explanation": "scarpe是阴性复数，用le，过去分词要一致"
+      },
+      {
+        "id": "ex_pronomi_compl_7",
+        "type": "choice",
+        "question": "Dai il libro a me? Sì, ____ do.",
+        "options": [
+          "te lo",
+          "me lo",
+          "glielo",
+          "lo ti"
+        ],
+        "answer": "te lo",
+        "explanation": "双代词：ti+lo变为te lo"
+      },
+      {
+        "id": "ex_pronomi_compl_8",
+        "type": "fill_blank",
+        "question": "Do la penna a Marco. ____ do la penna.",
+        "answer": "Gli",
+        "explanation": "dare a用间接宾格，阳性用gli"
+      },
+      {
+        "id": "ex_pronomi_compl_9",
+        "type": "choice",
+        "question": "Vuoi vedere i miei amici? Sì, voglio veder____.",
+        "options": [
+          "li",
+          "gli",
+          "le",
+          "lo"
+        ],
+        "answer": "li",
+        "explanation": "amici是阳性复数，不定式后用li，连写为vederli"
+      },
+      {
+        "id": "ex_pronomi_compl_10",
+        "type": "fill_blank",
+        "question": "Ho scritto a Maria. ____ ho scritto una lettera.",
+        "answer": "Le",
+        "explanation": "scrivere a用间接宾格，阴性用le"
+      }
+    ]
   }
 ]

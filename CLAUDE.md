@@ -24,8 +24,8 @@ This is an Italian language learning Flutter application (意大利语学习应�
    - Detailed word information sheets
 
 4. **Grammar Lessons** - Interactive grammar teaching with exercises
-   - 11 grammar points covering A1-A2 fundamentals with 75%+ A2 coverage
-   - Rules, examples, and practice exercises
+   - 14 grammar points covering A1-A2 fundamentals with 100% A2 coverage ✅
+   - Rules, examples, and practice exercises (140 exercises total)
    - Immediate feedback on exercise answers
    - Progress tracking per grammar point
 
@@ -36,10 +36,15 @@ This is an Italian language learning Flutter application (意大利语学习应�
    - Level-adaptive difficulty (A1-C2 CEFR levels)
    - DeepSeek API integration for conversational AI
 
-6. **Progress Tracking** - Comprehensive statistics and analytics
-   - Mastery calculation for each word
-   - Study streaks and daily goals
-   - Favorite words bookmarking
+6. **Progress Tracking** - Comprehensive statistics and analytics (✅ Complete)
+   - **Personal Center Page**: Beautiful statistics dashboard with fl_chart visualizations
+   - **Learning Statistics**: Total study days, study time, words learned, grammar points studied
+   - **Study Streak Tracking**: Consecutive learning days calculation and display
+   - **7-Day Trend Chart**: Line chart showing recent learning activity
+   - **Vocabulary Mastery Stats**: Words learned, mastered (≥80%), reviewing, average mastery
+   - **Grammar Progress**: Completed and favorited grammar points
+   - **Real-time Updates**: Pull-to-refresh capability
+   - **Home Screen Integration**: Dynamic streak counter and daily goal progress
    - All data persisted locally with SQLite
 
 ## Commands
@@ -265,11 +270,11 @@ Comprehensive grammar teaching with interactive exercises:
    - `grammarCategoriesProvider` - Auto-extracts unique categories
 
 5. **Grammar Data** (`assets/data/sample_grammar.json`)
-   - 11 grammar points covering A1-A2 fundamentals (75%+ A2 coverage)
-   - **A1 Topics**: Present tense, Articles, Personal pronouns, Gender/Number
-   - **A2 Topics**: Passato Prossimo, Imperfetto, Futuro Semplice, Reflexive verbs, Comparatives/Superlatives, Possessive adjectives, Prepositions
+   - **14 grammar points** covering A1-A2 fundamentals (100% A2 coverage ✅)
+   - **A1 Topics (4)**: Present tense, Articles, Personal pronouns, Gender/Number
+   - **A2 Topics (10)**: Passato Prossimo, Imperfetto, Futuro Semplice, Imperativo, Condizionale Semplice, Reflexive verbs, Comparatives/Superlatives, Possessive adjectives, Prepositions, Direct/Indirect Object Pronouns
    - Each with detailed rules, examples, and 10 practice exercises
-   - Total of 64 interactive exercises across all grammar points
+   - **Total of 140 interactive exercises** across all grammar points
 
 ### AI Conversation System
 Real-time conversation practice with intelligent AI partner powered by DeepSeek API:
@@ -370,7 +375,8 @@ lib/
 │   │   ├── conversation_scenario_screen.dart  # Scenario selection
 │   │   └── ai_conversation_screen.dart        # Chat interface
 │   ├── practice/           # Practice quizzes (placeholder)
-│   ├── profile/            # User profile (placeholder)
+│   ├── profile/            # User profile with statistics and charts
+│   │   └── profile_screen.dart
 │   └── test/               # Development test screens
 │       └── persistence_test_screen.dart
 └── shared/
@@ -414,12 +420,12 @@ Italian flag-inspired color scheme in `lib/core/theme/app_theme.dart`:
 - **Vocabulary Expansion**: Use Python scripts for bulk additions (50-100 words at a time)
 
 **Grammar** (`assets/data/sample_grammar.json`):
-- **11 grammar points** (4 A1 + 7 A2 level)
+- **14 grammar points** (4 A1 + 10 A2 level)
 - Categories: 时态, 冠词, 代词, 名词, 介词, 动词, 形容词
 - Each includes: rules (with bullet points), bilingual examples, 10 practice exercises (fill_blank/choice types)
 - **A1 Topics**: Present tense, Articles, Personal pronouns, Gender/Number
-- **A2 Topics**: Passato Prossimo, Imperfetto, Futuro Semplice, Reflexive verbs, Comparatives/Superlatives, Possessive adjectives, Prepositions
-- **A2 Coverage**: 75% (9/12 core CEFR requirements)
+- **A2 Topics**: Passato Prossimo, Imperfetto, Futuro Semplice, Imperativo, Condizionale Semplice, Reflexive verbs, Comparatives/Superlatives, Possessive adjectives, Prepositions, Direct/Indirect Object Pronouns
+- **A2 Coverage**: 100% ✅ (All core CEFR A2 requirements complete!)
 
 ### Audio Integration
 - Audio files expected at: `assets/audio/words/{wordId}.mp3`
