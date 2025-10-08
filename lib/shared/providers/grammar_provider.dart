@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../core/database/grammar_progress_repository.dart';
+import '../../core/database/learning_statistics_repository.dart';
 import '../models/grammar.dart';
 
 // 语法服务
@@ -52,9 +54,19 @@ final grammarByLevelProvider = FutureProvider.family<List<GrammarPoint>, String>
 
 // Grammar progress provider
 class GrammarProgressNotifier extends StateNotifier<Map<String, GrammarProgress>> {
-  GrammarProgressNotifier() : super({});
+  final GrammarProgressRepository _repository = GrammarProgressRepository();
+  final LearningStatisticsRepository _statsRepo = LearningStatisticsRepository();
 
-  void markAsStudied(String grammarId) {
+  GrammarProgressNotifier() : super({}) {
+    _loadProgress();
+  }
+
+  Future<void> _loadProgress() async {
+    final progress = await _repository.getAllProgress();
+    state = progress;
+  }
+
+  Future<void> markAsStudied(String grammarId) async {
     final existingProgress = state[grammarId];
     final newProgress = existingProgress?.copyWith(
       lastStudied: DateTime.now(),
@@ -63,10 +75,11 @@ class GrammarProgressNotifier extends StateNotifier<Map<String, GrammarProgress>
       lastStudied: DateTime.now(),
     );
 
+    await _repository.saveProgress(newProgress);
     state = {...state, grammarId: newProgress};
   }
 
-  void markAsCompleted(String grammarId) {
+  Future<void> markAsCompleted(String grammarId) async {
     final existingProgress = state[grammarId];
     final newProgress = existingProgress?.copyWith(
       completed: true,
@@ -77,10 +90,13 @@ class GrammarProgressNotifier extends StateNotifier<Map<String, GrammarProgress>
       completed: true,
     );
 
+    await _repository.saveProgress(newProgress);
+    await _statsRepo.incrementGrammarStudied(DateTime.now(), 1);
+
     state = {...state, grammarId: newProgress};
   }
 
-  void recordExerciseResult(String grammarId, bool correct) {
+  Future<void> recordExerciseResult(String grammarId, bool correct) async {
     final existingProgress = state[grammarId];
     final newProgress = existingProgress?.copyWith(
       exercisesCorrect: existingProgress.exercisesCorrect + (correct ? 1 : 0),
@@ -93,10 +109,11 @@ class GrammarProgressNotifier extends StateNotifier<Map<String, GrammarProgress>
       exercisesTotal: 1,
     );
 
+    await _repository.saveProgress(newProgress);
     state = {...state, grammarId: newProgress};
   }
 
-  void toggleFavorite(String grammarId) {
+  Future<void> toggleFavorite(String grammarId) async {
     final existingProgress = state[grammarId];
     final newProgress = existingProgress?.copyWith(
       isFavorite: !existingProgress.isFavorite,
@@ -106,6 +123,7 @@ class GrammarProgressNotifier extends StateNotifier<Map<String, GrammarProgress>
       isFavorite: true,
     );
 
+    await _repository.saveProgress(newProgress);
     state = {...state, grammarId: newProgress};
   }
 

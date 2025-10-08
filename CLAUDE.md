@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is an Italian language learning Flutter application (意大利语学习应用) with comprehensive features for vocabulary and grammar learning. The app uses a scientifically-proven spaced repetition algorithm to optimize long-term retention and stores all progress in a local SQLite database.
 
 ### Key Features
-1. **Learn New Words** - Smart filtering shows only unstudied words (600 total available)
+1. **Learn New Words** - Smart filtering shows only unstudied words (799 total available)
    - Badge on home screen shows count of new words
    - Interactive flashcard interface with swipe gestures
    - Automatic progress tracking
@@ -24,7 +24,7 @@ This is an Italian language learning Flutter application (意大利语学习应�
    - Detailed word information sheets
 
 4. **Grammar Lessons** - Interactive grammar teaching with exercises
-   - 6 grammar points covering fundamentals
+   - 11 grammar points covering A1-A2 fundamentals with 75%+ A2 coverage
    - Rules, examples, and practice exercises
    - Immediate feedback on exercise answers
    - Progress tracking per grammar point
@@ -104,12 +104,15 @@ Uses **Riverpod** (`flutter_riverpod`) as the state management solution:
 Use `ConsumerWidget` or `ConsumerStatefulWidget` for widgets that need to watch providers
 
 ### Data Persistence
-SQLite database managed through:
-- `DatabaseService` (`lib/core/database/database_service.dart`) - Database initialization and schema
-- `LearningRecordRepository` (`lib/core/database/learning_record_repository.dart`) - CRUD operations for learning records
-- Database file: `italiano_learning.db` with `learning_records` table
+SQLite database (v2 schema) managed through:
+- `DatabaseService` (`lib/core/database/database_service.dart`) - Database initialization and schema management with migrations
+- `LearningRecordRepository` (`lib/core/database/learning_record_repository.dart`) - CRUD operations for vocabulary learning records
+- `GrammarProgressRepository` (`lib/core/database/grammar_progress_repository.dart`) - Grammar study progress and exercise results
+- `ConversationHistoryRepository` (`lib/core/database/conversation_history_repository.dart`) - AI conversation message history per scenario
+- `LearningStatisticsRepository` (`lib/core/database/learning_statistics_repository.dart`) - Daily study statistics, streaks, and analytics
+- Database file: `italiano_learning.db` with tables: learning_records, grammar_progress, conversation_history, learning_statistics
 - All learning progress automatically persists across app restarts
-- Provider integration: `LearningProgressNotifier` loads from database on initialization and saves after each update
+- Provider integration: Notifiers load from database on initialization and save after each update
 
 ### Routing
 - Routes defined in `lib/core/router/app_router.dart` (GoRouter configured but not integrated)
@@ -262,9 +265,11 @@ Comprehensive grammar teaching with interactive exercises:
    - `grammarCategoriesProvider` - Auto-extracts unique categories
 
 5. **Grammar Data** (`assets/data/sample_grammar.json`)
-   - 6 grammar points covering A1-A2 fundamentals
-   - Topics: Present tense, Articles, Pronouns, Gender/Number, Past tense, Prepositions
-   - Each with detailed rules, examples, and practice exercises
+   - 11 grammar points covering A1-A2 fundamentals (75%+ A2 coverage)
+   - **A1 Topics**: Present tense, Articles, Personal pronouns, Gender/Number
+   - **A2 Topics**: Passato Prossimo, Imperfetto, Futuro Semplice, Reflexive verbs, Comparatives/Superlatives, Possessive adjectives, Prepositions
+   - Each with detailed rules, examples, and 10 practice exercises
+   - Total of 64 interactive exercises across all grammar points
 
 ### AI Conversation System
 Real-time conversation practice with intelligent AI partner powered by DeepSeek API:
@@ -396,22 +401,25 @@ Italian flag-inspired color scheme in `lib/core/theme/app_theme.dart`:
 ### Data Sources
 
 **Vocabulary** (`assets/data/sample_words.json`):
-- **600 words** covering all CEFR levels (expanded from original 163)
+- **799 words** covering all CEFR levels
 - Fields: id, italian, chinese, english, pronunciation, category, level, examples, audioUrl, imageUrl, createdAt
-- **Level distribution**: Comprehensive coverage from A1 to C2
-  - Strong focus on A1-A2 beginner vocabulary
-  - Progressive difficulty to advanced C1-C2 levels
+- **Level distribution**:
+  - A1: 392 words
+  - A2: 360 words (supports A2 mid-level learning)
+  - B1-C2: 47 words
 - **Categories**:
   - Core: 日常用语, 食物餐饮, 商务交流, 旅游出行, 家庭生活, 工作学习
   - Expanded: 文化艺术, 娱乐运动, 健康医疗, 通讯科技, 颜色, 形容词
   - Functional: 方位词, 时间副词, 疑问词, 代词
-- **Vocabulary Expansion**: Use `add_vocabulary.py` script for bulk additions
+- **Vocabulary Expansion**: Use Python scripts for bulk additions (50-100 words at a time)
 
 **Grammar** (`assets/data/sample_grammar.json`):
-- **6 grammar points** (A1-A2 level)
-- Categories: 时态, 冠词, 代词, 名词, 介词
-- Each includes: rules, examples, practice exercises
-- Topics: Present tense, Articles, Personal pronouns, Gender/Number, Past tense, Prepositions
+- **11 grammar points** (4 A1 + 7 A2 level)
+- Categories: 时态, 冠词, 代词, 名词, 介词, 动词, 形容词
+- Each includes: rules (with bullet points), bilingual examples, 10 practice exercises (fill_blank/choice types)
+- **A1 Topics**: Present tense, Articles, Personal pronouns, Gender/Number
+- **A2 Topics**: Passato Prossimo, Imperfetto, Futuro Semplice, Reflexive verbs, Comparatives/Superlatives, Possessive adjectives, Prepositions
+- **A2 Coverage**: 75% (9/12 core CEFR requirements)
 
 ### Audio Integration
 - Audio files expected at: `assets/audio/words/{wordId}.mp3`
@@ -427,6 +435,8 @@ Italian flag-inspired color scheme in `lib/core/theme/app_theme.dart`:
 - `just_audio` (^0.9.42) / `audioplayers` (^6.1.0) - Audio playback
 - `dio` (^5.7.0) - HTTP client for DeepSeek API and future API calls
 - `intl` (^0.20.1) - Internationalization utilities
+- `path` (^1.9.0) - Path manipulation utilities
+- `fl_chart` (^0.69.0) - Charts for statistics visualization
 
 ## DeepSeek API Configuration
 The app uses DeepSeek's conversational AI for language practice:
@@ -447,10 +457,34 @@ The app uses DeepSeek's conversational AI for language practice:
    - Run `flutter pub get` if adding new assets
 
 2. **Bulk Addition** (for large datasets):
-   - Use `add_vocabulary.py` Python script
-   - Script validates JSON structure and maintains formatting
-   - Automatically assigns sequential IDs
-   - Example usage: Add 100+ words programmatically
+   - Use Python scripts to add 50-100 words at a time
+   - Read existing words, find max ID, increment for new words
+   - Validate JSON structure and maintain formatting
+   - Group vocabulary by theme (e.g., Imperfetto-related, reflexive verbs, etc.)
+   - Example pattern:
+     ```python
+     import json
+     with open('assets/data/sample_words.json', 'r', encoding='utf-8') as f:
+         words = json.load(f)
+     # Find max ID, create new words with IDs, append, write back
+     ```
+
+### Adding New Grammar Points
+1. **Structure Requirements**:
+   - Each grammar point needs: id, title, category, level, description, rules, examples, exercises
+   - Rules: Array of objects with title, content, and bullet points
+   - Examples: Italian/Chinese/English with highlighted grammar elements
+   - Exercises: Mix of fill_blank and choice types (recommend 10 per grammar point)
+
+2. **Using Python Scripts**:
+   ```python
+   import json
+   with open('assets/data/sample_grammar.json', 'r', encoding='utf-8') as f:
+       grammar_data = json.load(f)
+   # Add new grammar point object
+   grammar_data.append(new_grammar)
+   # Write back with proper encoding
+   ```
 
 ### Extending Learning Features
 - Learning progress auto-saves after every `recordWordStudied()` call
@@ -460,14 +494,27 @@ The app uses DeepSeek's conversational AI for language practice:
 
 ### Working with AI Conversations
 - Each conversation scenario has independent state (via `.family` provider)
-- Conversation history is maintained in memory (not persisted to database yet)
+- Conversation history is persisted to database via `ConversationHistoryRepository`
 - Grammar corrections are parsed from AI response using regex pattern
 - To add new scenarios: Update `ConversationScenario.all` in `conversation.dart`
 - To modify AI behavior: Edit system prompts in `AIRole.fromScenario()`
 - Level changes apply immediately to next message (no reset required)
 
-### Database Schema
-Table: `learning_records`
+### Working with Statistics
+- Statistics are tracked automatically across all learning activities
+- `LearningStatisticsRepository` maintains daily records in `learning_statistics` table
+- Key methods:
+  - `incrementWordsLearned(date, count)` - Track new vocabulary learned
+  - `incrementWordsReviewed(date, count)` - Track review sessions
+  - `incrementGrammarStudied(date, count)` - Track grammar lessons completed
+  - `getStudyStreak()` - Calculate consecutive study days
+  - `getRecentStatistics(days)` - Get daily stats for time range
+- Use `statisticsProvider` (FutureProvider) to access aggregated statistics in UI
+- Includes vocabulary stats (`vocabularyStatsProvider`) and grammar stats (`grammarStatsProvider`)
+
+### Database Schema (Version 2)
+
+**learning_records** (vocabulary learning progress):
 - wordId (TEXT PRIMARY KEY)
 - lastReviewed (TEXT NOT NULL) - ISO8601 datetime
 - reviewCount (INTEGER NOT NULL)
@@ -475,8 +522,31 @@ Table: `learning_records`
 - mastery (REAL NOT NULL) - 0.0 to 1.0
 - nextReviewDate (TEXT) - ISO8601 datetime, nullable
 - isFavorite (INTEGER NOT NULL) - 0 or 1 boolean
+- Indexes: nextReviewDate, isFavorite
 
-Indexes on: nextReviewDate, isFavorite
+**grammar_progress** (grammar study tracking):
+- grammarId (TEXT PRIMARY KEY)
+- completedAt (TEXT) - ISO8601 datetime, nullable
+- exerciseResults (TEXT NOT NULL) - Format: "correct/total" (e.g., "8/10")
+- isFavorite (INTEGER NOT NULL) - 0 or 1 boolean
+
+**conversation_history** (AI conversation messages):
+- id (INTEGER PRIMARY KEY AUTOINCREMENT)
+- scenarioId (TEXT NOT NULL)
+- content (TEXT NOT NULL)
+- isUser (INTEGER NOT NULL) - 0 or 1 boolean
+- timestamp (TEXT NOT NULL) - ISO8601 datetime
+- translation (TEXT) - Nullable
+- grammarCorrections (TEXT) - JSON array of corrections, nullable
+- Index: scenarioId
+
+**learning_statistics** (daily study metrics):
+- date (TEXT PRIMARY KEY) - ISO8601 date (YYYY-MM-DD)
+- wordsLearned (INTEGER NOT NULL)
+- wordsReviewed (INTEGER NOT NULL)
+- grammarPointsStudied (INTEGER NOT NULL)
+- conversationMessages (INTEGER NOT NULL)
+- studyTimeMinutes (INTEGER NOT NULL)
 
 ### Development Testing
 - Use `PersistenceTestScreen` (accessible via science icon on home page)

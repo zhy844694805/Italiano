@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/word.dart';
 import '../../core/database/learning_record_repository.dart';
+import '../../core/database/learning_statistics_repository.dart';
 
 // 词汇服务
 class VocabularyService {
@@ -59,6 +60,7 @@ final learningRecordRepositoryProvider = Provider<LearningRecordRepository>((ref
 // Learning progress provider
 class LearningProgressNotifier extends StateNotifier<Map<String, LearningRecord>> {
   final LearningRecordRepository _repository;
+  final LearningStatisticsRepository _statsRepo = LearningStatisticsRepository();
 
   LearningProgressNotifier(this._repository) : super({}) {
     _loadFromDatabase();
@@ -100,6 +102,14 @@ class LearningProgressNotifier extends StateNotifier<Map<String, LearningRecord>
 
     // 保存到数据库
     await _repository.saveLearningRecord(newRecord);
+
+    // 更新统计数据
+    final isNewWord = existingRecord == null;
+    if (isNewWord) {
+      await _statsRepo.incrementWordsLearned(DateTime.now(), 1);
+    } else {
+      await _statsRepo.incrementWordsReviewed(DateTime.now(), 1);
+    }
   }
 
   // 切换收藏状态

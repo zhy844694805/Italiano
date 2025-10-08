@@ -1,5 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/services/deepseek_service.dart';
+import '../../core/database/conversation_history_repository.dart';
+import '../../core/database/learning_statistics_repository.dart';
 import '../models/conversation.dart';
 
 /// Provider for DeepSeek service
@@ -59,6 +61,8 @@ class ConversationState {
 /// Conversation state notifier
 class ConversationNotifier extends StateNotifier<ConversationState> {
   final DeepSeekService _service;
+  final ConversationHistoryRepository _historyRepo = ConversationHistoryRepository();
+  final LearningStatisticsRepository _statsRepo = LearningStatisticsRepository();
 
   ConversationNotifier(this._service, ConversationScenario scenario)
       : super(ConversationState(
@@ -67,7 +71,25 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
           scenario: scenario,
           role: AIRole.fromScenario(scenario),
         )) {
-    _initConversation();
+    _loadHistory();
+  }
+
+  /// Load conversation history from database
+  Future<void> _loadHistory() async {
+    try {
+      final messages = await _historyRepo.getMessages(state.scenario.id);
+
+      if (messages.isEmpty) {
+        // No history, initialize with AI greeting
+        await _initConversation();
+      } else {
+        // Load existing history
+        state = state.copyWith(messages: messages);
+      }
+    } catch (e) {
+      // If loading fails, initialize new conversation
+      await _initConversation();
+    }
   }
 
   /// Initialize conversation with greeting from AI
@@ -90,6 +112,9 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
           timestamp: DateTime.now(),
           corrections: response.corrections,
         );
+
+        // Save to database
+        await _historyRepo.saveMessage(state.scenario.id, aiMessage);
 
         state = state.copyWith(
           messages: [aiMessage],
@@ -121,6 +146,9 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
       timestamp: DateTime.now(),
     );
 
+    // Save user message to database
+    await _historyRepo.saveMessage(state.scenario.id, userMsg);
+
     state = state.copyWith(
       messages: [...state.messages, userMsg],
       isLoading: true,
@@ -143,6 +171,12 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
           timestamp: DateTime.now(),
           corrections: response.corrections,
         );
+
+        // Save AI message to database
+        await _historyRepo.saveMessage(state.scenario.id, aiMessage);
+
+        // Update statistics - increment conversation messages
+        await _statsRepo.incrementConversationMessages(DateTime.now(), 2); // user + AI
 
         state = state.copyWith(
           messages: [...state.messages, aiMessage],
@@ -173,7 +207,10 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
   }
 
   /// Reset conversation
-  void reset() {
+  Future<void> reset() async {
+    // Delete history from database
+    await _historyRepo.deleteMessages(state.scenario.id);
+
     state = ConversationState(
       messages: [],
       isLoading: false,
@@ -181,6 +218,6 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
       role: state.role,
       userLevel: state.userLevel,
     );
-    _initConversation();
+    await _initConversation();
   }
 }

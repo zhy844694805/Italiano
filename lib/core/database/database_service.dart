@@ -19,8 +19,9 @@ class DatabaseService {
 
     return await openDatabase(
       dbFilePath,
-      version: 1,
+      version: 2,
       onCreate: _createDB,
+      onUpgrade: _upgradeDB,
     );
   }
 
@@ -52,6 +53,109 @@ class DatabaseService {
     await db.execute('''
       CREATE INDEX idx_favorite ON learning_records(isFavorite)
     ''');
+
+    // 创建会话历史表
+    await db.execute('''
+      CREATE TABLE conversation_history (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        scenarioId $textType,
+        content $textType,
+        isUser $boolType,
+        timestamp $textType,
+        translation TEXT,
+        grammarCorrections TEXT
+      )
+    ''');
+
+    // 创建索引以提高查询性能
+    await db.execute('''
+      CREATE INDEX idx_scenario ON conversation_history(scenarioId)
+    ''');
+
+    await db.execute('''
+      CREATE INDEX idx_timestamp ON conversation_history(timestamp)
+    ''');
+
+    // 创建语法学习进度表
+    await db.execute('''
+      CREATE TABLE grammar_progress (
+        grammarId $idType,
+        completedAt TEXT,
+        exerciseResults TEXT,
+        isFavorite $boolType
+      )
+    ''');
+
+    // 创建学习统计表（记录每日学习数据）
+    await db.execute('''
+      CREATE TABLE learning_statistics (
+        date $idType,
+        wordsLearned $intType,
+        wordsReviewed $intType,
+        grammarPointsStudied $intType,
+        conversationMessages $intType,
+        studyTimeMinutes $intType
+      )
+    ''');
+
+    await db.execute('''
+      CREATE INDEX idx_date ON learning_statistics(date)
+    ''');
+  }
+
+  Future _upgradeDB(Database db, int oldVersion, int newVersion) async {
+    if (oldVersion < 2) {
+      const textType = 'TEXT NOT NULL';
+      const intType = 'INTEGER NOT NULL';
+      const boolType = 'INTEGER NOT NULL';
+
+      // 创建会话历史表
+      await db.execute('''
+        CREATE TABLE conversation_history (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          scenarioId $textType,
+          content $textType,
+          isUser $boolType,
+          timestamp $textType,
+          translation TEXT,
+          grammarCorrections TEXT
+        )
+      ''');
+
+      await db.execute('''
+        CREATE INDEX idx_scenario ON conversation_history(scenarioId)
+      ''');
+
+      await db.execute('''
+        CREATE INDEX idx_timestamp ON conversation_history(timestamp)
+      ''');
+
+      // 创建语法学习进度表
+      await db.execute('''
+        CREATE TABLE grammar_progress (
+          grammarId TEXT PRIMARY KEY,
+          completedAt TEXT,
+          exerciseResults TEXT,
+          isFavorite $boolType
+        )
+      ''');
+
+      // 创建学习统计表
+      await db.execute('''
+        CREATE TABLE learning_statistics (
+          date TEXT PRIMARY KEY,
+          wordsLearned $intType,
+          wordsReviewed $intType,
+          grammarPointsStudied $intType,
+          conversationMessages $intType,
+          studyTimeMinutes $intType
+        )
+      ''');
+
+      await db.execute('''
+        CREATE INDEX idx_date ON learning_statistics(date)
+      ''');
+    }
   }
 
   Future close() async {
@@ -63,5 +167,8 @@ class DatabaseService {
   Future<void> clearAllData() async {
     final db = await instance.database;
     await db.delete('learning_records');
+    await db.delete('conversation_history');
+    await db.delete('grammar_progress');
+    await db.delete('learning_statistics');
   }
 }

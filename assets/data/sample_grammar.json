@@ -58,7 +58,12 @@
         "id": "ex_presente_2",
         "type": "choice",
         "question": "Maria ____ molto bene.",
-        "options": ["canta", "canti", "cantare", "canto"],
+        "options": [
+          "canta",
+          "canti",
+          "cantare",
+          "canto"
+        ],
         "answer": "canta",
         "explanation": "第三人称单数，-are动词变位为-a"
       },
@@ -66,7 +71,12 @@
         "id": "ex_presente_3",
         "type": "choice",
         "question": "Noi ____ (essere) studenti.",
-        "options": ["sono", "siamo", "siete", "sei"],
+        "options": [
+          "sono",
+          "siamo",
+          "siete",
+          "sei"
+        ],
         "answer": "siamo",
         "explanation": "第一人称复数，essere的变位是siamo"
       }
@@ -124,7 +134,12 @@
         "id": "ex_articoli_1",
         "type": "choice",
         "question": "____ libro (阳性单数)",
-        "options": ["il", "lo", "la", "i"],
+        "options": [
+          "il",
+          "lo",
+          "la",
+          "i"
+        ],
         "answer": "il",
         "explanation": "libro是阳性单数名词，以辅音l开头，用il"
       },
@@ -132,7 +147,12 @@
         "id": "ex_articoli_2",
         "type": "choice",
         "question": "____ studente (阳性单数，s+辅音开头)",
-        "options": ["il", "lo", "un", "uno"],
+        "options": [
+          "il",
+          "lo",
+          "un",
+          "uno"
+        ],
         "answer": "lo",
         "explanation": "studente以s+t（辅音）开头，用lo"
       },
@@ -195,7 +215,12 @@
         "id": "ex_pronomi_1",
         "type": "choice",
         "question": "____ sono italiano. (我)",
-        "options": ["Io", "Tu", "Lui", "Noi"],
+        "options": [
+          "Io",
+          "Tu",
+          "Lui",
+          "Noi"
+        ],
         "answer": "Io",
         "explanation": "第一人称单数主格代词是Io"
       },
@@ -254,7 +279,12 @@
         "id": "ex_genere_1",
         "type": "choice",
         "question": "libro 的复数形式是？",
-        "options": ["libre", "libri", "libra", "libro"],
+        "options": [
+          "libre",
+          "libri",
+          "libra",
+          "libro"
+        ],
         "answer": "libri",
         "explanation": "阳性-o结尾的名词，复数变为-i"
       },
@@ -262,7 +292,12 @@
         "id": "ex_genere_2",
         "type": "choice",
         "question": "ragazza 的复数形式是？",
-        "options": ["ragazzi", "ragazze", "ragazzas", "ragazza"],
+        "options": [
+          "ragazzi",
+          "ragazze",
+          "ragazzas",
+          "ragazza"
+        ],
         "answer": "ragazze",
         "explanation": "阴性-a结尾的名词，复数变为-e"
       }
@@ -335,7 +370,12 @@
         "id": "ex_passato_2",
         "type": "choice",
         "question": "Maria ____ a Roma.",
-        "options": ["ha andato", "è andata", "ha andata", "è andato"],
+        "options": [
+          "ha andato",
+          "è andata",
+          "ha andata",
+          "è andato"
+        ],
         "answer": "è andata",
         "explanation": "andare使用essere，且需要性数一致（阴性单数）"
       }
@@ -399,7 +439,12 @@
         "id": "ex_prep_1",
         "type": "choice",
         "question": "Vado ____ cinema. (a + il)",
-        "options": ["al", "del", "nel", "sul"],
+        "options": [
+          "al",
+          "del",
+          "nel",
+          "sul"
+        ],
         "answer": "al",
         "explanation": "a + il = al"
       },
@@ -412,5 +457,867 @@
       }
     ],
     "createdAt": "2025-01-06T00:00:00.000Z"
+  },
+  {
+    "id": "imperfetto",
+    "title": "未完成过去时 (Imperfetto)",
+    "category": "时态",
+    "level": "A2",
+    "description": "未完成过去时用于描述过去的习惯性动作、持续的状态、背景描述，以及同时进行的动作。它强调动作的进行过程而非完成。",
+    "rules": [
+      {
+        "title": "规则动词变位",
+        "content": "未完成过去时有固定的词尾变化规则。",
+        "points": [
+          "-are动词（如parlare）：parlavo, parlavi, parlava, parlavamo, parlavate, parlavano",
+          "-ere动词（如credere）：credevo, credevi, credeva, credevamo, credevate, credevano",
+          "-ire动词（如dormire）：dormivo, dormivi, dormiva, dormivamo, dormivate, dormivano"
+        ]
+      },
+      {
+        "title": "常用不规则动词",
+        "content": "只有少数动词在未完成过去时中不规则。",
+        "points": [
+          "essere（是）：ero, eri, era, eravamo, eravate, erano",
+          "fare（做）：facevo, facevi, faceva, facevamo, facevate, facevano",
+          "dire（说）：dicevo, dicevi, diceva, dicevamo, dicevate, dicevano",
+          "bere（喝）：bevevo, bevevi, beveva, bevevamo, bevevate, bevevano"
+        ]
+      },
+      {
+        "title": "用法场景",
+        "content": "未完成过去时的主要使用场景。",
+        "points": [
+          "描述过去的习惯：Quando ero piccolo, giocavo ogni giorno (当我小时候，每天都玩)",
+          "描述过去的状态：Faceva freddo (天气很冷)",
+          "背景描述：Mentre guardavo la TV, è arrivato mio fratello (当我看电视时，我哥哥到了)",
+          "同时进行的动作：Mentre io studiavo, tu dormivi (我学习时，你在睡觉)"
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "italian": "Quando ero bambino, andavo sempre al parco.",
+        "chinese": "当我还是孩子的时候，我总是去公园。",
+        "english": "When I was a child, I always went to the park.",
+        "highlight": "ero, andavo"
+      },
+      {
+        "italian": "Mentre mangiavo, guardavo la televisione.",
+        "chinese": "我边吃饭边看电视。",
+        "english": "While I was eating, I was watching television.",
+        "highlight": "mangiavo, guardavo"
+      },
+      {
+        "italian": "Da piccola, Maria leggeva molti libri.",
+        "chinese": "小时候，玛丽亚读了很多书。",
+        "english": "As a child, Maria read many books.",
+        "highlight": "leggeva"
+      },
+      {
+        "italian": "Faceva bel tempo ieri.",
+        "chinese": "昨天天气很好。",
+        "english": "The weather was nice yesterday.",
+        "highlight": "Faceva"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex_imperfetto_1",
+        "type": "fill_blank",
+        "question": "Quando ero piccolo, ____ (giocare) ogni giorno.",
+        "answer": "giocavo",
+        "explanation": "第一人称单数，-are动词变为-avo"
+      },
+      {
+        "id": "ex_imperfetto_2",
+        "type": "choice",
+        "question": "Tu ____ (essere) molto giovane.",
+        "options": [
+          "eri",
+          "ero",
+          "era",
+          "erano"
+        ],
+        "answer": "eri",
+        "explanation": "第二人称单数，essere的未完成过去时是eri"
+      },
+      {
+        "id": "ex_imperfetto_3",
+        "type": "choice",
+        "question": "Noi ____ (vivere) a Roma.",
+        "options": [
+          "vivevamo",
+          "vivevano",
+          "vivevo",
+          "vivevi"
+        ],
+        "answer": "vivevamo",
+        "explanation": "第一人称复数，-ere动词变为-evamo"
+      },
+      {
+        "id": "ex_imperfetto_4",
+        "type": "fill_blank",
+        "question": "Loro ____ (fare) i compiti ogni sera.",
+        "answer": "facevano",
+        "explanation": "第三人称复数，fare的未完成过去时是facevano"
+      },
+      {
+        "id": "ex_imperfetto_5",
+        "type": "choice",
+        "question": "Mentre io ____ (leggere), tu dormivi.",
+        "options": [
+          "leggevo",
+          "leggevi",
+          "leggeva",
+          "leggevamo"
+        ],
+        "answer": "leggevo",
+        "explanation": "第一人称单数，-ere动词变为-evo"
+      },
+      {
+        "id": "ex_imperfetto_6",
+        "type": "fill_blank",
+        "question": "Da bambina, Maria ____ (andare) a scuola a piedi.",
+        "answer": "andava",
+        "explanation": "第三人称单数，-are动词变为-ava"
+      },
+      {
+        "id": "ex_imperfetto_7",
+        "type": "choice",
+        "question": "Voi ____ (dire) sempre la verità?",
+        "options": [
+          "dicevate",
+          "dicevo",
+          "dicevi",
+          "dicevano"
+        ],
+        "answer": "dicevate",
+        "explanation": "第二人称复数，dire的未完成过去时是dicevate"
+      },
+      {
+        "id": "ex_imperfetto_8",
+        "type": "fill_blank",
+        "question": "____ (fare) freddo ieri sera.",
+        "answer": "Faceva",
+        "explanation": "描述天气状态，用第三人称单数"
+      },
+      {
+        "id": "ex_imperfetto_9",
+        "type": "choice",
+        "question": "I bambini ____ (giocare) nel parco.",
+        "options": [
+          "giocavano",
+          "giocavo",
+          "giocavi",
+          "giocavamo"
+        ],
+        "answer": "giocavano",
+        "explanation": "第三人称复数，-are动词变为-avano"
+      },
+      {
+        "id": "ex_imperfetto_10",
+        "type": "fill_blank",
+        "question": "Quando ____ (essere, noi) piccoli, abitavamo in campagna.",
+        "answer": "eravamo",
+        "explanation": "第一人称复数，essere的未完成过去时是eravamo"
+      }
+    ],
+    "createdAt": "2025-01-07T00:00:00.000Z"
+  },
+  {
+    "id": "futuro_semplice",
+    "title": "简单将来时 (Futuro Semplice)",
+    "category": "时态",
+    "level": "A2",
+    "description": "简单将来时用于表达将来会发生的动作、计划、预测或意图。它是表达未来最常用的时态。",
+    "rules": [
+      {
+        "title": "规则动词变位",
+        "content": "大部分动词遵循规则变化，-are动词先变为-er再加词尾。",
+        "points": [
+          "-are动词（如parlare）：parlerò, parlerai, parlerà, parleremo, parlerete, parleranno",
+          "-ere动词（如credere）：crederò, crederai, crederà, crederemo, crederete, crederanno",
+          "-ire动词（如dormire）：dormirò, dormirai, dormirà, dormiremo, dormirete, dormiranno"
+        ]
+      },
+      {
+        "title": "常用不规则动词",
+        "content": "一些高频动词有不规则的将来时词干。",
+        "points": [
+          "essere（是）：sarò, sarai, sarà, saremo, sarete, saranno",
+          "avere（有）：avrò, avrai, avrà, avremo, avrete, avranno",
+          "andare（去）：andrò, andrai, andrà, andremo, andrete, andranno",
+          "fare（做）：farò, farai, farà, faremo, farete, faranno",
+          "venire（来）：verrò, verrai, verrà, verremo, verrete, verranno",
+          "vedere（看）：vedrò, vedrai, vedrà, vedremo, vedrete, vedranno",
+          "dovere（应该）：dovrò, dovrai, dovrà, dovremo, dovrete, dovranno",
+          "potere（能够）：potrò, potrai, potrà, potremo, potrete, potranno"
+        ]
+      },
+      {
+        "title": "用法场景",
+        "content": "简单将来时的主要使用场景。",
+        "points": [
+          "表达未来计划：Domani andrò al cinema (明天我要去电影院)",
+          "做出预测：Farà bel tempo domani (明天天气会很好)",
+          "表达意图：Studierò molto quest'anno (今年我会好好学习)",
+          "提出建议：Ti chiamerò stasera (今晚我会给你打电话)"
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "italian": "Domani andrò al mare.",
+        "chinese": "明天我要去海边。",
+        "english": "Tomorrow I will go to the seaside.",
+        "highlight": "andrò"
+      },
+      {
+        "italian": "Maria parlerà con il professore.",
+        "chinese": "玛丽亚会和教授谈话。",
+        "english": "Maria will speak with the professor.",
+        "highlight": "parlerà"
+      },
+      {
+        "italian": "La prossima settimana sarò in vacanza.",
+        "chinese": "下周我会去度假。",
+        "english": "Next week I will be on vacation.",
+        "highlight": "sarò"
+      },
+      {
+        "italian": "Quando finirai il lavoro?",
+        "chinese": "你什么时候会完成工作？",
+        "english": "When will you finish the work?",
+        "highlight": "finirai"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex_futuro_1",
+        "type": "fill_blank",
+        "question": "Domani io ____ (andare) al cinema.",
+        "answer": "andrò",
+        "explanation": "andare的将来时第一人称单数是andrò"
+      },
+      {
+        "id": "ex_futuro_2",
+        "type": "choice",
+        "question": "Tu ____ (parlare) con Maria?",
+        "options": [
+          "parlerai",
+          "parlerò",
+          "parlerà",
+          "parleranno"
+        ],
+        "answer": "parlerai",
+        "explanation": "第二人称单数，-are动词变为-erai"
+      },
+      {
+        "id": "ex_futuro_3",
+        "type": "choice",
+        "question": "Noi ____ (essere) a casa domani.",
+        "options": [
+          "saremo",
+          "sarete",
+          "saranno",
+          "sarà"
+        ],
+        "answer": "saremo",
+        "explanation": "essere的将来时第一人称复数是saremo"
+      },
+      {
+        "id": "ex_futuro_4",
+        "type": "fill_blank",
+        "question": "Loro ____ (venire) alla festa.",
+        "answer": "verranno",
+        "explanation": "venire的将来时第三人称复数是verranno"
+      },
+      {
+        "id": "ex_futuro_5",
+        "type": "choice",
+        "question": "Maria ____ (avere) molto lavoro.",
+        "options": [
+          "avrà",
+          "avrò",
+          "avrai",
+          "avranno"
+        ],
+        "answer": "avrà",
+        "explanation": "avere的将来时第三人称单数是avrà"
+      },
+      {
+        "id": "ex_futuro_6",
+        "type": "fill_blank",
+        "question": "Io ____ (fare) i compiti stasera.",
+        "answer": "farò",
+        "explanation": "fare的将来时第一人称单数是farò"
+      },
+      {
+        "id": "ex_futuro_7",
+        "type": "choice",
+        "question": "Voi ____ (partire) domani mattina?",
+        "options": [
+          "partirete",
+          "partiranno",
+          "partirò",
+          "partirai"
+        ],
+        "answer": "partirete",
+        "explanation": "第二人称复数，-ire动词变为-irete"
+      },
+      {
+        "id": "ex_futuro_8",
+        "type": "fill_blank",
+        "question": "Quando ____ (vedere, tu) il film?",
+        "answer": "vedrai",
+        "explanation": "vedere的将来时第二人称单数是vedrai"
+      },
+      {
+        "id": "ex_futuro_9",
+        "type": "choice",
+        "question": "La settimana prossima ____ (fare) bel tempo.",
+        "options": [
+          "farà",
+          "farò",
+          "farai",
+          "faranno"
+        ],
+        "answer": "farà",
+        "explanation": "描述天气，用第三人称单数"
+      },
+      {
+        "id": "ex_futuro_10",
+        "type": "fill_blank",
+        "question": "Noi ____ (dovere) studiare molto.",
+        "answer": "dovremo",
+        "explanation": "dovere的将来时第一人称复数是dovremo"
+      }
+    ],
+    "createdAt": "2025-01-08T00:00:00.000Z"
+  },
+  {
+    "id": "verbi_riflessivi",
+    "title": "反身动词 (Verbi Riflessivi)",
+    "category": "动词",
+    "level": "A2",
+    "description": "反身动词表示动作施加于主语自身。在意大利语中，反身动词非常常用，特别是在描述日常活动时。反身动词由动词原形加反身代词构成。",
+    "rules": [
+      {
+        "title": "反身代词",
+        "content": "反身代词必须与主语的人称和数保持一致。",
+        "points": [
+          "mi (我自己) - Io mi lavo",
+          "ti (你自己) - Tu ti vesti",
+          "si (他/她自己, 您自己) - Lui/Lei si sveglia, Lei si alza",
+          "ci (我们自己) - Noi ci prepariamo",
+          "vi (你们自己) - Voi vi lavate",
+          "si (他们自己) - Loro si riposano"
+        ]
+      },
+      {
+        "title": "现在时变位",
+        "content": "反身动词在现在时的变位：反身代词 + 动词变位。",
+        "points": [
+          "lavarsi (洗澡): mi lavo, ti lavi, si lava, ci laviamo, vi lavate, si lavano",
+          "alzarsi (起床): mi alzo, ti alzi, si alza, ci alziamo, vi alzate, si alzano",
+          "vestirsi (穿衣): mi vesto, ti vesti, si veste, ci vestiamo, vi vestite, si vestono"
+        ]
+      },
+      {
+        "title": "常用反身动词",
+        "content": "日常生活中最常用的反身动词。",
+        "points": [
+          "svegliarsi (醒来), alzarsi (起床), lavarsi (洗漱)",
+          "vestirsi (穿衣), prepararsi (准备), pettinarsi (梳头)",
+          "riposarsi (休息), divertirsi (玩得开心), annoiarsi (感到无聊)",
+          "chiamarsi (叫做), sentirsi (感觉), trovarsi (位于)"
+        ]
+      },
+      {
+        "title": "近过去时",
+        "content": "反身动词的近过去时总是使用essere作助动词，过去分词需与主语性数一致。",
+        "points": [
+          "Io mi sono svegliato/a (我醒了)",
+          "Tu ti sei alzato/a (你起床了)",
+          "Maria si è vestita (玛丽亚穿好衣服了)",
+          "Noi ci siamo preparati/e (我们准备好了)"
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "italian": "Mi sveglio alle sette ogni mattina.",
+        "chinese": "我每天早上七点醒来。",
+        "english": "I wake up at seven every morning.",
+        "highlight": "Mi sveglio"
+      },
+      {
+        "italian": "Come ti chiami?",
+        "chinese": "你叫什么名字？",
+        "english": "What's your name?",
+        "highlight": "ti chiami"
+      },
+      {
+        "italian": "Ci divertiamo molto alla festa.",
+        "chinese": "我们在派对上玩得很开心。",
+        "english": "We have a lot of fun at the party.",
+        "highlight": "Ci divertiamo"
+      },
+      {
+        "italian": "Maria si è alzata presto stamattina.",
+        "chinese": "玛丽亚今天早上起得很早。",
+        "english": "Maria got up early this morning.",
+        "highlight": "si è alzata"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex_riflessivi_1",
+        "type": "fill_blank",
+        "question": "Io ____ (svegliarsi) alle 7.",
+        "answer": "mi sveglio",
+        "explanation": "第一人称单数用mi，动词变位为sveglio"
+      },
+      {
+        "id": "ex_riflessivi_2",
+        "type": "choice",
+        "question": "Come ____ (chiamarsi, tu)?",
+        "options": [
+          "ti chiami",
+          "mi chiamo",
+          "si chiama",
+          "ci chiamiamo"
+        ],
+        "answer": "ti chiami",
+        "explanation": "第二人称单数用ti，动词变位为chiami"
+      },
+      {
+        "id": "ex_riflessivi_3",
+        "type": "choice",
+        "question": "Maria ____ (vestirsi) velocemente.",
+        "options": [
+          "si veste",
+          "ti vesti",
+          "mi vesto",
+          "vi vestite"
+        ],
+        "answer": "si veste",
+        "explanation": "第三人称单数用si，动词变位为veste"
+      },
+      {
+        "id": "ex_riflessivi_4",
+        "type": "fill_blank",
+        "question": "Noi ____ (prepararsi) per la festa.",
+        "answer": "ci prepariamo",
+        "explanation": "第一人称复数用ci，动词变位为prepariamo"
+      },
+      {
+        "id": "ex_riflessivi_5",
+        "type": "choice",
+        "question": "Voi ____ (divertirsi) al cinema?",
+        "options": [
+          "vi divertite",
+          "si divertono",
+          "ci divertiamo",
+          "ti diverti"
+        ],
+        "answer": "vi divertite",
+        "explanation": "第二人称复数用vi，动词变位为divertite"
+      },
+      {
+        "id": "ex_riflessivi_6",
+        "type": "fill_blank",
+        "question": "Loro ____ (riposarsi) dopo il lavoro.",
+        "answer": "si riposano",
+        "explanation": "第三人称复数用si，动词变位为riposano"
+      },
+      {
+        "id": "ex_riflessivi_7",
+        "type": "choice",
+        "question": "Maria ____ (alzarsi) presto. (近过去时)",
+        "options": [
+          "si è alzata",
+          "si alza",
+          "si è alzato",
+          "si sono alzate"
+        ],
+        "answer": "si è alzata",
+        "explanation": "近过去时用essere，阴性单数过去分词为alzata"
+      },
+      {
+        "id": "ex_riflessivi_8",
+        "type": "fill_blank",
+        "question": "Io ____ (lavarsi) le mani.",
+        "answer": "mi lavo",
+        "explanation": "第一人称单数用mi lavo"
+      },
+      {
+        "id": "ex_riflessivi_9",
+        "type": "choice",
+        "question": "I bambini ____ (divertirsi) al parco. (近过去时)",
+        "options": [
+          "si sono divertiti",
+          "si divertono",
+          "si è divertito",
+          "si diverte"
+        ],
+        "answer": "si sono divertiti",
+        "explanation": "近过去时，阳性复数过去分词为divertiti"
+      },
+      {
+        "id": "ex_riflessivi_10",
+        "type": "fill_blank",
+        "question": "Tu ____ (sentirsi) bene oggi?",
+        "answer": "ti senti",
+        "explanation": "第二人称单数用ti senti"
+      }
+    ],
+    "createdAt": "2025-01-09T00:00:00.000Z"
+  },
+  {
+    "id": "comparativi_superlativi",
+    "title": "形容词比较级和最高级 (Comparativi e Superlativi)",
+    "category": "形容词",
+    "level": "A2",
+    "description": "比较级用于比较两个事物，最高级用于表示某事物在一组中达到最高程度。掌握比较级和最高级对于表达观点和做出比较非常重要。",
+    "rules": [
+      {
+        "title": "比较级 (Comparativo)",
+        "content": "意大利语比较级有三种类型。",
+        "points": [
+          "优等比较级: più + 形容词 + di (比...更...) - Maria è più alta di Luigi",
+          "劣等比较级: meno + 形容词 + di (比...不那么...) - Questo libro è meno interessante di quello",
+          "平等比较级: (così/tanto)... come/quanto (和...一样...) - Paolo è (tanto) alto quanto Marco"
+        ]
+      },
+      {
+        "title": "相对最高级 (Superlativo Relativo)",
+        "content": "表示在一定范围内的最高程度。",
+        "points": [
+          "il/la/i/le + più + 形容词 + di (最...) - Maria è la più intelligente della classe",
+          "il/la/i/le + meno + 形容词 + di (最不...) - È il meno costoso del negozio"
+        ]
+      },
+      {
+        "title": "绝对最高级 (Superlativo Assoluto)",
+        "content": "表示非常高的程度，不与其他事物比较。",
+        "points": [
+          "形容词 + -issimo/a/i/e - bellissimo (非常美), altissima (非常高)",
+          "molto + 形容词 - molto bello (非常美), molto alto (非常高)"
+        ]
+      },
+      {
+        "title": "不规则比较级/最高级",
+        "content": "一些常用形容词有不规则形式。",
+        "points": [
+          "buono (好): migliore (更好), il migliore (最好), ottimo (极好)",
+          "cattivo (坏): peggiore (更坏), il peggiore (最坏), pessimo (极坏)",
+          "grande (大): maggiore (更大), il maggiore (最大), massimo (极大)",
+          "piccolo (小): minore (更小), il minore (最小), minimo (极小)"
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "italian": "Roma è più grande di Firenze.",
+        "chinese": "罗马比佛罗伦萨大。",
+        "english": "Rome is bigger than Florence.",
+        "highlight": "più grande di"
+      },
+      {
+        "italian": "Maria è la più brava della classe.",
+        "chinese": "玛丽亚是班上最优秀的。",
+        "english": "Maria is the best in the class.",
+        "highlight": "la più brava"
+      },
+      {
+        "italian": "Questo film è bellissimo!",
+        "chinese": "这部电影非常好看！",
+        "english": "This movie is very beautiful!",
+        "highlight": "bellissimo"
+      },
+      {
+        "italian": "Il mio caffè è migliore del tuo.",
+        "chinese": "我的咖啡比你的好。",
+        "english": "My coffee is better than yours.",
+        "highlight": "migliore"
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex_comp_1",
+        "type": "fill_blank",
+        "question": "Maria è ____ alta ____ sua sorella. (更...than)",
+        "answer": "più... di",
+        "explanation": "优等比较级用più...di"
+      },
+      {
+        "id": "ex_comp_2",
+        "type": "choice",
+        "question": "Questo libro è ____ interessante di quello.",
+        "options": [
+          "meno",
+          "più",
+          "molto",
+          "tanto"
+        ],
+        "answer": "meno",
+        "explanation": "劣等比较级用meno"
+      },
+      {
+        "id": "ex_comp_3",
+        "type": "choice",
+        "question": "Paolo è ____ intelligente ____ Marco. (和...一样)",
+        "options": [
+          "tanto...quanto",
+          "più...di",
+          "meno...di",
+          "molto"
+        ],
+        "answer": "tanto...quanto",
+        "explanation": "平等比较级用tanto...quanto或così...come"
+      },
+      {
+        "id": "ex_comp_4",
+        "type": "fill_blank",
+        "question": "Maria è ____ brava della classe. (最...)",
+        "answer": "la più",
+        "explanation": "相对最高级用定冠词+più"
+      },
+      {
+        "id": "ex_comp_5",
+        "type": "choice",
+        "question": "Questo film è ____! (非常美)",
+        "options": [
+          "bellissimo",
+          "più bello",
+          "il più bello",
+          "meno bello"
+        ],
+        "answer": "bellissimo",
+        "explanation": "绝对最高级用-issimo"
+      },
+      {
+        "id": "ex_comp_6",
+        "type": "fill_blank",
+        "question": "Il caffè italiano è ____ del caffè americano. (更好)",
+        "answer": "migliore",
+        "explanation": "buono的比较级是migliore"
+      },
+      {
+        "id": "ex_comp_7",
+        "type": "choice",
+        "question": "Questo è ____ ristorante della città. (最好的)",
+        "options": [
+          "il migliore",
+          "migliore",
+          "ottimo",
+          "più buono"
+        ],
+        "answer": "il migliore",
+        "explanation": "buono的相对最高级是il migliore"
+      },
+      {
+        "id": "ex_comp_8",
+        "type": "fill_blank",
+        "question": "Oggi fa ____ caldo! (非常)",
+        "answer": "caldissimo",
+        "explanation": "绝对最高级，caldo变为caldissimo"
+      },
+      {
+        "id": "ex_comp_9",
+        "type": "choice",
+        "question": "Questa soluzione è ____ di quella. (更坏)",
+        "options": [
+          "peggiore",
+          "migliore",
+          "cattiva",
+          "pessima"
+        ],
+        "answer": "peggiore",
+        "explanation": "cattivo的比较级是peggiore"
+      },
+      {
+        "id": "ex_comp_10",
+        "type": "fill_blank",
+        "question": "Lei è ____ giovane di me. (不那么...)",
+        "answer": "meno",
+        "explanation": "劣等比较级用meno"
+      }
+    ],
+    "createdAt": "2025-01-10T00:00:00.000Z"
+  },
+  {
+    "id": "aggettivi_possessivi",
+    "title": "物主形容词 (Aggettivi Possessivi)",
+    "category": "代词",
+    "level": "A2",
+    "description": "物主形容词用来表示所有关系，必须与所修饰的名词在性、数上保持一致，并且通常需要加定冠词。",
+    "rules": [
+      {
+        "title": "物主形容词的形式",
+        "content": "物主形容词有四种形式，根据所修饰名词的性、数变化：",
+        "points": [
+          "我的：il mio (阳单), la mia (阴单), i miei (阳复), le mie (阴复)",
+          "你的：il tuo (阳单), la tua (阴单), i tuoi (阳复), le tue (阴复)",
+          "他/她/您的：il suo (阳单), la sua (阴单), i suoi (阳复), le sue (阴复)",
+          "我们的：il nostro (阳单), la nostra (阴单), i nostri (阳复), le nostre (阴复)",
+          "你们的：il vostro (阳单), la vostra (阴单), i vostri (阳复), le vostre (阴复)",
+          "他们的：il loro (阳单), la loro (阴单), i loro (阳复), le loro (阴复)"
+        ]
+      },
+      {
+        "title": "与定冠词连用",
+        "content": "物主形容词通常与定冠词一起使用：",
+        "points": [
+          "il mio libro (我的书), la mia casa (我的房子)",
+          "i tuoi amici (你的朋友们), le tue sorelle (你的姐妹们)",
+          "loro是不变的，但冠词要变：il loro cane, la loro macchina, i loro figli"
+        ]
+      },
+      {
+        "title": "家庭成员单数时省略冠词",
+        "content": "当物主形容词修饰家庭成员的单数形式时，通常省略定冠词：",
+        "points": [
+          "mio padre (我的父亲), tua madre (你的母亲), suo fratello (他的兄弟)",
+          "但loro除外：il loro padre (他们的父亲)",
+          "复数或加修饰语时要加冠词：i miei fratelli (我的兄弟们), la mia cara madre (我亲爱的母亲)"
+        ]
+      },
+      {
+        "title": "与名词的一致",
+        "content": "物主形容词要与被修饰的名词保持性、数一致，而不是与所有者一致：",
+        "points": [
+          "Marco parla con sua madre. (Marco和他的母亲说话 - sua与madre一致)",
+          "Maria parla con suo padre. (Maria和她的父亲说话 - suo与padre一致)",
+          "关键是看所修饰的名词，不是看所有者的性别"
+        ]
+      }
+    ],
+    "examples": [
+      {
+        "italian": "Questo è il mio libro e quella è la mia penna.",
+        "chinese": "这是我的书，那是我的笔。",
+        "english": "This is my book and that is my pen.",
+        "highlights": [
+          "il mio libro",
+          "la mia penna"
+        ]
+      },
+      {
+        "italian": "Mio padre e mia madre lavorano in ospedale.",
+        "chinese": "我的父亲和母亲在医院工作。",
+        "english": "My father and my mother work in the hospital.",
+        "highlights": [
+          "Mio padre",
+          "mia madre"
+        ]
+      },
+      {
+        "italian": "I nostri amici vivono a Roma, ma la loro casa è piccola.",
+        "chinese": "我们的朋友住在罗马，但他们的房子很小。",
+        "english": "Our friends live in Rome, but their house is small.",
+        "highlights": [
+          "I nostri amici",
+          "la loro casa"
+        ]
+      },
+      {
+        "italian": "Dove sono le tue chiavi? Le mie sono sul tavolo.",
+        "chinese": "你的钥匙在哪里？我的在桌子上。",
+        "english": "Where are your keys? Mine are on the table.",
+        "highlights": [
+          "le tue chiavi",
+          "Le mie"
+        ]
+      }
+    ],
+    "exercises": [
+      {
+        "type": "fill_blank",
+        "question": "Questo è ___ (我的) libro preferito.",
+        "answer": "il mio",
+        "explanation": "libro是阳性单数名词，所以用il mio"
+      },
+      {
+        "type": "fill_blank",
+        "question": "___ (我的) sorella studia medicina all'università.",
+        "answer": "Mia",
+        "explanation": "家庭成员单数形式，省略定冠词，直接用mia"
+      },
+      {
+        "type": "choice",
+        "question": "Dove sono ___ (你的) chiavi?",
+        "options": [
+          "il tuo",
+          "la tua",
+          "i tuoi",
+          "le tue"
+        ],
+        "answer": "le tue",
+        "explanation": "chiavi (钥匙) 是阴性复数名词，用le tue"
+      },
+      {
+        "type": "fill_blank",
+        "question": "Marco parla con ___ (他的) madre al telefono.",
+        "answer": "sua",
+        "explanation": "madre是阴性单数，家庭成员单数省略冠词，用sua"
+      },
+      {
+        "type": "choice",
+        "question": "___ (我们的) casa è grande e luminosa.",
+        "options": [
+          "Il nostro",
+          "La nostra",
+          "I nostri",
+          "Le nostre"
+        ],
+        "answer": "La nostra",
+        "explanation": "casa是阴性单数名词，用la nostra"
+      },
+      {
+        "type": "fill_blank",
+        "question": "I bambini giocano con ___ (他们的) giocattoli.",
+        "answer": "i loro",
+        "explanation": "giocattoli是阳性复数，loro不变，但冠词要变成i"
+      },
+      {
+        "type": "choice",
+        "question": "___ (你的) amici sono molto simpatici.",
+        "options": [
+          "Il tuo",
+          "La tua",
+          "I tuoi",
+          "Le tue"
+        ],
+        "answer": "I tuoi",
+        "explanation": "amici是阳性复数名词，用i tuoi"
+      },
+      {
+        "type": "fill_blank",
+        "question": "Maria e ___ (她的) fratello vanno al cinema.",
+        "answer": "suo",
+        "explanation": "fratello是阳性单数，家庭成员单数省略冠词，用suo（与所修饰词一致）"
+      },
+      {
+        "type": "choice",
+        "question": "Questa è ___ (你们的) macchina?",
+        "options": [
+          "il vostro",
+          "la vostra",
+          "i vostri",
+          "le vostre"
+        ],
+        "answer": "la vostra",
+        "explanation": "macchina是阴性单数名词，用la vostra"
+      },
+      {
+        "type": "fill_blank",
+        "question": "___ (我的) genitori abitano in campagna.",
+        "answer": "I miei",
+        "explanation": "genitori是复数，需要加冠词，用i miei"
+      }
+    ]
   }
 ]
