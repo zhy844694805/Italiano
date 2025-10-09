@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/reading.dart';
 import '../../shared/providers/reading_provider.dart';
+import '../../shared/providers/tts_provider.dart';
 
 class ReadingDetailScreen extends ConsumerStatefulWidget {
   final ReadingPassage passage;
@@ -146,6 +147,8 @@ class _ReadingDetailScreenState extends ConsumerState<ReadingDetailScreen> {
   }
 
   Widget _buildHeader() {
+    final ttsService = ref.watch(ttsServiceProvider);
+
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(16),
@@ -177,6 +180,23 @@ class _ReadingDetailScreenState extends ConsumerState<ReadingDetailScreen> {
                   widget.passage.category,
                   style: const TextStyle(fontSize: 12),
                 ),
+              ),
+              const Spacer(),
+              // TTS按钮播放整篇文章
+              IconButton.filled(
+                icon: const Icon(Icons.volume_up),
+                tooltip: '朗读全文',
+                onPressed: () async {
+                  final success = await ttsService.speak(widget.passage.content);
+                  if (!success && mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('语音播放失败'),
+                        duration: Duration(seconds: 1),
+                      ),
+                    );
+                  }
+                },
               ),
             ],
           ),

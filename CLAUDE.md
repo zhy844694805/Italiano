@@ -11,17 +11,20 @@ This is an Italian language learning Flutter application (意大利语学习应�
    - Badge on home screen shows count of new words
    - Interactive flashcard interface with swipe gestures
    - Automatic progress tracking
+   - **TTS Support**: KOKORO TTS integration for authentic Italian pronunciation
 
 2. **Review System** - Intelligent spaced repetition based on learning history
    - Shows words due for review based on algorithm
    - Review reminders appear on home screen
    - Tracks accuracy and updates review schedule
+   - **TTS Support**: Play word pronunciation during review
 
 3. **Vocabulary Browser** - Complete word list with powerful filtering
    - Search by Italian, Chinese, or English
    - Filter by level (A1-C2) and category
    - Sort by mastery level or recent study
    - Detailed word information sheets
+   - **TTS Support**: Play pronunciation for any word in the list
 
 4. **Grammar Lessons** - Interactive grammar teaching with exercises
    - 14 grammar points covering A1-A2 fundamentals with 100% A2 coverage ✅
@@ -37,6 +40,7 @@ This is an Italian language learning Flutter application (意大利语学习应�
    - Immediate scoring with detailed explanations
    - Progress tracking and accuracy statistics
    - Filter by level (A1/A2) and category
+   - **TTS Support**: Read entire passages aloud for listening practice
 
 6. **AI Conversation Partner** - Real-time conversation practice with AI
    - 6 scenario-based conversations (restaurant, airport, shopping, doctor, interview, friend)
@@ -197,6 +201,33 @@ SQLite database (v2 schema) managed through:
   - Corrected text
   - Explanation in Chinese
   - Error type classification
+
+### Text-to-Speech (TTS) System
+Powered by **KOKORO TTS API** with OpenAI-compatible format (`lib/core/services/tts_service.dart`):
+
+**API Configuration**:
+- Base URL: `https://newapi.maiduoduo.it/v1`
+- Endpoint: `/audio/speech`
+- Model: `kokoro`
+- Response Format: MP3 audio
+
+**Voice Options**:
+- `im_nicola` - Italian male voice
+- `if_sara` - Italian female voice (default)
+
+**Features**:
+- Real-time text-to-speech conversion for Italian text
+- Audio caching system for improved performance
+  - `preloadAudio()` - Download and cache audio without playing
+  - `playFromCache()` - Play cached audio instantly
+  - `clearCache()` - Clean up cached audio files
+- Playback controls: play, pause, stop, resume
+- Integration with `audioplayers` package for audio playback
+- Used across vocabulary learning, review, list, and reading screens
+
+**Provider** (`lib/shared/providers/tts_provider.dart`):
+- `ttsServiceProvider` - Singleton TTSService instance
+- `ttsPlayingStateProvider` - Track current playback state
 
 ### Spaced Repetition Algorithm
 Implemented in `vocabulary_provider.dart:_calculateNextReviewDate()`:

@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/word.dart';
 import '../../shared/widgets/swipeable_word_card.dart';
 import '../../shared/providers/vocabulary_provider.dart';
-import '../../core/services/audio_player_service.dart';
+import '../../shared/providers/tts_provider.dart';
 
 class VocabularyReviewScreen extends ConsumerStatefulWidget {
   const VocabularyReviewScreen({super.key});
@@ -236,7 +236,7 @@ class _VocabularyReviewScreenState extends ConsumerState<VocabularyReviewScreen>
   }
 
   Widget _buildCardStack(Word currentWord) {
-    final audioService = ref.watch(audioPlayerServiceProvider);
+    final ttsService = ref.watch(ttsServiceProvider);
 
     return Stack(
       children: [
@@ -266,10 +266,15 @@ class _VocabularyReviewScreenState extends ConsumerState<VocabularyReviewScreen>
               word: currentWord,
               showAudioButton: true,
               onAudioTap: () async {
-                try {
-                  await audioService.playWordPronunciation(currentWord.id);
-                } catch (e) {
-                  print('Audio not available for word: ${currentWord.id}');
+                // 使用KOKORO TTS播放意大利语单词发音
+                final success = await ttsService.speak(currentWord.italian);
+                if (!success && mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('语音播放失败'),
+                      duration: Duration(seconds: 1),
+                    ),
+                  );
                 }
               },
               onSwipeLeft: () => _handleSwipe(currentWord, false),

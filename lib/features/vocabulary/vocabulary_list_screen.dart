@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/word.dart';
 import '../../shared/providers/vocabulary_provider.dart';
-import '../../core/services/audio_player_service.dart';
+import '../../shared/providers/tts_provider.dart';
 import 'vocabulary_learning_screen.dart';
 
 class VocabularyListScreen extends ConsumerStatefulWidget {
@@ -487,12 +487,8 @@ class _WordListItem extends ConsumerWidget {
                   IconButton(
                     icon: const Icon(Icons.volume_up),
                     onPressed: () async {
-                      final audioService = ref.read(audioPlayerServiceProvider);
-                      try {
-                        await audioService.playWordPronunciation(word.id);
-                      } catch (e) {
-                        // 音频文件不存在，忽略
-                      }
+                      final ttsService = ref.read(ttsServiceProvider);
+                      await ttsService.speak(word.italian);
                     },
                   ),
 
@@ -618,7 +614,7 @@ class _WordDetailSheet extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
-    final audioService = ref.watch(audioPlayerServiceProvider);
+    final ttsService = ref.watch(ttsServiceProvider);
 
     return DraggableScrollableSheet(
       initialChildSize: 0.7,
@@ -680,11 +676,7 @@ class _WordDetailSheet extends ConsumerWidget {
                     icon: const Icon(Icons.volume_up),
                     iconSize: 32,
                     onPressed: () async {
-                      try {
-                        await audioService.playWordPronunciation(word.id);
-                      } catch (e) {
-                        // 音频不存在
-                      }
+                      await ttsService.speak(word.italian);
                     },
                   ),
                 ],
