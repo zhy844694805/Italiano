@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is an Italian language learning Flutter application (意大利语学习应用) with comprehensive features for vocabulary and grammar learning. The app uses a scientifically-proven spaced repetition algorithm to optimize long-term retention and stores all progress in a local SQLite database.
 
 ### Key Features
-1. **Learn New Words** - Smart filtering shows only unstudied words (799 total available)
+1. **Learn New Words** - Smart filtering shows only unstudied words (1219 total available)
    - Badge on home screen shows count of new words
    - Interactive flashcard interface with swipe gestures
    - Automatic progress tracking
@@ -29,14 +29,23 @@ This is an Italian language learning Flutter application (意大利语学习应�
    - Immediate feedback on exercise answers
    - Progress tracking per grammar point
 
-5. **AI Conversation Partner** - Real-time conversation practice with AI
+5. **Reading Comprehension** - Authentic Italian reading passages with comprehension exercises (✅ NEW)
+   - 10 carefully curated passages (A1-A2 level)
+   - Topics: daily life, travel, culture, practical texts
+   - 5 comprehension questions per passage (50 questions total)
+   - Multiple choice, true/false, and fill-in-the-blank question types
+   - Immediate scoring with detailed explanations
+   - Progress tracking and accuracy statistics
+   - Filter by level (A1/A2) and category
+
+6. **AI Conversation Partner** - Real-time conversation practice with AI
    - 6 scenario-based conversations (restaurant, airport, shopping, doctor, interview, friend)
    - AI role-playing with natural language responses
    - Real-time grammar correction and explanations
    - Level-adaptive difficulty (A1-C2 CEFR levels)
    - DeepSeek API integration for conversational AI
 
-6. **Progress Tracking** - Comprehensive statistics and analytics (✅ Complete)
+7. **Progress Tracking** - Comprehensive statistics and analytics (✅ Complete)
    - **Personal Center Page**: Beautiful statistics dashboard with fl_chart visualizations
    - **Learning Statistics**: Total study days, study time, words learned, grammar points studied
    - **Study Streak Tracking**: Consecutive learning days calculation and display
@@ -140,6 +149,28 @@ SQLite database (v2 schema) managed through:
   - Accuracy tracking (correct/total reviews)
   - Mastery level (0.0-1.0 calculated score)
   - Next review date (spaced repetition)
+  - Favorite flag
+
+**Reading Models** (`lib/shared/models/reading.dart`):
+- `ReadingPassage` - Reading passage with:
+  - Italian and Chinese titles
+  - CEFR level (A1, A2) and category
+  - Full text content
+  - Word count and estimated reading time
+  - 5 comprehension questions per passage
+  - Optional audio URL
+
+- `ReadingQuestion` - Comprehension question:
+  - Question text (Chinese and Italian)
+  - Question type: choice, true_false, fill_blank
+  - Answer options (for multiple choice)
+  - Correct answer and explanation
+
+- `ReadingProgress` - Reading completion tracking:
+  - Passage ID and completion date
+  - Correct/total questions count
+  - User answers for each question
+  - Accuracy percentage (auto-calculated)
   - Favorite flag
 
 **Conversation Models** (`lib/shared/models/conversation.dart`):
@@ -352,13 +383,18 @@ Real-time conversation practice with intelligent AI partner powered by DeepSeek 
 lib/
 ├── core/
 │   ├── constants/          # App-wide constants
-│   ├── database/           # SQLite database layer
+│   ├── database/           # SQLite database layer (v3)
 │   │   ├── database_service.dart
-│   │   └── learning_record_repository.dart
+│   │   ├── learning_record_repository.dart
+│   │   ├── grammar_progress_repository.dart
+│   │   ├── conversation_history_repository.dart
+│   │   ├── learning_statistics_repository.dart
+│   │   └── reading_progress_repository.dart
 │   ├── router/             # GoRouter configuration
 │   ├── services/           # Singleton services
 │   │   ├── audio_player_service.dart    # Audio playback
-│   │   └── deepseek_service.dart        # DeepSeek API integration
+│   │   ├── deepseek_service.dart        # DeepSeek API integration
+│   │   └── reading_service.dart         # Reading passages loading
 │   ├── theme/              # Material 3 theme configuration
 │   └── utils/              # Utility functions
 ├── features/               # Feature-based organization
@@ -371,22 +407,25 @@ lib/
 │   ├── grammar/            # Grammar lessons with exercises
 │   │   ├── grammar_list_screen.dart
 │   │   └── grammar_detail_screen.dart
+│   ├── reading/            # Reading comprehension (NEW)
+│   │   ├── reading_list_screen.dart          # Browse passages with filters
+│   │   └── reading_detail_screen.dart        # Read passage and answer questions
 │   ├── conversation/       # AI conversation practice
 │   │   ├── conversation_scenario_screen.dart  # Scenario selection
 │   │   └── ai_conversation_screen.dart        # Chat interface
-│   ├── practice/           # Practice quizzes (placeholder)
-│   ├── profile/            # User profile with statistics and charts
-│   │   └── profile_screen.dart
-│   └── test/               # Development test screens
-│       └── persistence_test_screen.dart
+│   ├── practice/           # Integrated into reading feature
+│   └── profile/            # User profile with statistics and charts
+│       └── profile_screen.dart
 └── shared/
     ├── models/             # Data models
     │   ├── word.dart       # Word, LearningRecord
     │   ├── grammar.dart    # GrammarPoint, GrammarRule, GrammarExample, etc.
+    │   ├── reading.dart    # ReadingPassage, ReadingQuestion, ReadingProgress
     │   └── conversation.dart    # ConversationScenario, AIRole, ConversationMessage
     ├── providers/          # Riverpod state providers
     │   ├── vocabulary_provider.dart      # Word loading, learning progress
     │   ├── grammar_provider.dart         # Grammar loading, progress tracking
+    │   ├── reading_provider.dart         # Reading passages, progress tracking
     │   └── conversation_provider.dart    # Conversation state, DeepSeek API
     └── widgets/            # Reusable UI components
         ├── flip_card.dart
@@ -438,6 +477,25 @@ Italian flag-inspired color scheme in `lib/core/theme/app_theme.dart`:
 - **A1 Topics**: Present tense, Articles, Personal pronouns, Gender/Number
 - **A2 Topics**: Passato Prossimo, Imperfetto, Futuro Semplice, Imperativo, Condizionale Semplice, Reflexive verbs, Comparatives/Superlatives, Possessive adjectives, Prepositions, Direct/Indirect Object Pronouns
 - **A2 Coverage**: 100% ✅ (All core CEFR A2 requirements complete!)
+
+**Reading Comprehension** (`assets/data/reading_passages.json`):
+- **10 reading passages** (4 A1 + 6 A2 level) ✅
+- **Total**: 1,454 words of reading material
+- **Categories**:
+  - 日常生活 (Daily Life): 5 passages (La mia famiglia, Al ristorante, Una giornata tipica, Il mio hobby, etc.)
+  - 旅游 (Travel): 1 passage (Il mio weekend a Firenze)
+  - 实用文本 (Practical Texts): 3 passages (Cerco un appartamento, L'orario dei negozi, Una lettera)
+  - 文化 (Culture): 1 passage (Le stagioni in Italia)
+  - 学习 (Learning): 1 passage (Imparare l'italiano)
+- **Questions**: 5 comprehension questions per passage (50 total)
+  - Question types: Multiple choice, True/False, Fill-in-the-blank
+  - All questions include Chinese and Italian versions
+  - Detailed explanations for each answer
+- **Passage characteristics**:
+  - Word count: 96-162 words per passage
+  - Estimated reading time: 2-3 minutes each
+  - Authentic Italian language and cultural contexts
+  - Level-appropriate vocabulary and grammar structures
 
 ### Audio Integration
 - Audio files expected at: `assets/audio/words/{wordId}.mp3`
@@ -530,7 +588,7 @@ The app uses DeepSeek's conversational AI for language practice:
 - Use `statisticsProvider` (FutureProvider) to access aggregated statistics in UI
 - Includes vocabulary stats (`vocabularyStatsProvider`) and grammar stats (`grammarStatsProvider`)
 
-### Database Schema (Version 2)
+### Database Schema (Version 3)
 
 **learning_records** (vocabulary learning progress):
 - wordId (TEXT PRIMARY KEY)
@@ -565,6 +623,14 @@ The app uses DeepSeek's conversational AI for language practice:
 - grammarPointsStudied (INTEGER NOT NULL)
 - conversationMessages (INTEGER NOT NULL)
 - studyTimeMinutes (INTEGER NOT NULL)
+
+**reading_progress** (reading comprehension progress):
+- passage_id (TEXT PRIMARY KEY)
+- completed_at (TEXT NOT NULL) - ISO8601 datetime
+- correct_answers (INTEGER NOT NULL)
+- total_questions (INTEGER NOT NULL)
+- user_answers (TEXT NOT NULL) - Serialized "q1:A,q2:B" format
+- is_favorite (INTEGER NOT NULL) - 0 or 1 boolean
 
 ### Development Testing
 - Use `PersistenceTestScreen` (accessible via science icon on home page)

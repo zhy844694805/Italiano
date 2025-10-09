@@ -5,6 +5,7 @@ import '../vocabulary/vocabulary_list_screen.dart';
 import '../vocabulary/vocabulary_review_screen.dart';
 import '../grammar/grammar_list_screen.dart';
 import '../conversation/conversation_scenario_screen.dart';
+import '../reading/reading_list_screen.dart';
 import '../profile/profile_screen.dart';
 import '../../shared/providers/vocabulary_provider.dart';
 import '../../shared/providers/statistics_provider.dart';
@@ -631,16 +632,13 @@ class GrammarPage extends StatelessWidget {
   }
 }
 
-// 练习页面占位符
+// 练习页面 - 使用阅读理解列表
 class PracticePage extends StatelessWidget {
   const PracticePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('练习测验')),
-      body: const Center(child: Text('练习测验页面')),
-    );
+    return const ReadingListScreen();
   }
 }
 

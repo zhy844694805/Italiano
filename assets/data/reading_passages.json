@@ -1,0 +1,582 @@
+[
+  {
+    "id": "reading_001",
+    "title": "La mia famiglia",
+    "titleChinese": "我的家庭",
+    "level": "A1",
+    "category": "日常生活",
+    "content": "Ciao! Mi chiamo Marco e ho 25 anni. Abito a Roma con la mia famiglia. Mio padre si chiama Giuseppe e ha 55 anni. Lavora in un ufficio. Mia madre si chiama Maria e ha 52 anni. Lei è insegnante in una scuola elementare.\n\nHo una sorella maggiore, Giulia. Ha 28 anni ed è dottoressa in un ospedale. Abbiamo anche un cane che si chiama Max. Max ha 3 anni ed è molto simpatico. La domenica andiamo sempre al parco insieme.\n\nLa nostra casa è grande e ha quattro camere da letto. Mi piace molto la mia famiglia perché siamo sempre felici insieme.",
+    "wordCount": 98,
+    "estimatedMinutes": 2,
+    "questions": [
+      {
+        "id": "q1",
+        "type": "choice",
+        "question": "Marco住在哪里？",
+        "questionItalian": "Dove abita Marco?",
+        "options": ["Milano", "Roma", "Firenze", "Napoli"],
+        "answer": "Roma",
+        "explanation": "文章第一段提到：Abito a Roma con la mia famiglia."
+      },
+      {
+        "id": "q2",
+        "type": "choice",
+        "question": "Marco的妈妈是做什么工作的？",
+        "questionItalian": "Che lavoro fa la madre di Marco?",
+        "options": ["医生", "老师", "护士", "秘书"],
+        "answer": "老师",
+        "explanation": "文章提到：Mia madre...è insegnante in una scuola elementare（我妈妈是小学老师）。"
+      },
+      {
+        "id": "q3",
+        "type": "choice",
+        "question": "Giulia多大了？",
+        "questionItalian": "Quanti anni ha Giulia?",
+        "options": ["25", "28", "52", "55"],
+        "answer": "28",
+        "explanation": "文章第二段说：Ho una sorella maggiore, Giulia. Ha 28 anni."
+      },
+      {
+        "id": "q4",
+        "type": "true_false",
+        "question": "Max是一只猫。",
+        "questionItalian": "Max è un gatto.",
+        "options": ["真", "假"],
+        "answer": "假",
+        "explanation": "文章说：Abbiamo anche un cane che si chiama Max（我们有一只叫Max的狗）。"
+      },
+      {
+        "id": "q5",
+        "type": "choice",
+        "question": "Marco一家星期天通常做什么？",
+        "questionItalian": "Cosa fa la famiglia di Marco la domenica?",
+        "options": ["去餐厅", "去公园", "去电影院", "待在家"],
+        "answer": "去公园",
+        "explanation": "文章说：La domenica andiamo sempre al parco insieme（星期天我们总是一起去公园）。"
+      }
+    ],
+    "createdAt": "2025-01-08T00:00:00.000Z"
+  },
+  {
+    "id": "reading_002",
+    "title": "Al ristorante",
+    "titleChinese": "在餐厅",
+    "level": "A1",
+    "category": "日常生活",
+    "content": "Oggi vado al ristorante con i miei amici. Il ristorante si chiama \"La Bella Italia\" ed è molto famoso.\n\nQuando arriviamo, il cameriere ci porta al tavolo. Prendiamo il menu e scegliamo cosa mangiare. Io ordino una pizza Margherita e un'insalata. Il mio amico Paolo ordina gli spaghetti alla carbonara. La mia amica Sara prende il pesce con le patate.\n\nPer bere, ordiniamo acqua e vino rosso. Il cibo è delizioso! Dopo cena, prendiamo il tiramisù per dessert. Alla fine, paghiamo il conto e lasciamo una mancia per il cameriere.\n\nÈ stata una bella serata!",
+    "wordCount": 96,
+    "estimatedMinutes": 2,
+    "questions": [
+      {
+        "id": "q1",
+        "type": "choice",
+        "question": "餐厅叫什么名字？",
+        "questionItalian": "Come si chiama il ristorante?",
+        "options": ["La Bella Roma", "La Bella Italia", "Il Bel Paese", "La Dolce Vita"],
+        "answer": "La Bella Italia",
+        "explanation": "文章开头说：Il ristorante si chiama 'La Bella Italia'."
+      },
+      {
+        "id": "q2",
+        "type": "choice",
+        "question": "\"我\"点了什么主菜？",
+        "questionItalian": "Cosa ordina l'autore?",
+        "options": ["意大利面", "披萨和沙拉", "鱼和土豆", "提拉米苏"],
+        "answer": "披萨和沙拉",
+        "explanation": "文章说：Io ordino una pizza Margherita e un'insalata."
+      },
+      {
+        "id": "q3",
+        "type": "choice",
+        "question": "Paolo点了什么？",
+        "questionItalian": "Cosa ordina Paolo?",
+        "options": ["培根蛋意面", "披萨", "鱼", "沙拉"],
+        "answer": "培根蛋意面",
+        "explanation": "Il mio amico Paolo ordina gli spaghetti alla carbonara."
+      },
+      {
+        "id": "q4",
+        "type": "choice",
+        "question": "他们喝了什么？",
+        "questionItalian": "Cosa bevono?",
+        "options": ["啤酒", "水和红酒", "咖啡", "果汁"],
+        "answer": "水和红酒",
+        "explanation": "Per bere, ordiniamo acqua e vino rosso."
+      },
+      {
+        "id": "q5",
+        "type": "true_false",
+        "question": "他们给了服务员小费。",
+        "questionItalian": "Lasciano una mancia per il cameriere.",
+        "options": ["真", "假"],
+        "answer": "真",
+        "explanation": "文章最后说：paghiamo il conto e lasciamo una mancia per il cameriere."
+      }
+    ],
+    "createdAt": "2025-01-08T00:00:00.000Z"
+  },
+  {
+    "id": "reading_003",
+    "title": "Una giornata tipica",
+    "titleChinese": "典型的一天",
+    "level": "A2",
+    "category": "日常生活",
+    "content": "Mi sveglio ogni giorno alle 7:00 del mattino. Prima di tutto, faccio la doccia e mi vesto. Poi vado in cucina e preparo la colazione. Di solito mangio pane con marmellata e bevo un caffè.\n\nAlle 8:30 esco di casa e prendo l'autobus per andare al lavoro. Il viaggio dura circa 30 minuti. Arrivo in ufficio alle 9:00 e comincio a lavorare. Lavoro fino all'una, quando faccio una pausa per il pranzo.\n\nIl pomeriggio continuo a lavorare fino alle 18:00. Dopo il lavoro, a volte vado in palestra o incontro gli amici. Torno a casa verso le 19:30 e preparo la cena. La sera guardo la televisione o leggo un libro.\n\nVado a letto di solito verso le 23:00. Mi piace questa routine perché è equilibrata tra lavoro e tempo libero.",
+    "wordCount": 142,
+    "estimatedMinutes": 3,
+    "questions": [
+      {
+        "id": "q1",
+        "type": "choice",
+        "question": "\"我\"几点起床？",
+        "questionItalian": "A che ora si sveglia?",
+        "options": ["6:00", "7:00", "8:00", "9:00"],
+        "answer": "7:00",
+        "explanation": "Mi sveglio ogni giorno alle 7:00 del mattino."
+      },
+      {
+        "id": "q2",
+        "type": "choice",
+        "question": "\"我\"怎么去上班？",
+        "questionItalian": "Come va al lavoro?",
+        "options": ["开车", "走路", "坐公交", "骑自行车"],
+        "answer": "坐公交",
+        "explanation": "prendo l'autobus per andare al lavoro（坐公交去上班）。"
+      },
+      {
+        "id": "q3",
+        "type": "choice",
+        "question": "上班路上花多长时间？",
+        "questionItalian": "Quanto dura il viaggio?",
+        "options": ["20分钟", "30分钟", "40分钟", "1小时"],
+        "answer": "30分钟",
+        "explanation": "Il viaggio dura circa 30 minuti."
+      },
+      {
+        "id": "q4",
+        "type": "choice",
+        "question": "\"我\"下午什么时候下班？",
+        "questionItalian": "A che ora finisce di lavorare?",
+        "options": ["17:00", "18:00", "19:00", "19:30"],
+        "answer": "18:00",
+        "explanation": "Il pomeriggio continuo a lavorare fino alle 18:00."
+      },
+      {
+        "id": "q5",
+        "type": "true_false",
+        "question": "\"我\"每天晚上都去健身房。",
+        "questionItalian": "Va in palestra ogni sera.",
+        "options": ["真", "假"],
+        "answer": "假",
+        "explanation": "文章说：a volte vado in palestra（有时去健身房），不是每天。"
+      }
+    ],
+    "createdAt": "2025-01-08T00:00:00.000Z"
+  },
+  {
+    "id": "reading_004",
+    "title": "Il mio weekend a Firenze",
+    "titleChinese": "我在佛罗伦萨的周末",
+    "level": "A2",
+    "category": "旅游",
+    "content": "Lo scorso weekend sono andato a Firenze con la mia ragazza. Siamo partiti sabato mattina presto e siamo arrivati verso le 10:00. Il tempo era bellissimo: c'era il sole e faceva caldo.\n\nPrima di tutto, siamo andati a vedere il Duomo, la famosa cattedrale di Firenze. È veramente magnifico! Poi abbiamo visitato la Galleria degli Uffizi, dove abbiamo visto molti dipinti famosi del Rinascimento.\n\nA pranzo abbiamo mangiato in una trattoria tipica. Io ho preso la bistecca alla fiorentina, che era squisita. Nel pomeriggio abbiamo passeggiato sul Ponte Vecchio e abbiamo comprato alcuni souvenir.\n\nLa sera siamo andati a cena in un ristorante romantico vicino all'Arno. Abbiamo bevuto del vino Chianti e abbiamo guardato il tramonto. È stato un weekend indimenticabile!\n\nDomenica mattina, prima di tornare a casa, abbiamo visitato il Giardino di Boboli. È un posto tranquillo e molto bello.",
+    "wordCount": 156,
+    "estimatedMinutes": 3,
+    "questions": [
+      {
+        "id": "q1",
+        "type": "choice",
+        "question": "他们什么时候到达佛罗伦萨？",
+        "questionItalian": "Quando sono arrivati a Firenze?",
+        "options": ["周六早上10点", "周六下午", "周日早上", "周五晚上"],
+        "answer": "周六早上10点",
+        "explanation": "Siamo partiti sabato mattina presto e siamo arrivati verso le 10:00."
+      },
+      {
+        "id": "q2",
+        "type": "choice",
+        "question": "他们参观的第一个地方是什么？",
+        "questionItalian": "Qual è il primo posto che hanno visitato?",
+        "options": ["乌菲兹美术馆", "大教堂", "老桥", "波波里花园"],
+        "answer": "大教堂",
+        "explanation": "Prima di tutto, siamo andati a vedere il Duomo."
+      },
+      {
+        "id": "q3",
+        "type": "choice",
+        "question": "\"我\"午餐吃了什么？",
+        "questionItalian": "Cosa ha mangiato a pranzo?",
+        "options": ["披萨", "意面", "佛罗伦萨牛排", "鱼"],
+        "answer": "佛罗伦萨牛排",
+        "explanation": "Io ho preso la bistecca alla fiorentina（我点了佛罗伦萨牛排）。"
+      },
+      {
+        "id": "q4",
+        "type": "choice",
+        "question": "他们在哪里买了纪念品？",
+        "questionItalian": "Dove hanno comprato i souvenir?",
+        "options": ["大教堂", "美术馆", "老桥", "花园"],
+        "answer": "老桥",
+        "explanation": "Nel pomeriggio abbiamo passeggiato sul Ponte Vecchio e abbiamo comprato alcuni souvenir."
+      },
+      {
+        "id": "q5",
+        "type": "true_false",
+        "question": "周日他们回家前参观了波波里花园。",
+        "questionItalian": "Domenica hanno visitato il Giardino di Boboli prima di tornare.",
+        "options": ["真", "假"],
+        "answer": "真",
+        "explanation": "Domenica mattina, prima di tornare a casa, abbiamo visitato il Giardino di Boboli."
+      }
+    ],
+    "createdAt": "2025-01-08T00:00:00.000Z"
+  },
+  {
+    "id": "reading_005",
+    "title": "Cerco un appartamento",
+    "titleChinese": "找房子",
+    "level": "A2",
+    "category": "实用文本",
+    "content": "Sono uno studente universitario e cerco un appartamento in affitto a Milano. Il mio budget è di circa 600 euro al mese. Preferisco un appartamento vicino all'università perché non ho la macchina.\n\nHo trovato alcuni annunci interessanti su Internet. Il primo appartamento è un monolocale di 35 metri quadrati. È al terzo piano senza ascensore. Ha una cucina piccola e un bagno. Il prezzo è 550 euro al mese, spese escluse.\n\nIl secondo appartamento è più grande: ha due camere, una cucina e un bagno. È al primo piano con l'ascensore. Il prezzo è 700 euro al mese, ma le spese sono incluse. C'è anche un balcone.\n\nIl terzo appartamento è perfetto! Ha una camera da letto, un soggiorno con angolo cottura e un bagno. È arredato e costa 650 euro al mese, spese incluse. Inoltre, è a solo 10 minuti dall'università a piedi.\n\nDomani andrò a visitare il terzo appartamento. Spero che sia libero!",
+    "wordCount": 158,
+    "estimatedMinutes": 3,
+    "questions": [
+      {
+        "id": "q1",
+        "type": "choice",
+        "question": "\"我\"的预算是多少？",
+        "questionItalian": "Qual è il budget?",
+        "options": ["500欧", "600欧", "700欧", "800欧"],
+        "answer": "600欧",
+        "explanation": "Il mio budget è di circa 600 euro al mese."
+      },
+      {
+        "id": "q2",
+        "type": "choice",
+        "question": "第一套公寓有多大？",
+        "questionItalian": "Quanto è grande il primo appartamento?",
+        "options": ["25平米", "35平米", "45平米", "55平米"],
+        "answer": "35平米",
+        "explanation": "Il primo appartamento è un monolocale di 35 metri quadrati."
+      },
+      {
+        "id": "q3",
+        "type": "true_false",
+        "question": "第二套公寓的价格包含费用。",
+        "questionItalian": "Il secondo appartamento include le spese.",
+        "options": ["真", "假"],
+        "answer": "真",
+        "explanation": "Il prezzo è 700 euro al mese, ma le spese sono incluse."
+      },
+      {
+        "id": "q4",
+        "type": "choice",
+        "question": "第三套公寓离大学有多远？",
+        "questionItalian": "Quanto dista il terzo appartamento dall'università?",
+        "options": ["5分钟", "10分钟", "15分钟", "20分钟"],
+        "answer": "10分钟",
+        "explanation": "È a solo 10 minuti dall'università a piedi."
+      },
+      {
+        "id": "q5",
+        "type": "choice",
+        "question": "第三套公寓的月租是多少？",
+        "questionItalian": "Quanto costa il terzo appartamento?",
+        "options": ["550欧", "600欧", "650欧", "700欧"],
+        "answer": "650欧",
+        "explanation": "È arredato e costa 650 euro al mese, spese incluse."
+      }
+    ],
+    "createdAt": "2025-01-08T00:00:00.000Z"
+  },
+  {
+    "id": "reading_006",
+    "title": "Le stagioni in Italia",
+    "titleChinese": "意大利的四季",
+    "level": "A1",
+    "category": "文化",
+    "content": "In Italia ci sono quattro stagioni: primavera, estate, autunno e inverno.\n\nLa primavera inizia a marzo e finisce a giugno. In primavera il tempo è mite e ci sono molti fiori. Gli alberi diventano verdi e gli uccelli cantano.\n\nL'estate va da giugno a settembre. Fa molto caldo e c'è tanto sole. Molte persone vanno al mare o in montagna per le vacanze. A me piace andare in spiaggia.\n\nL'autunno inizia a settembre e finisce a dicembre. Le foglie cambiano colore e cadono dagli alberi. Fa più fresco e qualche volta piove.\n\nL'inverno è da dicembre a marzo. Fa freddo e in montagna nevica. A Natale molte città sono decorate con le luci. Mi piace l'inverno perché posso sciare.\n\nOgni stagione è bella a modo suo!",
+    "wordCount": 125,
+    "estimatedMinutes": 2,
+    "questions": [
+      {
+        "id": "q1",
+        "type": "choice",
+        "question": "春天从几月开始？",
+        "questionItalian": "Quando inizia la primavera?",
+        "options": ["二月", "三月", "四月", "五月"],
+        "answer": "三月",
+        "explanation": "La primavera inizia a marzo."
+      },
+      {
+        "id": "q2",
+        "type": "choice",
+        "question": "夏天人们通常去哪里度假？",
+        "questionItalian": "Dove vanno le persone in estate?",
+        "options": ["只去海边", "只去山里", "海边或山里", "待在家"],
+        "answer": "海边或山里",
+        "explanation": "Molte persone vanno al mare o in montagna per le vacanze."
+      },
+      {
+        "id": "q3",
+        "type": "choice",
+        "question": "秋天的特点是什么？",
+        "questionItalian": "Cosa succede in autunno?",
+        "options": ["下雪", "树叶变色掉落", "开花", "很热"],
+        "answer": "树叶变色掉落",
+        "explanation": "Le foglie cambiano colore e cadono dagli alberi."
+      },
+      {
+        "id": "q4",
+        "type": "true_false",
+        "question": "冬天在山上会下雪。",
+        "questionItalian": "In inverno nevica in montagna.",
+        "options": ["真", "假"],
+        "answer": "真",
+        "explanation": "Fa freddo e in montagna nevica."
+      },
+      {
+        "id": "q5",
+        "type": "choice",
+        "question": "\"我\"冬天喜欢做什么？",
+        "questionItalian": "Cosa piace fare all'autore in inverno?",
+        "options": ["游泳", "滑雪", "爬山", "跑步"],
+        "answer": "滑雪",
+        "explanation": "Mi piace l'inverno perché posso sciare."
+      }
+    ],
+    "createdAt": "2025-01-08T00:00:00.000Z"
+  },
+  {
+    "id": "reading_007",
+    "title": "Una lettera alla mia amica",
+    "titleChinese": "给朋友的信",
+    "level": "A2",
+    "category": "实用文本",
+    "content": "Cara Laura,\n\nCome stai? Spero che tu stia bene. Volevo raccontarti del mio nuovo lavoro.\n\nDa tre settimane lavoro in una libreria nel centro di Bologna. Il negozio è piccolo ma molto carino. Vende libri, riviste e anche cartoline. I miei colleghi sono simpatici e il mio capo è molto gentile.\n\nIl mio orario è dalle 9:00 alle 18:00, con una pausa di un'ora per pranzo. Durante la pausa vado spesso in un bar vicino dove fanno ottimi panini.\n\nMi piace molto questo lavoro perché adoro i libri. Ogni giorno incontro persone interessanti che vengono a comprare libri. A volte organizziamo anche presentazioni di libri con gli autori.\n\nL'unico problema è che guadagno poco, ma per ora va bene così. Sto imparando molte cose nuove.\n\nE tu? Come va il tuo corso di fotografia? Quando ci vediamo ti mostro il negozio!\n\nUn abbraccio,\nSofia",
+    "wordCount": 145,
+    "estimatedMinutes": 3,
+    "questions": [
+      {
+        "id": "q1",
+        "type": "choice",
+        "question": "Sofia在哪里工作？",
+        "questionItalian": "Dove lavora Sofia?",
+        "options": ["书店", "餐厅", "酒吧", "学校"],
+        "answer": "书店",
+        "explanation": "Da tre settimane lavoro in una libreria（我在一家书店工作了三周）。"
+      },
+      {
+        "id": "q2",
+        "type": "choice",
+        "question": "书店卖什么？",
+        "questionItalian": "Cosa vende la libreria?",
+        "options": ["只卖书", "书和杂志", "书、杂志和明信片", "只卖明信片"],
+        "answer": "书、杂志和明信片",
+        "explanation": "Vende libri, riviste e anche cartoline."
+      },
+      {
+        "id": "q3",
+        "type": "choice",
+        "question": "Sofia的工作时间是几点到几点？",
+        "questionItalian": "Qual è l'orario di lavoro di Sofia?",
+        "options": ["8:00-17:00", "9:00-18:00", "10:00-19:00", "9:00-17:00"],
+        "answer": "9:00-18:00",
+        "explanation": "Il mio orario è dalle 9:00 alle 18:00."
+      },
+      {
+        "id": "q4",
+        "type": "true_false",
+        "question": "Sofia对这份工作的薪水很满意。",
+        "questionItalian": "Sofia è soddisfatta dello stipendio.",
+        "options": ["真", "假"],
+        "answer": "假",
+        "explanation": "L'unico problema è che guadagno poco（唯一的问题是工资少）。"
+      },
+      {
+        "id": "q5",
+        "type": "choice",
+        "question": "书店有时组织什么活动？",
+        "questionItalian": "Che eventi organizza la libreria?",
+        "options": ["音乐会", "新书发布会", "摄影展", "烹饪课"],
+        "answer": "新书发布会",
+        "explanation": "A volte organizziamo anche presentazioni di libri con gli autori."
+      }
+    ],
+    "createdAt": "2025-01-08T00:00:00.000Z"
+  },
+  {
+    "id": "reading_008",
+    "title": "Il mio hobby: la cucina",
+    "titleChinese": "我的爱好：烹饪",
+    "level": "A2",
+    "category": "日常生活",
+    "content": "Uno dei miei hobby preferiti è cucinare. Ho iniziato a cucinare tre anni fa, quando sono andato a vivere da solo. All'inizio era difficile, ma adesso mi diverto molto.\n\nMi piace preparare piatti italiani tradizionali. Il mio piatto preferito da cucinare è la pasta al pesto. È semplice ma delizioso. Uso basilico fresco, pinoli, aglio, parmigiano e olio d'oliva.\n\nIl fine settimana cucino piatti più elaborati. Sabato scorso ho fatto le lasagne alla bolognese per i miei amici. Ci sono volute tre ore, ma tutti hanno detto che erano buonissime!\n\nMi piace anche sperimentare ricette nuove. L'ultimo piatto che ho provato è il risotto ai funghi porcini. Ho seguito una ricetta che ho trovato su Internet ed è venuto benissimo.\n\nCucinare mi rilassa e mi fa sentire creativo. Inoltre, è bello condividere i piatti che preparo con le persone che amo.",
+    "wordCount": 145,
+    "estimatedMinutes": 3,
+    "questions": [
+      {
+        "id": "q1",
+        "type": "choice",
+        "question": "\"我\"什么时候开始学做饭的？",
+        "questionItalian": "Quando ha iniziato a cucinare?",
+        "options": ["1年前", "2年前", "3年前", "5年前"],
+        "answer": "3年前",
+        "explanation": "Ho iniziato a cucinare tre anni fa."
+      },
+      {
+        "id": "q2",
+        "type": "choice",
+        "question": "\"我\"最喜欢做的菜是什么？",
+        "questionItalian": "Qual è il piatto preferito da cucinare?",
+        "options": ["千层面", "青酱意面", "牛肝菌烩饭", "披萨"],
+        "answer": "青酱意面",
+        "explanation": "Il mio piatto preferito da cucinare è la pasta al pesto."
+      },
+      {
+        "id": "q3",
+        "type": "choice",
+        "question": "上周六做千层面花了多长时间？",
+        "questionItalian": "Quanto tempo ci è voluto per fare le lasagne?",
+        "options": ["1小时", "2小时", "3小时", "4小时"],
+        "answer": "3小时",
+        "explanation": "Ci sono volute tre ore（花了三小时）。"
+      },
+      {
+        "id": "q4",
+        "type": "choice",
+        "question": "\"我\"最近尝试的新菜是什么？",
+        "questionItalian": "Qual è l'ultimo piatto che ha provato?",
+        "options": ["青酱意面", "千层面", "牛肝菌烩饭", "披萨"],
+        "answer": "牛肝菌烩饭",
+        "explanation": "L'ultimo piatto che ho provato è il risotto ai funghi porcini."
+      },
+      {
+        "id": "q5",
+        "type": "true_false",
+        "question": "烹饪让\"我\"感到放松和有创造力。",
+        "questionItalian": "Cucinare lo rilassa e lo fa sentire creativo.",
+        "options": ["真", "假"],
+        "answer": "真",
+        "explanation": "Cucinare mi rilassa e mi fa sentire creativo."
+      }
+    ],
+    "createdAt": "2025-01-08T00:00:00.000Z"
+  },
+  {
+    "id": "reading_009",
+    "title": "L'orario dei negozi",
+    "titleChinese": "商店营业时间",
+    "level": "A1",
+    "category": "实用文本",
+    "content": "In Italia, i negozi hanno orari diversi.\n\nI supermercati di solito aprono alle 8:00 o alle 9:00 del mattino. Chiudono alle 20:00 o alle 21:00. Molti supermercati sono aperti anche la domenica.\n\nI negozi piccoli, come le panetterie e le macellerie, aprono molto presto, verso le 7:00. Chiudono per la pausa pranzo dalle 13:00 alle 16:00 o alle 17:00. Poi riaprono fino alle 19:30. La domenica sono chiusi.\n\nLe farmacie sono aperte dalle 9:00 alle 19:00. C'è sempre una farmacia di turno aperta anche di notte per le emergenze.\n\nI ristoranti aprono per pranzo dalle 12:00 alle 14:30. Per cena aprono dalle 19:00 alle 22:30 o alle 23:00.\n\nI bar sono aperti tutto il giorno, dalle 7:00 alle 20:00 o anche più tardi.",
+    "wordCount": 128,
+    "estimatedMinutes": 2,
+    "questions": [
+      {
+        "id": "q1",
+        "type": "choice",
+        "question": "超市通常几点开门？",
+        "questionItalian": "A che ora aprono i supermercati?",
+        "options": ["7:00", "8:00或9:00", "10:00", "11:00"],
+        "answer": "8:00或9:00",
+        "explanation": "I supermercati di solito aprono alle 8:00 o alle 9:00."
+      },
+      {
+        "id": "q2",
+        "type": "true_false",
+        "question": "超市周日也营业。",
+        "questionItalian": "I supermercati sono aperti la domenica.",
+        "options": ["真", "假"],
+        "answer": "真",
+        "explanation": "Molti supermercati sono aperti anche la domenica."
+      },
+      {
+        "id": "q3",
+        "type": "choice",
+        "question": "小商店的午休时间是几点到几点？",
+        "questionItalian": "Quando chiudono i negozi piccoli per pranzo?",
+        "options": ["12:00-15:00", "13:00-16:00或17:00", "14:00-17:00", "不午休"],
+        "answer": "13:00-16:00或17:00",
+        "explanation": "Chiudono per la pausa pranzo dalle 13:00 alle 16:00 o alle 17:00."
+      },
+      {
+        "id": "q4",
+        "type": "choice",
+        "question": "餐厅晚餐时间从几点开始？",
+        "questionItalian": "A che ora aprono i ristoranti per cena?",
+        "options": ["18:00", "19:00", "20:00", "21:00"],
+        "answer": "19:00",
+        "explanation": "Per cena aprono dalle 19:00."
+      },
+      {
+        "id": "q5",
+        "type": "true_false",
+        "question": "有药房全天24小时营业应对紧急情况。",
+        "questionItalian": "C'è una farmacia aperta di notte per le emergenze.",
+        "options": ["真", "假"],
+        "answer": "真",
+        "explanation": "C'è sempre una farmacia di turno aperta anche di notte per le emergenze."
+      }
+    ],
+    "createdAt": "2025-01-08T00:00:00.000Z"
+  },
+  {
+    "id": "reading_010",
+    "title": "Imparare l'italiano",
+    "titleChinese": "学习意大利语",
+    "level": "A2",
+    "category": "学习",
+    "content": "Ho iniziato a studiare italiano un anno fa perché voglio trasferirmi in Italia per lavoro. All'inizio pensavo che fosse molto difficile, ma adesso sto facendo progressi.\n\nFrequento un corso di italiano due volte alla settimana. La mia insegnante si chiama Francesca ed è molto brava. Nelle lezioni impariamo la grammatica, facciamo conversazione e leggiamo testi semplici.\n\nOltre al corso, studio anche da solo a casa. Guardo film italiani con i sottotitoli e ascolto podcast in italiano. Questo mi aiuta molto con la pronuncia e la comprensione.\n\nHo anche scaricato un'app sul telefono per imparare nuove parole ogni giorno. Cerco di studiare almeno 30 minuti al giorno.\n\nIl mese prossimo farò un esame per ottenere la certificazione A2. Sono un po' nervoso, ma penso di essere pronto. Se supero l'esame, in estate andrò a Roma per una vacanza studio di due settimane.\n\nImparare una lingua straniera richiede tempo e pazienza, ma è anche molto gratificante!",
+    "wordCount": 162,
+    "estimatedMinutes": 3,
+    "questions": [
+      {
+        "id": "q1",
+        "type": "choice",
+        "question": "\"我\"为什么学意大利语？",
+        "questionItalian": "Perché studia l'italiano?",
+        "options": ["去旅游", "工作需要", "兴趣爱好", "家人要求"],
+        "answer": "工作需要",
+        "explanation": "Ho iniziato a studiare italiano...perché voglio trasferirmi in Italia per lavoro."
+      },
+      {
+        "id": "q2",
+        "type": "choice",
+        "question": "\"我\"每周上几次意大利语课？",
+        "questionItalian": "Quante volte alla settimana frequenta il corso?",
+        "options": ["一次", "两次", "三次", "四次"],
+        "answer": "两次",
+        "explanation": "Frequento un corso di italiano due volte alla settimana."
+      },
+      {
+        "id": "q3",
+        "type": "choice",
+        "question": "在家\"我\"怎么学习意大利语？",
+        "questionItalian": "Come studia a casa?",
+        "options": ["只看书", "看电影和听播客", "只用app", "不在家学习"],
+        "answer": "看电影和听播客",
+        "explanation": "Guardo film italiani con i sottotitoli e ascolto podcast in italiano."
+      },
+      {
+        "id": "q4",
+        "type": "choice",
+        "question": "\"我\"每天学习多长时间？",
+        "questionItalian": "Quanto tempo studia ogni giorno?",
+        "options": ["至少15分钟", "至少30分钟", "至少1小时", "至少2小时"],
+        "answer": "至少30分钟",
+        "explanation": "Cerco di studiare almeno 30 minuti al giorno."
+      },
+      {
+        "id": "q5",
+        "type": "true_false",
+        "question": "如果通过考试，\"我\"夏天会去罗马学习两周。",
+        "questionItalian": "Se supera l'esame, andrà a Roma per due settimane.",
+        "options": ["真", "假"],
+        "answer": "真",
+        "explanation": "Se supero l'esame, in estate andrò a Roma per una vacanza studio di due settimane."
+      }
+    ],
+    "createdAt": "2025-01-08T00:00:00.000Z"
+  }
+]

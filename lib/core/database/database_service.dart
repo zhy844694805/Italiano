@@ -19,7 +19,7 @@ class DatabaseService {
 
     return await openDatabase(
       dbFilePath,
-      version: 2,
+      version: 3,
       onCreate: _createDB,
       onUpgrade: _upgradeDB,
     );
@@ -101,6 +101,18 @@ class DatabaseService {
     await db.execute('''
       CREATE INDEX idx_date ON learning_statistics(date)
     ''');
+
+    // 创建阅读进度表
+    await db.execute('''
+      CREATE TABLE reading_progress (
+        passage_id $idType,
+        completed_at $textType,
+        correct_answers $intType,
+        total_questions $intType,
+        user_answers $textType,
+        is_favorite $boolType
+      )
+    ''');
   }
 
   Future _upgradeDB(Database db, int oldVersion, int newVersion) async {
@@ -154,6 +166,25 @@ class DatabaseService {
 
       await db.execute('''
         CREATE INDEX idx_date ON learning_statistics(date)
+      ''');
+    }
+
+    if (oldVersion < 3) {
+      const idType = 'TEXT PRIMARY KEY';
+      const textType = 'TEXT NOT NULL';
+      const intType = 'INTEGER NOT NULL';
+      const boolType = 'INTEGER NOT NULL';
+
+      // 创建阅读进度表
+      await db.execute('''
+        CREATE TABLE reading_progress (
+          passage_id $idType,
+          completed_at $textType,
+          correct_answers $intType,
+          total_questions $intType,
+          user_answers $textType,
+          is_favorite $boolType
+        )
       ''');
     }
   }
