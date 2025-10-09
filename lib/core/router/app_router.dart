@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../features/home/home_screen.dart';
-import '../../features/vocabulary/vocabulary_screen.dart';
-import '../../features/grammar/grammar_screen.dart';
+import '../../features/vocabulary/vocabulary_list_screen.dart';
+import '../../features/grammar/grammar_list_screen.dart';
 import '../../features/practice/practice_screen.dart';
 import '../../features/profile/profile_screen.dart';
 
@@ -22,11 +22,11 @@ class AppRouter {
       ),
       GoRoute(
         path: vocabulary,
-        builder: (context, state) => const VocabularyScreen(),
+        builder: (context, state) => const VocabularyListScreen(),
       ),
       GoRoute(
         path: grammar,
-        builder: (context, state) => const GrammarScreen(),
+        builder: (context, state) => const GrammarListScreen(),
       ),
       GoRoute(
         path: practice,

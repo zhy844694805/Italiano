@@ -91,12 +91,6 @@ class HomePage extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Ciao! 👋'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.notifications_outlined),
-            onPressed: () {},
-          ),
-        ],
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -406,71 +400,6 @@ class HomePage extends ConsumerWidget {
                 ],
               ),
 
-              const SizedBox(height: 24),
-
-              // 推荐课程
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    '推荐课程',
-                    style: theme.textTheme.headlineMedium,
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text('查看全部'),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 12),
-
-              SizedBox(
-                height: 180,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 3,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      width: 160,
-                      margin: const EdgeInsets.only(right: 12),
-                      child: Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(16),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                height: 60,
-                                decoration: BoxDecoration(
-                                  color: colorScheme.surfaceContainerHighest,
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                child: Center(
-                                  child: Icon(
-                                    Icons.restaurant_menu,
-                                    size: 32,
-                                    color: colorScheme.primary,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(height: 12),
-                              Text(
-                                '意大利美食',
-                                style: theme.textTheme.titleLarge,
-                              ),
-                              const Spacer(),
-                              Text(
-                                '50个单词',
-                                style: theme.textTheme.bodySmall,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
             ],
           ),
         ),
