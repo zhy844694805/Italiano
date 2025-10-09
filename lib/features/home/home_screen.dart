@@ -391,14 +391,14 @@ class HomePage extends ConsumerWidget {
                     },
                   ),
                   _QuickActionCard(
-                    icon: Icons.quiz,
-                    title: '每日测验',
-                    color: Colors.purple,
+                    icon: Icons.article,
+                    title: '阅读理解',
+                    color: Colors.orange,
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const PracticeScreen(),
+                          builder: (context) => const ReadingListScreen(),
                         ),
                       );
                     },
@@ -646,7 +646,7 @@ class PracticePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ReadingListScreen();
+    return const PracticeScreen();
   }
 }
 
