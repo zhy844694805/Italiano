@@ -6,6 +6,7 @@ import '../vocabulary/vocabulary_review_screen.dart';
 import '../grammar/grammar_list_screen.dart';
 import '../conversation/conversation_scenario_screen.dart';
 import '../reading/reading_list_screen.dart';
+import '../practice/practice_screen.dart';
 import '../profile/profile_screen.dart';
 import '../../shared/providers/vocabulary_provider.dart';
 import '../../shared/providers/statistics_provider.dart';
@@ -393,7 +394,14 @@ class HomePage extends ConsumerWidget {
                     icon: Icons.quiz,
                     title: '每日测验',
                     color: Colors.purple,
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const PracticeScreen(),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
