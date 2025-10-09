@@ -633,10 +633,31 @@ The app uses DeepSeek's conversational AI for language practice:
 - is_favorite (INTEGER NOT NULL) - 0 or 1 boolean
 
 ### Development Testing
-- Use `PersistenceTestScreen` (accessible via science icon on home page)
-- Add test learning records and verify database persistence
-- Clear all data for fresh testing
-- View real-time statistics
+- ~~Use `PersistenceTestScreen` (accessible via science icon on home page)~~ - REMOVED
+- Test database operations through actual app usage
+- Use Flutter DevTools for debugging state and database
+- Clear app data: `flutter clean` or uninstall/reinstall app
+
+### Adding New Features
+
+**Adding a new content type** (similar to reading comprehension):
+1. Create data model in `lib/shared/models/`
+2. Add JSON data file in `assets/data/`
+3. Create repository in `lib/core/database/` and update schema in `database_service.dart`
+4. Create provider in `lib/shared/providers/`
+5. Create UI screens in `lib/features/[feature_name]/`
+6. Integrate into navigation in `home_screen.dart`
+7. Update CLAUDE.md documentation
+
+**Adding vocabulary/grammar content**:
+- Use Python scripts to bulk-add data (see `add_verbs_batch*.py` examples in git history)
+- Follow existing JSON structure in `sample_words.json` or `sample_grammar.json`
+- Maintain consistent formatting and required fields
+
+**Database migrations**:
+- Increment version number in `database_service.dart`
+- Add migration logic in `_upgradeDB()` method
+- Test migration with existing user data
 
 ### Common Dart Null Safety Patterns
 When working with nullable properties from database models:
@@ -656,3 +677,13 @@ if (record != null) {
   )
 }
 ```
+
+### Future Enhancement Ideas
+Based on CEFR A2 requirements, potential additions:
+- **Listening Practice**: Audio comprehension exercises with transcripts
+- **Writing Practice**: Guided writing tasks with AI feedback (using DeepSeek)
+- **Pronunciation Practice**: Speech recognition for pronunciation scoring
+- **More Content**: Expand to 1500+ A2 words, 20+ reading passages
+- **B1 Level**: Begin B1 content for advanced learners
+- **Offline Mode**: Download audio and enable full offline usage
+- **Gamification**: Achievements, streaks, leaderboards
