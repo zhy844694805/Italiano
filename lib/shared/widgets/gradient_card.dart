@@ -217,34 +217,41 @@ class StatCard extends StatelessWidget {
 
     return Container(
       decoration: ModernTheme.floatingCardDecoration(),
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
           // 渐变图标
           Container(
-            padding: const EdgeInsets.all(12),
+            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               gradient: effectiveGradient,
-              borderRadius: BorderRadius.circular(14),
+              borderRadius: BorderRadius.circular(12),
             ),
-            child: Icon(icon, color: Colors.white, size: 24),
+            child: Icon(icon, color: Colors.white, size: 22),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 12),
           // 数值
           Text(
             value,
             style: theme.textTheme.displaySmall?.copyWith(
               fontWeight: FontWeight.bold,
+              fontSize: 24,
             ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
-          const SizedBox(height: 4),
+          const SizedBox(height: 3),
           // 标签
           Text(
             label,
             style: theme.textTheme.bodyMedium?.copyWith(
               color: ModernTheme.textLight,
+              fontSize: 13,
             ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
         ],
       ),
