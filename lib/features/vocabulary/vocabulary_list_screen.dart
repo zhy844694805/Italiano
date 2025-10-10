@@ -4,6 +4,8 @@ import '../../shared/models/word.dart';
 import '../../shared/providers/vocabulary_provider.dart';
 import '../../shared/providers/tts_provider.dart';
 import '../../shared/providers/voice_preference_provider.dart';
+import '../../core/theme/modern_theme.dart';
+import '../../shared/widgets/gradient_card.dart';
 import 'vocabulary_learning_screen.dart';
 
 class VocabularyListScreen extends ConsumerStatefulWidget {
@@ -431,15 +433,11 @@ class _WordListItem extends ConsumerWidget {
     final mastery = record?.mastery ?? 0.0;
     final isFavorite = record?.isFavorite ?? false;
 
-    return Card(
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(16),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+    return FloatingCard(
+      onTap: onTap,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
               Row(
                 children: [
                   // 单词信息
@@ -512,15 +510,15 @@ class _WordListItem extends ConsumerWidget {
               // 标签
               Row(
                 children: [
-                  _buildTag(word.level, colorScheme.primary),
+                  _buildTag(word.level, ModernTheme.primaryGradient),
                   const SizedBox(width: 8),
-                  _buildTag(word.category, colorScheme.secondary),
+                  _buildTag(word.category, ModernTheme.secondaryGradient),
                 ],
               ),
 
               const SizedBox(height: 12),
 
-              // 掌握度进度条
+              // 掌握度进度条（渐变）
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -530,27 +528,23 @@ class _WordListItem extends ConsumerWidget {
                       Text(
                         '掌握度',
                         style: theme.textTheme.bodySmall?.copyWith(
-                          color: colorScheme.onSurface.withValues(alpha: 0.6),
+                          color: ModernTheme.textLight,
                         ),
                       ),
                       Text(
                         '${(mastery * 100).toInt()}%',
                         style: theme.textTheme.bodySmall?.copyWith(
                           fontWeight: FontWeight.w600,
-                          color: _getMasteryColor(mastery, colorScheme),
+                          color: _getMasteryColor(mastery),
                         ),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 4),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(4),
-                    child: LinearProgressIndicator(
-                      value: mastery,
-                      minHeight: 6,
-                      backgroundColor: colorScheme.surfaceContainerHighest,
-                      color: _getMasteryColor(mastery, colorScheme),
-                    ),
+                  const SizedBox(height: 6),
+                  GradientProgressBar(
+                    progress: mastery,
+                    height: 8,
+                    gradient: _getMasteryGradient(mastery),
                   ),
                 ],
               ),
@@ -569,37 +563,47 @@ class _WordListItem extends ConsumerWidget {
                   },
                 ),
               ],
-            ],
-          ),
-        ),
+        ],
       ),
     );
   }
 
-  Widget _buildTag(String text, Color color) {
+  Widget _buildTag(String text, Gradient gradient) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(6),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
+        gradient: gradient,
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Text(
         text,
-        style: TextStyle(
-          color: color,
-          fontSize: 11,
-          fontWeight: FontWeight.w600,
+        style: const TextStyle(
+          color: Colors.white,
+          fontSize: 12,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );
   }
 
-  Color _getMasteryColor(double mastery, ColorScheme colorScheme) {
+  Color _getMasteryColor(double mastery) {
     if (mastery >= 0.8) return Colors.green;
-    if (mastery >= 0.5) return colorScheme.tertiary;
-    if (mastery >= 0.2) return Colors.orange;
-    return colorScheme.error;
+    if (mastery >= 0.5) return ModernTheme.accentColor;
+    return ModernTheme.textLight;
+  }
+
+  Gradient _getMasteryGradient(double mastery) {
+    if (mastery >= 0.8) {
+      return const LinearGradient(
+        colors: [Color(0xFF4CAF50), Color(0xFF388E3C)],
+      );
+    }
+    if (mastery >= 0.5) {
+      return ModernTheme.accentGradient;
+    }
+    return const LinearGradient(
+      colors: [Color(0xFFBDBDBD), Color(0xFF9E9E9E)],
+    );
   }
 }
 

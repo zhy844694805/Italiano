@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/grammar.dart';
 import '../../shared/providers/grammar_provider.dart';
+import '../../core/theme/modern_theme.dart';
+import '../../shared/widgets/gradient_card.dart';
 import 'grammar_detail_screen.dart';
 
 class GrammarListScreen extends ConsumerStatefulWidget {
@@ -168,9 +170,9 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
     final isCompleted = progress?.completed ?? false;
     final isFavorite = progress?.isFavorite ?? false;
 
-    return Card(
-      margin: const EdgeInsets.only(bottom: 12),
-      child: InkWell(
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
+      child: FloatingCard(
         onTap: () {
           Navigator.push(
             context,
@@ -179,157 +181,181 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
             ),
           );
         },
-        borderRadius: BorderRadius.circular(16),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  // 等级标签
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: _getLevelColor(grammarPoint.level).withValues(alpha: 0.2),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Text(
-                      grammarPoint.level,
-                      style: TextStyle(
-                        color: _getLevelColor(grammarPoint.level),
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                      ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                // 等级标签（渐变背景）
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  decoration: BoxDecoration(
+                    gradient: _getLevelGradient(grammarPoint.level),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Text(
+                    grammarPoint.level,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(width: 8),
-                  // 分类标签
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: colorScheme.secondaryContainer,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Text(
-                      grammarPoint.category,
-                      style: TextStyle(
-                        color: colorScheme.onSecondaryContainer,
-                        fontSize: 12,
-                      ),
-                    ),
-                  ),
-                  const Spacer(),
-                  // 完成状态图标
-                  if (isCompleted)
-                    Icon(Icons.check_circle, color: Colors.green, size: 20),
-                  const SizedBox(width: 8),
-                  // 收藏图标
-                  IconButton(
-                    icon: Icon(
-                      isFavorite ? Icons.favorite : Icons.favorite_border,
-                      color: isFavorite ? Colors.red : colorScheme.onSurface.withValues(alpha: 0.6),
-                      size: 20,
-                    ),
-                    onPressed: () {
-                      ref.read(grammarProgressProvider.notifier).toggleFavorite(grammarPoint.id);
-                    },
-                  ),
-                ],
-              ),
-              const SizedBox(height: 12),
-              // 标题
-              Text(
-                grammarPoint.title,
-                style: theme.textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
                 ),
-              ),
-              const SizedBox(height: 8),
-              // 描述
-              Text(
-                grammarPoint.description,
-                style: theme.textTheme.bodyMedium?.copyWith(
-                  color: colorScheme.onSurface.withValues(alpha: 0.7),
+                const SizedBox(width: 8),
+                // 分类标签
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  decoration: BoxDecoration(
+                    color: ModernTheme.backgroundColor,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Text(
+                    grammarPoint.category,
+                    style: TextStyle(
+                      color: ModernTheme.textDark,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-              const SizedBox(height: 12),
-              // 底部信息
-              Row(
-                children: [
-                  Icon(Icons.list_alt, size: 16, color: colorScheme.primary),
-                  const SizedBox(width: 4),
-                  Text(
-                    '${grammarPoint.rules.length} 条规则',
-                    style: theme.textTheme.bodySmall,
+                const Spacer(),
+                // 完成状态图标
+                if (isCompleted)
+                  Container(
+                    padding: const EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: Colors.green.withValues(alpha: 0.1),
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Icon(Icons.check_circle, color: Colors.green, size: 18),
                   ),
-                  const SizedBox(width: 16),
-                  Icon(Icons.lightbulb_outline, size: 16, color: colorScheme.tertiary),
-                  const SizedBox(width: 4),
-                  Text(
-                    '${grammarPoint.examples.length} 个例句',
-                    style: theme.textTheme.bodySmall,
+                const SizedBox(width: 4),
+                // 收藏图标
+                IconButton(
+                  icon: Icon(
+                    isFavorite ? Icons.favorite : Icons.favorite_border,
+                    color: isFavorite ? Colors.red : ModernTheme.textLight,
+                    size: 20,
                   ),
-                  if (grammarPoint.exercises.isNotEmpty) ...[
-                    const SizedBox(width: 16),
-                    Icon(Icons.quiz_outlined, size: 16, color: colorScheme.secondary),
-                    const SizedBox(width: 4),
-                    Text(
-                      '${grammarPoint.exercises.length} 道练习',
-                      style: theme.textTheme.bodySmall,
-                    ),
-                  ],
-                ],
-              ),
-              // 练习进度
-              if (progress != null && progress.exercisesTotal > 0) ...[
-                const SizedBox(height: 8),
-                Row(
-                  children: [
-                    Expanded(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(4),
-                        child: LinearProgressIndicator(
-                          value: progress.exercisesCorrect / progress.exercisesTotal,
-                          minHeight: 6,
-                          backgroundColor: colorScheme.surfaceContainerHighest,
-                          color: colorScheme.primary,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    Text(
-                      '${progress.exercisesCorrect}/${progress.exercisesTotal}',
-                      style: theme.textTheme.bodySmall,
-                    ),
-                  ],
+                  padding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(),
+                  onPressed: () {
+                    ref.read(grammarProgressProvider.notifier).toggleFavorite(grammarPoint.id);
+                  },
                 ),
               ],
+            ),
+            const SizedBox(height: 12),
+            // 标题
+            Text(
+              grammarPoint.title,
+              style: theme.textTheme.titleLarge?.copyWith(
+                fontWeight: FontWeight.bold,
+                color: ModernTheme.textDark,
+              ),
+            ),
+            const SizedBox(height: 8),
+            // 描述
+            Text(
+              grammarPoint.description,
+              style: theme.textTheme.bodyMedium?.copyWith(
+                color: ModernTheme.textLight,
+              ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+            const SizedBox(height: 12),
+            // 底部信息
+            Row(
+              children: [
+                Icon(Icons.list_alt, size: 16, color: ModernTheme.primaryColor),
+                const SizedBox(width: 4),
+                Text(
+                  '${grammarPoint.rules.length} 条规则',
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: ModernTheme.textLight,
+                  ),
+                ),
+                const SizedBox(width: 16),
+                Icon(Icons.lightbulb_outline, size: 16, color: ModernTheme.accentColor),
+                const SizedBox(width: 4),
+                Text(
+                  '${grammarPoint.examples.length} 个例句',
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: ModernTheme.textLight,
+                  ),
+                ),
+                if (grammarPoint.exercises.isNotEmpty) ...[
+                  const SizedBox(width: 16),
+                  Icon(Icons.quiz_outlined, size: 16, color: ModernTheme.secondaryColor),
+                  const SizedBox(width: 4),
+                  Text(
+                    '${grammarPoint.exercises.length} 道练习',
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: ModernTheme.textLight,
+                    ),
+                  ),
+                ],
+              ],
+            ),
+            // 练习进度（渐变进度条）
+            if (progress != null && progress.exercisesTotal > 0) ...[
+              const SizedBox(height: 12),
+              Row(
+                children: [
+                  Expanded(
+                    child: GradientProgressBar(
+                      progress: progress.exercisesCorrect / progress.exercisesTotal,
+                      height: 8,
+                      gradient: ModernTheme.primaryGradient,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    '${progress.exercisesCorrect}/${progress.exercisesTotal}',
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      fontWeight: FontWeight.w600,
+                      color: ModernTheme.primaryColor,
+                    ),
+                  ),
+                ],
+              ),
             ],
-          ),
+          ],
         ),
       ),
     );
   }
 
-  Color _getLevelColor(String level) {
+  Gradient _getLevelGradient(String level) {
     switch (level) {
       case 'A1':
-        return Colors.green;
+        return const LinearGradient(
+          colors: [Color(0xFF4CAF50), Color(0xFF388E3C)],
+        );
       case 'A2':
-        return Colors.lightGreen;
+        return const LinearGradient(
+          colors: [Color(0xFF8BC34A), Color(0xFF689F38)],
+        );
       case 'B1':
-        return Colors.blue;
+        return ModernTheme.secondaryGradient;
       case 'B2':
-        return Colors.indigo;
+        return const LinearGradient(
+          colors: [Color(0xFF3F51B5), Color(0xFF303F9F)],
+        );
       case 'C1':
-        return Colors.purple;
+        return const LinearGradient(
+          colors: [Color(0xFF9C27B0), Color(0xFF7B1FA2)],
+        );
       case 'C2':
-        return Colors.deepPurple;
+        return const LinearGradient(
+          colors: [Color(0xFF673AB7), Color(0xFF512DA8)],
+        );
       default:
-        return Colors.grey;
+        return const LinearGradient(
+          colors: [Color(0xFF9E9E9E), Color(0xFF757575)],
+        );
     }
   }
 
