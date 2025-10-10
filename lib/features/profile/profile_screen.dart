@@ -286,27 +286,26 @@ class ProfileScreen extends ConsumerWidget {
                     const SizedBox(height: 12),
                     FloatingCard(
                       child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            _GrammarStatItem(
-                              icon: Icons.check_circle,
-                              label: '已完成',
-                              value: grammarStats['completedCount'],
-                              color: Colors.green,
-                            ),
-                            Container(
-                              height: 40,
-                              width: 1,
-                              color: colorScheme.outlineVariant,
-                            ),
-                            _GrammarStatItem(
-                              icon: Icons.favorite,
-                              label: '已收藏',
-                              value: grammarStats['favoriteCount'],
-                              color: Colors.red,
-                            ),
-                          ],
-                        ),
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          _GrammarStatItem(
+                            icon: Icons.check_circle,
+                            label: '已完成',
+                            value: grammarStats['completedCount'],
+                            color: Colors.green,
+                          ),
+                          Container(
+                            height: 40,
+                            width: 1,
+                            color: colorScheme.outlineVariant,
+                          ),
+                          _GrammarStatItem(
+                            icon: Icons.favorite,
+                            label: '已收藏',
+                            value: grammarStats['favoriteCount'],
+                            color: Colors.red,
+                          ),
+                        ],
                       ),
                     ),
                   ],
