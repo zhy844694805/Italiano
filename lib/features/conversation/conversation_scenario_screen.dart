@@ -107,7 +107,7 @@ class _ScenarioCard extends StatelessWidget {
     return GradientCard(
       gradient: _getScenarioGradient(scenario.id),
       onTap: onTap,
-      padding: const EdgeInsets.all(18),
+      padding: const EdgeInsets.all(14),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -116,24 +116,24 @@ class _ScenarioCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                padding: const EdgeInsets.all(12),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   color: Colors.white.withValues(alpha: 0.3),
-                  borderRadius: BorderRadius.circular(14),
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
                   scenario.icon,
-                  style: const TextStyle(fontSize: 32),
+                  style: const TextStyle(fontSize: 28),
                 ),
               ),
               Container(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 10,
-                  vertical: 6,
+                  horizontal: 8,
+                  vertical: 4,
                 ),
                 decoration: BoxDecoration(
                   color: Colors.white.withValues(alpha: 0.25),
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(8),
                   border: Border.all(
                     color: Colors.white.withValues(alpha: 0.4),
                     width: 1.5,
@@ -143,31 +143,33 @@ class _ScenarioCard extends StatelessWidget {
                   scenario.level,
                   style: const TextStyle(
                     color: Colors.white,
-                    fontSize: 13,
+                    fontSize: 12,
                     fontWeight: FontWeight.bold,
-                    letterSpacing: 0.5,
+                    letterSpacing: 0.3,
                   ),
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 12),
           // Italian name
           Text(
             scenario.nameIt,
             style: const TextStyle(
-              fontSize: 17,
+              fontSize: 15,
               fontWeight: FontWeight.bold,
               color: Colors.white,
-              letterSpacing: 0.3,
+              letterSpacing: 0.2,
             ),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
           ),
-          const SizedBox(height: 4),
+          const SizedBox(height: 3),
           // Chinese name
           Text(
             scenario.nameZh,
             style: TextStyle(
-              fontSize: 14,
+              fontSize: 13,
               color: Colors.white.withValues(alpha: 0.9),
               fontWeight: FontWeight.w500,
             ),
@@ -177,9 +179,9 @@ class _ScenarioCard extends StatelessWidget {
           Text(
             scenario.description,
             style: TextStyle(
-              fontSize: 12,
+              fontSize: 11,
               color: Colors.white.withValues(alpha: 0.85),
-              height: 1.4,
+              height: 1.3,
             ),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
