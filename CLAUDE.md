@@ -308,10 +308,13 @@ Powered by **KOKORO TTS API** with OpenAI-compatible format (`lib/core/services/
 - Endpoint: `/audio/speech`
 - Model: `kokoro`
 - Response Format: MP3 audio
+- **IMPORTANT**: Requires `INTERNET` permission in `AndroidManifest.xml`
 
 **Voice Options**:
-- `im_nicola` - Italian male voice
-- `if_sara` - Italian female voice (default)
+- `im_nicola` - Italian male voice (Nicola)
+- `if_sara` - Italian female voice (Sara, default)
+- User preference stored via `voicePreferenceProvider` using SharedPreferences
+- Voice selection UI available in Settings screen
 
 **Features**:
 - Real-time text-to-speech conversion for Italian text
@@ -326,6 +329,15 @@ Powered by **KOKORO TTS API** with OpenAI-compatible format (`lib/core/services/
 **Provider** (`lib/shared/providers/tts_provider.dart`):
 - `ttsServiceProvider` - Singleton TTSService instance
 - `ttsPlayingStateProvider` - Track current playback state
+- `voicePreferenceProvider` - User's selected voice preference (Sara/Nicola)
+
+**Integration Pattern**:
+```dart
+// Read user's voice preference
+final selectedVoice = ref.read(voicePreferenceProvider);
+// Play with selected voice
+await ttsService.speak(text, voice: selectedVoice);
+```
 
 ### Spaced Repetition Algorithm
 Implemented in `vocabulary_provider.dart:_calculateNextReviewDate()`:
@@ -562,15 +574,34 @@ lib/
         └── word_card.dart
 ```
 
-### Theme
-Italian flag-inspired color scheme in `lib/core/theme/app_theme.dart`:
-- **Primary**: Italian green (#009246)
-- **Accent**: Italian red (#CE2B37)
-- **Secondary**: Light blue (#4A90E2)
-- **Tertiary**: Warm orange (#FF9F66)
-- Material 3 design system
-- Rounded corners: 16dp cards, 12dp buttons
-- Both light and dark themes defined (light theme active)
+### Theme System
+The app uses **Modern Theme** (`lib/core/theme/modern_theme.dart`) - a gradient-based design inspired by Duolingo and Material 3:
+
+**Color System**:
+- **Primary Gradient**: Italian green (#00B578 → #009246)
+- **Secondary Gradient**: Blue (#5BA4FF → #4A90E2)
+- **Accent Gradient**: Orange (#FFAA66 → #FF9F66)
+- **Red Gradient**: Red (#FF5757 → #CE2B37)
+- **Background**: Light purple-gray (#F8F9FE)
+
+**Modern UI Components** (`lib/shared/widgets/gradient_card.dart`):
+- `GradientCard` - Cards with gradient backgrounds and shadows (tap-enabled)
+- `FloatingCard` - White cards with subtle floating shadow
+- `StatCard` - Statistics display with gradient icon background
+- `GradientButton` - Buttons with gradient fills and icons
+- `GlassCard` - Semi-transparent glass-morphism cards
+- `GradientProgressBar` - Animated progress bars with gradient fills
+
+**Layout Considerations**:
+- Use appropriate padding for GridView cards (14-16px recommended)
+- Add `mainAxisSize: MainAxisSize.min` to prevent overflow in constrained layouts
+- Test font sizes for overflow: titles (14-15px), labels (13px), descriptions (11-12px)
+- Use `maxLines` and `overflow: TextOverflow.ellipsis` for text in cards
+
+**Theme Configuration** (`main.dart`):
+- Active: `ModernTheme.lightTheme` (gradient-based modern design)
+- Alternative: `AppTheme.lightTheme` (classic Italian flag colors)
+- Switch by uncommenting appropriate theme in `main.dart`
 
 ### Data Sources
 
@@ -643,14 +674,29 @@ Italian flag-inspired color scheme in `lib/core/theme/app_theme.dart`:
 - `path` (^1.9.0) - Path manipulation utilities
 - `fl_chart` (^0.69.0) - Charts for statistics visualization
 
-## DeepSeek API Configuration
+## API Configuration
+
+### DeepSeek API (AI Conversation)
 The app uses DeepSeek's conversational AI for language practice:
 - **API Key**: Stored in `conversation_provider.dart`
 - **Base URL**: `https://api.deepseek.com`
 - **Model**: `deepseek-chat`
 - **Endpoint**: `/chat/completions` (OpenAI-compatible)
+- **Timeouts**: 30s connect, 60s receive
 - **Rate Limits**: Follow DeepSeek's standard rate limits
 - **Error Handling**: Network errors, timeout errors, API errors gracefully handled with user feedback
+- **IMPORTANT**: Requires `INTERNET` and `ACCESS_NETWORK_STATE` permissions in `AndroidManifest.xml`
+
+### KOKORO TTS API
+See "Text-to-Speech (TTS) System" section above for complete configuration details.
+
+### Android Permissions Required
+Add to `android/app/src/main/AndroidManifest.xml`:
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
+Without these permissions, both AI conversation and TTS features will fail with network errors.
 
 ## Important Implementation Notes
 
@@ -806,6 +852,47 @@ if (record != null) {
   )
 }
 ```
+
+### UI Development Best Practices
+
+**Layout Overflow Prevention**:
+- When using `GridView` with custom cards, test for overflow at various screen sizes
+- Recommended approach: Start with larger padding (18-20px) and reduce if overflow occurs
+- Use `flutter run` with hot reload to test layout changes immediately
+- Common overflow fixes:
+  - Reduce padding: 20→16→14px
+  - Reduce icon sizes: 32→28→24px
+  - Reduce font sizes: 17→15→14px for titles, 15→13→12px for labels
+  - Add `mainAxisSize: MainAxisSize.min` to Column/Row widgets
+  - Always add `maxLines` and `overflow: TextOverflow.ellipsis` to Text widgets
+
+**GridView Card Sizing**:
+```dart
+// Example: Properly sized card for GridView
+GradientCard(
+  padding: const EdgeInsets.all(14), // Not too large
+  child: Column(
+    mainAxisSize: MainAxisSize.min, // Prevent expansion
+    children: [
+      Icon(icon, size: 28), // Moderate icon size
+      const SizedBox(height: 10), // Moderate spacing
+      Text(
+        title,
+        style: TextStyle(fontSize: 14), // Not too large
+        maxLines: 2, // Limit lines
+        overflow: TextOverflow.ellipsis, // Handle overflow
+      ),
+    ],
+  ),
+)
+```
+
+**Testing Workflow**:
+1. Run `flutter run` for development testing
+2. Check console for RenderFlex overflow errors
+3. Adjust padding/font sizes incrementally
+4. Hot reload to test changes
+5. Build release APK only after all errors resolved
 
 ## Learning Best Practices
 
