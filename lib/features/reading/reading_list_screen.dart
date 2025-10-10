@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/reading.dart';
 import '../../shared/providers/reading_provider.dart';
+import '../../core/theme/modern_theme.dart';
+import '../../shared/widgets/gradient_card.dart';
 import 'reading_detail_screen.dart';
 
 class ReadingListScreen extends ConsumerStatefulWidget {
@@ -175,9 +177,9 @@ class _ReadingListScreenState extends ConsumerState<ReadingListScreen> {
     final isCompleted = progress != null;
     final accuracy = progress?.accuracy ?? 0.0;
 
-    return Card(
-      margin: const EdgeInsets.only(bottom: 12),
-      child: InkWell(
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
+      child: FloatingCard(
         onTap: () {
           Navigator.push(
             context,
@@ -186,19 +188,19 @@ class _ReadingListScreenState extends ConsumerState<ReadingListScreen> {
             ),
           );
         },
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
+        child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [
-                  // 级别标签
+                  // 级别标签（渐变）
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                     decoration: BoxDecoration(
-                      color: _getLevelColor(passage.level),
-                      borderRadius: BorderRadius.circular(4),
+                      gradient: passage.level == 'A1'
+                        ? const LinearGradient(colors: [Color(0xFF4CAF50), Color(0xFF388E3C)])
+                        : ModernTheme.secondaryGradient,
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     child: Text(
                       passage.level,
@@ -208,14 +210,14 @@ class _ReadingListScreenState extends ConsumerState<ReadingListScreen> {
                   const SizedBox(width: 8),
                   // 分类标签
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                     decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: BorderRadius.circular(4),
+                      color: ModernTheme.backgroundColor,
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     child: Text(
                       passage.category,
-                      style: const TextStyle(fontSize: 12),
+                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: ModernTheme.textDark),
                     ),
                   ),
                   const Spacer(),
@@ -258,25 +260,26 @@ class _ReadingListScreenState extends ConsumerState<ReadingListScreen> {
                 Row(
                   children: [
                     Expanded(
-                      child: LinearProgressIndicator(
-                        value: accuracy,
-                        backgroundColor: Colors.grey[300],
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          accuracy >= 0.8 ? Colors.green : (accuracy >= 0.6 ? Colors.orange : Colors.red),
-                        ),
+                      child: GradientProgressBar(
+                        progress: accuracy,
+                        height: 8,
+                        gradient: accuracy >= 0.8
+                          ? const LinearGradient(colors: [Color(0xFF4CAF50), Color(0xFF388E3C)])
+                          : accuracy >= 0.6
+                            ? ModernTheme.accentGradient
+                            : ModernTheme.redGradient,
                       ),
                     ),
                     const SizedBox(width: 12),
                     Text(
                       '${(accuracy * 100).toStringAsFixed(0)}%',
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(fontWeight: FontWeight.bold, color: ModernTheme.primaryColor),
                     ),
                   ],
                 ),
               ],
             ],
           ),
-        ),
       ),
     );
   }
