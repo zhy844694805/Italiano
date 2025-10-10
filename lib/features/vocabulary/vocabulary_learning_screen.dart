@@ -4,6 +4,7 @@ import '../../shared/models/word.dart';
 import '../../shared/widgets/swipeable_word_card.dart';
 import '../../shared/providers/vocabulary_provider.dart';
 import '../../shared/providers/tts_provider.dart';
+import '../../shared/providers/voice_preference_provider.dart';
 
 class VocabularyLearningScreen extends ConsumerStatefulWidget {
   final String? level;
@@ -313,7 +314,8 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
               showAudioButton: true,
               onAudioTap: () async {
                 // 使用KOKORO TTS播放意大利语单词发音
-                final success = await ttsService.speak(currentWord.italian);
+                final selectedVoice = ref.read(voicePreferenceProvider);
+                final success = await ttsService.speak(currentWord.italian, voice: selectedVoice);
                 if (!success && mounted) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/word.dart';
 import '../../shared/providers/vocabulary_provider.dart';
 import '../../shared/providers/tts_provider.dart';
+import '../../shared/providers/voice_preference_provider.dart';
 import 'vocabulary_learning_screen.dart';
 
 class VocabularyListScreen extends ConsumerStatefulWidget {
@@ -488,7 +489,8 @@ class _WordListItem extends ConsumerWidget {
                     icon: const Icon(Icons.volume_up),
                     onPressed: () async {
                       final ttsService = ref.read(ttsServiceProvider);
-                      await ttsService.speak(word.italian);
+                      final selectedVoice = ref.read(voicePreferenceProvider);
+                      await ttsService.speak(word.italian, voice: selectedVoice);
                     },
                   ),
 
@@ -676,7 +678,8 @@ class _WordDetailSheet extends ConsumerWidget {
                     icon: const Icon(Icons.volume_up),
                     iconSize: 32,
                     onPressed: () async {
-                      await ttsService.speak(word.italian);
+                      final selectedVoice = ref.read(voicePreferenceProvider);
+                      await ttsService.speak(word.italian, voice: selectedVoice);
                     },
                   ),
                 ],

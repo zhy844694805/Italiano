@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/reading.dart';
 import '../../shared/providers/reading_provider.dart';
 import '../../shared/providers/tts_provider.dart';
+import '../../shared/providers/voice_preference_provider.dart';
 
 class ReadingDetailScreen extends ConsumerStatefulWidget {
   final ReadingPassage passage;
@@ -187,7 +188,8 @@ class _ReadingDetailScreenState extends ConsumerState<ReadingDetailScreen> {
                 icon: const Icon(Icons.volume_up),
                 tooltip: '朗读全文',
                 onPressed: () async {
-                  final success = await ttsService.speak(widget.passage.content);
+                  final selectedVoice = ref.read(voicePreferenceProvider);
+                  final success = await ttsService.speak(widget.passage.content, voice: selectedVoice);
                   if (!success && mounted) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
