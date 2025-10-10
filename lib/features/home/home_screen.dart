@@ -10,6 +10,8 @@ import '../practice/practice_screen.dart';
 import '../profile/profile_screen.dart';
 import '../../shared/providers/vocabulary_provider.dart';
 import '../../shared/providers/statistics_provider.dart';
+import '../../core/theme/modern_theme.dart';
+import '../../shared/widgets/gradient_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -98,124 +100,168 @@ class HomePage extends ConsumerWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // 学习进度卡片
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(12),
-                            decoration: BoxDecoration(
-                              color: colorScheme.primary.withValues(alpha: 0.1),
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Icon(
-                              Icons.local_fire_department,
-                              color: colorScheme.primary,
-                              size: 28,
-                            ),
+              // 学习进度卡片 - 现代化设计
+              FloatingCard(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        // 渐变图标背景
+                        Container(
+                          padding: const EdgeInsets.all(14),
+                          decoration: BoxDecoration(
+                            gradient: ModernTheme.accentGradient,
+                            borderRadius: BorderRadius.circular(16),
+                            boxShadow: [
+                              BoxShadow(
+                                color: ModernTheme.accentColor.withValues(alpha: 0.3),
+                                blurRadius: 12,
+                                offset: const Offset(0, 4),
+                              ),
+                            ],
                           ),
-                          const SizedBox(width: 16),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                          child: const Icon(
+                            Icons.local_fire_department,
+                            color: Colors.white,
+                            size: 32,
+                          ),
+                        ),
+                        const SizedBox(width: 16),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '连续学习',
+                                style: theme.textTheme.bodyMedium?.copyWith(
+                                  color: ModernTheme.textLight,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              statisticsAsync.when(
+                                data: (stats) => Text(
+                                  '${stats.studyStreak} 天',
+                                  style: theme.textTheme.displaySmall?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                loading: () => Text(
+                                  '0 天',
+                                  style: theme.textTheme.displaySmall?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                error: (_, __) => Text(
+                                  '0 天',
+                                  style: theme.textTheme.displaySmall?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 24),
+                    todayStatsAsync.when(
+                      data: (todayStats) {
+                        final dailyGoal = 20;
+                        final wordsLearned = todayStats?.wordsLearned ?? 0;
+                        final progress = (wordsLearned / dailyGoal).clamp(0.0, 1.0);
+
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  '连续学习',
-                                  style: theme.textTheme.bodyMedium,
+                                  '今日目标',
+                                  style: theme.textTheme.titleMedium?.copyWith(
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
-                                const SizedBox(height: 4),
-                                statisticsAsync.when(
-                                  data: (stats) => Text(
-                                    '${stats.studyStreak} 天',
-                                    style: theme.textTheme.displaySmall,
-                                  ),
-                                  loading: () => Text(
-                                    '0 天',
-                                    style: theme.textTheme.displaySmall,
-                                  ),
-                                  error: (_, __) => Text(
-                                    '0 天',
-                                    style: theme.textTheme.displaySmall,
+                                Text(
+                                  '$wordsLearned / $dailyGoal 词',
+                                  style: theme.textTheme.bodyMedium?.copyWith(
+                                    color: ModernTheme.textLight,
+                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
                               ],
                             ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 20),
-                      todayStatsAsync.when(
-                        data: (todayStats) {
-                          final dailyGoal = 20;
-                          final wordsLearned = todayStats?.wordsLearned ?? 0;
-                          final progress = (wordsLearned / dailyGoal).clamp(0.0, 1.0);
-
-                          return Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                            const SizedBox(height: 12),
+                            // 使用渐变进度条
+                            GradientProgressBar(
+                              progress: progress,
+                              height: 12,
+                              gradient: ModernTheme.primaryGradient,
+                            ),
+                          ],
+                        );
+                      },
+                      loading: () => Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                '今日目标: $wordsLearned/$dailyGoal 个单词',
-                                style: theme.textTheme.bodyMedium,
+                                '今日目标',
+                                style: theme.textTheme.titleMedium?.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
-                              const SizedBox(height: 12),
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(8),
-                                child: LinearProgressIndicator(
-                                  value: progress,
-                                  minHeight: 8,
-                                  backgroundColor: colorScheme.surfaceContainerHighest,
-                                  color: colorScheme.primary,
+                              Text(
+                                '0 / 20 词',
+                                style: theme.textTheme.bodyMedium?.copyWith(
+                                  color: ModernTheme.textLight,
+                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
                             ],
-                          );
-                        },
-                        loading: () => Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '今日目标: 0/20 个单词',
-                              style: theme.textTheme.bodyMedium,
-                            ),
-                            const SizedBox(height: 12),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: LinearProgressIndicator(
-                                value: 0,
-                                minHeight: 8,
-                                backgroundColor: colorScheme.surfaceContainerHighest,
-                                color: colorScheme.primary,
-                              ),
-                            ),
-                          ],
-                        ),
-                        error: (_, __) => Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '今日目标: 0/20 个单词',
-                              style: theme.textTheme.bodyMedium,
-                            ),
-                            const SizedBox(height: 12),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: LinearProgressIndicator(
-                                value: 0,
-                                minHeight: 8,
-                                backgroundColor: colorScheme.surfaceContainerHighest,
-                                color: colorScheme.primary,
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                          const SizedBox(height: 12),
+                          const GradientProgressBar(
+                            progress: 0,
+                            height: 12,
+                            gradient: ModernTheme.primaryGradient,
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                      error: (_, __) => Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                '今日目标',
+                                style: theme.textTheme.titleMedium?.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              Text(
+                                '0 / 20 词',
+                                style: theme.textTheme.bodyMedium?.copyWith(
+                                  color: ModernTheme.textLight,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 12),
+                          const GradientProgressBar(
+                            progress: 0,
+                            height: 12,
+                            gradient: ModernTheme.primaryGradient,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
 
@@ -421,42 +467,56 @@ class _QuickActionCard extends StatelessWidget {
     required this.onTap,
   });
 
+  Gradient _getGradient() {
+    // 根据颜色返回对应的渐变
+    if (color == ModernTheme.primaryColor || color == Colors.green) {
+      return ModernTheme.primaryGradient;
+    } else if (color == ModernTheme.secondaryColor || color == Colors.blue) {
+      return ModernTheme.secondaryGradient;
+    } else if (color == Colors.deepPurple) {
+      return const LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        colors: [Color(0xFF9C27B0), Color(0xFF673AB7)],
+      );
+    } else if (color == Colors.orange) {
+      return ModernTheme.accentGradient;
+    }
+    return LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: [color, color.withValues(alpha: 0.8)],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(16),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Icon(
-                  icon,
-                  color: color,
-                  size: 32,
-                ),
-              ),
-              const SizedBox(height: 12),
-              Text(
-                title,
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                  color: Theme.of(context).colorScheme.onSurface,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ],
+    return GradientCard(
+      gradient: _getGradient(),
+      onTap: onTap,
+      padding: const EdgeInsets.all(18),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            icon,
+            color: Colors.white,
+            size: 36,
           ),
-        ),
+          const SizedBox(height: 12),
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+              letterSpacing: 0.3,
+            ),
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ],
       ),
     );
   }
@@ -478,73 +538,95 @@ class _QuickActionCardWithBadge extends StatelessWidget {
     this.badge,
   });
 
+  Gradient _getGradient() {
+    // 根据颜色返回对应的渐变
+    if (color == ModernTheme.primaryColor || color == Colors.green) {
+      return ModernTheme.primaryGradient;
+    } else if (color == ModernTheme.secondaryColor || color == Colors.blue) {
+      return ModernTheme.secondaryGradient;
+    } else if (color == Colors.deepPurple) {
+      return const LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        colors: [Color(0xFF9C27B0), Color(0xFF673AB7)],
+      );
+    } else if (color == Colors.orange) {
+      return ModernTheme.accentGradient;
+    }
+    return LinearGradient(
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      colors: [color, color.withValues(alpha: 0.8)],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(16),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        GradientCard(
+          gradient: _getGradient(),
+          onTap: onTap,
+          padding: const EdgeInsets.all(18),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: color.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Icon(
-                      icon,
-                      color: color,
-                      size: 32,
-                    ),
-                  ),
-                  if (badge != null)
-                    Positioned(
-                      right: -8,
-                      top: -8,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        constraints: const BoxConstraints(
-                          minWidth: 20,
-                          minHeight: 20,
-                        ),
-                        child: Text(
-                          badge!,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
-                ],
+              Icon(
+                icon,
+                color: Colors.white,
+                size: 36,
               ),
               const SizedBox(height: 12),
               Text(
                 title,
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                  color: Theme.of(context).colorScheme.onSurface,
+                style: const TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  letterSpacing: 0.3,
                 ),
                 textAlign: TextAlign.center,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
               ),
             ],
           ),
         ),
-      ),
+        // 徽章
+        if (badge != null)
+          Positioned(
+            right: 8,
+            top: 8,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              decoration: BoxDecoration(
+                color: ModernTheme.redGradient.colors.first,
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.2),
+                    blurRadius: 8,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              constraints: const BoxConstraints(
+                minWidth: 24,
+                minHeight: 24,
+              ),
+              child: Text(
+                badge!,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
+      ],
     );
   }
 }

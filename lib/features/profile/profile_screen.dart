@@ -4,6 +4,8 @@ import 'package:fl_chart/fl_chart.dart';
 import '../../shared/providers/statistics_provider.dart';
 import '../../core/database/learning_statistics_repository.dart';
 import '../settings/settings_screen.dart';
+import '../../core/theme/modern_theme.dart';
+import '../../shared/widgets/gradient_card.dart';
 import 'package:intl/intl.dart';
 
 class ProfileScreen extends ConsumerWidget {
@@ -116,38 +118,42 @@ class ProfileScreen extends ConsumerWidget {
                     ),
                     const SizedBox(height: 12),
 
-                    // 统计数据网格
+                    // 统计数据网格 - 使用现代化 StatCard
                     GridView.count(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       crossAxisCount: 2,
                       mainAxisSpacing: 12,
                       crossAxisSpacing: 12,
-                      childAspectRatio: 1.5,
+                      childAspectRatio: 1.2,
                       children: [
-                        _StatCard(
-                          icon: Icons.book,
-                          title: '总学习天数',
-                          value: '${stats.totalStudyDays}',
-                          color: colorScheme.primary,
+                        StatCard(
+                          icon: Icons.local_fire_department,
+                          label: '总学习天数',
+                          value: '${stats.totalStudyDays}天',
+                          gradient: ModernTheme.accentGradient,
                         ),
-                        _StatCard(
+                        StatCard(
                           icon: Icons.schedule,
-                          title: '总学习时长',
+                          label: '总学习时长',
                           value: '${(stats.totalStudyTimeMinutes / 60).toStringAsFixed(1)}h',
-                          color: colorScheme.secondary,
+                          gradient: ModernTheme.secondaryGradient,
                         ),
-                        _StatCard(
+                        StatCard(
                           icon: Icons.translate,
-                          title: '学习单词',
+                          label: '学习单词',
                           value: '${stats.totalWordsLearned}',
-                          color: Colors.deepPurple,
+                          gradient: ModernTheme.primaryGradient,
                         ),
-                        _StatCard(
+                        StatCard(
                           icon: Icons.school,
-                          title: '语法点',
+                          label: '语法点',
                           value: '${stats.totalGrammarStudied}',
-                          color: Colors.orange,
+                          gradient: const LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [Color(0xFFFF8A65), Color(0xFFFF6F00)],
+                          ),
                         ),
                       ],
                     ),
@@ -162,13 +168,11 @@ class ProfileScreen extends ConsumerWidget {
                       ),
                     ),
                     const SizedBox(height: 12),
-                    Card(
-                      child: Padding(
-                        padding: const EdgeInsets.all(16),
-                        child: SizedBox(
-                          height: 200,
-                          child: _LearningChart(recentStats: stats.recentStats),
-                        ),
+                    FloatingCard(
+                      padding: const EdgeInsets.all(16),
+                      child: SizedBox(
+                        height: 200,
+                        child: _LearningChart(recentStats: stats.recentStats),
                       ),
                     ),
                   ],
@@ -201,10 +205,8 @@ class ProfileScreen extends ConsumerWidget {
                       ),
                     ),
                     const SizedBox(height: 12),
-                    Card(
-                      child: Padding(
-                        padding: const EdgeInsets.all(20),
-                        child: Column(
+                    FloatingCard(
+                      child: Column(
                           children: [
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -261,7 +263,6 @@ class ProfileScreen extends ConsumerWidget {
                             ),
                           ],
                         ),
-                      ),
                     ),
                   ],
                 ),
@@ -283,10 +284,8 @@ class ProfileScreen extends ConsumerWidget {
                       ),
                     ),
                     const SizedBox(height: 12),
-                    Card(
-                      child: Padding(
-                        padding: const EdgeInsets.all(20),
-                        child: Row(
+                    FloatingCard(
+                      child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             _GrammarStatItem(
@@ -327,11 +326,19 @@ class ProfileScreen extends ConsumerWidget {
               ),
               const SizedBox(height: 12),
 
-              Card(
+              FloatingCard(
+                padding: EdgeInsets.zero,
                 child: Column(
                   children: [
                     ListTile(
-                      leading: Icon(Icons.star, color: colorScheme.primary),
+                      leading: Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          gradient: ModernTheme.primaryGradient,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const Icon(Icons.star, color: Colors.white, size: 20),
+                      ),
                       title: const Text('我的收藏'),
                       trailing: const Icon(Icons.chevron_right),
                       onTap: () {
@@ -340,7 +347,14 @@ class ProfileScreen extends ConsumerWidget {
                     ),
                     Divider(height: 1, indent: 56),
                     ListTile(
-                      leading: Icon(Icons.emoji_events, color: Colors.amber),
+                      leading: Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          gradient: ModernTheme.accentGradient,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const Icon(Icons.emoji_events, color: Colors.white, size: 20),
+                      ),
                       title: const Text('学习成就'),
                       trailing: const Icon(Icons.chevron_right),
                       onTap: () {
@@ -349,7 +363,14 @@ class ProfileScreen extends ConsumerWidget {
                     ),
                     Divider(height: 1, indent: 56),
                     ListTile(
-                      leading: Icon(Icons.notifications, color: colorScheme.secondary),
+                      leading: Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          gradient: ModernTheme.secondaryGradient,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const Icon(Icons.notifications, color: Colors.white, size: 20),
+                      ),
                       title: const Text('学习提醒'),
                       trailing: const Icon(Icons.chevron_right),
                       onTap: () {
@@ -358,7 +379,16 @@ class ProfileScreen extends ConsumerWidget {
                     ),
                     Divider(height: 1, indent: 56),
                     ListTile(
-                      leading: Icon(Icons.info_outline, color: colorScheme.tertiary),
+                      leading: Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFF9C27B0), Color(0xFF673AB7)],
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const Icon(Icons.info_outline, color: Colors.white, size: 20),
+                      ),
                       title: const Text('关于应用'),
                       trailing: const Icon(Icons.chevron_right),
                       onTap: () {
@@ -399,54 +429,6 @@ class ProfileScreen extends ConsumerWidget {
             child: const Text('确定'),
           ),
         ],
-      ),
-    );
-  }
-}
-
-// 统计卡片组件
-class _StatCard extends StatelessWidget {
-  final IconData icon;
-  final String title;
-  final String value;
-  final Color color;
-
-  const _StatCard({
-    required this.icon,
-    required this.title,
-    required this.value,
-    required this.color,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, size: 32, color: color),
-            const SizedBox(height: 8),
-            Text(
-              value,
-              style: theme.textTheme.headlineMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: color,
-              ),
-            ),
-            const SizedBox(height: 4),
-            Text(
-              title,
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
       ),
     );
   }

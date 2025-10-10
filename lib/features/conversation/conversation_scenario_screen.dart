@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../shared/models/conversation.dart';
 import 'ai_conversation_screen.dart';
+import '../../core/theme/modern_theme.dart';
+import '../../shared/widgets/gradient_card.dart';
 
 /// Screen for selecting conversation scenarios
 class ConversationScenarioScreen extends StatelessWidget {
@@ -76,102 +78,113 @@ class _ScenarioCard extends StatelessWidget {
     required this.onTap,
   });
 
-  Color _getLevelColor(String level) {
-    switch (level) {
-      case 'A1':
-        return Colors.green;
-      case 'A2':
-        return Colors.lightGreen;
-      case 'B1':
-        return Colors.orange;
-      case 'B2':
-        return Colors.deepOrange;
-      case 'C1':
-        return Colors.red;
-      case 'C2':
-        return Colors.deepPurple;
+  Gradient _getScenarioGradient(String id) {
+    // 根据场景ID返回不同的渐变
+    switch (id) {
+      case 'restaurant':
+        return ModernTheme.accentGradient;
+      case 'airport':
+        return ModernTheme.secondaryGradient;
+      case 'shopping':
+        return ModernTheme.primaryGradient;
+      case 'doctor':
+        return ModernTheme.redGradient;
+      case 'interview':
+        return const LinearGradient(
+          colors: [Color(0xFF9C27B0), Color(0xFF673AB7)],
+        );
+      case 'friend':
+        return const LinearGradient(
+          colors: [Color(0xFFFF8A65), Color(0xFFFF6F00)],
+        );
       default:
-        return Colors.grey;
+        return ModernTheme.primaryGradient;
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 2,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(16),
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+    return GradientCard(
+      gradient: _getScenarioGradient(scenario.id),
+      onTap: onTap,
+      padding: const EdgeInsets.all(18),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Icon and level badge
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // Icon and level badge
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    scenario.icon,
-                    style: const TextStyle(fontSize: 40),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 8,
-                      vertical: 4,
-                    ),
-                    decoration: BoxDecoration(
-                      color: _getLevelColor(scenario.level),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Text(
-                      scenario.level,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 12),
-              // Italian name
-              Text(
-                scenario.nameIt,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.3),
+                  borderRadius: BorderRadius.circular(14),
                 ),
-              ),
-              const SizedBox(height: 4),
-              // Chinese name
-              Text(
-                scenario.nameZh,
-                style: const TextStyle(
-                  fontSize: 14,
-                  color: Colors.grey,
-                ),
-              ),
-              const SizedBox(height: 8),
-              // Description
-              Expanded(
                 child: Text(
-                  scenario.description,
-                  style: const TextStyle(
-                    fontSize: 12,
-                    color: Colors.black87,
+                  scenario.icon,
+                  style: const TextStyle(fontSize: 32),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 6,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.25),
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(
+                    color: Colors.white.withValues(alpha: 0.4),
+                    width: 1.5,
                   ),
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
+                ),
+                child: Text(
+                  scenario.level,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0.5,
+                  ),
                 ),
               ),
             ],
           ),
-        ),
+          const SizedBox(height: 16),
+          // Italian name
+          Text(
+            scenario.nameIt,
+            style: const TextStyle(
+              fontSize: 17,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+              letterSpacing: 0.3,
+            ),
+          ),
+          const SizedBox(height: 4),
+          // Chinese name
+          Text(
+            scenario.nameZh,
+            style: TextStyle(
+              fontSize: 14,
+              color: Colors.white.withValues(alpha: 0.9),
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          const Spacer(),
+          // Description
+          Text(
+            scenario.description,
+            style: TextStyle(
+              fontSize: 12,
+              color: Colors.white.withValues(alpha: 0.85),
+              height: 1.4,
+            ),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ],
       ),
     );
   }
