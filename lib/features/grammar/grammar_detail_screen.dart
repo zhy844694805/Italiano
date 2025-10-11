@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/grammar.dart';
 import '../../shared/providers/grammar_provider.dart';
+import '../../core/theme/modern_theme.dart';
+import '../../shared/widgets/gradient_card.dart';
 
 class GrammarDetailScreen extends ConsumerStatefulWidget {
   final GrammarPoint grammarPoint;
@@ -97,24 +99,33 @@ class _GrammarDetailScreenState extends ConsumerState<GrammarDetailScreen> with 
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // 描述
-          Card(
-            color: colorScheme.primaryContainer,
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Row(
-                children: [
-                  Icon(Icons.info_outline, color: colorScheme.onPrimaryContainer),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: Text(
-                      widget.grammarPoint.description,
-                      style: theme.textTheme.bodyLarge?.copyWith(
-                        color: colorScheme.onPrimaryContainer,
-                      ),
+          Container(
+            decoration: BoxDecoration(
+              gradient: ModernTheme.primaryGradient,
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                  color: ModernTheme.primaryColor.withValues(alpha: 0.2),
+                  blurRadius: 12,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            padding: const EdgeInsets.all(16),
+            child: Row(
+              children: [
+                const Icon(Icons.info_outline, color: Colors.white),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    widget.grammarPoint.description,
+                    style: theme.textTheme.bodyLarge?.copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           const SizedBox(height: 24),
@@ -132,13 +143,13 @@ class _GrammarDetailScreenState extends ConsumerState<GrammarDetailScreen> with 
                     Container(
                       padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                        color: colorScheme.primary,
+                        gradient: ModernTheme.primaryGradient,
                         shape: BoxShape.circle,
                       ),
                       child: Text(
                         '${index + 1}',
-                        style: TextStyle(
-                          color: colorScheme.onPrimary,
+                        style: const TextStyle(
+                          color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -206,9 +217,9 @@ class _GrammarDetailScreenState extends ConsumerState<GrammarDetailScreen> with 
       itemCount: widget.grammarPoint.examples.length,
       itemBuilder: (context, index) {
         final example = widget.grammarPoint.examples[index];
-        return Card(
-          margin: const EdgeInsets.only(bottom: 16),
-          child: Padding(
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 16),
+          child: FloatingCard(
             padding: const EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -218,13 +229,13 @@ class _GrammarDetailScreenState extends ConsumerState<GrammarDetailScreen> with 
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                       decoration: BoxDecoration(
-                        color: colorScheme.primary,
+                        gradient: ModernTheme.secondaryGradient,
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Text(
                         '例 ${index + 1}',
-                        style: TextStyle(
-                          color: colorScheme.onPrimary,
+                        style: const TextStyle(
+                          color: Colors.white,
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
                         ),
@@ -367,42 +378,37 @@ class _GrammarDetailScreenState extends ConsumerState<GrammarDetailScreen> with 
             ],
           ),
           const SizedBox(height: 8),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: LinearProgressIndicator(
-              value: (_currentExerciseIndex + 1) / widget.grammarPoint.exercises.length,
-              minHeight: 8,
-              backgroundColor: colorScheme.surfaceContainerHighest,
-              color: colorScheme.primary,
-            ),
+          GradientProgressBar(
+            progress: (_currentExerciseIndex + 1) / widget.grammarPoint.exercises.length,
+            height: 8,
+            gradient: ModernTheme.primaryGradient,
           ),
           const SizedBox(height: 24),
 
           // 题目卡片
           Expanded(
             child: SingleChildScrollView(
-              child: Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // 题型标签
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                        decoration: BoxDecoration(
-                          color: colorScheme.secondaryContainer,
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: Text(
-                          _getExerciseTypeName(exercise.type),
-                          style: TextStyle(
-                            color: colorScheme.onSecondaryContainer,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                          ),
+              child: FloatingCard(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // 题型标签
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                      decoration: BoxDecoration(
+                        gradient: ModernTheme.accentGradient,
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: Text(
+                        _getExerciseTypeName(exercise.type),
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
+                    ),
                       const SizedBox(height: 16),
 
                       // 题目
@@ -539,7 +545,6 @@ class _GrammarDetailScreenState extends ConsumerState<GrammarDetailScreen> with 
                 ),
               ),
             ),
-          ),
 
           // 导航按钮
           const SizedBox(height: 16),
