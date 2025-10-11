@@ -565,32 +565,34 @@ class _QuickActionCardWithBadge extends StatelessWidget {
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        GradientCard(
-          gradient: _getGradient(),
-          onTap: onTap,
-          padding: const EdgeInsets.all(14),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                icon,
-                color: Colors.white,
-                size: 32,
-              ),
-              const SizedBox(height: 10),
-              Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
+        SizedBox.expand(
+          child: GradientCard(
+            gradient: _getGradient(),
+            onTap: onTap,
+            padding: const EdgeInsets.all(14),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  icon,
                   color: Colors.white,
-                  letterSpacing: 0.2,
+                  size: 32,
                 ),
-                textAlign: TextAlign.center,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-            ],
+                const SizedBox(height: 10),
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    letterSpacing: 0.2,
+                  ),
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ),
           ),
         ),
         // 徽章
