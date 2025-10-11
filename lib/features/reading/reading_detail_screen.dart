@@ -4,6 +4,8 @@ import '../../shared/models/reading.dart';
 import '../../shared/providers/reading_provider.dart';
 import '../../shared/providers/tts_provider.dart';
 import '../../shared/providers/voice_preference_provider.dart';
+import '../../core/theme/modern_theme.dart';
+import '../../shared/widgets/gradient_card.dart';
 
 class ReadingDetailScreen extends ConsumerStatefulWidget {
   final ReadingPassage passage;
@@ -160,10 +162,12 @@ class _ReadingDetailScreenState extends ConsumerState<ReadingDetailScreen> {
           Row(
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 decoration: BoxDecoration(
-                  color: _getLevelColor(widget.passage.level),
-                  borderRadius: BorderRadius.circular(4),
+                  gradient: widget.passage.level == 'A1'
+                      ? const LinearGradient(colors: [Color(0xFF4CAF50), Color(0xFF388E3C)])
+                      : ModernTheme.secondaryGradient,
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: Text(
                   widget.passage.level,
@@ -172,14 +176,14 @@ class _ReadingDetailScreenState extends ConsumerState<ReadingDetailScreen> {
               ),
               const SizedBox(width: 8),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 decoration: BoxDecoration(
-                  color: Colors.grey[300],
-                  borderRadius: BorderRadius.circular(4),
+                  color: ModernTheme.backgroundColor,
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: Text(
                   widget.passage.category,
-                  style: const TextStyle(fontSize: 12),
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: ModernTheme.textDark),
                 ),
               ),
               const Spacer(),
@@ -279,12 +283,12 @@ class _ReadingDetailScreenState extends ConsumerState<ReadingDetailScreen> {
     final isCorrect = userAnswer == question.answer;
     final showFeedback = _showResults && userAnswer != null;
 
-    return Card(
-      margin: const EdgeInsets.only(bottom: 16),
-      color: showFeedback
-          ? (isCorrect ? Colors.green[50] : Colors.red[50])
-          : null,
-      child: Padding(
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: FloatingCard(
+        backgroundColor: showFeedback
+            ? (isCorrect ? Colors.green[50] : Colors.red[50])
+            : null,
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -297,9 +301,11 @@ class _ReadingDetailScreenState extends ConsumerState<ReadingDetailScreen> {
                   width: 28,
                   height: 28,
                   decoration: BoxDecoration(
-                    color: showFeedback
-                        ? (isCorrect ? Colors.green : Colors.red)
-                        : Theme.of(context).colorScheme.primary,
+                    gradient: showFeedback
+                        ? (isCorrect
+                            ? const LinearGradient(colors: [Color(0xFF4CAF50), Color(0xFF388E3C)])
+                            : ModernTheme.redGradient)
+                        : ModernTheme.primaryGradient,
                     shape: BoxShape.circle,
                   ),
                   child: Center(
@@ -477,41 +483,31 @@ class _ReadingDetailScreenState extends ConsumerState<ReadingDetailScreen> {
   Widget _buildSubmitButton() {
     final allAnswered = widget.passage.questions.every((q) => _userAnswers.containsKey(q.id));
 
-    return Container(
+    return Padding(
       padding: const EdgeInsets.all(16),
       child: SizedBox(
         width: double.infinity,
-        height: 48,
-        child: ElevatedButton(
-          onPressed: allAnswered ? _submitAnswers : null,
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Theme.of(context).colorScheme.primary,
-            foregroundColor: Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-          ),
-          child: Text(
-            allAnswered ? '提交答案' : '请完成所有题目',
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          ),
-        ),
+        child: allAnswered
+            ? GradientButton(
+                text: '提交答案',
+                icon: Icons.check_circle,
+                onPressed: _submitAnswers,
+                gradient: ModernTheme.primaryGradient,
+              )
+            : Container(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                decoration: BoxDecoration(
+                  color: Colors.grey[300],
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: const Center(
+                  child: Text(
+                    '请完成所有题目',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.grey),
+                  ),
+                ),
+              ),
       ),
     );
-  }
-
-  Color _getLevelColor(String level) {
-    switch (level) {
-      case 'A1':
-        return Colors.green;
-      case 'A2':
-        return Colors.blue;
-      case 'B1':
-        return Colors.orange;
-      case 'B2':
-        return Colors.red;
-      default:
-        return Colors.grey;
-    }
   }
 }
