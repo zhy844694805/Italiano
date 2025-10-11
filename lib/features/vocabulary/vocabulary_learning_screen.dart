@@ -172,15 +172,17 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
       child: Column(
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                '已学习 $_currentIndex / $total',
-                style: theme.textTheme.titleMedium?.copyWith(
-                  color: colorScheme.onSurface,
-                  fontWeight: FontWeight.w600,
+              Expanded(
+                child: Text(
+                  '已学习 $_currentIndex / $total',
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    color: colorScheme.onSurface,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
+              const SizedBox(width: 16),
               Text(
                 '剩余 ${_remainingWords.length}',
                 style: theme.textTheme.titleMedium?.copyWith(

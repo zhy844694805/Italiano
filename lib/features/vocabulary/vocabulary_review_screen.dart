@@ -134,15 +134,17 @@ class _VocabularyReviewScreenState extends ConsumerState<VocabularyReviewScreen>
       child: Column(
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                '已复习 $_currentIndex / $total',
-                style: theme.textTheme.titleMedium?.copyWith(
-                  color: colorScheme.onSurface,
-                  fontWeight: FontWeight.w600,
+              Expanded(
+                child: Text(
+                  '已复习 $_currentIndex / $total',
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    color: colorScheme.onSurface,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
+              const SizedBox(width: 16),
               Text(
                 '剩余 ${_remainingWords.length}',
                 style: theme.textTheme.titleMedium?.copyWith(
