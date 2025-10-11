@@ -16,10 +16,10 @@ This is an Italian language learning Flutter application (意大利语学习应�
 ### Content Coverage vs CEFR Standards
 
 #### Vocabulary Content
-- **Total Vocabulary**: 1,219 words
-  - A1: 392 words (CEFR standard: 500-700 words) - 78% coverage
-  - A2: 780 words (CEFR standard: 1000-1200 words) - 78% coverage
-  - **A1+A2 Combined**: 1,172 words - **98% coverage of CEFR requirements** ✅
+- **Total Vocabulary**: 1,469 words
+  - A1: 492 words (CEFR standard: 500-700 words) - **98% coverage** ✅
+  - A2: 930 words (CEFR standard: 1000-1200 words) - **78-93% coverage** ✅
+  - **A1+A2 Combined**: 1,422 words - **95% coverage of CEFR requirements** ✅
   - B1-C2: 47 words (bonus advanced vocabulary)
 
 #### Grammar Content
@@ -43,7 +43,7 @@ This is an Italian language learning Flutter application (意大利语学习应�
 |-------|------------------|-------------------|--------|
 | **Listening** | Understand simple daily conversations | TTS audio for words + reading passages | ✅ Adequate |
 | **Speaking** | Communicate in routine situations | 6 AI conversation scenarios | ✅ Adequate |
-| **Reading** | Understand simple texts | 10 reading passages (A1-A2) | ✅ Adequate |
+| **Reading** | Understand simple texts | 20 reading passages (A1-A2) | ✅ Adequate |
 | **Writing** | Write simple sentences | 140 grammar exercises + fill-in-the-blank | ✅ Adequate |
 
 ### Recommended Learning Path (Zero to A2)
@@ -83,9 +83,9 @@ This is an Italian language learning Flutter application (意大利语学习应�
 - Practice: Doctor visit, job interview scenarios
 
 **Month 13-18: A2 Mastery**
-- Review all 1,172 words with SRS
+- Review all 1,422 words with SRS
 - Complete all 140 grammar exercises
-- Read all 10 passages multiple times
+- Read all 20 passages multiple times
 - Daily AI conversation at A2 level
 - Take comprehensive A2 tests
 
@@ -105,7 +105,7 @@ This is an Italian language learning Flutter application (意大利语学习应�
 - ✅ Review progress statistics weekly
 
 ### Key Features
-1. **Learn New Words** - Smart filtering shows only unstudied words (1219 total available)
+1. **Learn New Words** - Smart filtering shows only unstudied words (1469 total available)
    - Badge on home screen shows count of new words
    - Interactive flashcard interface with swipe gestures
    - Automatic progress tracking
@@ -130,10 +130,10 @@ This is an Italian language learning Flutter application (意大利语学习应�
    - Immediate feedback on exercise answers
    - Progress tracking per grammar point
 
-5. **Reading Comprehension** - Authentic Italian reading passages with comprehension exercises (✅ NEW)
-   - 10 carefully curated passages (A1-A2 level)
-   - Topics: daily life, travel, culture, practical texts
-   - 5 comprehension questions per passage (50 questions total)
+5. **Reading Comprehension** - Authentic Italian reading passages with comprehension exercises
+   - 20 carefully curated passages (7 A1 + 13 A2 level)
+   - Topics: daily life, travel, culture, practical texts, news, social media, emails, reviews
+   - 5 comprehension questions per passage (100 questions total)
    - Multiple choice, true/false, and fill-in-the-blank question types
    - Immediate scoring with detailed explanations
    - Progress tracking and accuracy statistics
@@ -623,29 +623,28 @@ All major screens have been updated with the modern gradient-based design:
 ### Data Sources
 
 **Vocabulary** (`assets/data/sample_words.json`):
-- **1219 words** covering all CEFR levels ✅ (Exceeds A2 CEFR requirement of 1000-1200 words)
+- **1,469 words** covering all CEFR levels ✅ (95% of A1+A2 CEFR requirements)
 - Fields: id, italian, chinese, english, pronunciation, category, level, examples, audioUrl, imageUrl, createdAt
 - **Level distribution**:
-  - A1: 392 words (100% coverage)
-  - A2: 780 words (exceeds CEFR A2 standard) ✅
+  - A1: 492 words (98% coverage) ✅
+  - A2: 930 words (78-93% coverage) ✅
   - B1-C2: 47 words
+- **A1 Categories**: 颜色(15), 身体部位(25), 衣物(20), 情绪(15), 天气(15), 方位词(10), 日常用语(264), 食物餐饮(35), 家庭生活(21), 旅游出行(19), 工作学习(15)
 - **A2 Categories** (top 10):
   - 日常用语: 287 words (daily expressions, verbs, states)
   - 形容词: 141 words (descriptive, personality, quality adjectives)
   - 家庭生活: 84 words (home items, appliances, daily routines)
+  - 工作学习: 59 words (study, work, cognition)
   - 旅游出行: 54 words (travel, places, city facilities)
+  - 娱乐运动: 47 words (sports, entertainment)
   - 健康医疗: 42 words (body parts, health conditions)
+  - 通讯科技: 39 words (technology, internet, communication)
   - 时间副词: 38 words (frequency, temporal expressions)
   - 食物餐饮: 36 words (food, cooking, dining)
-  - 商务交流: 33 words (shopping, business, transactions)
-  - 工作学习: 29 words (study, work, cognition)
-  - 娱乐运动: 17 words (sports, entertainment)
-- **Recent Expansion (2025)**: Added 420 A2 core words:
-  - 80 daily action verbs (basic movements, communication, activities)
-  - 70 emotional & cognitive verbs (feelings, mental states)
-  - 120 adjectives & adverbs (personality, appearance, frequency)
-  - 150 lifestyle vocabulary (home, clothing, body, weather, city)
-- **Vocabulary Expansion**: Use Python scripts for bulk additions (50-100 words at a time)
+- **Recent Expansion (October 2025)**: Added 250 words:
+  - **A1 Batch (+100)**: Colors, body parts, clothing, emotions, weather, directions
+  - **A2 Batch (+150)**: Technology, entertainment, abstract concepts, work/study, social relations
+- **Vocabulary Expansion**: Use Python scripts (`add_a1_vocabulary.py`, `add_a2_vocabulary.py`) for bulk additions
 
 **Grammar** (`assets/data/sample_grammar.json`):
 - **14 grammar points** (4 A1 + 10 A2 level)
@@ -656,23 +655,28 @@ All major screens have been updated with the modern gradient-based design:
 - **A2 Coverage**: 100% ✅ (All core CEFR A2 requirements complete!)
 
 **Reading Comprehension** (`assets/data/reading_passages.json`):
-- **10 reading passages** (4 A1 + 6 A2 level) ✅
-- **Total**: 1,454 words of reading material
+- **20 reading passages** (7 A1 + 13 A2 level) ✅
+- **Total**: 3,020 words of reading material
 - **Categories**:
-  - 日常生活 (Daily Life): 5 passages (La mia famiglia, Al ristorante, Una giornata tipica, Il mio hobby, etc.)
-  - 旅游 (Travel): 1 passage (Il mio weekend a Firenze)
-  - 实用文本 (Practical Texts): 3 passages (Cerco un appartamento, L'orario dei negozi, Una lettera)
-  - 文化 (Culture): 1 passage (Le stagioni in Italia)
-  - 学习 (Learning): 1 passage (Imparare l'italiano)
-- **Questions**: 5 comprehension questions per passage (50 total)
+  - 实用文本 (Practical Texts): 8 passages (supermarket ads, cinema posters, apartment rentals, weather forecasts, social media, emails)
+  - 日常生活 (Daily Life): 6 passages (family, restaurant, daily routines, hobbies, health blog, restaurant reviews)
+  - 旅游 (Travel): 2 passages (Florence weekend, tourist guide)
+  - 文化 (Culture): 2 passages (seasons, music festival)
+  - 工作学习 (Work/Study): 1 passage (work email)
+  - 学习 (Learning): 1 passage (learning Italian)
+- **Questions**: 5 comprehension questions per passage (100 total)
   - Question types: Multiple choice, True/False, Fill-in-the-blank
   - All questions include Chinese and Italian versions
   - Detailed explanations for each answer
 - **Passage characteristics**:
-  - Word count: 96-162 words per passage
-  - Estimated reading time: 2-3 minutes each
+  - Word count: 78-278 words per passage
+  - Estimated reading time: 2-4 minutes each
   - Authentic Italian language and cultural contexts
   - Level-appropriate vocabulary and grammar structures
+- **Recent Expansion (October 2025)**: Added 10 passages:
+  - **A1 (+3)**: Supermarket ads, cinema posters, apartment rentals
+  - **A2 (+7)**: Weather forecasts, social media posts, work emails, music festival news, health blogs, restaurant reviews, travel guides
+- **Reading Expansion**: Use Python script (`add_reading_passages.py`) to add new passages in batches
 
 ### Audio Integration
 - Audio files expected at: `assets/audio/words/{wordId}.mp3`
@@ -1034,17 +1038,12 @@ GridView(
 ## Current Limitations & Future Enhancements
 
 ### Known Gaps (Minor)
-1. **A1 Vocabulary Coverage**: 392 words (78% of CEFR standard)
-   - Recommendation: Focus on quality over quantity
-   - Current words are high-frequency and practical
-   - Can supplement with textbooks if desired
-
-2. **Listening Comprehension**: Only TTS audio available
+1. **Listening Comprehension**: Only TTS audio available
    - TTS provides clear, consistent pronunciation
    - Missing: Varied speakers, accents, speeds
    - Workaround: Use AI conversation for varied speech
 
-3. **Writing Production**: Limited to fill-in-the-blank
+2. **Writing Production**: Limited to fill-in-the-blank
    - Exercises focus on grammar accuracy
    - Missing: Free writing with feedback
    - Workaround: Use AI conversation for text chat
@@ -1055,11 +1054,11 @@ Based on CEFR A2 requirements and user feedback:
 **High Priority** (fill critical gaps):
 - **Listening Exercises**: Dedicated audio comprehension with transcripts
 - **Writing Tasks**: Guided paragraph writing with AI feedback (DeepSeek)
-- **A1 Vocabulary Expansion**: Add 100-200 more basic words
+- **A2 Vocabulary Expansion**: Add 70 more words to reach 1000 (current: 930)
 - **Pronunciation Practice**: Speech recognition for speaking practice
 
 **Medium Priority** (improve experience):
-- **More Reading Content**: Expand to 20+ passages (current: 10)
+- **More Reading Content**: Continue expanding beyond 20 passages
 - **Grammar Drills**: Additional practice exercises per topic
 - **Dialogue Practice**: Scripted conversations with role-play
 - **Offline Mode**: Download all audio for offline learning
@@ -1076,11 +1075,12 @@ Based on CEFR A2 requirements and user feedback:
 ### Extending Content
 If you need to add more vocabulary or grammar:
 
-**Adding A1 Vocabulary** (recommended next step):
+**Adding More Vocabulary**:
 ```python
-# Use Python script to add words in batches
-# Focus on: colors, body parts, clothing, emotions, weather
-# Target: 100-200 words to reach 500+ A1 words
+# Use existing Python scripts for bulk additions
+# A1: python3 add_a1_vocabulary.py (currently at 492/500-700)
+# A2: python3 add_a2_vocabulary.py (currently at 930/1000-1200)
+# Focus on thematic groups: food, nature, technology, etc.
 ```
 
 **Adding Grammar Points** (for B1 level):
@@ -1091,19 +1091,30 @@ If you need to add more vocabulary or grammar:
 - Gerund and participles
 
 **Adding Reading Passages**:
-- Focus on diverse topics: sports, technology, health
-- Vary text types: emails, ads, short stories, news
-- Ensure CEFR level alignment (check word frequency)
+```python
+# Use Python script for bulk reading additions
+# python3 add_reading_passages.py (currently at 20 passages)
+# Focus on diverse topics: sports, technology, health, culture
+# Vary text types: emails, ads, short stories, news, reviews
+# Ensure CEFR level alignment (check word frequency)
+```
 
 ## Conclusion
 
-This app provides a **complete, structured path from zero to A2 Italian proficiency**. With 1,172 high-quality vocabulary words, 14 comprehensive grammar points, and integrated four-skills training, learners can achieve functional Italian communication ability in 9-18 months with consistent daily practice.
+This app provides a **complete, structured path from zero to A2 Italian proficiency**. With 1,422 high-quality vocabulary words, 14 comprehensive grammar points, 20 reading passages, and integrated four-skills training, learners can achieve functional Italian communication ability in 9-18 months with consistent daily practice.
+
+**Current Content Summary** (as of October 2025):
+- **Vocabulary**: 1,469 words (492 A1 + 930 A2 + 47 B1-C2) - 95% CEFR coverage ✅
+- **Grammar**: 14 points with 140 exercises - 100% A1-A2 coverage ✅
+- **Reading**: 20 passages (7 A1 + 13 A2) with 100 questions - Complete diversity ✅
+- **Conversation**: 6 AI scenarios with real-time grammar correction ✅
+- **TTS Audio**: KOKORO integration for authentic pronunciation ✅
 
 **Key Strengths**:
 - ✅ Scientifically-proven spaced repetition system
 - ✅ Authentic Italian pronunciation (KOKORO TTS)
 - ✅ AI conversation partner with grammar correction
-- ✅ Comprehensive progress tracking
+- ✅ Comprehensive progress tracking with statistics
 - ✅ All content aligned to CEFR standards
 - ✅ Completely self-contained (no external materials needed)
 
@@ -1111,5 +1122,10 @@ This app provides a **complete, structured path from zero to A2 Italian proficie
 - With disciplined daily practice: 90%+ learners reach A2
 - Average time to A2: 12-15 months (30-60 min/day)
 - Critical success factor: Consistency + review discipline
+
+**Development Tools Available**:
+- `add_a1_vocabulary.py` - Bulk add A1 vocabulary (50-100 words at a time)
+- `add_a2_vocabulary.py` - Bulk add A2 vocabulary (50-100 words at a time)
+- `add_reading_passages.py` - Bulk add reading passages (5-10 passages at a time)
 
 Start your Italian learning journey today - **Buona fortuna!** 🇮🇹
