@@ -583,25 +583,42 @@ The app uses **Modern Theme** (`lib/core/theme/modern_theme.dart`) - a gradient-
 - **Accent Gradient**: Orange (#FFAA66 → #FF9F66)
 - **Red Gradient**: Red (#FF5757 → #CE2B37)
 - **Background**: Light purple-gray (#F8F9FE)
+- **Text Colors**: Dark (#2C3E50), Light (#6C757D)
 
 **Modern UI Components** (`lib/shared/widgets/gradient_card.dart`):
 - `GradientCard` - Cards with gradient backgrounds and shadows (tap-enabled)
-- `FloatingCard` - White cards with subtle floating shadow
+- `FloatingCard` - White cards with subtle floating shadow (most common for content cards)
 - `StatCard` - Statistics display with gradient icon background
 - `GradientButton` - Buttons with gradient fills and icons
 - `GlassCard` - Semi-transparent glass-morphism cards
 - `GradientProgressBar` - Animated progress bars with gradient fills
+
+**Component Usage Guidelines**:
+- **List items**: Use `FloatingCard` for clean white backgrounds
+- **Quick actions**: Use `GradientCard` with appropriate gradient
+- **Progress indicators**: Replace `LinearProgressIndicator` with `GradientProgressBar`
+- **Buttons**: Use `GradientButton` for primary actions
+- **Badges/Tags**: Use `Container` with gradient decoration for level/category badges
 
 **Layout Considerations**:
 - Use appropriate padding for GridView cards (14-16px recommended)
 - Add `mainAxisSize: MainAxisSize.min` to prevent overflow in constrained layouts
 - Test font sizes for overflow: titles (14-15px), labels (13px), descriptions (11-12px)
 - Use `maxLines` and `overflow: TextOverflow.ellipsis` for text in cards
+- For Stack widgets with cards, wrap first child with `SizedBox.expand()` to ensure proper sizing
 
 **Theme Configuration** (`main.dart`):
 - Active: `ModernTheme.lightTheme` (gradient-based modern design)
 - Alternative: `AppTheme.lightTheme` (classic Italian flag colors)
 - Switch by uncommenting appropriate theme in `main.dart`
+
+**Recent UI Modernization** (October 2025):
+All major screens have been updated with the modern gradient-based design:
+- Grammar list/detail screens - Level badges with gradients, FloatingCard for content
+- Vocabulary list/learning/review screens - Mastery progress bars with gradients, expandable text areas
+- Reading list/detail screens - Question cards with FloatingCard, gradient submit buttons
+- AI conversation screen - Message bubbles with gradients, gradient avatars
+- Home screen quick actions - Properly sized GradientCards with badges
 
 ### Data Sources
 
@@ -853,6 +870,24 @@ if (record != null) {
 }
 ```
 
+### Handling Deprecated APIs
+
+**Color Opacity (Critical)**:
+```dart
+// ❌ DEPRECATED - withOpacity() is deprecated in Flutter 3.32+
+color.withOpacity(0.1)
+
+// ✅ CORRECT - Use withValues() to avoid precision loss
+color.withValues(alpha: 0.1)
+```
+Always use `withValues(alpha: value)` instead of `withOpacity()` throughout the codebase. This affects:
+- Shadow colors
+- Background colors with transparency
+- Overlay colors
+
+**Radio Buttons**:
+The current settings screen uses deprecated `groupValue` and `onChanged` parameters for Radio widgets. These warnings can be ignored for now until RadioGroup is properly implemented in a future Flutter version.
+
 ### UI Development Best Practices
 
 **Layout Overflow Prevention**:
@@ -887,12 +922,74 @@ GradientCard(
 )
 ```
 
+**Common Layout Issues & Solutions**:
+
+1. **Text Getting Squeezed in Row**:
+```dart
+// ❌ WRONG - Text gets compressed by sibling
+Row(
+  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  children: [
+    Text('Long text that might overflow'),
+    Text('Other text'),
+  ],
+)
+
+// ✅ CORRECT - Give text room to expand
+Row(
+  children: [
+    Expanded(
+      child: Text('Long text that might overflow'),
+    ),
+    const SizedBox(width: 16),
+    Text('Other text'),
+  ],
+)
+```
+
+2. **Stack Widget Not Filling Space**:
+```dart
+// ❌ WRONG - Stack shrinks to content size
+GridView(
+  children: [
+    Stack(
+      children: [
+        GradientCard(...), // Shrinks to minimum size
+        Positioned(badge),
+      ],
+    ),
+  ],
+)
+
+// ✅ CORRECT - Force stack child to expand
+GridView(
+  children: [
+    Stack(
+      children: [
+        SizedBox.expand(
+          child: GradientCard(...), // Fills available space
+        ),
+        Positioned(badge),
+      ],
+    ),
+  ],
+)
+```
+
+3. **GridView childAspectRatio**:
+- Default 1.0 (square cards) may be too tall or too short
+- For quick action cards with icon + text: Use 1.1-1.3
+- Test on actual device to verify card proportions
+- Smaller ratio = taller cards (more vertical space)
+
 **Testing Workflow**:
 1. Run `flutter run` for development testing
 2. Check console for RenderFlex overflow errors
 3. Adjust padding/font sizes incrementally
 4. Hot reload to test changes
-5. Build release APK only after all errors resolved
+5. Use Flutter DevTools to inspect widget tree
+6. Test on both small and large screen sizes
+7. Build release APK only after all errors resolved
 
 ## Learning Best Practices
 
