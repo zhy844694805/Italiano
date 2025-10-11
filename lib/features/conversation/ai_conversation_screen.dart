@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/conversation.dart';
 import '../../shared/providers/conversation_provider.dart';
+import '../../core/theme/modern_theme.dart';
 
 /// AI Conversation screen with chat interface
 class AIConversationScreen extends ConsumerStatefulWidget {
@@ -74,16 +75,24 @@ class _AIConversationScreenState extends ConsumerState<AIConversationScreen> {
           // Level selector
           PopupMenuButton<String>(
             icon: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor.withOpacity(0.2),
-                borderRadius: BorderRadius.circular(8),
+                gradient: ModernTheme.primaryGradient,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    color: ModernTheme.primaryColor.withValues(alpha: 0.3),
+                    blurRadius: 8,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
               ),
               child: Text(
                 conversationState.userLevel,
-                style: TextStyle(
-                  color: Theme.of(context).primaryColor,
+                style: const TextStyle(
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
+                  fontSize: 13,
                 ),
               ),
             ),
@@ -141,18 +150,28 @@ class _AIConversationScreenState extends ConsumerState<AIConversationScreen> {
           // Scenario description banner
           Container(
             width: double.infinity,
-            padding: const EdgeInsets.all(12),
+            padding: const EdgeInsets.all(14),
             decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor.withOpacity(0.1),
+              gradient: LinearGradient(
+                colors: [
+                  ModernTheme.primaryColor.withValues(alpha: 0.1),
+                  ModernTheme.secondaryColor.withValues(alpha: 0.1),
+                ],
+              ),
               border: Border(
                 bottom: BorderSide(
-                  color: Theme.of(context).dividerColor,
+                  color: ModernTheme.primaryColor.withValues(alpha: 0.2),
+                  width: 2,
                 ),
               ),
             ),
             child: Text(
               widget.scenario.description,
-              style: const TextStyle(fontSize: 12),
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.w500,
+                color: ModernTheme.textDark,
+              ),
               textAlign: TextAlign.center,
             ),
           ),
@@ -227,7 +246,7 @@ class _AIConversationScreenState extends ConsumerState<AIConversationScreen> {
               color: Theme.of(context).scaffoldBackgroundColor,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
+                  color: Colors.black.withValues(alpha: 0.1),
                   blurRadius: 4,
                   offset: const Offset(0, -2),
                 ),
@@ -290,9 +309,21 @@ class _MessageBubble extends StatelessWidget {
             isUser ? MainAxisAlignment.end : MainAxisAlignment.start,
         children: [
           if (!isUser) ...[
-            CircleAvatar(
-              backgroundColor: Theme.of(context).primaryColor,
-              child: const Icon(Icons.smart_toy, color: Colors.white),
+            Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                gradient: ModernTheme.secondaryGradient,
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: ModernTheme.secondaryColor.withValues(alpha: 0.3),
+                    blurRadius: 8,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: const Icon(Icons.smart_toy, color: Colors.white, size: 22),
             ),
             const SizedBox(width: 8),
           ],
@@ -315,12 +346,20 @@ class _MessageBubble extends StatelessWidget {
                 ),
                 // Message content
                 Container(
-                  padding: const EdgeInsets.all(12),
+                  padding: const EdgeInsets.all(14),
                   decoration: BoxDecoration(
-                    color: isUser
-                        ? Theme.of(context).primaryColor
-                        : Colors.grey.shade200,
+                    gradient: isUser ? ModernTheme.primaryGradient : null,
+                    color: isUser ? null : Colors.grey.shade100,
                     borderRadius: BorderRadius.circular(16),
+                    boxShadow: isUser
+                        ? [
+                            BoxShadow(
+                              color: ModernTheme.primaryColor.withValues(alpha: 0.3),
+                              blurRadius: 8,
+                              offset: const Offset(0, 2),
+                            ),
+                          ]
+                        : null,
                   ),
                   child: Text(
                     message.content,
@@ -430,9 +469,21 @@ class _MessageBubble extends StatelessWidget {
           ),
           if (isUser) ...[
             const SizedBox(width: 8),
-            CircleAvatar(
-              backgroundColor: Theme.of(context).primaryColor,
-              child: const Icon(Icons.person, color: Colors.white),
+            Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                gradient: ModernTheme.primaryGradient,
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: ModernTheme.primaryColor.withValues(alpha: 0.3),
+                    blurRadius: 8,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: const Icon(Icons.person, color: Colors.white, size: 22),
             ),
           ],
         ],
