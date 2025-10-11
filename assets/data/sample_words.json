@@ -17263,5 +17263,3505 @@
       "Guarda centro commerciale! - 看那个购物中心！",
       "Mi piace centro commerciale. - 我喜欢购物中心。"
     ]
+  },
+  {
+    "id": "1220",
+    "italian": "rosso",
+    "chinese": "红色",
+    "english": "red",
+    "pronunciation": "ˈrosso",
+    "category": "颜色",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112014Z",
+    "examples": [
+      "La mia macchina è rossa. - 我的车是红色的。",
+      "Mi piace il vestito rosso. - 我喜欢红色的裙子。"
+    ]
+  },
+  {
+    "id": "1221",
+    "italian": "blu",
+    "chinese": "蓝色",
+    "english": "blue",
+    "pronunciation": "blu",
+    "category": "颜色",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112020Z",
+    "examples": [
+      "Il cielo è blu. - 天空是蓝色的。",
+      "Ho gli occhi blu. - 我有蓝色的眼睛。"
+    ]
+  },
+  {
+    "id": "1222",
+    "italian": "verde",
+    "chinese": "绿色",
+    "english": "green",
+    "pronunciation": "ˈverde",
+    "category": "颜色",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112021Z",
+    "examples": [
+      "L'erba è verde. - 草是绿色的。",
+      "Mangio l'insalata verde. - 我吃绿色的沙拉。"
+    ]
+  },
+  {
+    "id": "1223",
+    "italian": "giallo",
+    "chinese": "黄色",
+    "english": "yellow",
+    "pronunciation": "ˈdʒallo",
+    "category": "颜色",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112022Z",
+    "examples": [
+      "Il sole è giallo. - 太阳是黄色的。",
+      "I limoni sono gialli. - 柠檬是黄色的。"
+    ]
+  },
+  {
+    "id": "1224",
+    "italian": "nero",
+    "chinese": "黑色",
+    "english": "black",
+    "pronunciation": "ˈnero",
+    "category": "颜色",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112023Z",
+    "examples": [
+      "Il gatto è nero. - 猫是黑色的。",
+      "Porto scarpe nere. - 我穿黑色的鞋子。"
+    ]
+  },
+  {
+    "id": "1225",
+    "italian": "bianco",
+    "chinese": "白色",
+    "english": "white",
+    "pronunciation": "ˈbjanko",
+    "category": "颜色",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112024Z",
+    "examples": [
+      "La neve è bianca. - 雪是白色的。",
+      "Bevo il latte bianco. - 我喝白色的牛奶。"
+    ]
+  },
+  {
+    "id": "1226",
+    "italian": "arancione",
+    "chinese": "橙色",
+    "english": "orange",
+    "pronunciation": "aranˈtʃone",
+    "category": "颜色",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112024Z",
+    "examples": [
+      "L'arancia è arancione. - 橙子是橙色的。",
+      "Il tramonto è arancione. - 日落是橙色的。"
+    ]
+  },
+  {
+    "id": "1227",
+    "italian": "rosa",
+    "chinese": "粉色",
+    "english": "pink",
+    "pronunciation": "ˈroza",
+    "category": "颜色",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112025Z",
+    "examples": [
+      "Il fiore è rosa. - 花是粉色的。",
+      "Le bambine amano il rosa. - 小女孩喜欢粉色。"
+    ]
+  },
+  {
+    "id": "1228",
+    "italian": "grigio",
+    "chinese": "灰色",
+    "english": "gray",
+    "pronunciation": "ˈɡridʒo",
+    "category": "颜色",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112026Z",
+    "examples": [
+      "Il cielo è grigio oggi. - 今天天空是灰色的。",
+      "Ho un cappotto grigio. - 我有一件灰色的外套。"
+    ]
+  },
+  {
+    "id": "1229",
+    "italian": "marrone",
+    "chinese": "棕色",
+    "english": "brown",
+    "pronunciation": "marˈrone",
+    "category": "颜色",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112027Z",
+    "examples": [
+      "L'orso è marrone. - 熊是棕色的。",
+      "I miei capelli sono marroni. - 我的头发是棕色的。"
+    ]
+  },
+  {
+    "id": "1230",
+    "italian": "viola",
+    "chinese": "紫色",
+    "english": "purple",
+    "pronunciation": "ˈvjola",
+    "category": "颜色",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112028Z",
+    "examples": [
+      "L'uva è viola. - 葡萄是紫色的。",
+      "Mi piace il colore viola. - 我喜欢紫色。"
+    ]
+  },
+  {
+    "id": "1231",
+    "italian": "azzurro",
+    "chinese": "天蓝色",
+    "english": "light blue",
+    "pronunciation": "atˈtsurro",
+    "category": "颜色",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112028Z",
+    "examples": [
+      "Il mare è azzurro. - 大海是天蓝色的。",
+      "La maglia azzurra è bella. - 天蓝色的衬衫很漂亮。"
+    ]
+  },
+  {
+    "id": "1232",
+    "italian": "colorato",
+    "chinese": "彩色的",
+    "english": "colorful",
+    "pronunciation": "koloˈrato",
+    "category": "颜色",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112029Z",
+    "examples": [
+      "Il quadro è molto colorato. - 画很彩色。",
+      "I palloncini colorati sono belli. - 彩色的气球很漂亮。"
+    ]
+  },
+  {
+    "id": "1233",
+    "italian": "chiaro",
+    "chinese": "浅色的",
+    "english": "light",
+    "pronunciation": "ˈkjaro",
+    "category": "颜色",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112030Z",
+    "examples": [
+      "Preferisco i colori chiari. - 我更喜欢浅色。",
+      "La stanza è chiara. - 房间是明亮的。"
+    ]
+  },
+  {
+    "id": "1234",
+    "italian": "scuro",
+    "chinese": "深色的",
+    "english": "dark",
+    "pronunciation": "ˈskuro",
+    "category": "颜色",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112031Z",
+    "examples": [
+      "Fuori è scuro. - 外面很暗。",
+      "Porto vestiti scuri. - 我穿深色的衣服。"
+    ]
+  },
+  {
+    "id": "1235",
+    "italian": "testa",
+    "chinese": "头",
+    "english": "head",
+    "pronunciation": "ˈtesta",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112033Z",
+    "examples": [
+      "Mi fa male la testa. - 我头疼。",
+      "Ho una grande testa. - 我有一个大头。"
+    ]
+  },
+  {
+    "id": "1236",
+    "italian": "occhio",
+    "chinese": "眼睛",
+    "english": "eye",
+    "pronunciation": "ˈɔkkjo",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112034Z",
+    "examples": [
+      "Ho due occhi. - 我有两只眼睛。",
+      "I miei occhi sono marroni. - 我的眼睛是棕色的。"
+    ]
+  },
+  {
+    "id": "1237",
+    "italian": "occhi",
+    "chinese": "眼睛(复数)",
+    "english": "eyes",
+    "pronunciation": "ˈɔkki",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112035Z",
+    "examples": [
+      "I suoi occhi sono azzurri. - 他的眼睛是蓝色的。",
+      "Chiudi gli occhi! - 闭上眼睛!"
+    ]
+  },
+  {
+    "id": "1238",
+    "italian": "orecchio",
+    "chinese": "耳朵",
+    "english": "ear",
+    "pronunciation": "oˈrekkjo",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112035Z",
+    "examples": [
+      "Ho mal d'orecchio. - 我耳朵疼。",
+      "Pulisco le orecchie. - 我清洁耳朵。"
+    ]
+  },
+  {
+    "id": "1239",
+    "italian": "naso",
+    "chinese": "鼻子",
+    "english": "nose",
+    "pronunciation": "ˈnazo",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112036Z",
+    "examples": [
+      "Ho il naso lungo. - 我有长鼻子。",
+      "Mi fa male il naso. - 我鼻子疼。"
+    ]
+  },
+  {
+    "id": "1240",
+    "italian": "bocca",
+    "chinese": "嘴巴",
+    "english": "mouth",
+    "pronunciation": "ˈbokka",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112037Z",
+    "examples": [
+      "Apri la bocca! - 张开嘴!",
+      "Ho la bocca asciutta. - 我嘴巴干。"
+    ]
+  },
+  {
+    "id": "1241",
+    "italian": "dente",
+    "chinese": "牙齿",
+    "english": "tooth",
+    "pronunciation": "ˈdɛnte",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112038Z",
+    "examples": [
+      "Ho mal di denti. - 我牙疼。",
+      "Mi lavo i denti. - 我刷牙。"
+    ]
+  },
+  {
+    "id": "1242",
+    "italian": "collo",
+    "chinese": "脖子",
+    "english": "neck",
+    "pronunciation": "ˈkɔllo",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112039Z",
+    "examples": [
+      "Ho il collo lungo. - 我有长脖子。",
+      "Mi fa male il collo. - 我脖子疼。"
+    ]
+  },
+  {
+    "id": "1243",
+    "italian": "spalla",
+    "chinese": "肩膀",
+    "english": "shoulder",
+    "pronunciation": "ˈspalla",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112039Z",
+    "examples": [
+      "Ho dolore alla spalla. - 我肩膀疼。",
+      "Porto la borsa sulla spalla. - 我把包背在肩上。"
+    ]
+  },
+  {
+    "id": "1244",
+    "italian": "braccio",
+    "chinese": "手臂",
+    "english": "arm",
+    "pronunciation": "ˈbrattʃo",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112040Z",
+    "examples": [
+      "Ho due braccia. - 我有两条手臂。",
+      "Mi fa male il braccio. - 我手臂疼。"
+    ]
+  },
+  {
+    "id": "1245",
+    "italian": "mano",
+    "chinese": "手",
+    "english": "hand",
+    "pronunciation": "ˈmano",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112041Z",
+    "examples": [
+      "Ho le mani fredde. - 我手冷。",
+      "Dammi la mano! - 给我你的手!"
+    ]
+  },
+  {
+    "id": "1246",
+    "italian": "dito",
+    "chinese": "手指",
+    "english": "finger",
+    "pronunciation": "ˈdito",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112042Z",
+    "examples": [
+      "Ho cinque dita. - 我有五根手指。",
+      "Mi fa male il dito. - 我手指疼。"
+    ]
+  },
+  {
+    "id": "1247",
+    "italian": "petto",
+    "chinese": "胸部",
+    "english": "chest",
+    "pronunciation": "ˈpetto",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112043Z",
+    "examples": [
+      "Ho dolore al petto. - 我胸口疼。",
+      "Il cuore è nel petto. - 心脏在胸腔里。"
+    ]
+  },
+  {
+    "id": "1248",
+    "italian": "stomaco",
+    "chinese": "胃/肚子",
+    "english": "stomach",
+    "pronunciation": "ˈstomako",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112043Z",
+    "examples": [
+      "Mi fa male lo stomaco. - 我胃疼。",
+      "Ho lo stomaco vuoto. - 我肚子空。"
+    ]
+  },
+  {
+    "id": "1249",
+    "italian": "pancia",
+    "chinese": "肚子",
+    "english": "belly",
+    "pronunciation": "ˈpantʃa",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112044Z",
+    "examples": [
+      "Ho la pancia piena. - 我肚子饱了。",
+      "Mi fa male la pancia. - 我肚子疼。"
+    ]
+  },
+  {
+    "id": "1250",
+    "italian": "schiena",
+    "chinese": "背部",
+    "english": "back",
+    "pronunciation": "ˈskjena",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112045Z",
+    "examples": [
+      "Mi fa male la schiena. - 我背疼。",
+      "Ho la schiena dritta. - 我背挺直。"
+    ]
+  },
+  {
+    "id": "1251",
+    "italian": "gamba",
+    "chinese": "腿",
+    "english": "leg",
+    "pronunciation": "ˈɡamba",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112046Z",
+    "examples": [
+      "Ho due gambe. - 我有两条腿。",
+      "Le mie gambe sono lunghe. - 我的腿很长。"
+    ]
+  },
+  {
+    "id": "1252",
+    "italian": "ginocchio",
+    "chinese": "膝盖",
+    "english": "knee",
+    "pronunciation": "dʒiˈnɔkkjo",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112046Z",
+    "examples": [
+      "Mi fa male il ginocchio. - 我膝盖疼。",
+      "Mi sono fatto male al ginocchio. - 我膝盖受伤了。"
+    ]
+  },
+  {
+    "id": "1253",
+    "italian": "piede",
+    "chinese": "脚",
+    "english": "foot",
+    "pronunciation": "ˈpjɛde",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112047Z",
+    "examples": [
+      "Ho i piedi stanchi. - 我脚累了。",
+      "Mi fanno male i piedi. - 我脚疼。"
+    ]
+  },
+  {
+    "id": "1254",
+    "italian": "faccia",
+    "chinese": "脸",
+    "english": "face",
+    "pronunciation": "ˈfattʃa",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112048Z",
+    "examples": [
+      "Ho la faccia rossa. - 我脸红了。",
+      "Mi lavo la faccia. - 我洗脸。"
+    ]
+  },
+  {
+    "id": "1255",
+    "italian": "capelli",
+    "chinese": "头发",
+    "english": "hair",
+    "pronunciation": "kaˈpelli",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112049Z",
+    "examples": [
+      "Ho i capelli lunghi. - 我有长头发。",
+      "I miei capelli sono neri. - 我的头发是黑色的。"
+    ]
+  },
+  {
+    "id": "1256",
+    "italian": "barba",
+    "chinese": "胡子",
+    "english": "beard",
+    "pronunciation": "ˈbarba",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112050Z",
+    "examples": [
+      "Lui ha la barba. - 他有胡子。",
+      "Mi faccio la barba. - 我刮胡子。"
+    ]
+  },
+  {
+    "id": "1257",
+    "italian": "cuore",
+    "chinese": "心脏/心",
+    "english": "heart",
+    "pronunciation": "ˈkwore",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112050Z",
+    "examples": [
+      "Il mio cuore batte forte. - 我的心跳得很快。",
+      "Ti amo con tutto il cuore. - 我全心全意爱你。"
+    ]
+  },
+  {
+    "id": "1258",
+    "italian": "pelle",
+    "chinese": "皮肤",
+    "english": "skin",
+    "pronunciation": "ˈpelle",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112051Z",
+    "examples": [
+      "Ho la pelle chiara. - 我皮肤白。",
+      "La mia pelle è secca. - 我的皮肤很干。"
+    ]
+  },
+  {
+    "id": "1259",
+    "italian": "sangue",
+    "chinese": "血",
+    "english": "blood",
+    "pronunciation": "ˈsangwe",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112052Z",
+    "examples": [
+      "Ho paura del sangue. - 我怕血。",
+      "Dono il sangue. - 我献血。"
+    ]
+  },
+  {
+    "id": "1260",
+    "italian": "vestito",
+    "chinese": "连衣裙/衣服",
+    "english": "dress/clothes",
+    "pronunciation": "vesˈtito",
+    "category": "衣物",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112053Z",
+    "examples": [
+      "Il vestito è bello. - 裙子很漂亮。",
+      "Compro un vestito nuovo. - 我买一件新衣服。"
+    ]
+  },
+  {
+    "id": "1261",
+    "italian": "maglietta",
+    "chinese": "T恤",
+    "english": "t-shirt",
+    "pronunciation": "maʎˈʎetta",
+    "category": "衣物",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112054Z",
+    "examples": [
+      "Porto una maglietta bianca. - 我穿一件白色T恤。",
+      "La maglietta è comoda. - T恤很舒服。"
+    ]
+  },
+  {
+    "id": "1262",
+    "italian": "camicia",
+    "chinese": "衬衫",
+    "english": "shirt",
+    "pronunciation": "kaˈmitʃa",
+    "category": "衣物",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112055Z",
+    "examples": [
+      "Porto una camicia blu. - 我穿一件蓝色衬衫。",
+      "La camicia è stirata. - 衬衫熨好了。"
+    ]
+  },
+  {
+    "id": "1263",
+    "italian": "pantaloni",
+    "chinese": "裤子",
+    "english": "pants",
+    "pronunciation": "pantaˈloni",
+    "category": "衣物",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112056Z",
+    "examples": [
+      "I pantaloni sono lunghi. - 裤子很长。",
+      "Compro pantaloni neri. - 我买黑色裤子。"
+    ]
+  },
+  {
+    "id": "1264",
+    "italian": "gonna",
+    "chinese": "裙子",
+    "english": "skirt",
+    "pronunciation": "ˈɡonna",
+    "category": "衣物",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112057Z",
+    "examples": [
+      "La gonna è corta. - 裙子很短。",
+      "Mi piace la gonna rossa. - 我喜欢红色裙子。"
+    ]
+  },
+  {
+    "id": "1265",
+    "italian": "giacca",
+    "chinese": "夹克",
+    "english": "jacket",
+    "pronunciation": "ˈdʒakka",
+    "category": "衣物",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112057Z",
+    "examples": [
+      "Porto la giacca. - 我穿夹克。",
+      "La giacca è calda. - 夹克很暖和。"
+    ]
+  },
+  {
+    "id": "1266",
+    "italian": "cappotto",
+    "chinese": "大衣",
+    "english": "coat",
+    "pronunciation": "kapˈpɔtto",
+    "category": "衣物",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112058Z",
+    "examples": [
+      "In inverno porto il cappotto. - 冬天我穿大衣。",
+      "Il cappotto è pesante. - 大衣很厚重。"
+    ]
+  },
+  {
+    "id": "1267",
+    "italian": "scarpe",
+    "chinese": "鞋子",
+    "english": "shoes",
+    "pronunciation": "ˈskarpe",
+    "category": "衣物",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112059Z",
+    "examples": [
+      "Le scarpe sono comode. - 鞋子很舒服。",
+      "Compro scarpe nuove. - 我买新鞋子。"
+    ]
+  },
+  {
+    "id": "1268",
+    "italian": "stivali",
+    "chinese": "靴子",
+    "english": "boots",
+    "pronunciation": "stiˈvali",
+    "category": "衣物",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112060Z",
+    "examples": [
+      "Porto gli stivali in inverno. - 冬天我穿靴子。",
+      "Gli stivali sono alti. - 靴子很高。"
+    ]
+  },
+  {
+    "id": "1269",
+    "italian": "calze",
+    "chinese": "袜子",
+    "english": "socks",
+    "pronunciation": "ˈkaltse",
+    "category": "衣物",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112060Z",
+    "examples": [
+      "Le calze sono calde. - 袜子很暖和。",
+      "Porto calze bianche. - 我穿白色袜子。"
+    ]
+  },
+  {
+    "id": "1270",
+    "italian": "cappello",
+    "chinese": "帽子",
+    "english": "hat",
+    "pronunciation": "kapˈpello",
+    "category": "衣物",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112061Z",
+    "examples": [
+      "Porto un cappello. - 我戴帽子。",
+      "Il cappello è grande. - 帽子很大。"
+    ]
+  },
+  {
+    "id": "1271",
+    "italian": "berretto",
+    "chinese": "便帽",
+    "english": "cap",
+    "pronunciation": "berˈretto",
+    "category": "衣物",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112062Z",
+    "examples": [
+      "Il berretto è rosso. - 便帽是红色的。",
+      "Porto il berretto in inverno. - 冬天我戴便帽。"
+    ]
+  },
+  {
+    "id": "1272",
+    "italian": "occhiali",
+    "chinese": "眼镜",
+    "english": "glasses",
+    "pronunciation": "okˈkjali",
+    "category": "衣物",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112063Z",
+    "examples": [
+      "Porto gli occhiali. - 我戴眼镜。",
+      "I miei occhiali sono rotti. - 我的眼镜坏了。"
+    ]
+  },
+  {
+    "id": "1273",
+    "italian": "orologio",
+    "chinese": "手表",
+    "english": "watch",
+    "pronunciation": "oroˈlodʒo",
+    "category": "衣物",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112063Z",
+    "examples": [
+      "Il mio orologio è bello. - 我的手表很漂亮。",
+      "Guardo l'orologio. - 我看手表。"
+    ]
+  },
+  {
+    "id": "1274",
+    "italian": "borsa",
+    "chinese": "包/手提包",
+    "english": "bag",
+    "pronunciation": "ˈborsa",
+    "category": "衣物",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112065Z",
+    "examples": [
+      "La borsa è grande. - 包很大。",
+      "Compro una borsa nuova. - 我买一个新包。"
+    ]
+  },
+  {
+    "id": "1275",
+    "italian": "zaino",
+    "chinese": "背包",
+    "english": "backpack",
+    "pronunciation": "dzaˈino",
+    "category": "衣物",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112066Z",
+    "examples": [
+      "Lo zaino è pesante. - 背包很重。",
+      "Porto lo zaino a scuola. - 我背书包去学校。"
+    ]
+  },
+  {
+    "id": "1276",
+    "italian": "cintura",
+    "chinese": "腰带",
+    "english": "belt",
+    "pronunciation": "tʃinˈtura",
+    "category": "衣物",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112067Z",
+    "examples": [
+      "La cintura è di cuoio. - 腰带是皮革的。",
+      "Porto una cintura nera. - 我系黑色腰带。"
+    ]
+  },
+  {
+    "id": "1277",
+    "italian": "guanti",
+    "chinese": "手套",
+    "english": "gloves",
+    "pronunciation": "ˈɡwanti",
+    "category": "衣物",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112068Z",
+    "examples": [
+      "I guanti sono caldi. - 手套很暖和。",
+      "Porto i guanti in inverno. - 冬天我戴手套。"
+    ]
+  },
+  {
+    "id": "1278",
+    "italian": "sciarpa",
+    "chinese": "围巾",
+    "english": "scarf",
+    "pronunciation": "ˈʃarfa",
+    "category": "衣物",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112068Z",
+    "examples": [
+      "La sciarpa è lunga. - 围巾很长。",
+      "Porto la sciarpa rossa. - 我围红色围巾。"
+    ]
+  },
+  {
+    "id": "1279",
+    "italian": "costume",
+    "chinese": "泳衣",
+    "english": "swimsuit",
+    "pronunciation": "kosˈtume",
+    "category": "衣物",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112069Z",
+    "examples": [
+      "Il costume è nuovo. - 泳衣是新的。",
+      "Compro un costume da bagno. - 我买一件泳衣。"
+    ]
+  },
+  {
+    "id": "1280",
+    "italian": "felice",
+    "chinese": "快乐的",
+    "english": "happy",
+    "pronunciation": "feˈlitʃe",
+    "category": "情绪",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112071Z",
+    "examples": [
+      "Sono molto felice! - 我很快乐!",
+      "Lei è felice oggi. - 她今天很开心。"
+    ]
+  },
+  {
+    "id": "1281",
+    "italian": "triste",
+    "chinese": "悲伤的",
+    "english": "sad",
+    "pronunciation": "ˈtriste",
+    "category": "情绪",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112072Z",
+    "examples": [
+      "Sono triste. - 我很难过。",
+      "Perché sei triste? - 你为什么难过?"
+    ]
+  },
+  {
+    "id": "1282",
+    "italian": "contento",
+    "chinese": "满意的",
+    "english": "content",
+    "pronunciation": "konˈtento",
+    "category": "情绪",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112072Z",
+    "examples": [
+      "Sono contento del risultato. - 我对结果很满意。",
+      "Lei è contenta. - 她很满意。"
+    ]
+  },
+  {
+    "id": "1283",
+    "italian": "arrabbiato",
+    "chinese": "生气的",
+    "english": "angry",
+    "pronunciation": "arraˈbjato",
+    "category": "情绪",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112073Z",
+    "examples": [
+      "Sono arrabbiato! - 我生气了!",
+      "Lui è arrabbiato con me. - 他对我生气。"
+    ]
+  },
+  {
+    "id": "1284",
+    "italian": "preoccupato",
+    "chinese": "担心的",
+    "english": "worried",
+    "pronunciation": "preokˈkupato",
+    "category": "情绪",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112074Z",
+    "examples": [
+      "Sono preoccupato per te. - 我为你担心。",
+      "Lei è preoccupata. - 她很担心。"
+    ]
+  },
+  {
+    "id": "1285",
+    "italian": "stanco",
+    "chinese": "累的",
+    "english": "tired",
+    "pronunciation": "ˈstanko",
+    "category": "情绪",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112075Z",
+    "examples": [
+      "Sono molto stanco. - 我很累。",
+      "Lei è stanca. - 她累了。"
+    ]
+  },
+  {
+    "id": "1286",
+    "italian": "annoiato",
+    "chinese": "无聊的",
+    "english": "bored",
+    "pronunciation": "annoˈjato",
+    "category": "情绪",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112075Z",
+    "examples": [
+      "Sono annoiato. - 我很无聊。",
+      "Il film è annoiante. - 电影很无聊。"
+    ]
+  },
+  {
+    "id": "1287",
+    "italian": "emozionato",
+    "chinese": "激动的",
+    "english": "excited",
+    "pronunciation": "emotsjoˈnato",
+    "category": "情绪",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112076Z",
+    "examples": [
+      "Sono emozionato! - 我很激动!",
+      "Siamo emozionati per il viaggio. - 我们对旅行很兴奋。"
+    ]
+  },
+  {
+    "id": "1288",
+    "italian": "sorpreso",
+    "chinese": "惊讶的",
+    "english": "surprised",
+    "pronunciation": "sorˈprezo",
+    "category": "情绪",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112077Z",
+    "examples": [
+      "Sono sorpreso! - 我很惊讶!",
+      "Lei è sorpresa dalla notizia. - 她对消息感到惊讶。"
+    ]
+  },
+  {
+    "id": "1289",
+    "italian": "nervoso",
+    "chinese": "紧张的",
+    "english": "nervous",
+    "pronunciation": "nerˈvozo",
+    "category": "情绪",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112078Z",
+    "examples": [
+      "Sono nervoso prima dell'esame. - 考试前我很紧张。",
+      "Lei è nervosa. - 她很紧张。"
+    ]
+  },
+  {
+    "id": "1290",
+    "italian": "calmo",
+    "chinese": "平静的",
+    "english": "calm",
+    "pronunciation": "ˈkalmo",
+    "category": "情绪",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112079Z",
+    "examples": [
+      "Sono calmo adesso. - 我现在很平静。",
+      "Rimani calmo! - 保持冷静!"
+    ]
+  },
+  {
+    "id": "1291",
+    "italian": "paura",
+    "chinese": "害怕/恐惧",
+    "english": "fear",
+    "pronunciation": "paˈura",
+    "category": "情绪",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112079Z",
+    "examples": [
+      "Ho paura del buio. - 我怕黑。",
+      "Non avere paura! - 别害怕!"
+    ]
+  },
+  {
+    "id": "1292",
+    "italian": "spaventato",
+    "chinese": "害怕的",
+    "english": "scared",
+    "pronunciation": "spavenˈtato",
+    "category": "情绪",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112080Z",
+    "examples": [
+      "Sono spaventato! - 我害怕!",
+      "Il bambino è spaventato. - 孩子害怕了。"
+    ]
+  },
+  {
+    "id": "1293",
+    "italian": "orgoglioso",
+    "chinese": "骄傲的",
+    "english": "proud",
+    "pronunciation": "orɡoʎˈʎozo",
+    "category": "情绪",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112081Z",
+    "examples": [
+      "Sono orgoglioso di te. - 我为你骄傲。",
+      "Lei è orgogliosa. - 她很自豪。"
+    ]
+  },
+  {
+    "id": "1294",
+    "italian": "geloso",
+    "chinese": "嫉妒的",
+    "english": "jealous",
+    "pronunciation": "dʒeˈlozo",
+    "category": "情绪",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112082Z",
+    "examples": [
+      "Sono geloso. - 我嫉妒。",
+      "Lui è geloso di lei. - 他嫉妒她。"
+    ]
+  },
+  {
+    "id": "1295",
+    "italian": "tempo",
+    "chinese": "天气",
+    "english": "weather",
+    "pronunciation": "ˈtempo",
+    "category": "天气",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112084Z",
+    "examples": [
+      "Che tempo fa? - 天气怎么样?",
+      "Il tempo è bello oggi. - 今天天气好。"
+    ]
+  },
+  {
+    "id": "1296",
+    "italian": "sole",
+    "chinese": "太阳",
+    "english": "sun",
+    "pronunciation": "ˈsole",
+    "category": "天气",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112085Z",
+    "examples": [
+      "C'è il sole oggi. - 今天有太阳。",
+      "Il sole splende. - 太阳在闪耀。"
+    ]
+  },
+  {
+    "id": "1297",
+    "italian": "pioggia",
+    "chinese": "雨",
+    "english": "rain",
+    "pronunciation": "ˈpjɔddʒa",
+    "category": "天气",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112086Z",
+    "examples": [
+      "C'è pioggia oggi. - 今天下雨。",
+      "Mi piace la pioggia. - 我喜欢雨。"
+    ]
+  },
+  {
+    "id": "1298",
+    "italian": "neve",
+    "chinese": "雪",
+    "english": "snow",
+    "pronunciation": "ˈneve",
+    "category": "天气",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112086Z",
+    "examples": [
+      "C'è neve in inverno. - 冬天下雪。",
+      "La neve è bianca. - 雪是白色的。"
+    ]
+  },
+  {
+    "id": "1299",
+    "italian": "vento",
+    "chinese": "风",
+    "english": "wind",
+    "pronunciation": "ˈvento",
+    "category": "天气",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112087Z",
+    "examples": [
+      "C'è vento oggi. - 今天有风。",
+      "Il vento è forte. - 风很大。"
+    ]
+  },
+  {
+    "id": "1300",
+    "italian": "nuvola",
+    "chinese": "云",
+    "english": "cloud",
+    "pronunciation": "ˈnuvola",
+    "category": "天气",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112088Z",
+    "examples": [
+      "Ci sono nuvole nel cielo. - 天空有云。",
+      "Le nuvole sono bianche. - 云是白色的。"
+    ]
+  },
+  {
+    "id": "1301",
+    "italian": "caldo",
+    "chinese": "热的",
+    "english": "hot",
+    "pronunciation": "ˈkaldo",
+    "category": "天气",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112089Z",
+    "examples": [
+      "Fa caldo oggi. - 今天很热。",
+      "L'estate è calda. - 夏天很热。"
+    ]
+  },
+  {
+    "id": "1302",
+    "italian": "freddo",
+    "chinese": "冷的",
+    "english": "cold",
+    "pronunciation": "ˈfreddo",
+    "category": "天气",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112089Z",
+    "examples": [
+      "Fa freddo oggi. - 今天很冷。",
+      "L'inverno è freddo. - 冬天很冷。"
+    ]
+  },
+  {
+    "id": "1303",
+    "italian": "fresco",
+    "chinese": "凉爽的",
+    "english": "cool",
+    "pronunciation": "ˈfresko",
+    "category": "天气",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112090Z",
+    "examples": [
+      "Fa fresco stasera. - 今晚很凉爽。",
+      "L'aria è fresca. - 空气清新。"
+    ]
+  },
+  {
+    "id": "1304",
+    "italian": "bello",
+    "chinese": "好的(天气)",
+    "english": "nice",
+    "pronunciation": "ˈbɛllo",
+    "category": "天气",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112091Z",
+    "examples": [
+      "Fa bel tempo. - 天气好。",
+      "Oggi è una bella giornata. - 今天是美好的一天。"
+    ]
+  },
+  {
+    "id": "1305",
+    "italian": "brutto",
+    "chinese": "坏的(天气)",
+    "english": "bad",
+    "pronunciation": "ˈbrutto",
+    "category": "天气",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112092Z",
+    "examples": [
+      "Fa brutto tempo. - 天气不好。",
+      "Oggi il tempo è brutto. - 今天天气糟糕。"
+    ]
+  },
+  {
+    "id": "1306",
+    "italian": "temporale",
+    "chinese": "暴风雨",
+    "english": "storm",
+    "pronunciation": "tempoˈrale",
+    "category": "天气",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112092Z",
+    "examples": [
+      "C'è un temporale. - 有暴风雨。",
+      "Il temporale è forte. - 暴风雨很强。"
+    ]
+  },
+  {
+    "id": "1307",
+    "italian": "nebbia",
+    "chinese": "雾",
+    "english": "fog",
+    "pronunciation": "ˈnebbja",
+    "category": "天气",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112093Z",
+    "examples": [
+      "C'è nebbia stamattina. - 今早有雾。",
+      "La nebbia è fitta. - 雾很浓。"
+    ]
+  },
+  {
+    "id": "1308",
+    "italian": "temperatura",
+    "chinese": "温度",
+    "english": "temperature",
+    "pronunciation": "temperatˈtura",
+    "category": "天气",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112094Z",
+    "examples": [
+      "La temperatura è alta. - 温度高。",
+      "Qual è la temperatura? - 温度是多少?"
+    ]
+  },
+  {
+    "id": "1309",
+    "italian": "stagione",
+    "chinese": "季节",
+    "english": "season",
+    "pronunciation": "stadʒˈʒone",
+    "category": "天气",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112095Z",
+    "examples": [
+      "La mia stagione preferita è l'estate. - 我最喜欢的季节是夏天。",
+      "Ci sono quattro stagioni. - 有四个季节。"
+    ]
+  },
+  {
+    "id": "1310",
+    "italian": "sopra",
+    "chinese": "在...上面",
+    "english": "above",
+    "pronunciation": "ˈsopra",
+    "category": "方位词",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112096Z",
+    "examples": [
+      "Il libro è sopra il tavolo. - 书在桌子上。",
+      "L'aereo vola sopra le nuvole. - 飞机在云上飞。"
+    ]
+  },
+  {
+    "id": "1311",
+    "italian": "sotto",
+    "chinese": "在...下面",
+    "english": "under",
+    "pronunciation": "ˈsotto",
+    "category": "方位词",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112097Z",
+    "examples": [
+      "Il gatto è sotto il letto. - 猫在床下。",
+      "Metto le scarpe sotto la sedia. - 我把鞋放在椅子下。"
+    ]
+  },
+  {
+    "id": "1312",
+    "italian": "dentro",
+    "chinese": "在...里面",
+    "english": "inside",
+    "pronunciation": "ˈdentro",
+    "category": "方位词",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112097Z",
+    "examples": [
+      "Sono dentro casa. - 我在家里。",
+      "Il gatto è dentro la scatola. - 猫在盒子里。"
+    ]
+  },
+  {
+    "id": "1313",
+    "italian": "fuori",
+    "chinese": "在...外面",
+    "english": "outside",
+    "pronunciation": "ˈfwɔri",
+    "category": "方位词",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112098Z",
+    "examples": [
+      "Sono fuori casa. - 我在外面。",
+      "Il cane è fuori. - 狗在外面。"
+    ]
+  },
+  {
+    "id": "1314",
+    "italian": "vicino",
+    "chinese": "靠近/附近",
+    "english": "near",
+    "pronunciation": "viˈtʃino",
+    "category": "方位词",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112099Z",
+    "examples": [
+      "Abito vicino alla scuola. - 我住在学校附近。",
+      "La farmacia è vicino. - 药店很近。"
+    ]
+  },
+  {
+    "id": "1315",
+    "italian": "lontano",
+    "chinese": "远的",
+    "english": "far",
+    "pronunciation": "lonˈtano",
+    "category": "方位词",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112100Z",
+    "examples": [
+      "La stazione è lontana. - 车站很远。",
+      "Abito lontano da qui. - 我住得离这里远。"
+    ]
+  },
+  {
+    "id": "1316",
+    "italian": "davanti",
+    "chinese": "在...前面",
+    "english": "in front",
+    "pronunciation": "daˈvanti",
+    "category": "方位词",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112101Z",
+    "examples": [
+      "Sono davanti alla porta. - 我在门前。",
+      "La macchina è davanti a casa. - 车在房子前面。"
+    ]
+  },
+  {
+    "id": "1317",
+    "italian": "dietro",
+    "chinese": "在...后面",
+    "english": "behind",
+    "pronunciation": "ˈdjɛtro",
+    "category": "方位词",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112101Z",
+    "examples": [
+      "Il giardino è dietro la casa. - 花园在房子后面。",
+      "Sono dietro di te. - 我在你后面。"
+    ]
+  },
+  {
+    "id": "1318",
+    "italian": "destra",
+    "chinese": "右边",
+    "english": "right",
+    "pronunciation": "ˈdɛstra",
+    "category": "方位词",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112103Z",
+    "examples": [
+      "Gira a destra. - 向右转。",
+      "La banca è a destra. - 银行在右边。"
+    ]
+  },
+  {
+    "id": "1319",
+    "italian": "sinistra",
+    "chinese": "左边",
+    "english": "left",
+    "pronunciation": "siˈnistra",
+    "category": "方位词",
+    "level": "A1",
+    "createdAt": "2025-10-11T10:10:10.112104Z",
+    "examples": [
+      "Gira a sinistra. - 向左转。",
+      "Il negozio è a sinistra. - 商店在左边。"
+    ]
+  },
+  {
+    "id": "1320",
+    "italian": "computer",
+    "chinese": "电脑",
+    "english": "computer",
+    "pronunciation": "komˈpjuter",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813216Z",
+    "examples": [
+      "Lavoro al computer. - 我用电脑工作。",
+      "Ho comprato un nuovo computer. - 我买了一台新电脑。"
+    ]
+  },
+  {
+    "id": "1321",
+    "italian": "telefono",
+    "chinese": "电话",
+    "english": "telephone",
+    "pronunciation": "teˈlɛfono",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813221Z",
+    "examples": [
+      "Il mio telefono è rotto. - 我的电话坏了。",
+      "Ti chiamo al telefono. - 我给你打电话。"
+    ]
+  },
+  {
+    "id": "1322",
+    "italian": "cellulare",
+    "chinese": "手机",
+    "english": "mobile phone",
+    "pronunciation": "tʃelluˈlare",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813222Z",
+    "examples": [
+      "Il mio cellulare è nuovo. - 我的手机是新的。",
+      "Uso il cellulare ogni giorno. - 我每天用手机。"
+    ]
+  },
+  {
+    "id": "1323",
+    "italian": "smartphone",
+    "chinese": "智能手机",
+    "english": "smartphone",
+    "pronunciation": "ˈsmartfon",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813223Z",
+    "examples": [
+      "Ho uno smartphone moderno. - 我有一部现代智能手机。",
+      "Lo smartphone è utile. - 智能手机很有用。"
+    ]
+  },
+  {
+    "id": "1324",
+    "italian": "Internet",
+    "chinese": "互联网",
+    "english": "Internet",
+    "pronunciation": "ˈinternet",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813224Z",
+    "examples": [
+      "Uso Internet ogni giorno. - 我每天上网。",
+      "Internet è veloce. - 网速快。"
+    ]
+  },
+  {
+    "id": "1325",
+    "italian": "rete",
+    "chinese": "网络",
+    "english": "network",
+    "pronunciation": "ˈrete",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813225Z",
+    "examples": [
+      "La rete non funziona. - 网络不工作。",
+      "Connetto alla rete Wi-Fi. - 我连接到Wi-Fi网络。"
+    ]
+  },
+  {
+    "id": "1326",
+    "italian": "sito",
+    "chinese": "网站",
+    "english": "website",
+    "pronunciation": "ˈsito",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813226Z",
+    "examples": [
+      "Visito il sito web. - 我访问网站。",
+      "Questo sito è interessante. - 这个网站很有趣。"
+    ]
+  },
+  {
+    "id": "1327",
+    "italian": "email",
+    "chinese": "电子邮件",
+    "english": "email",
+    "pronunciation": "iˈmeil",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813227Z",
+    "examples": [
+      "Ti mando un'email. - 我给你发邮件。",
+      "Controllo le email. - 我查看邮件。"
+    ]
+  },
+  {
+    "id": "1328",
+    "italian": "messaggio",
+    "chinese": "消息",
+    "english": "message",
+    "pronunciation": "mesˈsaddʒo",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813227Z",
+    "examples": [
+      "Ti mando un messaggio. - 我给你发消息。",
+      "Ho ricevuto un messaggio. - 我收到一条消息。"
+    ]
+  },
+  {
+    "id": "1329",
+    "italian": "foto",
+    "chinese": "照片",
+    "english": "photo",
+    "pronunciation": "ˈfɔto",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813228Z",
+    "examples": [
+      "Faccio una foto. - 我拍一张照片。",
+      "Le foto sono belle. - 照片很漂亮。"
+    ]
+  },
+  {
+    "id": "1330",
+    "italian": "video",
+    "chinese": "视频",
+    "english": "video",
+    "pronunciation": "ˈvideo",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813229Z",
+    "examples": [
+      "Guardo un video. - 我看视频。",
+      "Il video è interessante. - 视频很有趣。"
+    ]
+  },
+  {
+    "id": "1331",
+    "italian": "schermo",
+    "chinese": "屏幕",
+    "english": "screen",
+    "pronunciation": "ˈskermo",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813230Z",
+    "examples": [
+      "Lo schermo è grande. - 屏幕很大。",
+      "Lo schermo è rotto. - 屏幕坏了。"
+    ]
+  },
+  {
+    "id": "1332",
+    "italian": "tastiera",
+    "chinese": "键盘",
+    "english": "keyboard",
+    "pronunciation": "tasˈtjera",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813230Z",
+    "examples": [
+      "La tastiera è comoda. - 键盘很舒服。",
+      "Scrivo con la tastiera. - 我用键盘打字。"
+    ]
+  },
+  {
+    "id": "1333",
+    "italian": "mouse",
+    "chinese": "鼠标",
+    "english": "mouse",
+    "pronunciation": "maus",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813231Z",
+    "examples": [
+      "Il mouse non funziona. - 鼠标不工作。",
+      "Uso il mouse. - 我用鼠标。"
+    ]
+  },
+  {
+    "id": "1334",
+    "italian": "stampante",
+    "chinese": "打印机",
+    "english": "printer",
+    "pronunciation": "stamˈpante",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813232Z",
+    "examples": [
+      "La stampante è rotta. - 打印机坏了。",
+      "Stampo con la stampante. - 我用打印机打印。"
+    ]
+  },
+  {
+    "id": "1335",
+    "italian": "applicazione",
+    "chinese": "应用程序",
+    "english": "application",
+    "pronunciation": "applikatˈtsjone",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813233Z",
+    "examples": [
+      "Scarico un'applicazione. - 我下载一个应用。",
+      "Questa applicazione è utile. - 这个应用很有用。"
+    ]
+  },
+  {
+    "id": "1336",
+    "italian": "app",
+    "chinese": "应用",
+    "english": "app",
+    "pronunciation": "app",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813233Z",
+    "examples": [
+      "Uso molte app. - 我用很多应用。",
+      "Questa app è gratis. - 这个应用是免费的。"
+    ]
+  },
+  {
+    "id": "1337",
+    "italian": "social media",
+    "chinese": "社交媒体",
+    "english": "social media",
+    "pronunciation": "ˈsoutʃal ˈmidja",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813234Z",
+    "examples": [
+      "Uso i social media. - 我用社交媒体。",
+      "I social media sono popolari. - 社交媒体很受欢迎。"
+    ]
+  },
+  {
+    "id": "1338",
+    "italian": "account",
+    "chinese": "账户",
+    "english": "account",
+    "pronunciation": "akˈkaunt",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813235Z",
+    "examples": [
+      "Creo un account. - 我创建一个账户。",
+      "Ho un account. - 我有一个账户。"
+    ]
+  },
+  {
+    "id": "1339",
+    "italian": "password",
+    "chinese": "密码",
+    "english": "password",
+    "pronunciation": "ˈpassword",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813236Z",
+    "examples": [
+      "La mia password è sicura. - 我的密码很安全。",
+      "Dimentico la password. - 我忘记密码了。"
+    ]
+  },
+  {
+    "id": "1340",
+    "italian": "profilo",
+    "chinese": "个人资料",
+    "english": "profile",
+    "pronunciation": "proˈfilo",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813237Z",
+    "examples": [
+      "Aggiorno il mio profilo. - 我更新我的资料。",
+      "Il tuo profilo è interessante. - 你的资料很有趣。"
+    ]
+  },
+  {
+    "id": "1341",
+    "italian": "batteria",
+    "chinese": "电池",
+    "english": "battery",
+    "pronunciation": "batteˈria",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813237Z",
+    "examples": [
+      "La batteria è scarica. - 电池没电了。",
+      "Carico la batteria. - 我给电池充电。"
+    ]
+  },
+  {
+    "id": "1342",
+    "italian": "caricabatterie",
+    "chinese": "充电器",
+    "english": "charger",
+    "pronunciation": "karikabaˈtterje",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813238Z",
+    "examples": [
+      "Dove è il caricabatterie? - 充电器在哪里？",
+      "Ho bisogno del caricabatterie. - 我需要充电器。"
+    ]
+  },
+  {
+    "id": "1343",
+    "italian": "cavo",
+    "chinese": "电缆/线",
+    "english": "cable",
+    "pronunciation": "ˈkavo",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813239Z",
+    "examples": [
+      "Il cavo è lungo. - 线很长。",
+      "Ho bisogno di un cavo. - 我需要一根线。"
+    ]
+  },
+  {
+    "id": "1344",
+    "italian": "wifi",
+    "chinese": "无线网络",
+    "english": "wifi",
+    "pronunciation": "ˈwaifai",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813240Z",
+    "examples": [
+      "Il wifi non funziona. - Wi-Fi不工作。",
+      "Connetto al wifi. - 我连接Wi-Fi。"
+    ]
+  },
+  {
+    "id": "1345",
+    "italian": "connessione",
+    "chinese": "连接",
+    "english": "connection",
+    "pronunciation": "konnesˈsjone",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813241Z",
+    "examples": [
+      "La connessione è lenta. - 连接很慢。",
+      "Ho una buona connessione. - 我有一个好的连接。"
+    ]
+  },
+  {
+    "id": "1346",
+    "italian": "scaricare",
+    "chinese": "下载",
+    "english": "download",
+    "pronunciation": "skariˈkare",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813241Z",
+    "examples": [
+      "Scarico un film. - 我下载一部电影。",
+      "Posso scaricare questa app? - 我可以下载这个应用吗？"
+    ]
+  },
+  {
+    "id": "1347",
+    "italian": "caricare",
+    "chinese": "上传/充电",
+    "english": "upload/charge",
+    "pronunciation": "kariˈkare",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813242Z",
+    "examples": [
+      "Carico le foto. - 我上传照片。",
+      "Carico il telefono. - 我给手机充电。"
+    ]
+  },
+  {
+    "id": "1348",
+    "italian": "aggiornare",
+    "chinese": "更新",
+    "english": "update",
+    "pronunciation": "addʒorˈnare",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813243Z",
+    "examples": [
+      "Aggiorno il sistema. - 我更新系统。",
+      "Devo aggiornare l'app. - 我需要更新应用。"
+    ]
+  },
+  {
+    "id": "1349",
+    "italian": "cliccare",
+    "chinese": "点击",
+    "english": "click",
+    "pronunciation": "klikˈkare",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813244Z",
+    "examples": [
+      "Clicco sul link. - 我点击链接。",
+      "Devi cliccare qui. - 你需要点这里。"
+    ]
+  },
+  {
+    "id": "1350",
+    "italian": "digitare",
+    "chinese": "输入",
+    "english": "type",
+    "pronunciation": "digiˈtare",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813245Z",
+    "examples": [
+      "Digito la password. - 我输入密码。",
+      "Digita il tuo nome. - 输入你的名字。"
+    ]
+  },
+  {
+    "id": "1351",
+    "italian": "salvare",
+    "chinese": "保存",
+    "english": "save",
+    "pronunciation": "salˈvare",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813245Z",
+    "examples": [
+      "Salvo il documento. - 我保存文档。",
+      "Non dimenticare di salvare! - 别忘记保存！"
+    ]
+  },
+  {
+    "id": "1352",
+    "italian": "cancellare",
+    "chinese": "删除",
+    "english": "delete",
+    "pronunciation": "kantʃelˈlare",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813246Z",
+    "examples": [
+      "Cancello il file. - 我删除文件。",
+      "Posso cancellare questo? - 我可以删除这个吗？"
+    ]
+  },
+  {
+    "id": "1353",
+    "italian": "condividere",
+    "chinese": "分享",
+    "english": "share",
+    "pronunciation": "kondiˈvidere",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813247Z",
+    "examples": [
+      "Condivido la foto. - 我分享照片。",
+      "Vuoi condividere? - 你想分享吗？"
+    ]
+  },
+  {
+    "id": "1354",
+    "italian": "tecnologia",
+    "chinese": "技术",
+    "english": "technology",
+    "pronunciation": "teknoloˈdʒia",
+    "category": "通讯科技",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813248Z",
+    "examples": [
+      "La tecnologia è importante. - 技术很重要。",
+      "Amo la tecnologia. - 我喜欢技术。"
+    ]
+  },
+  {
+    "id": "1355",
+    "italian": "musica",
+    "chinese": "音乐",
+    "english": "music",
+    "pronunciation": "ˈmuzika",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813250Z",
+    "examples": [
+      "Ascolto la musica. - 我听音乐。",
+      "La musica è bella. - 音乐很美。"
+    ]
+  },
+  {
+    "id": "1356",
+    "italian": "canzone",
+    "chinese": "歌曲",
+    "english": "song",
+    "pronunciation": "kanˈtsone",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813251Z",
+    "examples": [
+      "Questa canzone è bella. - 这首歌很好听。",
+      "Canto una canzone. - 我唱一首歌。"
+    ]
+  },
+  {
+    "id": "1357",
+    "italian": "cantare",
+    "chinese": "唱歌",
+    "english": "sing",
+    "pronunciation": "kanˈtare",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813251Z",
+    "examples": [
+      "Mi piace cantare. - 我喜欢唱歌。",
+      "Lui canta bene. - 他唱得好。"
+    ]
+  },
+  {
+    "id": "1358",
+    "italian": "suonare",
+    "chinese": "演奏",
+    "english": "play (instrument)",
+    "pronunciation": "swoˈnare",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813252Z",
+    "examples": [
+      "Suono la chitarra. - 我弹吉他。",
+      "Lei suona il pianoforte. - 她弹钢琴。"
+    ]
+  },
+  {
+    "id": "1359",
+    "italian": "chitarra",
+    "chinese": "吉他",
+    "english": "guitar",
+    "pronunciation": "kiˈtarra",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813253Z",
+    "examples": [
+      "Ho una chitarra. - 我有一把吉他。",
+      "Suono la chitarra. - 我弹吉他。"
+    ]
+  },
+  {
+    "id": "1360",
+    "italian": "pianoforte",
+    "chinese": "钢琴",
+    "english": "piano",
+    "pronunciation": "pjanoˈfɔrte",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813254Z",
+    "examples": [
+      "Il pianoforte è grande. - 钢琴很大。",
+      "Imparo il pianoforte. - 我学钢琴。"
+    ]
+  },
+  {
+    "id": "1361",
+    "italian": "concerto",
+    "chinese": "音乐会",
+    "english": "concert",
+    "pronunciation": "konˈtʃɛrto",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813254Z",
+    "examples": [
+      "Vado al concerto. - 我去音乐会。",
+      "Il concerto è stasera. - 音乐会是今晚。"
+    ]
+  },
+  {
+    "id": "1362",
+    "italian": "cinema",
+    "chinese": "电影院",
+    "english": "cinema",
+    "pronunciation": "ˈtʃinema",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813255Z",
+    "examples": [
+      "Andiamo al cinema. - 我们去电影院。",
+      "Il cinema è vicino. - 电影院很近。"
+    ]
+  },
+  {
+    "id": "1363",
+    "italian": "film",
+    "chinese": "电影",
+    "english": "film",
+    "pronunciation": "film",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813256Z",
+    "examples": [
+      "Guardo un film. - 我看电影。",
+      "Il film è interessante. - 电影很有趣。"
+    ]
+  },
+  {
+    "id": "1364",
+    "italian": "attore",
+    "chinese": "演员(男)",
+    "english": "actor",
+    "pronunciation": "atˈtore",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813257Z",
+    "examples": [
+      "Lui è un attore famoso. - 他是著名演员。",
+      "L'attore è bravo. - 演员很棒。"
+    ]
+  },
+  {
+    "id": "1365",
+    "italian": "attrice",
+    "chinese": "演员(女)",
+    "english": "actress",
+    "pronunciation": "atˈtritʃe",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813258Z",
+    "examples": [
+      "Lei è un'attrice. - 她是演员。",
+      "L'attrice è brava. - 女演员很棒。"
+    ]
+  },
+  {
+    "id": "1366",
+    "italian": "teatro",
+    "chinese": "剧院",
+    "english": "theater",
+    "pronunciation": "teˈatro",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813258Z",
+    "examples": [
+      "Vado a teatro. - 我去剧院。",
+      "Lo spettacolo è a teatro. - 演出在剧院。"
+    ]
+  },
+  {
+    "id": "1367",
+    "italian": "spettacolo",
+    "chinese": "演出",
+    "english": "show",
+    "pronunciation": "spetˈtakolo",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813259Z",
+    "examples": [
+      "Lo spettacolo è bello. - 演出很精彩。",
+      "Guardo uno spettacolo. - 我看演出。"
+    ]
+  },
+  {
+    "id": "1368",
+    "italian": "ballare",
+    "chinese": "跳舞",
+    "english": "dance",
+    "pronunciation": "balˈlare",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813260Z",
+    "examples": [
+      "Mi piace ballare. - 我喜欢跳舞。",
+      "Balliamo insieme! - 我们一起跳舞！"
+    ]
+  },
+  {
+    "id": "1369",
+    "italian": "danza",
+    "chinese": "舞蹈",
+    "english": "dance",
+    "pronunciation": "ˈdantsa",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813261Z",
+    "examples": [
+      "Studio danza. - 我学舞蹈。",
+      "La danza è arte. - 舞蹈是艺术。"
+    ]
+  },
+  {
+    "id": "1370",
+    "italian": "festa",
+    "chinese": "派对/节日",
+    "english": "party/festival",
+    "pronunciation": "ˈfɛsta",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813261Z",
+    "examples": [
+      "Vado alla festa. - 我去派对。",
+      "La festa è domani. - 派对是明天。"
+    ]
+  },
+  {
+    "id": "1371",
+    "italian": "sport",
+    "chinese": "运动",
+    "english": "sport",
+    "pronunciation": "spɔrt",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813262Z",
+    "examples": [
+      "Faccio sport. - 我做运动。",
+      "Lo sport è sano. - 运动很健康。"
+    ]
+  },
+  {
+    "id": "1372",
+    "italian": "calcio",
+    "chinese": "足球",
+    "english": "soccer",
+    "pronunciation": "ˈkaltʃo",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813263Z",
+    "examples": [
+      "Gioco a calcio. - 我踢足球。",
+      "Il calcio è popolare. - 足球很受欢迎。"
+    ]
+  },
+  {
+    "id": "1373",
+    "italian": "pallacanestro",
+    "chinese": "篮球",
+    "english": "basketball",
+    "pronunciation": "pallakaˈnestro",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813263Z",
+    "examples": [
+      "Gioco a pallacanestro. - 我打篮球。",
+      "La pallacanestro è divertente. - 篮球很有趣。"
+    ]
+  },
+  {
+    "id": "1374",
+    "italian": "nuotare",
+    "chinese": "游泳",
+    "english": "swim",
+    "pronunciation": "nwoˈtare",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813264Z",
+    "examples": [
+      "Mi piace nuotare. - 我喜欢游泳。",
+      "Nuoto in piscina. - 我在游泳池游泳。"
+    ]
+  },
+  {
+    "id": "1375",
+    "italian": "piscina",
+    "chinese": "游泳池",
+    "english": "swimming pool",
+    "pronunciation": "piʃˈʃina",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813265Z",
+    "examples": [
+      "Vado in piscina. - 我去游泳池。",
+      "La piscina è grande. - 游泳池很大。"
+    ]
+  },
+  {
+    "id": "1376",
+    "italian": "correre",
+    "chinese": "跑步",
+    "english": "run",
+    "pronunciation": "ˈkorrere",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813266Z",
+    "examples": [
+      "Mi piace correre. - 我喜欢跑步。",
+      "Corro ogni mattina. - 我每天早上跑步。"
+    ]
+  },
+  {
+    "id": "1377",
+    "italian": "bicicletta",
+    "chinese": "自行车",
+    "english": "bicycle",
+    "pronunciation": "bitʃiˈkletta",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813267Z",
+    "examples": [
+      "Vado in bicicletta. - 我骑自行车。",
+      "La bicicletta è rossa. - 自行车是红色的。"
+    ]
+  },
+  {
+    "id": "1378",
+    "italian": "squadra",
+    "chinese": "队伍",
+    "english": "team",
+    "pronunciation": "ˈskwadra",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813267Z",
+    "examples": [
+      "La mia squadra vince. - 我的队赢了。",
+      "Gioco in una squadra. - 我在一个队里。"
+    ]
+  },
+  {
+    "id": "1379",
+    "italian": "partita",
+    "chinese": "比赛",
+    "english": "match",
+    "pronunciation": "parˈtita",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813268Z",
+    "examples": [
+      "Guardo la partita. - 我看比赛。",
+      "La partita è domani. - 比赛是明天。"
+    ]
+  },
+  {
+    "id": "1380",
+    "italian": "vincere",
+    "chinese": "赢",
+    "english": "win",
+    "pronunciation": "ˈvintʃere",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813269Z",
+    "examples": [
+      "La mia squadra vince. - 我的队赢了。",
+      "Voglio vincere! - 我想赢！"
+    ]
+  },
+  {
+    "id": "1381",
+    "italian": "perdere",
+    "chinese": "输",
+    "english": "lose",
+    "pronunciation": "ˈpɛrdere",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813270Z",
+    "examples": [
+      "Non voglio perdere. - 我不想输。",
+      "Abbiamo perso la partita. - 我们输了比赛。"
+    ]
+  },
+  {
+    "id": "1382",
+    "italian": "hobby",
+    "chinese": "爱好",
+    "english": "hobby",
+    "pronunciation": "ˈɔbbi",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813271Z",
+    "examples": [
+      "Il mio hobby è leggere. - 我的爱好是阅读。",
+      "Quali sono i tuoi hobby? - 你的爱好是什么？"
+    ]
+  },
+  {
+    "id": "1383",
+    "italian": "passatempo",
+    "chinese": "消遣",
+    "english": "pastime",
+    "pronunciation": "passaˈtɛmpo",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813272Z",
+    "examples": [
+      "La lettura è il mio passatempo. - 阅读是我的消遣。",
+      "Hai un passatempo? - 你有消遣吗？"
+    ]
+  },
+  {
+    "id": "1384",
+    "italian": "divertimento",
+    "chinese": "娱乐/乐趣",
+    "english": "fun",
+    "pronunciation": "divertiˈmento",
+    "category": "娱乐运动",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813273Z",
+    "examples": [
+      "È per divertimento. - 这是为了娱乐。",
+      "Il divertimento è importante. - 娱乐很重要。"
+    ]
+  },
+  {
+    "id": "1385",
+    "italian": "cosa",
+    "chinese": "事情/东西",
+    "english": "thing",
+    "pronunciation": "ˈkɔza",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813275Z",
+    "examples": [
+      "Che cosa fai? - 你在做什么？",
+      "È una bella cosa. - 这是件好事。"
+    ]
+  },
+  {
+    "id": "1386",
+    "italian": "idea",
+    "chinese": "想法/主意",
+    "english": "idea",
+    "pronunciation": "iˈdɛa",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813276Z",
+    "examples": [
+      "Ho un'idea! - 我有一个主意！",
+      "È una buona idea. - 这是个好主意。"
+    ]
+  },
+  {
+    "id": "1387",
+    "italian": "problema",
+    "chinese": "问题",
+    "english": "problem",
+    "pronunciation": "proˈblɛma",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813277Z",
+    "examples": [
+      "Ho un problema. - 我有一个问题。",
+      "Il problema è difficile. - 问题很难。"
+    ]
+  },
+  {
+    "id": "1388",
+    "italian": "soluzione",
+    "chinese": "解决方案",
+    "english": "solution",
+    "pronunciation": "solutˈtsjone",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813278Z",
+    "examples": [
+      "Ho trovato la soluzione. - 我找到了解决方案。",
+      "Questa è la soluzione. - 这是解决方案。"
+    ]
+  },
+  {
+    "id": "1389",
+    "italian": "motivo",
+    "chinese": "原因",
+    "english": "reason",
+    "pronunciation": "moˈtivo",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813278Z",
+    "examples": [
+      "Qual è il motivo? - 原因是什么？",
+      "Non c'è motivo. - 没有原因。"
+    ]
+  },
+  {
+    "id": "1390",
+    "italian": "ragione",
+    "chinese": "理由/理性",
+    "english": "reason",
+    "pronunciation": "raˈdʒone",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813279Z",
+    "examples": [
+      "Hai ragione. - 你是对的。",
+      "La ragione è semplice. - 理由很简单。"
+    ]
+  },
+  {
+    "id": "1391",
+    "italian": "modo",
+    "chinese": "方式",
+    "english": "way",
+    "pronunciation": "ˈmɔdo",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813280Z",
+    "examples": [
+      "In questo modo. - 用这种方式。",
+      "C'è un altro modo? - 有另一种方式吗？"
+    ]
+  },
+  {
+    "id": "1392",
+    "italian": "maniera",
+    "chinese": "方式/方法",
+    "english": "manner",
+    "pronunciation": "maˈnjera",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813281Z",
+    "examples": [
+      "In questa maniera. - 以这种方式。",
+      "È una buona maniera. - 这是一个好方法。"
+    ]
+  },
+  {
+    "id": "1393",
+    "italian": "importanza",
+    "chinese": "重要性",
+    "english": "importance",
+    "pronunciation": "importˈtantsa",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813281Z",
+    "examples": [
+      "È di grande importanza. - 这很重要。",
+      "L'importanza è chiara. - 重要性很明显。"
+    ]
+  },
+  {
+    "id": "1394",
+    "italian": "valore",
+    "chinese": "价值",
+    "english": "value",
+    "pronunciation": "vaˈlore",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813282Z",
+    "examples": [
+      "Ha grande valore. - 有很大价值。",
+      "Il valore è alto. - 价值很高。"
+    ]
+  },
+  {
+    "id": "1395",
+    "italian": "qualità",
+    "chinese": "质量",
+    "english": "quality",
+    "pronunciation": "kwaliˈta",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813283Z",
+    "examples": [
+      "La qualità è buona. - 质量好。",
+      "È di alta qualità. - 是高质量的。"
+    ]
+  },
+  {
+    "id": "1396",
+    "italian": "quantità",
+    "chinese": "数量",
+    "english": "quantity",
+    "pronunciation": "kwantiˈta",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813284Z",
+    "examples": [
+      "La quantità è grande. - 数量大。",
+      "Dipende dalla quantità. - 取决于数量。"
+    ]
+  },
+  {
+    "id": "1397",
+    "italian": "parte",
+    "chinese": "部分",
+    "english": "part",
+    "pronunciation": "ˈparte",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813285Z",
+    "examples": [
+      "Una parte del libro. - 书的一部分。",
+      "Faccio parte della squadra. - 我是队伍的一部分。"
+    ]
+  },
+  {
+    "id": "1398",
+    "italian": "tutto",
+    "chinese": "全部",
+    "english": "all",
+    "pronunciation": "ˈtutto",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813285Z",
+    "examples": [
+      "Tutto va bene. - 一切都好。",
+      "Mangio tutto. - 我全吃了。"
+    ]
+  },
+  {
+    "id": "1399",
+    "italian": "niente",
+    "chinese": "什么都没有",
+    "english": "nothing",
+    "pronunciation": "ˈnjɛnte",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813286Z",
+    "examples": [
+      "Non c'è niente. - 什么都没有。",
+      "Non voglio niente. - 我什么都不想要。"
+    ]
+  },
+  {
+    "id": "1400",
+    "italian": "qualcosa",
+    "chinese": "某事/某物",
+    "english": "something",
+    "pronunciation": "kwalˈkɔza",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813287Z",
+    "examples": [
+      "C'è qualcosa? - 有什么吗？",
+      "Voglio qualcosa. - 我想要什么东西。"
+    ]
+  },
+  {
+    "id": "1401",
+    "italian": "volta",
+    "chinese": "次/倍",
+    "english": "time",
+    "pronunciation": "ˈvolta",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813288Z",
+    "examples": [
+      "Una volta. - 一次。",
+      "Tre volte. - 三次。"
+    ]
+  },
+  {
+    "id": "1402",
+    "italian": "momento",
+    "chinese": "时刻",
+    "english": "moment",
+    "pronunciation": "moˈmento",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813288Z",
+    "examples": [
+      "Un momento, per favore. - 等一下。",
+      "È il momento giusto. - 这是正确的时刻。"
+    ]
+  },
+  {
+    "id": "1403",
+    "italian": "periodo",
+    "chinese": "时期",
+    "english": "period",
+    "pronunciation": "peˈriodo",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813289Z",
+    "examples": [
+      "In questo periodo. - 在这个时期。",
+      "Un breve periodo. - 一个短时期。"
+    ]
+  },
+  {
+    "id": "1404",
+    "italian": "inizio",
+    "chinese": "开始",
+    "english": "beginning",
+    "pronunciation": "iˈnittsjo",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813290Z",
+    "examples": [
+      "All'inizio. - 在开始。",
+      "L'inizio è difficile. - 开始很难。"
+    ]
+  },
+  {
+    "id": "1405",
+    "italian": "fine",
+    "chinese": "结束/末尾",
+    "english": "end",
+    "pronunciation": "ˈfine",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813291Z",
+    "examples": [
+      "Alla fine. - 最后。",
+      "La fine del film. - 电影的结尾。"
+    ]
+  },
+  {
+    "id": "1406",
+    "italian": "differenza",
+    "chinese": "差异",
+    "english": "difference",
+    "pronunciation": "diffeˈrɛntsa",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813291Z",
+    "examples": [
+      "C'è una differenza. - 有一个差异。",
+      "Qual è la differenza? - 差异是什么？"
+    ]
+  },
+  {
+    "id": "1407",
+    "italian": "somiglianza",
+    "chinese": "相似",
+    "english": "similarity",
+    "pronunciation": "somiʎˈʎantsa",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813292Z",
+    "examples": [
+      "C'è somiglianza. - 有相似之处。",
+      "La somiglianza è chiara. - 相似性很明显。"
+    ]
+  },
+  {
+    "id": "1408",
+    "italian": "possibilità",
+    "chinese": "可能性",
+    "english": "possibility",
+    "pronunciation": "possibiliˈta",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813294Z",
+    "examples": [
+      "C'è una possibilità. - 有一个可能性。",
+      "È una buona possibilità. - 这是个好机会。"
+    ]
+  },
+  {
+    "id": "1409",
+    "italian": "necessità",
+    "chinese": "必要性",
+    "english": "necessity",
+    "pronunciation": "netʃessiˈta",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813295Z",
+    "examples": [
+      "È una necessità. - 这是必需的。",
+      "La necessità è chiara. - 必要性很明显。"
+    ]
+  },
+  {
+    "id": "1410",
+    "italian": "verità",
+    "chinese": "真相",
+    "english": "truth",
+    "pronunciation": "veriˈta",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813295Z",
+    "examples": [
+      "Dico la verità. - 我说真话。",
+      "La verità è importante. - 真相很重要。"
+    ]
+  },
+  {
+    "id": "1411",
+    "italian": "bugia",
+    "chinese": "谎言",
+    "english": "lie",
+    "pronunciation": "buˈdʒia",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813296Z",
+    "examples": [
+      "È una bugia. - 这是谎言。",
+      "Non dire bugie! - 别说谎！"
+    ]
+  },
+  {
+    "id": "1412",
+    "italian": "segreto",
+    "chinese": "秘密",
+    "english": "secret",
+    "pronunciation": "seˈɡrɛto",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813297Z",
+    "examples": [
+      "È un segreto. - 这是秘密。",
+      "Non dire il segreto! - 别说出秘密！"
+    ]
+  },
+  {
+    "id": "1413",
+    "italian": "sorpresa",
+    "chinese": "惊喜",
+    "english": "surprise",
+    "pronunciation": "sorˈpreza",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813298Z",
+    "examples": [
+      "È una sorpresa! - 这是一个惊喜！",
+      "La sorpresa è bella. - 惊喜很美好。"
+    ]
+  },
+  {
+    "id": "1414",
+    "italian": "fortuna",
+    "chinese": "运气",
+    "english": "luck",
+    "pronunciation": "forˈtuna",
+    "category": "抽象概念",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813299Z",
+    "examples": [
+      "Buona fortuna! - 祝你好运！",
+      "Ho fortuna. - 我有运气。"
+    ]
+  },
+  {
+    "id": "1415",
+    "italian": "lavoro",
+    "chinese": "工作",
+    "english": "work",
+    "pronunciation": "laˈvoro",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813320Z",
+    "examples": [
+      "Il mio lavoro è interessante. - 我的工作很有趣。",
+      "Vado al lavoro. - 我去上班。"
+    ]
+  },
+  {
+    "id": "1416",
+    "italian": "lavorare",
+    "chinese": "工作",
+    "english": "work",
+    "pronunciation": "lavoˈrare",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813321Z",
+    "examples": [
+      "Lavoro in un ufficio. - 我在办公室工作。",
+      "Lui lavora molto. - 他工作很多。"
+    ]
+  },
+  {
+    "id": "1417",
+    "italian": "ufficio",
+    "chinese": "办公室",
+    "english": "office",
+    "pronunciation": "ufˈfitʃo",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813322Z",
+    "examples": [
+      "Sono in ufficio. - 我在办公室。",
+      "L'ufficio è grande. - 办公室很大。"
+    ]
+  },
+  {
+    "id": "1418",
+    "italian": "collega",
+    "chinese": "同事",
+    "english": "colleague",
+    "pronunciation": "kolˈlɛɡa",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813323Z",
+    "examples": [
+      "Il mio collega è simpatico. - 我的同事很友好。",
+      "Parlo con i colleghi. - 我和同事说话。"
+    ]
+  },
+  {
+    "id": "1419",
+    "italian": "capo",
+    "chinese": "老板",
+    "english": "boss",
+    "pronunciation": "ˈkapo",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813324Z",
+    "examples": [
+      "Il capo è severo. - 老板很严格。",
+      "Parlo con il capo. - 我和老板说话。"
+    ]
+  },
+  {
+    "id": "1420",
+    "italian": "riunione",
+    "chinese": "会议",
+    "english": "meeting",
+    "pronunciation": "riunˈjone",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813324Z",
+    "examples": [
+      "Ho una riunione. - 我有一个会议。",
+      "La riunione è alle 10. - 会议在10点。"
+    ]
+  },
+  {
+    "id": "1421",
+    "italian": "progetto",
+    "chinese": "项目",
+    "english": "project",
+    "pronunciation": "proˈdʒɛtto",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813325Z",
+    "examples": [
+      "Lavoro su un progetto. - 我在做一个项目。",
+      "Il progetto è importante. - 项目很重要。"
+    ]
+  },
+  {
+    "id": "1422",
+    "italian": "compito",
+    "chinese": "任务/作业",
+    "english": "task",
+    "pronunciation": "ˈkɔmpito",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813326Z",
+    "examples": [
+      "Ho un compito da fare. - 我有任务要做。",
+      "Il compito è difficile. - 任务很难。"
+    ]
+  },
+  {
+    "id": "1423",
+    "italian": "stipendio",
+    "chinese": "工资",
+    "english": "salary",
+    "pronunciation": "stiˈpɛndjo",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813327Z",
+    "examples": [
+      "Il mio stipendio è buono. - 我的工资不错。",
+      "Ricevo lo stipendio. - 我收到工资。"
+    ]
+  },
+  {
+    "id": "1424",
+    "italian": "contratto",
+    "chinese": "合同",
+    "english": "contract",
+    "pronunciation": "konˈtratto",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813327Z",
+    "examples": [
+      "Firmo il contratto. - 我签合同。",
+      "Il contratto è importante. - 合同很重要。"
+    ]
+  },
+  {
+    "id": "1425",
+    "italian": "professione",
+    "chinese": "职业",
+    "english": "profession",
+    "pronunciation": "professˈsjone",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813328Z",
+    "examples": [
+      "Qual è la tua professione? - 你的职业是什么？",
+      "È una buona professione. - 这是一个好职业。"
+    ]
+  },
+  {
+    "id": "1426",
+    "italian": "carriera",
+    "chinese": "职业生涯",
+    "english": "career",
+    "pronunciation": "karˈrjɛra",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813329Z",
+    "examples": [
+      "La mia carriera è importante. - 我的职业生涯很重要。",
+      "Faccio carriera. - 我在发展职业。"
+    ]
+  },
+  {
+    "id": "1427",
+    "italian": "esperienza",
+    "chinese": "经验",
+    "english": "experience",
+    "pronunciation": "esperˈjɛntsa",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813330Z",
+    "examples": [
+      "Ho molta esperienza. - 我有很多经验。",
+      "L'esperienza è utile. - 经验很有用。"
+    ]
+  },
+  {
+    "id": "1428",
+    "italian": "curriculum",
+    "chinese": "简历",
+    "english": "resume",
+    "pronunciation": "kurˈrikulum",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813331Z",
+    "examples": [
+      "Mando il curriculum. - 我发送简历。",
+      "Il mio curriculum è aggiornato. - 我的简历是最新的。"
+    ]
+  },
+  {
+    "id": "1429",
+    "italian": "colloquio",
+    "chinese": "面试",
+    "english": "interview",
+    "pronunciation": "kolˈlɔkwjo",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813332Z",
+    "examples": [
+      "Ho un colloquio domani. - 我明天有面试。",
+      "Il colloquio è andato bene. - 面试进行得很好。"
+    ]
+  },
+  {
+    "id": "1430",
+    "italian": "studio",
+    "chinese": "学习/书房",
+    "english": "study",
+    "pronunciation": "ˈstudjo",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813333Z",
+    "examples": [
+      "Studio l'italiano. - 我学意大利语。",
+      "Il mio studio è piccolo. - 我的书房很小。"
+    ]
+  },
+  {
+    "id": "1431",
+    "italian": "studiare",
+    "chinese": "学习",
+    "english": "study",
+    "pronunciation": "stuˈdjare",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813334Z",
+    "examples": [
+      "Studio ogni giorno. - 我每天学习。",
+      "Devo studiare di più. - 我需要学习更多。"
+    ]
+  },
+  {
+    "id": "1432",
+    "italian": "scuola",
+    "chinese": "学校",
+    "english": "school",
+    "pronunciation": "ˈskwɔla",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813335Z",
+    "examples": [
+      "Vado a scuola. - 我去学校。",
+      "La scuola è vicina. - 学校很近。"
+    ]
+  },
+  {
+    "id": "1433",
+    "italian": "università",
+    "chinese": "大学",
+    "english": "university",
+    "pronunciation": "universiˈta",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813335Z",
+    "examples": [
+      "Studio all'università. - 我在大学学习。",
+      "L'università è grande. - 大学很大。"
+    ]
+  },
+  {
+    "id": "1434",
+    "italian": "corso",
+    "chinese": "课程",
+    "english": "course",
+    "pronunciation": "ˈkorso",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813336Z",
+    "examples": [
+      "Seguo un corso. - 我上一门课。",
+      "Il corso è interessante. - 课程很有趣。"
+    ]
+  },
+  {
+    "id": "1435",
+    "italian": "lezione",
+    "chinese": "课",
+    "english": "lesson",
+    "pronunciation": "letˈtsjone",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813337Z",
+    "examples": [
+      "Ho una lezione di italiano. - 我有一节意大利语课。",
+      "La lezione è alle 9. - 课在9点。"
+    ]
+  },
+  {
+    "id": "1436",
+    "italian": "insegnante",
+    "chinese": "教师",
+    "english": "teacher",
+    "pronunciation": "inseɲˈɲante",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813338Z",
+    "examples": [
+      "Il mio insegnante è bravo. - 我的老师很好。",
+      "L'insegnante spiega bene. - 老师解释得好。"
+    ]
+  },
+  {
+    "id": "1437",
+    "italian": "professore",
+    "chinese": "教授/老师",
+    "english": "professor",
+    "pronunciation": "professˈsore",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813338Z",
+    "examples": [
+      "Il professore è esperto. - 教授很专业。",
+      "Parlo con il professore. - 我和教授说话。"
+    ]
+  },
+  {
+    "id": "1438",
+    "italian": "studente",
+    "chinese": "学生",
+    "english": "student",
+    "pronunciation": "stuˈdɛnte",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813339Z",
+    "examples": [
+      "Sono uno studente. - 我是学生。",
+      "Gli studenti studiano. - 学生们学习。"
+    ]
+  },
+  {
+    "id": "1439",
+    "italian": "esame",
+    "chinese": "考试",
+    "english": "exam",
+    "pronunciation": "eˈzame",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813340Z",
+    "examples": [
+      "Ho un esame domani. - 我明天有考试。",
+      "L'esame è difficile. - 考试很难。"
+    ]
+  },
+  {
+    "id": "1440",
+    "italian": "voto",
+    "chinese": "成绩",
+    "english": "grade",
+    "pronunciation": "ˈvɔto",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813340Z",
+    "examples": [
+      "Ho preso un buon voto. - 我得了好成绩。",
+      "Il voto è alto. - 成绩很高。"
+    ]
+  },
+  {
+    "id": "1441",
+    "italian": "diploma",
+    "chinese": "文凭",
+    "english": "diploma",
+    "pronunciation": "diˈplɔma",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813341Z",
+    "examples": [
+      "Ho ottenuto il diploma. - 我获得了文凭。",
+      "Il diploma è importante. - 文凭很重要。"
+    ]
+  },
+  {
+    "id": "1442",
+    "italian": "laurea",
+    "chinese": "学位",
+    "english": "degree",
+    "pronunciation": "laˈurea",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813342Z",
+    "examples": [
+      "Ho la laurea. - 我有学位。",
+      "Prendo la laurea. - 我获得学位。"
+    ]
+  },
+  {
+    "id": "1443",
+    "italian": "biblioteca",
+    "chinese": "图书馆",
+    "english": "library",
+    "pronunciation": "bibliˈotɛka",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813343Z",
+    "examples": [
+      "Studio in biblioteca. - 我在图书馆学习。",
+      "La biblioteca è grande. - 图书馆很大。"
+    ]
+  },
+  {
+    "id": "1444",
+    "italian": "ricerca",
+    "chinese": "研究",
+    "english": "research",
+    "pronunciation": "riˈtʃɛrka",
+    "category": "工作学习",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813344Z",
+    "examples": [
+      "Faccio una ricerca. - 我做研究。",
+      "La ricerca è interessante. - 研究很有趣。"
+    ]
+  },
+  {
+    "id": "1445",
+    "italian": "amicizia",
+    "chinese": "友谊",
+    "english": "friendship",
+    "pronunciation": "amiˈtʃitsja",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813346Z",
+    "examples": [
+      "L'amicizia è importante. - 友谊很重要。",
+      "Abbiamo una bella amicizia. - 我们有美好的友谊。"
+    ]
+  },
+  {
+    "id": "1446",
+    "italian": "relazione",
+    "chinese": "关系",
+    "english": "relationship",
+    "pronunciation": "relatˈtsjone",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813346Z",
+    "examples": [
+      "Ho una buona relazione con lui. - 我和他关系很好。",
+      "La relazione è complicata. - 关系很复杂。"
+    ]
+  },
+  {
+    "id": "1447",
+    "italian": "rapporto",
+    "chinese": "关系",
+    "english": "relationship",
+    "pronunciation": "rapˈpɔrto",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813348Z",
+    "examples": [
+      "Il rapporto è forte. - 关系很牢固。",
+      "Abbiamo un buon rapporto. - 我们关系很好。"
+    ]
+  },
+  {
+    "id": "1448",
+    "italian": "vicino",
+    "chinese": "邻居",
+    "english": "neighbor",
+    "pronunciation": "viˈtʃino",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813349Z",
+    "examples": [
+      "Il mio vicino è gentile. - 我的邻居很友好。",
+      "Saluto i vicini. - 我向邻居打招呼。"
+    ]
+  },
+  {
+    "id": "1449",
+    "italian": "conoscente",
+    "chinese": "熟人",
+    "english": "acquaintance",
+    "pronunciation": "konoʃˈʃɛnte",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813350Z",
+    "examples": [
+      "È solo un conoscente. - 他只是个熟人。",
+      "Ho molti conoscenti. - 我有很多熟人。"
+    ]
+  },
+  {
+    "id": "1450",
+    "italian": "incontro",
+    "chinese": "会面/相遇",
+    "english": "meeting",
+    "pronunciation": "inˈkontro",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813350Z",
+    "examples": [
+      "Ho un incontro con lei. - 我和她有个会面。",
+      "L'incontro è alle 3. - 会面在3点。"
+    ]
+  },
+  {
+    "id": "1451",
+    "italian": "incontrare",
+    "chinese": "遇见",
+    "english": "meet",
+    "pronunciation": "inkontˈrare",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813351Z",
+    "examples": [
+      "Incontro un amico. - 我遇见一个朋友。",
+      "Ci incontriamo domani. - 我们明天见面。"
+    ]
+  },
+  {
+    "id": "1452",
+    "italian": "appuntamento",
+    "chinese": "约会",
+    "english": "appointment",
+    "pronunciation": "appuntaˈmento",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813352Z",
+    "examples": [
+      "Ho un appuntamento. - 我有个约会。",
+      "L'appuntamento è alle 7. - 约会在7点。"
+    ]
+  },
+  {
+    "id": "1453",
+    "italian": "invito",
+    "chinese": "邀请",
+    "english": "invitation",
+    "pronunciation": "inˈvito",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813353Z",
+    "examples": [
+      "Ricevo un invito. - 我收到邀请。",
+      "Grazie per l'invito! - 谢谢邀请！"
+    ]
+  },
+  {
+    "id": "1454",
+    "italian": "invitare",
+    "chinese": "邀请",
+    "english": "invite",
+    "pronunciation": "inviˈtare",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813354Z",
+    "examples": [
+      "Ti invito a cena. - 我邀请你吃晚饭。",
+      "Invito gli amici. - 我邀请朋友们。"
+    ]
+  },
+  {
+    "id": "1455",
+    "italian": "ospite",
+    "chinese": "客人",
+    "english": "guest",
+    "pronunciation": "ˈɔspite",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813354Z",
+    "examples": [
+      "Aspetto gli ospiti. - 我等客人。",
+      "Sei mio ospite. - 你是我的客人。"
+    ]
+  },
+  {
+    "id": "1456",
+    "italian": "visitare",
+    "chinese": "拜访/参观",
+    "english": "visit",
+    "pronunciation": "viziˈtare",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813355Z",
+    "examples": [
+      "Visito un amico. - 我拜访朋友。",
+      "Visitiamo il museo. - 我们参观博物馆。"
+    ]
+  },
+  {
+    "id": "1457",
+    "italian": "visita",
+    "chinese": "拜访/参观",
+    "english": "visit",
+    "pronunciation": "ˈvizita",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813356Z",
+    "examples": [
+      "Faccio una visita. - 我去拜访。",
+      "La visita è breve. - 拜访很短。"
+    ]
+  },
+  {
+    "id": "1458",
+    "italian": "salutare",
+    "chinese": "打招呼",
+    "english": "greet",
+    "pronunciation": "saluˈtare",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813357Z",
+    "examples": [
+      "Saluto gli amici. - 我向朋友打招呼。",
+      "Saluta tua madre! - 向你妈妈问好！"
+    ]
+  },
+  {
+    "id": "1459",
+    "italian": "saluto",
+    "chinese": "问候",
+    "english": "greeting",
+    "pronunciation": "saˈluto",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813357Z",
+    "examples": [
+      "Mando i miei saluti. - 我送上问候。",
+      "Un saluto cordiale. - 诚挚的问候。"
+    ]
+  },
+  {
+    "id": "1460",
+    "italian": "presentare",
+    "chinese": "介绍",
+    "english": "introduce",
+    "pronunciation": "prezenˈtare",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813358Z",
+    "examples": [
+      "Ti presento mia sorella. - 我给你介绍我妹妹。",
+      "Mi presento: sono Marco. - 我自我介绍：我是马可。"
+    ]
+  },
+  {
+    "id": "1461",
+    "italian": "presentazione",
+    "chinese": "介绍/演示",
+    "english": "presentation",
+    "pronunciation": "prezentatˈtsjone",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813359Z",
+    "examples": [
+      "Faccio una presentazione. - 我做介绍。",
+      "La presentazione è lunga. - 演示很长。"
+    ]
+  },
+  {
+    "id": "1462",
+    "italian": "compagnia",
+    "chinese": "陪伴/公司",
+    "english": "company",
+    "pronunciation": "kompaɲˈɲia",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813360Z",
+    "examples": [
+      "Mi piace la tua compagnia. - 我喜欢你的陪伴。",
+      "Lavoro per una compagnia. - 我为一家公司工作。"
+    ]
+  },
+  {
+    "id": "1463",
+    "italian": "gruppo",
+    "chinese": "小组",
+    "english": "group",
+    "pronunciation": "ˈɡruppo",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813360Z",
+    "examples": [
+      "Sono nel gruppo. - 我在小组里。",
+      "Il gruppo è grande. - 小组很大。"
+    ]
+  },
+  {
+    "id": "1464",
+    "italian": "comunità",
+    "chinese": "社区",
+    "english": "community",
+    "pronunciation": "komuniˈta",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813361Z",
+    "examples": [
+      "La comunità è importante. - 社区很重要。",
+      "Faccio parte della comunità. - 我是社区的一部分。"
+    ]
+  },
+  {
+    "id": "1465",
+    "italian": "società",
+    "chinese": "社会/公司",
+    "english": "society",
+    "pronunciation": "sotʃeˈta",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813362Z",
+    "examples": [
+      "Viviamo in società. - 我们生活在社会中。",
+      "La società cambia. - 社会在变化。"
+    ]
+  },
+  {
+    "id": "1466",
+    "italian": "pubblico",
+    "chinese": "公众/公共的",
+    "english": "public",
+    "pronunciation": "ˈpubbliko",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813363Z",
+    "examples": [
+      "È un luogo pubblico. - 这是公共场所。",
+      "Il pubblico applaude. - 观众鼓掌。"
+    ]
+  },
+  {
+    "id": "1467",
+    "italian": "privato",
+    "chinese": "私人的",
+    "english": "private",
+    "pronunciation": "priˈvato",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813363Z",
+    "examples": [
+      "È privato. - 这是私人的。",
+      "Ho un incontro privato. - 我有私人会面。"
+    ]
+  },
+  {
+    "id": "1468",
+    "italian": "rispetto",
+    "chinese": "尊重",
+    "english": "respect",
+    "pronunciation": "risˈpetto",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813364Z",
+    "examples": [
+      "Ho rispetto per te. - 我尊重你。",
+      "Il rispetto è importante. - 尊重很重要。"
+    ]
+  },
+  {
+    "id": "1469",
+    "italian": "educazione",
+    "chinese": "教育/礼貌",
+    "english": "education",
+    "pronunciation": "edukatˈtsjone",
+    "category": "社交关系",
+    "level": "A2",
+    "createdAt": "2025-10-11T10:15:32.813365Z",
+    "examples": [
+      "L'educazione è importante. - 教育很重要。",
+      "Ha molta educazione. - 他很有礼貌。"
+    ]
   }
 ]

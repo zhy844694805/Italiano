@@ -14,7 +14,12 @@
         "type": "choice",
         "question": "Marco住在哪里？",
         "questionItalian": "Dove abita Marco?",
-        "options": ["Milano", "Roma", "Firenze", "Napoli"],
+        "options": [
+          "Milano",
+          "Roma",
+          "Firenze",
+          "Napoli"
+        ],
         "answer": "Roma",
         "explanation": "文章第一段提到：Abito a Roma con la mia famiglia."
       },
@@ -23,7 +28,12 @@
         "type": "choice",
         "question": "Marco的妈妈是做什么工作的？",
         "questionItalian": "Che lavoro fa la madre di Marco?",
-        "options": ["医生", "老师", "护士", "秘书"],
+        "options": [
+          "医生",
+          "老师",
+          "护士",
+          "秘书"
+        ],
         "answer": "老师",
         "explanation": "文章提到：Mia madre...è insegnante in una scuola elementare（我妈妈是小学老师）。"
       },
@@ -32,7 +42,12 @@
         "type": "choice",
         "question": "Giulia多大了？",
         "questionItalian": "Quanti anni ha Giulia?",
-        "options": ["25", "28", "52", "55"],
+        "options": [
+          "25",
+          "28",
+          "52",
+          "55"
+        ],
         "answer": "28",
         "explanation": "文章第二段说：Ho una sorella maggiore, Giulia. Ha 28 anni."
       },
@@ -41,7 +56,10 @@
         "type": "true_false",
         "question": "Max是一只猫。",
         "questionItalian": "Max è un gatto.",
-        "options": ["真", "假"],
+        "options": [
+          "真",
+          "假"
+        ],
         "answer": "假",
         "explanation": "文章说：Abbiamo anche un cane che si chiama Max（我们有一只叫Max的狗）。"
       },
@@ -50,7 +68,12 @@
         "type": "choice",
         "question": "Marco一家星期天通常做什么？",
         "questionItalian": "Cosa fa la famiglia di Marco la domenica?",
-        "options": ["去餐厅", "去公园", "去电影院", "待在家"],
+        "options": [
+          "去餐厅",
+          "去公园",
+          "去电影院",
+          "待在家"
+        ],
         "answer": "去公园",
         "explanation": "文章说：La domenica andiamo sempre al parco insieme（星期天我们总是一起去公园）。"
       }
@@ -72,7 +95,12 @@
         "type": "choice",
         "question": "餐厅叫什么名字？",
         "questionItalian": "Come si chiama il ristorante?",
-        "options": ["La Bella Roma", "La Bella Italia", "Il Bel Paese", "La Dolce Vita"],
+        "options": [
+          "La Bella Roma",
+          "La Bella Italia",
+          "Il Bel Paese",
+          "La Dolce Vita"
+        ],
         "answer": "La Bella Italia",
         "explanation": "文章开头说：Il ristorante si chiama 'La Bella Italia'."
       },
@@ -81,7 +109,12 @@
         "type": "choice",
         "question": "\"我\"点了什么主菜？",
         "questionItalian": "Cosa ordina l'autore?",
-        "options": ["意大利面", "披萨和沙拉", "鱼和土豆", "提拉米苏"],
+        "options": [
+          "意大利面",
+          "披萨和沙拉",
+          "鱼和土豆",
+          "提拉米苏"
+        ],
         "answer": "披萨和沙拉",
         "explanation": "文章说：Io ordino una pizza Margherita e un'insalata."
       },
@@ -90,7 +123,12 @@
         "type": "choice",
         "question": "Paolo点了什么？",
         "questionItalian": "Cosa ordina Paolo?",
-        "options": ["培根蛋意面", "披萨", "鱼", "沙拉"],
+        "options": [
+          "培根蛋意面",
+          "披萨",
+          "鱼",
+          "沙拉"
+        ],
         "answer": "培根蛋意面",
         "explanation": "Il mio amico Paolo ordina gli spaghetti alla carbonara."
       },
@@ -99,7 +137,12 @@
         "type": "choice",
         "question": "他们喝了什么？",
         "questionItalian": "Cosa bevono?",
-        "options": ["啤酒", "水和红酒", "咖啡", "果汁"],
+        "options": [
+          "啤酒",
+          "水和红酒",
+          "咖啡",
+          "果汁"
+        ],
         "answer": "水和红酒",
         "explanation": "Per bere, ordiniamo acqua e vino rosso."
       },
@@ -108,7 +151,10 @@
         "type": "true_false",
         "question": "他们给了服务员小费。",
         "questionItalian": "Lasciano una mancia per il cameriere.",
-        "options": ["真", "假"],
+        "options": [
+          "真",
+          "假"
+        ],
         "answer": "真",
         "explanation": "文章最后说：paghiamo il conto e lasciamo una mancia per il cameriere."
       }
@@ -130,7 +176,12 @@
         "type": "choice",
         "question": "\"我\"几点起床？",
         "questionItalian": "A che ora si sveglia?",
-        "options": ["6:00", "7:00", "8:00", "9:00"],
+        "options": [
+          "6:00",
+          "7:00",
+          "8:00",
+          "9:00"
+        ],
         "answer": "7:00",
         "explanation": "Mi sveglio ogni giorno alle 7:00 del mattino."
       },
@@ -139,7 +190,12 @@
         "type": "choice",
         "question": "\"我\"怎么去上班？",
         "questionItalian": "Come va al lavoro?",
-        "options": ["开车", "走路", "坐公交", "骑自行车"],
+        "options": [
+          "开车",
+          "走路",
+          "坐公交",
+          "骑自行车"
+        ],
         "answer": "坐公交",
         "explanation": "prendo l'autobus per andare al lavoro（坐公交去上班）。"
       },
@@ -148,7 +204,12 @@
         "type": "choice",
         "question": "上班路上花多长时间？",
         "questionItalian": "Quanto dura il viaggio?",
-        "options": ["20分钟", "30分钟", "40分钟", "1小时"],
+        "options": [
+          "20分钟",
+          "30分钟",
+          "40分钟",
+          "1小时"
+        ],
         "answer": "30分钟",
         "explanation": "Il viaggio dura circa 30 minuti."
       },
@@ -157,7 +218,12 @@
         "type": "choice",
         "question": "\"我\"下午什么时候下班？",
         "questionItalian": "A che ora finisce di lavorare?",
-        "options": ["17:00", "18:00", "19:00", "19:30"],
+        "options": [
+          "17:00",
+          "18:00",
+          "19:00",
+          "19:30"
+        ],
         "answer": "18:00",
         "explanation": "Il pomeriggio continuo a lavorare fino alle 18:00."
       },
@@ -166,7 +232,10 @@
         "type": "true_false",
         "question": "\"我\"每天晚上都去健身房。",
         "questionItalian": "Va in palestra ogni sera.",
-        "options": ["真", "假"],
+        "options": [
+          "真",
+          "假"
+        ],
         "answer": "假",
         "explanation": "文章说：a volte vado in palestra（有时去健身房），不是每天。"
       }
@@ -188,7 +257,12 @@
         "type": "choice",
         "question": "他们什么时候到达佛罗伦萨？",
         "questionItalian": "Quando sono arrivati a Firenze?",
-        "options": ["周六早上10点", "周六下午", "周日早上", "周五晚上"],
+        "options": [
+          "周六早上10点",
+          "周六下午",
+          "周日早上",
+          "周五晚上"
+        ],
         "answer": "周六早上10点",
         "explanation": "Siamo partiti sabato mattina presto e siamo arrivati verso le 10:00."
       },
@@ -197,7 +271,12 @@
         "type": "choice",
         "question": "他们参观的第一个地方是什么？",
         "questionItalian": "Qual è il primo posto che hanno visitato?",
-        "options": ["乌菲兹美术馆", "大教堂", "老桥", "波波里花园"],
+        "options": [
+          "乌菲兹美术馆",
+          "大教堂",
+          "老桥",
+          "波波里花园"
+        ],
         "answer": "大教堂",
         "explanation": "Prima di tutto, siamo andati a vedere il Duomo."
       },
@@ -206,7 +285,12 @@
         "type": "choice",
         "question": "\"我\"午餐吃了什么？",
         "questionItalian": "Cosa ha mangiato a pranzo?",
-        "options": ["披萨", "意面", "佛罗伦萨牛排", "鱼"],
+        "options": [
+          "披萨",
+          "意面",
+          "佛罗伦萨牛排",
+          "鱼"
+        ],
         "answer": "佛罗伦萨牛排",
         "explanation": "Io ho preso la bistecca alla fiorentina（我点了佛罗伦萨牛排）。"
       },
@@ -215,7 +299,12 @@
         "type": "choice",
         "question": "他们在哪里买了纪念品？",
         "questionItalian": "Dove hanno comprato i souvenir?",
-        "options": ["大教堂", "美术馆", "老桥", "花园"],
+        "options": [
+          "大教堂",
+          "美术馆",
+          "老桥",
+          "花园"
+        ],
         "answer": "老桥",
         "explanation": "Nel pomeriggio abbiamo passeggiato sul Ponte Vecchio e abbiamo comprato alcuni souvenir."
       },
@@ -224,7 +313,10 @@
         "type": "true_false",
         "question": "周日他们回家前参观了波波里花园。",
         "questionItalian": "Domenica hanno visitato il Giardino di Boboli prima di tornare.",
-        "options": ["真", "假"],
+        "options": [
+          "真",
+          "假"
+        ],
         "answer": "真",
         "explanation": "Domenica mattina, prima di tornare a casa, abbiamo visitato il Giardino di Boboli."
       }
@@ -246,7 +338,12 @@
         "type": "choice",
         "question": "\"我\"的预算是多少？",
         "questionItalian": "Qual è il budget?",
-        "options": ["500欧", "600欧", "700欧", "800欧"],
+        "options": [
+          "500欧",
+          "600欧",
+          "700欧",
+          "800欧"
+        ],
         "answer": "600欧",
         "explanation": "Il mio budget è di circa 600 euro al mese."
       },
@@ -255,7 +352,12 @@
         "type": "choice",
         "question": "第一套公寓有多大？",
         "questionItalian": "Quanto è grande il primo appartamento?",
-        "options": ["25平米", "35平米", "45平米", "55平米"],
+        "options": [
+          "25平米",
+          "35平米",
+          "45平米",
+          "55平米"
+        ],
         "answer": "35平米",
         "explanation": "Il primo appartamento è un monolocale di 35 metri quadrati."
       },
@@ -264,7 +366,10 @@
         "type": "true_false",
         "question": "第二套公寓的价格包含费用。",
         "questionItalian": "Il secondo appartamento include le spese.",
-        "options": ["真", "假"],
+        "options": [
+          "真",
+          "假"
+        ],
         "answer": "真",
         "explanation": "Il prezzo è 700 euro al mese, ma le spese sono incluse."
       },
@@ -273,7 +378,12 @@
         "type": "choice",
         "question": "第三套公寓离大学有多远？",
         "questionItalian": "Quanto dista il terzo appartamento dall'università?",
-        "options": ["5分钟", "10分钟", "15分钟", "20分钟"],
+        "options": [
+          "5分钟",
+          "10分钟",
+          "15分钟",
+          "20分钟"
+        ],
         "answer": "10分钟",
         "explanation": "È a solo 10 minuti dall'università a piedi."
       },
@@ -282,7 +392,12 @@
         "type": "choice",
         "question": "第三套公寓的月租是多少？",
         "questionItalian": "Quanto costa il terzo appartamento?",
-        "options": ["550欧", "600欧", "650欧", "700欧"],
+        "options": [
+          "550欧",
+          "600欧",
+          "650欧",
+          "700欧"
+        ],
         "answer": "650欧",
         "explanation": "È arredato e costa 650 euro al mese, spese incluse."
       }
@@ -304,7 +419,12 @@
         "type": "choice",
         "question": "春天从几月开始？",
         "questionItalian": "Quando inizia la primavera?",
-        "options": ["二月", "三月", "四月", "五月"],
+        "options": [
+          "二月",
+          "三月",
+          "四月",
+          "五月"
+        ],
         "answer": "三月",
         "explanation": "La primavera inizia a marzo."
       },
@@ -313,7 +433,12 @@
         "type": "choice",
         "question": "夏天人们通常去哪里度假？",
         "questionItalian": "Dove vanno le persone in estate?",
-        "options": ["只去海边", "只去山里", "海边或山里", "待在家"],
+        "options": [
+          "只去海边",
+          "只去山里",
+          "海边或山里",
+          "待在家"
+        ],
         "answer": "海边或山里",
         "explanation": "Molte persone vanno al mare o in montagna per le vacanze."
       },
@@ -322,7 +447,12 @@
         "type": "choice",
         "question": "秋天的特点是什么？",
         "questionItalian": "Cosa succede in autunno?",
-        "options": ["下雪", "树叶变色掉落", "开花", "很热"],
+        "options": [
+          "下雪",
+          "树叶变色掉落",
+          "开花",
+          "很热"
+        ],
         "answer": "树叶变色掉落",
         "explanation": "Le foglie cambiano colore e cadono dagli alberi."
       },
@@ -331,7 +461,10 @@
         "type": "true_false",
         "question": "冬天在山上会下雪。",
         "questionItalian": "In inverno nevica in montagna.",
-        "options": ["真", "假"],
+        "options": [
+          "真",
+          "假"
+        ],
         "answer": "真",
         "explanation": "Fa freddo e in montagna nevica."
       },
@@ -340,7 +473,12 @@
         "type": "choice",
         "question": "\"我\"冬天喜欢做什么？",
         "questionItalian": "Cosa piace fare all'autore in inverno?",
-        "options": ["游泳", "滑雪", "爬山", "跑步"],
+        "options": [
+          "游泳",
+          "滑雪",
+          "爬山",
+          "跑步"
+        ],
         "answer": "滑雪",
         "explanation": "Mi piace l'inverno perché posso sciare."
       }
@@ -362,7 +500,12 @@
         "type": "choice",
         "question": "Sofia在哪里工作？",
         "questionItalian": "Dove lavora Sofia?",
-        "options": ["书店", "餐厅", "酒吧", "学校"],
+        "options": [
+          "书店",
+          "餐厅",
+          "酒吧",
+          "学校"
+        ],
         "answer": "书店",
         "explanation": "Da tre settimane lavoro in una libreria（我在一家书店工作了三周）。"
       },
@@ -371,7 +514,12 @@
         "type": "choice",
         "question": "书店卖什么？",
         "questionItalian": "Cosa vende la libreria?",
-        "options": ["只卖书", "书和杂志", "书、杂志和明信片", "只卖明信片"],
+        "options": [
+          "只卖书",
+          "书和杂志",
+          "书、杂志和明信片",
+          "只卖明信片"
+        ],
         "answer": "书、杂志和明信片",
         "explanation": "Vende libri, riviste e anche cartoline."
       },
@@ -380,7 +528,12 @@
         "type": "choice",
         "question": "Sofia的工作时间是几点到几点？",
         "questionItalian": "Qual è l'orario di lavoro di Sofia?",
-        "options": ["8:00-17:00", "9:00-18:00", "10:00-19:00", "9:00-17:00"],
+        "options": [
+          "8:00-17:00",
+          "9:00-18:00",
+          "10:00-19:00",
+          "9:00-17:00"
+        ],
         "answer": "9:00-18:00",
         "explanation": "Il mio orario è dalle 9:00 alle 18:00."
       },
@@ -389,7 +542,10 @@
         "type": "true_false",
         "question": "Sofia对这份工作的薪水很满意。",
         "questionItalian": "Sofia è soddisfatta dello stipendio.",
-        "options": ["真", "假"],
+        "options": [
+          "真",
+          "假"
+        ],
         "answer": "假",
         "explanation": "L'unico problema è che guadagno poco（唯一的问题是工资少）。"
       },
@@ -398,7 +554,12 @@
         "type": "choice",
         "question": "书店有时组织什么活动？",
         "questionItalian": "Che eventi organizza la libreria?",
-        "options": ["音乐会", "新书发布会", "摄影展", "烹饪课"],
+        "options": [
+          "音乐会",
+          "新书发布会",
+          "摄影展",
+          "烹饪课"
+        ],
         "answer": "新书发布会",
         "explanation": "A volte organizziamo anche presentazioni di libri con gli autori."
       }
@@ -420,7 +581,12 @@
         "type": "choice",
         "question": "\"我\"什么时候开始学做饭的？",
         "questionItalian": "Quando ha iniziato a cucinare?",
-        "options": ["1年前", "2年前", "3年前", "5年前"],
+        "options": [
+          "1年前",
+          "2年前",
+          "3年前",
+          "5年前"
+        ],
         "answer": "3年前",
         "explanation": "Ho iniziato a cucinare tre anni fa."
       },
@@ -429,7 +595,12 @@
         "type": "choice",
         "question": "\"我\"最喜欢做的菜是什么？",
         "questionItalian": "Qual è il piatto preferito da cucinare?",
-        "options": ["千层面", "青酱意面", "牛肝菌烩饭", "披萨"],
+        "options": [
+          "千层面",
+          "青酱意面",
+          "牛肝菌烩饭",
+          "披萨"
+        ],
         "answer": "青酱意面",
         "explanation": "Il mio piatto preferito da cucinare è la pasta al pesto."
       },
@@ -438,7 +609,12 @@
         "type": "choice",
         "question": "上周六做千层面花了多长时间？",
         "questionItalian": "Quanto tempo ci è voluto per fare le lasagne?",
-        "options": ["1小时", "2小时", "3小时", "4小时"],
+        "options": [
+          "1小时",
+          "2小时",
+          "3小时",
+          "4小时"
+        ],
         "answer": "3小时",
         "explanation": "Ci sono volute tre ore（花了三小时）。"
       },
@@ -447,7 +623,12 @@
         "type": "choice",
         "question": "\"我\"最近尝试的新菜是什么？",
         "questionItalian": "Qual è l'ultimo piatto che ha provato?",
-        "options": ["青酱意面", "千层面", "牛肝菌烩饭", "披萨"],
+        "options": [
+          "青酱意面",
+          "千层面",
+          "牛肝菌烩饭",
+          "披萨"
+        ],
         "answer": "牛肝菌烩饭",
         "explanation": "L'ultimo piatto che ho provato è il risotto ai funghi porcini."
       },
@@ -456,7 +637,10 @@
         "type": "true_false",
         "question": "烹饪让\"我\"感到放松和有创造力。",
         "questionItalian": "Cucinare lo rilassa e lo fa sentire creativo.",
-        "options": ["真", "假"],
+        "options": [
+          "真",
+          "假"
+        ],
         "answer": "真",
         "explanation": "Cucinare mi rilassa e mi fa sentire creativo."
       }
@@ -478,7 +662,12 @@
         "type": "choice",
         "question": "超市通常几点开门？",
         "questionItalian": "A che ora aprono i supermercati?",
-        "options": ["7:00", "8:00或9:00", "10:00", "11:00"],
+        "options": [
+          "7:00",
+          "8:00或9:00",
+          "10:00",
+          "11:00"
+        ],
         "answer": "8:00或9:00",
         "explanation": "I supermercati di solito aprono alle 8:00 o alle 9:00."
       },
@@ -487,7 +676,10 @@
         "type": "true_false",
         "question": "超市周日也营业。",
         "questionItalian": "I supermercati sono aperti la domenica.",
-        "options": ["真", "假"],
+        "options": [
+          "真",
+          "假"
+        ],
         "answer": "真",
         "explanation": "Molti supermercati sono aperti anche la domenica."
       },
@@ -496,7 +688,12 @@
         "type": "choice",
         "question": "小商店的午休时间是几点到几点？",
         "questionItalian": "Quando chiudono i negozi piccoli per pranzo?",
-        "options": ["12:00-15:00", "13:00-16:00或17:00", "14:00-17:00", "不午休"],
+        "options": [
+          "12:00-15:00",
+          "13:00-16:00或17:00",
+          "14:00-17:00",
+          "不午休"
+        ],
         "answer": "13:00-16:00或17:00",
         "explanation": "Chiudono per la pausa pranzo dalle 13:00 alle 16:00 o alle 17:00."
       },
@@ -505,7 +702,12 @@
         "type": "choice",
         "question": "餐厅晚餐时间从几点开始？",
         "questionItalian": "A che ora aprono i ristoranti per cena?",
-        "options": ["18:00", "19:00", "20:00", "21:00"],
+        "options": [
+          "18:00",
+          "19:00",
+          "20:00",
+          "21:00"
+        ],
         "answer": "19:00",
         "explanation": "Per cena aprono dalle 19:00."
       },
@@ -514,7 +716,10 @@
         "type": "true_false",
         "question": "有药房全天24小时营业应对紧急情况。",
         "questionItalian": "C'è una farmacia aperta di notte per le emergenze.",
-        "options": ["真", "假"],
+        "options": [
+          "真",
+          "假"
+        ],
         "answer": "真",
         "explanation": "C'è sempre una farmacia di turno aperta anche di notte per le emergenze."
       }
@@ -536,7 +741,12 @@
         "type": "choice",
         "question": "\"我\"为什么学意大利语？",
         "questionItalian": "Perché studia l'italiano?",
-        "options": ["去旅游", "工作需要", "兴趣爱好", "家人要求"],
+        "options": [
+          "去旅游",
+          "工作需要",
+          "兴趣爱好",
+          "家人要求"
+        ],
         "answer": "工作需要",
         "explanation": "Ho iniziato a studiare italiano...perché voglio trasferirmi in Italia per lavoro."
       },
@@ -545,7 +755,12 @@
         "type": "choice",
         "question": "\"我\"每周上几次意大利语课？",
         "questionItalian": "Quante volte alla settimana frequenta il corso?",
-        "options": ["一次", "两次", "三次", "四次"],
+        "options": [
+          "一次",
+          "两次",
+          "三次",
+          "四次"
+        ],
         "answer": "两次",
         "explanation": "Frequento un corso di italiano due volte alla settimana."
       },
@@ -554,7 +769,12 @@
         "type": "choice",
         "question": "在家\"我\"怎么学习意大利语？",
         "questionItalian": "Come studia a casa?",
-        "options": ["只看书", "看电影和听播客", "只用app", "不在家学习"],
+        "options": [
+          "只看书",
+          "看电影和听播客",
+          "只用app",
+          "不在家学习"
+        ],
         "answer": "看电影和听播客",
         "explanation": "Guardo film italiani con i sottotitoli e ascolto podcast in italiano."
       },
@@ -563,7 +783,12 @@
         "type": "choice",
         "question": "\"我\"每天学习多长时间？",
         "questionItalian": "Quanto tempo studia ogni giorno?",
-        "options": ["至少15分钟", "至少30分钟", "至少1小时", "至少2小时"],
+        "options": [
+          "至少15分钟",
+          "至少30分钟",
+          "至少1小时",
+          "至少2小时"
+        ],
         "answer": "至少30分钟",
         "explanation": "Cerco di studiare almeno 30 minuti al giorno."
       },
@@ -572,11 +797,822 @@
         "type": "true_false",
         "question": "如果通过考试，\"我\"夏天会去罗马学习两周。",
         "questionItalian": "Se supera l'esame, andrà a Roma per due settimane.",
-        "options": ["真", "假"],
+        "options": [
+          "真",
+          "假"
+        ],
         "answer": "真",
         "explanation": "Se supero l'esame, in estate andrò a Roma per una vacanza studio di due settimane."
       }
     ],
     "createdAt": "2025-01-08T00:00:00.000Z"
+  },
+  {
+    "id": "reading_011",
+    "title": "Offerte del supermercato",
+    "titleChinese": "超市促销",
+    "level": "A1",
+    "category": "实用文本",
+    "content": "SUPERMERCATO COOP - OFFERTE DELLA SETTIMANA\n\nFrutta e Verdura:\n• Mele: 1,50€ al kg\n• Pomodori: 2,00€ al kg\n• Insalata: 0,80€ al pezzo\n\nLatticini:\n• Latte (1 litro): 0,99€\n• Formaggio: 8,50€ al kg\n• Yogurt (confezione da 4): 2,30€\n\nCarne e Pesce:\n• Pollo: 6,90€ al kg\n• Pesce fresco: 12,00€ al kg\n\nORARI: Lunedì-Sabato 8:00-20:00, Domenica 9:00-13:00\n\nOfferte valide dal 10 al 16 gennaio.",
+    "wordCount": 78,
+    "estimatedMinutes": 2,
+    "questions": [
+      {
+        "id": "q1",
+        "type": "choice",
+        "question": "苹果多少钱一公斤？",
+        "questionItalian": "Quanto costano le mele al kg?",
+        "options": [
+          "0,80€",
+          "1,50€",
+          "2,00€",
+          "2,30€"
+        ],
+        "answer": "1,50€",
+        "explanation": "广告中写着：Mele: 1,50€ al kg"
+      },
+      {
+        "id": "q2",
+        "type": "choice",
+        "question": "星期天超市什么时候开门？",
+        "questionItalian": "A che ora apre il supermercato la domenica?",
+        "options": [
+          "8:00",
+          "9:00",
+          "13:00",
+          "20:00"
+        ],
+        "answer": "9:00",
+        "explanation": "营业时间显示：Domenica 9:00-13:00"
+      },
+      {
+        "id": "q3",
+        "type": "choice",
+        "question": "一盒酸奶（4个装）多少钱？",
+        "questionItalian": "Quanto costa una confezione di yogurt?",
+        "options": [
+          "0,99€",
+          "2,00€",
+          "2,30€",
+          "8,50€"
+        ],
+        "answer": "2,30€",
+        "explanation": "广告中：Yogurt (confezione da 4): 2,30€"
+      },
+      {
+        "id": "q4",
+        "type": "true_false",
+        "question": "促销活动持续一周。",
+        "questionItalian": "Le offerte durano una settimana.",
+        "options": [
+          "真",
+          "假"
+        ],
+        "answer": "真",
+        "explanation": "文末写着：Offerte valide dal 10 al 16 gennaio（促销有效期1月10-16日，共7天）"
+      },
+      {
+        "id": "q5",
+        "type": "choice",
+        "question": "什么东西最贵？",
+        "questionItalian": "Quale prodotto costa di più?",
+        "options": [
+          "鸡肉",
+          "新鲜鱼",
+          "奶酪",
+          "西红柿"
+        ],
+        "answer": "新鲜鱼",
+        "explanation": "新鲜鱼12,00€/kg是价格最高的商品"
+      }
+    ],
+    "createdAt": "2025-10-11T14:59:32.421481Z"
+  },
+  {
+    "id": "reading_012",
+    "title": "Al cinema",
+    "titleChinese": "电影院海报",
+    "level": "A1",
+    "category": "实用文本",
+    "content": "CINEMA ROMA - PROGRAMMA DEL WEEKEND\n\nSABATO 13 GENNAIO\nSala 1: \"La Dolce Vita\" (Film classico italiano)\nOrari: 15:00 - 18:30 - 21:00\n\nSala 2: \"Avventura a Roma\" (Commedia)\nOrari: 16:00 - 19:30\n\nDOMENICA 14 GENNAIO\nSala 1: \"Il Grande Blu\" (Documentario)\nOrari: 10:00 - 14:00 - 17:00\n\nSala 2: \"Amore a Firenze\" (Film romantico)\nOrari: 15:30 - 18:00 - 20:30\n\nPREZZI:\n• Intero: 10€\n• Ridotto (studenti/anziani): 7€\n• Bambini sotto 12 anni: 5€\n\nInfo: www.cinemaroma.it - Tel. 06-1234567",
+    "wordCount": 96,
+    "estimatedMinutes": 2,
+    "questions": [
+      {
+        "id": "q1",
+        "type": "choice",
+        "question": "星期六晚上9点放映什么电影？",
+        "questionItalian": "Quale film c'è sabato alle 21:00?",
+        "options": [
+          "Il Grande Blu",
+          "La Dolce Vita",
+          "Amore a Firenze",
+          "Avventura a Roma"
+        ],
+        "answer": "La Dolce Vita",
+        "explanation": "星期六第一厅21:00场次是《甜蜜生活》"
+      },
+      {
+        "id": "q2",
+        "type": "choice",
+        "question": "学生票多少钱？",
+        "questionItalian": "Quanto costa il biglietto ridotto?",
+        "options": [
+          "5€",
+          "7€",
+          "10€",
+          "12€"
+        ],
+        "answer": "7€",
+        "explanation": "价格表显示：Ridotto (studenti/anziani): 7€"
+      },
+      {
+        "id": "q3",
+        "type": "true_false",
+        "question": "星期天有纪录片放映。",
+        "questionItalian": "Domenica c'è un documentario.",
+        "options": [
+          "真",
+          "假"
+        ],
+        "answer": "真",
+        "explanation": "星期天第一厅放映：Il Grande Blu (Documentario)"
+      },
+      {
+        "id": "q4",
+        "type": "choice",
+        "question": "《爱在佛罗伦萨》是什么类型的电影？",
+        "questionItalian": "Che tipo di film è 'Amore a Firenze'?",
+        "options": [
+          "喜剧",
+          "纪录片",
+          "浪漫片",
+          "经典片"
+        ],
+        "answer": "浪漫片",
+        "explanation": "海报标注：Amore a Firenze (Film romantico)"
+      },
+      {
+        "id": "q5",
+        "type": "choice",
+        "question": "10岁的孩子票价是多少？",
+        "questionItalian": "Quanto paga un bambino di 10 anni?",
+        "options": [
+          "5€",
+          "7€",
+          "10€",
+          "免费"
+        ],
+        "answer": "5€",
+        "explanation": "价格表：Bambini sotto 12 anni: 5€（12岁以下儿童5欧）"
+      }
+    ],
+    "createdAt": "2025-10-11T14:59:32.421487Z"
+  },
+  {
+    "id": "reading_013",
+    "title": "Annuncio: Appartamento in affitto",
+    "titleChinese": "出租公寓广告",
+    "level": "A1",
+    "category": "实用文本",
+    "content": "AFFITTASI APPARTAMENTO - CENTRO MILANO\n\nAppartamento luminoso e moderno, 3 camere da letto, 2 bagni, cucina, soggiorno con balcone.\n\nCaratteristiche:\n• Piano: 3° piano con ascensore\n• Superficie: 85 mq\n• Arredato: Sì (mobili nuovi)\n• Riscaldamento: Autonomo\n• Aria condizionata: Sì\n• Parcheggio: 1 posto auto\n\nPosizione: Vicino alla metro (5 minuti a piedi), supermercato, farmacia, scuole.\n\nDisponibile da: 1° febbraio\nAffitto mensile: 1.200€ (spese condominiali incluse)\n\nContatto: Maria Rossi\nTel: 02-9876543\nEmail: maria.rossi@email.it\n\nSolo referenze serie!",
+    "wordCount": 89,
+    "estimatedMinutes": 2,
+    "questions": [
+      {
+        "id": "q1",
+        "type": "choice",
+        "question": "公寓有几个卧室？",
+        "questionItalian": "Quante camere da letto ha l'appartamento?",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": "3",
+        "explanation": "广告开头说：3 camere da letto"
+      },
+      {
+        "id": "q2",
+        "type": "choice",
+        "question": "每月租金是多少？",
+        "questionItalian": "Quanto costa l'affitto al mese?",
+        "options": [
+          "850€",
+          "1.000€",
+          "1.200€",
+          "1.500€"
+        ],
+        "answer": "1.200€",
+        "explanation": "租金部分：Affitto mensile: 1.200€"
+      },
+      {
+        "id": "q3",
+        "type": "true_false",
+        "question": "公寓有家具。",
+        "questionItalian": "L'appartamento è arredato.",
+        "options": [
+          "真",
+          "假"
+        ],
+        "answer": "真",
+        "explanation": "特征中写着：Arredato: Sì (mobili nuovi)"
+      },
+      {
+        "id": "q4",
+        "type": "choice",
+        "question": "公寓在几楼？",
+        "questionItalian": "A che piano è l'appartamento?",
+        "options": [
+          "1楼",
+          "2楼",
+          "3楼",
+          "5楼"
+        ],
+        "answer": "3楼",
+        "explanation": "特征：Piano: 3° piano con ascensore"
+      },
+      {
+        "id": "q5",
+        "type": "true_false",
+        "question": "地铁站离公寓很近。",
+        "questionItalian": "La metro è vicina all'appartamento.",
+        "options": [
+          "真",
+          "假"
+        ],
+        "answer": "真",
+        "explanation": "位置说明：Vicino alla metro (5 minuti a piedi)"
+      }
+    ],
+    "createdAt": "2025-10-11T14:59:32.421488Z"
+  },
+  {
+    "id": "reading_014",
+    "title": "Previsioni meteo per il weekend",
+    "titleChinese": "周末天气预报",
+    "level": "A2",
+    "category": "实用文本",
+    "content": "METEO ITALIA - PREVISIONI 13-14 GENNAIO\n\nSABATO 13 GENNAIO\nNord Italia: Cielo sereno al mattino, possibili nuvole nel pomeriggio. Temperature: minima 2°C, massima 12°C. Vento debole da nord-est.\n\nCentro Italia: Bel tempo per tutta la giornata. Temperature: minima 5°C, massima 15°C. Mare calmo.\n\nSud Italia e Isole: Parzialmente nuvoloso con possibili piogge nel pomeriggio in Sicilia. Temperature: minima 8°C, massima 16°C.\n\nDOMENICA 14 GENNAIO\nNord: Cielo coperto con piogge leggere dalla sera. Temperature in calo. Massima 10°C.\n\nCentro: Nuvole in aumento, ma senza piogge. Temperature stabili.\n\nSud: Miglioramento generale, ritorno del sole. Temperature in leggero aumento.\n\nConsigli: Portate l'ombrello nel Nord e in Sicilia! Al Centro e Sud Italia è un buon weekend per passeggiate all'aria aperta.",
+    "wordCount": 134,
+    "estimatedMinutes": 3,
+    "questions": [
+      {
+        "id": "q1",
+        "type": "choice",
+        "question": "星期六意大利北部的最高温度是多少？",
+        "questionItalian": "Qual è la temperatura massima al Nord sabato?",
+        "options": [
+          "10°C",
+          "12°C",
+          "15°C",
+          "16°C"
+        ],
+        "answer": "12°C",
+        "explanation": "北部天气：Temperature: minima 2°C, massima 12°C"
+      },
+      {
+        "id": "q2",
+        "type": "choice",
+        "question": "星期六哪里可能下雨？",
+        "questionItalian": "Dove può piovere sabato?",
+        "options": [
+          "北部",
+          "中部",
+          "西西里",
+          "全国"
+        ],
+        "answer": "西西里",
+        "explanation": "南部天气：possibili piogge nel pomeriggio in Sicilia"
+      },
+      {
+        "id": "q3",
+        "type": "true_false",
+        "question": "星期天意大利北部会下雨。",
+        "questionItalian": "Domenica piove al Nord Italia.",
+        "options": [
+          "真",
+          "假"
+        ],
+        "answer": "真",
+        "explanation": "星期天北部：Cielo coperto con piogge leggere dalla sera"
+      },
+      {
+        "id": "q4",
+        "type": "choice",
+        "question": "哪个地区星期六有最高温度？",
+        "questionItalian": "Quale zona ha la temperatura più alta sabato?",
+        "options": [
+          "北部",
+          "中部",
+          "南部",
+          "都一样"
+        ],
+        "answer": "南部",
+        "explanation": "南部最高温16°C，高于北部12°C和中部15°C"
+      },
+      {
+        "id": "q5",
+        "type": "choice",
+        "question": "天气预报建议什么？",
+        "questionItalian": "Cosa consigliano le previsioni?",
+        "options": [
+          "待在家",
+          "带雨伞去北部和西西里",
+          "去海滩",
+          "待在室内"
+        ],
+        "answer": "带雨伞去北部和西西里",
+        "explanation": "建议：Portate l'ombrello nel Nord e in Sicilia!"
+      }
+    ],
+    "createdAt": "2025-10-11T14:59:32.421491Z"
+  },
+  {
+    "id": "reading_015",
+    "title": "Post sui social media",
+    "titleChinese": "社交媒体帖子",
+    "level": "A2",
+    "category": "实用文本",
+    "content": "📱 INSTAGRAM POST - @sofia_travels\n\n📍 Venezia, Italia\n⏰ Pubblicato 2 ore fa\n\nBuongiorno a tutti! 🌞\n\nSono finalmente arrivata a Venezia dopo un viaggio in treno di 3 ore da Milano. Questa città è davvero magica! Stamattina ho visitato Piazza San Marco e la Basilica - sono rimasta senza parole per la loro bellezza. 😍\n\nOra sono seduta in un caffè vicino al Canal Grande, sto bevendo un caffè e mangiando un delizioso tiramisù. L'atmosfera qui è incredibile! Ci sono gondole che passano continuamente e la gente sembra molto felice.\n\nNel pomeriggio voglio fare un giro in gondola e visitare il Ponte di Rialto. Stasera ho prenotato un ristorante tipico dove proverò i cicchetti veneziani.\n\nDomani parto per Firenze. Mi dispiace lasciare Venezia così presto, ma la mia avventura italiana continua! 🇮🇹✨\n\nChi di voi è già stato a Venezia? Consigliatemi altri posti da visitare!\n\n❤️ 1,234 Mi piace\n💬 87 Commenti\n🔄 45 Condivisioni",
+    "wordCount": 162,
+    "estimatedMinutes": 3,
+    "questions": [
+      {
+        "id": "q1",
+        "type": "choice",
+        "question": "Sofia是怎么到威尼斯的？",
+        "questionItalian": "Come è arrivata Sofia a Venezia?",
+        "options": [
+          "飞机",
+          "火车",
+          "汽车",
+          "船"
+        ],
+        "answer": "火车",
+        "explanation": "文中说：dopo un viaggio in treno di 3 ore da Milano"
+      },
+      {
+        "id": "q2",
+        "type": "choice",
+        "question": "Sofia上午去了哪里？",
+        "questionItalian": "Dove è andata Sofia stamattina?",
+        "options": [
+          "里亚托桥",
+          "运河",
+          "圣马可广场",
+          "餐厅"
+        ],
+        "answer": "圣马可广场",
+        "explanation": "文中：Stamattina ho visitato Piazza San Marco e la Basilica"
+      },
+      {
+        "id": "q3",
+        "type": "choice",
+        "question": "Sofia下午想做什么？",
+        "questionItalian": "Cosa vuole fare Sofia nel pomeriggio?",
+        "options": [
+          "睡觉",
+          "坐贡多拉和参观里亚托桥",
+          "回米兰",
+          "去佛罗伦萨"
+        ],
+        "answer": "坐贡多拉和参观里亚托桥",
+        "explanation": "下午计划：Nel pomeriggio voglio fare un giro in gondola e visitare il Ponte di Rialto"
+      },
+      {
+        "id": "q4",
+        "type": "true_false",
+        "question": "Sofia明天会留在威尼斯。",
+        "questionItalian": "Sofia resta a Venezia domani.",
+        "options": [
+          "真",
+          "假"
+        ],
+        "answer": "假",
+        "explanation": "文中说：Domani parto per Firenze（明天出发去佛罗伦萨）"
+      },
+      {
+        "id": "q5",
+        "type": "choice",
+        "question": "这个帖子收到了多少个赞？",
+        "questionItalian": "Quanti 'Mi piace' ha ricevuto il post?",
+        "options": [
+          "45",
+          "87",
+          "1234",
+          "162"
+        ],
+        "answer": "1234",
+        "explanation": "底部统计：❤️ 1,234 Mi piace"
+      }
+    ],
+    "createdAt": "2025-10-11T14:59:32.421493Z"
+  },
+  {
+    "id": "reading_016",
+    "title": "Email di lavoro",
+    "titleChinese": "工作邮件",
+    "level": "A2",
+    "category": "工作学习",
+    "content": "Da: marco.bianchi@techitalia.com\nA: team@techitalia.com\nData: 15 gennaio 2025, 09:30\nOggetto: Riunione importante - Nuovo progetto\n\nBuongiorno a tutti,\n\nVi scrivo per informarvi che lunedì prossimo, 22 gennaio, avremo una riunione molto importante alle ore 14:00 in sala conferenze al terzo piano.\n\nDurante la riunione discuteremo il nuovo progetto per il cliente \"Milano Fashion Week\". Questo progetto è una grande opportunità per la nostra azienda e richiede la collaborazione di tutto il team.\n\nVi chiedo cortesemente di:\n1. Preparare le vostre idee e proposte\n2. Portare i report del mese scorso\n3. Essere puntuali - la riunione durerà circa 2 ore\n\nDopo la riunione, faremo un aperitivo insieme per festeggiare i successi dell'ultimo trimestre.\n\nSe avete domande o non potete partecipare, per favore rispondete a questa email entro venerdì.\n\nGrazie per la vostra collaborazione!\n\nCordiali saluti,\nMarco Bianchi\nProject Manager\nTech Italia S.r.l.\nTel: +39 02-1234567",
+    "wordCount": 156,
+    "estimatedMinutes": 3,
+    "questions": [
+      {
+        "id": "q1",
+        "type": "choice",
+        "question": "会议什么时候举行？",
+        "questionItalian": "Quando si terrà la riunione?",
+        "options": [
+          "1月15日",
+          "1月22日下午2点",
+          "1月22日上午",
+          "周五"
+        ],
+        "answer": "1月22日下午2点",
+        "explanation": "邮件中：lunedì prossimo, 22 gennaio...alle ore 14:00"
+      },
+      {
+        "id": "q2",
+        "type": "choice",
+        "question": "会议在哪里举行？",
+        "questionItalian": "Dove si terrà la riunione?",
+        "options": [
+          "一楼",
+          "二楼",
+          "三楼会议室",
+          "办公室"
+        ],
+        "answer": "三楼会议室",
+        "explanation": "地点：in sala conferenze al terzo piano"
+      },
+      {
+        "id": "q3",
+        "type": "choice",
+        "question": "新项目的客户是谁？",
+        "questionItalian": "Chi è il cliente del nuovo progetto?",
+        "options": [
+          "Tech Italia",
+          "Marco Bianchi",
+          "Milano Fashion Week",
+          "不知道"
+        ],
+        "answer": "Milano Fashion Week",
+        "explanation": "项目介绍：il nuovo progetto per il cliente 'Milano Fashion Week'"
+      },
+      {
+        "id": "q4",
+        "type": "true_false",
+        "question": "会议后会有庆祝活动。",
+        "questionItalian": "Dopo la riunione ci sarà una celebrazione.",
+        "options": [
+          "真",
+          "假"
+        ],
+        "answer": "真",
+        "explanation": "邮件说：Dopo la riunione, faremo un aperitivo insieme per festeggiare"
+      },
+      {
+        "id": "q5",
+        "type": "choice",
+        "question": "如果不能参加会议应该什么时候回复？",
+        "questionItalian": "Entro quando bisogna rispondere se non si può partecipare?",
+        "options": [
+          "星期一",
+          "立即",
+          "星期五之前",
+          "1月22日"
+        ],
+        "answer": "星期五之前",
+        "explanation": "要求：per favore rispondete a questa email entro venerdì"
+      }
+    ],
+    "createdAt": "2025-10-11T14:59:32.421494Z"
+  },
+  {
+    "id": "reading_017",
+    "title": "Festival della musica a Roma",
+    "titleChinese": "罗马音乐节",
+    "level": "A2",
+    "category": "文化",
+    "content": "ROMA - Il weekend scorso si è concluso con grande successo il \"Festival della Musica Italiana\", uno degli eventi musicali più importanti dell'anno. Il festival, che si è svolto dal 10 al 14 gennaio in diversi luoghi della capitale, ha attirato più di 50.000 visitatori.\n\nDurante i cinque giorni di festival, oltre 80 artisti italiani e internazionali si sono esibiti in concerti, spettacoli e performance dal vivo. Il concerto più popolare è stato quello del famoso cantante italiano Marco Mengoni, che ha riempito completamente Piazza del Popolo con 15.000 persone.\n\n\"È stata un'esperienza incredibile\", ha detto Laura, una studentessa di 22 anni venuta da Milano. \"Ho scoperto molti artisti nuovi e l'atmosfera era fantastica. Tornerò sicuramente l'anno prossimo!\"\n\nIl festival ha offerto anche workshop gratuiti per musicisti emergenti e lezioni di musica per bambini. Grazie al successo di quest'anno, gli organizzatori hanno già annunciato che il festival tornerà nel 2026 con un programma ancora più ricco.\n\nIl sindaco di Roma ha dichiarato: \"Questo festival dimostra che la musica unisce le persone e arricchisce la nostra città. Siamo orgogliosi di ospitare un evento così importante.",
+    "wordCount": 192,
+    "estimatedMinutes": 3,
+    "questions": [
+      {
+        "id": "q1",
+        "type": "choice",
+        "question": "音乐节持续了多久？",
+        "questionItalian": "Quanto è durato il festival?",
+        "options": [
+          "3天",
+          "5天",
+          "7天",
+          "10天"
+        ],
+        "answer": "5天",
+        "explanation": "文中说：dal 10 al 14 gennaio（1月10-14日，共5天）"
+      },
+      {
+        "id": "q2",
+        "type": "choice",
+        "question": "有多少游客参加了音乐节？",
+        "questionItalian": "Quanti visitatori hanno partecipato al festival?",
+        "options": [
+          "15.000",
+          "22.000",
+          "50.000",
+          "80.000"
+        ],
+        "answer": "50.000",
+        "explanation": "参观人数：ha attirato più di 50.000 visitatori"
+      },
+      {
+        "id": "q3",
+        "type": "choice",
+        "question": "谁是最受欢迎的歌手？",
+        "questionItalian": "Chi è stato l'artista più popolare?",
+        "options": [
+          "Laura",
+          "市长",
+          "Marco Mengoni",
+          "文中未提及"
+        ],
+        "answer": "Marco Mengoni",
+        "explanation": "最受欢迎的演出：Il concerto più popolare è stato quello...Marco Mengoni"
+      },
+      {
+        "id": "q4",
+        "type": "true_false",
+        "question": "音乐节为新兴音乐家提供了免费研讨会。",
+        "questionItalian": "Il festival ha offerto workshop gratuiti per musicisti emergenti.",
+        "options": [
+          "真",
+          "假"
+        ],
+        "answer": "真",
+        "explanation": "文中明确说：Il festival ha offerto anche workshop gratuiti per musicisti emergenti"
+      },
+      {
+        "id": "q5",
+        "type": "choice",
+        "question": "下一届音乐节什么时候举办？",
+        "questionItalian": "Quando ci sarà il prossimo festival?",
+        "options": [
+          "2025",
+          "2026",
+          "今年",
+          "不知道"
+        ],
+        "answer": "2026",
+        "explanation": "组织者宣布：il festival tornerà nel 2026"
+      }
+    ],
+    "createdAt": "2025-10-11T14:59:32.421496Z"
+  },
+  {
+    "id": "reading_018",
+    "title": "Consigli per una vita sana",
+    "titleChinese": "健康生活建议",
+    "level": "A2",
+    "category": "日常生活",
+    "content": "BLOG SALUTE - 5 Abitudini per vivere meglio\n\nCiao a tutti! Oggi voglio condividere con voi alcuni consigli semplici ma efficaci per migliorare la vostra salute e il vostro benessere quotidiano.\n\n1. DORMIRE BENE\nÈ fondamentale dormire 7-8 ore ogni notte. Un buon sonno aiuta il corpo a riposarsi e la mente a essere più concentrata. Provate ad andare a letto sempre alla stessa ora e evitate di usare il telefono prima di dormire.\n\n2. FARE MOVIMENTO\nNon è necessario andare in palestra ogni giorno! Anche 30 minuti di camminata al giorno fanno la differenza. Potete andare a piedi al lavoro, usare le scale invece dell'ascensore, o fare una passeggiata nel parco.\n\n3. MANGIARE SANO\nIncludete nella vostra dieta molta frutta, verdura e cereali integrali. Bevete almeno 2 litri d'acqua al giorno e limitate cibi grassi e zuccheri.\n\n4. RIDURRE LO STRESS\nLo stress fa male alla salute! Dedicate del tempo a voi stessi: leggete un libro, ascoltate musica, meditate o praticate yoga. Anche solo 10 minuti al giorno possono aiutare.\n\n5. SOCIALIZZARE\nPassare tempo con amici e famiglia è importante per la salute mentale. Le relazioni positive ci rendono più felici e più forti.\n\nRicordate: piccoli cambiamenti quotidiani portano grandi risultati! Iniziate con una o due abitudini e aggiungete le altre gradualmente.\n\nQual è la vostra abitudine preferita per stare bene? Scrivetelo nei commenti!",
+    "wordCount": 238,
+    "estimatedMinutes": 3,
+    "questions": [
+      {
+        "id": "q1",
+        "type": "choice",
+        "question": "文章建议每晚睡多少小时？",
+        "questionItalian": "Quante ore di sonno consiglia l'articolo?",
+        "options": [
+          "5-6小时",
+          "7-8小时",
+          "8-10小时",
+          "10小时以上"
+        ],
+        "answer": "7-8小时",
+        "explanation": "睡眠建议：È fondamentale dormire 7-8 ore ogni notte"
+      },
+      {
+        "id": "q2",
+        "type": "choice",
+        "question": "文章建议每天运动多久？",
+        "questionItalian": "Quanto movimento consiglia l'articolo al giorno?",
+        "options": [
+          "10分钟",
+          "20分钟",
+          "30分钟",
+          "1小时"
+        ],
+        "answer": "30分钟",
+        "explanation": "运动建议：Anche 30 minuti di camminata al giorno fanno la differenza"
+      },
+      {
+        "id": "q3",
+        "type": "choice",
+        "question": "应该每天喝多少水？",
+        "questionItalian": "Quanta acqua bisogna bere al giorno?",
+        "options": [
+          "1升",
+          "2升",
+          "3升",
+          "文中未提及"
+        ],
+        "answer": "2升",
+        "explanation": "饮水建议：Bevete almeno 2 litri d'acqua al giorno"
+      },
+      {
+        "id": "q4",
+        "type": "true_false",
+        "question": "文章说必须每天去健身房。",
+        "questionItalian": "L'articolo dice che è necessario andare in palestra ogni giorno.",
+        "options": [
+          "真",
+          "假"
+        ],
+        "answer": "假",
+        "explanation": "文章明确说：Non è necessario andare in palestra ogni giorno!"
+      },
+      {
+        "id": "q5",
+        "type": "choice",
+        "question": "文章建议如何减压？",
+        "questionItalian": "Come suggerisce l'articolo di ridurre lo stress?",
+        "options": [
+          "多工作",
+          "阅读、听音乐、冥想或瑜伽",
+          "多睡觉",
+          "多吃东西"
+        ],
+        "answer": "阅读、听音乐、冥想或瑜伽",
+        "explanation": "减压方法：leggete un libro, ascoltate musica, meditate o praticate yoga"
+      }
+    ],
+    "createdAt": "2025-10-11T14:59:32.421497Z"
+  },
+  {
+    "id": "reading_019",
+    "title": "Recensione: Ristorante 'Da Giuseppe'",
+    "titleChinese": "餐厅评论：朱塞佩餐厅",
+    "level": "A2",
+    "category": "日常生活",
+    "content": "⭐⭐⭐⭐⭐ 5/5 stelle\n\nRECENSIONE di Anna M. - Visitato il 12 gennaio 2025\n\nHo cenato ieri sera al ristorante \"Da Giuseppe\" con il mio fidanzato per festeggiare il nostro anniversario, e devo dire che è stata un'esperienza fantastica dall'inizio alla fine!\n\nAMBIENTE\nIl locale è accogliente e ben arredato, con un'atmosfera romantica grazie alle luci soffuse e alla musica leggera in sottofondo. Abbiamo avuto un tavolo vicino alla finestra con una bella vista sulla piazza.\n\nSERVIZIO\nIl personale è stato cordiale, professionale e molto attento. Il nostro cameriere, Luca, ci ha consigliato ottimi piatti e vini. Il servizio è stato veloce nonostante il ristorante fosse pieno.\n\nCIBO\nAbbiamo iniziato con un antipasto di bruschette miste - fresche e saporite! Come primo piatto, io ho preso i ravioli al tartufo (divini!) e il mio fidanzato ha scelto le tagliatelle al ragù. Per secondo, abbiamo condiviso una tagliata di manzo che era cotta perfettamente e accompagnata da verdure grigliate.\n\nIl tiramisù del dessert era così buono che ne abbiamo ordinato un secondo!\n\nPREZZO\nIl conto finale è stato di 85€ per due persone, incluso vino e dessert. Un po' caro, ma la qualità giustifica assolutamente il prezzo.\n\nCONCLUSIONE\nTorneremo sicuramente! Consiglio vivamente questo ristorante a chiunque cerchi autentica cucina italiana in un ambiente piacevole. Ricordatevi di prenotare, perché è sempre molto frequentato!",
+    "wordCount": 242,
+    "estimatedMinutes": 3,
+    "questions": [
+      {
+        "id": "q1",
+        "type": "choice",
+        "question": "Anna为什么去这家餐厅？",
+        "questionItalian": "Perché Anna è andata al ristorante?",
+        "options": [
+          "工作晚餐",
+          "庆祝周年纪念",
+          "朋友聚会",
+          "生日派对"
+        ],
+        "answer": "庆祝周年纪念",
+        "explanation": "文中说：per festeggiare il nostro anniversario"
+      },
+      {
+        "id": "q2",
+        "type": "choice",
+        "question": "Anna的男朋友点了什么第一道菜？",
+        "questionItalian": "Cosa ha ordinato il fidanzato di Anna come primo?",
+        "options": [
+          "松露馄饨",
+          "肉酱面",
+          "意大利面",
+          "烩饭"
+        ],
+        "answer": "肉酱面",
+        "explanation": "男友点的：il mio fidanzato ha scelto le tagliatelle al ragù"
+      },
+      {
+        "id": "q3",
+        "type": "choice",
+        "question": "总共花了多少钱？",
+        "questionItalian": "Quanto hanno speso in totale?",
+        "options": [
+          "65€",
+          "75€",
+          "85€",
+          "95€"
+        ],
+        "answer": "85€",
+        "explanation": "账单：Il conto finale è stato di 85€ per due persone"
+      },
+      {
+        "id": "q4",
+        "type": "true_false",
+        "question": "Anna觉得餐厅太贵了，不值得。",
+        "questionItalian": "Anna pensa che il ristorante sia troppo caro e non valga la pena.",
+        "options": [
+          "真",
+          "假"
+        ],
+        "answer": "假",
+        "explanation": "Anna说：Un po' caro, ma la qualità giustifica assolutamente il prezzo（有点贵但质量完全值得）"
+      },
+      {
+        "id": "q5",
+        "type": "choice",
+        "question": "Anna建议做什么？",
+        "questionItalian": "Cosa consiglia Anna?",
+        "options": [
+          "避免去这家餐厅",
+          "自带食物",
+          "提前预订",
+          "只点甜点"
+        ],
+        "answer": "提前预订",
+        "explanation": "建议：Ricordatevi di prenotare, perché è sempre molto frequentato!"
+      }
+    ],
+    "createdAt": "2025-10-11T14:59:32.421499Z"
+  },
+  {
+    "id": "reading_020",
+    "title": "Guida turistica: Un giorno a Firenze",
+    "titleChinese": "旅游攻略：佛罗伦萨一日游",
+    "level": "A2",
+    "category": "旅游",
+    "content": "VISITARE FIRENZE IN UN GIORNO - Itinerario consigliato\n\nFirenze, la capitale del Rinascimento, è una città che merita molto più di un giorno, ma se avete tempo limitato, ecco come sfruttare al meglio le vostre 24 ore!\n\nMATTINA (9:00-13:00)\nIniziate la giornata alla Galleria degli Uffizi, uno dei musei più famosi al mondo. Qui potrete ammirare capolavori di Botticelli, Leonardo da Vinci e Michelangelo. Consiglio: prenotate i biglietti online per evitare lunghe code!\n\nDopo il museo, camminate fino a Piazza della Signoria e ammirate Palazzo Vecchio. La piazza è piena di statue bellissime e artisti di strada.\n\nPRANZO (13:00-14:30)\nFermatevi in una trattoria tipica per assaggiare la bistecca alla fiorentina, il piatto più famoso della città. Accompagnatela con un buon Chianti toscano!\n\nPOMERIGGIO (14:30-18:00)\nAttraversate il famoso Ponte Vecchio con le sue botteghe di gioiellieri. Dall'altra parte del fiume, salite fino a Piazzale Michelangelo per godere di una vista panoramica mozzafiato su tutta la città. È il posto perfetto per scattare foto!\n\nScendendo dalla collina, visitate la Basilica di Santa Croce, dove sono sepolti Michelangelo, Galileo e Machiavelli.\n\nSERA (18:00-22:00)\nAl tramonto, passeggiate lungo l'Arno e godetevi l'atmosfera magica della città. Per cena, provate un gelato artigianale (Firenze ne produce di ottimi!) e una pizza in una pizzeria locale.\n\nCONSIGLI PRATICI:\n• Indossate scarpe comode - camminerete molto!\n• Portate acqua: le fontanelle pubbliche sono ovunque\n• I negozi chiudono tra le 13:00 e le 15:30\n• Il centro storico è piccolo - tutto è raggiungibile a piedi\n\nBuon viaggio! 🇮🇹",
+    "wordCount": 278,
+    "estimatedMinutes": 4,
+    "questions": [
+      {
+        "id": "q1",
+        "type": "choice",
+        "question": "文章建议早上几点开始参观？",
+        "questionItalian": "A che ora consiglia di iniziare la visita la mattina?",
+        "options": [
+          "8:00",
+          "9:00",
+          "10:00",
+          "11:00"
+        ],
+        "answer": "9:00",
+        "explanation": "早晨行程：MATTINA (9:00-13:00)"
+      },
+      {
+        "id": "q2",
+        "type": "choice",
+        "question": "佛罗伦萨最著名的菜是什么？",
+        "questionItalian": "Qual è il piatto più famoso di Firenze?",
+        "options": [
+          "披萨",
+          "意大利面",
+          "佛罗伦萨牛排",
+          "提拉米苏"
+        ],
+        "answer": "佛罗伦萨牛排",
+        "explanation": "午餐推荐：la bistecca alla fiorentina, il piatto più famoso della città"
+      },
+      {
+        "id": "q3",
+        "type": "choice",
+        "question": "在哪里可以看到城市全景？",
+        "questionItalian": "Dove si può vedere una vista panoramica della città?",
+        "options": [
+          "乌菲兹美术馆",
+          "老桥",
+          "米开朗基罗广场",
+          "圣十字教堂"
+        ],
+        "answer": "米开朗基罗广场",
+        "explanation": "全景位置：salite fino a Piazzale Michelangelo per godere di una vista panoramica mozzafiato"
+      },
+      {
+        "id": "q4",
+        "type": "true_false",
+        "question": "米开朗基罗埋葬在圣十字教堂。",
+        "questionItalian": "Michelangelo è sepolto nella Basilica di Santa Croce.",
+        "options": [
+          "真",
+          "假"
+        ],
+        "answer": "真",
+        "explanation": "文中明确说：dove sono sepolti Michelangelo, Galileo e Machiavelli"
+      },
+      {
+        "id": "q5",
+        "type": "choice",
+        "question": "文章给出了什么实用建议？",
+        "questionItalian": "Quale consiglio pratico dà l'articolo?",
+        "options": [
+          "租车",
+          "穿舒适的鞋",
+          "早上5点出发",
+          "带很多钱"
+        ],
+        "answer": "穿舒适的鞋",
+        "explanation": "实用建议：Indossate scarpe comode - camminerete molto!"
+      }
+    ],
+    "createdAt": "2025-10-11T14:59:32.421501Z"
   }
 ]
