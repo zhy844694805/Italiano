@@ -5,6 +5,8 @@ import '../../shared/widgets/swipeable_word_card.dart';
 import '../../shared/providers/vocabulary_provider.dart';
 import '../../shared/providers/tts_provider.dart';
 import '../../shared/providers/voice_preference_provider.dart';
+import '../../core/theme/modern_theme.dart';
+import '../../shared/widgets/gradient_card.dart';
 
 class VocabularyLearningScreen extends ConsumerStatefulWidget {
   final String? level;
@@ -189,14 +191,10 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
             ],
           ),
           const SizedBox(height: 12),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: LinearProgressIndicator(
-              value: progress,
-              minHeight: 10,
-              backgroundColor: colorScheme.surfaceContainerHighest,
-              color: colorScheme.primary,
-            ),
+          GradientProgressBar(
+            progress: progress,
+            height: 10,
+            gradient: ModernTheme.primaryGradient,
           ),
         ],
       ),
@@ -406,19 +404,30 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
                 }
 
                 final stats = snapshot.data!;
-                return Card(
-                  child: Padding(
-                    padding: const EdgeInsets.all(24),
-                    child: Column(
-                      children: [
-                        Text('学习统计', style: theme.textTheme.titleLarge),
-                        const SizedBox(height: 16),
-                        _buildStatRow('总学习单词', '${stats['totalWords']}'),
-                        _buildStatRow('平均掌握度', '${(stats['averageMastery'] * 100).toStringAsFixed(1)}%'),
-                        _buildStatRow('收藏单词', '${stats['favoriteWords']}'),
-                        _buildStatRow('待复习单词', '${stats['wordsToReview']}'),
-                      ],
-                    ),
+                return FloatingCard(
+                  padding: const EdgeInsets.all(24),
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                        decoration: BoxDecoration(
+                          gradient: ModernTheme.primaryGradient,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Text(
+                          '学习统计',
+                          style: theme.textTheme.titleLarge?.copyWith(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      _buildStatRow('总学习单词', '${stats['totalWords']}'),
+                      _buildStatRow('平均掌握度', '${(stats['averageMastery'] * 100).toStringAsFixed(1)}%'),
+                      _buildStatRow('收藏单词', '${stats['favoriteWords']}'),
+                      _buildStatRow('待复习单词', '${stats['wordsToReview']}'),
+                    ],
                   ),
                 );
               },

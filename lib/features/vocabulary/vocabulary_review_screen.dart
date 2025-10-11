@@ -5,6 +5,8 @@ import '../../shared/widgets/swipeable_word_card.dart';
 import '../../shared/providers/vocabulary_provider.dart';
 import '../../shared/providers/tts_provider.dart';
 import '../../shared/providers/voice_preference_provider.dart';
+import '../../core/theme/modern_theme.dart';
+import '../../shared/widgets/gradient_card.dart';
 
 class VocabularyReviewScreen extends ConsumerStatefulWidget {
   const VocabularyReviewScreen({super.key});
@@ -151,14 +153,10 @@ class _VocabularyReviewScreenState extends ConsumerState<VocabularyReviewScreen>
             ],
           ),
           const SizedBox(height: 12),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: LinearProgressIndicator(
-              value: progress,
-              minHeight: 10,
-              backgroundColor: colorScheme.surfaceContainerHighest,
-              color: colorScheme.secondary,
-            ),
+          GradientProgressBar(
+            progress: progress,
+            height: 10,
+            gradient: ModernTheme.secondaryGradient,
           ),
         ],
       ),
@@ -418,19 +416,30 @@ class _VocabularyReviewScreenState extends ConsumerState<VocabularyReviewScreen>
             const SizedBox(height: 40),
 
             // 复习统计摘要
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(24),
-                child: Column(
-                  children: [
-                    Text('复习成绩', style: theme.textTheme.titleLarge),
-                    const SizedBox(height: 16),
-                    _buildStatRow('复习单词数', '$total'),
-                    _buildStatRow('记得', '$_correctCount'),
-                    _buildStatRow('不记得', '$_incorrectCount'),
-                    _buildStatRow('正确率', '${(accuracy * 100).toStringAsFixed(1)}%'),
-                  ],
-                ),
+            FloatingCard(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                    decoration: BoxDecoration(
+                      gradient: ModernTheme.secondaryGradient,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Text(
+                      '复习成绩',
+                      style: theme.textTheme.titleLarge?.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  _buildStatRow('复习单词数', '$total'),
+                  _buildStatRow('记得', '$_correctCount'),
+                  _buildStatRow('不记得', '$_incorrectCount'),
+                  _buildStatRow('正确率', '${(accuracy * 100).toStringAsFixed(1)}%'),
+                ],
               ),
             ),
 
