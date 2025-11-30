@@ -8,6 +8,8 @@ class DailyStatistics {
   final int wordsReviewed;
   final int grammarPointsStudied;
   final int conversationMessages;
+  final int listeningExercises;
+  final int speakingExercises;
   final int studyTimeMinutes;
 
   DailyStatistics({
@@ -16,6 +18,8 @@ class DailyStatistics {
     this.wordsReviewed = 0,
     this.grammarPointsStudied = 0,
     this.conversationMessages = 0,
+    this.listeningExercises = 0,
+    this.speakingExercises = 0,
     this.studyTimeMinutes = 0,
   });
 
@@ -26,6 +30,8 @@ class DailyStatistics {
       wordsReviewed: map['wordsReviewed'] as int,
       grammarPointsStudied: map['grammarPointsStudied'] as int,
       conversationMessages: map['conversationMessages'] as int,
+      listeningExercises: map['listeningExercises'] as int? ?? 0,
+      speakingExercises: map['speakingExercises'] as int? ?? 0,
       studyTimeMinutes: map['studyTimeMinutes'] as int,
     );
   }
@@ -37,6 +43,8 @@ class DailyStatistics {
       'wordsReviewed': wordsReviewed,
       'grammarPointsStudied': grammarPointsStudied,
       'conversationMessages': conversationMessages,
+      'listeningExercises': listeningExercises,
+      'speakingExercises': speakingExercises,
       'studyTimeMinutes': studyTimeMinutes,
     };
   }
@@ -94,6 +102,16 @@ class LearningStatisticsRepository {
   // 增加会话消息数量
   Future<void> incrementConversationMessages(DateTime date, int count) async {
     await _incrementField(date, 'conversationMessages', count);
+  }
+
+  // 增加听力练习数量
+  Future<void> incrementListeningExercises(DateTime date, int count) async {
+    await _incrementField(date, 'listeningExercises', count);
+  }
+
+  // 增加口语练习数量
+  Future<void> incrementSpeakingExercises(DateTime date, int count) async {
+    await _incrementField(date, 'speakingExercises', count);
   }
 
   // 增加学习时长

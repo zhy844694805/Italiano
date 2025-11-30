@@ -1,0 +1,861 @@
+{
+  "phrases": [
+    {
+      "id": "comp_001",
+      "italian": "Sei fantastico!",
+      "chinese": "你太棒了！",
+      "phonetic": "sei fan-TAS-ti-ko",
+      "category": "compliment",
+      "context": "夸奖他人表现出色时使用",
+      "level": "A1",
+      "examples": [
+        "Sei fantastico nel tuo lavoro! (你工作太棒了！)",
+        "Grazie, sei davvero fantastico! (谢谢，你真的很棒！)"
+      ],
+      "emoji": "🌟",
+      "isPopular": true
+    },
+    {
+      "id": "comp_002",
+      "italian": "Che bella figura!",
+      "chinese": "你形象真好/真有面子！",
+      "phonetic": "ke BEL-lya FEE-gu-ra",
+      "category": "compliment",
+      "context": "夸奖外表、仪态或给人留下好印象",
+      "level": "A2",
+      "examples": [
+        "Con questo abito, che bella figura! (穿这件衣服形象真好！)",
+        "Hai fatto una bellafigura alla riunione. (你在会议上表现很好。)"
+      ],
+      "emoji": "👔",
+      "isPopular": true
+    },
+    {
+      "id": "comp_003",
+      "italian": "Sei un pezzo grosso!",
+      "chinese": "你是个大人物！",
+      "phonetic": "sei un PEHT-tso GROS-so",
+      "category": "compliment",
+      "context": "夸奖对方地位高、有权势",
+      "level": "B1",
+      "examples": [
+        "In questa azienda, sei un pezzo grosso! (在这家公司你是大人物！)",
+        "Conosco che sei un pezzo grosso nel settore. (我知道你是这个行业的大人物。)"
+      ],
+      "emoji": "💼",
+      "isPopular": true
+    },
+    {
+      "id": "comp_004",
+      "italian": "Hai un cuore d'oro!",
+      "chinese": "你有一颗金子般的心！",
+      "phonetic": "ai un KWO-re DOR-o",
+      "category": "compliment",
+      "context": "夸奖他人心地善良、乐于助人",
+      "level": "A2",
+      "examples": [
+        "Aiuti sempre tutti, hai un cuore d'oro! (你总是帮助大家，心地真好！)",
+        "Grazie per il tuo aiuto, hai un cuore d'oro. (谢谢你的帮助，你真善良。)"
+      ],
+      "emoji": "❤️",
+      "isPopular": true
+    },
+    {
+      "id": "comp_005",
+      "italian": "Sei una macchina!",
+      "chinese": "你是个机器/太强了！",
+      "phonetic": "sei u-na MA-ki-na",
+      "category": "compliment",
+      "context": "夸奖工作效率高或体力好",
+      "level": "A2",
+      "examples": [
+        "Lavori senza sosta, sei una macchina! (你工作不停歇，太强了！)",
+        "In palestra, sei proprio una macchina! (在健身房你真是机器！)"
+      ],
+      "emoji": "💪",
+      "isPopular": true
+    },
+    {
+      "id": "comp_006",
+      "italian": "Che hò!",
+      "chinese": "太酷了/真牛！",
+      "phonetic": "ke OH",
+      "category": "compliment",
+      "context": "年轻人常用的夸奖用语",
+      "level": "A2",
+      "examples": [
+        "La tua macchina nuova, che hò! (你的新车真酷！)",
+        "Hai vinto? Che hò! (你赢了？太牛了！)"
+      ],
+      "emoji": "😎",
+      "isPopular": true
+    },
+    {
+      "id": "insult_001",
+      "italian": "Sei un cretino!",
+      "chinese": "你是个笨蛋！",
+      "phonetic": "sei un kre-TEE-no",
+      "category": "insult",
+      "context": "骂人愚蠢、笨蛋",
+      "level": "A2",
+      "examples": [
+        "Non ascoltarlo, è solo un cretino! (别听他的，他就是个笨蛋！)",
+        "Che cretino che sei! (你真是个笨蛋！)"
+      ],
+      "emoji": "🤦",
+      "isPopular": true
+    },
+    {
+      "id": "insult_002",
+      "italian": "Vaffanculo!",
+      "chinese": "去你的！/滚蛋！",
+      "phonetic": "vaf-FAN-ku-lo",
+      "category": "insult",
+      "context": "非常粗俗的骂人话，表示愤怒",
+      "level": "B1",
+      "examples": [
+        "Vaffanculo! Non voglio più vederti! (滚蛋！我不想再见到你！)",
+        "Mi dici solo vaffanculo? (你就只会说去你的吗？)"
+      ],
+      "emoji": "🖕",
+      "isPopular": true
+    },
+    {
+      "id": "insult_003",
+      "italian": "Sei uno stronzo!",
+      "chinese": "你是个混蛋！",
+      "phonetic": "sei u-NO STRON-tso",
+      "category": "insult",
+      "context": "骂人卑鄙、讨厌",
+      "level": "B1",
+      "examples": [
+        "Mi hai mentito, sei uno stronzo! (你骗我，你是个混蛋！)",
+        "Non voglio più parlare con questo stronzo. (我不想再和这个混蛋说话了。)"
+      ],
+      "emoji": "😠",
+      "isPopular": true
+    },
+    {
+      "id": "insult_004",
+      "italian": "Che palle!",
+      "chinese": "真烦人/扯淡！",
+      "phonetic": "ke PAL-le",
+      "category": "insult",
+      "context": "表达烦躁、讨厌某种情况",
+      "level": "A2",
+      "examples": [
+        "Ancora lavoro da fare? Che palle! (还有工作要做？真烦人！)",
+        "Questo traffico, che palle! (这个交通，真烦人！)"
+      ],
+      "emoji": "😤",
+      "isPopular": true
+    },
+    {
+      "id": "insult_005",
+      "italian": "Sei un coglione!",
+      "chinese": "你是个蠢货！",
+      "phonetic": "sei un kol-YO-ne",
+      "category": "insult",
+      "context": "骂人愚蠢、傻",
+      "level": "B1",
+      "examples": [
+        "Hai fatto proprio una stupidaggine, coglione! (你做了件蠢事，蠢货！)",
+        "Non posso credere che sia così coglione! (我不敢相信他这么蠢！)"
+      ],
+      "emoji": "🤯",
+      "isPopular": true
+    },
+    {
+      "id": "casual_001",
+      "italian": "Andiamo a bere qualcosa?",
+      "chinese": "我们去喝点什么吧？",
+      "phonetic": "an-DYA-mo a BE-re kwal-KO-sa",
+      "category": "casual",
+      "context": "邀请朋友出去",
+      "level": "A1",
+      "examples": [
+        "Stasera andiamo a bere qualcosa? (今晚我们去喝点什么吧？)",
+        "Finito il lavoro, andiamo a bere qualcosa! (工作结束，我们去喝点东西！)"
+      ],
+      "emoji": "🍻",
+      "isPopular": true
+    },
+    {
+      "id": "casual_002",
+      "italian": "Ma che dici?",
+      "chinese": "你在说什么？/胡说八道！",
+      "phonetic": "ma ke DEE-chee",
+      "category": "casual",
+      "context": "表达不敢相信或觉得对方在胡说",
+      "level": "A1",
+      "examples": [
+        "Ma che dici? È impossibile! (你在说什么？不可能！)",
+        "Ma che dici stasera? Non esco! (今晚你说什么呢？我不出去！)"
+      ],
+      "emoji": "😲",
+      "isPopular": true
+    },
+    {
+      "id": "casual_003",
+      "italian": "Mamma mia!",
+      "chinese": "我的天！/妈呀！",
+      "phonetic": "MAM-ma MEE-a",
+      "category": "casual",
+      "context": "表达惊讶、震惊",
+      "level": "A1",
+      "examples": [
+        "Mamma mia! Che bello! (我的天！太美了！)",
+        "Mamma mia, che hai fatto? (我的天，你做了什么？)"
+      ],
+      "emoji": "😮",
+      "isPopular": true
+    },
+    {
+      "id": "casual_004",
+      "italian": "Figurati!",
+      "chinese": "别客气！/没问题！",
+      "phonetic": "fee-gu-RA-tee",
+      "category": "casual",
+      "context": "回应他人感谢",
+      "level": "A1",
+      "examples": [
+        "Grazie mille! - Figurati! (非常感谢！- 别客气！)",
+        "Scusa il disturbo. - Figurati! (抱歉打扰。- 没问题！)"
+      ],
+      "emoji": "🤝",
+      "isPopular": true
+    },
+    {
+      "id": "casual_005",
+      "italian": "Magari!",
+      "chinese": "但愿如此！/要是就好了！",
+      "phonetic": "ma-GA-ree",
+      "category": "casual",
+      "context": "表达希望但觉得不太可能",
+      "level": "A2",
+      "examples": [
+        "Domani non lavoro. - Magari! (明天我不工作。- 但愿如此！)",
+        "Vinci alla lotteria? - Magari! (你中彩票？- 要是就好了！)"
+      ],
+      "emoji": "🤞",
+      "isPopular": true
+    },
+    {
+      "id": "insult_006",
+      "italian": "Rompi le palle!",
+      "chinese": "你真烦人！/别烦我！",
+      "phonetic": "ROM-pee le PAL-le",
+      "category": "insult",
+      "context": "觉得对方很烦人",
+      "level": "B1",
+      "examples": [
+        "Smettila, mi rompi le palle! (住手，你真烦人！)",
+        "Con queste domande, rompi solo le palle! (你这些问题很烦人！)"
+      ],
+      "emoji": "😑",
+      "isPopular": true
+    },
+    {
+      "id": "comp_007",
+      "italian": "Sei il numero uno!",
+      "chinese": "你是第一名！/你是最棒的！",
+      "phonetic": "sei il NU-me-ro U-no",
+      "category": "compliment",
+      "context": "最高级别的夸奖",
+      "level": "A1",
+      "examples": [
+        "Nell'esame, sei il numero uno! (考试中你是第一名！)",
+        "Per me, sei sempre il numero uno! (对我来说，你永远是最棒的！)"
+      ],
+      "emoji": "🏆",
+      "isPopular": true
+    },
+    {
+      "id": "comp_008",
+      "italian": "Bravo/a!",
+      "chinese": "好样的！/干得漂亮！",
+      "phonetic": "BRA-vo/BRA-va",
+      "category": "compliment",
+      "context": "夸奖某事做得好",
+      "level": "A1",
+      "examples": [
+        "Bravo! Hai finito in tempo! (好样的！你按时完成了！)",
+        "Brava! La tua presentazione è perfetta! (干得漂亮！你的演讲很完美！)"
+      ],
+      "emoji": "👏",
+      "isPopular": true
+    },
+    {
+      "id": "insult_007",
+      "italian": "Testa di cazzo!",
+      "chinese": "蠢货！/混球！",
+      "phonetic": "TES-ta di KAT-tso",
+      "category": "insult",
+      "context": "非常粗俗的骂人话",
+      "level": "B2",
+      "examples": [
+        "Ma che testa di cazzo che sei! (你这个蠢货！)",
+        "Non parlare con questa testa di cazzo. (别和这个混球说话。)"
+      ],
+      "emoji": "💢",
+      "isPopular": false
+    },
+    {
+      "id": "comp_009",
+      "italian": "Sei un mito!",
+      "chinese": "你是个传奇！/太神了！",
+      "phonetic": "sei un MEE-to",
+      "category": "compliment",
+      "context": "夸奖对方非常厉害",
+      "level": "A2",
+      "examples": [
+        "Come hai fatto? Sei un mito! (你怎么做到的？太神了！)",
+        "Nel calcio, sei proprio un mito! (踢足球你真是个传奇！)"
+      ],
+      "emoji": "🔥",
+      "isPopular": true
+    },
+    {
+      "id": "casual_006",
+      "italian": "Ci mancherebbe!",
+      "chinese": "那还用说！/当然不会！",
+      "phonetic": "chi man-keh-REH-beh",
+      "category": "casual",
+      "context": "讽刺或强烈否定",
+      "level": "A2",
+      "examples": [
+        "Vuoi che ti aiuti? - Ci mancherebbe! (想让我帮你？- 当然不会！)",
+        "Credi che sia vero? - Ci mancherebbe! (你相信那是真的？- 当然不会！)"
+      ],
+      "emoji": "😒",
+      "isPopular": true
+    },
+    {
+      "italian": "Che bravo/a!",
+      "chinese": "太能干了/好厉害！",
+      "phonetic": "ke BRA-vo/BRA-va",
+      "context": "夸奖别人能力强或做得好",
+      "level": "A1",
+      "examples": [
+        "Che bravo con i bambini! (你带孩子真厉害！)",
+        "Hai risolto il problema? Che bravo! (你解决了问题？太能干了！)"
+      ],
+      "emoji": "👍",
+      "isPopular": true,
+      "id": "compliment_010",
+      "category": "compliment"
+    },
+    {
+      "italian": "Sei il migliore!",
+      "chinese": "你是最棒的！",
+      "phonetic": "sei il MEE-o-re",
+      "context": "最高级别的夸奖",
+      "level": "A1",
+      "examples": [
+        "Nello sport, sei il migliore! (在运动方面你最棒！)",
+        "Per me, sei sempre il migliore! (对我来说你永远是最棒的！)"
+      ],
+      "emoji": "🏆",
+      "isPopular": true,
+      "id": "compliment_011",
+      "category": "compliment"
+    },
+    {
+      "italian": "Complimenti!",
+      "chinese": "恭喜！/做得好！",
+      "phonetic": "kom-plee-MEN-tee",
+      "context": "祝贺或赞扬他人的成就",
+      "level": "A1",
+      "examples": [
+        "Complimenti per la promozione! (恭喜升职！)",
+        "Complimenti, hai lavorato bene! (做得好，你工作很出色！)"
+      ],
+      "emoji": "🎉",
+      "isPopular": true,
+      "id": "compliment_012",
+      "category": "compliment"
+    },
+    {
+      "italian": "Sei gentilissimo/a!",
+      "chinese": "你真是太好了！",
+      "phonetic": "sei jen-tee-LISS-i-mo/ma",
+      "context": "感谢他人的善意和帮助",
+      "level": "A2",
+      "examples": [
+        "Grazie per l'aiuto, sei gentilissimo! (谢谢帮助，你真是太好了！)",
+        "Sei sempre gentilissimo con tutti! (你对每个人总是那么好！)"
+      ],
+      "emoji": "🤗",
+      "isPopular": true,
+      "id": "compliment_013",
+      "category": "compliment"
+    },
+    {
+      "italian": "Che carino/a!",
+      "chinese": "真可爱！/真好看！",
+      "phonetic": "ke ka-REE-no/na",
+      "context": "夸奖人或物可爱漂亮",
+      "level": "A1",
+      "examples": [
+        "Che carino il tuo vestito! (你的裙子真好看！)",
+        "Il tuo gatto è molto carino! (你的猫很可爱！)"
+      ],
+      "emoji": "😍",
+      "isPopular": true,
+      "id": "compliment_014",
+      "category": "compliment"
+    },
+    {
+      "italian": "Sei molto intelligente!",
+      "chinese": "你非常聪明！",
+      "phonetic": "sei MOL-to in-tel-LEE-jen-te",
+      "context": "夸奖他人聪明智慧",
+      "level": "A2",
+      "examples": [
+        "Hai capito subito, sei molto intelligente! (你马上就懂了，真聪明！)",
+        "La tua soluzione è geniale, sei molto intelligente! (你的解决方案很天才，你很聪明！)"
+      ],
+      "emoji": "🧠",
+      "isPopular": true,
+      "id": "compliment_015",
+      "category": "compliment"
+    },
+    {
+      "italian": "Che stile!",
+      "chinese": "真有风格！/真时髦！",
+      "phonetic": "ke STEE-le",
+      "context": "夸奖时尚品味或做事风格",
+      "level": "A2",
+      "examples": [
+        "Con questo vestito, che stile! (穿这件衣服真有风格！)",
+        "Parla sempre con stile! (他说话总是很有风格！)"
+      ],
+      "emoji": "🕶️",
+      "isPopular": true,
+      "id": "compliment_016",
+      "category": "compliment"
+    },
+    {
+      "italian": "Sei forte!",
+      "chinese": "你很强！/你真厉害！",
+      "phonetic": "sei FOR-te",
+      "context": "夸奖能力强或身体强壮",
+      "level": "A1",
+      "examples": [
+        "Nella matematica, sei molto forte! (在数学方面你很强！)",
+        "Hai sollevato quel peso? Sei forte! (你举起了那个重量？你很强！)"
+      ],
+      "emoji": "💪",
+      "isPopular": true,
+      "id": "compliment_017",
+      "category": "compliment"
+    },
+    {
+      "italian": "Magnifico/a!",
+      "chinese": "太棒了！/太精彩了！",
+      "phonetic": "man-nee-FEE-ko/ka",
+      "context": "极高的赞美",
+      "level": "B1",
+      "examples": [
+        "La tua presentazione è magnifica! (你的演讲太精彩了！)",
+        "Magnifico! Hai vinto la gara! (太棒了！你赢得了比赛！)"
+      ],
+      "emoji": "⭐",
+      "isPopular": true,
+      "id": "compliment_018",
+      "category": "compliment"
+    },
+    {
+      "italian": "Eccellente!",
+      "chinese": "太优秀了！/完美！",
+      "phonetic": "ek-chel-LEN-te",
+      "context": "正式场合的赞美",
+      "level": "A2",
+      "examples": [
+        "Il tuo lavoro è eccellente! (你的工作太优秀了！)",
+        "Eccellente performance! (表现完美！)"
+      ],
+      "emoji": "✨",
+      "isPopular": true,
+      "id": "compliment_019",
+      "category": "compliment"
+    },
+    {
+      "italian": "Sei uno scemo!",
+      "chinese": "你是个白痴！",
+      "phonetic": "sei u-NO SHE-mo",
+      "context": "骂人愚蠢、傻",
+      "level": "A2",
+      "examples": [
+        "Ma che dici, sei uno scemo? (你在说什么，白痴吗？)",
+        "Non fare così, non essere uno scemo! (别那样做，别当白痴！)"
+      ],
+      "emoji": "🤪",
+      "isPopular": true,
+      "id": "insult_008",
+      "category": "insult"
+    },
+    {
+      "italian": "Vai a quel paese!",
+      "chinese": "滚开！/去死吧！",
+      "phonetic": "vai a kwel PA-ee-ze",
+      "context": "让某人走开，比较粗鲁",
+      "level": "A2",
+      "examples": [
+        "Non mi rompere, vai a quel paese! (别烦我，滚开！)",
+        "Se non ti piace, vai a quel paese! (如果你不喜欢，就滚开！)"
+      ],
+      "emoji": "👋",
+      "isPopular": true,
+      "id": "insult_009",
+      "category": "insult"
+    },
+    {
+      "italian": "Sei un verme!",
+      "chinese": "你是个蛆虫！/卑鄙小人！",
+      "phonetic": "sei un VER-me",
+      "context": "严重侮辱，骂人卑鄙",
+      "level": "B1",
+      "examples": [
+        "Traditore, sei un verme! (叛徒，你是个卑鄙小人！)",
+        "Come hai potuto farlo? Sei un verme! (你怎么能这样做？你是个蛆虫！)"
+      ],
+      "emoji": "🐛",
+      "isPopular": false,
+      "id": "insult_010",
+      "category": "insult"
+    },
+    {
+      "italian": "Ma ti pare?!",
+      "chinese": "你以为呢？！/开什么玩笑！",
+      "phonetic": "ma ti PA-re?",
+      "context": "表达不相信或觉得对方荒谬",
+      "level": "A2",
+      "examples": [
+        "Pensi di aver ragione? Ma ti pare?! (你以为你对吗？开什么玩笑！)",
+        "Mi dai consigli tu? Ma ti pare?! (你给我建议？你以为呢？！)"
+      ],
+      "emoji": "🙄",
+      "isPopular": true,
+      "id": "insult_011",
+      "category": "insult"
+    },
+    {
+      "italian": "Che schifo!",
+      "chinese": "太恶心了！/真糟糕！",
+      "phonetic": "ke SKEE-fo",
+      "context": "表达厌恶或讨厌",
+      "level": "A1",
+      "examples": [
+        "Questo cibo fa che schifo! (这食物太恶心了！)",
+        "Che schifo questa situazione! (这情况真糟糕！)"
+      ],
+      "emoji": "🤢",
+      "isPopular": true,
+      "id": "insult_012",
+      "category": "insult"
+    },
+    {
+      "italian": "Sei un rompiscatole!",
+      "chinese": "你是个麻烦精！/讨厌鬼！",
+      "phonetic": "sei un rom-pee-SKA-to-le",
+      "context": "骂人爱捣乱或烦人",
+      "level": "A2",
+      "examples": [
+        "Smettila di rompere, sei un rompiscatole! (别捣乱了，你这个麻烦精！)",
+        "Mio fratello è un rompiscatole! (我弟弟是个讨厌鬼！)"
+      ],
+      "emoji": "😠",
+      "isPopular": true,
+      "id": "insult_013",
+      "category": "insult"
+    },
+    {
+      "italian": "Stai zitto/a!",
+      "chinese": "闭嘴！",
+      "phonetic": "stai ZEE-to/ta",
+      "context": "让某人安静，比较粗鲁",
+      "level": "A1",
+      "examples": [
+        "Stai zitto, non voglio sentire! (闭嘴，我不想听！)",
+        "Basta, stai zitta! (够了，你闭嘴！)"
+      ],
+      "emoji": "🤫",
+      "isPopular": true,
+      "id": "insult_014",
+      "category": "insult"
+    },
+    {
+      "italian": "Mi fai girare le scatole!",
+      "chinese": "你让我抓狂！/你气死我了！",
+      "phonetic": "mi fai dgee-RA-re le SKA-to-le",
+      "context": "表达被某人惹恼",
+      "level": "B1",
+      "examples": [
+        "Con le tue domande, mi fai girare le scatole! (你的问题让我抓狂！)",
+        "Non fare così, mi fai girare le scatole! (别那样做，你气死我了！)"
+      ],
+      "emoji": "🤬",
+      "isPopular": true,
+      "id": "insult_015",
+      "category": "insult"
+    },
+    {
+      "italian": "Ma va là!",
+      "chinese": "得了吧！/别开玩笑了！",
+      "phonetic": "ma va LA",
+      "context": "不相信或觉得某事荒谬",
+      "level": "A2",
+      "examples": [
+        "Hai vinto la lotteria? Ma va là! (你中彩票了？得了吧！)",
+        "Ma va là, non è vero! (别开玩笑了，不是真的！)"
+      ],
+      "emoji": "😂",
+      "isPopular": true,
+      "id": "insult_016",
+      "category": "insult"
+    },
+    {
+      "italian": "Peccato!",
+      "chinese": "真可惜！/活该！",
+      "phonetic": "pek-KA-to",
+      "context": "表示遗憾或幸灾乐祸",
+      "level": "A2",
+      "examples": [
+        "Hai perso? Peccato! (你输了？真可惜！)",
+        "Non è venuto alla festa? Peccato per lui! (他没来派对？活该！)"
+      ],
+      "emoji": "😏",
+      "isPopular": true,
+      "id": "insult_017",
+      "category": "insult"
+    },
+    {
+      "italian": "Andiamo!",
+      "chinese": "走吧！/快点！",
+      "phonetic": "an-DYA-mo",
+      "context": "催促或邀请一起行动",
+      "level": "A1",
+      "examples": [
+        "È tardi, andiamo! (太晚了，走吧！)",
+        "Andiamo a mangiare! (我们去吃东西吧！)"
+      ],
+      "emoji": "🚶",
+      "isPopular": true,
+      "id": "casual_007",
+      "category": "casual"
+    },
+    {
+      "italian": "Che bella giornata!",
+      "chinese": "今天天气真好！",
+      "phonetic": "ke BEL-lya JOR-na-ta",
+      "context": "赞美好天气",
+      "level": "A1",
+      "examples": [
+        "Oggi c'è il sole, che bella giornata! (今天有太阳，天气真好！)",
+        "Che bella giornata per una passeggiata! (真是散步的好天气！)"
+      ],
+      "emoji": "☀️",
+      "isPopular": true,
+      "id": "casual_008",
+      "category": "casual"
+    },
+    {
+      "italian": "Non mi piace!",
+      "chinese": "我不喜欢！",
+      "phonetic": "non mee PEE-che",
+      "context": "表达不喜欢",
+      "level": "A1",
+      "examples": [
+        "Questo cibo? Non mi piace! (这个食物？我不喜欢！)",
+        "Non mi piace questo film! (我不喜欢这部电影！)"
+      ],
+      "emoji": "👎",
+      "isPopular": true,
+      "id": "casual_009",
+      "category": "casual"
+    },
+    {
+      "italian": "Lo so!",
+      "chinese": "我知道！",
+      "phonetic": "lo so",
+      "context": "表示已经知道某事",
+      "level": "A1",
+      "examples": [
+        "Giovanni è sposato? Lo so! (乔瓦尼结婚了？我知道！)",
+        "Lo so, non c'è bisogno di ripeterlo! (我知道了，不用重复！)"
+      ],
+      "emoji": "🤓",
+      "isPopular": true,
+      "id": "casual_010",
+      "category": "casual"
+    },
+    {
+      "italian": "Non so!",
+      "chinese": "我不知道！",
+      "phonetic": "non so",
+      "context": "表示不知道",
+      "level": "A1",
+      "examples": [
+        "Dove è la stazione? Non so! (车站在哪里？我不知道！)",
+        "Non so cosa fare! (我不知道该做什么！)"
+      ],
+      "emoji": "🤷",
+      "isPopular": true,
+      "id": "casual_011",
+      "category": "casual"
+    },
+    {
+      "italian": "Forse!",
+      "chinese": "可能吧！/也许！",
+      "phonetic": "FOR-tse",
+      "context": "表达不确定性",
+      "level": "A1",
+      "examples": [
+        "Vieni alla festa? Forse! (你来派对吗？可能吧！)",
+        "Forse piove stasera! (也许今晚下雨！)"
+      ],
+      "emoji": "🤔",
+      "isPopular": true,
+      "id": "casual_012",
+      "category": "casual"
+    },
+    {
+      "italian": "Certo!",
+      "chinese": "当然！/肯定！",
+      "phonetic": "CHER-to",
+      "context": "表示肯定或同意",
+      "level": "A1",
+      "examples": [
+        "Mi aiuti? Certo! (你帮我吗？当然！)",
+        "Certo, ho tempo domani! (当然，我明天有时间！)"
+      ],
+      "emoji": "✅",
+      "isPopular": true,
+      "id": "casual_013",
+      "category": "casual"
+    },
+    {
+      "italian": "Niente!",
+      "chinese": "没什么！/没事！",
+      "phonetic": "NYEN-te",
+      "context": "表示没什么大事",
+      "level": "A1",
+      "examples": [
+        "Cosa c'è? Niente! (有什么？没什么！)",
+        "Stai bene? Niente, solo stanco! (你还好吗？没事，只是累了！)"
+      ],
+      "emoji": "🤷‍♂️",
+      "isPopular": true,
+      "id": "casual_014",
+      "category": "casual"
+    },
+    {
+      "italian": "Calma!",
+      "chinese": "冷静！/别着急！",
+      "phonetic": "KAL-ma",
+      "context": "让人冷静或别担心",
+      "level": "A1",
+      "examples": [
+        "Calma, non è successo niente! (冷静，没发生什么！)",
+        "Calma, ho tempo! (别着急，我有时间！)"
+      ],
+      "emoji": "😌",
+      "isPopular": true,
+      "id": "casual_015",
+      "category": "casual"
+    },
+    {
+      "italian": "Attenzione!",
+      "chinese": "注意！/小心！",
+      "phonetic": "at-ten-TSYO-ne",
+      "context": "提醒注意或警告",
+      "level": "A1",
+      "examples": [
+        "Attenzione, l'auto! (注意，车！)",
+        "Attenzione, è scivoloso! (小心，地面滑！)"
+      ],
+      "emoji": "⚠️",
+      "isPopular": true,
+      "id": "casual_016",
+      "category": "casual"
+    },
+    {
+      "italian": "Pazienza!",
+      "chinese": "耐心点！/没办法！",
+      "phonetic": "pa-TSYEN-tsa",
+      "context": "表达需要耐心或接受现实",
+      "level": "A2",
+      "examples": [
+        "Il treno è in ritardo, pazienza! (火车晚点了，没办法！)",
+        "Pazienza, domani andrà meglio! (耐心点，明天会更好！)"
+      ],
+      "emoji": "⏳",
+      "isPopular": true,
+      "id": "casual_017",
+      "category": "casual"
+    },
+    {
+      "italian": "Appena!",
+      "chinese": "马上！/立刻！",
+      "phonetic": "ap-PA-na",
+      "context": "表示很快发生",
+      "level": "A2",
+      "examples": [
+        "Quando arrivi? Appena! (你什么时候到？马上！)",
+        "Appena finisco, vengo! (我马上就完，过来！)"
+      ],
+      "emoji": "⏰",
+      "isPopular": true,
+      "id": "casual_018",
+      "category": "casual"
+    },
+    {
+      "italian": "Ovviamente!",
+      "chinese": "显然！/当然了！",
+      "phonetic": "o-vya-meen-te",
+      "context": "表达某事很明显",
+      "level": "A2",
+      "examples": [
+        "Vincerà? Ovviamente! (他会赢？当然了！)",
+        "Ovviamente, è la scelta giusta! (显然，这是正确的选择！)"
+      ],
+      "emoji": "👁️",
+      "isPopular": true,
+      "id": "casual_019",
+      "category": "casual"
+    },
+    {
+      "italian": "Esatto!",
+      "chinese": "没错！/正是！",
+      "phonetic": "e-ZA-tto",
+      "context": "表示同意或确认",
+      "level": "A1",
+      "examples": [
+        "È questo il libro? Esatto! (是这本书吗？没错！)",
+        "Esatto, ho capito perfettamente! (正是，我完全理解了！)"
+      ],
+      "emoji": "👌",
+      "isPopular": true,
+      "id": "casual_020",
+      "category": "casual"
+    },
+    {
+      "italian": "Naturale!",
+      "chinese": "自然了！/当然！",
+      "phonetic": "na-tu-RA-le",
+      "context": "表示某事很自然",
+      "level": "A2",
+      "examples": [
+        "Ti piace la pizza? Naturale! (你喜欢披萨？自然了！)",
+        "È triste? Naturale, ha perso! (他难过？当然，他输了！)"
+      ],
+      "emoji": "🌿",
+      "isPopular": true,
+      "id": "casual_021",
+      "category": "casual"
+    }
+  ],
+  "updated_at": "2025-11-22T18:11:35.605844",
+  "total_count": 57
+}

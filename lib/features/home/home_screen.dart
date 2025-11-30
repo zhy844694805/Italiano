@@ -8,6 +8,8 @@ import '../conversation/conversation_scenario_screen.dart';
 import '../reading/reading_list_screen.dart';
 import '../practice/practice_screen.dart';
 import '../profile/profile_screen.dart';
+import '../phrase/phrase_list_screen.dart';
+import '../daily_conversation/daily_conversation_list_screen.dart';
 import '../../shared/providers/vocabulary_provider.dart';
 import '../../shared/providers/statistics_provider.dart';
 import '../../core/theme/modern_theme.dart';
@@ -430,15 +432,28 @@ class HomePage extends ConsumerWidget {
                       );
                     },
                   ),
-                  _QuickActionCard(
-                    icon: Icons.article,
-                    title: '阅读理解',
-                    color: Colors.orange,
+                    _QuickActionCard(
+                    icon: Icons.record_voice_over,
+                    title: '意大利语口语',
+                    color: Colors.red,
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const ReadingListScreen(),
+                          builder: (context) => const PhraseListScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                  _QuickActionCard(
+                    icon: Icons.forum,
+                    title: '日常对话',
+                    color: Colors.teal,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const DailyConversationListScreen(),
                         ),
                       );
                     },
@@ -481,6 +496,14 @@ class _QuickActionCard extends StatelessWidget {
       );
     } else if (color == Colors.orange) {
       return ModernTheme.accentGradient;
+    } else if (color == Colors.red) {
+      return ModernTheme.redGradient;
+    } else if (color == Colors.teal) {
+      return const LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        colors: [Color(0xFF00897B), Color(0xFF00695C)],
+      );
     }
     return LinearGradient(
       begin: Alignment.topLeft,
@@ -552,6 +575,14 @@ class _QuickActionCardWithBadge extends StatelessWidget {
       );
     } else if (color == Colors.orange) {
       return ModernTheme.accentGradient;
+    } else if (color == Colors.red) {
+      return ModernTheme.redGradient;
+    } else if (color == Colors.teal) {
+      return const LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        colors: [Color(0xFF00897B), Color(0xFF00695C)],
+      );
     }
     return LinearGradient(
       begin: Alignment.topLeft,

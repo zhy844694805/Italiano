@@ -20763,5 +20763,3109 @@
       "L'educazione è importante. - 教育很重要。",
       "Ha molta educazione. - 他很有礼貌。"
     ]
+  },
+  {
+    "id": "1470",
+    "italian": "undici",
+    "chinese": "十一",
+    "english": "eleven",
+    "pronunciation": "ˈunditʃi",
+    "category": "数字",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699748.000Z",
+    "examples": [
+      "Ho undici anni. - 我11岁。",
+      "Undici più undici fa ventidue. - 11加11等于22。"
+    ],
+    "audioUrl": "assets/audio/words/1470.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1471",
+    "italian": "dodici",
+    "chinese": "十二",
+    "english": "twelve",
+    "pronunciation": "ˈdoditʃi",
+    "category": "数字",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699754.000Z",
+    "examples": [
+      "Sono le dodici. - 12点了。",
+      "Dodici mesi in un anno. - 一年12个月。"
+    ],
+    "audioUrl": "assets/audio/words/1471.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1472",
+    "italian": "tredici",
+    "chinese": "十三",
+    "english": "thirteen",
+    "pronunciation": "tredˈitʃi",
+    "category": "数字",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699756.000Z",
+    "examples": [
+      "Oggi è tredici. - 今天是13号。",
+      "Tredici persone. - 13个人。"
+    ],
+    "audioUrl": "assets/audio/words/1472.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1473",
+    "italian": "quattordici",
+    "chinese": "十四",
+    "english": "fourteen",
+    "pronunciation": "kwattorˈditʃi",
+    "category": "数字",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699757.000Z",
+    "examples": [
+      "Ho quattordici libri. - 我有14本书。",
+      "Quattordici anni. - 14岁。"
+    ],
+    "audioUrl": "assets/audio/words/1473.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1474",
+    "italian": "quindici",
+    "chinese": "十五",
+    "english": "fifteen",
+    "pronunciation": "ˈkwinditʃi",
+    "category": "数字",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699758.000Z",
+    "examples": [
+      "Sono le quindici. - 15点。",
+      "Quindici minuti. - 15分钟。"
+    ],
+    "audioUrl": "assets/audio/words/1474.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1475",
+    "italian": "venti",
+    "chinese": "二十",
+    "english": "twenty",
+    "pronunciation": "vɛnti",
+    "category": "数字",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699759.000Z",
+    "examples": [
+      "Venti euro. - 20欧元。",
+      "Ho venti anni. - 我20岁。"
+    ],
+    "audioUrl": "assets/audio/words/1475.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1476",
+    "italian": "trenta",
+    "chinese": "三十",
+    "english": "thirty",
+    "pronunciation": "trɛnta",
+    "category": "数字",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699760.000Z",
+    "examples": [
+      "Sono le trenta. - 30点。",
+      "Trenta studenti. - 30个学生。"
+    ],
+    "audioUrl": "assets/audio/words/1476.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1477",
+    "italian": "quaranta",
+    "chinese": "四十",
+    "english": "forty",
+    "pronunciation": "kwarˈanta",
+    "category": "数字",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699761.000Z",
+    "examples": [
+      "Quaranta gradi. - 40度。",
+      "Ho quaranta anni. - 我40岁。"
+    ],
+    "audioUrl": "assets/audio/words/1477.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1478",
+    "italian": "cinquanta",
+    "chinese": "五十",
+    "english": "fifty",
+    "pronunciation": "tʃinˈkwanta",
+    "category": "数字",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699762.000Z",
+    "examples": [
+      "Cinquanta euro. - 50欧元。",
+      "Cinquanta minuti. - 50分钟。"
+    ],
+    "audioUrl": "assets/audio/words/1478.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1479",
+    "italian": "sessanta",
+    "chinese": "六十",
+    "english": "sixty",
+    "pronunciation": "sɛssˈanta",
+    "category": "数字",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699762.000Z",
+    "examples": [
+      "Sessanta chilometri. - 60公里。",
+      "Ho sessanta anni. - 我60岁。"
+    ],
+    "audioUrl": "assets/audio/words/1479.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1480",
+    "italian": "settanta",
+    "chinese": "七十",
+    "english": "seventy",
+    "pronunciation": "sɛtˈtanta",
+    "category": "数字",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699763.000Z",
+    "examples": [
+      "Settanta euro. - 70欧元。",
+      "Settanta persone. - 70个人。"
+    ],
+    "audioUrl": "assets/audio/words/1480.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1481",
+    "italian": "ottanta",
+    "chinese": "八十",
+    "english": "eighty",
+    "pronunciation": "otˈtanta",
+    "category": "数字",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699764.000Z",
+    "examples": [
+      "Ottanta anni. - 80年。",
+      "Ottanta chili. - 80公斤。"
+    ],
+    "audioUrl": "assets/audio/words/1481.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1482",
+    "italian": "novanta",
+    "chinese": "九十",
+    "english": "ninety",
+    "pronunciation": "noˈvanta",
+    "category": "数字",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699765.000Z",
+    "examples": [
+      "Novanta euro. - 90欧元。",
+      "Novanta chilometri. - 90公里。"
+    ],
+    "audioUrl": "assets/audio/words/1482.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1483",
+    "italian": "cento",
+    "chinese": "一百",
+    "english": "one hundred",
+    "pronunciation": "tʃɛnto",
+    "category": "数字",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699766.000Z",
+    "examples": [
+      "Cento euro. - 100欧元。",
+      "Cento metri. - 100米。"
+    ],
+    "audioUrl": "assets/audio/words/1483.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1484",
+    "italian": "lunedì",
+    "chinese": "星期一",
+    "english": "Monday",
+    "pronunciation": "lunɛˈdi",
+    "category": "星期",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699767.000Z",
+    "examples": [
+      "Lunedì vado a scuola. - 星期一我去上学。",
+      "Il lunedì è il primo giorno. - 星期一是第一天。"
+    ],
+    "audioUrl": "assets/audio/words/1484.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1485",
+    "italian": "martedì",
+    "chinese": "星期二",
+    "english": "Tuesday",
+    "pronunciation": "marˈtɛdi",
+    "category": "星期",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699768.000Z",
+    "examples": [
+      "Martedì ho una riunione. - 星期二我有个会议。",
+      "Martedì prossimo. - 下星期二。"
+    ],
+    "audioUrl": "assets/audio/words/1485.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1486",
+    "italian": "mercoledì",
+    "chinese": "星期三",
+    "english": "Wednesday",
+    "pronunciation": "mɛrkolɛˈdi",
+    "category": "星期",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699770.000Z",
+    "examples": [
+      "Mercoledì vado al cinema. - 星期三我去看电影。",
+      "Il mercoledì. - 星期三。"
+    ],
+    "audioUrl": "assets/audio/words/1486.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1487",
+    "italian": "giovedì",
+    "chinese": "星期四",
+    "english": "Thursday",
+    "pronunciation": "dʒovɛˈdi",
+    "category": "星期",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699771.000Z",
+    "examples": [
+      "Giovedì lavoro fino alle sei. - 星期四我工作到6点。",
+      "Il giovedì. - 星期四。"
+    ],
+    "audioUrl": "assets/audio/words/1487.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1488",
+    "italian": "venerdì",
+    "chinese": "星期五",
+    "english": "Friday",
+    "pronunciation": "vɛnɛrˈdi",
+    "category": "星期",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699772.000Z",
+    "examples": [
+      "Venerdì sera esco con amici. - 星期五晚上我和朋友出去。",
+      "Venerdì prossimo. - 下星期五。"
+    ],
+    "audioUrl": "assets/audio/words/1488.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1489",
+    "italian": "sabato",
+    "chinese": "星期六",
+    "english": "Saturday",
+    "pronunciation": "sabato",
+    "category": "星期",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699773.000Z",
+    "examples": [
+      "Sabato vado al mercato. - 星期六我去市场。",
+      "Buon sabato! - 周末愉快！"
+    ],
+    "audioUrl": "assets/audio/words/1489.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1490",
+    "italian": "domenica",
+    "chinese": "星期日",
+    "english": "Sunday",
+    "pronunciation": "domɛˈnika",
+    "category": "星期",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699773.000Z",
+    "examples": [
+      "Domenica riposo. - 星期天我休息。",
+      "La domenica. - 星期天。"
+    ],
+    "audioUrl": "assets/audio/words/1490.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1491",
+    "italian": "gennaio",
+    "chinese": "一月",
+    "english": "January",
+    "pronunciation": "dʒɛnˈnaio",
+    "category": "月份",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699774.000Z",
+    "examples": [
+      "Gennaio è freddo. - 一月很冷。",
+      "Il primo gennaio. - 1月1日。"
+    ],
+    "audioUrl": "assets/audio/words/1491.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1492",
+    "italian": "febbraio",
+    "chinese": "二月",
+    "english": "February",
+    "pronunciation": "fɛbˈbraio",
+    "category": "月份",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699775.000Z",
+    "examples": [
+      "Febbraio ha ventotto giorni. - 二月有28天。",
+      "Il febbraio. - 二月。"
+    ],
+    "audioUrl": "assets/audio/words/1492.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1493",
+    "italian": "marzo",
+    "chinese": "三月",
+    "english": "March",
+    "pronunciation": "martso",
+    "category": "月份",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699776.000Z",
+    "examples": [
+      "Marzo inizia la primavera. - 三月春天开始。",
+      "Marzo 2024. - 2024年3月。"
+    ],
+    "audioUrl": "assets/audio/words/1493.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1494",
+    "italian": "aprile",
+    "chinese": "四月",
+    "english": "April",
+    "pronunciation": "aˈprile",
+    "category": "月份",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699777.000Z",
+    "examples": [
+      "Aprile è un mese bello. - 四月是个美丽的月份。",
+      "Buon aprile! - 四月快乐！"
+    ],
+    "audioUrl": "assets/audio/words/1494.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1495",
+    "italian": "maggio",
+    "chinese": "五月",
+    "english": "May",
+    "pronunciation": "maddʒo",
+    "category": "月份",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699778.000Z",
+    "examples": [
+      "Maggio è il mio mese preferito. - 五月是我最喜欢的月份。",
+      "Il primo maggio. - 5月1日。"
+    ],
+    "audioUrl": "assets/audio/words/1495.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1496",
+    "italian": "giugno",
+    "chinese": "六月",
+    "english": "June",
+    "pronunciation": "dʒuˈnjo",
+    "category": "月份",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699779.000Z",
+    "examples": [
+      "Giugno è molto caldo. - 六月很热。",
+      "Il giugno. - 六月。"
+    ],
+    "audioUrl": "assets/audio/words/1496.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1497",
+    "italian": "luglio",
+    "chinese": "七月",
+    "english": "July",
+    "pronunciation": "luˈljo",
+    "category": "月份",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699779.000Z",
+    "examples": [
+      "Luglio è il mese delle vacanze. - 七月是度假的月份。",
+      "Luglio 2024. - 2024年7月。"
+    ],
+    "audioUrl": "assets/audio/words/1497.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1498",
+    "italian": "agosto",
+    "chinese": "八月",
+    "english": "August",
+    "pronunciation": "aˈgosto",
+    "category": "月份",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699780.000Z",
+    "examples": [
+      "Ad agosto vado al mare. - 八月我去海边。",
+      "L'agosto. - 八月。"
+    ],
+    "audioUrl": "assets/audio/words/1498.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1499",
+    "italian": "settembre",
+    "chinese": "九月",
+    "english": "September",
+    "pronunciation": "sɛtˈtɛmbre",
+    "category": "月份",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699781.000Z",
+    "examples": [
+      "Settembre inizia l'autunno. - 九月秋天开始。",
+      "Settembre 2024. - 2024年9月。"
+    ],
+    "audioUrl": "assets/audio/words/1499.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1500",
+    "italian": "ottobre",
+    "chinese": "十月",
+    "english": "October",
+    "pronunciation": "otˈtobre",
+    "category": "月份",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699782.000Z",
+    "examples": [
+      "Ottobre è il mese dei colori. - 十月是多彩的季节。",
+      "Primo ottobre. - 10月1日。"
+    ],
+    "audioUrl": "assets/audio/words/1500.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1501",
+    "italian": "novembre",
+    "chinese": "十一月",
+    "english": "November",
+    "pronunciation": "novɛmbre",
+    "category": "月份",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699783.000Z",
+    "examples": [
+      "Novembre è freddo. - 十一月很冷。",
+      "Il novembre. - 十一月。"
+    ],
+    "audioUrl": "assets/audio/words/1501.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1502",
+    "italian": "dicembre",
+    "chinese": "十二月",
+    "english": "December",
+    "pronunciation": "ditʃɛmbre",
+    "category": "月份",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699784.000Z",
+    "examples": [
+      "Dicembre è il mese del Natale. - 十二月是圣诞节。",
+      "Buon dicembre! - 十二月快乐！"
+    ],
+    "audioUrl": "assets/audio/words/1502.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1503",
+    "italian": "ora",
+    "chinese": "小时/现在",
+    "english": "hour/now",
+    "pronunciation": "ˈora",
+    "category": "时间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699785.000Z",
+    "examples": [
+      "Che ora è? - 现在几点？",
+      "Un'ora fa. - 一小时前。"
+    ],
+    "audioUrl": "assets/audio/words/1503.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1504",
+    "italian": "minuto",
+    "chinese": "分钟",
+    "english": "minute",
+    "pronunciation": "miˈnuto",
+    "category": "时间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699786.000Z",
+    "examples": [
+      "Aspetta un minuto. - 等一分钟。",
+      "Cinque minuti. - 5分钟。"
+    ],
+    "audioUrl": "assets/audio/words/1504.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1505",
+    "italian": "giorno",
+    "chinese": "天/白天",
+    "english": "day",
+    "pronunciation": "dʒorno",
+    "category": "时间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699787.000Z",
+    "examples": [
+      "Buon giorno! - 日安！",
+      "Un giorno bello. - 好天气的一天。"
+    ],
+    "audioUrl": "assets/audio/words/1505.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1506",
+    "italian": "settimana",
+    "chinese": "星期/周",
+    "english": "week",
+    "pronunciation": "sɛtˈtimana",
+    "category": "时间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699787.000Z",
+    "examples": [
+      "Una settimana. - 一周。",
+      "La prossima settimana. - 下周。"
+    ],
+    "audioUrl": "assets/audio/words/1506.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1507",
+    "italian": "mese",
+    "chinese": "月",
+    "english": "month",
+    "pronunciation": "mɛze",
+    "category": "时间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699788.000Z",
+    "examples": [
+      "Questo mese. - 这个月。",
+      "Un mese fa. - 一个月前。"
+    ],
+    "audioUrl": "assets/audio/words/1507.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1508",
+    "italian": "anno",
+    "chinese": "年",
+    "english": "year",
+    "pronunciation": "anno",
+    "category": "时间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699789.000Z",
+    "examples": [
+      "Buon anno! - 新年快乐！",
+      "Un anno fa. - 一年前。"
+    ],
+    "audioUrl": "assets/audio/words/1508.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1509",
+    "italian": "mattina",
+    "chinese": "早上",
+    "english": "morning",
+    "pronunciation": "matˈtina",
+    "category": "时间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699790.000Z",
+    "examples": [
+      "La mattina vado a lavoro. - 早上我去工作。",
+      "Buona mattina! - 早上好！"
+    ],
+    "audioUrl": "assets/audio/words/1509.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1510",
+    "italian": "pomeriggio",
+    "chinese": "下午",
+    "english": "afternoon",
+    "pronunciation": "pomɛrˈiddʒo",
+    "category": "时间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699791.000Z",
+    "examples": [
+      "Il pomeriggio studio. - 下午我学习。",
+      "Buon pomeriggio! - 下午好！"
+    ],
+    "audioUrl": "assets/audio/words/1510.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1511",
+    "italian": "sera",
+    "chinese": "晚上",
+    "english": "evening",
+    "pronunciation": "sɛra",
+    "category": "时间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699792.000Z",
+    "examples": [
+      "La sera guardo la TV. - 晚上看电视。",
+      "Buona sera! - 晚上好！"
+    ],
+    "audioUrl": "assets/audio/words/1511.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1512",
+    "italian": "notte",
+    "chinese": "夜晚",
+    "english": "night",
+    "pronunciation": "nɔtɛ",
+    "category": "时间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699793.000Z",
+    "examples": [
+      "Buona notte! - 晚安！",
+      "La notte è buia. - 夜晚很黑。"
+    ],
+    "audioUrl": "assets/audio/words/1512.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1513",
+    "italian": "banca",
+    "chinese": "银行",
+    "english": "bank",
+    "pronunciation": "banka",
+    "category": "城市设施",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699794.000Z",
+    "examples": [
+      "Vado in banca. - 我去银行。",
+      "La banca è chiusa. - 银行关门了。"
+    ],
+    "audioUrl": "assets/audio/words/1513.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1514",
+    "italian": "ospedale",
+    "chinese": "医院",
+    "english": "hospital",
+    "pronunciation": "ospedˈale",
+    "category": "城市设施",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699795.000Z",
+    "examples": [
+      "Mio padre è in ospedale. - 我父亲在医院。",
+      "L'ospedale è grande. - 医院很大。"
+    ],
+    "audioUrl": "assets/audio/words/1514.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1515",
+    "italian": "scuola",
+    "chinese": "学校",
+    "english": "school",
+    "pronunciation": "skwɔla",
+    "category": "城市设施",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699797.000Z",
+    "examples": [
+      "Vado a scuola. - 我去上学。",
+      "La scuola è lontana. - 学校很远。"
+    ],
+    "audioUrl": "assets/audio/words/1515.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1516",
+    "italian": "università",
+    "chinese": "大学",
+    "english": "university",
+    "pronunciation": "universita",
+    "category": "城市设施",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699798.000Z",
+    "examples": [
+      "Studio all'università. - 我在大学学习。",
+      "L'università è importante. - 大学很重要。"
+    ],
+    "audioUrl": "assets/audio/words/1516.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1517",
+    "italian": "supermercato",
+    "chinese": "超市",
+    "english": "supermarket",
+    "pronunciation": "supermɛrkato",
+    "category": "购物",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699799.000Z",
+    "examples": [
+      "Compro al supermercato. - 我在超市购物。",
+      "Il supermercato è aperto. - 超市营业。"
+    ],
+    "audioUrl": "assets/audio/words/1517.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1518",
+    "italian": "negozio",
+    "chinese": "商店",
+    "english": "shop/store",
+    "pronunciation": "nɛˈɡodzio",
+    "category": "购物",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699800.000Z",
+    "examples": [
+      "Vado al negozio. - 我去商店。",
+      "Il negozio di abbigliamento. - 服装店。"
+    ],
+    "audioUrl": "assets/audio/words/1518.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1519",
+    "italian": "panificio",
+    "chinese": "面包店",
+    "english": "bakery",
+    "pronunciation": "panifitʃo",
+    "category": "购物",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699801.000Z",
+    "examples": [
+      "Compro il pane al panificio. - 我在面包店买面包。",
+      "Il panificio è vicino. - 面包店很近。"
+    ],
+    "audioUrl": "assets/audio/words/1519.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1520",
+    "italian": "ristorante",
+    "chinese": "餐厅",
+    "english": "restaurant",
+    "pronunciation": "ristorˈante",
+    "category": "餐饮",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699802.000Z",
+    "examples": [
+      "Ceno al ristorante. - 我在餐厅吃晚饭。",
+      "Il ristorante è buono. - 餐厅很好。"
+    ],
+    "audioUrl": "assets/audio/words/1520.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1521",
+    "italian": "bar",
+    "chinese": "酒吧/咖啡馆",
+    "english": "bar/cafè",
+    "pronunciation": "bar",
+    "category": "餐饮",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699803.000Z",
+    "examples": [
+      "Prendo un caffè al bar. - 我在酒吧喝咖啡。",
+      "Il bar è aperto. - 酒吧营业。"
+    ],
+    "audioUrl": "assets/audio/words/1521.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1522",
+    "italian": "pizzeria",
+    "chinese": "披萨店",
+    "english": "pizzeria",
+    "pronunciation": "pittsɛˈria",
+    "category": "餐饮",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699804.000Z",
+    "examples": [
+      "Mangio la pizza. - 我吃披萨。",
+      "La pizzeria è famosa. - 披萨店很出名。"
+    ],
+    "audioUrl": "assets/audio/words/1522.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1523",
+    "italian": "hotel",
+    "chinese": "酒店",
+    "english": "hotel",
+    "pronunciation": "oˈtɛl",
+    "category": "住宿",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699805.000Z",
+    "examples": [
+      "Alloggio in hotel. - 我住酒店。",
+      "L'hotel è di lusso. - 豪华酒店。"
+    ],
+    "audioUrl": "assets/audio/words/1523.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1524",
+    "italian": "museo",
+    "chinese": "博物馆",
+    "english": "museum",
+    "pronunciation": "muˈzɛo",
+    "category": "文化",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699806.000Z",
+    "examples": [
+      "Visito il museo. - 我参观博物馆。",
+      "Il museo d'arte. - 艺术博物馆。"
+    ],
+    "audioUrl": "assets/audio/words/1524.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1525",
+    "italian": "teatro",
+    "chinese": "剧院",
+    "english": "theater",
+    "pronunciation": "tɛˈatro",
+    "category": "文化",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699807.000Z",
+    "examples": [
+      "Vado al teatro. - 我去剧院。",
+      "Il teatro è vecchio. - 剧院很古老。"
+    ],
+    "audioUrl": "assets/audio/words/1525.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1526",
+    "italian": "cinema",
+    "chinese": "电影院",
+    "english": "cinema",
+    "pronunciation": "tʃinɛma",
+    "category": "娱乐",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699807.000Z",
+    "examples": [
+      "Vado al cinema. - 我去看电影。",
+      "Il cinema è pieno. - 电影院满了。"
+    ],
+    "audioUrl": "assets/audio/words/1526.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1527",
+    "italian": "parco",
+    "chinese": "公园",
+    "english": "park",
+    "pronunciation": "parco",
+    "category": "休闲",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699808.000Z",
+    "examples": [
+      "Faccio una passeggiata nel parco. - 我在公园散步。",
+      "Il parco è bello. - 公园很美。"
+    ],
+    "audioUrl": "assets/audio/words/1527.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1528",
+    "italian": "chiesa",
+    "chinese": "教堂",
+    "english": "church",
+    "pronunciation": "kjɛsa",
+    "category": "宗教",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699809.000Z",
+    "examples": [
+      "La chiesa è antica. - 教堂很古老。",
+      "Vado in chiesa. - 我去教堂。"
+    ],
+    "audioUrl": "assets/audio/words/1528.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1529",
+    "italian": "stazione",
+    "chinese": "车站",
+    "english": "station",
+    "pronunciation": "statˈtsjone",
+    "category": "交通",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699810.000Z",
+    "examples": [
+      "Aspetto alla stazione. - 我在车站等待。",
+      "La stazione ferroviaria. - 火车站。"
+    ],
+    "audioUrl": "assets/audio/words/1529.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1530",
+    "italian": "aeroporto",
+    "chinese": "机场",
+    "english": "airport",
+    "pronunciation": "aɛrˈporto",
+    "category": "交通",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699811.000Z",
+    "examples": [
+      "L'aereo parte dall'aeroporto. - 飞机从机场起飞。",
+      "L'aeroporto internazionale. - 国际机场。"
+    ],
+    "audioUrl": "assets/audio/words/1530.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1531",
+    "italian": "metro",
+    "chinese": "地铁",
+    "english": "subway/metro",
+    "pronunciation": "mɛtro",
+    "category": "交通",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699812.000Z",
+    "examples": [
+      "Prendo la metro. - 我坐地铁。",
+      "La stazione della metro. - 地铁站。"
+    ],
+    "audioUrl": "assets/audio/words/1531.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1532",
+    "italian": "farmacia",
+    "chinese": "药店/药房",
+    "english": "pharmacy",
+    "pronunciation": "farmatʃa",
+    "category": "健康",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699813.000Z",
+    "examples": [
+      "Comprare medicine in farmacia. - 在药房买药。",
+      "La farmacia è aperta. - 药房营业。"
+    ],
+    "audioUrl": "assets/audio/words/1532.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1533",
+    "italian": "biblioteca",
+    "chinese": "图书馆",
+    "english": "library",
+    "pronunciation": "bibliotɛka",
+    "category": "学习",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699814.000Z",
+    "examples": [
+      "Studio in biblioteca. - 我在图书馆学习。",
+      "La biblioteca è silenziosa. - 图书馆很安静。"
+    ],
+    "audioUrl": "assets/audio/words/1533.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1534",
+    "italian": "piscina",
+    "chinese": "游泳池",
+    "english": "swimming pool",
+    "pronunciation": "piʃˈina",
+    "category": "运动",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699815.000Z",
+    "examples": [
+      "Vado in piscina. - 我去游泳池。",
+      "La piscina è grande. - 游泳池很大。"
+    ],
+    "audioUrl": "assets/audio/words/1534.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1535",
+    "italian": "palestra",
+    "chinese": "健身房",
+    "english": "gym",
+    "pronunciation": "palˈɛsra",
+    "category": "运动",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699815.000Z",
+    "examples": [
+      "Mi alleno in palestra. - 我在健身房锻炼。",
+      "La palestra è moderna. - 健身房很现代。"
+    ],
+    "audioUrl": "assets/audio/words/1535.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1536",
+    "italian": "stadio",
+    "chinese": "体育场",
+    "english": "stadium",
+    "pronunciation": "stadˈjo",
+    "category": "运动",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699816.000Z",
+    "examples": [
+      "Gioco allo stadio. - 我在体育场打球。",
+      "Lo stadio di calcio. - 足球场。"
+    ],
+    "audioUrl": "assets/audio/words/1536.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1537",
+    "italian": "ufficio",
+    "chinese": "办公室",
+    "english": "office",
+    "pronunciation": "ufˈfitʃo",
+    "category": "工作",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699817.000Z",
+    "examples": [
+      "Lavoro in ufficio. - 我在办公室工作。",
+      "L'ufficio è al secondo piano. - 办公室在二楼。"
+    ],
+    "audioUrl": "assets/audio/words/1537.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1538",
+    "italian": "casa",
+    "chinese": "家/房子",
+    "english": "home/house",
+    "pronunciation": "kasa",
+    "category": "居住",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699818.000Z",
+    "examples": [
+      "Torno a casa. - 我回家。",
+      "La mia casa è grande. - 我的房子很大。"
+    ],
+    "audioUrl": "assets/audio/words/1538.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1539",
+    "italian": "appartamento",
+    "chinese": "公寓",
+    "english": "apartment",
+    "pronunciation": "appartamɛnto",
+    "category": "居住",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699819.000Z",
+    "examples": [
+      "Vivo in un appartamento. - 我住在公寓里。",
+      "L'appartamento è piccolo. - 公寓很小。"
+    ],
+    "audioUrl": "assets/audio/words/1539.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1540",
+    "italian": "cucina",
+    "chinese": "厨房",
+    "english": "kitchen",
+    "pronunciation": "kuˈtʃina",
+    "category": "房间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699820.000Z",
+    "examples": [
+      "Cucino nella cucina. - 我在厨房做饭。",
+      "La cucina è pulita. - 厨房很干净。"
+    ],
+    "audioUrl": "assets/audio/words/1540.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1541",
+    "italian": "camera",
+    "chinese": "房间",
+    "english": "room",
+    "pronunciation": "kamɛra",
+    "category": "房间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699821.000Z",
+    "examples": [
+      "La mia camera è piccola. - 我的房间很小。",
+      "Camera da letto. - 卧室。"
+    ],
+    "audioUrl": "assets/audio/words/1541.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1542",
+    "italian": "soggiorno",
+    "chinese": "客厅",
+    "english": "living room",
+    "pronunciation": "soddʒorno",
+    "category": "房间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699823.000Z",
+    "examples": [
+      "Guardiamo TV in soggiorno. - 我们在客厅看电视。",
+      "Il soggiorno è accogliente. - 客厅很温馨。"
+    ],
+    "audioUrl": "assets/audio/words/1542.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1543",
+    "italian": "bagno",
+    "chinese": "浴室",
+    "english": "bathroom",
+    "pronunciation": "baɲo",
+    "category": "房间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699823.000Z",
+    "examples": [
+      "Mi lavo in bagno. - 我在浴室洗漱。",
+      "Il bagno è piccolo. - 浴室很小。"
+    ],
+    "audioUrl": "assets/audio/words/1543.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1544",
+    "italian": "giardino",
+    "chinese": "花园",
+    "english": "garden",
+    "pronunciation": "dʒardino",
+    "category": "户外",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699824.000Z",
+    "examples": [
+      "Leggo in giardino. - 我在花园阅读。",
+      "Il giardino è fiorito. - 花园鲜花盛开。"
+    ],
+    "audioUrl": "assets/audio/words/1544.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1545",
+    "italian": "garage",
+    "chinese": "车库",
+    "english": "garage",
+    "pronunciation": "garadʒ",
+    "category": "房屋",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699825.000Z",
+    "examples": [
+      "La macchina è nel garage. - 车在车库里。",
+      "Il garage è pieno. - 车库满了。"
+    ],
+    "audioUrl": "assets/audio/words/1545.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1546",
+    "italian": "posto",
+    "chinese": "地方/位置",
+    "english": "place/seat",
+    "pronunciation": "posto",
+    "category": "方位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699826.000Z",
+    "examples": [
+      "Questo posto è libero. - 这个位置是空的。",
+      "Un posto bello. - 一个美丽的地方。"
+    ],
+    "audioUrl": "assets/audio/words/1546.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1547",
+    "italian": "indirizzo",
+    "chinese": "地址",
+    "english": "address",
+    "pronunciation": "indirittso",
+    "category": "方位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699827.000Z",
+    "examples": [
+      "Il mio indirizzo è Via Roma. - 我的地址是罗马路。",
+      "Qual è il tuo indirizzo? - 你的地址是什么？"
+    ],
+    "audioUrl": "assets/audio/words/1547.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1548",
+    "italian": "macchina",
+    "chinese": "汽车",
+    "english": "car",
+    "pronunciation": "makkina",
+    "category": "交通",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699829.000Z",
+    "examples": [
+      "Guido la macchina. - 我开车。",
+      "La macchina è nuova. - 汽车是新的。"
+    ],
+    "audioUrl": "assets/audio/words/1548.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1549",
+    "italian": "automobile",
+    "chinese": "汽车",
+    "english": "automobile",
+    "pronunciation": "automɔbile",
+    "category": "交通",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699829.000Z",
+    "examples": [
+      "L'automobile è veloce. - 汽车很快。",
+      "Compro un'automobile. - 我买一辆汽车。"
+    ],
+    "audioUrl": "assets/audio/words/1549.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1550",
+    "italian": "treno",
+    "chinese": "火车",
+    "english": "train",
+    "pronunciation": "trɛno",
+    "category": "交通",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699830.000Z",
+    "examples": [
+      "Viaggio in treno. - 我乘火车旅行。",
+      "Il treno parte alle 9. - 火车9点出发。"
+    ],
+    "audioUrl": "assets/audio/words/1550.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1551",
+    "italian": "autobus",
+    "chinese": "公交车",
+    "english": "bus",
+    "pronunciation": "autobus",
+    "category": "交通",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699831.000Z",
+    "examples": [
+      "Prendo l'autobus. - 我坐公交车。",
+      "L'autobus è pieno. - 公交车很挤。"
+    ],
+    "audioUrl": "assets/audio/words/1551.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1552",
+    "italian": "bicicletta",
+    "chinese": "自行车",
+    "english": "bicycle",
+    "pronunciation": "bitʃiklɛtta",
+    "category": "交通",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699832.000Z",
+    "examples": [
+      "Vado in bicicletta. - 我骑自行车。",
+      "La bicicletta è rossa. - 自行车是红色的。"
+    ],
+    "audioUrl": "assets/audio/words/1552.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1553",
+    "italian": "moto",
+    "chinese": "摩托车",
+    "english": "motorcycle",
+    "pronunciation": "mɔto",
+    "category": "交通",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699833.000Z",
+    "examples": [
+      "Guido la moto. - 我骑摩托车。",
+      "La moto è veloce. - 摩托车很快。"
+    ],
+    "audioUrl": "assets/audio/words/1553.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1554",
+    "italian": "aereo",
+    "chinese": "飞机",
+    "english": "airplane",
+    "pronunciation": "aɛrɛo",
+    "category": "交通",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699834.000Z",
+    "examples": [
+      "Viaggio in aereo. - 我乘飞机旅行。",
+      "L'aereo vola alto. - 飞机飞得很高。"
+    ],
+    "audioUrl": "assets/audio/words/1554.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1555",
+    "italian": "barca",
+    "chinese": "小船",
+    "english": "boat",
+    "pronunciation": "barka",
+    "category": "交通",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699835.000Z",
+    "examples": [
+      "Vado in barca. - 我坐船。",
+      "La barca a vela. - 帆船。"
+    ],
+    "audioUrl": "assets/audio/words/1555.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1556",
+    "italian": "nave",
+    "chinese": "轮船",
+    "english": "ship",
+    "pronunciation": "nave",
+    "category": "交通",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699836.000Z",
+    "examples": [
+      "La nave è nel porto. - 轮船在港口。",
+      "Viaggio in nave. - 我乘船旅行。"
+    ],
+    "audioUrl": "assets/audio/words/1556.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1557",
+    "italian": "metropolitana",
+    "chinese": "地铁",
+    "english": "subway",
+    "pronunciation": "mɛtropolitana",
+    "category": "交通",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699837.000Z",
+    "examples": [
+      "Prendo la metropolitana. - 我坐地铁。",
+      "La metropolitana è veloce. - 地铁很快。"
+    ],
+    "audioUrl": "assets/audio/words/1557.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1558",
+    "italian": "taxi",
+    "chinese": "出租车",
+    "english": "taxi",
+    "pronunciation": "taksi",
+    "category": "交通",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699837.000Z",
+    "examples": [
+      "Chiamo un taxi. - 我叫出租车。",
+      "Il taxi è giallo. - 出租车是黄色的。"
+    ],
+    "audioUrl": "assets/audio/words/1558.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1559",
+    "italian": "biglietto",
+    "chinese": "票",
+    "english": "ticket",
+    "pronunciation": "bidʒɛtto",
+    "category": "出行",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699838.000Z",
+    "examples": [
+      "Compro un biglietto. - 我买票。",
+      "Il biglietto costa 10 euro. - 票价10欧元。"
+    ],
+    "audioUrl": "assets/audio/words/1559.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1560",
+    "italian": "passaporto",
+    "chinese": "护照",
+    "english": "passport",
+    "pronunciation": "passaporto",
+    "category": "出行",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699839.000Z",
+    "examples": [
+      "Mostro il passaporto. - 我出示护照。",
+      "Il mio passaporto è valido. - 我的护照有效。"
+    ],
+    "audioUrl": "assets/audio/words/1560.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1561",
+    "italian": "valigia",
+    "chinese": "行李箱",
+    "english": "suitcase",
+    "pronunciation": "validʒa",
+    "category": "出行",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699840.000Z",
+    "examples": [
+      "Preparo la valigia. - 我准备行李箱。",
+      "La valigia è pesante. - 行李箱很重。"
+    ],
+    "audioUrl": "assets/audio/words/1561.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1562",
+    "italian": "bagaglio",
+    "chinese": "行李",
+    "english": "luggage",
+    "pronunciation": "badʒallo",
+    "category": "出行",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699841.000Z",
+    "examples": [
+      "Il mio bagaglio. - 我的行李。",
+      "Aereo con bagaglio. - 带行李的飞机。"
+    ],
+    "audioUrl": "assets/audio/words/1562.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1563",
+    "italian": "passeggero",
+    "chinese": "乘客",
+    "english": "passenger",
+    "pronunciation": "passɛddʒɛro",
+    "category": "出行",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699842.000Z",
+    "examples": [
+      "Sono un passeggero. - 我是一名乘客。",
+      "I passeggeri aspettano. - 乘客们等待。"
+    ],
+    "audioUrl": "assets/audio/words/1563.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1564",
+    "italian": "pilota",
+    "chinese": "飞行员",
+    "english": "pilot",
+    "pronunciation": "pilota",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699843.000Z",
+    "examples": [
+      "Il pilota guida l'aereo. - 飞行员驾驶飞机。",
+      "Il pilota è esperto. - 飞行员经验丰富。"
+    ],
+    "audioUrl": "assets/audio/words/1564.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1565",
+    "italian": "autista",
+    "chinese": "司机",
+    "english": "driver",
+    "pronunciation": "autista",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699844.000Z",
+    "examples": [
+      "L'autista guida il taxi. - 司机驾驶出租车。",
+      "L'autista è gentile. - 司机很友善。"
+    ],
+    "audioUrl": "assets/audio/words/1565.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1566",
+    "italian": "viaggio",
+    "chinese": "旅行",
+    "english": "trip/travel",
+    "pronunciation": "viaddʒo",
+    "category": "出行",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699845.000Z",
+    "examples": [
+      "Faccio un viaggio. - 我去旅行。",
+      "Un viaggio bello. - 一次美好的旅行。"
+    ],
+    "audioUrl": "assets/audio/words/1566.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1567",
+    "italian": "vacanza",
+    "chinese": "假期",
+    "english": "vacation/holiday",
+    "pronunciation": "vakantʦa",
+    "category": "出行",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699846.000Z",
+    "examples": [
+      "Sono in vacanza. - 我在度假。",
+      "Buone vacanze! - 假期愉快！"
+    ],
+    "audioUrl": "assets/audio/words/1567.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1568",
+    "italian": "partire",
+    "chinese": "出发/离开",
+    "english": "to leave/depart",
+    "pronunciation": "partirɛ",
+    "category": "动词",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699847.000Z",
+    "examples": [
+      "Parto domani. - 我明天出发。",
+      "Il treno parte alle 10. - 火车10点出发。"
+    ],
+    "audioUrl": "assets/audio/words/1568.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1569",
+    "italian": "arrivare",
+    "chinese": "到达",
+    "english": "to arrive",
+    "pronunciation": "arrivarɛ",
+    "category": "动词",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699847.000Z",
+    "examples": [
+      "Arrivo presto. - 我很早到达。",
+      "L'aereo arrive tra un'ora. - 飞机一小时后到达。"
+    ],
+    "audioUrl": "assets/audio/words/1569.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1570",
+    "italian": "guidare",
+    "chinese": "驾驶",
+    "english": "to drive",
+    "pronunciation": "guidarɛ",
+    "category": "动词",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699849.000Z",
+    "examples": [
+      "So guidare la macchina. - 我会开车。",
+      "Guida con attenzione. - 小心驾驶。"
+    ],
+    "audioUrl": "assets/audio/words/1570.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1571",
+    "italian": "viaggiare",
+    "chinese": "旅行",
+    "english": "to travel",
+    "pronunciation": "viaddʒarɛ",
+    "category": "动词",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699850.000Z",
+    "examples": [
+      "Mi piace viaggiare. - 我喜欢旅行。",
+      "Viaggiare è bello. - 旅行很美好。"
+    ],
+    "audioUrl": "assets/audio/words/1571.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1572",
+    "italian": "salire",
+    "chinese": "上车",
+    "english": "to get on",
+    "pronunciation": "salirɛ",
+    "category": "动词",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699851.000Z",
+    "examples": [
+      "Salire sull'autobus. - 上公交车。",
+      "Salgo in macchina. - 我上车。"
+    ],
+    "audioUrl": "assets/audio/words/1572.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1573",
+    "italian": "scendere",
+    "chinese": "下车",
+    "english": "to get off",
+    "pronunciation": "ʃɛndɛrɛ",
+    "category": "动词",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699853.000Z",
+    "examples": [
+      "Scendo alla prossima fermata. - 我在下一站下车。",
+      "Scendere dall'autobus. - 下公交车。"
+    ],
+    "audioUrl": "assets/audio/words/1573.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1574",
+    "italian": "dottore",
+    "chinese": "医生",
+    "english": "doctor",
+    "pronunciation": "dottɔrɛ",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699854.000Z",
+    "examples": [
+      "Il dottore cura i pazienti. - 医生治疗病人。",
+      "Vado dal dottore. - 我去看医生。"
+    ],
+    "audioUrl": "assets/audio/words/1574.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1575",
+    "italian": "medico",
+    "chinese": "医生",
+    "english": "doctor",
+    "pronunciation": "mɛdiko",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699855.000Z",
+    "examples": [
+      "Il medico è gentile. - 医生很友善。",
+      "Il medico mi visita. - 医生给我看病。"
+    ],
+    "audioUrl": "assets/audio/words/1575.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1576",
+    "italian": "infermiera",
+    "chinese": "护士",
+    "english": "nurse",
+    "pronunciation": "infɛrmjɛra",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699856.000Z",
+    "examples": [
+      "L'infermiera aiuta i pazienti. - 护士帮助病人。",
+      "L'infermiera è gentile. - 护士很友善。"
+    ],
+    "audioUrl": "assets/audio/words/1576.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1577",
+    "italian": "insegnante",
+    "chinese": "教师",
+    "english": "teacher",
+    "pronunciation": "insɛɡnantɛ",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699857.000Z",
+    "examples": [
+      "L'insegnante spiega la lezione. - 老师讲解课程。",
+      "L'insegnante è bravo. - 老师很棒。"
+    ],
+    "audioUrl": "assets/audio/words/1577.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1578",
+    "italian": "studente",
+    "chinese": "学生",
+    "english": "student",
+    "pronunciation": "studɛntɛ",
+    "category": "身份",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699858.000Z",
+    "examples": [
+      "Sono studente. - 我是学生。",
+      "Lo studente studia molto. - 这个学生学习很努力。"
+    ],
+    "audioUrl": "assets/audio/words/1578.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1579",
+    "italian": "studentessa",
+    "chinese": "女学生",
+    "english": "female student",
+    "pronunciation": "studɛntɛssa",
+    "category": "身份",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699859.000Z",
+    "examples": [
+      "La studentessa è brava. - 这个女学生很棒。",
+      "Le studentesse studiano. - 女学生们在学习。"
+    ],
+    "audioUrl": "assets/audio/words/1579.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1580",
+    "italian": "lavoratore",
+    "chinese": "工人",
+    "english": "worker",
+    "pronunciation": "lavɔratɔrɛ",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699860.000Z",
+    "examples": [
+      "Il lavoratore è stanco. - 工人很累。",
+      "I lavoratori partono. - 工人们出发了。"
+    ],
+    "audioUrl": "assets/audio/words/1580.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1581",
+    "italian": "impiegato",
+    "chinese": "职员",
+    "english": "employee",
+    "pronunciation": "implɛgato",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699860.000Z",
+    "examples": [
+      "L'impiegato lavora in ufficio. - 职员在办公室工作。",
+      "Gli impiegati pranzano. - 职员们吃午饭。"
+    ],
+    "audioUrl": "assets/audio/words/1581.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1582",
+    "italian": "commerciante",
+    "chinese": "商人",
+    "english": "merchant",
+    "pronunciation": "kommɛrtʃantɛ",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699861.000Z",
+    "examples": [
+      "Il commerciante vende prodotti. - 商人销售产品。",
+      "Il commerciante è ricco. - 商人很富有。"
+    ],
+    "audioUrl": "assets/audio/words/1582.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1583",
+    "italian": "artigiano",
+    "chinese": "工匠",
+    "english": "craftsman",
+    "pronunciation": "artidʒano",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699862.000Z",
+    "examples": [
+      "L'artigiano crea oggetti. - 工匠制作物品。",
+      "L'artigiano è abile. - 工匠技术娴熟。"
+    ],
+    "audioUrl": "assets/audio/words/1583.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1584",
+    "italian": "cuoco",
+    "chinese": "厨师",
+    "english": "cook",
+    "pronunciation": "kuoko",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699863.000Z",
+    "examples": [
+      "Il cu cucina la pasta. - 厨师煮意面。",
+      "Il cuoco è professionale. - 厨师很专业。"
+    ],
+    "audioUrl": "assets/audio/words/1584.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1585",
+    "italian": "pasticcere",
+    "chinese": "糕点师",
+    "english": "pastry chef",
+    "pronunciation": "pastittʃɛrɛ",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699864.000Z",
+    "examples": [
+      "Il pasticcere fa dolci. - 糕点师做甜点。",
+      "Il pasticcere è bravo. - 糕点师很棒。"
+    ],
+    "audioUrl": "assets/audio/words/1585.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1586",
+    "italian": "cameriere",
+    "chinese": "服务员",
+    "english": "waiter",
+    "pronunciation": "kamɛrjɛrɛ",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699865.000Z",
+    "examples": [
+      "Il cameriere serve i clienti. - 服务员服务顾客。",
+      "Il cameriere è gentile. - 服务员很友善。"
+    ],
+    "audioUrl": "assets/audio/words/1586.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1587",
+    "italian": "cameriera",
+    "chinese": "女服务员",
+    "english": "waitress",
+    "pronunciation": "kamɛrjɛra",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699866.000Z",
+    "examples": [
+      "La cameriera porta il cibo. - 女服务员端来食物。",
+      "La cameriera è gentile. - 女服务员很友善。"
+    ],
+    "audioUrl": "assets/audio/words/1587.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1588",
+    "italian": "pizzaiolo",
+    "chinese": "披萨师",
+    "english": "pizza maker",
+    "pronunciation": "pitsaiɔlo",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699867.000Z",
+    "examples": [
+      "Il pizzaiolo prepara la pizza. - 披萨师准备披萨。",
+      "Il pizzaiolo è veloce. - 披萨师动作很快。"
+    ],
+    "audioUrl": "assets/audio/words/1588.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1589",
+    "italian": "barista",
+    "chinese": "酒吧服务员",
+    "english": "barista",
+    "pronunciation": "barista",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699868.000Z",
+    "examples": [
+      "Il barista prepara il caffè. - 酒吧服务员准备咖啡。",
+      "La barista è gentile. - 酒吧女服务员很友善。"
+    ],
+    "audioUrl": "assets/audio/words/1589.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1590",
+    "italian": "libraio",
+    "chinese": "书店老板",
+    "english": "bookseller",
+    "pronunciation": "libraio",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699868.000Z",
+    "examples": [
+      "Il libraio vende libri. - 书店老板卖书。",
+      "Il libraio mi consiglia. - 书店老板给我推荐。"
+    ],
+    "audioUrl": "assets/audio/words/1590.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1591",
+    "italian": "fioraio",
+    "chinese": "花商",
+    "english": "florist",
+    "pronunciation": "fjɔraio",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699869.000Z",
+    "examples": [
+      "Il fioraio vende fiori. - 花商卖花。",
+      "Il fioraio è gentile. - 花商很友善。"
+    ],
+    "audioUrl": "assets/audio/words/1591.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1592",
+    "italian": "panettiere",
+    "chinese": "面包师",
+    "english": "baker",
+    "pronunciation": "panɛttjɛrɛ",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699870.000Z",
+    "examples": [
+      "Il panettiere fa il pane. - 面包师做面包。",
+      "Il panettiere si alza presto. - 面包师起得很早。"
+    ],
+    "audioUrl": "assets/audio/words/1592.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1593",
+    "italian": "meccanico",
+    "chinese": "机械师",
+    "english": "mechanic",
+    "pronunciation": "mɛkkanko",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699871.000Z",
+    "examples": [
+      "Il meccanico ripara la macchina. - 机械师修理汽车。",
+      "Il meccanico è esperto. - 机械师是专家。"
+    ],
+    "audioUrl": "assets/audio/words/1593.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1594",
+    "italian": "elettricista",
+    "chinese": "电工",
+    "english": "electrician",
+    "pronunciation": "ɛlɛttritʃista",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699872.000Z",
+    "examples": [
+      "L'elettricista ripara le luci. - 电工修理电灯。",
+      "L'elettricista è abile. - 电工技术娴熟。"
+    ],
+    "audioUrl": "assets/audio/words/1594.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1595",
+    "italian": "idraulico",
+    "chinese": "水管工",
+    "english": "plumber",
+    "pronunciation": "idrauliko",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699873.000Z",
+    "examples": [
+      "L'idraulico ripara il lavandino. - 水管工修理水槽。",
+      "L'idraulico è veloce. - 水管工动作很快。"
+    ],
+    "audioUrl": "assets/audio/words/1595.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1596",
+    "italian": "muratore",
+    "chinese": "泥瓦匠",
+    "english": "bricklayer",
+    "pronunciation": "muratorɛ",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699874.000Z",
+    "examples": [
+      "Il muratore costruisce case. - 泥瓦匠建造房屋。",
+      "Il muratore lavora duro. - 泥瓦匠工作辛苦。"
+    ],
+    "audioUrl": "assets/audio/words/1596.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1597",
+    "italian": "pittore",
+    "chinese": "画家",
+    "english": "painter",
+    "pronunciation": "pittɔrɛ",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699875.000Z",
+    "examples": [
+      "Il pittore dipinge quadri. - 画家画画。",
+      "Il pittore è famoso. - 画家很出名。"
+    ],
+    "audioUrl": "assets/audio/words/1597.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1598",
+    "italian": "musicista",
+    "chinese": "音乐家",
+    "english": "musician",
+    "pronunciation": "musitʃista",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699876.000Z",
+    "examples": [
+      "Il musicista suona il pianoforte. - 音乐家弹钢琴。",
+      "Il musicista è talentuoso. - 音乐家很有天赋。"
+    ],
+    "audioUrl": "assets/audio/words/1598.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1599",
+    "italian": "attore",
+    "chinese": "演员",
+    "english": "actor",
+    "pronunciation": "attɔrɛ",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699877.000Z",
+    "examples": [
+      "L'attore recita in teatro. - 演员在剧院表演。",
+      "L'attore è famoso. - 演员很出名。"
+    ],
+    "audioUrl": "assets/audio/words/1599.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1600",
+    "italian": "attrice",
+    "chinese": "女演员",
+    "english": "actress",
+    "pronunciation": "attritʃɛ",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699878.000Z",
+    "examples": [
+      "L'attrice recita bene. - 女演员表演得很好。",
+      "L'attrice è bellissima. - 女演员非常漂亮。"
+    ],
+    "audioUrl": "assets/audio/words/1600.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1601",
+    "italian": "scrittore",
+    "chinese": "作家",
+    "english": "writer",
+    "pronunciation": "skrittɔrɛ",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699879.000Z",
+    "examples": [
+      "Lo scrittore scrive libri. - 作家写书。",
+      "Lo scrittore è famoso. - 作家很出名。"
+    ],
+    "audioUrl": "assets/audio/words/1601.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1602",
+    "italian": "giornalista",
+    "chinese": "记者",
+    "english": "journalist",
+    "pronunciation": "dʒornalista",
+    "category": "职业",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699880.000Z",
+    "examples": [
+      "Il giornalista scrive articoli. - 记者写文章。",
+      "Il giornalista lavora per il giornale. - 记者为报社工作。"
+    ],
+    "audioUrl": "assets/audio/words/1602.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1603",
+    "italian": "testa",
+    "chinese": "头",
+    "english": "head",
+    "pronunciation": "tɛsta",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699881.000Z",
+    "examples": [
+      "Ho mal di testa. - 我头痛。",
+      "La testa è importante. - 头部很重要。"
+    ],
+    "audioUrl": "assets/audio/words/1603.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1604",
+    "italian": "capelli",
+    "chinese": "头发",
+    "english": "hair",
+    "pronunciation": "kapɛlli",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699882.000Z",
+    "examples": [
+      "Ho i capelli neri. - 我有黑头发。",
+      "I capelli lunghi. - 长发。"
+    ],
+    "audioUrl": "assets/audio/words/1604.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1605",
+    "italian": "occhio",
+    "chinese": "眼睛",
+    "english": "eye",
+    "pronunciation": "ɔkkjo",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699883.000Z",
+    "examples": [
+      "Ho due occhi. - 我有两只眼睛。",
+      "L'occhio blu. - 蓝眼睛。"
+    ],
+    "audioUrl": "assets/audio/words/1605.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1606",
+    "italian": "occhi",
+    "chinese": "眼睛（复数）",
+    "english": "eyes",
+    "pronunciation": "ɔkki",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699884.000Z",
+    "examples": [
+      "Gli occhi sono belli. - 眼睛很漂亮。",
+      "Apro gli occhi. - 我睁开眼睛。"
+    ],
+    "audioUrl": "assets/audio/words/1606.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1607",
+    "italian": "naso",
+    "chinese": "鼻子",
+    "english": "nose",
+    "pronunciation": "nazo",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699885.000Z",
+    "examples": [
+      "Ho il naso grande. - 我鼻子很大。",
+      "Il naso sente gli odori. - 鼻子闻气味。"
+    ],
+    "audioUrl": "assets/audio/words/1607.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1608",
+    "italian": "bocca",
+    "chinese": "嘴",
+    "english": "mouth",
+    "pronunciation": "bɔkka",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699886.000Z",
+    "examples": [
+      "Apro la bocca. - 我张开嘴。",
+      "La bocca parla. - 嘴巴说话。"
+    ],
+    "audioUrl": "assets/audio/words/1608.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1609",
+    "italian": "orecchio",
+    "chinese": "耳朵",
+    "english": "ear",
+    "pronunciation": "orɛkkjo",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699886.000Z",
+    "examples": [
+      "Ho due orecchie. - 我有两只耳朵。",
+      "L'orecchio ascolta. - 耳朵听声音。"
+    ],
+    "audioUrl": "assets/audio/words/1609.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1610",
+    "italian": "orecchie",
+    "chinese": "耳朵（复数）",
+    "english": "ears",
+    "pronunciation": "orɛkkjɛ",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699887.000Z",
+    "examples": [
+      "Le orecchie sono piccole. - 耳朵很小。",
+      "Pulisco le orecchie. - 我清洁耳朵。"
+    ],
+    "audioUrl": "assets/audio/words/1610.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1611",
+    "italian": "viso",
+    "chinese": "脸",
+    "english": "face",
+    "pronunciation": "vizo",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699888.000Z",
+    "examples": [
+      "Lavo il viso. - 我洗脸。",
+      "Il viso è gentile. - 脸很友善。"
+    ],
+    "audioUrl": "assets/audio/words/1611.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1612",
+    "italian": "fronte",
+    "chinese": "额头",
+    "english": "forehead",
+    "pronunciation": "frɔntɛ",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699889.000Z",
+    "examples": [
+      "La fronte è alta. - 额头很高。",
+      "Sudo dalla fronte. - 我额头出汗。"
+    ],
+    "audioUrl": "assets/audio/words/1612.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1613",
+    "italian": "guancia",
+    "chinese": "脸颊",
+    "english": "cheek",
+    "pronunciation": "gwantʃa",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699890.000Z",
+    "examples": [
+      "Ho le guance rosse. - 我脸颊发红。",
+      "La guancia è morbida. - 脸颊很柔软。"
+    ],
+    "audioUrl": "assets/audio/words/1613.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1614",
+    "italian": "collo",
+    "chinese": "脖子",
+    "english": "neck",
+    "pronunciation": "kollo",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699891.000Z",
+    "examples": [
+      "Il collo è lungo. - 脖子很长。",
+      "Ho dolore al collo. - 我脖子痛。"
+    ],
+    "audioUrl": "assets/audio/words/1614.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1615",
+    "italian": "spalla",
+    "chinese": "肩膀",
+    "english": "shoulder",
+    "pronunciation": "spalla",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699892.000Z",
+    "examples": [
+      "Ho due spalle. - 我有两个肩膀。",
+      "La spalla è forte. - 肩膀很强壮。"
+    ],
+    "audioUrl": "assets/audio/words/1615.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1616",
+    "italian": "braccio",
+    "chinese": "手臂",
+    "english": "arm",
+    "pronunciation": "brattʃo",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699893.000Z",
+    "examples": [
+      "Alzo il braccio. - 我举起手臂。",
+      "Il braccio è lungo. - 手臂很长。"
+    ],
+    "audioUrl": "assets/audio/words/1616.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1617",
+    "italian": "braccia",
+    "chinese": "手臂（复数）",
+    "english": "arms",
+    "pronunciation": "brattʃa",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699894.000Z",
+    "examples": [
+      "Apro le braccia. - 我张开双臂。",
+      "Le braccia forti. - 强壮的手臂。"
+    ],
+    "audioUrl": "assets/audio/words/1617.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1618",
+    "italian": "mano",
+    "chinese": "手",
+    "english": "hand",
+    "pronunciation": "mano",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699894.000Z",
+    "examples": [
+      "Lavo le mani. - 我洗手。",
+      "La mano è calda. - 手很温暖。"
+    ],
+    "audioUrl": "assets/audio/words/1618.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1619",
+    "italian": "mani",
+    "chinese": "手（复数）",
+    "english": "hands",
+    "pronunciation": "mani",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699895.000Z",
+    "examples": [
+      "Ho le mani pulite. - 我手很干净。",
+      "Le mani lavorano. - 手在工作。"
+    ],
+    "audioUrl": "assets/audio/words/1619.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1620",
+    "italian": "dito",
+    "chinese": "手指",
+    "english": "finger",
+    "pronunciation": "dito",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699896.000Z",
+    "examples": [
+      "Ho dieci dita. - 我有十根手指。",
+      "Il dito indica. - 手指指示。"
+    ],
+    "audioUrl": "assets/audio/words/1620.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1621",
+    "italian": "dita",
+    "chinese": "手指（复数）",
+    "english": "fingers",
+    "pronunciation": "dita",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699897.000Z",
+    "examples": [
+      "Le dita lunghe. - 长手指。",
+      "Movo le dita. - 我活动手指。"
+    ],
+    "audioUrl": "assets/audio/words/1621.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1622",
+    "italian": "gambe",
+    "chinese": "腿",
+    "english": "legs",
+    "pronunciation": "gambɛ",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699899.000Z",
+    "examples": [
+      "Ho due gambe. - 我有两条腿。",
+      "Le gambe camminano. - 腿走路。"
+    ],
+    "audioUrl": "assets/audio/words/1622.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1623",
+    "italian": "piede",
+    "chinese": "脚",
+    "english": "foot",
+    "pronunciation": "pjɛdɛ",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699900.000Z",
+    "examples": [
+      "Ho due piedi. - 我有两只脚。",
+      "Il piede è grande. - 脚很大。"
+    ],
+    "audioUrl": "assets/audio/words/1623.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1624",
+    "italian": "piedi",
+    "chinese": "脚（复数）",
+    "english": "feet",
+    "pronunciation": "pjɛdi",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699901.000Z",
+    "examples": [
+      "I piedi sono stanchi. - 脚很累。",
+      "Lavo i piedi. - 我洗脚。"
+    ],
+    "audioUrl": "assets/audio/words/1624.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1625",
+    "italian": "cuore",
+    "chinese": "心脏",
+    "english": "heart",
+    "pronunciation": "kuorɛ",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699902.000Z",
+    "examples": [
+      "Il cuore batte. - 心脏在跳动。",
+      "Ho il cuore felice. - 我很高兴。"
+    ],
+    "audioUrl": "assets/audio/words/1625.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1626",
+    "italian": "stomaco",
+    "chinese": "胃",
+    "english": "stomach",
+    "pronunciation": "stɔmako",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699902.000Z",
+    "examples": [
+      "Ho lo stomaco vuoto. - 我胃空空的。",
+      "Lo stomaco digerisce. - 胃消化食物。"
+    ],
+    "audioUrl": "assets/audio/words/1626.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1627",
+    "italian": "schiena",
+    "chinese": "背",
+    "english": "back",
+    "pronunciation": "skjɛna",
+    "category": "身体部位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699903.000Z",
+    "examples": [
+      "Ho mal di schiena. - 我背痛。",
+      "La schiena è dritta. - 背很直。"
+    ],
+    "audioUrl": "assets/audio/words/1627.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1628",
+    "italian": "sinistra",
+    "chinese": "左",
+    "english": "left",
+    "pronunciation": "sɔnistra",
+    "category": "方位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699905.000Z",
+    "examples": [
+      "Gira a sinistra. - 向左转。",
+      "La mano sinistra. - 左手。"
+    ],
+    "audioUrl": "assets/audio/words/1628.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1629",
+    "italian": "destra",
+    "chinese": "右",
+    "english": "right",
+    "pronunciation": "dɛstra",
+    "category": "方位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699906.000Z",
+    "examples": [
+      "Gira a destra. - 向右转。",
+      "La mano destra. - 右手。"
+    ],
+    "audioUrl": "assets/audio/words/1629.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1630",
+    "italian": "dritto",
+    "chinese": "直",
+    "english": "straight",
+    "pronunciation": "drittɔ",
+    "category": "方位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699907.000Z",
+    "examples": [
+      "Vai dritto. - 直走。",
+      "La strada è dritta. - 路是直的。"
+    ],
+    "audioUrl": "assets/audio/words/1630.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1631",
+    "italian": "su",
+    "chinese": "上",
+    "english": "up",
+    "pronunciation": "su",
+    "category": "方位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699908.000Z",
+    "examples": [
+      "Vado su. - 我上去。",
+      "La casa è su. - 房子在上面。"
+    ],
+    "audioUrl": "assets/audio/words/1631.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1632",
+    "italian": "giù",
+    "chinese": "下",
+    "english": "down",
+    "pronunciation": "dʒu",
+    "category": "方位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699909.000Z",
+    "examples": [
+      "Vado giù. - 我下去。",
+      "Il gatto scende giù. - 猫下来。"
+    ],
+    "audioUrl": "assets/audio/words/1632.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1633",
+    "italian": "dentro",
+    "chinese": "里面",
+    "english": "inside",
+    "pronunciation": "dɛntro",
+    "category": "方位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699910.000Z",
+    "examples": [
+      "Sono dentro casa. - 我在屋里。",
+      "La chiave è dentro. - 钥匙在里面。"
+    ],
+    "audioUrl": "assets/audio/words/1633.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1634",
+    "italian": "fuori",
+    "chinese": "外面",
+    "english": "outside",
+    "pronunciation": "fuɔri",
+    "category": "方位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699911.000Z",
+    "examples": [
+      "Gioco fuori. - 我在外面玩。",
+      "Fa freddo fuori. - 外面很冷。"
+    ],
+    "audioUrl": "assets/audio/words/1634.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1635",
+    "italian": "vicino",
+    "chinese": "近",
+    "english": "near",
+    "pronunciation": "vitʃino",
+    "category": "方位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699912.000Z",
+    "examples": [
+      "La casa è vicino. - 房子很近。",
+      "Vicino a casa. - 靠近家。"
+    ],
+    "audioUrl": "assets/audio/words/1635.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1636",
+    "italian": "lontano",
+    "chinese": "远",
+    "english": "far",
+    "pronunciation": "lontano",
+    "category": "方位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699913.000Z",
+    "examples": [
+      "La scuola è lontano. - 学校很远。",
+      "Vado lontano. - 我去远处。"
+    ],
+    "audioUrl": "assets/audio/words/1636.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1637",
+    "italian": "qui",
+    "chinese": "这里",
+    "english": "here",
+    "pronunciation": "kwi",
+    "category": "方位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699913.000Z",
+    "examples": [
+      "Sono qui. - 我在这里。",
+      "Vieni qui. - 来这里。"
+    ],
+    "audioUrl": "assets/audio/words/1637.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1638",
+    "italian": "qua",
+    "chinese": "这里",
+    "english": "here",
+    "pronunciation": "kwa",
+    "category": "方位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699914.000Z",
+    "examples": [
+      "Resta qua. - 留在这里。",
+      "Prendilo qua. - 在这里拿。"
+    ],
+    "audioUrl": "assets/audio/words/1638.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1639",
+    "italian": "lì",
+    "chinese": "那里",
+    "english": "there",
+    "pronunciation": "li",
+    "category": "方位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699915.000Z",
+    "examples": [
+      "È lì. - 它在那里。",
+      "Vado lì. - 我去那里。"
+    ],
+    "audioUrl": "assets/audio/words/1639.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1640",
+    "italian": "là",
+    "chinese": "那里",
+    "english": "there",
+    "pronunciation": "la",
+    "category": "方位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699916.000Z",
+    "examples": [
+      "La casa è là. - 房子在那里。",
+      "Guarda là. - 看那边。"
+    ],
+    "audioUrl": "assets/audio/words/1640.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1641",
+    "italian": "fronte",
+    "chinese": "前面",
+    "english": "front",
+    "pronunciation": "frɔntɛ",
+    "category": "方位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699917.000Z",
+    "examples": [
+      "Davanti alla casa. - 在房子前面。",
+      "In fronte. - 在前面。"
+    ],
+    "audioUrl": "assets/audio/words/1641.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1642",
+    "italian": "dietro",
+    "chinese": "后面",
+    "english": "behind",
+    "pronunciation": "djɛtro",
+    "category": "方位",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699918.000Z",
+    "examples": [
+      "Il gatto è dietro. - 猫在后面。",
+      "Guardo dietro. - 我看后面。"
+    ],
+    "audioUrl": "assets/audio/words/1642.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1643",
+    "italian": "tavolo",
+    "chinese": "桌子",
+    "english": "table",
+    "pronunciation": "tavolo",
+    "category": "家具",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699919.000Z",
+    "examples": [
+      "Mangio al tavolo. - 我在桌子旁吃饭。",
+      "Il tavolo è di legno. - 桌子是木头的。"
+    ],
+    "audioUrl": "assets/audio/words/1643.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1644",
+    "italian": "sedia",
+    "chinese": "椅子",
+    "english": "chair",
+    "pronunciation": "sɛdia",
+    "category": "家具",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699920.000Z",
+    "examples": [
+      "Siedo sulla sedia. - 我坐在椅子上。",
+      "La sedia è comoda. - 椅子很舒服。"
+    ],
+    "audioUrl": "assets/audio/words/1644.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1645",
+    "italian": "letto",
+    "chinese": "床",
+    "english": "bed",
+    "pronunciation": "lɛtto",
+    "category": "家具",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699921.000Z",
+    "examples": [
+      "Dormo nel letto. - 我在床上睡觉。",
+      "Il letto è grande. - 床很大。"
+    ],
+    "audioUrl": "assets/audio/words/1645.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1646",
+    "italian": "divano",
+    "chinese": "沙发",
+    "english": "sofa",
+    "pronunciation": "divano",
+    "category": "家具",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699922.000Z",
+    "examples": [
+      "Mi rilasso sul divano. - 我在沙发上放松。",
+      "Il divano è comodo. - 沙发很舒服。"
+    ],
+    "audioUrl": "assets/audio/words/1646.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1647",
+    "italian": "poltrona",
+    "chinese": "扶手椅",
+    "english": "armchair",
+    "pronunciation": "pɔltrona",
+    "category": "家具",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699923.000Z",
+    "examples": [
+      "Leggo sulla poltrona. - 我在扶手椅上阅读。",
+      "La poltrona è comoda. - 扶手椅很舒服。"
+    ],
+    "audioUrl": "assets/audio/words/1647.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1648",
+    "italian": "cucina",
+    "chinese": "厨房",
+    "english": "kitchen",
+    "pronunciation": "kuˈtʃina",
+    "category": "房间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699924.000Z",
+    "examples": [
+      "Cucino nella cucina. - 我在厨房做饭。",
+      "La cucina è grande. - 厨房很大。"
+    ],
+    "audioUrl": "assets/audio/words/1648.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1649",
+    "italian": "camera",
+    "chinese": "房间",
+    "english": "room",
+    "pronunciation": "kamɛra",
+    "category": "房间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699925.000Z",
+    "examples": [
+      "La mia camera è piccola. - 我的房间很小。",
+      "Camera da letto. - 卧室。"
+    ],
+    "audioUrl": "assets/audio/words/1649.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1650",
+    "italian": "salotto",
+    "chinese": "客厅",
+    "english": "living room",
+    "pronunciation": "salotto",
+    "category": "房间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699925.000Z",
+    "examples": [
+      "Guardiamo TV in salotto. - 我们在客厅看电视。",
+      "Il salotto è bello. - 客厅很漂亮。"
+    ],
+    "audioUrl": "assets/audio/words/1650.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1651",
+    "italian": "bagno",
+    "chinese": "浴室",
+    "english": "bathroom",
+    "pronunciation": "baɲo",
+    "category": "房间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699926.000Z",
+    "examples": [
+      "Mi lavo in bagno. - 我在浴室洗漱。",
+      "Il bagno è piccolo. - 浴室很小。"
+    ],
+    "audioUrl": "assets/audio/words/1651.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1652",
+    "italian": "ripostiglio",
+    "chinese": "储藏室",
+    "english": "storage room",
+    "pronunciation": "ripɔstildʒo",
+    "category": "房间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699927.000Z",
+    "examples": [
+      "Mantengo le cose nel ripostiglio. - 我把东西放在储藏室。",
+      "Il ripostiglio è pieno. - 储藏室满了。"
+    ],
+    "audioUrl": "assets/audio/words/1652.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1653",
+    "italian": "terrazzo",
+    "chinese": "阳台",
+    "english": "terrace/balcony",
+    "pronunciation": "tɛrattso",
+    "category": "房间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699928.000Z",
+    "examples": [
+      "Prendo il sole sul terrazzo. - 我在阳台晒太阳。",
+      "Il terrazzo è grande. - 阳台很大。"
+    ],
+    "audioUrl": "assets/audio/words/1653.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1654",
+    "italian": "balcone",
+    "chinese": "阳台",
+    "english": "balcony",
+    "pronunciation": "balkone",
+    "category": "房间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699929.000Z",
+    "examples": [
+      "Le piante sono sul balcone. - 植物在阳台上。",
+      "Il balcone fiorito. - 阳台鲜花盛开。"
+    ],
+    "audioUrl": "assets/audio/words/1654.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1655",
+    "italian": "cantina",
+    "chinese": "地下室",
+    "english": "cellar",
+    "pronunciation": "kantina",
+    "category": "房间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699930.000Z",
+    "examples": [
+      "Conservo il vino in cantina. - 我在地下室保存酒。",
+      "La cantina è fresca. - 地下室很凉爽。"
+    ],
+    "audioUrl": "assets/audio/words/1655.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1656",
+    "italian": "soffitta",
+    "chinese": "阁楼",
+    "english": "attic",
+    "pronunciation": "sɔfitta",
+    "category": "房间",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699932.000Z",
+    "examples": [
+      "Metto le cose vecchie in soffitta. - 我把旧东西放在阁楼。",
+      "La soffitta è polverosa. - 阁楼很脏。"
+    ],
+    "audioUrl": "assets/audio/words/1656.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1657",
+    "italian": "finestra",
+    "chinese": "窗户",
+    "english": "window",
+    "pronunciation": "finɛstra",
+    "category": "家具",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699933.000Z",
+    "examples": [
+      "Apro la finestra. - 我打开窗户。",
+      "La finestra è grande. - 窗户很大。"
+    ],
+    "audioUrl": "assets/audio/words/1657.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1658",
+    "italian": "porta",
+    "chinese": "门",
+    "english": "door",
+    "pronunciation": "porta",
+    "category": "家具",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699934.000Z",
+    "examples": [
+      "Apro la porta. - 我开门。",
+      "La porta è chiusa. - 门关着。"
+    ],
+    "audioUrl": "assets/audio/words/1658.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1659",
+    "italian": "specchio",
+    "chinese": "镜子",
+    "english": "mirror",
+    "pronunciation": "spɛkkjo",
+    "category": "家具",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699934.000Z",
+    "examples": [
+      "Mi guardo allo specchio. - 我照镜子。",
+      "Lo specchio è pulito. - 镜子很干净。"
+    ],
+    "audioUrl": "assets/audio/words/1659.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1660",
+    "italian": "armadio",
+    "chinese": "衣柜",
+    "english": "wardrobe",
+    "pronunciation": "armadjo",
+    "category": "家具",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699935.000Z",
+    "examples": [
+      "Metto i vestiti nell'armadio. - 我把衣服放在衣柜里。",
+      "L'armadio è grande. - 衣柜很大。"
+    ],
+    "audioUrl": "assets/audio/words/1660.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1661",
+    "italian": "libreria",
+    "chinese": "书架",
+    "english": "bookshelf",
+    "pronunciation": "librɛria",
+    "category": "家具",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699936.000Z",
+    "examples": [
+      "Metto i libri nella libreria. - 我把书放在书架上。",
+      "La libreria è piena. - 书架满了。"
+    ],
+    "audioUrl": "assets/audio/words/1661.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1662",
+    "italian": "scrivania",
+    "chinese": "书桌",
+    "english": "desk",
+    "pronunciation": "skrivania",
+    "category": "家具",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699937.000Z",
+    "examples": [
+      "Studio alla scrivania. - 我在书桌学习。",
+      "La scrivania è ordinata. - 书桌很整洁。"
+    ],
+    "audioUrl": "assets/audio/words/1662.mp3",
+    "imageUrl": null
+  },
+  {
+    "id": "1663",
+    "italian": "lampada",
+    "chinese": "灯",
+    "english": "lamp",
+    "pronunciation": "lampada",
+    "category": "家具",
+    "level": "A1",
+    "createdAt": "2025-11-26T20:23:46.699938.000Z",
+    "examples": [
+      "Accendo la lampada. - 我开灯。",
+      "La lampada è accesa. - 灯开着。"
+    ],
+    "audioUrl": "assets/audio/words/1663.mp3",
+    "imageUrl": null
   }
 ]

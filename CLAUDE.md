@@ -147,7 +147,15 @@ This is an Italian language learning Flutter application (意大利语学习应�
    - Level-adaptive difficulty (A1-C2 CEFR levels)
    - DeepSeek API integration for conversational AI
 
-7. **Progress Tracking** - Comprehensive statistics and analytics (✅ Complete)
+7. **Italian Phrases** - Practical expressions for real-world conversations
+   - 57 curated phrases across categories (compliments, insults, casual)
+   - Phonetic notation and usage context for each phrase
+   - Tabbed interface for easy category browsing
+   - **TTS Support**: Authentic pronunciation playback for all expressions
+   - Popularity filtering to highlight most commonly used phrases
+   - Emoji support for visual learning enhancement
+
+8. **Progress Tracking** - Comprehensive statistics and analytics (✅ Complete)
    - **Personal Center Page**: Beautiful statistics dashboard with fl_chart visualizations
    - **Learning Statistics**: Total study days, study time, words learned, grammar points studied
    - **Study Streak Tracking**: Consecutive learning days calculation and display
@@ -208,6 +216,14 @@ Uses **Riverpod** (`flutter_riverpod`) as the state management solution:
 - `grammarProgressProvider` - StateNotifier tracking study progress and exercise results
 - `grammarCategoriesProvider` - Auto-extracts unique categories
 - `grammarServiceProvider` - Service for loading grammar data
+
+**Phrase Providers** (`lib/shared/providers/phrase_provider.dart`):
+- `phraseNotifierProvider` - StateNotifier managing all Italian phrases data
+- `popularPhrasesProvider` - Filtered provider for commonly used phrases
+- `complimentPhrasesProvider` - Compliment expressions (19 phrases)
+- `insultPhrasesProvider` - Expressions for emotional expression (17 phrases)
+- `casualPhrasesProvider` - Everyday conversation phrases (21 phrases)
+- Automatic JSON loading with error handling
 
 **Conversation Providers** (`lib/shared/providers/conversation_provider.dart`):
 - `deepSeekServiceProvider` - Singleton DeepSeek API service with credentials
@@ -299,6 +315,16 @@ SQLite database (v2 schema) managed through:
   - Corrected text
   - Explanation in Chinese
   - Error type classification
+
+**Phrase Models** (`lib/shared/models/phrase.dart`):
+- `ItalianPhrase` - Italian expression with:
+  - Italian text with phonetic pronunciation guide
+  - Chinese translation and context usage
+  - Category classification: compliment, insult, casual
+  - CEFR difficulty level (A1, A2, B1)
+  - Example sentences with bilingual content
+  - Emoji support for visual learning
+  - Popularity flag for commonly used phrases
 
 ### Text-to-Speech (TTS) System
 Powered by **KOKORO TTS API** with OpenAI-compatible format (`lib/core/services/tts_service.dart`):
@@ -448,6 +474,51 @@ Comprehensive grammar teaching with interactive exercises:
    - Each with detailed rules, examples, and 10 practice exercises
    - **Total of 140 interactive exercises** across all grammar points
 
+### Italian Phrases System
+Practical Italian expressions organized by usage category with TTS support:
+
+1. **Data Structure** (`lib/shared/models/phrase.dart`)
+   - `ItalianPhrase` model with comprehensive fields:
+     - Italian text with phonetic pronunciation guide
+     - Chinese translation and detailed context usage
+     - Category classification: compliment, insult, casual
+     - CEFR difficulty level (A1, A2, B1)
+     - Example sentences with bilingual content
+     - Emoji support for visual learning enhancement
+     - Popularity flag for commonly used expressions
+
+2. **Content Management** (`assets/data/italian_phrases.json`)
+   - **57 curated phrases** across three categories:
+     - Compliments (19 phrases): Sei fantastico!, Che bravo/a!, Complimenti!
+     - Expressions (17 phrases): Sei uno scemo!, Che schifo!, Stai zitto/a!
+     - Casual (21 phrases): Mamma mia!, Andiamo!, Calma!, Pazienza!
+   - Rich metadata for each phrase including examples and cultural context
+   - Regular JSON format easy for bulk updates and management
+
+3. **Provider Architecture** (`lib/shared/providers/phrase_provider.dart`)
+   - `phraseNotifierProvider` - StateNotifier managing all phrase data
+   - Category-specific providers:
+     - `complimentPhrasesProvider` - Filtered compliment expressions
+     - `insultPhrasesProvider` - Emotional expression phrases
+     - `casualPhrasesProvider` - Everyday conversation phrases
+     - `popularPhrasesProvider` - Most commonly used expressions
+   - Automatic JSON loading with comprehensive error handling
+
+4. **PhraseListScreen** (`lib/features/phrase/phrase_list_screen.dart`)
+   - **Tabbed Interface**: Compliments, Insults, Casual, Popular
+   - **Category Statistics**: Real-time count display for each category
+   - **Search & Filter**: Advanced filtering by level, category, popularity
+   - **TTS Integration**: One-click audio playback for pronunciation
+   - **Detailed Cards**: Rich display with phonetics, examples, and context
+   - **Responsive Design**: Optimized for both mobile and web platforms
+
+5. **Phrase Card Design**
+   - **Visual Hierarchy**: Italian text prominent with phonetic notation
+   - **Cultural Context**: Usage scenarios and example sentences
+   - **Audio Support**: Integrated TTS playback controls
+   - **Progress Indicators**: Category badges and difficulty levels
+   - **Interactive Elements**: Tap-to-play audio, expandable content areas
+
 ### AI Conversation System
 Real-time conversation practice with intelligent AI partner powered by DeepSeek API:
 
@@ -535,7 +606,8 @@ lib/
 │   ├── services/           # Singleton services
 │   │   ├── audio_player_service.dart    # Audio playback
 │   │   ├── deepseek_service.dart        # DeepSeek API integration
-│   │   └── reading_service.dart         # Reading passages loading
+│   │   ├── reading_service.dart         # Reading passages loading
+│   │   └── tts_service.dart             # KOKORO TTS integration
 │   ├── theme/              # Material 3 theme configuration
 │   └── utils/              # Utility functions
 ├── features/               # Feature-based organization
@@ -555,6 +627,8 @@ lib/
 │   │   ├── conversation_scenario_screen.dart  # Scenario selection
 │   │   └── ai_conversation_screen.dart        # Chat interface
 │   ├── practice/           # Integrated into reading feature
+│   ├── phrase/             # Italian expressions learning (NEW)
+│   │   └── phrase_list_screen.dart       # Tabbed interface with TTS support
 │   └── profile/            # User profile with statistics and charts
 │       └── profile_screen.dart
 └── shared/
@@ -562,12 +636,15 @@ lib/
     │   ├── word.dart       # Word, LearningRecord
     │   ├── grammar.dart    # GrammarPoint, GrammarRule, GrammarExample, etc.
     │   ├── reading.dart    # ReadingPassage, ReadingQuestion, ReadingProgress
-    │   └── conversation.dart    # ConversationScenario, AIRole, ConversationMessage
+    │   ├── conversation.dart    # ConversationScenario, AIRole, ConversationMessage
+    │   └── phrase.dart     # ItalianPhrase with phonetics and context (NEW)
     ├── providers/          # Riverpod state providers
     │   ├── vocabulary_provider.dart      # Word loading, learning progress
     │   ├── grammar_provider.dart         # Grammar loading, progress tracking
     │   ├── reading_provider.dart         # Reading passages, progress tracking
-    │   └── conversation_provider.dart    # Conversation state, DeepSeek API
+    │   ├── phrase_provider.dart          # Italian phrases, category filtering (NEW)
+    │   ├── conversation_provider.dart    # Conversation state, DeepSeek API
+    │   └── tts_provider.dart               # Text-to-speech integration (NEW)
     └── widgets/            # Reusable UI components
         ├── flip_card.dart
         ├── swipeable_word_card.dart
@@ -612,12 +689,13 @@ The app uses **Modern Theme** (`lib/core/theme/modern_theme.dart`) - a gradient-
 - Alternative: `AppTheme.lightTheme` (classic Italian flag colors)
 - Switch by uncommenting appropriate theme in `main.dart`
 
-**Recent UI Modernization** (October 2025):
+**Recent UI Modernization** (November 2025):
 All major screens have been updated with the modern gradient-based design:
 - Grammar list/detail screens - Level badges with gradients, FloatingCard for content
 - Vocabulary list/learning/review screens - Mastery progress bars with gradients, expandable text areas
 - Reading list/detail screens - Question cards with FloatingCard, gradient submit buttons
 - AI conversation screen - Message bubbles with gradients, gradient avatars
+- Phrase list screen - Tabbed interface with gradient category badges, TTS integration
 - Home screen quick actions - Properly sized GradientCards with badges
 
 ### Data Sources
@@ -783,6 +861,18 @@ Without these permissions, both AI conversation and TTS features will fail with 
   - `getRecentStatistics(days)` - Get daily stats for time range
 - Use `statisticsProvider` (FutureProvider) to access aggregated statistics in UI
 - Includes vocabulary stats (`vocabularyStatsProvider`) and grammar stats (`grammarStatsProvider`)
+
+### Working with Italian Phrases
+- Phrases are loaded from JSON in `assets/data/italian_phrases.json`
+- `PhraseNotifier` manages all phrase data with automatic loading
+- Category-specific providers for easy filtering:
+  - `complimentPhrasesProvider` - Compliment expressions (19 total)
+  - `insultPhrasesProvider` - Emotional expressions (17 total)
+  - `casualPhrasesProvider` - Everyday conversation phrases (21 total)
+  - `popularPhrasesProvider` - Most commonly used expressions
+- TTS integration for pronunciation learning with `ttsServiceProvider`
+- Phrase data structure includes phonetics, context, examples, and usage scenarios
+- UI organized in tabbed interface with category statistics and search functionality
 
 ### Database Schema (Version 3)
 
@@ -1103,11 +1193,12 @@ If you need to add more vocabulary or grammar:
 
 This app provides a **complete, structured path from zero to A2 Italian proficiency**. With 1,422 high-quality vocabulary words, 14 comprehensive grammar points, 20 reading passages, and integrated four-skills training, learners can achieve functional Italian communication ability in 9-18 months with consistent daily practice.
 
-**Current Content Summary** (as of October 2025):
+**Current Content Summary** (as of November 2025):
 - **Vocabulary**: 1,469 words (492 A1 + 930 A2 + 47 B1-C2) - 95% CEFR coverage ✅
 - **Grammar**: 14 points with 140 exercises - 100% A1-A2 coverage ✅
 - **Reading**: 20 passages (7 A1 + 13 A2) with 100 questions - Complete diversity ✅
 - **Conversation**: 6 AI scenarios with real-time grammar correction ✅
+- **Italian Phrases**: 57 practical expressions (19 compliments, 17 insults, 21 casual) ✅
 - **TTS Audio**: KOKORO integration for authentic pronunciation ✅
 
 **Key Strengths**:
@@ -1117,6 +1208,7 @@ This app provides a **complete, structured path from zero to A2 Italian proficie
 - ✅ Comprehensive progress tracking with statistics
 - ✅ All content aligned to CEFR standards
 - ✅ Completely self-contained (no external materials needed)
+- ✅ Practical Italian expressions for real-world conversations
 
 **Success Rate Expectation**:
 - With disciplined daily practice: 90%+ learners reach A2
@@ -1127,5 +1219,13 @@ This app provides a **complete, structured path from zero to A2 Italian proficie
 - `add_a1_vocabulary.py` - Bulk add A1 vocabulary (50-100 words at a time)
 - `add_a2_vocabulary.py` - Bulk add A2 vocabulary (50-100 words at a time)
 - `add_reading_passages.py` - Bulk add reading passages (5-10 passages at a time)
+
+### Content Management
+For bulk content additions, use the provided Python scripts in the root directory:
+- **Vocabulary**: A1 (currently 492/500-700), A2 (currently 930/1000-1200)
+- **Reading**: 20 passages with comprehension questions (7 A1 + 13 A2)
+- **Phrases**: 57 practical expressions with categories and phonetics
+- All content files stored in `assets/data/` with JSON format
+- Scripts maintain proper ID sequencing and JSON structure integrity
 
 Start your Italian learning journey today - **Buona fortuna!** 🇮🇹
