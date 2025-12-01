@@ -8,7 +8,20 @@ import 'package:path_provider/path_provider.dart';
 /// 使用本地模型进行离线文本转语音
 class KokoroLocalTTSService {
   static final KokoroLocalTTSService instance = KokoroLocalTTSService._init();
-  KokoroLocalTTSService._init();
+  KokoroLocalTTSService._init() {
+    // 只注册一次播放完成监听器，避免内存泄漏
+    _audioPlayer.onPlayerComplete.listen((_) {
+      _isPlaying = false;
+      print('[TTS] 播放完成');
+      _cleanupCurrentAudioFile();
+    });
+    // 监听播放错误
+    _audioPlayer.onPlayerStateChanged.listen((state) {
+      if (state == PlayerState.stopped || state == PlayerState.completed) {
+        _isPlaying = false;
+      }
+    });
+  }
 
   Kokoro? _kokoro;
   Tokenizer? _tokenizer;
@@ -16,6 +29,7 @@ class KokoroLocalTTSService {
   bool _isPlaying = false;
   bool _isInitialized = false;
   String? _initError;
+  File? _currentAudioFile; // 跟踪当前播放的音频文件
 
   /// 可用的意大利语语音
   /// Kokoro 本地模型支持的意大利语语音
@@ -131,35 +145,46 @@ class KokoroLocalTTSService {
       );
 
       final audioData = ttsResult.audio;
-      print('[TTS] 音频数据长度: ${audioData.length}');
+      print('[TTS] 音频数据长度: ${audioData.length}, 类型: ${audioData.runtimeType}');
 
       if (audioData.isEmpty) {
         print('[TTS] 音频数据为空');
         return false;
       }
 
+      // 安全转换音频数据为 List<double>
+      final List<double> audioDoubles;
+      try {
+        audioDoubles = audioData.map((e) => (e as num).toDouble()).toList();
+        print('[TTS] 音频数据转换成功');
+      } catch (e) {
+        print('[TTS] 音频数据转换失败: $e');
+        return false;
+      }
+
+      // 清理之前的音频文件
+      _cleanupCurrentAudioFile();
+
       // 保存音频到临时文件
       final tempDir = await getTemporaryDirectory();
-      final audioFile = File('${tempDir.path}/tts_local_${DateTime.now().millisecondsSinceEpoch}.wav');
-      print('[TTS] 保存音频到: ${audioFile.path}');
-      await audioFile.writeAsBytes(_convertToWav(audioData.cast<double>()));
+      _currentAudioFile = File('${tempDir.path}/tts_local_${DateTime.now().millisecondsSinceEpoch}.wav');
+      print('[TTS] 保存音频到: ${_currentAudioFile!.path}');
+      await _currentAudioFile!.writeAsBytes(_convertToWav(audioDoubles));
 
-      final fileSize = await audioFile.length();
+      final fileSize = await _currentAudioFile!.length();
       print('[TTS] 音频文件大小: $fileSize 字节');
 
-      // 播放音频
+      // 播放音频 - 使用单独的 try-catch 捕获音频播放器错误
       print('[TTS] 开始播放...');
       _isPlaying = true;
-      await _audioPlayer.play(DeviceFileSource(audioFile.path));
-      print('[TTS] 播放已启动');
-
-      // 监听播放完成
-      _audioPlayer.onPlayerComplete.listen((_) {
+      try {
+        await _audioPlayer.play(DeviceFileSource(_currentAudioFile!.path));
+        print('[TTS] 播放已启动');
+      } catch (playError) {
+        print('[TTS] 音频播放器错误: $playError');
         _isPlaying = false;
-        print('[TTS] 播放完成');
-        // 删除临时文件
-        audioFile.delete().catchError((_) => audioFile);
-      });
+        return false;
+      }
 
       return true;
     } catch (e, stackTrace) {
@@ -226,12 +251,28 @@ class KokoroLocalTTSService {
     return byteData.buffer.asUint8List();
   }
 
+  /// 清理当前音频文件
+  void _cleanupCurrentAudioFile() {
+    if (_currentAudioFile != null) {
+      try {
+        if (_currentAudioFile!.existsSync()) {
+          _currentAudioFile!.deleteSync();
+          print('[TTS] 已删除临时音频文件');
+        }
+      } catch (e) {
+        // 忽略删除错误
+      }
+      _currentAudioFile = null;
+    }
+  }
+
   /// 停止播放
   Future<void> stop() async {
     if (_isPlaying) {
       await _audioPlayer.stop();
       _isPlaying = false;
     }
+    _cleanupCurrentAudioFile();
   }
 
   /// 暂停播放
@@ -248,6 +289,7 @@ class KokoroLocalTTSService {
 
   /// 释放资源
   Future<void> dispose() async {
+    _cleanupCurrentAudioFile();
     await _audioPlayer.dispose();
     _kokoro?.dispose();
     _isInitialized = false;
