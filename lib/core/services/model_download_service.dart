@@ -68,24 +68,19 @@ class ModelDownloadService {
 
   /// Kokoro 模型下载地址
   /// 来源: https://github.com/thewh1teagle/kokoro-onnx/releases
+  /// 注意: voices.json 已打包在 assets 中，只需下载 ONNX 模型文件
 
   /// GitHub Release (主要下载源)
   static const String _modelUrl =
       'https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx';
-  static const String _voicesUrl =
-      'https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin';
 
   /// GitHub 镜像 (ghproxy.com - 中国加速)
   static const String _modelUrlChina =
       'https://ghproxy.com/https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx';
-  static const String _voicesUrlChina =
-      'https://ghproxy.com/https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin';
 
   /// 备用 GitHub 镜像
   static const String _modelUrlBackup =
       'https://mirror.ghproxy.com/https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx';
-  static const String _voicesUrlBackup =
-      'https://mirror.ghproxy.com/https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin';
 
   CancelToken? _cancelToken;
   bool _isCancelled = false;
@@ -107,36 +102,11 @@ class ModelDownloadService {
       }
 
       final modelFile = File('${modelDir.path}/kokoro-v1.0.onnx');
-      final voicesFile = File('${modelDir.path}/voices-v1.0.bin');
 
-      // 下载 voices-v1.0.bin (小文件先下载)
+      // 只需下载 ONNX 模型文件（voices.json 已打包在 assets 中）
       onProgress(const DownloadProgress(
         status: DownloadStatus.downloading,
         progress: 0.0,
-        currentFile: 'voices-v1.0.bin',
-      ));
-
-      await _downloadFile(
-        urls: [_voicesUrl, _voicesUrlChina, _voicesUrlBackup],
-        savePath: voicesFile.path,
-        onProgress: (received, total) {
-          // voices 文件算作 1% 的进度
-          onProgress(DownloadProgress(
-            status: DownloadStatus.downloading,
-            progress: 0.01 * (received / total),
-            currentFile: 'voices-v1.0.bin',
-            downloadedBytes: received,
-            totalBytes: total,
-          ));
-        },
-      );
-
-      if (_isCancelled) return;
-
-      // 下载主模型文件
-      onProgress(const DownloadProgress(
-        status: DownloadStatus.downloading,
-        progress: 0.01,
         currentFile: 'kokoro-v1.0.onnx',
       ));
 
@@ -144,11 +114,10 @@ class ModelDownloadService {
         urls: [_modelUrl, _modelUrlChina, _modelUrlBackup],
         savePath: modelFile.path,
         onProgress: (received, total) {
-          // 主模型占 99% 的进度
-          final modelProgress = total > 0 ? received / total : 0.0;
+          final progress = total > 0 ? received / total : 0.0;
           onProgress(DownloadProgress(
             status: DownloadStatus.downloading,
-            progress: 0.01 + 0.99 * modelProgress,
+            progress: progress,
             currentFile: 'kokoro-v1.0.onnx',
             downloadedBytes: received,
             totalBytes: total,

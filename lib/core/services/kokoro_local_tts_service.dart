@@ -40,15 +40,13 @@ class KokoroLocalTTSService {
       final modelDir = Directory('${appDir.path}/kokoro_models');
       print('[TTS] 模型目录: ${modelDir.path}');
 
-      // 检查模型文件是否存在
+      // 检查 ONNX 模型文件是否存在（voices.json 已打包在 assets 中，无需检查）
       final modelFile = File('${modelDir.path}/kokoro-v1.0.onnx');
-      final voicesFile = File('${modelDir.path}/voices-v1.0.bin');
 
       final modelExists = await modelFile.exists();
-      final voicesExists = await voicesFile.exists();
-      print('[TTS] 模型文件存在: $modelExists, voices文件存在: $voicesExists');
+      print('[TTS] ONNX模型文件存在: $modelExists');
 
-      if (!modelExists || !voicesExists) {
+      if (!modelExists) {
         _initError = '模型文件未找到，请先下载模型文件';
         print('[TTS] 错误: $_initError');
         return false;
@@ -56,15 +54,16 @@ class KokoroLocalTTSService {
 
       // 检查文件大小
       final modelSize = await modelFile.length();
-      final voicesSize = await voicesFile.length();
       print('[TTS] 模型大小: ${(modelSize / 1024 / 1024).toStringAsFixed(2)} MB');
-      print('[TTS] Voices大小: ${(voicesSize / 1024 / 1024).toStringAsFixed(2)} MB');
+      print('[TTS] Voices: 使用打包的 assets/voices.json');
 
       // 创建配置
+      // 注意: voicesPath 必须使用 asset 路径，因为 kokoro_tts_flutter 使用 rootBundle.loadString() 加载
+      // modelPath 可以使用文件系统路径，因为 ONNX 模型支持从文件系统加载
       print('[TTS] 创建Kokoro配置...');
       final config = KokoroConfig(
         modelPath: modelFile.path,
-        voicesPath: voicesFile.path,
+        voicesPath: 'assets/voices.json',  // 使用 asset 路径，不是文件系统路径
       );
 
       // 初始化 Kokoro 引擎
@@ -345,18 +344,18 @@ class KokoroLocalTTSService {
   }
 
   /// 检查模型是否已安装
+  /// 只需检查 ONNX 模型文件，voices.json 已打包在 assets 中
   static Future<bool> isModelInstalled() async {
     final modelDir = await getModelDirectoryPath();
     final modelFile = File('$modelDir/kokoro-v1.0.onnx');
-    final voicesFile = File('$modelDir/voices-v1.0.bin');
-    return await modelFile.exists() && await voicesFile.exists();
+    return await modelFile.exists();
   }
 
   /// 获取模型大小信息
   static Map<String, String> getModelInfo() {
     return {
       'modelFile': 'kokoro-v1.0.onnx',
-      'voicesFile': 'voices-v1.0.bin',
+      'voicesFile': 'assets/voices.json (已打包)',
       'modelSize': '~330MB',
       'downloadUrl': 'https://github.com/thewh1teagle/kokoro-onnx/releases',
     };
