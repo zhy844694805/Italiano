@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/providers/quiz_provider.dart';
 import '../../shared/models/quiz.dart';
+import '../../core/theme/openai_theme.dart';
+import '../../shared/widgets/openai_widgets.dart';
 import 'quiz_screen.dart';
 
 class PracticeScreen extends ConsumerWidget {
@@ -9,29 +11,26 @@ class PracticeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
-
     final todaysChallengeAsync = ref.watch(todaysChallengeProvider);
     final wrongCountAsync = ref.watch(wrongQuestionsCountProvider);
     final quizStatsAsync = ref.watch(quizStatisticsProvider);
     final challengeStreakAsync = ref.watch(challengeStreakProvider);
 
     return Scaffold(
+      backgroundColor: OpenAITheme.white,
       appBar: AppBar(
-        title: const Text('练习测验'),
+        title: const Text('练习'),
+        backgroundColor: OpenAITheme.white,
+        surfaceTintColor: Colors.transparent,
         actions: [
           IconButton(
-            icon: const Icon(Icons.history),
-            tooltip: '测验历史',
-            onPressed: () {
-              // TODO: 导航到历史记录页面
-            },
+            icon: const Icon(Icons.history, color: OpenAITheme.gray600),
+            onPressed: () {},
           ),
         ],
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -40,104 +39,97 @@ class PracticeScreen extends ConsumerWidget {
               data: (challenge) {
                 final isCompleted = challenge?.completed ?? false;
 
-                return Card(
-                  color: isCompleted
-                      ? colorScheme.primaryContainer
-                      : colorScheme.secondaryContainer,
-                  child: InkWell(
-                    onTap: isCompleted
-                        ? null
-                        : () => _startDailyChallenge(context, ref),
-                    borderRadius: BorderRadius.circular(16),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Row(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(16),
-                            decoration: BoxDecoration(
-                              color: isCompleted
-                                  ? Colors.green.withValues(alpha: 0.2)
-                                  : Colors.orange.withValues(alpha: 0.2),
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Icon(
-                              isCompleted ? Icons.check_circle : Icons.today,
-                              size: 40,
-                              color: isCompleted ? Colors.green : Colors.orange,
-                            ),
-                          ),
-                          const SizedBox(width: 20),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  isCompleted ? '今日挑战已完成!' : '每日挑战',
-                                  style: theme.textTheme.titleLarge?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                    color: isCompleted
-                                        ? colorScheme.onPrimaryContainer
-                                        : colorScheme.onSecondaryContainer,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  isCompleted
-                                      ? '得分: ${challenge?.score ?? 0} 分'
-                                      : '10道题 · 混合难度',
-                                  style: theme.textTheme.bodyMedium?.copyWith(
-                                    color: isCompleted
-                                        ? colorScheme.onPrimaryContainer
-                                        : colorScheme.onSecondaryContainer,
-                                  ),
-                                ),
-                                if (!isCompleted)
-                                  challengeStreakAsync.when(
-                                    data: (streak) => streak > 0
-                                        ? Padding(
-                                            padding: const EdgeInsets.only(top: 8),
-                                            child: Row(
-                                              children: [
-                                                Icon(
-                                                  Icons.local_fire_department,
-                                                  size: 16,
-                                                  color: Colors.deepOrange,
-                                                ),
-                                                const SizedBox(width: 4),
-                                                Text(
-                                                  '连续 $streak 天',
-                                                  style: theme.textTheme.bodySmall
-                                                      ?.copyWith(
-                                                    color: Colors.deepOrange,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          )
-                                        : const SizedBox(),
-                                    loading: () => const SizedBox(),
-                                    error: (_, __) => const SizedBox(),
-                                  ),
-                              ],
-                            ),
-                          ),
-                          if (!isCompleted)
-                            Icon(
-                              Icons.arrow_forward_ios,
-                              color: colorScheme.onSecondaryContainer,
-                            ),
-                        ],
+                return OCard(
+                  onTap: isCompleted
+                      ? null
+                      : () => _startDailyChallenge(context, ref),
+                  padding: const EdgeInsets.all(20),
+                  backgroundColor: isCompleted ? OpenAITheme.greenLight : OpenAITheme.gray50,
+                  child: Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(14),
+                        decoration: BoxDecoration(
+                          color: isCompleted
+                              ? OpenAITheme.green.withValues(alpha: 0.15)
+                              : OpenAITheme.gray200,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Icon(
+                          isCompleted ? Icons.check_circle : Icons.today,
+                          size: 28,
+                          color: isCompleted ? OpenAITheme.green : OpenAITheme.gray700,
+                        ),
                       ),
-                    ),
+                      const SizedBox(width: 16),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              isCompleted ? '今日挑战已完成' : '每日挑战',
+                              style: TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.w600,
+                                color: isCompleted ? OpenAITheme.green : OpenAITheme.gray900,
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              isCompleted
+                                  ? '得分: ${challenge?.score ?? 0} 分'
+                                  : '10道题 · 混合难度',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: isCompleted
+                                    ? OpenAITheme.green.withValues(alpha: 0.8)
+                                    : OpenAITheme.gray500,
+                              ),
+                            ),
+                            if (!isCompleted)
+                              challengeStreakAsync.when(
+                                data: (streak) => streak > 0
+                                    ? Padding(
+                                        padding: const EdgeInsets.only(top: 8),
+                                        child: Row(
+                                          children: [
+                                            const Icon(
+                                              Icons.local_fire_department,
+                                              size: 14,
+                                              color: OpenAITheme.gray500,
+                                            ),
+                                            const SizedBox(width: 4),
+                                            Text(
+                                              '连续 $streak 天',
+                                              style: const TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w500,
+                                                color: OpenAITheme.gray500,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      )
+                                    : const SizedBox(),
+                                loading: () => const SizedBox(),
+                                error: (_, __) => const SizedBox(),
+                              ),
+                          ],
+                        ),
+                      ),
+                      if (!isCompleted)
+                        const Icon(
+                          Icons.chevron_right,
+                          color: OpenAITheme.gray400,
+                        ),
+                    ],
                   ),
                 );
               },
-              loading: () => const Card(
-                child: Padding(
-                  padding: EdgeInsets.all(20),
-                  child: Center(child: CircularProgressIndicator()),
+              loading: () => OCard(
+                padding: const EdgeInsets.all(20),
+                child: const Center(
+                  child: CircularProgressIndicator(color: OpenAITheme.gray900),
                 ),
               ),
               error: (_, __) => const SizedBox(),
@@ -145,47 +137,129 @@ class PracticeScreen extends ConsumerWidget {
 
             const SizedBox(height: 24),
 
-            Text(
-              '测验模式',
-              style: theme.textTheme.titleLarge?.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 16),
+            const OSectionHeader(title: '测验模式'),
 
-            // 综合测验卡片
-            _QuizModeCard(
-              icon: Icons.quiz,
-              title: '综合测验',
-              description: '词汇+语法混合练习',
-              color: colorScheme.primary,
-              onTap: () => _showDifficultyDialog(
-                context,
-                ref,
-                QuizMode.comprehensive,
+            // 综合测验
+            OCard(
+              onTap: () => _showDifficultySheet(context, ref, QuizMode.comprehensive),
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: OpenAITheme.gray100,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Icon(Icons.quiz_outlined, color: OpenAITheme.gray700, size: 24),
+                  ),
+                  const SizedBox(width: 14),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          '综合测验',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                            color: OpenAITheme.gray900,
+                          ),
+                        ),
+                        SizedBox(height: 2),
+                        Text(
+                          '词汇+语法混合练习',
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: OpenAITheme.gray500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Icon(Icons.chevron_right, color: OpenAITheme.gray400),
+                ],
               ),
             ),
 
             const SizedBox(height: 12),
 
-            // 错题集卡片
+            // 错题集
             wrongCountAsync.when(
-              data: (count) => _QuizModeCard(
-                icon: Icons.error_outline,
-                title: '错题集',
-                description: count > 0 ? '$count 道错题待复习' : '暂无错题',
-                color: Colors.red,
-                badge: count > 0 ? '$count' : null,
+              data: (count) => OCard(
                 onTap: count > 0
                     ? () => _startWrongQuestionsQuiz(context, ref)
                     : null,
+                padding: const EdgeInsets.all(16),
+                child: Row(
+                  children: [
+                    Stack(
+                      clipBehavior: Clip.none,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: count > 0 ? OpenAITheme.redLight : OpenAITheme.gray100,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Icon(
+                            Icons.error_outline,
+                            color: count > 0 ? OpenAITheme.red : OpenAITheme.gray400,
+                            size: 24,
+                          ),
+                        ),
+                        if (count > 0)
+                          Positioned(
+                            right: -6,
+                            top: -6,
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                              decoration: BoxDecoration(
+                                color: OpenAITheme.red,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Text(
+                                '$count',
+                                style: const TextStyle(
+                                  color: OpenAITheme.white,
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ),
+                      ],
+                    ),
+                    const SizedBox(width: 14),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            '错题集',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: OpenAITheme.gray900,
+                            ),
+                          ),
+                          const SizedBox(height: 2),
+                          Text(
+                            count > 0 ? '$count 道错题待复习' : '暂无错题',
+                            style: const TextStyle(
+                              fontSize: 13,
+                              color: OpenAITheme.gray500,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    if (count > 0)
+                      const Icon(Icons.chevron_right, color: OpenAITheme.gray400),
+                  ],
+                ),
               ),
-              loading: () => _QuizModeCard(
-                icon: Icons.error_outline,
-                title: '错题集',
-                description: '加载中...',
-                color: Colors.red,
-              ),
+              loading: () => const SizedBox(),
               error: (_, __) => const SizedBox(),
             ),
 
@@ -196,77 +270,65 @@ class PracticeScreen extends ConsumerWidget {
               data: (stats) => Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    '我的统计',
-                    style: theme.textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              _StatItem(
-                                label: '完成测验',
-                                value: '${stats['totalQuizzes']}',
-                                icon: Icons.check_circle,
-                                color: colorScheme.primary,
-                              ),
-                              _StatItem(
-                                label: '平均分',
-                                value: '${stats['avgScore'].toStringAsFixed(0)}',
-                                icon: Icons.score,
-                                color: colorScheme.secondary,
-                              ),
-                              _StatItem(
-                                label: '最高分',
-                                value: '${stats['maxScore']}',
-                                icon: Icons.star,
-                                color: Colors.amber,
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 20),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.trending_up,
-                                color: colorScheme.primary,
-                                size: 20,
-                              ),
-                              const SizedBox(width: 8),
-                              Text(
-                                '总正确率',
-                                style: theme.textTheme.titleMedium,
-                              ),
-                              const Spacer(),
-                              Text(
-                                '${(stats['accuracy'] * 100).toStringAsFixed(1)}%',
-                                style: theme.textTheme.titleLarge?.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  color: colorScheme.primary,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 12),
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
-                            child: LinearProgressIndicator(
-                              value: stats['accuracy'],
-                              minHeight: 10,
-                              backgroundColor:
-                                  colorScheme.surfaceContainerHighest,
-                              color: colorScheme.primary,
+                  const OSectionHeader(title: '我的统计'),
+                  OCard(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            _StatItem(
+                              label: '完成测验',
+                              value: '${stats['totalQuizzes']}',
                             ),
-                          ),
-                        ],
-                      ),
+                            Container(
+                              height: 40,
+                              width: 1,
+                              color: OpenAITheme.gray200,
+                            ),
+                            _StatItem(
+                              label: '平均分',
+                              value: '${stats['avgScore'].toStringAsFixed(0)}',
+                            ),
+                            Container(
+                              height: 40,
+                              width: 1,
+                              color: OpenAITheme.gray200,
+                            ),
+                            _StatItem(
+                              label: '最高分',
+                              value: '${stats['maxScore']}',
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 20),
+                        Row(
+                          children: [
+                            const Text(
+                              '总正确率',
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: OpenAITheme.gray500,
+                              ),
+                            ),
+                            const Spacer(),
+                            Text(
+                              '${(stats['accuracy'] * 100).toStringAsFixed(1)}%',
+                              style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                color: OpenAITheme.gray900,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 10),
+                        OProgressBar(
+                          progress: stats['accuracy'],
+                          height: 6,
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -303,7 +365,12 @@ class PracticeScreen extends ConsumerWidget {
     if (questions.isEmpty) {
       if (!context.mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('错题集为空')),
+        SnackBar(
+          content: const Text('错题集为空'),
+          backgroundColor: OpenAITheme.gray900,
+          behavior: SnackBarBehavior.floating,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        ),
       );
       return;
     }
@@ -322,55 +389,72 @@ class PracticeScreen extends ConsumerWidget {
     );
   }
 
-  void _showDifficultyDialog(
-    BuildContext context,
-    WidgetRef ref,
-    QuizMode mode,
-  ) {
-    showDialog(
+  void _showDifficultySheet(BuildContext context, WidgetRef ref, QuizMode mode) {
+    showModalBottomSheet(
       context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('选择难度'),
-        content: Column(
+      backgroundColor: OpenAITheme.white,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      builder: (context) => Container(
+        padding: const EdgeInsets.all(20),
+        child: Column(
           mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ListTile(
-              leading: const Icon(Icons.sentiment_satisfied, color: Colors.green),
-              title: const Text('简单'),
-              subtitle: const Text('A1-A2 级别'),
+            Center(
+              child: Container(
+                width: 40,
+                height: 4,
+                decoration: BoxDecoration(
+                  color: OpenAITheme.gray300,
+                  borderRadius: BorderRadius.circular(2),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              '选择难度',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                color: OpenAITheme.gray900,
+              ),
+            ),
+            const SizedBox(height: 16),
+            _DifficultyOption(
+              title: '简单',
+              subtitle: 'A1-A2 级别',
               onTap: () {
                 Navigator.pop(context);
                 _startComprehensiveQuiz(context, ref, QuizDifficulty.easy);
               },
             ),
-            ListTile(
-              leading: const Icon(Icons.sentiment_neutral, color: Colors.orange),
-              title: const Text('中等'),
-              subtitle: const Text('B1-B2 级别'),
+            _DifficultyOption(
+              title: '中等',
+              subtitle: 'B1-B2 级别',
               onTap: () {
                 Navigator.pop(context);
                 _startComprehensiveQuiz(context, ref, QuizDifficulty.medium);
               },
             ),
-            ListTile(
-              leading: const Icon(Icons.sentiment_very_dissatisfied,
-                  color: Colors.red),
-              title: const Text('困难'),
-              subtitle: const Text('C1-C2 级别'),
+            _DifficultyOption(
+              title: '困难',
+              subtitle: 'C1-C2 级别',
               onTap: () {
                 Navigator.pop(context);
                 _startComprehensiveQuiz(context, ref, QuizDifficulty.hard);
               },
             ),
-            ListTile(
-              leading: const Icon(Icons.shuffle, color: Colors.purple),
-              title: const Text('混合'),
-              subtitle: const Text('所有级别'),
+            _DifficultyOption(
+              title: '混合',
+              subtitle: '所有级别',
               onTap: () {
                 Navigator.pop(context);
                 _startComprehensiveQuiz(context, ref, QuizDifficulty.mixed);
               },
             ),
+            const SizedBox(height: 10),
           ],
         ),
       ),
@@ -382,13 +466,17 @@ class PracticeScreen extends ConsumerWidget {
     WidgetRef ref,
     QuizDifficulty difficulty,
   ) async {
-    final questions =
-        await ref.read(comprehensiveQuizProvider(difficulty).future);
+    final questions = await ref.read(comprehensiveQuizProvider(difficulty).future);
 
     if (questions.isEmpty) {
       if (!context.mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('该难度暂无题目')),
+        SnackBar(
+          content: const Text('该难度暂无题目'),
+          backgroundColor: OpenAITheme.gray900,
+          behavior: SnackBarBehavior.floating,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        ),
       );
       return;
     }
@@ -408,105 +496,50 @@ class PracticeScreen extends ConsumerWidget {
   }
 }
 
-class _QuizModeCard extends StatelessWidget {
-  final IconData icon;
+class _DifficultyOption extends StatelessWidget {
   final String title;
-  final String description;
-  final Color color;
-  final String? badge;
-  final VoidCallback? onTap;
+  final String subtitle;
+  final VoidCallback onTap;
 
-  const _QuizModeCard({
-    required this.icon,
+  const _DifficultyOption({
     required this.title,
-    required this.description,
-    required this.color,
-    this.badge,
-    this.onTap,
+    required this.subtitle,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    return Card(
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(16),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Row(
-            children: [
-              Stack(
-                clipBehavior: Clip.none,
+    return InkWell(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 12),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: color.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(12),
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      color: OpenAITheme.gray900,
                     ),
-                    child: Icon(icon, color: color, size: 28),
                   ),
-                  if (badge != null)
-                    Positioned(
-                      right: -8,
-                      top: -8,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 6,
-                          vertical: 2,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        constraints: const BoxConstraints(
-                          minWidth: 20,
-                          minHeight: 20,
-                        ),
-                        child: Text(
-                          badge!,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
+                  const SizedBox(height: 2),
+                  Text(
+                    subtitle,
+                    style: const TextStyle(
+                      fontSize: 13,
+                      color: OpenAITheme.gray500,
                     ),
+                  ),
                 ],
               ),
-              const SizedBox(width: 16),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: theme.textTheme.titleMedium?.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      description,
-                      style: theme.textTheme.bodyMedium?.copyWith(
-                        color: theme.colorScheme.onSurfaceVariant,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              if (onTap != null)
-                Icon(
-                  Icons.arrow_forward_ios,
-                  color: theme.colorScheme.onSurfaceVariant,
-                  size: 20,
-                ),
-            ],
-          ),
+            ),
+            const Icon(Icons.chevron_right, color: OpenAITheme.gray400),
+          ],
         ),
       ),
     );
@@ -516,36 +549,30 @@ class _QuizModeCard extends StatelessWidget {
 class _StatItem extends StatelessWidget {
   final String label;
   final String value;
-  final IconData icon;
-  final Color color;
 
   const _StatItem({
     required this.label,
     required this.value,
-    required this.icon,
-    required this.color,
   });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Icon(icon, size: 32, color: color),
-        const SizedBox(height: 8),
         Text(
           value,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: color,
+            fontWeight: FontWeight.w600,
+            color: OpenAITheme.gray900,
           ),
         ),
         const SizedBox(height: 4),
         Text(
           label,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 12,
-            color: Theme.of(context).colorScheme.onSurfaceVariant,
+            color: OpenAITheme.gray500,
           ),
         ),
       ],

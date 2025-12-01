@@ -46,8 +46,11 @@ dependencies:
   path: ^1.9.0
 
   # 音频播放
-  just_audio: ^0.9.42
+  just_audio: ^0.10.5
   audioplayers: ^6.1.0
+
+  # 本地TTS
+  kokoro_tts_flutter: ^0.2.0+1
 
   # 网络请求
   dio: ^5.7.0
@@ -62,6 +65,7 @@ dependencies:
   intl: ^0.20.1
   uuid: ^4.5.1
   collection: ^1.19.1
+  url_launcher: ^6.2.5
 
 dev_dependencies:
   flutter_test:

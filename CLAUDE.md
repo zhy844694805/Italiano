@@ -226,12 +226,13 @@ Uses **Riverpod** (`flutter_riverpod`) as the state management solution:
 - Automatic JSON loading with error handling
 
 **Conversation Providers** (`lib/shared/providers/conversation_provider.dart`):
-- `deepSeekServiceProvider` - Singleton DeepSeek API service with credentials
+- `deepSeekServiceProvider` - DeepSeek API service (nullable, requires API key)
 - `conversationProvider` - StateNotifierProvider.family for scenario-specific conversation state
   - Each scenario maintains independent conversation history
   - Manages messages, loading state, errors, user level
   - Auto-initializes with AI greeting message
   - Handles real-time grammar correction parsing
+- `conversationAvailableProvider` - Check if API key is configured
 
 Use `ConsumerWidget` or `ConsumerStatefulWidget` for widgets that need to watch providers
 
@@ -251,6 +252,15 @@ SQLite database (v2 schema) managed through:
 - Currently uses basic MaterialApp navigation with `Navigator.push`
 - Main entry: `HomeScreen` with bottom navigation bar
 - Learning flow: `HomeScreen` → `VocabularyLearningScreen`
+
+### First-Launch Setup Flow
+Managed by `AppLauncher` in `main.dart`:
+1. **TTS Setup** (`tts_setup_screen.dart`) - Download ~330MB Kokoro model
+2. **API Key Setup** (`api_key_setup_screen.dart`) - Enter DeepSeek API key
+3. **Home Screen** - Full app access after setup
+
+Each step can be skipped; settings accessible later via Settings screen.
+Setup state tracked via SharedPreferences (`tts_setup_completed`, `deepseek_api_key`).
 
 ### Data Models
 
@@ -327,43 +337,34 @@ SQLite database (v2 schema) managed through:
   - Popularity flag for commonly used phrases
 
 ### Text-to-Speech (TTS) System
-Powered by **KOKORO TTS API** with OpenAI-compatible format (`lib/core/services/tts_service.dart`):
+Powered by **Kokoro TTS** running locally via ONNX Runtime (`lib/core/services/`):
 
-**API Configuration**:
-- Base URL: `https://newapi.maiduoduo.it/v1`
-- Endpoint: `/audio/speech`
-- Model: `kokoro`
-- Response Format: MP3 audio
-- **IMPORTANT**: Requires `INTERNET` permission in `AndroidManifest.xml`
+**Architecture**:
+- `KokoroLocalTTSService` - Low-level interface to kokoro_tts_flutter package
+- `TTSService` (tts_manager.dart) - High-level wrapper with voice selection
+- `ModelDownloadService` - Downloads ONNX model files from HuggingFace
+
+**Model Files** (stored in app documents/kokoro_models/):
+- `kokoro-v1.0.onnx` (~330MB) - Main ONNX model
+- `voices.json` - Voice configuration file
+- Downloaded on first launch via setup screen or settings
 
 **Voice Options**:
 - `im_nicola` - Italian male voice (Nicola)
 - `if_sara` - Italian female voice (Sara, default)
 - User preference stored via `voicePreferenceProvider` using SharedPreferences
-- Voice selection UI available in Settings screen
 
-**Features**:
-- Real-time text-to-speech conversion for Italian text
-- Audio caching system for improved performance
-  - `preloadAudio()` - Download and cache audio without playing
-  - `playFromCache()` - Play cached audio instantly
-  - `clearCache()` - Clean up cached audio files
-- Playback controls: play, pause, stop, resume
-- Integration with `audioplayers` package for audio playback
-- Used across vocabulary learning, review, list, and reading screens
+**First-Launch Setup** (`lib/features/setup/tts_setup_screen.dart`):
+- Prompts user to download TTS model on first app launch
+- Shows download progress with cancel option
+- Can be skipped and configured later in Settings
 
 **Provider** (`lib/shared/providers/tts_provider.dart`):
 - `ttsServiceProvider` - Singleton TTSService instance
-- `ttsPlayingStateProvider` - Track current playback state
-- `voicePreferenceProvider` - User's selected voice preference (Sara/Nicola)
+- `localModelInstalledProvider` - Check if model is downloaded
+- `voicePreferenceProvider` - User's selected voice preference
 
-**Integration Pattern**:
-```dart
-// Read user's voice preference
-final selectedVoice = ref.read(voicePreferenceProvider);
-// Play with selected voice
-await ttsService.speak(text, voice: selectedVoice);
-```
+**iOS Requirement**: Minimum deployment target iOS 16.0 (for ONNX Runtime)
 
 ### Spaced Repetition Algorithm
 Implemented in `vocabulary_provider.dart:_calculateNextReviewDate()`:
@@ -626,6 +627,11 @@ lib/
 │   ├── conversation/       # AI conversation practice
 │   │   ├── conversation_scenario_screen.dart  # Scenario selection
 │   │   └── ai_conversation_screen.dart        # Chat interface
+│   ├── setup/              # First-launch setup screens
+│   │   ├── tts_setup_screen.dart              # TTS model download
+│   │   └── api_key_setup_screen.dart          # DeepSeek API key config
+│   ├── settings/           # App settings
+│   │   └── settings_screen.dart               # Voice, model, API key management
 │   ├── practice/           # Integrated into reading feature
 │   ├── phrase/             # Italian expressions learning (NEW)
 │   │   └── phrase_list_screen.dart       # Tabbed interface with TTS support
@@ -642,9 +648,11 @@ lib/
     │   ├── vocabulary_provider.dart      # Word loading, learning progress
     │   ├── grammar_provider.dart         # Grammar loading, progress tracking
     │   ├── reading_provider.dart         # Reading passages, progress tracking
-    │   ├── phrase_provider.dart          # Italian phrases, category filtering (NEW)
+    │   ├── phrase_provider.dart          # Italian phrases, category filtering
     │   ├── conversation_provider.dart    # Conversation state, DeepSeek API
-    │   └── tts_provider.dart               # Text-to-speech integration (NEW)
+    │   ├── api_key_provider.dart         # DeepSeek API key storage
+    │   ├── voice_preference_provider.dart # TTS voice selection
+    │   └── tts_provider.dart             # Text-to-speech integration
     └── widgets/            # Reusable UI components
         ├── flip_card.dart
         ├── swipeable_word_card.dart
@@ -767,27 +775,32 @@ All major screens have been updated with the modern gradient-based design:
 - `go_router` (^14.6.2) - Declarative routing (defined but not integrated)
 - `sqflite` (^2.4.1) - SQLite database for learning progress persistence
 - `shared_preferences` (^2.3.3) - Key-value storage
-- `just_audio` (^0.9.42) / `audioplayers` (^6.1.0) - Audio playback
-- `dio` (^5.7.0) - HTTP client for DeepSeek API and future API calls
-- `intl` (^0.20.1) - Internationalization utilities
-- `path` (^1.9.0) - Path manipulation utilities
+- `kokoro_tts_flutter` (^0.2.0+1) - Local TTS with ONNX Runtime
+- `just_audio` (^0.10.5) / `audioplayers` (^6.1.0) - Audio playback
+- `dio` (^5.7.0) - HTTP client for model downloads and API calls
+- `url_launcher` (^6.2.5) - Open external URLs (DeepSeek platform)
 - `fl_chart` (^0.69.0) - Charts for statistics visualization
 
 ## API Configuration
 
 ### DeepSeek API (AI Conversation)
 The app uses DeepSeek's conversational AI for language practice:
-- **API Key**: Stored in `conversation_provider.dart`
+- **API Key**: User-provided, stored securely via `apiKeyProvider` in SharedPreferences
 - **Base URL**: `https://api.deepseek.com`
 - **Model**: `deepseek-chat`
 - **Endpoint**: `/chat/completions` (OpenAI-compatible)
 - **Timeouts**: 30s connect, 60s receive
-- **Rate Limits**: Follow DeepSeek's standard rate limits
-- **Error Handling**: Network errors, timeout errors, API errors gracefully handled with user feedback
-- **IMPORTANT**: Requires `INTERNET` and `ACCESS_NETWORK_STATE` permissions in `AndroidManifest.xml`
 
-### KOKORO TTS API
-See "Text-to-Speech (TTS) System" section above for complete configuration details.
+**First-Launch Setup** (`lib/features/setup/api_key_setup_screen.dart`):
+- Prompts user to enter their own DeepSeek API key
+- Includes step-by-step guide to obtain API key from platform.deepseek.com
+- Key validation (must start with `sk-`)
+- Can be skipped and configured later in Settings
+
+**Provider** (`lib/shared/providers/api_key_provider.dart`):
+- `apiKeyProvider` - Stores and manages API key
+- `apiKeyConfiguredProvider` - Check if API key is set
+- `conversationAvailableProvider` - Check if AI conversation is usable
 
 ### Android Permissions Required
 Add to `android/app/src/main/AndroidManifest.xml`:
@@ -795,7 +808,10 @@ Add to `android/app/src/main/AndroidManifest.xml`:
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
-Without these permissions, both AI conversation and TTS features will fail with network errors.
+
+### iOS Configuration
+- Minimum deployment target: **iOS 16.0** (required for ONNX Runtime)
+- Set in both `ios/Podfile` and `ios/Runner.xcodeproj/project.pbxproj`
 
 ## Important Implementation Notes
 

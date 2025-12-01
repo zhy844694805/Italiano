@@ -4,8 +4,8 @@ import '../../shared/models/word.dart';
 import '../../shared/providers/vocabulary_provider.dart';
 import '../../shared/providers/tts_provider.dart';
 import '../../shared/providers/voice_preference_provider.dart';
-import '../../core/theme/modern_theme.dart';
-import '../../shared/widgets/gradient_card.dart';
+import '../../core/theme/openai_theme.dart';
+import '../../shared/widgets/openai_widgets.dart';
 import 'vocabulary_learning_screen.dart';
 
 class VocabularyListScreen extends ConsumerStatefulWidget {
@@ -16,26 +16,36 @@ class VocabularyListScreen extends ConsumerStatefulWidget {
 }
 
 class _VocabularyListScreenState extends ConsumerState<VocabularyListScreen> {
+  final _searchController = TextEditingController();
   String _searchQuery = '';
   String? _selectedLevel;
   String? _selectedCategory;
-  String _sortBy = 'default'; // default, mastery, recent
+  String _sortBy = 'default';
   bool _showOnlyFavorites = false;
 
   @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
     final wordsAsync = ref.watch(allWordsProvider);
     final learningProgress = ref.watch(learningProgressProvider);
 
     return Scaffold(
+      backgroundColor: OpenAITheme.white,
       appBar: AppBar(
-        title: const Text('词汇列表'),
+        title: const Text('词汇'),
+        backgroundColor: OpenAITheme.white,
+        surfaceTintColor: Colors.transparent,
         actions: [
           IconButton(
-            icon: Icon(_showOnlyFavorites ? Icons.favorite : Icons.favorite_border),
-            tooltip: '只看收藏',
+            icon: Icon(
+              _showOnlyFavorites ? Icons.favorite : Icons.favorite_border,
+              color: _showOnlyFavorites ? OpenAITheme.red : OpenAITheme.gray500,
+            ),
             onPressed: () {
               setState(() {
                 _showOnlyFavorites = !_showOnlyFavorites;
@@ -43,37 +53,32 @@ class _VocabularyListScreenState extends ConsumerState<VocabularyListScreen> {
             },
           ),
           PopupMenuButton<String>(
-            icon: const Icon(Icons.sort),
-            tooltip: '排序',
+            icon: const Icon(Icons.sort, color: OpenAITheme.gray600),
             onSelected: (value) {
               setState(() {
                 _sortBy = value;
               });
             },
             itemBuilder: (context) => [
-              const PopupMenuItem(value: 'default', child: Text('默认排序')),
-              const PopupMenuItem(value: 'mastery', child: Text('按掌握度')),
-              const PopupMenuItem(value: 'recent', child: Text('最近学习')),
+              _buildPopupItem('default', '默认排序', _sortBy == 'default'),
+              _buildPopupItem('mastery', '按掌握度', _sortBy == 'mastery'),
+              _buildPopupItem('recent', '最近学习', _sortBy == 'recent'),
             ],
           ),
         ],
       ),
       body: wordsAsync.when(
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (error, stack) => Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.error_outline, size: 64, color: colorScheme.error),
-              const SizedBox(height: 16),
-              Text('加载失败: $error'),
-            ],
-          ),
+        loading: () => const Center(
+          child: CircularProgressIndicator(color: OpenAITheme.gray900),
+        ),
+        error: (error, stack) => OEmptyState(
+          icon: Icons.error_outline,
+          title: '加载失败',
+          subtitle: error.toString(),
         ),
         data: (allWords) {
-          // 筛选单词
+          // 筛选
           var filteredWords = allWords.where((word) {
-            // 搜索过滤
             if (_searchQuery.isNotEmpty) {
               final query = _searchQuery.toLowerCase();
               if (!word.italian.toLowerCase().contains(query) &&
@@ -82,25 +87,18 @@ class _VocabularyListScreenState extends ConsumerState<VocabularyListScreen> {
                 return false;
               }
             }
-
-            // 级别过滤
             if (_selectedLevel != null && word.level != _selectedLevel) {
               return false;
             }
-
-            // 分类过滤
             if (_selectedCategory != null && word.category != _selectedCategory) {
               return false;
             }
-
-            // 收藏过滤
             if (_showOnlyFavorites) {
               final record = learningProgress[word.id];
               if (record == null || !record.isFavorite) {
                 return false;
               }
             }
-
             return true;
           }).toList();
 
@@ -109,7 +107,7 @@ class _VocabularyListScreenState extends ConsumerState<VocabularyListScreen> {
             filteredWords.sort((a, b) {
               final masteryA = learningProgress[a.id]?.mastery ?? 0.0;
               final masteryB = learningProgress[b.id]?.mastery ?? 0.0;
-              return masteryB.compareTo(masteryA); // 降序
+              return masteryB.compareTo(masteryA);
             });
           } else if (_sortBy == 'recent') {
             filteredWords.sort((a, b) {
@@ -118,11 +116,10 @@ class _VocabularyListScreenState extends ConsumerState<VocabularyListScreen> {
               if (dateA == null && dateB == null) return 0;
               if (dateA == null) return 1;
               if (dateB == null) return -1;
-              return dateB.compareTo(dateA); // 降序
+              return dateB.compareTo(dateA);
             });
           }
 
-          // 获取所有级别和分类
           final levels = allWords.map((w) => w.level).toSet().toList()..sort();
           final categories = allWords.map((w) => w.category).toSet().toList()..sort();
 
@@ -130,21 +127,39 @@ class _VocabularyListScreenState extends ConsumerState<VocabularyListScreen> {
             children: [
               // 搜索栏
               Padding(
-                padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
                 child: TextField(
+                  controller: _searchController,
                   decoration: InputDecoration(
                     hintText: '搜索单词...',
-                    prefixIcon: const Icon(Icons.search),
+                    hintStyle: const TextStyle(color: OpenAITheme.gray400),
+                    prefixIcon: const Icon(Icons.search, color: OpenAITheme.gray400, size: 20),
                     suffixIcon: _searchQuery.isNotEmpty
                         ? IconButton(
-                            icon: const Icon(Icons.clear),
+                            icon: const Icon(Icons.close, color: OpenAITheme.gray400, size: 18),
                             onPressed: () {
+                              _searchController.clear();
                               setState(() {
                                 _searchQuery = '';
                               });
                             },
                           )
                         : null,
+                    filled: true,
+                    fillColor: OpenAITheme.gray50,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: const BorderSide(color: OpenAITheme.gray200),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: const BorderSide(color: OpenAITheme.gray200),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: const BorderSide(color: OpenAITheme.gray900, width: 1.5),
+                    ),
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   ),
                   onChanged: (value) {
                     setState(() {
@@ -160,55 +175,58 @@ class _VocabularyListScreenState extends ConsumerState<VocabularyListScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Row(
                   children: [
-                    // 级别筛选
-                    _buildFilterChip(
-                      label: _selectedLevel ?? '所有级别',
+                    _FilterChip(
+                      label: _selectedLevel ?? '级别',
                       selected: _selectedLevel != null,
                       onTap: () => _showLevelFilter(context, levels),
                     ),
                     const SizedBox(width: 8),
-                    // 分类筛选
-                    _buildFilterChip(
-                      label: _selectedCategory ?? '所有分类',
+                    _FilterChip(
+                      label: _selectedCategory ?? '分类',
                       selected: _selectedCategory != null,
                       onTap: () => _showCategoryFilter(context, categories),
                     ),
-                    const SizedBox(width: 8),
-                    // 清除筛选
-                    if (_selectedLevel != null || _selectedCategory != null)
-                      TextButton.icon(
-                        icon: const Icon(Icons.clear_all, size: 16),
-                        label: const Text('清除筛选'),
-                        onPressed: () {
+                    if (_selectedLevel != null || _selectedCategory != null) ...[
+                      const SizedBox(width: 8),
+                      GestureDetector(
+                        onTap: () {
                           setState(() {
                             _selectedLevel = null;
                             _selectedCategory = null;
                           });
                         },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                          child: const Text(
+                            '清除',
+                            style: TextStyle(
+                              fontSize: 13,
+                              color: OpenAITheme.gray500,
+                            ),
+                          ),
+                        ),
                       ),
+                    ],
                   ],
                 ),
               ),
 
-              const SizedBox(height: 8),
-
               // 结果统计
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
                 child: Row(
                   children: [
                     Text(
                       '共 ${filteredWords.length} 个单词',
-                      style: theme.textTheme.bodyMedium?.copyWith(
-                        color: colorScheme.onSurface.withValues(alpha: 0.6),
+                      style: const TextStyle(
+                        fontSize: 13,
+                        color: OpenAITheme.gray500,
                       ),
                     ),
                     const Spacer(),
                     if (filteredWords.isNotEmpty)
-                      TextButton.icon(
-                        icon: const Icon(Icons.school, size: 18),
-                        label: const Text('全部学习'),
-                        onPressed: () {
+                      GestureDetector(
+                        onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -216,46 +234,42 @@ class _VocabularyListScreenState extends ConsumerState<VocabularyListScreen> {
                             ),
                           );
                         },
+                        child: const Text(
+                          '全部学习',
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w500,
+                            color: OpenAITheme.gray900,
+                          ),
+                        ),
                       ),
                   ],
                 ),
               ),
 
-              const Divider(height: 1),
+              const Divider(height: 1, color: OpenAITheme.gray200),
 
               // 单词列表
               Expanded(
                 child: filteredWords.isEmpty
-                    ? Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.search_off,
-                              size: 64,
-                              color: colorScheme.onSurface.withValues(alpha: 0.3),
-                            ),
-                            const SizedBox(height: 16),
-                            Text(
-                              '没有找到单词',
-                              style: theme.textTheme.titleMedium?.copyWith(
-                                color: colorScheme.onSurface.withValues(alpha: 0.6),
-                              ),
-                            ),
-                          ],
-                        ),
+                    ? const OEmptyState(
+                        icon: Icons.search_off,
+                        title: '没有找到单词',
+                        subtitle: '尝试调整搜索条件',
                       )
-                    : ListView.separated(
+                    : ListView.builder(
                         padding: const EdgeInsets.all(16),
                         itemCount: filteredWords.length,
-                        separatorBuilder: (context, index) => const SizedBox(height: 12),
                         itemBuilder: (context, index) {
                           final word = filteredWords[index];
                           final record = learningProgress[word.id];
-                          return _WordListItem(
-                            word: word,
-                            record: record,
-                            onTap: () => _showWordDetail(context, word, record),
+                          return Padding(
+                            padding: const EdgeInsets.only(bottom: 12),
+                            child: _WordListItem(
+                              word: word,
+                              record: record,
+                              onTap: () => _showWordDetail(context, word, record),
+                            ),
                           );
                         },
                       ),
@@ -267,49 +281,18 @@ class _VocabularyListScreenState extends ConsumerState<VocabularyListScreen> {
     );
   }
 
-  Widget _buildFilterChip({
-    required String label,
-    required bool selected,
-    required VoidCallback onTap,
-  }) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(20),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        decoration: BoxDecoration(
-          color: selected
-              ? Theme.of(context).colorScheme.primaryContainer
-              : Theme.of(context).colorScheme.surfaceContainerHighest,
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(
-            color: selected
-                ? Theme.of(context).colorScheme.primary
-                : Colors.transparent,
-          ),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              label,
-              style: TextStyle(
-                color: selected
-                    ? Theme.of(context).colorScheme.onPrimaryContainer
-                    : Theme.of(context).colorScheme.onSurface,
-                fontWeight: selected ? FontWeight.w600 : FontWeight.normal,
-              ),
-            ),
-            const SizedBox(width: 4),
-            Icon(
-              Icons.arrow_drop_down,
-              size: 18,
-              color: selected
-                  ? Theme.of(context).colorScheme.onPrimaryContainer
-                  : Theme.of(context).colorScheme.onSurface,
-            ),
-          ],
-        ),
+  PopupMenuItem<String> _buildPopupItem(String value, String text, bool selected) {
+    return PopupMenuItem(
+      value: value,
+      child: Row(
+        children: [
+          if (selected)
+            const Icon(Icons.check, size: 18, color: OpenAITheme.gray900)
+          else
+            const SizedBox(width: 18),
+          const SizedBox(width: 8),
+          Text(text),
+        ],
       ),
     );
   }
@@ -317,45 +300,20 @@ class _VocabularyListScreenState extends ConsumerState<VocabularyListScreen> {
   void _showLevelFilter(BuildContext context, List<String> levels) {
     showModalBottomSheet(
       context: context,
-      builder: (context) => Container(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              '选择级别',
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-            const SizedBox(height: 16),
-            Wrap(
-              spacing: 8,
-              runSpacing: 8,
-              children: [
-                ChoiceChip(
-                  label: const Text('全部'),
-                  selected: _selectedLevel == null,
-                  onSelected: (selected) {
-                    setState(() {
-                      _selectedLevel = null;
-                    });
-                    Navigator.pop(context);
-                  },
-                ),
-                ...levels.map((level) => ChoiceChip(
-                      label: Text(level),
-                      selected: _selectedLevel == level,
-                      onSelected: (selected) {
-                        setState(() {
-                          _selectedLevel = selected ? level : null;
-                        });
-                        Navigator.pop(context);
-                      },
-                    )),
-              ],
-            ),
-          ],
-        ),
+      backgroundColor: OpenAITheme.white,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      builder: (context) => _FilterSheet(
+        title: '选择级别',
+        options: ['全部', ...levels],
+        selected: _selectedLevel ?? '全部',
+        onSelected: (value) {
+          setState(() {
+            _selectedLevel = value == '全部' ? null : value;
+          });
+          Navigator.pop(context);
+        },
       ),
     );
   }
@@ -363,44 +321,27 @@ class _VocabularyListScreenState extends ConsumerState<VocabularyListScreen> {
   void _showCategoryFilter(BuildContext context, List<String> categories) {
     showModalBottomSheet(
       context: context,
-      builder: (context) => Container(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              '选择分类',
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-            const SizedBox(height: 16),
-            Wrap(
-              spacing: 8,
-              runSpacing: 8,
-              children: [
-                ChoiceChip(
-                  label: const Text('全部'),
-                  selected: _selectedCategory == null,
-                  onSelected: (selected) {
-                    setState(() {
-                      _selectedCategory = null;
-                    });
-                    Navigator.pop(context);
-                  },
-                ),
-                ...categories.map((category) => ChoiceChip(
-                      label: Text(category),
-                      selected: _selectedCategory == category,
-                      onSelected: (selected) {
-                        setState(() {
-                          _selectedCategory = selected ? category : null;
-                        });
-                        Navigator.pop(context);
-                      },
-                    )),
-              ],
-            ),
-          ],
+      backgroundColor: OpenAITheme.white,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      isScrollControlled: true,
+      builder: (context) => DraggableScrollableSheet(
+        initialChildSize: 0.6,
+        minChildSize: 0.4,
+        maxChildSize: 0.9,
+        expand: false,
+        builder: (context, scrollController) => _FilterSheet(
+          title: '选择分类',
+          options: ['全部', ...categories],
+          selected: _selectedCategory ?? '全部',
+          onSelected: (value) {
+            setState(() {
+              _selectedCategory = value == '全部' ? null : value;
+            });
+            Navigator.pop(context);
+          },
+          scrollController: scrollController,
         ),
       ),
     );
@@ -410,11 +351,145 @@ class _VocabularyListScreenState extends ConsumerState<VocabularyListScreen> {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
+      backgroundColor: OpenAITheme.white,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
       builder: (context) => _WordDetailSheet(word: word, record: record),
     );
   }
 }
 
+// 筛选按钮
+class _FilterChip extends StatelessWidget {
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+
+  const _FilterChip({
+    required this.label,
+    required this.selected,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+        decoration: BoxDecoration(
+          color: selected ? OpenAITheme.gray900 : OpenAITheme.gray100,
+          borderRadius: BorderRadius.circular(6),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.w500,
+                color: selected ? OpenAITheme.white : OpenAITheme.gray700,
+              ),
+            ),
+            const SizedBox(width: 4),
+            Icon(
+              Icons.keyboard_arrow_down,
+              size: 16,
+              color: selected ? OpenAITheme.white : OpenAITheme.gray500,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// 筛选面板
+class _FilterSheet extends StatelessWidget {
+  final String title;
+  final List<String> options;
+  final String selected;
+  final ValueChanged<String> onSelected;
+  final ScrollController? scrollController;
+
+  const _FilterSheet({
+    required this.title,
+    required this.options,
+    required this.selected,
+    required this.onSelected,
+    this.scrollController,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(
+            child: Container(
+              width: 40,
+              height: 4,
+              decoration: BoxDecoration(
+                color: OpenAITheme.gray300,
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              color: OpenAITheme.gray900,
+            ),
+          ),
+          const SizedBox(height: 16),
+          Flexible(
+            child: ListView(
+              controller: scrollController,
+              shrinkWrap: scrollController == null,
+              children: [
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: options.map((option) {
+                    final isSelected = option == selected;
+                    return GestureDetector(
+                      onTap: () => onSelected(option),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                        decoration: BoxDecoration(
+                          color: isSelected ? OpenAITheme.gray900 : OpenAITheme.gray100,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Text(
+                          option,
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            color: isSelected ? OpenAITheme.white : OpenAITheme.gray700,
+                          ),
+                        ),
+                      ),
+                    );
+                  }).toList(),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// 单词列表项
 class _WordListItem extends ConsumerWidget {
   final Word word;
   final LearningRecord? record;
@@ -428,185 +503,109 @@ class _WordListItem extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
     final mastery = record?.mastery ?? 0.0;
     final isFavorite = record?.isFavorite ?? false;
 
-    return FloatingCard(
+    return OCard(
       onTap: onTap,
+      padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-              Row(
-                children: [
-                  // 单词信息
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
                       children: [
-                        Row(
-                          children: [
-                            Text(
-                              word.italian,
-                              style: theme.textTheme.titleLarge?.copyWith(
-                                fontWeight: FontWeight.bold,
-                                color: colorScheme.primary,
-                              ),
-                            ),
-                            const SizedBox(width: 8),
-                            if (isFavorite)
-                              Icon(
-                                Icons.favorite,
-                                size: 16,
-                                color: Colors.red,
-                              ),
-                          ],
-                        ),
-                        const SizedBox(height: 4),
                         Text(
-                          word.chinese,
-                          style: theme.textTheme.bodyLarge,
-                        ),
-                        if (word.pronunciation != null) ...[
-                          const SizedBox(height: 4),
-                          Text(
-                            '/${word.pronunciation}/',
-                            style: theme.textTheme.bodyMedium?.copyWith(
-                              color: colorScheme.onSurface.withValues(alpha: 0.6),
-                              fontStyle: FontStyle.italic,
-                            ),
+                          word.italian,
+                          style: const TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: OpenAITheme.gray900,
                           ),
+                        ),
+                        if (isFavorite) ...[
+                          const SizedBox(width: 6),
+                          const Icon(Icons.favorite, size: 14, color: OpenAITheme.red),
                         ],
                       ],
                     ),
-                  ),
-
-                  // 音频按钮
-                  IconButton(
-                    icon: const Icon(Icons.volume_up),
-                    onPressed: () async {
-                      final ttsService = ref.read(ttsServiceProvider);
-                      final selectedVoice = ref.read(voicePreferenceProvider);
-                      await ttsService.speak(word.italian, voice: selectedVoice);
-                    },
-                  ),
-
-                  // 收藏按钮
-                  IconButton(
-                    icon: Icon(
-                      isFavorite ? Icons.favorite : Icons.favorite_border,
-                      color: isFavorite ? Colors.red : null,
-                    ),
-                    onPressed: () {
-                      ref.read(learningProgressProvider.notifier).toggleFavorite(word.id);
-                    },
-                  ),
-                ],
-              ),
-
-              const SizedBox(height: 12),
-
-              // 标签
-              Row(
-                children: [
-                  _buildTag(word.level, ModernTheme.primaryGradient),
-                  const SizedBox(width: 8),
-                  _buildTag(word.category, ModernTheme.secondaryGradient),
-                ],
-              ),
-
-              const SizedBox(height: 12),
-
-              // 掌握度进度条（渐变）
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        '掌握度',
-                        style: theme.textTheme.bodySmall?.copyWith(
-                          color: ModernTheme.textLight,
-                        ),
+                    const SizedBox(height: 4),
+                    Text(
+                      word.chinese,
+                      style: const TextStyle(
+                        fontSize: 15,
+                        color: OpenAITheme.gray600,
                       ),
+                    ),
+                    if (word.pronunciation != null) ...[
+                      const SizedBox(height: 2),
                       Text(
-                        '${(mastery * 100).toInt()}%',
-                        style: theme.textTheme.bodySmall?.copyWith(
-                          fontWeight: FontWeight.w600,
-                          color: _getMasteryColor(mastery),
+                        '/${word.pronunciation}/',
+                        style: const TextStyle(
+                          fontSize: 13,
+                          color: OpenAITheme.gray400,
+                          fontStyle: FontStyle.italic,
                         ),
                       ),
                     ],
-                  ),
-                  const SizedBox(height: 6),
-                  GradientProgressBar(
-                    progress: mastery,
-                    height: 8,
-                    gradient: _getMasteryGradient(mastery),
-                  ),
-                ],
-              ),
-
-              if (record != null) ...[
-                const SizedBox(height: 8),
-                Builder(
-                  builder: (context) {
-                    final rec = record!;
-                    return Text(
-                      '已学习 ${rec.reviewCount} 次 · 正确 ${rec.correctCount} 次',
-                      style: theme.textTheme.bodySmall?.copyWith(
-                        color: colorScheme.onSurface.withValues(alpha: 0.5),
-                      ),
-                    );
-                  },
+                  ],
                 ),
-              ],
+              ),
+              // 播放按钮
+              IconButton(
+                icon: const Icon(Icons.volume_up_outlined, size: 20),
+                color: OpenAITheme.gray500,
+                onPressed: () async {
+                  final ttsService = ref.read(ttsServiceProvider);
+                  final selectedVoice = ref.read(voicePreferenceProvider);
+                  await ttsService.speak(word.italian, voice: selectedVoice);
+                },
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          // 标签和进度
+          Row(
+            children: [
+              OBadge(text: word.level, small: true),
+              const SizedBox(width: 6),
+              OBadge(text: word.category, small: true),
+              const Spacer(),
+              Text(
+                '${(mastery * 100).toInt()}%',
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: _getMasteryColor(mastery),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          OProgressBar(
+            progress: mastery,
+            height: 3,
+            color: _getMasteryColor(mastery),
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildTag(String text, Gradient gradient) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-      decoration: BoxDecoration(
-        gradient: gradient,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Text(
-        text,
-        style: const TextStyle(
-          color: Colors.white,
-          fontSize: 12,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-    );
-  }
-
   Color _getMasteryColor(double mastery) {
-    if (mastery >= 0.8) return Colors.green;
-    if (mastery >= 0.5) return ModernTheme.accentColor;
-    return ModernTheme.textLight;
-  }
-
-  Gradient _getMasteryGradient(double mastery) {
-    if (mastery >= 0.8) {
-      return const LinearGradient(
-        colors: [Color(0xFF4CAF50), Color(0xFF388E3C)],
-      );
-    }
-    if (mastery >= 0.5) {
-      return ModernTheme.accentGradient;
-    }
-    return const LinearGradient(
-      colors: [Color(0xFFBDBDBD), Color(0xFF9E9E9E)],
-    );
+    if (mastery >= 0.8) return OpenAITheme.green;
+    if (mastery >= 0.5) return OpenAITheme.gray600;
+    return OpenAITheme.gray400;
   }
 }
 
+// 单词详情面板
 class _WordDetailSheet extends ConsumerWidget {
   final Word word;
   final LearningRecord? record;
@@ -618,8 +617,6 @@ class _WordDetailSheet extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
     final ttsService = ref.watch(ttsServiceProvider);
 
     return DraggableScrollableSheet(
@@ -629,13 +626,9 @@ class _WordDetailSheet extends ConsumerWidget {
       expand: false,
       builder: (context, scrollController) {
         return Container(
-          decoration: BoxDecoration(
-            color: colorScheme.surface,
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-          ),
+          padding: const EdgeInsets.all(24),
           child: ListView(
             controller: scrollController,
-            padding: const EdgeInsets.all(24),
             children: [
               // 拖动指示器
               Center(
@@ -643,12 +636,11 @@ class _WordDetailSheet extends ConsumerWidget {
                   width: 40,
                   height: 4,
                   decoration: BoxDecoration(
-                    color: colorScheme.onSurface.withValues(alpha: 0.3),
+                    color: OpenAITheme.gray300,
                     borderRadius: BorderRadius.circular(2),
                   ),
                 ),
               ),
-
               const SizedBox(height: 24),
 
               // 单词标题
@@ -660,17 +652,20 @@ class _WordDetailSheet extends ConsumerWidget {
                       children: [
                         Text(
                           word.italian,
-                          style: theme.textTheme.displaySmall?.copyWith(
-                            color: colorScheme.primary,
-                            fontWeight: FontWeight.bold,
+                          style: const TextStyle(
+                            fontSize: 32,
+                            fontWeight: FontWeight.w600,
+                            color: OpenAITheme.gray900,
+                            letterSpacing: -0.5,
                           ),
                         ),
                         if (word.pronunciation != null) ...[
-                          const SizedBox(height: 8),
+                          const SizedBox(height: 4),
                           Text(
                             '/${word.pronunciation}/',
-                            style: theme.textTheme.titleMedium?.copyWith(
-                              color: colorScheme.onSurface.withValues(alpha: 0.6),
+                            style: const TextStyle(
+                              fontSize: 16,
+                              color: OpenAITheme.gray500,
                               fontStyle: FontStyle.italic,
                             ),
                           ),
@@ -678,83 +673,110 @@ class _WordDetailSheet extends ConsumerWidget {
                       ],
                     ),
                   ),
-                  IconButton.filled(
-                    icon: const Icon(Icons.volume_up),
-                    iconSize: 32,
-                    onPressed: () async {
-                      final selectedVoice = ref.read(voicePreferenceProvider);
-                      await ttsService.speak(word.italian, voice: selectedVoice);
-                    },
+                  Container(
+                    decoration: BoxDecoration(
+                      color: OpenAITheme.gray100,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: IconButton(
+                      icon: const Icon(Icons.volume_up),
+                      iconSize: 28,
+                      color: OpenAITheme.gray700,
+                      onPressed: () async {
+                        final selectedVoice = ref.read(voicePreferenceProvider);
+                        await ttsService.speak(word.italian, voice: selectedVoice);
+                      },
+                    ),
                   ),
                 ],
               ),
 
               const SizedBox(height: 24),
+              const Divider(color: OpenAITheme.gray200),
+              const SizedBox(height: 24),
 
               // 释义
-              _buildSection(
-                title: '释义',
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '🇨🇳 ${word.chinese}',
-                      style: theme.textTheme.titleLarge,
-                    ),
-                    if (word.english != null) ...[
-                      const SizedBox(height: 8),
-                      Text(
-                        '🇬🇧 ${word.english}',
-                        style: theme.textTheme.titleMedium?.copyWith(
-                          color: colorScheme.onSurface.withValues(alpha: 0.7),
-                        ),
-                      ),
-                    ],
-                  ],
+              const Text(
+                '释义',
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600,
+                  color: OpenAITheme.gray500,
+                  letterSpacing: 0.5,
                 ),
               ),
+              const SizedBox(height: 12),
+              Text(
+                word.chinese,
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  color: OpenAITheme.gray900,
+                ),
+              ),
+              if (word.english != null) ...[
+                const SizedBox(height: 4),
+                Text(
+                  word.english!,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: OpenAITheme.gray500,
+                  ),
+                ),
+              ],
 
               // 例句
               if (word.examples.isNotEmpty) ...[
                 const SizedBox(height: 24),
-                _buildSection(
-                  title: '例句',
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: word.examples.map((example) {
-                      return Padding(
-                        padding: const EdgeInsets.only(bottom: 12),
-                        child: Text(
-                          '• $example',
-                          style: theme.textTheme.bodyLarge?.copyWith(
-                            height: 1.5,
-                          ),
-                        ),
-                      );
-                    }).toList(),
+                const Text(
+                  '例句',
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w600,
+                    color: OpenAITheme.gray500,
+                    letterSpacing: 0.5,
                   ),
                 ),
+                const SizedBox(height: 12),
+                ...word.examples.map((example) => Padding(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: Text(
+                    '• $example',
+                    style: const TextStyle(
+                      fontSize: 15,
+                      color: OpenAITheme.gray700,
+                      height: 1.5,
+                    ),
+                  ),
+                )),
               ],
 
               // 学习统计
               if (record != null) ...[
                 const SizedBox(height: 24),
+                const Text(
+                  '学习统计',
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w600,
+                    color: OpenAITheme.gray500,
+                    letterSpacing: 0.5,
+                  ),
+                ),
+                const SizedBox(height: 12),
                 Builder(
                   builder: (context) {
                     final rec = record!;
-                    return _buildSection(
-                      title: '学习统计',
+                    return OCard(
+                      padding: const EdgeInsets.all(16),
                       child: Column(
                         children: [
-                          _buildStatRow('总复习次数', '${rec.reviewCount}'),
-                          _buildStatRow('正确次数', '${rec.correctCount}'),
-                          _buildStatRow('正确率', '${((rec.reviewCount > 0 ? rec.correctCount / rec.reviewCount : 0) * 100).toInt()}%'),
-                          _buildStatRow('掌握度', '${(rec.mastery * 100).toInt()}%'),
+                          _StatRow('复习次数', '${rec.reviewCount}'),
+                          _StatRow('正确次数', '${rec.correctCount}'),
+                          _StatRow('正确率', '${((rec.reviewCount > 0 ? rec.correctCount / rec.reviewCount : 0) * 100).toInt()}%'),
+                          _StatRow('掌握度', '${(rec.mastery * 100).toInt()}%'),
                           if (rec.nextReviewDate != null)
-                            _buildStatRow(
-                              '下次复习',
-                              _formatDate(rec.nextReviewDate!),
-                            ),
+                            _StatRow('下次复习', _formatDate(rec.nextReviewDate!)),
                         ],
                       ),
                     );
@@ -762,17 +784,15 @@ class _WordDetailSheet extends ConsumerWidget {
                 ),
               ],
 
-              const SizedBox(height: 24),
+              const SizedBox(height: 32),
 
               // 操作按钮
               Row(
                 children: [
                   Expanded(
-                    child: OutlinedButton.icon(
-                      icon: Icon(
-                        record?.isFavorite ?? false ? Icons.favorite : Icons.favorite_border,
-                      ),
-                      label: Text(record?.isFavorite ?? false ? '取消收藏' : '收藏'),
+                    child: OButtonOutlined(
+                      text: record?.isFavorite ?? false ? '取消收藏' : '收藏',
+                      icon: record?.isFavorite ?? false ? Icons.favorite : Icons.favorite_border,
                       onPressed: () {
                         ref.read(learningProgressProvider.notifier).toggleFavorite(word.id);
                       },
@@ -780,9 +800,9 @@ class _WordDetailSheet extends ConsumerWidget {
                   ),
                   const SizedBox(width: 12),
                   Expanded(
-                    child: ElevatedButton.icon(
-                      icon: const Icon(Icons.school),
-                      label: const Text('开始学习'),
+                    child: OButton(
+                      text: '开始学习',
+                      icon: Icons.school,
                       onPressed: () {
                         Navigator.pop(context);
                         Navigator.push(
@@ -803,54 +823,47 @@ class _WordDetailSheet extends ConsumerWidget {
     );
   }
 
-  Widget _buildSection({required String title, required Widget child}) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          title,
-          style: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-            color: Colors.grey,
-          ),
-        ),
-        const SizedBox(height: 12),
-        child,
-      ],
-    );
+  String _formatDate(DateTime date) {
+    final now = DateTime.now();
+    final diff = date.difference(now);
+    if (diff.isNegative) return '需要复习';
+    if (diff.inDays == 0) return '今天';
+    if (diff.inDays == 1) return '明天';
+    if (diff.inDays < 7) return '${diff.inDays} 天后';
+    return '${date.month}/${date.day}';
   }
+}
 
-  Widget _buildStatRow(String label, String value) {
+class _StatRow extends StatelessWidget {
+  final String label;
+  final String value;
+
+  const _StatRow(this.label, this.value);
+
+  @override
+  Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.symmetric(vertical: 6),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(label),
+          Text(
+            label,
+            style: const TextStyle(
+              fontSize: 14,
+              color: OpenAITheme.gray500,
+            ),
+          ),
           Text(
             value,
-            style: const TextStyle(fontWeight: FontWeight.w600),
+            style: const TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+              color: OpenAITheme.gray900,
+            ),
           ),
         ],
       ),
     );
-  }
-
-  String _formatDate(DateTime date) {
-    final now = DateTime.now();
-    final diff = date.difference(now);
-
-    if (diff.isNegative) {
-      return '需要复习';
-    } else if (diff.inDays == 0) {
-      return '今天';
-    } else if (diff.inDays == 1) {
-      return '明天';
-    } else if (diff.inDays < 7) {
-      return '${diff.inDays} 天后';
-    } else {
-      return '${date.month}/${date.day}';
-    }
   }
 }

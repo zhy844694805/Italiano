@@ -368,8 +368,5 @@ class DatabaseService {
     await db.delete('grammar_progress');
     await db.delete('learning_statistics');
     await db.delete('reading_progress');
-    await db.delete('listening_progress');
-    await db.delete('speaking_progress');
-    await db.delete('learning_guide_progress');
   }
 }

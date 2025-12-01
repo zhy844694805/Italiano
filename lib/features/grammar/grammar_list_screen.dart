@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/grammar.dart';
 import '../../shared/providers/grammar_provider.dart';
-import '../../core/theme/modern_theme.dart';
-import '../../shared/widgets/gradient_card.dart';
+import '../../core/theme/openai_theme.dart';
+import '../../shared/widgets/openai_widgets.dart';
 import 'grammar_detail_screen.dart';
 
 class GrammarListScreen extends ConsumerStatefulWidget {
@@ -19,36 +19,32 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
-
     final grammarAsync = ref.watch(allGrammarProvider);
     final categoriesAsync = ref.watch(grammarCategoriesProvider);
 
     return Scaffold(
+      backgroundColor: OpenAITheme.white,
       appBar: AppBar(
-        title: const Text('语法课程'),
+        title: const Text('语法'),
+        backgroundColor: OpenAITheme.white,
+        surfaceTintColor: Colors.transparent,
         actions: [
           IconButton(
-            icon: const Icon(Icons.filter_list),
-            onPressed: () => _showFilterDialog(context),
+            icon: const Icon(Icons.filter_list, color: OpenAITheme.gray600),
+            onPressed: () => _showFilterSheet(context),
           ),
         ],
       ),
       body: grammarAsync.when(
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (error, stack) => Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.error_outline, size: 64, color: colorScheme.error),
-              const SizedBox(height: 16),
-              Text('加载失败: $error'),
-            ],
-          ),
+        loading: () => const Center(
+          child: CircularProgressIndicator(color: OpenAITheme.gray900),
+        ),
+        error: (error, stack) => OEmptyState(
+          icon: Icons.error_outline,
+          title: '加载失败',
+          subtitle: error.toString(),
         ),
         data: (grammarPoints) {
-          // 应用过滤
           var filteredGrammar = grammarPoints.where((point) {
             if (_selectedCategory != '全部' && point.category != _selectedCategory) {
               return false;
@@ -68,28 +64,44 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
                 error: (_, __) => const SizedBox.shrink(),
               ),
 
-              // 等级过滤器
-              _buildLevelFilter(theme, colorScheme),
+              // 等级筛选
+              _buildLevelFilter(),
 
-              // 语法点列表
+              // 结果统计
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+                child: Row(
+                  children: [
+                    Text(
+                      '共 ${filteredGrammar.length} 个语法点',
+                      style: const TextStyle(
+                        fontSize: 13,
+                        color: OpenAITheme.gray500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              const Divider(height: 1, color: OpenAITheme.gray200),
+
+              // 语法列表
               Expanded(
                 child: filteredGrammar.isEmpty
-                    ? Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.school_outlined, size: 64, color: colorScheme.primary),
-                            const SizedBox(height: 16),
-                            const Text('暂无语法课程'),
-                          ],
-                        ),
+                    ? const OEmptyState(
+                        icon: Icons.school_outlined,
+                        title: '暂无语法课程',
+                        subtitle: '调整筛选条件试试',
                       )
                     : ListView.builder(
                         padding: const EdgeInsets.all(16),
                         itemCount: filteredGrammar.length,
                         itemBuilder: (context, index) {
                           final grammarPoint = filteredGrammar[index];
-                          return _buildGrammarCard(grammarPoint, theme, colorScheme);
+                          return Padding(
+                            padding: const EdgeInsets.only(bottom: 12),
+                            child: _GrammarCard(grammarPoint: grammarPoint),
+                          );
                         },
                       ),
               ),
@@ -114,14 +126,27 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
 
           return Padding(
             padding: const EdgeInsets.only(right: 8),
-            child: ChoiceChip(
-              label: Text(category),
-              selected: isSelected,
-              onSelected: (selected) {
+            child: GestureDetector(
+              onTap: () {
                 setState(() {
                   _selectedCategory = category;
                 });
               },
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                decoration: BoxDecoration(
+                  color: isSelected ? OpenAITheme.gray900 : OpenAITheme.gray100,
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: Text(
+                  category,
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w500,
+                    color: isSelected ? OpenAITheme.white : OpenAITheme.gray700,
+                  ),
+                ),
+              ),
             ),
           );
         },
@@ -129,15 +154,22 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
     );
   }
 
-  Widget _buildLevelFilter(ThemeData theme, ColorScheme colorScheme) {
-    final levels = ['全部', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+  Widget _buildLevelFilter() {
+    final levels = ['全部', 'A1', 'A2', 'B1', 'B2'];
 
-    return Container(
+    return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Row(
         children: [
-          Text('等级:', style: theme.textTheme.titleSmall),
-          const SizedBox(width: 8),
+          const Text(
+            '等级',
+            style: TextStyle(
+              fontSize: 13,
+              fontWeight: FontWeight.w500,
+              color: OpenAITheme.gray500,
+            ),
+          ),
+          const SizedBox(width: 12),
           Expanded(
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -146,14 +178,30 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
                   final isSelected = level == _selectedLevel;
                   return Padding(
                     padding: const EdgeInsets.only(right: 8),
-                    child: FilterChip(
-                      label: Text(level),
-                      selected: isSelected,
-                      onSelected: (selected) {
+                    child: GestureDetector(
+                      onTap: () {
                         setState(() {
                           _selectedLevel = level;
                         });
                       },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                        decoration: BoxDecoration(
+                          color: isSelected ? OpenAITheme.gray900 : Colors.transparent,
+                          borderRadius: BorderRadius.circular(6),
+                          border: Border.all(
+                            color: isSelected ? OpenAITheme.gray900 : OpenAITheme.gray300,
+                          ),
+                        ),
+                        child: Text(
+                          level,
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                            color: isSelected ? OpenAITheme.white : OpenAITheme.gray600,
+                          ),
+                        ),
+                      ),
                     ),
                   );
                 }).toList(),
@@ -165,263 +213,281 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
     );
   }
 
-  Widget _buildGrammarCard(GrammarPoint grammarPoint, ThemeData theme, ColorScheme colorScheme) {
-    final progress = ref.watch(grammarProgressProvider)[grammarPoint.id];
-    final isCompleted = progress?.completed ?? false;
-    final isFavorite = progress?.isFavorite ?? false;
-
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12),
-      child: FloatingCard(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => GrammarDetailScreen(grammarPoint: grammarPoint),
-            ),
-          );
-        },
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                // 等级标签（渐变背景）
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  decoration: BoxDecoration(
-                    gradient: _getLevelGradient(grammarPoint.level),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Text(
-                    grammarPoint.level,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 8),
-                // 分类标签
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  decoration: BoxDecoration(
-                    color: ModernTheme.backgroundColor,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Text(
-                    grammarPoint.category,
-                    style: TextStyle(
-                      color: ModernTheme.textDark,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-                const Spacer(),
-                // 完成状态图标
-                if (isCompleted)
-                  Container(
-                    padding: const EdgeInsets.all(4),
-                    decoration: BoxDecoration(
-                      color: Colors.green.withValues(alpha: 0.1),
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Icon(Icons.check_circle, color: Colors.green, size: 18),
-                  ),
-                const SizedBox(width: 4),
-                // 收藏图标
-                IconButton(
-                  icon: Icon(
-                    isFavorite ? Icons.favorite : Icons.favorite_border,
-                    color: isFavorite ? Colors.red : ModernTheme.textLight,
-                    size: 20,
-                  ),
-                  padding: EdgeInsets.zero,
-                  constraints: const BoxConstraints(),
-                  onPressed: () {
-                    ref.read(grammarProgressProvider.notifier).toggleFavorite(grammarPoint.id);
-                  },
-                ),
-              ],
-            ),
-            const SizedBox(height: 12),
-            // 标题
-            Text(
-              grammarPoint.title,
-              style: theme.textTheme.titleLarge?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: ModernTheme.textDark,
-              ),
-            ),
-            const SizedBox(height: 8),
-            // 描述
-            Text(
-              grammarPoint.description,
-              style: theme.textTheme.bodyMedium?.copyWith(
-                color: ModernTheme.textLight,
-              ),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-            ),
-            const SizedBox(height: 12),
-            // 底部信息
-            Row(
-              children: [
-                Icon(Icons.list_alt, size: 16, color: ModernTheme.primaryColor),
-                const SizedBox(width: 4),
-                Text(
-                  '${grammarPoint.rules.length} 条规则',
-                  style: theme.textTheme.bodySmall?.copyWith(
-                    color: ModernTheme.textLight,
-                  ),
-                ),
-                const SizedBox(width: 16),
-                Icon(Icons.lightbulb_outline, size: 16, color: ModernTheme.accentColor),
-                const SizedBox(width: 4),
-                Text(
-                  '${grammarPoint.examples.length} 个例句',
-                  style: theme.textTheme.bodySmall?.copyWith(
-                    color: ModernTheme.textLight,
-                  ),
-                ),
-                if (grammarPoint.exercises.isNotEmpty) ...[
-                  const SizedBox(width: 16),
-                  Icon(Icons.quiz_outlined, size: 16, color: ModernTheme.secondaryColor),
-                  const SizedBox(width: 4),
-                  Text(
-                    '${grammarPoint.exercises.length} 道练习',
-                    style: theme.textTheme.bodySmall?.copyWith(
-                      color: ModernTheme.textLight,
-                    ),
-                  ),
-                ],
-              ],
-            ),
-            // 练习进度（渐变进度条）
-            if (progress != null && progress.exercisesTotal > 0) ...[
-              const SizedBox(height: 12),
-              Row(
-                children: [
-                  Expanded(
-                    child: GradientProgressBar(
-                      progress: progress.exercisesCorrect / progress.exercisesTotal,
-                      height: 8,
-                      gradient: ModernTheme.primaryGradient,
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  Text(
-                    '${progress.exercisesCorrect}/${progress.exercisesTotal}',
-                    style: theme.textTheme.bodySmall?.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: ModernTheme.primaryColor,
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ],
-        ),
-      ),
-    );
-  }
-
-  Gradient _getLevelGradient(String level) {
-    switch (level) {
-      case 'A1':
-        return const LinearGradient(
-          colors: [Color(0xFF4CAF50), Color(0xFF388E3C)],
-        );
-      case 'A2':
-        return const LinearGradient(
-          colors: [Color(0xFF8BC34A), Color(0xFF689F38)],
-        );
-      case 'B1':
-        return ModernTheme.secondaryGradient;
-      case 'B2':
-        return const LinearGradient(
-          colors: [Color(0xFF3F51B5), Color(0xFF303F9F)],
-        );
-      case 'C1':
-        return const LinearGradient(
-          colors: [Color(0xFF9C27B0), Color(0xFF7B1FA2)],
-        );
-      case 'C2':
-        return const LinearGradient(
-          colors: [Color(0xFF673AB7), Color(0xFF512DA8)],
-        );
-      default:
-        return const LinearGradient(
-          colors: [Color(0xFF9E9E9E), Color(0xFF757575)],
-        );
-    }
-  }
-
-  void _showFilterDialog(BuildContext context) {
-    showDialog(
+  void _showFilterSheet(BuildContext context) {
+    showModalBottomSheet(
       context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('筛选语法课程'),
-        content: Column(
+      backgroundColor: OpenAITheme.white,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      builder: (context) => Container(
+        padding: const EdgeInsets.all(20),
+        child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('分类'),
-            const SizedBox(height: 8),
+            Center(
+              child: Container(
+                width: 40,
+                height: 4,
+                decoration: BoxDecoration(
+                  color: OpenAITheme.gray300,
+                  borderRadius: BorderRadius.circular(2),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  '筛选',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    color: OpenAITheme.gray900,
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _selectedCategory = '全部';
+                      _selectedLevel = '全部';
+                    });
+                    Navigator.pop(context);
+                  },
+                  child: const Text(
+                    '重置',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: OpenAITheme.gray500,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 24),
+            const Text(
+              '分类',
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.w600,
+                color: OpenAITheme.gray500,
+              ),
+            ),
+            const SizedBox(height: 12),
             Wrap(
               spacing: 8,
-              children: ['全部', '时态', '冠词', '代词', '名词', '介词'].map((category) {
-                return ChoiceChip(
-                  label: Text(category),
-                  selected: category == _selectedCategory,
-                  onSelected: (selected) {
+              runSpacing: 8,
+              children: ['全部', '时态', '冠词', '代词', '名词', '介词', '动词', '形容词'].map((category) {
+                final isSelected = category == _selectedCategory;
+                return GestureDetector(
+                  onTap: () {
                     setState(() {
                       _selectedCategory = category;
                     });
                     Navigator.pop(context);
                   },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                    decoration: BoxDecoration(
+                      color: isSelected ? OpenAITheme.gray900 : OpenAITheme.gray100,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      category,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: isSelected ? OpenAITheme.white : OpenAITheme.gray700,
+                      ),
+                    ),
+                  ),
                 );
               }).toList(),
             ),
-            const SizedBox(height: 16),
-            const Text('等级'),
-            const SizedBox(height: 8),
+            const SizedBox(height: 24),
+            const Text(
+              '等级',
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.w600,
+                color: OpenAITheme.gray500,
+              ),
+            ),
+            const SizedBox(height: 12),
             Wrap(
               spacing: 8,
+              runSpacing: 8,
               children: ['全部', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map((level) {
-                return ChoiceChip(
-                  label: Text(level),
-                  selected: level == _selectedLevel,
-                  onSelected: (selected) {
+                final isSelected = level == _selectedLevel;
+                return GestureDetector(
+                  onTap: () {
                     setState(() {
                       _selectedLevel = level;
                     });
                     Navigator.pop(context);
                   },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                    decoration: BoxDecoration(
+                      color: isSelected ? OpenAITheme.gray900 : OpenAITheme.gray100,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      level,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: isSelected ? OpenAITheme.white : OpenAITheme.gray700,
+                      ),
+                    ),
+                  ),
                 );
               }).toList(),
             ),
+            const SizedBox(height: 20),
           ],
         ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              setState(() {
-                _selectedCategory = '全部';
-                _selectedLevel = '全部';
-              });
-              Navigator.pop(context);
-            },
-            child: const Text('重置'),
+      ),
+    );
+  }
+}
+
+class _GrammarCard extends ConsumerWidget {
+  final GrammarPoint grammarPoint;
+
+  const _GrammarCard({required this.grammarPoint});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final progress = ref.watch(grammarProgressProvider)[grammarPoint.id];
+    final isCompleted = progress?.completed ?? false;
+    final isFavorite = progress?.isFavorite ?? false;
+
+    return OCard(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => GrammarDetailScreen(grammarPoint: grammarPoint),
           ),
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('关闭'),
+        );
+      },
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              OBadge(text: grammarPoint.level, small: true),
+              const SizedBox(width: 6),
+              OBadge(text: grammarPoint.category, small: true),
+              const Spacer(),
+              if (isCompleted)
+                Container(
+                  padding: const EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    color: OpenAITheme.greenLight,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(Icons.check, color: OpenAITheme.green, size: 14),
+                ),
+              const SizedBox(width: 4),
+              GestureDetector(
+                onTap: () {
+                  ref.read(grammarProgressProvider.notifier).toggleFavorite(grammarPoint.id);
+                },
+                child: Icon(
+                  isFavorite ? Icons.favorite : Icons.favorite_border,
+                  color: isFavorite ? OpenAITheme.red : OpenAITheme.gray400,
+                  size: 18,
+                ),
+              ),
+            ],
           ),
+          const SizedBox(height: 12),
+          Text(
+            grammarPoint.title,
+            style: const TextStyle(
+              fontSize: 17,
+              fontWeight: FontWeight.w600,
+              color: OpenAITheme.gray900,
+            ),
+          ),
+          const SizedBox(height: 6),
+          Text(
+            grammarPoint.description,
+            style: const TextStyle(
+              fontSize: 14,
+              color: OpenAITheme.gray500,
+              height: 1.4,
+            ),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+          const SizedBox(height: 12),
+          Row(
+            children: [
+              _InfoChip(Icons.list_alt, '${grammarPoint.rules.length} 规则'),
+              const SizedBox(width: 12),
+              _InfoChip(Icons.lightbulb_outline, '${grammarPoint.examples.length} 例句'),
+              if (grammarPoint.exercises.isNotEmpty) ...[
+                const SizedBox(width: 12),
+                _InfoChip(Icons.quiz_outlined, '${grammarPoint.exercises.length} 练习'),
+              ],
+            ],
+          ),
+          if (progress != null && progress.exercisesTotal > 0) ...[
+            const SizedBox(height: 12),
+            Row(
+              children: [
+                Expanded(
+                  child: OProgressBar(
+                    progress: progress.exercisesCorrect / progress.exercisesTotal,
+                    height: 4,
+                    color: OpenAITheme.green,
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Text(
+                  '${progress.exercisesCorrect}/${progress.exercisesTotal}',
+                  style: const TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: OpenAITheme.gray500,
+                  ),
+                ),
+              ],
+            ),
+          ],
         ],
       ),
+    );
+  }
+}
+
+class _InfoChip extends StatelessWidget {
+  final IconData icon;
+  final String text;
+
+  const _InfoChip(this.icon, this.text);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(icon, size: 14, color: OpenAITheme.gray400),
+        const SizedBox(width: 4),
+        Text(
+          text,
+          style: const TextStyle(
+            fontSize: 12,
+            color: OpenAITheme.gray500,
+          ),
+        ),
+      ],
     );
   }
 }

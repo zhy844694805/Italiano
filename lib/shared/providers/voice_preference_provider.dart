@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../../core/services/tts_service.dart';
+import '../../core/services/tts_manager.dart';
 
 /// Provider for voice preference (male/female)
 final voicePreferenceProvider = StateNotifierProvider<VoicePreferenceNotifier, String>((ref) {

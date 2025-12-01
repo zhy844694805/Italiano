@@ -4,8 +4,8 @@ import 'package:fl_chart/fl_chart.dart';
 import '../../shared/providers/statistics_provider.dart';
 import '../../core/database/learning_statistics_repository.dart';
 import '../settings/settings_screen.dart';
-import '../../core/theme/modern_theme.dart';
-import '../../shared/widgets/gradient_card.dart';
+import '../../core/theme/openai_theme.dart';
+import '../../shared/widgets/openai_widgets.dart';
 import 'package:intl/intl.dart';
 
 class ProfileScreen extends ConsumerWidget {
@@ -13,19 +13,19 @@ class ProfileScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
-
     final statisticsAsync = ref.watch(statisticsProvider);
     final vocabularyStatsAsync = ref.watch(vocabularyStatsProvider);
     final grammarStatsAsync = ref.watch(grammarStatsProvider);
 
     return Scaffold(
+      backgroundColor: OpenAITheme.white,
       appBar: AppBar(
         title: const Text('我的'),
+        backgroundColor: OpenAITheme.white,
+        surfaceTintColor: Colors.transparent,
         actions: [
           IconButton(
-            icon: const Icon(Icons.settings_outlined),
+            icon: const Icon(Icons.settings_outlined, color: OpenAITheme.gray600),
             onPressed: () {
               Navigator.push(
                 context,
@@ -38,68 +38,74 @@ class ProfileScreen extends ConsumerWidget {
         ],
       ),
       body: RefreshIndicator(
+        color: OpenAITheme.gray900,
         onRefresh: () async {
           ref.invalidate(statisticsProvider);
           ref.invalidate(vocabularyStatsProvider);
           ref.invalidate(grammarStatsProvider);
         },
         child: SingleChildScrollView(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // 用户信息卡片
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Row(
-                    children: [
-                      CircleAvatar(
-                        radius: 40,
-                        backgroundColor: colorScheme.primaryContainer,
-                        child: Icon(
-                          Icons.person,
-                          size: 48,
-                          color: colorScheme.primary,
-                        ),
+              OCard(
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 60,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        color: OpenAITheme.gray100,
+                        shape: BoxShape.circle,
                       ),
-                      const SizedBox(width: 20),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '意大利语学习者',
-                              style: theme.textTheme.headlineSmall?.copyWith(
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            const SizedBox(height: 8),
-                            statisticsAsync.when(
-                              data: (stats) => Row(
-                                children: [
-                                  Icon(
-                                    Icons.local_fire_department,
-                                    size: 20,
-                                    color: Colors.orange,
-                                  ),
-                                  const SizedBox(width: 4),
-                                  Text(
-                                    '连续学习 ${stats.studyStreak} 天',
-                                    style: theme.textTheme.bodyLarge?.copyWith(
-                                      color: colorScheme.onSurfaceVariant,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              loading: () => const SizedBox(),
-                              error: (_, __) => const SizedBox(),
-                            ),
-                          ],
-                        ),
+                      child: const Icon(
+                        Icons.person,
+                        size: 32,
+                        color: OpenAITheme.gray500,
                       ),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            '意大利语学习者',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                              color: OpenAITheme.gray900,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          statisticsAsync.when(
+                            data: (stats) => Row(
+                              children: [
+                                const Icon(
+                                  Icons.local_fire_department,
+                                  size: 16,
+                                  color: OpenAITheme.gray500,
+                                ),
+                                const SizedBox(width: 4),
+                                Text(
+                                  '连续学习 ${stats.studyStreak} 天',
+                                  style: const TextStyle(
+                                    fontSize: 14,
+                                    color: OpenAITheme.gray500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            loading: () => const SizedBox(),
+                            error: (_, __) => const SizedBox(),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
 
@@ -110,68 +116,48 @@ class ProfileScreen extends ConsumerWidget {
                 data: (stats) => Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      '学习统计',
-                      style: theme.textTheme.titleLarge?.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(height: 12),
+                    const OSectionHeader(title: '学习统计'),
 
-                    // 统计数据网格 - 使用现代化 StatCard
+                    // 统计数据网格
                     GridView.count(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       crossAxisCount: 2,
                       mainAxisSpacing: 12,
                       crossAxisSpacing: 12,
-                      childAspectRatio: 1.2,
+                      childAspectRatio: 1.5,
                       children: [
-                        StatCard(
+                        _StatCard(
                           icon: Icons.local_fire_department,
-                          label: '总学习天数',
-                          value: '${stats.totalStudyDays}天',
-                          gradient: ModernTheme.accentGradient,
+                          label: '学习天数',
+                          value: '${stats.totalStudyDays}',
                         ),
-                        StatCard(
+                        _StatCard(
                           icon: Icons.schedule,
-                          label: '总学习时长',
+                          label: '学习时长',
                           value: '${(stats.totalStudyTimeMinutes / 60).toStringAsFixed(1)}h',
-                          gradient: ModernTheme.secondaryGradient,
                         ),
-                        StatCard(
+                        _StatCard(
                           icon: Icons.translate,
                           label: '学习单词',
                           value: '${stats.totalWordsLearned}',
-                          gradient: ModernTheme.primaryGradient,
                         ),
-                        StatCard(
+                        _StatCard(
                           icon: Icons.school,
                           label: '语法点',
                           value: '${stats.totalGrammarStudied}',
-                          gradient: const LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            colors: [Color(0xFFFF8A65), Color(0xFFFF6F00)],
-                          ),
                         ),
                       ],
                     ),
 
                     const SizedBox(height: 24),
 
-                    // 最近7天学习趋势图
-                    Text(
-                      '最近7天学习趋势',
-                      style: theme.textTheme.titleLarge?.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(height: 12),
-                    FloatingCard(
+                    // 学习趋势图
+                    const OSectionHeader(title: '最近7天'),
+                    OCard(
                       padding: const EdgeInsets.all(16),
                       child: SizedBox(
-                        height: 200,
+                        height: 180,
                         child: _LearningChart(recentStats: stats.recentStats),
                       ),
                     ),
@@ -180,14 +166,13 @@ class ProfileScreen extends ConsumerWidget {
                 loading: () => const Center(
                   child: Padding(
                     padding: EdgeInsets.all(32),
-                    child: CircularProgressIndicator(),
+                    child: CircularProgressIndicator(color: OpenAITheme.gray900),
                   ),
                 ),
-                error: (error, stack) => Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Text('加载统计数据失败: $error'),
-                  ),
+                error: (error, stack) => OEmptyState(
+                  icon: Icons.error_outline,
+                  title: '加载失败',
+                  subtitle: error.toString(),
                 ),
               ),
 
@@ -198,71 +183,67 @@ class ProfileScreen extends ConsumerWidget {
                 data: (vocabStats) => Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      '词汇掌握情况',
-                      style: theme.textTheme.titleLarge?.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(height: 12),
-                    FloatingCard(
+                    const OSectionHeader(title: '词汇掌握'),
+                    OCard(
+                      padding: const EdgeInsets.all(20),
                       child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                _VocabStatItem(
-                                  label: '已学习',
-                                  value: vocabStats['totalWords'],
-                                  color: colorScheme.primary,
-                                ),
-                                _VocabStatItem(
-                                  label: '已掌握',
-                                  value: vocabStats['masteredWords'],
-                                  color: Colors.green,
-                                ),
-                                _VocabStatItem(
-                                  label: '复习中',
-                                  value: vocabStats['reviewingWords'],
-                                  color: Colors.orange,
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 20),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.trending_up,
-                                  color: colorScheme.primary,
-                                  size: 20,
-                                ),
-                                const SizedBox(width: 8),
-                                Text(
-                                  '平均掌握度',
-                                  style: theme.textTheme.titleMedium,
-                                ),
-                                const Spacer(),
-                                Text(
-                                  '${(vocabStats['averageMastery'] * 100).toStringAsFixed(1)}%',
-                                  style: theme.textTheme.titleLarge?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                    color: colorScheme.primary,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 12),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: LinearProgressIndicator(
-                                value: vocabStats['averageMastery'],
-                                minHeight: 10,
-                                backgroundColor: colorScheme.surfaceContainerHighest,
-                                color: colorScheme.primary,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              _VocabStat(
+                                label: '已学习',
+                                value: vocabStats['totalWords'],
                               ),
-                            ),
-                          ],
-                        ),
+                              Container(
+                                height: 40,
+                                width: 1,
+                                color: OpenAITheme.gray200,
+                              ),
+                              _VocabStat(
+                                label: '已掌握',
+                                value: vocabStats['masteredWords'],
+                                color: OpenAITheme.green,
+                              ),
+                              Container(
+                                height: 40,
+                                width: 1,
+                                color: OpenAITheme.gray200,
+                              ),
+                              _VocabStat(
+                                label: '复习中',
+                                value: vocabStats['reviewingWords'],
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 20),
+                          Row(
+                            children: [
+                              const Text(
+                                '平均掌握度',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: OpenAITheme.gray500,
+                                ),
+                              ),
+                              const Spacer(),
+                              Text(
+                                '${(vocabStats['averageMastery'] * 100).toStringAsFixed(1)}%',
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600,
+                                  color: OpenAITheme.gray900,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 10),
+                          OProgressBar(
+                            progress: vocabStats['averageMastery'],
+                            height: 6,
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -277,33 +258,26 @@ class ProfileScreen extends ConsumerWidget {
                 data: (grammarStats) => Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      '语法学习进度',
-                      style: theme.textTheme.titleLarge?.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(height: 12),
-                    FloatingCard(
+                    const OSectionHeader(title: '语法进度'),
+                    OCard(
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          _GrammarStatItem(
-                            icon: Icons.check_circle,
+                          _GrammarStat(
+                            icon: Icons.check_circle_outline,
                             label: '已完成',
                             value: grammarStats['completedCount'],
-                            color: Colors.green,
                           ),
                           Container(
-                            height: 40,
+                            height: 50,
                             width: 1,
-                            color: colorScheme.outlineVariant,
+                            color: OpenAITheme.gray200,
                           ),
-                          _GrammarStatItem(
-                            icon: Icons.favorite,
+                          _GrammarStat(
+                            icon: Icons.favorite_outline,
                             label: '已收藏',
                             value: grammarStats['favoriteCount'],
-                            color: Colors.red,
                           ),
                         ],
                       ),
@@ -316,89 +290,40 @@ class ProfileScreen extends ConsumerWidget {
 
               const SizedBox(height: 24),
 
-              // 功能入口
-              Text(
-                '更多功能',
-                style: theme.textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 12),
-
-              FloatingCard(
+              // 更多功能
+              const OSectionHeader(title: '更多'),
+              OCard(
                 padding: EdgeInsets.zero,
                 child: Column(
                   children: [
-                    ListTile(
-                      leading: Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          gradient: ModernTheme.primaryGradient,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: const Icon(Icons.star, color: Colors.white, size: 20),
-                      ),
-                      title: const Text('我的收藏'),
-                      trailing: const Icon(Icons.chevron_right),
-                      onTap: () {
-                        // TODO: 导航到收藏页面
-                      },
+                    OListTile(
+                      leading: Icons.star_outline,
+                      title: '我的收藏',
+                      onTap: () {},
                     ),
-                    Divider(height: 1, indent: 56),
-                    ListTile(
-                      leading: Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          gradient: ModernTheme.accentGradient,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: const Icon(Icons.emoji_events, color: Colors.white, size: 20),
-                      ),
-                      title: const Text('学习成就'),
-                      trailing: const Icon(Icons.chevron_right),
-                      onTap: () {
-                        // TODO: 导航到成就页面
-                      },
+                    const ODivider(indent: 50),
+                    OListTile(
+                      leading: Icons.emoji_events_outlined,
+                      title: '学习成就',
+                      onTap: () {},
                     ),
-                    Divider(height: 1, indent: 56),
-                    ListTile(
-                      leading: Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          gradient: ModernTheme.secondaryGradient,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: const Icon(Icons.notifications, color: Colors.white, size: 20),
-                      ),
-                      title: const Text('学习提醒'),
-                      trailing: const Icon(Icons.chevron_right),
-                      onTap: () {
-                        // TODO: 导航到提醒设置页面
-                      },
+                    const ODivider(indent: 50),
+                    OListTile(
+                      leading: Icons.notifications_outlined,
+                      title: '学习提醒',
+                      onTap: () {},
                     ),
-                    Divider(height: 1, indent: 56),
-                    ListTile(
-                      leading: Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            colors: [Color(0xFF9C27B0), Color(0xFF673AB7)],
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: const Icon(Icons.info_outline, color: Colors.white, size: 20),
-                      ),
-                      title: const Text('关于应用'),
-                      trailing: const Icon(Icons.chevron_right),
-                      onTap: () {
-                        _showAboutDialog(context);
-                      },
+                    const ODivider(indent: 50),
+                    OListTile(
+                      leading: Icons.info_outline,
+                      title: '关于应用',
+                      onTap: () => _showAboutDialog(context),
                     ),
                   ],
                 ),
               ),
 
-              const SizedBox(height: 80), // 底部留白
+              const SizedBox(height: 40),
             ],
           ),
         ),
@@ -410,22 +335,49 @@ class ProfileScreen extends ConsumerWidget {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('关于意大利语学习'),
+        backgroundColor: OpenAITheme.white,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        title: const Text(
+          '关于',
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: OpenAITheme.gray900,
+          ),
+        ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
-            Text('版本: 1.0.0'),
-            SizedBox(height: 8),
-            Text('一个现代化的意大利语学习应用'),
-            SizedBox(height: 8),
-            Text('使用科学的间隔重复算法帮助你高效学习意大利语'),
+            Text(
+              '意大利语学习 v1.0.0',
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                color: OpenAITheme.gray800,
+              ),
+            ),
+            SizedBox(height: 12),
+            Text(
+              '使用科学的间隔重复算法，帮助你高效学习意大利语。',
+              style: TextStyle(
+                fontSize: 14,
+                color: OpenAITheme.gray500,
+                height: 1.5,
+              ),
+            ),
           ],
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('确定'),
+            child: const Text(
+              '确定',
+              style: TextStyle(
+                color: OpenAITheme.gray900,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
           ),
         ],
       ),
@@ -433,77 +385,81 @@ class ProfileScreen extends ConsumerWidget {
   }
 }
 
-// 词汇统计项
-class _VocabStatItem extends StatelessWidget {
+class _StatCard extends StatelessWidget {
+  final IconData icon;
   final String label;
-  final int value;
-  final Color color;
+  final String value;
 
-  const _VocabStatItem({
+  const _StatCard({
+    required this.icon,
     required this.label,
     required this.value,
-    required this.color,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          '$value',
-          style: TextStyle(
-            fontSize: 28,
-            fontWeight: FontWeight.bold,
-            color: color,
+    return OCard(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Icon(icon, size: 20, color: OpenAITheme.gray500),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                value,
+                style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w600,
+                  color: OpenAITheme.gray900,
+                ),
+              ),
+              Text(
+                label,
+                style: const TextStyle(
+                  fontSize: 12,
+                  color: OpenAITheme.gray500,
+                ),
+              ),
+            ],
           ),
-        ),
-        const SizedBox(height: 4),
-        Text(
-          label,
-          style: TextStyle(
-            fontSize: 12,
-            color: Theme.of(context).colorScheme.onSurfaceVariant,
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
 
-// 语法统计项
-class _GrammarStatItem extends StatelessWidget {
-  final IconData icon;
+class _VocabStat extends StatelessWidget {
   final String label;
   final int value;
-  final Color color;
+  final Color? color;
 
-  const _GrammarStatItem({
-    required this.icon,
+  const _VocabStat({
     required this.label,
     required this.value,
-    required this.color,
+    this.color,
   });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Icon(icon, size: 32, color: color),
-        const SizedBox(height: 8),
         Text(
           '$value',
           style: TextStyle(
             fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: color,
+            fontWeight: FontWeight.w600,
+            color: color ?? OpenAITheme.gray900,
           ),
         ),
         const SizedBox(height: 4),
         Text(
           label,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 12,
-            color: Theme.of(context).colorScheme.onSurfaceVariant,
+            color: OpenAITheme.gray500,
           ),
         ),
       ],
@@ -511,7 +467,44 @@ class _GrammarStatItem extends StatelessWidget {
   }
 }
 
-// 学习趋势图表
+class _GrammarStat extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final int value;
+
+  const _GrammarStat({
+    required this.icon,
+    required this.label,
+    required this.value,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Icon(icon, size: 24, color: OpenAITheme.gray500),
+        const SizedBox(height: 8),
+        Text(
+          '$value',
+          style: const TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.w600,
+            color: OpenAITheme.gray900,
+          ),
+        ),
+        const SizedBox(height: 2),
+        Text(
+          label,
+          style: const TextStyle(
+            fontSize: 12,
+            color: OpenAITheme.gray500,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
 class _LearningChart extends StatelessWidget {
   final List<DailyStatistics> recentStats;
 
@@ -519,21 +512,15 @@ class _LearningChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-
-    // 如果没有数据,显示空状态
     if (recentStats.isEmpty) {
-      return Center(
+      return const Center(
         child: Text(
           '暂无学习数据',
-          style: TextStyle(
-            color: colorScheme.onSurfaceVariant,
-          ),
+          style: TextStyle(color: OpenAITheme.gray500),
         ),
       );
     }
 
-    // 准备图表数据
     final spots = <FlSpot>[];
     final dates = <String>[];
 
@@ -545,9 +532,8 @@ class _LearningChart extends StatelessWidget {
       dates.add(DateFormat('MM/dd').format(stat.date));
     }
 
-    // 计算Y轴最大值
     final maxY = spots.isEmpty ? 10.0 : spots.map((s) => s.y).reduce((a, b) => a > b ? a : b);
-    final yInterval = maxY > 0 ? (maxY / 5).ceilToDouble() : 5.0;
+    final yInterval = maxY > 0 ? (maxY / 4).ceilToDouble() : 5.0;
 
     return LineChart(
       LineChartData(
@@ -557,7 +543,7 @@ class _LearningChart extends StatelessWidget {
           horizontalInterval: yInterval.toDouble(),
           getDrawingHorizontalLine: (value) {
             return FlLine(
-              color: colorScheme.outlineVariant.withValues(alpha: 0.3),
+              color: OpenAITheme.gray200,
               strokeWidth: 1,
             );
           },
@@ -573,7 +559,7 @@ class _LearningChart extends StatelessWidget {
           bottomTitles: AxisTitles(
             sideTitles: SideTitles(
               showTitles: true,
-              reservedSize: 30,
+              reservedSize: 28,
               interval: 1,
               getTitlesWidget: (value, meta) {
                 final index = value.toInt();
@@ -582,8 +568,8 @@ class _LearningChart extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 8),
                     child: Text(
                       dates[index],
-                      style: TextStyle(
-                        color: colorScheme.onSurfaceVariant,
+                      style: const TextStyle(
+                        color: OpenAITheme.gray400,
                         fontSize: 10,
                       ),
                     ),
@@ -597,12 +583,12 @@ class _LearningChart extends StatelessWidget {
             sideTitles: SideTitles(
               showTitles: true,
               interval: yInterval.toDouble(),
-              reservedSize: 32,
+              reservedSize: 28,
               getTitlesWidget: (value, meta) {
                 return Text(
                   value.toInt().toString(),
-                  style: TextStyle(
-                    color: colorScheme.onSurfaceVariant,
+                  style: const TextStyle(
+                    color: OpenAITheme.gray400,
                     fontSize: 10,
                   ),
                 );
@@ -610,13 +596,7 @@ class _LearningChart extends StatelessWidget {
             ),
           ),
         ),
-        borderData: FlBorderData(
-          show: true,
-          border: Border(
-            bottom: BorderSide(color: colorScheme.outlineVariant),
-            left: BorderSide(color: colorScheme.outlineVariant),
-          ),
-        ),
+        borderData: FlBorderData(show: false),
         minX: 0,
         maxX: (recentStats.length - 1).toDouble(),
         minY: 0,
@@ -625,23 +605,22 @@ class _LearningChart extends StatelessWidget {
           LineChartBarData(
             spots: spots,
             isCurved: true,
-            color: colorScheme.primary,
-            barWidth: 3,
+            color: OpenAITheme.gray900,
+            barWidth: 2,
             isStrokeCapRound: true,
             dotData: FlDotData(
               show: true,
               getDotPainter: (spot, percent, barData, index) {
                 return FlDotCirclePainter(
-                  radius: 4,
-                  color: colorScheme.primary,
-                  strokeWidth: 2,
-                  strokeColor: colorScheme.surface,
+                  radius: 3,
+                  color: OpenAITheme.gray900,
+                  strokeWidth: 0,
                 );
               },
             ),
             belowBarData: BarAreaData(
               show: true,
-              color: colorScheme.primary.withValues(alpha: 0.1),
+              color: OpenAITheme.gray100,
             ),
           ),
         ],

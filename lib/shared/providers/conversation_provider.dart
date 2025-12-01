@@ -3,11 +3,16 @@ import '../../core/services/deepseek_service.dart';
 import '../../core/database/conversation_history_repository.dart';
 import '../../core/database/learning_statistics_repository.dart';
 import '../models/conversation.dart';
+import 'api_key_provider.dart';
 
-/// Provider for DeepSeek service
-final deepSeekServiceProvider = Provider<DeepSeekService>((ref) {
+/// Provider for DeepSeek service (requires API key to be configured)
+final deepSeekServiceProvider = Provider<DeepSeekService?>((ref) {
+  final apiKey = ref.watch(apiKeyProvider);
+  if (apiKey == null || apiKey.isEmpty) {
+    return null;
+  }
   return DeepSeekService(
-    apiKey: 'REDACTED_DEEPSEEK_API_KEY',
+    apiKey: apiKey,
     baseUrl: 'https://api.deepseek.com',
   );
 });
@@ -20,6 +25,11 @@ final conversationProvider =
     return ConversationNotifier(service, scenario);
   },
 );
+
+/// Check if conversation service is available (API key configured)
+final conversationAvailableProvider = Provider<bool>((ref) {
+  return ref.watch(deepSeekServiceProvider) != null;
+});
 
 /// Conversation state
 class ConversationState {
@@ -60,7 +70,7 @@ class ConversationState {
 
 /// Conversation state notifier
 class ConversationNotifier extends StateNotifier<ConversationState> {
-  final DeepSeekService _service;
+  final DeepSeekService? _service;
   final ConversationHistoryRepository _historyRepo = ConversationHistoryRepository();
   final LearningStatisticsRepository _statsRepo = LearningStatisticsRepository();
 
@@ -71,8 +81,13 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
           scenario: scenario,
           role: AIRole.fromScenario(scenario),
         )) {
-    _loadHistory();
+    if (_service != null) {
+      _loadHistory();
+    }
   }
+
+  /// Check if service is available
+  bool get isServiceAvailable => _service != null;
 
   /// Load conversation history from database
   Future<void> _loadHistory() async {
@@ -94,10 +109,15 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
 
   /// Initialize conversation with greeting from AI
   Future<void> _initConversation() async {
+    if (_service == null) {
+      state = state.copyWith(error: '请先配置 DeepSeek API Key');
+      return;
+    }
+
     state = state.copyWith(isLoading: true);
 
     try {
-      final response = await _service.sendMessage(
+      final response = await _service!.sendMessage(
         history: [],
         userMessage: 'Ciao! [Inizia la conversazione con un saluto appropriato per questa situazione]',
         role: state.role,
@@ -138,6 +158,11 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
   Future<void> sendMessage(String userMessage) async {
     if (userMessage.trim().isEmpty) return;
 
+    if (_service == null) {
+      state = state.copyWith(error: '请先配置 DeepSeek API Key');
+      return;
+    }
+
     // Add user message
     final userMsg = ConversationMessage(
       id: '${DateTime.now().millisecondsSinceEpoch}_user',
@@ -156,7 +181,7 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
     );
 
     try {
-      final response = await _service.sendMessage(
+      final response = await _service!.sendMessage(
         history: state.messages.where((m) => m != userMsg).toList(),
         userMessage: userMessage.trim(),
         role: state.role,
