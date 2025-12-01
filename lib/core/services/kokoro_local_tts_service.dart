@@ -39,7 +39,7 @@ class KokoroLocalTTSService {
 
       // 检查模型文件是否存在
       final modelFile = File('${modelDir.path}/kokoro-v1.0.onnx');
-      final voicesFile = File('${modelDir.path}/voices.json');
+      final voicesFile = File('${modelDir.path}/voices-v1.0.bin');
 
       if (!await modelFile.exists() || !await voicesFile.exists()) {
         _initError = '模型文件未找到，请先下载模型文件';
@@ -301,7 +301,7 @@ class KokoroLocalTTSService {
   static Future<bool> isModelInstalled() async {
     final modelDir = await getModelDirectoryPath();
     final modelFile = File('$modelDir/kokoro-v1.0.onnx');
-    final voicesFile = File('$modelDir/voices.json');
+    final voicesFile = File('$modelDir/voices-v1.0.bin');
     return await modelFile.exists() && await voicesFile.exists();
   }
 
@@ -309,9 +309,9 @@ class KokoroLocalTTSService {
   static Map<String, String> getModelInfo() {
     return {
       'modelFile': 'kokoro-v1.0.onnx',
-      'voicesFile': 'voices.json',
+      'voicesFile': 'voices-v1.0.bin',
       'modelSize': '~330MB',
-      'downloadUrl': 'https://github.com/hexgrad/kokoro-onnx/releases',
+      'downloadUrl': 'https://github.com/thewh1teagle/kokoro-onnx/releases',
     };
   }
 }

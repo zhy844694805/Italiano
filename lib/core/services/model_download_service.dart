@@ -67,25 +67,25 @@ class ModelDownloadService {
   ));
 
   /// Kokoro 模型下载地址
-  /// 优先使用中国镜像，备用原始地址
+  /// 来源: https://github.com/thewh1teagle/kokoro-onnx/releases
 
-  /// 中国镜像 (hf-mirror.com)
-  static const String _modelUrlChina =
-      'https://hf-mirror.com/hexgrad/Kokoro-82M/resolve/main/kokoro-v1.0.onnx';
-  static const String _voicesUrlChina =
-      'https://hf-mirror.com/hexgrad/Kokoro-82M/resolve/main/voices.json';
-
-  /// HuggingFace 原始地址
+  /// GitHub Release (主要下载源)
   static const String _modelUrl =
-      'https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/kokoro-v1.0.onnx';
+      'https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx';
   static const String _voicesUrl =
-      'https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/voices.json';
+      'https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin';
 
-  /// 备用下载地址 (GitHub Release)
+  /// GitHub 镜像 (ghproxy.com - 中国加速)
+  static const String _modelUrlChina =
+      'https://ghproxy.com/https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx';
+  static const String _voicesUrlChina =
+      'https://ghproxy.com/https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin';
+
+  /// 备用 GitHub 镜像
   static const String _modelUrlBackup =
-      'https://github.com/hexgrad/kokoro-onnx/releases/download/v1.0/kokoro-v1.0.onnx';
+      'https://mirror.ghproxy.com/https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx';
   static const String _voicesUrlBackup =
-      'https://github.com/hexgrad/kokoro-onnx/releases/download/v1.0/voices.json';
+      'https://mirror.ghproxy.com/https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin';
 
   CancelToken? _cancelToken;
   bool _isCancelled = false;
@@ -107,24 +107,24 @@ class ModelDownloadService {
       }
 
       final modelFile = File('${modelDir.path}/kokoro-v1.0.onnx');
-      final voicesFile = File('${modelDir.path}/voices.json');
+      final voicesFile = File('${modelDir.path}/voices-v1.0.bin');
 
-      // 下载 voices.json (小文件先下载)
+      // 下载 voices-v1.0.bin (小文件先下载)
       onProgress(const DownloadProgress(
         status: DownloadStatus.downloading,
         progress: 0.0,
-        currentFile: 'voices.json',
+        currentFile: 'voices-v1.0.bin',
       ));
 
       await _downloadFile(
-        urls: [_voicesUrlChina, _voicesUrl, _voicesUrlBackup],
+        urls: [_voicesUrl, _voicesUrlChina, _voicesUrlBackup],
         savePath: voicesFile.path,
         onProgress: (received, total) {
-          // voices.json 很小，算作 1% 的进度
+          // voices 文件算作 1% 的进度
           onProgress(DownloadProgress(
             status: DownloadStatus.downloading,
             progress: 0.01 * (received / total),
-            currentFile: 'voices.json',
+            currentFile: 'voices-v1.0.bin',
             downloadedBytes: received,
             totalBytes: total,
           ));
@@ -141,7 +141,7 @@ class ModelDownloadService {
       ));
 
       await _downloadFile(
-        urls: [_modelUrlChina, _modelUrl, _modelUrlBackup],
+        urls: [_modelUrl, _modelUrlChina, _modelUrlBackup],
         savePath: modelFile.path,
         onProgress: (received, total) {
           // 主模型占 99% 的进度
