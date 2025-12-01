@@ -33,39 +33,61 @@ class KokoroLocalTTSService {
     if (_isInitialized) return true;
 
     try {
+      print('[TTS] 开始初始化...');
+
       // 获取应用文档目录
       final appDir = await getApplicationDocumentsDirectory();
       final modelDir = Directory('${appDir.path}/kokoro_models');
+      print('[TTS] 模型目录: ${modelDir.path}');
 
       // 检查模型文件是否存在
       final modelFile = File('${modelDir.path}/kokoro-v1.0.onnx');
       final voicesFile = File('${modelDir.path}/voices-v1.0.bin');
 
-      if (!await modelFile.exists() || !await voicesFile.exists()) {
+      final modelExists = await modelFile.exists();
+      final voicesExists = await voicesFile.exists();
+      print('[TTS] 模型文件存在: $modelExists, voices文件存在: $voicesExists');
+
+      if (!modelExists || !voicesExists) {
         _initError = '模型文件未找到，请先下载模型文件';
+        print('[TTS] 错误: $_initError');
         return false;
       }
 
+      // 检查文件大小
+      final modelSize = await modelFile.length();
+      final voicesSize = await voicesFile.length();
+      print('[TTS] 模型大小: ${(modelSize / 1024 / 1024).toStringAsFixed(2)} MB');
+      print('[TTS] Voices大小: ${(voicesSize / 1024 / 1024).toStringAsFixed(2)} MB');
+
       // 创建配置
+      print('[TTS] 创建Kokoro配置...');
       final config = KokoroConfig(
         modelPath: modelFile.path,
         voicesPath: voicesFile.path,
       );
 
       // 初始化 Kokoro 引擎
+      print('[TTS] 初始化Kokoro引擎...');
       _kokoro = Kokoro(config);
       await _kokoro!.initialize();
+      print('[TTS] Kokoro引擎初始化成功');
 
       // 初始化 Tokenizer
+      print('[TTS] 初始化Tokenizer...');
       _tokenizer = Tokenizer();
       await _tokenizer!.ensureInitialized();
+      print('[TTS] Tokenizer初始化成功');
 
       _isInitialized = true;
       _initError = null;
+      print('[TTS] 初始化完成!');
       return true;
-    } catch (e) {
+    } catch (e, stackTrace) {
       _initError = '初始化失败: $e';
       _isInitialized = false;
+      print('[TTS] 初始化失败: $e');
+      print('[TTS] 堆栈: $stackTrace');
       return false;
     }
   }
@@ -74,22 +96,35 @@ class KokoroLocalTTSService {
   /// [text] 要朗读的意大利语文本
   /// [voice] 语音类型，默认使用 Sara（女声）
   Future<bool> speak(String text, {String voice = voiceSara}) async {
-    if (text.isEmpty) return false;
+    print('[TTS] speak() 被调用, 文本: "$text", 语音: $voice');
+
+    if (text.isEmpty) {
+      print('[TTS] 文本为空，跳过');
+      return false;
+    }
 
     if (!_isInitialized) {
+      print('[TTS] 未初始化，尝试初始化...');
       final initialized = await initialize();
-      if (!initialized) return false;
+      if (!initialized) {
+        print('[TTS] 初始化失败，无法播放');
+        return false;
+      }
     }
 
     if (_isPlaying) {
+      print('[TTS] 正在播放，先停止');
       await stop();
     }
 
     try {
       // 将文本转换为音素（意大利语）
+      print('[TTS] 转换文本为音素...');
       final phonemes = await _tokenizer!.phonemize(text, lang: 'it');
+      print('[TTS] 音素: $phonemes');
 
       // 使用 Kokoro 生成音频
+      print('[TTS] 生成音频...');
       final ttsResult = await _kokoro!.createTTS(
         text: phonemes,
         voice: voice,
@@ -97,29 +132,41 @@ class KokoroLocalTTSService {
       );
 
       final audioData = ttsResult.audio;
+      print('[TTS] 音频数据长度: ${audioData.length}');
+
       if (audioData.isEmpty) {
+        print('[TTS] 音频数据为空');
         return false;
       }
 
       // 保存音频到临时文件
       final tempDir = await getTemporaryDirectory();
       final audioFile = File('${tempDir.path}/tts_local_${DateTime.now().millisecondsSinceEpoch}.wav');
+      print('[TTS] 保存音频到: ${audioFile.path}');
       await audioFile.writeAsBytes(_convertToWav(audioData.cast<double>()));
 
+      final fileSize = await audioFile.length();
+      print('[TTS] 音频文件大小: $fileSize 字节');
+
       // 播放音频
+      print('[TTS] 开始播放...');
       _isPlaying = true;
       await _audioPlayer.play(DeviceFileSource(audioFile.path));
+      print('[TTS] 播放已启动');
 
       // 监听播放完成
       _audioPlayer.onPlayerComplete.listen((_) {
         _isPlaying = false;
+        print('[TTS] 播放完成');
         // 删除临时文件
         audioFile.delete().catchError((_) => audioFile);
       });
 
       return true;
-    } catch (e) {
+    } catch (e, stackTrace) {
       _isPlaying = false;
+      print('[TTS] speak() 错误: $e');
+      print('[TTS] 堆栈: $stackTrace');
       return false;
     }
   }
