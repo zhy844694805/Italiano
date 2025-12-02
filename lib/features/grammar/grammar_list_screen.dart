@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/grammar.dart';
 import '../../shared/providers/grammar_provider.dart';
-import '../../core/theme/modern_theme.dart';
+import '../../core/theme/openai_theme.dart';
 import '../../shared/widgets/gradient_card.dart';
 import 'grammar_detail_screen.dart';
 
@@ -207,13 +207,13 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   decoration: BoxDecoration(
-                    color: ModernTheme.backgroundColor,
+                    color: OpenAITheme.bgSecondary,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Text(
                     grammarPoint.category,
                     style: TextStyle(
-                      color: ModernTheme.textDark,
+                      color: OpenAITheme.textPrimary,
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
                     ),
@@ -235,7 +235,7 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
                 IconButton(
                   icon: Icon(
                     isFavorite ? Icons.favorite : Icons.favorite_border,
-                    color: isFavorite ? Colors.red : ModernTheme.textLight,
+                    color: isFavorite ? Colors.red : OpenAITheme.textSecondary,
                     size: 20,
                   ),
                   padding: EdgeInsets.zero,
@@ -252,7 +252,7 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
               grammarPoint.title,
               style: theme.textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.bold,
-                color: ModernTheme.textDark,
+                color: OpenAITheme.textPrimary,
               ),
             ),
             const SizedBox(height: 8),
@@ -260,7 +260,7 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
             Text(
               grammarPoint.description,
               style: theme.textTheme.bodyMedium?.copyWith(
-                color: ModernTheme.textLight,
+                color: OpenAITheme.textSecondary,
               ),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
@@ -269,31 +269,31 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
             // 底部信息
             Row(
               children: [
-                Icon(Icons.list_alt, size: 16, color: ModernTheme.primaryColor),
+                Icon(Icons.list_alt, size: 16, color: OpenAITheme.openaiGreen),
                 const SizedBox(width: 4),
                 Text(
                   '${grammarPoint.rules.length} 条规则',
                   style: theme.textTheme.bodySmall?.copyWith(
-                    color: ModernTheme.textLight,
+                    color: OpenAITheme.textSecondary,
                   ),
                 ),
                 const SizedBox(width: 16),
-                Icon(Icons.lightbulb_outline, size: 16, color: ModernTheme.accentColor),
+                Icon(Icons.lightbulb_outline, size: 16, color: OpenAITheme.warning),
                 const SizedBox(width: 4),
                 Text(
                   '${grammarPoint.examples.length} 个例句',
                   style: theme.textTheme.bodySmall?.copyWith(
-                    color: ModernTheme.textLight,
+                    color: OpenAITheme.textSecondary,
                   ),
                 ),
                 if (grammarPoint.exercises.isNotEmpty) ...[
                   const SizedBox(width: 16),
-                  Icon(Icons.quiz_outlined, size: 16, color: ModernTheme.secondaryColor),
+                  Icon(Icons.quiz_outlined, size: 16, color: OpenAITheme.info),
                   const SizedBox(width: 4),
                   Text(
                     '${grammarPoint.exercises.length} 道练习',
                     style: theme.textTheme.bodySmall?.copyWith(
-                      color: ModernTheme.textLight,
+                      color: OpenAITheme.textSecondary,
                     ),
                   ),
                 ],
@@ -308,7 +308,7 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
                     child: GradientProgressBar(
                       progress: progress.exercisesCorrect / progress.exercisesTotal,
                       height: 8,
-                      gradient: ModernTheme.primaryGradient,
+                      gradient: LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]),
                     ),
                   ),
                   const SizedBox(width: 8),
@@ -316,7 +316,7 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
                     '${progress.exercisesCorrect}/${progress.exercisesTotal}',
                     style: theme.textTheme.bodySmall?.copyWith(
                       fontWeight: FontWeight.w600,
-                      color: ModernTheme.primaryColor,
+                      color: OpenAITheme.openaiGreen,
                     ),
                   ),
                 ],
@@ -339,7 +339,7 @@ class _GrammarListScreenState extends ConsumerState<GrammarListScreen> {
           colors: [Color(0xFF8BC34A), Color(0xFF689F38)],
         );
       case 'B1':
-        return ModernTheme.secondaryGradient;
+        return LinearGradient(colors: [OpenAITheme.info, Color(0xFF2563EB)]);
       case 'B2':
         return const LinearGradient(
           colors: [Color(0xFF3F51B5), Color(0xFF303F9F)],

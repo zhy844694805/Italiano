@@ -73,6 +73,18 @@ dev_dependencies:
   riverpod_generator: ^2.6.2
   json_serializable: ^6.8.0
 
+  # App图标生成
+  flutter_launcher_icons: ^0.14.3
+
+# flutter_launcher_icons 配置
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/app_icon.png"
+  min_sdk_android: 21
+  remove_alpha_ios: true
+  background_color_ios: "#10A37F"
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -87,6 +99,7 @@ flutter:
     - assets/audio/
     - assets/lottie/
     - assets/data/
+    - assets/icon/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

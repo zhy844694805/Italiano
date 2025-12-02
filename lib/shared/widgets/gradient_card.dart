@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import '../../core/theme/modern_theme.dart';
+import '../../core/theme/openai_theme.dart';
 
-/// 渐变卡片组件 - 现代风格
+/// 卡片组件 - OpenAI 极简风格
+/// 支持纯色和渐变两种模式
 class GradientCard extends StatelessWidget {
   final Widget child;
   final Gradient? gradient;
+  final Color? color;
   final VoidCallback? onTap;
   final EdgeInsetsGeometry? padding;
   final double borderRadius;
@@ -15,30 +17,23 @@ class GradientCard extends StatelessWidget {
     super.key,
     required this.child,
     this.gradient,
+    this.color,
     this.onTap,
     this.padding,
-    this.borderRadius = 24,
+    this.borderRadius = 12,
     this.width,
     this.height,
   });
 
   @override
   Widget build(BuildContext context) {
-    final effectiveGradient = gradient ?? ModernTheme.primaryGradient;
-
     return Container(
       width: width,
       height: height,
       decoration: BoxDecoration(
-        gradient: effectiveGradient,
+        gradient: gradient,
+        color: gradient == null ? (color ?? OpenAITheme.darkGray) : null,
         borderRadius: BorderRadius.circular(borderRadius),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
-            blurRadius: 20,
-            offset: const Offset(0, 8),
-          ),
-        ],
       ),
       child: Material(
         color: Colors.transparent,
@@ -46,7 +41,7 @@ class GradientCard extends StatelessWidget {
           onTap: onTap,
           borderRadius: BorderRadius.circular(borderRadius),
           child: Padding(
-            padding: padding ?? const EdgeInsets.all(20),
+            padding: padding ?? const EdgeInsets.all(16),
             child: child,
           ),
         ),
@@ -68,21 +63,24 @@ class GlassCard extends StatelessWidget {
     required this.child,
     this.onTap,
     this.padding,
-    this.borderRadius = 24,
+    this.borderRadius = 12,
     this.backgroundColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: ModernTheme.glassDecoration(color: backgroundColor),
+      decoration: OpenAITheme.glassDecoration(
+        color: backgroundColor,
+        radius: borderRadius,
+      ),
       child: Material(
         color: Colors.transparent,
         child: InkWell(
           onTap: onTap,
           borderRadius: BorderRadius.circular(borderRadius),
           child: Padding(
-            padding: padding ?? const EdgeInsets.all(20),
+            padding: padding ?? const EdgeInsets.all(16),
             child: child,
           ),
         ),
@@ -91,34 +89,41 @@ class GlassCard extends StatelessWidget {
   }
 }
 
-/// 浮动卡片组件（带阴影）
+/// 浮动卡片组件（带边框和微妙阴影）
 class FloatingCard extends StatelessWidget {
   final Widget child;
   final VoidCallback? onTap;
   final EdgeInsetsGeometry? padding;
   final double borderRadius;
   final Color? backgroundColor;
+  final bool selected;
 
   const FloatingCard({
     super.key,
     required this.child,
     this.onTap,
     this.padding,
-    this.borderRadius = 24,
+    this.borderRadius = 12,
     this.backgroundColor,
+    this.selected = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: ModernTheme.floatingCardDecoration(color: backgroundColor),
+      decoration: selected
+          ? OpenAITheme.accentCardDecoration(radius: borderRadius)
+          : OpenAITheme.floatingCardDecoration(
+              color: backgroundColor,
+              radius: borderRadius,
+            ),
       child: Material(
         color: Colors.transparent,
         child: InkWell(
           onTap: onTap,
           borderRadius: BorderRadius.circular(borderRadius),
           child: Padding(
-            padding: padding ?? const EdgeInsets.all(20),
+            padding: padding ?? const EdgeInsets.all(16),
             child: child,
           ),
         ),
@@ -127,14 +132,16 @@ class FloatingCard extends StatelessWidget {
   }
 }
 
-/// 带图标的渐变按钮
+/// 带图标的按钮 - OpenAI 风格
 class GradientButton extends StatelessWidget {
   final String text;
   final IconData? icon;
   final VoidCallback? onPressed;
   final Gradient? gradient;
+  final Color? color;
   final double borderRadius;
   final EdgeInsetsGeometry? padding;
+  final bool outlined;
 
   const GradientButton({
     super.key,
@@ -142,25 +149,42 @@ class GradientButton extends StatelessWidget {
     this.icon,
     this.onPressed,
     this.gradient,
-    this.borderRadius = 20,
+    this.color,
+    this.borderRadius = 8,
     this.padding,
+    this.outlined = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    final effectiveGradient = gradient ?? ModernTheme.primaryGradient;
+    if (outlined) {
+      return OutlinedButton(
+        onPressed: onPressed,
+        style: OutlinedButton.styleFrom(
+          padding: padding ?? const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(borderRadius),
+          ),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (icon != null) ...[
+              Icon(icon, size: 18),
+              const SizedBox(width: 8),
+            ],
+            Text(text),
+          ],
+        ),
+      );
+    }
 
     return Container(
       decoration: BoxDecoration(
-        gradient: effectiveGradient,
+        gradient: gradient,
+        color: gradient == null ? (color ?? OpenAITheme.openaiGreen) : null,
         borderRadius: BorderRadius.circular(borderRadius),
-        boxShadow: [
-          BoxShadow(
-            color: ModernTheme.primaryColor.withValues(alpha: 0.3),
-            blurRadius: 16,
-            offset: const Offset(0, 8),
-          ),
-        ],
       ),
       child: Material(
         color: Colors.transparent,
@@ -168,22 +192,21 @@ class GradientButton extends StatelessWidget {
           onTap: onPressed,
           borderRadius: BorderRadius.circular(borderRadius),
           child: Padding(
-            padding: padding ?? const EdgeInsets.symmetric(horizontal: 32, vertical: 18),
+            padding: padding ?? const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 if (icon != null) ...[
-                  Icon(icon, color: Colors.white, size: 22),
-                  const SizedBox(width: 12),
+                  Icon(icon, color: Colors.white, size: 18),
+                  const SizedBox(width: 8),
                 ],
                 Text(
                   text,
                   style: const TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
                     color: Colors.white,
-                    letterSpacing: 0.5,
                   ),
                 ),
               ],
@@ -195,12 +218,13 @@ class GradientButton extends StatelessWidget {
   }
 }
 
-/// 统计数字卡片（带渐变边框）
+/// 统计数字卡片 - OpenAI 风格
 class StatCard extends StatelessWidget {
   final String label;
   final String value;
   final IconData icon;
   final Gradient? gradient;
+  final Color? iconColor;
 
   const StatCard({
     super.key,
@@ -208,48 +232,48 @@ class StatCard extends StatelessWidget {
     required this.value,
     required this.icon,
     this.gradient,
+    this.iconColor,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final effectiveGradient = gradient ?? ModernTheme.secondaryGradient;
 
     return Container(
-      decoration: ModernTheme.floatingCardDecoration(),
+      decoration: OpenAITheme.floatingCardDecoration(),
       padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          // 渐变图标
+          // 图标
           Container(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              gradient: effectiveGradient,
-              borderRadius: BorderRadius.circular(12),
+              color: OpenAITheme.bgSecondary,
+              borderRadius: BorderRadius.circular(8),
             ),
-            child: Icon(icon, color: Colors.white, size: 22),
+            child: Icon(
+              icon,
+              color: iconColor ?? OpenAITheme.openaiGreen,
+              size: 20,
+            ),
           ),
           const SizedBox(height: 12),
           // 数值
           Text(
             value,
-            style: theme.textTheme.displaySmall?.copyWith(
-              fontWeight: FontWeight.bold,
-              fontSize: 24,
+            style: theme.textTheme.headlineMedium?.copyWith(
+              fontWeight: FontWeight.w600,
             ),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
-          const SizedBox(height: 3),
+          const SizedBox(height: 2),
           // 标签
           Text(
             label,
-            style: theme.textTheme.bodyMedium?.copyWith(
-              color: ModernTheme.textLight,
-              fontSize: 13,
-            ),
+            style: theme.textTheme.bodySmall,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
@@ -259,30 +283,29 @@ class StatCard extends StatelessWidget {
   }
 }
 
-/// 进度条（渐变）
+/// 进度条 - OpenAI 风格
 class GradientProgressBar extends StatelessWidget {
   final double progress; // 0.0 - 1.0
   final double height;
   final Gradient? gradient;
+  final Color? color;
   final Color? backgroundColor;
 
   const GradientProgressBar({
     super.key,
     required this.progress,
-    this.height = 12,
+    this.height = 6,
     this.gradient,
+    this.color,
     this.backgroundColor,
   });
 
   @override
   Widget build(BuildContext context) {
-    final effectiveGradient = gradient ?? ModernTheme.primaryGradient;
-    final effectiveBackground = backgroundColor ?? ModernTheme.backgroundColor;
-
     return Container(
       height: height,
       decoration: BoxDecoration(
-        color: effectiveBackground,
+        color: backgroundColor ?? OpenAITheme.gray100,
         borderRadius: BorderRadius.circular(height / 2),
       ),
       child: ClipRRect(
@@ -292,7 +315,8 @@ class GradientProgressBar extends StatelessWidget {
           widthFactor: progress.clamp(0.0, 1.0),
           child: Container(
             decoration: BoxDecoration(
-              gradient: effectiveGradient,
+              gradient: gradient,
+              color: gradient == null ? (color ?? OpenAITheme.openaiGreen) : null,
             ),
           ),
         ),

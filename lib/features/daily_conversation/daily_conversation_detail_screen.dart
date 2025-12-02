@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/daily_conversation.dart';
 import '../../shared/providers/tts_provider.dart';
-import '../../core/theme/modern_theme.dart';
+import '../../core/theme/openai_theme.dart';
 import '../../shared/widgets/gradient_card.dart';
 
 class DailyConversationDetailScreen extends ConsumerStatefulWidget {
@@ -112,14 +112,14 @@ class _DailyConversationDetailScreenState extends ConsumerState<DailyConversatio
           widget.conversation.title,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
-            color: ModernTheme.primaryColor,
+            color: OpenAITheme.openaiGreen,
           ),
         ),
         backgroundColor: Colors.white,
         elevation: 0,
         actions: [
           IconButton(
-            icon: const Icon(Icons.volume_up, color: ModernTheme.primaryColor),
+            icon: const Icon(Icons.volume_up, color: OpenAITheme.openaiGreen),
             onPressed: () async {
               try {
                 // Play first message as example
@@ -140,7 +140,7 @@ class _DailyConversationDetailScreenState extends ConsumerState<DailyConversatio
           children: [
             // 标题信息卡片
             GradientCard(
-              gradient: ModernTheme.primaryGradient,
+              gradient: LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]),
               child: Padding(
                 padding: const EdgeInsets.all(20),
                 child: Column(
@@ -232,7 +232,7 @@ class _DailyConversationDetailScreenState extends ConsumerState<DailyConversatio
                       children: [
                         Icon(
                           Icons.location_on_outlined,
-                          color: ModernTheme.primaryColor,
+                          color: OpenAITheme.openaiGreen,
                           size: 20,
                         ),
                         const SizedBox(width: 8),
@@ -241,7 +241,7 @@ class _DailyConversationDetailScreenState extends ConsumerState<DailyConversatio
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: ModernTheme.textDark,
+                            color: OpenAITheme.textPrimary,
                           ),
                         ),
                       ],
@@ -251,7 +251,7 @@ class _DailyConversationDetailScreenState extends ConsumerState<DailyConversatio
                       widget.conversation.scenario,
                       style: const TextStyle(
                         fontSize: 14,
-                        color: ModernTheme.textDark,
+                        color: OpenAITheme.textPrimary,
                         height: 1.5,
                       ),
                     ),
@@ -283,7 +283,7 @@ class _DailyConversationDetailScreenState extends ConsumerState<DailyConversatio
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
-                              color: ModernTheme.textDark,
+                              color: OpenAITheme.textPrimary,
                             ),
                           ),
                         ],
@@ -293,7 +293,7 @@ class _DailyConversationDetailScreenState extends ConsumerState<DailyConversatio
                         widget.conversation.culturalNote!,
                         style: const TextStyle(
                           fontSize: 14,
-                          color: ModernTheme.textDark,
+                          color: OpenAITheme.textPrimary,
                           height: 1.5,
                         ),
                       ),
@@ -310,7 +310,7 @@ class _DailyConversationDetailScreenState extends ConsumerState<DailyConversatio
               style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: ModernTheme.textDark,
+                color: OpenAITheme.textPrimary,
               ),
             ),
             const SizedBox(height: 16),
@@ -334,7 +334,7 @@ class _DailyConversationDetailScreenState extends ConsumerState<DailyConversatio
               style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: ModernTheme.textDark,
+                color: OpenAITheme.textPrimary,
               ),
             ),
             const SizedBox(height: 16),
@@ -349,14 +349,14 @@ class _DailyConversationDetailScreenState extends ConsumerState<DailyConversatio
                     return Container(
                       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                       decoration: BoxDecoration(
-                        color: ModernTheme.primaryColor.withValues(alpha: 0.1),
+                        color: OpenAITheme.openaiGreen.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: ModernTheme.primaryColor),
+                        border: Border.all(color: OpenAITheme.openaiGreen),
                       ),
                       child: Text(
                         vocab,
                         style: const TextStyle(
-                          color: ModernTheme.primaryColor,
+                          color: OpenAITheme.openaiGreen,
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
                         ),
@@ -417,7 +417,7 @@ class _MessageBubble extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: isUser ? ModernTheme.primaryColor : Colors.grey.shade100,
+                    color: isUser ? OpenAITheme.openaiGreen : Colors.grey.shade100,
                     borderRadius: BorderRadius.circular(16).copyWith(
                       bottomLeft: isUser ? const Radius.circular(16) : const Radius.circular(4),
                       bottomRight: isUser ? const Radius.circular(4) : const Radius.circular(16),
@@ -489,7 +489,7 @@ class _MessageBubble extends StatelessWidget {
               width: 32,
               height: 32,
               decoration: BoxDecoration(
-                color: ModernTheme.primaryColor,
+                color: OpenAITheme.openaiGreen,
                 borderRadius: BorderRadius.circular(16),
               ),
               child: const Icon(
@@ -539,11 +539,11 @@ class _ClickableWordText extends StatelessWidget {
               word.text,
               style: TextStyle(
                 fontSize: 16,
-                color: isUser ? Colors.white : ModernTheme.textDark,
+                color: isUser ? Colors.white : OpenAITheme.textPrimary,
                 fontWeight: FontWeight.w500,
                 height: 1.4,
                 decoration: TextDecoration.underline,
-                decorationColor: isUser ? Colors.white30 : ModernTheme.primaryColor.withValues(alpha: 0.3),
+                decorationColor: isUser ? Colors.white30 : OpenAITheme.openaiGreen.withValues(alpha: 0.3),
                 decorationThickness: 1,
               ),
             ),

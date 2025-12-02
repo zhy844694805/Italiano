@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../shared/models/conversation.dart';
 import 'ai_conversation_screen.dart';
-import '../../core/theme/modern_theme.dart';
+import '../../core/theme/openai_theme.dart';
 import '../../shared/widgets/gradient_card.dart';
 
 /// Screen for selecting conversation scenarios
@@ -82,13 +82,13 @@ class _ScenarioCard extends StatelessWidget {
     // 根据场景ID返回不同的渐变
     switch (id) {
       case 'restaurant':
-        return ModernTheme.accentGradient;
+        return LinearGradient(colors: [OpenAITheme.warning, Color(0xFFD97706)]);
       case 'airport':
-        return ModernTheme.secondaryGradient;
+        return LinearGradient(colors: [OpenAITheme.info, Color(0xFF2563EB)]);
       case 'shopping':
-        return ModernTheme.primaryGradient;
+        return LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]);
       case 'doctor':
-        return ModernTheme.redGradient;
+        return LinearGradient(colors: [OpenAITheme.error, Color(0xFFDC2626)]);
       case 'interview':
         return const LinearGradient(
           colors: [Color(0xFF9C27B0), Color(0xFF673AB7)],
@@ -98,7 +98,7 @@ class _ScenarioCard extends StatelessWidget {
           colors: [Color(0xFFFF8A65), Color(0xFFFF6F00)],
         );
       default:
-        return ModernTheme.primaryGradient;
+        return LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]);
     }
   }
 

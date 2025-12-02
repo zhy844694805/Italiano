@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/phrase.dart';
 import '../../shared/providers/phrase_provider.dart';
 import '../../shared/providers/tts_provider.dart';
-import '../../core/theme/modern_theme.dart';
+import '../../core/theme/openai_theme.dart';
 import '../../shared/widgets/gradient_card.dart';
 
 class PhraseListScreen extends ConsumerStatefulWidget {
@@ -42,13 +42,13 @@ class _PhraseListScreenState extends ConsumerState<PhraseListScreen>
           '意大利语口语 🇮🇹',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: ModernTheme.primaryColor,
+            color: OpenAITheme.openaiGreen,
           ),
         ),
         bottom: TabBar(
           controller: _tabController,
-          indicatorColor: ModernTheme.primaryColor,
-          labelColor: ModernTheme.primaryColor,
+          indicatorColor: OpenAITheme.openaiGreen,
+          labelColor: OpenAITheme.openaiGreen,
           unselectedLabelColor: Colors.grey,
           tabs: const [
             Tab(
@@ -131,10 +131,10 @@ class _PhraseListScreenState extends ConsumerState<PhraseListScreen>
                   Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      gradient: isPopular ? ModernTheme.primaryGradient :
-                        title.contains('夸人') ? ModernTheme.accentGradient :
-                        title.contains('骂人') ? ModernTheme.redGradient :
-                        ModernTheme.secondaryGradient,
+                      gradient: isPopular ? LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]) :
+                        title.contains('夸人') ? LinearGradient(colors: [OpenAITheme.warning, Color(0xFFD97706)]) :
+                        title.contains('骂人') ? LinearGradient(colors: [OpenAITheme.error, Color(0xFFDC2626)]) :
+                        LinearGradient(colors: [OpenAITheme.info, Color(0xFF2563EB)]),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Icon(
@@ -280,12 +280,12 @@ class _PhraseCard extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                        color: ModernTheme.primaryColor.withValues(alpha: 0.1),
+                        color: OpenAITheme.openaiGreen.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Icon(
                         Icons.volume_up,
-                        color: ModernTheme.primaryColor,
+                        color: OpenAITheme.openaiGreen,
                         size: 20,
                       ),
                     ),
@@ -304,7 +304,7 @@ class _PhraseCard extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: ModernTheme.textDark,
+                        color: OpenAITheme.textPrimary,
                       ),
                     ),
                   ),
@@ -344,7 +344,7 @@ class _PhraseCard extends StatelessWidget {
                   phrase.chinese,
                   style: const TextStyle(
                     fontSize: 16,
-                    color: ModernTheme.textDark,
+                    color: OpenAITheme.textPrimary,
                     fontWeight: FontWeight.w500,
                   ),
                 ),

@@ -4,7 +4,7 @@ import '../../shared/models/word.dart';
 import '../../shared/providers/vocabulary_provider.dart';
 import '../../shared/providers/tts_provider.dart';
 import '../../shared/providers/voice_preference_provider.dart';
-import '../../core/theme/modern_theme.dart';
+import '../../core/theme/openai_theme.dart';
 import '../../shared/widgets/gradient_card.dart';
 import 'vocabulary_learning_screen.dart';
 
@@ -510,9 +510,9 @@ class _WordListItem extends ConsumerWidget {
               // 标签
               Row(
                 children: [
-                  _buildTag(word.level, ModernTheme.primaryGradient),
+                  _buildTag(word.level, LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark])),
                   const SizedBox(width: 8),
-                  _buildTag(word.category, ModernTheme.secondaryGradient),
+                  _buildTag(word.category, LinearGradient(colors: [OpenAITheme.info, Color(0xFF2563EB)])),
                 ],
               ),
 
@@ -528,7 +528,7 @@ class _WordListItem extends ConsumerWidget {
                       Text(
                         '掌握度',
                         style: theme.textTheme.bodySmall?.copyWith(
-                          color: ModernTheme.textLight,
+                          color: OpenAITheme.textSecondary,
                         ),
                       ),
                       Text(
@@ -588,8 +588,8 @@ class _WordListItem extends ConsumerWidget {
 
   Color _getMasteryColor(double mastery) {
     if (mastery >= 0.8) return Colors.green;
-    if (mastery >= 0.5) return ModernTheme.accentColor;
-    return ModernTheme.textLight;
+    if (mastery >= 0.5) return OpenAITheme.warning;
+    return OpenAITheme.textSecondary;
   }
 
   Gradient _getMasteryGradient(double mastery) {
@@ -599,7 +599,7 @@ class _WordListItem extends ConsumerWidget {
       );
     }
     if (mastery >= 0.5) {
-      return ModernTheme.accentGradient;
+      return LinearGradient(colors: [OpenAITheme.warning, Color(0xFFD97706)]);
     }
     return const LinearGradient(
       colors: [Color(0xFFBDBDBD), Color(0xFF9E9E9E)],

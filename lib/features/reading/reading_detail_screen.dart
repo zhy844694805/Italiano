@@ -4,7 +4,7 @@ import '../../shared/models/reading.dart';
 import '../../shared/providers/reading_provider.dart';
 import '../../shared/providers/tts_provider.dart';
 import '../../shared/providers/voice_preference_provider.dart';
-import '../../core/theme/modern_theme.dart';
+import '../../core/theme/openai_theme.dart';
 import '../../shared/widgets/gradient_card.dart';
 
 class ReadingDetailScreen extends ConsumerStatefulWidget {
@@ -166,7 +166,7 @@ class _ReadingDetailScreenState extends ConsumerState<ReadingDetailScreen> {
                 decoration: BoxDecoration(
                   gradient: widget.passage.level == 'A1'
                       ? const LinearGradient(colors: [Color(0xFF4CAF50), Color(0xFF388E3C)])
-                      : ModernTheme.secondaryGradient,
+                      : LinearGradient(colors: [OpenAITheme.info, Color(0xFF2563EB)]),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Text(
@@ -178,12 +178,12 @@ class _ReadingDetailScreenState extends ConsumerState<ReadingDetailScreen> {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 decoration: BoxDecoration(
-                  color: ModernTheme.backgroundColor,
+                  color: OpenAITheme.bgSecondary,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Text(
                   widget.passage.category,
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: ModernTheme.textDark),
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: OpenAITheme.textPrimary),
                 ),
               ),
               const Spacer(),
@@ -304,8 +304,8 @@ class _ReadingDetailScreenState extends ConsumerState<ReadingDetailScreen> {
                     gradient: showFeedback
                         ? (isCorrect
                             ? const LinearGradient(colors: [Color(0xFF4CAF50), Color(0xFF388E3C)])
-                            : ModernTheme.redGradient)
-                        : ModernTheme.primaryGradient,
+                            : LinearGradient(colors: [OpenAITheme.error, Color(0xFFDC2626)]))
+                        : LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]),
                     shape: BoxShape.circle,
                   ),
                   child: Center(
@@ -492,7 +492,7 @@ class _ReadingDetailScreenState extends ConsumerState<ReadingDetailScreen> {
                 text: '提交答案',
                 icon: Icons.check_circle,
                 onPressed: _submitAnswers,
-                gradient: ModernTheme.primaryGradient,
+                gradient: LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]),
               )
             : Container(
                 padding: const EdgeInsets.symmetric(vertical: 16),

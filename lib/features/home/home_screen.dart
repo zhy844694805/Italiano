@@ -5,15 +5,13 @@ import '../vocabulary/vocabulary_list_screen.dart';
 import '../vocabulary/vocabulary_review_screen.dart';
 import '../grammar/grammar_list_screen.dart';
 import '../conversation/conversation_scenario_screen.dart';
-import '../reading/reading_list_screen.dart';
 import '../practice/practice_screen.dart';
 import '../profile/profile_screen.dart';
 import '../phrase/phrase_list_screen.dart';
 import '../daily_conversation/daily_conversation_list_screen.dart';
 import '../../shared/providers/vocabulary_provider.dart';
 import '../../shared/providers/statistics_provider.dart';
-import '../../core/theme/modern_theme.dart';
-import '../../shared/widgets/gradient_card.dart';
+import '../../core/theme/openai_theme.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -40,125 +38,120 @@ class _HomeScreenState extends State<HomeScreen> {
         index: _selectedIndex,
         children: _pages,
       ),
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: _selectedIndex,
-        onDestinationSelected: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-        },
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(Icons.home_outlined),
-            selectedIcon: Icon(Icons.home),
-            label: '首页',
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          border: Border(
+            top: BorderSide(color: OpenAITheme.borderLight, width: 1),
           ),
-          NavigationDestination(
-            icon: Icon(Icons.book_outlined),
-            selectedIcon: Icon(Icons.book),
-            label: '词汇',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.school_outlined),
-            selectedIcon: Icon(Icons.school),
-            label: '语法',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.edit_outlined),
-            selectedIcon: Icon(Icons.edit),
-            label: '练习',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.person_outline),
-            selectedIcon: Icon(Icons.person),
-            label: '我的',
-          ),
-        ],
+        ),
+        child: NavigationBar(
+          selectedIndex: _selectedIndex,
+          onDestinationSelected: (index) {
+            setState(() {
+              _selectedIndex = index;
+            });
+          },
+          destinations: const [
+            NavigationDestination(
+              icon: Icon(Icons.home_outlined),
+              selectedIcon: Icon(Icons.home),
+              label: '首页',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.book_outlined),
+              selectedIcon: Icon(Icons.book),
+              label: '词汇',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.school_outlined),
+              selectedIcon: Icon(Icons.school),
+              label: '语法',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.edit_outlined),
+              selectedIcon: Icon(Icons.edit),
+              label: '练习',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.person_outline),
+              selectedIcon: Icon(Icons.person),
+              label: '我的',
+            ),
+          ],
+        ),
       ),
     );
   }
 }
 
-// 首页
+// 首页 - OpenAI 极简风格
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
     final wordsToReviewAsync = ref.watch(wordsToReviewProvider);
     final newWordsAsync = ref.watch(newWordsProvider);
     final statisticsAsync = ref.watch(statisticsProvider);
     final todayStatsAsync = ref.watch(todayStatisticsProvider);
 
     return Scaffold(
+      backgroundColor: OpenAITheme.bgPrimary,
       appBar: AppBar(
-        title: const Text('Ciao! 👋'),
+        backgroundColor: OpenAITheme.bgPrimary,
+        title: const Text('学意大利语'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // 学习进度卡片 - 现代化设计
-              FloatingCard(
+              // 学习进度卡片 - 简洁边框风格
+              Container(
+                padding: const EdgeInsets.all(20),
+                decoration: OpenAITheme.floatingCardDecoration(),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       children: [
-                        // 渐变图标背景
+                        // 简洁图标
                         Container(
-                          padding: const EdgeInsets.all(14),
+                          padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                            gradient: ModernTheme.accentGradient,
-                            borderRadius: BorderRadius.circular(16),
-                            boxShadow: [
-                              BoxShadow(
-                                color: ModernTheme.accentColor.withValues(alpha: 0.3),
-                                blurRadius: 12,
-                                offset: const Offset(0, 4),
-                              ),
-                            ],
+                            color: OpenAITheme.bgSecondary,
+                            borderRadius: BorderRadius.circular(10),
                           ),
                           child: const Icon(
                             Icons.local_fire_department,
-                            color: Colors.white,
-                            size: 32,
+                            color: OpenAITheme.openaiGreen,
+                            size: 24,
                           ),
                         ),
-                        const SizedBox(width: 16),
+                        const SizedBox(width: 14),
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 '连续学习',
-                                style: theme.textTheme.bodyMedium?.copyWith(
-                                  color: ModernTheme.textLight,
-                                ),
+                                style: theme.textTheme.bodySmall,
                               ),
-                              const SizedBox(height: 4),
+                              const SizedBox(height: 2),
                               statisticsAsync.when(
                                 data: (stats) => Text(
                                   '${stats.studyStreak} 天',
-                                  style: theme.textTheme.displaySmall?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                  style: theme.textTheme.headlineMedium,
                                 ),
                                 loading: () => Text(
                                   '0 天',
-                                  style: theme.textTheme.displaySmall?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                  style: theme.textTheme.headlineMedium,
                                 ),
                                 error: (_, __) => Text(
                                   '0 天',
-                                  style: theme.textTheme.displaySmall?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                  style: theme.textTheme.headlineMedium,
                                 ),
                               ),
                             ],
@@ -166,10 +159,12 @@ class HomePage extends ConsumerWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 24),
+                    const SizedBox(height: 20),
+                    const Divider(height: 1, color: OpenAITheme.borderLight),
+                    const SizedBox(height: 20),
                     todayStatsAsync.when(
                       data: (todayStats) {
-                        final dailyGoal = 20;
+                        const dailyGoal = 20;
                         final wordsLearned = todayStats?.wordsLearned ?? 0;
                         final progress = (wordsLearned / dailyGoal).clamp(0.0, 1.0);
 
@@ -181,87 +176,40 @@ class HomePage extends ConsumerWidget {
                               children: [
                                 Text(
                                   '今日目标',
-                                  style: theme.textTheme.titleMedium?.copyWith(
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                                  style: theme.textTheme.titleSmall,
                                 ),
                                 Text(
                                   '$wordsLearned / $dailyGoal 词',
-                                  style: theme.textTheme.bodyMedium?.copyWith(
-                                    color: ModernTheme.textLight,
-                                    fontWeight: FontWeight.w600,
+                                  style: theme.textTheme.titleSmall?.copyWith(
+                                    color: OpenAITheme.openaiGreen,
                                   ),
                                 ),
                               ],
                             ),
-                            const SizedBox(height: 12),
-                            // 使用渐变进度条
-                            GradientProgressBar(
-                              progress: progress,
-                              height: 12,
-                              gradient: ModernTheme.primaryGradient,
+                            const SizedBox(height: 10),
+                            // 简洁进度条
+                            Container(
+                              height: 6,
+                              decoration: BoxDecoration(
+                                color: OpenAITheme.gray100,
+                                borderRadius: BorderRadius.circular(3),
+                              ),
+                              child: FractionallySizedBox(
+                                alignment: Alignment.centerLeft,
+                                widthFactor: progress,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: OpenAITheme.openaiGreen,
+                                    borderRadius: BorderRadius.circular(3),
+                                  ),
+                                ),
+                              ),
                             ),
                           ],
                         );
                       },
-                      loading: () => Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                '今日目标',
-                                style: theme.textTheme.titleMedium?.copyWith(
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              Text(
-                                '0 / 20 词',
-                                style: theme.textTheme.bodyMedium?.copyWith(
-                                  color: ModernTheme.textLight,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 12),
-                          const GradientProgressBar(
-                            progress: 0,
-                            height: 12,
-                            gradient: ModernTheme.primaryGradient,
-                          ),
-                        ],
-                      ),
-                      error: (_, __) => Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                '今日目标',
-                                style: theme.textTheme.titleMedium?.copyWith(
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              Text(
-                                '0 / 20 词',
-                                style: theme.textTheme.bodyMedium?.copyWith(
-                                  color: ModernTheme.textLight,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 12),
-                          const GradientProgressBar(
-                            progress: 0,
-                            height: 12,
-                            gradient: ModernTheme.primaryGradient,
-                          ),
-                        ],
-                      ),
+                      loading: () => _buildProgressPlaceholder(theme),
+                      error: (_, __) => _buildProgressPlaceholder(theme),
                     ),
                   ],
                 ),
@@ -269,72 +217,13 @@ class HomePage extends ConsumerWidget {
 
               const SizedBox(height: 24),
 
-              // 复习提醒卡片
+              // 复习提醒
               wordsToReviewAsync.when(
                 data: (wordsToReview) {
                   if (wordsToReview.isNotEmpty) {
                     return Padding(
-                      padding: const EdgeInsets.only(bottom: 16),
-                      child: Card(
-                        color: colorScheme.secondaryContainer,
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const VocabularyReviewScreen(),
-                              ),
-                            );
-                          },
-                          borderRadius: BorderRadius.circular(16),
-                          child: Padding(
-                            padding: const EdgeInsets.all(16),
-                            child: Row(
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.all(12),
-                                  decoration: BoxDecoration(
-                                    color: colorScheme.secondary,
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  child: Icon(
-                                    Icons.alarm,
-                                    color: colorScheme.onSecondary,
-                                    size: 28,
-                                  ),
-                                ),
-                                const SizedBox(width: 16),
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        '复习提醒',
-                                        style: theme.textTheme.titleMedium?.copyWith(
-                                          fontWeight: FontWeight.bold,
-                                          color: colorScheme.onSecondaryContainer,
-                                        ),
-                                      ),
-                                      const SizedBox(height: 4),
-                                      Text(
-                                        '${wordsToReview.length} 个单词等待复习',
-                                        style: theme.textTheme.bodyMedium?.copyWith(
-                                          color: colorScheme.onSecondaryContainer,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: colorScheme.onSecondaryContainer,
-                                  size: 20,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
+                      padding: const EdgeInsets.only(bottom: 24),
+                      child: _buildReviewCard(context, wordsToReview.length),
                     );
                   }
                   return const SizedBox.shrink();
@@ -350,321 +239,223 @@ class HomePage extends ConsumerWidget {
               ),
               const SizedBox(height: 16),
 
+              // 功能卡片网格
               GridView.count(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 crossAxisCount: 2,
                 mainAxisSpacing: 12,
                 crossAxisSpacing: 12,
-                childAspectRatio: 1.1,
+                childAspectRatio: 1.15,
                 children: [
                   newWordsAsync.when(
-                    data: (newWords) => _QuickActionCardWithBadge(
-                      icon: Icons.book,
+                    data: (newWords) => _ActionCard(
+                      icon: Icons.auto_stories,
                       title: '学习新词',
-                      color: colorScheme.primary,
-                      badge: newWords.isNotEmpty ? '${newWords.length}' : null,
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const VocabularyLearningScreen(
-                              newWordsOnly: true,
-                            ),
-                          ),
-                        );
-                      },
+                      subtitle: '${newWords.length} 词待学',
+                      color: OpenAITheme.openaiGreen,
+                      onTap: () => _navigateTo(context, const VocabularyLearningScreen(newWordsOnly: true)),
                     ),
-                    loading: () => _QuickActionCard(
-                      icon: Icons.book,
+                    loading: () => _ActionCard(
+                      icon: Icons.auto_stories,
                       title: '学习新词',
-                      color: colorScheme.primary,
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const VocabularyLearningScreen(
-                              newWordsOnly: true,
-                            ),
-                          ),
-                        );
-                      },
+                      color: OpenAITheme.openaiGreen,
+                      onTap: () => _navigateTo(context, const VocabularyLearningScreen(newWordsOnly: true)),
                     ),
-                    error: (_, __) => _QuickActionCard(
-                      icon: Icons.book,
+                    error: (_, __) => _ActionCard(
+                      icon: Icons.auto_stories,
                       title: '学习新词',
-                      color: colorScheme.primary,
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const VocabularyLearningScreen(
-                              newWordsOnly: true,
-                            ),
-                          ),
-                        );
-                      },
+                      color: OpenAITheme.openaiGreen,
+                      onTap: () => _navigateTo(context, const VocabularyLearningScreen(newWordsOnly: true)),
                     ),
                   ),
-                  _QuickActionCard(
-                    icon: Icons.repeat,
+                  _ActionCard(
+                    icon: Icons.refresh,
                     title: '复习单词',
-                    color: colorScheme.secondary,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const VocabularyReviewScreen(),
-                        ),
-                      );
-                    },
+                    color: OpenAITheme.charcoal,
+                    onTap: () => _navigateTo(context, const VocabularyReviewScreen()),
                   ),
-                  _QuickActionCard(
+                  _ActionCard(
                     icon: Icons.chat_bubble_outline,
                     title: 'AI 对话',
-                    color: Colors.deepPurple,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ConversationScenarioScreen(),
-                        ),
-                      );
-                    },
+                    color: const Color(0xFF7C3AED),
+                    onTap: () => _navigateTo(context, const ConversationScenarioScreen()),
                   ),
-                    _QuickActionCard(
+                  _ActionCard(
                     icon: Icons.record_voice_over,
                     title: '意大利语口语',
-                    color: Colors.red,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const PhraseListScreen(),
-                        ),
-                      );
-                    },
+                    color: const Color(0xFFDC2626),
+                    onTap: () => _navigateTo(context, const PhraseListScreen()),
                   ),
-                  _QuickActionCard(
-                    icon: Icons.forum,
+                  _ActionCard(
+                    icon: Icons.forum_outlined,
                     title: '日常对话',
-                    color: Colors.teal,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const DailyConversationListScreen(),
-                        ),
-                      );
-                    },
+                    color: const Color(0xFF0891B2),
+                    onTap: () => _navigateTo(context, const DailyConversationListScreen()),
                   ),
                 ],
               ),
-
             ],
           ),
         ),
       ),
     );
   }
+
+  Widget _buildProgressPlaceholder(ThemeData theme) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text('今日目标', style: theme.textTheme.titleSmall),
+            Text(
+              '0 / 20 词',
+              style: theme.textTheme.titleSmall?.copyWith(
+                color: OpenAITheme.openaiGreen,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 10),
+        Container(
+          height: 6,
+          decoration: BoxDecoration(
+            color: OpenAITheme.gray100,
+            borderRadius: BorderRadius.circular(3),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildReviewCard(BuildContext context, int count) {
+    return GestureDetector(
+      onTap: () => _navigateTo(context, const VocabularyReviewScreen()),
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: OpenAITheme.bgSecondary,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: OpenAITheme.borderLight),
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: OpenAITheme.white,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: const Icon(
+                Icons.notifications_none,
+                color: OpenAITheme.openaiGreen,
+                size: 22,
+              ),
+            ),
+            const SizedBox(width: 14),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    '复习提醒',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: OpenAITheme.textPrimary,
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    '$count 个单词等待复习',
+                    style: const TextStyle(
+                      fontSize: 13,
+                      color: OpenAITheme.textSecondary,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const Icon(
+              Icons.arrow_forward_ios,
+              size: 16,
+              color: OpenAITheme.textTertiary,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _navigateTo(BuildContext context, Widget screen) {
+    Navigator.push(context, MaterialPageRoute(builder: (_) => screen));
+  }
 }
 
-class _QuickActionCard extends StatelessWidget {
+// 功能卡片 - OpenAI 风格
+class _ActionCard extends StatelessWidget {
   final IconData icon;
   final String title;
+  final String? subtitle;
   final Color color;
   final VoidCallback onTap;
 
-  const _QuickActionCard({
+  const _ActionCard({
     required this.icon,
     required this.title,
+    this.subtitle,
     required this.color,
     required this.onTap,
   });
 
-  Gradient _getGradient() {
-    // 根据颜色返回对应的渐变
-    if (color == ModernTheme.primaryColor || color == Colors.green) {
-      return ModernTheme.primaryGradient;
-    } else if (color == ModernTheme.secondaryColor || color == Colors.blue) {
-      return ModernTheme.secondaryGradient;
-    } else if (color == Colors.deepPurple) {
-      return const LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        colors: [Color(0xFF9C27B0), Color(0xFF673AB7)],
-      );
-    } else if (color == Colors.orange) {
-      return ModernTheme.accentGradient;
-    } else if (color == Colors.red) {
-      return ModernTheme.redGradient;
-    } else if (color == Colors.teal) {
-      return const LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        colors: [Color(0xFF00897B), Color(0xFF00695C)],
-      );
-    }
-    return LinearGradient(
-      begin: Alignment.topLeft,
-      end: Alignment.bottomRight,
-      colors: [color, color.withValues(alpha: 0.8)],
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    return GradientCard(
-      gradient: _getGradient(),
+    return GestureDetector(
       onTap: onTap,
-      padding: const EdgeInsets.all(14),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            icon,
-            color: Colors.white,
-            size: 32,
-          ),
-          const SizedBox(height: 10),
-          Text(
-            title,
-            style: const TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-              letterSpacing: 0.2,
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Icon(icon, color: Colors.white, size: 28),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ),
+                if (subtitle != null) ...[
+                  const SizedBox(height: 2),
+                  Text(
+                    subtitle!,
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.white.withValues(alpha: 0.8),
+                    ),
+                  ),
+                ],
+              ],
             ),
-            textAlign: TextAlign.center,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 }
 
-// 带徽章的快捷操作卡片
-class _QuickActionCardWithBadge extends StatelessWidget {
-  final IconData icon;
-  final String title;
-  final Color color;
-  final VoidCallback onTap;
-  final String? badge;
-
-  const _QuickActionCardWithBadge({
-    required this.icon,
-    required this.title,
-    required this.color,
-    required this.onTap,
-    this.badge,
-  });
-
-  Gradient _getGradient() {
-    // 根据颜色返回对应的渐变
-    if (color == ModernTheme.primaryColor || color == Colors.green) {
-      return ModernTheme.primaryGradient;
-    } else if (color == ModernTheme.secondaryColor || color == Colors.blue) {
-      return ModernTheme.secondaryGradient;
-    } else if (color == Colors.deepPurple) {
-      return const LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        colors: [Color(0xFF9C27B0), Color(0xFF673AB7)],
-      );
-    } else if (color == Colors.orange) {
-      return ModernTheme.accentGradient;
-    } else if (color == Colors.red) {
-      return ModernTheme.redGradient;
-    } else if (color == Colors.teal) {
-      return const LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        colors: [Color(0xFF00897B), Color(0xFF00695C)],
-      );
-    }
-    return LinearGradient(
-      begin: Alignment.topLeft,
-      end: Alignment.bottomRight,
-      colors: [color, color.withValues(alpha: 0.8)],
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      clipBehavior: Clip.none,
-      children: [
-        SizedBox.expand(
-          child: GradientCard(
-            gradient: _getGradient(),
-            onTap: onTap,
-            padding: const EdgeInsets.all(14),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  icon,
-                  color: Colors.white,
-                  size: 32,
-                ),
-                const SizedBox(height: 10),
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    letterSpacing: 0.2,
-                  ),
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ],
-            ),
-          ),
-        ),
-        // 徽章
-        if (badge != null)
-          Positioned(
-            right: 8,
-            top: 8,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              decoration: BoxDecoration(
-                color: ModernTheme.redGradient.colors.first,
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.2),
-                    blurRadius: 8,
-                    offset: const Offset(0, 2),
-                  ),
-                ],
-              ),
-              constraints: const BoxConstraints(
-                minWidth: 24,
-                minHeight: 24,
-              ),
-              child: Text(
-                badge!,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ),
-      ],
-    );
-  }
-}
-
-// 词汇页面 - 使用词汇列表
+// 词汇页面
 class VocabularyPage extends StatelessWidget {
   const VocabularyPage({super.key});
 
@@ -674,7 +465,7 @@ class VocabularyPage extends StatelessWidget {
   }
 }
 
-// 语法页面 - 使用语法列表
+// 语法页面
 class GrammarPage extends StatelessWidget {
   const GrammarPage({super.key});
 
@@ -684,7 +475,7 @@ class GrammarPage extends StatelessWidget {
   }
 }
 
-// 练习页面 - 使用阅读理解列表
+// 练习页面
 class PracticePage extends StatelessWidget {
   const PracticePage({super.key});
 
@@ -694,7 +485,7 @@ class PracticePage extends StatelessWidget {
   }
 }
 
-// 个人页面 - 使用个人中心页面
+// 个人页面
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 

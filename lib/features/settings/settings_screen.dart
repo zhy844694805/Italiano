@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/providers/voice_preference_provider.dart';
 import '../../core/services/tts_service.dart';
-import '../demo/ui_showcase_screen.dart';
 
 /// Settings screen for app preferences
 class SettingsScreen extends ConsumerWidget {
@@ -75,20 +74,6 @@ class SettingsScreen extends ConsumerWidget {
             leading: const Icon(Icons.info_outline),
             title: const Text('应用版本'),
             subtitle: const Text('v1.0.0'),
-          ),
-          ListTile(
-            leading: const Icon(Icons.palette_outlined),
-            title: const Text('新UI预览'),
-            subtitle: const Text('查看现代化界面组件'),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const UIShowcaseScreen(),
-                ),
-              );
-            },
           ),
           ListTile(
             leading: const Icon(Icons.description_outlined),

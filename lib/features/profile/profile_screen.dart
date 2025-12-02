@@ -4,7 +4,7 @@ import 'package:fl_chart/fl_chart.dart';
 import '../../shared/providers/statistics_provider.dart';
 import '../../core/database/learning_statistics_repository.dart';
 import '../settings/settings_screen.dart';
-import '../../core/theme/modern_theme.dart';
+import '../../core/theme/openai_theme.dart';
 import '../../shared/widgets/gradient_card.dart';
 import 'package:intl/intl.dart';
 
@@ -131,19 +131,19 @@ class ProfileScreen extends ConsumerWidget {
                           icon: Icons.local_fire_department,
                           label: '总学习天数',
                           value: '${stats.totalStudyDays}天',
-                          gradient: ModernTheme.accentGradient,
+                          gradient: LinearGradient(colors: [OpenAITheme.warning, Color(0xFFD97706)]),
                         ),
                         StatCard(
                           icon: Icons.schedule,
                           label: '总学习时长',
                           value: '${(stats.totalStudyTimeMinutes / 60).toStringAsFixed(1)}h',
-                          gradient: ModernTheme.secondaryGradient,
+                          gradient: LinearGradient(colors: [OpenAITheme.info, Color(0xFF2563EB)]),
                         ),
                         StatCard(
                           icon: Icons.translate,
                           label: '学习单词',
                           value: '${stats.totalWordsLearned}',
-                          gradient: ModernTheme.primaryGradient,
+                          gradient: LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]),
                         ),
                         StatCard(
                           icon: Icons.school,
@@ -333,7 +333,7 @@ class ProfileScreen extends ConsumerWidget {
                       leading: Container(
                         padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                          gradient: ModernTheme.primaryGradient,
+                          gradient: LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: const Icon(Icons.star, color: Colors.white, size: 20),
@@ -349,7 +349,7 @@ class ProfileScreen extends ConsumerWidget {
                       leading: Container(
                         padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                          gradient: ModernTheme.accentGradient,
+                          gradient: LinearGradient(colors: [OpenAITheme.warning, Color(0xFFD97706)]),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: const Icon(Icons.emoji_events, color: Colors.white, size: 20),
@@ -365,7 +365,7 @@ class ProfileScreen extends ConsumerWidget {
                       leading: Container(
                         padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                          gradient: ModernTheme.secondaryGradient,
+                          gradient: LinearGradient(colors: [OpenAITheme.info, Color(0xFF2563EB)]),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: const Icon(Icons.notifications, color: Colors.white, size: 20),

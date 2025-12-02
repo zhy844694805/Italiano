@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/grammar.dart';
 import '../../shared/providers/grammar_provider.dart';
-import '../../core/theme/modern_theme.dart';
+import '../../core/theme/openai_theme.dart';
 import '../../shared/widgets/gradient_card.dart';
 
 class GrammarDetailScreen extends ConsumerStatefulWidget {
@@ -101,11 +101,11 @@ class _GrammarDetailScreenState extends ConsumerState<GrammarDetailScreen> with 
           // 描述
           Container(
             decoration: BoxDecoration(
-              gradient: ModernTheme.primaryGradient,
+              gradient: LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]),
               borderRadius: BorderRadius.circular(16),
               boxShadow: [
                 BoxShadow(
-                  color: ModernTheme.primaryColor.withValues(alpha: 0.2),
+                  color: OpenAITheme.openaiGreen.withValues(alpha: 0.2),
                   blurRadius: 12,
                   offset: const Offset(0, 4),
                 ),
@@ -143,7 +143,7 @@ class _GrammarDetailScreenState extends ConsumerState<GrammarDetailScreen> with 
                     Container(
                       padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                        gradient: ModernTheme.primaryGradient,
+                        gradient: LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]),
                         shape: BoxShape.circle,
                       ),
                       child: Text(
@@ -229,7 +229,7 @@ class _GrammarDetailScreenState extends ConsumerState<GrammarDetailScreen> with 
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                       decoration: BoxDecoration(
-                        gradient: ModernTheme.secondaryGradient,
+                        gradient: LinearGradient(colors: [OpenAITheme.info, Color(0xFF2563EB)]),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Text(
@@ -381,7 +381,7 @@ class _GrammarDetailScreenState extends ConsumerState<GrammarDetailScreen> with 
           GradientProgressBar(
             progress: (_currentExerciseIndex + 1) / widget.grammarPoint.exercises.length,
             height: 8,
-            gradient: ModernTheme.primaryGradient,
+            gradient: LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]),
           ),
           const SizedBox(height: 24),
 
@@ -397,7 +397,7 @@ class _GrammarDetailScreenState extends ConsumerState<GrammarDetailScreen> with 
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                       decoration: BoxDecoration(
-                        gradient: ModernTheme.accentGradient,
+                        gradient: LinearGradient(colors: [OpenAITheme.warning, Color(0xFFD97706)]),
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: Text(

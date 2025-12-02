@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/daily_conversation.dart';
 import '../../shared/providers/daily_conversation_provider.dart';
 import '../../shared/providers/tts_provider.dart';
-import '../../core/theme/modern_theme.dart';
+import '../../core/theme/openai_theme.dart';
 import '../../shared/widgets/gradient_card.dart';
 import 'daily_conversation_detail_screen.dart';
 
@@ -44,13 +44,13 @@ class _DailyConversationListScreenState extends ConsumerState<DailyConversationL
           '日常对话 🗣️',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: ModernTheme.primaryColor,
+            color: OpenAITheme.openaiGreen,
           ),
         ),
         bottom: TabBar(
           controller: _tabController,
-          indicatorColor: ModernTheme.primaryColor,
-          labelColor: ModernTheme.primaryColor,
+          indicatorColor: OpenAITheme.openaiGreen,
+          labelColor: OpenAITheme.openaiGreen,
           unselectedLabelColor: Colors.grey,
           tabs: const [
             Tab(
@@ -346,7 +346,7 @@ class _ConversationCard extends StatelessWidget {
                             style: const TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: ModernTheme.textDark,
+                              color: OpenAITheme.textPrimary,
                             ),
                           ),
                           const SizedBox(height: 4),

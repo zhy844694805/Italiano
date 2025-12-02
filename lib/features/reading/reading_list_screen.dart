@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/reading.dart';
 import '../../shared/providers/reading_provider.dart';
-import '../../core/theme/modern_theme.dart';
+import '../../core/theme/openai_theme.dart';
 import '../../shared/widgets/gradient_card.dart';
 import 'reading_detail_screen.dart';
 
@@ -199,7 +199,7 @@ class _ReadingListScreenState extends ConsumerState<ReadingListScreen> {
                     decoration: BoxDecoration(
                       gradient: passage.level == 'A1'
                         ? const LinearGradient(colors: [Color(0xFF4CAF50), Color(0xFF388E3C)])
-                        : ModernTheme.secondaryGradient,
+                        : LinearGradient(colors: [OpenAITheme.info, Color(0xFF2563EB)]),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Text(
@@ -212,12 +212,12 @@ class _ReadingListScreenState extends ConsumerState<ReadingListScreen> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                     decoration: BoxDecoration(
-                      color: ModernTheme.backgroundColor,
+                      color: OpenAITheme.bgSecondary,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Text(
                       passage.category,
-                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: ModernTheme.textDark),
+                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: OpenAITheme.textPrimary),
                     ),
                   ),
                   const Spacer(),
@@ -266,14 +266,14 @@ class _ReadingListScreenState extends ConsumerState<ReadingListScreen> {
                         gradient: accuracy >= 0.8
                           ? const LinearGradient(colors: [Color(0xFF4CAF50), Color(0xFF388E3C)])
                           : accuracy >= 0.6
-                            ? ModernTheme.accentGradient
-                            : ModernTheme.redGradient,
+                            ? LinearGradient(colors: [OpenAITheme.warning, Color(0xFFD97706)])
+                            : LinearGradient(colors: [OpenAITheme.error, Color(0xFFDC2626)]),
                       ),
                     ),
                     const SizedBox(width: 12),
                     Text(
                       '${(accuracy * 100).toStringAsFixed(0)}%',
-                      style: TextStyle(fontWeight: FontWeight.bold, color: ModernTheme.primaryColor),
+                      style: TextStyle(fontWeight: FontWeight.bold, color: OpenAITheme.openaiGreen),
                     ),
                   ],
                 ),

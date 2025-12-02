@@ -5,7 +5,7 @@ import '../../shared/widgets/swipeable_word_card.dart';
 import '../../shared/providers/vocabulary_provider.dart';
 import '../../shared/providers/tts_provider.dart';
 import '../../shared/providers/voice_preference_provider.dart';
-import '../../core/theme/modern_theme.dart';
+import '../../core/theme/openai_theme.dart';
 import '../../shared/widgets/gradient_card.dart';
 
 class VocabularyReviewScreen extends ConsumerStatefulWidget {
@@ -158,7 +158,7 @@ class _VocabularyReviewScreenState extends ConsumerState<VocabularyReviewScreen>
           GradientProgressBar(
             progress: progress,
             height: 10,
-            gradient: ModernTheme.secondaryGradient,
+            gradient: LinearGradient(colors: [OpenAITheme.info, Color(0xFF2563EB)]),
           ),
         ],
       ),
@@ -425,7 +425,7 @@ class _VocabularyReviewScreenState extends ConsumerState<VocabularyReviewScreen>
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
-                      gradient: ModernTheme.secondaryGradient,
+                      gradient: LinearGradient(colors: [OpenAITheme.info, Color(0xFF2563EB)]),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(

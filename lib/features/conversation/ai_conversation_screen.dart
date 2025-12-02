@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/conversation.dart';
 import '../../shared/providers/conversation_provider.dart';
-import '../../core/theme/modern_theme.dart';
+import '../../core/theme/openai_theme.dart';
 
 /// AI Conversation screen with chat interface
 class AIConversationScreen extends ConsumerStatefulWidget {
@@ -77,11 +77,11 @@ class _AIConversationScreenState extends ConsumerState<AIConversationScreen> {
             icon: Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               decoration: BoxDecoration(
-                gradient: ModernTheme.primaryGradient,
+                gradient: LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]),
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
-                    color: ModernTheme.primaryColor.withValues(alpha: 0.3),
+                    color: OpenAITheme.openaiGreen.withValues(alpha: 0.3),
                     blurRadius: 8,
                     offset: const Offset(0, 2),
                   ),
@@ -154,13 +154,13 @@ class _AIConversationScreenState extends ConsumerState<AIConversationScreen> {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  ModernTheme.primaryColor.withValues(alpha: 0.1),
-                  ModernTheme.secondaryColor.withValues(alpha: 0.1),
+                  OpenAITheme.openaiGreen.withValues(alpha: 0.1),
+                  OpenAITheme.info.withValues(alpha: 0.1),
                 ],
               ),
               border: Border(
                 bottom: BorderSide(
-                  color: ModernTheme.primaryColor.withValues(alpha: 0.2),
+                  color: OpenAITheme.openaiGreen.withValues(alpha: 0.2),
                   width: 2,
                 ),
               ),
@@ -170,7 +170,7 @@ class _AIConversationScreenState extends ConsumerState<AIConversationScreen> {
               style: TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w500,
-                color: ModernTheme.textDark,
+                color: OpenAITheme.textPrimary,
               ),
               textAlign: TextAlign.center,
             ),
@@ -313,11 +313,11 @@ class _MessageBubble extends StatelessWidget {
               width: 40,
               height: 40,
               decoration: BoxDecoration(
-                gradient: ModernTheme.secondaryGradient,
+                gradient: LinearGradient(colors: [OpenAITheme.info, Color(0xFF2563EB)]),
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: ModernTheme.secondaryColor.withValues(alpha: 0.3),
+                    color: OpenAITheme.info.withValues(alpha: 0.3),
                     blurRadius: 8,
                     offset: const Offset(0, 2),
                   ),
@@ -348,13 +348,13 @@ class _MessageBubble extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(14),
                   decoration: BoxDecoration(
-                    gradient: isUser ? ModernTheme.primaryGradient : null,
+                    gradient: isUser ? LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]) : null,
                     color: isUser ? null : Colors.grey.shade100,
                     borderRadius: BorderRadius.circular(16),
                     boxShadow: isUser
                         ? [
                             BoxShadow(
-                              color: ModernTheme.primaryColor.withValues(alpha: 0.3),
+                              color: OpenAITheme.openaiGreen.withValues(alpha: 0.3),
                               blurRadius: 8,
                               offset: const Offset(0, 2),
                             ),
@@ -473,11 +473,11 @@ class _MessageBubble extends StatelessWidget {
               width: 40,
               height: 40,
               decoration: BoxDecoration(
-                gradient: ModernTheme.primaryGradient,
+                gradient: LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]),
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: ModernTheme.primaryColor.withValues(alpha: 0.3),
+                    color: OpenAITheme.openaiGreen.withValues(alpha: 0.3),
                     blurRadius: 8,
                     offset: const Offset(0, 2),
                   ),
