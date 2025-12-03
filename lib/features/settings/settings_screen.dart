@@ -367,7 +367,7 @@ class UserGuideScreen extends StatelessWidget {
           _GuideSection(
             icon: Icons.school,
             title: '关于应用',
-            content: '这是一款专为零基础学习者设计的意大利语学习应用，'
+            content: 'Ciao 是一款专为零基础学习者设计的意大利语学习应用，'
                 '采用科学的间隔重复算法，帮助您高效记忆单词和语法。'
                 '完成全部内容后，您将达到 CEFR A2 水平。',
           ),

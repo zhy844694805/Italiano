@@ -17,7 +17,7 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
-      title: '学意大利语',
+      title: 'Ciao',
       debugShowCheckedModeBanner: false,
       // 使用 OpenAI 极简风格主题
       theme: OpenAITheme.lightTheme,

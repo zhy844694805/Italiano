@@ -572,7 +572,7 @@ class ProfileScreen extends ConsumerWidget {
               const SizedBox(height: 16),
 
               const Text(
-                '意大利语学习',
+                'Ciao',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,

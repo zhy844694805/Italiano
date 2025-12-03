@@ -1,0 +1,13 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="512" cy="512" r="480" fill="#10A37F"/>
+
+  <!-- Letter "i" dot - representing Italian -->
+  <circle cx="512" cy="280" r="60" fill="white"/>
+
+  <!-- Letter "i" body - stylized as speech/learning bubble -->
+  <rect x="452" y="380" width="120" height="320" rx="60" fill="white"/>
+
+  <!-- Subtle book/page accent on the right -->
+  <path d="M572 500 L620 480 L620 680 L572 700 Z" fill="rgba(255,255,255,0.6)"/>
+</svg>

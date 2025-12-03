@@ -100,7 +100,7 @@ class HomePage extends ConsumerWidget {
       backgroundColor: OpenAITheme.bgPrimary,
       appBar: AppBar(
         backgroundColor: OpenAITheme.bgPrimary,
-        title: const Text('学意大利语'),
+        title: const Text('Ciao'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
