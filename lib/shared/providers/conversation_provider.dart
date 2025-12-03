@@ -110,6 +110,7 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
           content: response.message,
           isUser: false,
           timestamp: DateTime.now(),
+          translation: response.translation,
           corrections: response.corrections,
         );
 
@@ -169,6 +170,7 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
           content: response.message,
           isUser: false,
           timestamp: DateTime.now(),
+          translation: response.translation,
           corrections: response.corrections,
         );
 

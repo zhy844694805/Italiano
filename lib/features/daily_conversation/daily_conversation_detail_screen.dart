@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/daily_conversation.dart';
 import '../../shared/providers/tts_provider.dart';
 import '../../core/theme/openai_theme.dart';
-import '../../shared/widgets/gradient_card.dart';
 
 class DailyConversationDetailScreen extends ConsumerStatefulWidget {
   final DailyConversation conversation;
@@ -107,15 +106,10 @@ class _DailyConversationDetailScreenState extends ConsumerState<DailyConversatio
     final ttsService = ref.watch(ttsServiceProvider);
 
     return Scaffold(
+      backgroundColor: OpenAITheme.bgPrimary,
       appBar: AppBar(
-        title: Text(
-          widget.conversation.title,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            color: OpenAITheme.openaiGreen,
-          ),
-        ),
-        backgroundColor: Colors.white,
+        title: Text(widget.conversation.title),
+        backgroundColor: OpenAITheme.bgPrimary,
         elevation: 0,
         actions: [
           IconButton(
@@ -127,7 +121,7 @@ class _DailyConversationDetailScreenState extends ConsumerState<DailyConversatio
                   await ttsService.speak(widget.conversation.messages.first.italian);
                 }
               } catch (e) {
-                print('TTS播放失败: $e');
+                debugPrint('TTS播放失败: $e');
               }
             },
           ),
@@ -138,106 +132,157 @@ class _DailyConversationDetailScreenState extends ConsumerState<DailyConversatio
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 标题信息卡片
-            GradientCard(
-              gradient: LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]),
-              child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Text(
-                          widget.conversation.emoji,
-                          style: const TextStyle(fontSize: 32),
-                        ),
-                        const SizedBox(width: 12),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                widget.conversation.title,
-                                style: const TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
+            // 标题信息卡片 - OpenAI 风格
+            Container(
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: OpenAITheme.white,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: OpenAITheme.borderLight),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        widget.conversation.emoji,
+                        style: const TextStyle(fontSize: 32),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              widget.conversation.title,
+                              style: const TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: OpenAITheme.textPrimary,
                               ),
-                              const SizedBox(height: 4),
-                              Text(
-                                widget.conversation.description,
-                                style: const TextStyle(
-                                  fontSize: 14,
-                                  color: Colors.white70,
-                                ),
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              widget.conversation.description,
+                              style: const TextStyle(
+                                fontSize: 14,
+                                color: OpenAITheme.textSecondary,
                               ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 16),
-                    Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                          decoration: BoxDecoration(
-                            color: Colors.white.withValues(alpha: 0.2),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Text(
-                            widget.conversation.level.toUpperCase(),
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
                             ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: OpenAITheme.bgSecondary,
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: Text(
+                          widget.conversation.level.toUpperCase(),
+                          style: const TextStyle(
+                            color: OpenAITheme.textSecondary,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
-                        const SizedBox(width: 8),
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                          decoration: BoxDecoration(
-                            color: Colors.white.withValues(alpha: 0.2),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Text(
-                            '${widget.conversation.messages.length} 对话',
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                            ),
+                      ),
+                      const SizedBox(width: 8),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: OpenAITheme.openaiGreen.withValues(alpha: 0.1),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: Text(
+                          '${widget.conversation.messages.length} 对话',
+                          style: const TextStyle(
+                            color: OpenAITheme.openaiGreen,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
 
             const SizedBox(height: 20),
 
-            // 场景描述
-            FloatingCard(
-              child: Padding(
+            // 场景描述 - OpenAI 风格
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: OpenAITheme.white,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: OpenAITheme.borderLight),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      const Icon(
+                        Icons.location_on_outlined,
+                        color: OpenAITheme.openaiGreen,
+                        size: 20,
+                      ),
+                      const SizedBox(width: 8),
+                      const Text(
+                        '场景',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: OpenAITheme.textPrimary,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    widget.conversation.scenario,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      color: OpenAITheme.textSecondary,
+                      height: 1.5,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            // 文化注释（如果有的话）- OpenAI 风格
+            if (widget.conversation.culturalNote != null) ...[
+              Container(
                 padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: OpenAITheme.white,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: OpenAITheme.borderLight),
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       children: [
-                        Icon(
-                          Icons.location_on_outlined,
-                          color: OpenAITheme.openaiGreen,
+                        const Icon(
+                          Icons.lightbulb_outline,
+                          color: Color(0xFFF59E0B),
                           size: 20,
                         ),
                         const SizedBox(width: 8),
                         const Text(
-                          '场景',
+                          '文化小贴士',
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
@@ -248,66 +293,23 @@ class _DailyConversationDetailScreenState extends ConsumerState<DailyConversatio
                     ),
                     const SizedBox(height: 12),
                     Text(
-                      widget.conversation.scenario,
+                      widget.conversation.culturalNote!,
                       style: const TextStyle(
                         fontSize: 14,
-                        color: OpenAITheme.textPrimary,
+                        color: OpenAITheme.textSecondary,
                         height: 1.5,
                       ),
                     ),
                   ],
                 ),
               ),
-            ),
-
-            const SizedBox(height: 20),
-
-            // 文化注释（如果有的话）
-            if (widget.conversation.culturalNote != null) ...[
-              FloatingCard(
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.lightbulb_outline,
-                            color: Colors.orange,
-                            size: 20,
-                          ),
-                          const SizedBox(width: 8),
-                          const Text(
-                            '文化小贴士',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: OpenAITheme.textPrimary,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 12),
-                      Text(
-                        widget.conversation.culturalNote!,
-                        style: const TextStyle(
-                          fontSize: 14,
-                          color: OpenAITheme.textPrimary,
-                          height: 1.5,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
               const SizedBox(height: 20),
             ],
 
-            // 对话内容
-            Text(
+            // 对话内容标题
+            const Text(
               '对话内容',
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: OpenAITheme.textPrimary,
@@ -324,14 +326,14 @@ class _DailyConversationDetailScreenState extends ConsumerState<DailyConversatio
                 isUser: isUser,
                 onWordTap: _onWordTap,
               );
-            }).toList(),
+            }),
 
             const SizedBox(height: 20),
 
-            // 词汇表
-            Text(
+            // 词汇表标题
+            const Text(
               '重点词汇',
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: OpenAITheme.textPrimary,
@@ -339,31 +341,34 @@ class _DailyConversationDetailScreenState extends ConsumerState<DailyConversatio
             ),
             const SizedBox(height: 16),
 
-            FloatingCard(
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Wrap(
-                  spacing: 8,
-                  runSpacing: 8,
-                  children: widget.conversation.vocabulary.map((vocab) {
-                    return Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                      decoration: BoxDecoration(
-                        color: OpenAITheme.openaiGreen.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: OpenAITheme.openaiGreen),
+            // 词汇表 - OpenAI 风格
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: OpenAITheme.white,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: OpenAITheme.borderLight),
+              ),
+              child: Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: widget.conversation.vocabulary.map((vocab) {
+                  return Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                    decoration: BoxDecoration(
+                      color: OpenAITheme.bgSecondary,
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    child: Text(
+                      vocab,
+                      style: const TextStyle(
+                        color: OpenAITheme.textPrimary,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
                       ),
-                      child: Text(
-                        vocab,
-                        style: const TextStyle(
-                          color: OpenAITheme.openaiGreen,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    );
-                  }).toList(),
-                ),
+                    ),
+                  );
+                }).toList(),
               ),
             ),
 
@@ -398,13 +403,13 @@ class _MessageBubble extends StatelessWidget {
               width: 32,
               height: 32,
               decoration: BoxDecoration(
-                color: Colors.grey.shade300,
+                color: OpenAITheme.bgSecondary,
                 borderRadius: BorderRadius.circular(16),
               ),
               child: const Icon(
                 Icons.person,
                 size: 18,
-                color: Colors.grey,
+                color: OpenAITheme.textTertiary,
               ),
             ),
             const SizedBox(width: 12),
@@ -417,11 +422,12 @@ class _MessageBubble extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: isUser ? OpenAITheme.openaiGreen : Colors.grey.shade100,
-                    borderRadius: BorderRadius.circular(16).copyWith(
-                      bottomLeft: isUser ? const Radius.circular(16) : const Radius.circular(4),
-                      bottomRight: isUser ? const Radius.circular(4) : const Radius.circular(16),
+                    color: isUser ? OpenAITheme.charcoal : OpenAITheme.white,
+                    borderRadius: BorderRadius.circular(12).copyWith(
+                      bottomLeft: isUser ? const Radius.circular(12) : const Radius.circular(4),
+                      bottomRight: isUser ? const Radius.circular(4) : const Radius.circular(12),
                     ),
+                    border: isUser ? null : Border.all(color: OpenAITheme.borderLight),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -432,9 +438,9 @@ class _MessageBubble extends StatelessWidget {
                           padding: const EdgeInsets.only(bottom: 8),
                           child: Text(
                             message.speaker,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 12,
-                              color: Colors.grey.shade600,
+                              color: OpenAITheme.textTertiary,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -454,15 +460,15 @@ class _MessageBubble extends StatelessWidget {
                         padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
                           color: isUser
-                              ? Colors.white.withValues(alpha: 0.2)
-                              : Colors.grey.shade200,
+                              ? Colors.white.withValues(alpha: 0.1)
+                              : OpenAITheme.bgSecondary,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Text(
                           message.chinese,
                           style: TextStyle(
                             fontSize: 14,
-                            color: isUser ? Colors.white70 : Colors.grey.shade700,
+                            color: isUser ? Colors.white70 : OpenAITheme.textSecondary,
                           ),
                         ),
                       ),
@@ -474,9 +480,9 @@ class _MessageBubble extends StatelessWidget {
 
                 Text(
                   message.context,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 12,
-                    color: Colors.grey.shade500,
+                    color: OpenAITheme.textTertiary,
                   ),
                 ),
               ],
@@ -525,7 +531,7 @@ class _ClickableWordText extends StatelessWidget {
             word.text,
             style: TextStyle(
               fontSize: 16,
-              color: isUser ? Colors.white70 : Colors.grey.shade600,
+              color: isUser ? Colors.white70 : OpenAITheme.textSecondary,
               height: 1.4,
             ),
           );
@@ -571,11 +577,11 @@ class _WordTooltip extends StatelessWidget {
         constraints: const BoxConstraints(maxWidth: 200),
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: Colors.grey.shade900,
+          color: OpenAITheme.charcoal,
           borderRadius: BorderRadius.circular(8),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.3),
+              color: Colors.black.withValues(alpha: 0.2),
               blurRadius: 8,
               offset: const Offset(0, 2),
             ),
@@ -630,8 +636,7 @@ class _WordTooltip extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
               decoration: BoxDecoration(
                 color: _getWordTypeColor(word.type).withValues(alpha: 0.2),
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: _getWordTypeColor(word.type)),
+                borderRadius: BorderRadius.circular(4),
               ),
               child: Text(
                 _getWordTypeName(word.type),
@@ -651,25 +656,25 @@ class _WordTooltip extends StatelessWidget {
   Color _getWordTypeColor(WordType type) {
     switch (type) {
       case WordType.noun:
-        return Colors.blue;
+        return Colors.blue.shade300;
       case WordType.verb:
-        return Colors.green;
+        return OpenAITheme.openaiGreen;
       case WordType.adjective:
-        return Colors.orange;
+        return Colors.orange.shade300;
       case WordType.adverb:
-        return Colors.purple;
+        return Colors.purple.shade300;
       case WordType.preposition:
-        return Colors.red;
+        return Colors.red.shade300;
       case WordType.conjunction:
-        return Colors.teal;
+        return Colors.teal.shade300;
       case WordType.pronoun:
-        return Colors.indigo;
+        return Colors.indigo.shade300;
       case WordType.article:
-        return Colors.grey;
+        return Colors.grey.shade400;
       case WordType.interjection:
-        return Colors.amber;
+        return Colors.amber.shade300;
       default:
-        return Colors.grey;
+        return Colors.grey.shade400;
     }
   }
 

@@ -134,6 +134,8 @@ class LearningStatisticsRepository {
         'wordsReviewed': field == 'wordsReviewed' ? increment : 0,
         'grammarPointsStudied': field == 'grammarPointsStudied' ? increment : 0,
         'conversationMessages': field == 'conversationMessages' ? increment : 0,
+        'listeningExercises': field == 'listeningExercises' ? increment : 0,
+        'speakingExercises': field == 'speakingExercises' ? increment : 0,
         'studyTimeMinutes': field == 'studyTimeMinutes' ? increment : 0,
       });
     } else {

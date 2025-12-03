@@ -595,7 +595,7 @@ Real-time conversation practice with intelligent AI partner powered by DeepSeek 
 lib/
 ├── core/
 │   ├── constants/          # App-wide constants
-│   ├── database/           # SQLite database layer (v3)
+│   ├── database/           # SQLite database layer
 │   │   ├── database_service.dart
 │   │   ├── learning_record_repository.dart
 │   │   ├── grammar_progress_repository.dart
@@ -604,99 +604,100 @@ lib/
 │   │   └── reading_progress_repository.dart
 │   ├── router/             # GoRouter configuration
 │   ├── services/           # Singleton services
-│   │   ├── audio_player_service.dart    # Audio playback
-│   │   ├── deepseek_service.dart        # DeepSeek API integration
-│   │   ├── reading_service.dart         # Reading passages loading
-│   │   └── tts_service.dart             # KOKORO TTS integration
-│   ├── theme/              # Material 3 theme configuration
-│   └── utils/              # Utility functions
-├── features/               # Feature-based organization
-│   ├── home/               # Home screen with quick actions & review reminders
-│   ├── vocabulary/         # Vocabulary learning screens
-│   │   ├── vocabulary_screen.dart
-│   │   ├── vocabulary_learning_screen.dart    # Supports newWordsOnly mode
-│   │   ├── vocabulary_review_screen.dart      # Smart review with SRS
-│   │   └── vocabulary_list_screen.dart        # Browse, search, filter
-│   ├── grammar/            # Grammar lessons with exercises
+│   │   ├── audio_player_service.dart
+│   │   ├── deepseek_service.dart
+│   │   ├── quiz_generator_service.dart
+│   │   ├── reading_service.dart
+│   │   └── tts_service.dart
+│   ├── theme/
+│   │   └── openai_theme.dart   # OpenAI-style minimalist theme
+│   └── utils/
+├── features/
+│   ├── home/
+│   │   └── home_screen.dart
+│   ├── vocabulary/
+│   │   ├── vocabulary_learning_screen.dart
+│   │   ├── vocabulary_review_screen.dart
+│   │   └── vocabulary_list_screen.dart
+│   ├── grammar/
 │   │   ├── grammar_list_screen.dart
 │   │   └── grammar_detail_screen.dart
-│   ├── reading/            # Reading comprehension (NEW)
-│   │   ├── reading_list_screen.dart          # Browse passages with filters
-│   │   └── reading_detail_screen.dart        # Read passage and answer questions
-│   ├── conversation/       # AI conversation practice
-│   │   ├── conversation_scenario_screen.dart  # Scenario selection
-│   │   └── ai_conversation_screen.dart        # Chat interface
-│   ├── practice/           # Integrated into reading feature
-│   ├── phrase/             # Italian expressions learning (NEW)
-│   │   └── phrase_list_screen.dart       # Tabbed interface with TTS support
-│   └── profile/            # User profile with statistics and charts
+│   ├── reading/
+│   │   ├── reading_list_screen.dart
+│   │   └── reading_detail_screen.dart
+│   ├── conversation/
+│   │   ├── conversation_scenario_screen.dart
+│   │   └── ai_conversation_screen.dart
+│   ├── daily_conversation/
+│   │   ├── daily_conversation_list_screen.dart
+│   │   └── daily_conversation_detail_screen.dart
+│   ├── practice/
+│   │   ├── practice_screen.dart
+│   │   ├── quiz_screen.dart
+│   │   └── quiz_result_screen.dart
+│   ├── phrase/
+│   │   └── phrase_list_screen.dart
+│   ├── settings/
+│   │   └── settings_screen.dart
+│   └── profile/
 │       └── profile_screen.dart
 └── shared/
-    ├── models/             # Data models
-    │   ├── word.dart       # Word, LearningRecord
-    │   ├── grammar.dart    # GrammarPoint, GrammarRule, GrammarExample, etc.
-    │   ├── reading.dart    # ReadingPassage, ReadingQuestion, ReadingProgress
-    │   ├── conversation.dart    # ConversationScenario, AIRole, ConversationMessage
-    │   └── phrase.dart     # ItalianPhrase with phonetics and context (NEW)
-    ├── providers/          # Riverpod state providers
-    │   ├── vocabulary_provider.dart      # Word loading, learning progress
-    │   ├── grammar_provider.dart         # Grammar loading, progress tracking
-    │   ├── reading_provider.dart         # Reading passages, progress tracking
-    │   ├── phrase_provider.dart          # Italian phrases, category filtering (NEW)
-    │   ├── conversation_provider.dart    # Conversation state, DeepSeek API
-    │   └── tts_provider.dart               # Text-to-speech integration (NEW)
-    └── widgets/            # Reusable UI components
+    ├── models/
+    │   ├── word.dart
+    │   ├── grammar.dart
+    │   ├── reading.dart
+    │   ├── conversation.dart
+    │   └── phrase.dart
+    ├── providers/
+    │   ├── vocabulary_provider.dart
+    │   ├── grammar_provider.dart
+    │   ├── reading_provider.dart
+    │   ├── phrase_provider.dart
+    │   ├── conversation_provider.dart
+    │   ├── statistics_provider.dart
+    │   ├── voice_preference_provider.dart
+    │   └── tts_provider.dart
+    └── widgets/
         ├── flip_card.dart
         ├── swipeable_word_card.dart
-        └── word_card.dart
+        ├── word_card.dart
+        └── gradient_card.dart
 ```
 
 ### Theme System
-The app uses **Modern Theme** (`lib/core/theme/modern_theme.dart`) - a gradient-based design inspired by Duolingo and Material 3:
+The app uses **OpenAI Theme** (`lib/core/theme/openai_theme.dart`) - a minimalist design inspired by OpenAI's official website:
+
+**Design Philosophy**: 极简、黑白、精致、专业 (Minimalist, black-white, refined, professional)
 
 **Color System**:
-- **Primary Gradient**: Italian green (#00B578 → #009246)
-- **Secondary Gradient**: Blue (#5BA4FF → #4A90E2)
-- **Accent Gradient**: Orange (#FFAA66 → #FF9F66)
-- **Red Gradient**: Red (#FF5757 → #CE2B37)
-- **Background**: Light purple-gray (#F8F9FE)
-- **Text Colors**: Dark (#2C3E50), Light (#6C757D)
+- **Primary**: OpenAI Green (#10A37F) - Brand accent color
+- **Black Series**: Black (#000000), Dark Gray (#202123), Charcoal (#343541)
+- **Gray Series**: 7 levels from gray700 (#40414F) to gray50 (#F7F7F8)
+- **White Series**: White (#FFFFFF), Off-white (#FAFAFA)
+- **Functional**: Error (#EF4444), Warning (#F59E0B), Success (#10A37F), Info (#3B82F6)
+- **Text**: Primary (#202123), Secondary (#6E6E80), Tertiary (#ACACAC)
+- **Background**: Primary (white), Secondary (#F7F7F8), Tertiary (#ECECF1)
+- **Border**: Light (#E5E5E5), Medium (#D1D5DB), Dark (#ACACAC)
 
-**Modern UI Components** (`lib/shared/widgets/gradient_card.dart`):
-- `GradientCard` - Cards with gradient backgrounds and shadows (tap-enabled)
-- `FloatingCard` - White cards with subtle floating shadow (most common for content cards)
-- `StatCard` - Statistics display with gradient icon background
-- `GradientButton` - Buttons with gradient fills and icons
-- `GlassCard` - Semi-transparent glass-morphism cards
-- `GradientProgressBar` - Animated progress bars with gradient fills
+**Helper Decoration Methods** (static methods on `OpenAITheme`):
+- `cardDecoration()` - Card with border, optional selection state
+- `floatingCardDecoration()` - Card with subtle shadow
+- `accentCardDecoration()` - Card with green border and shadow
+- `darkCardDecoration()` - Dark background card
+- `gradientButtonDecoration()` - Green gradient for buttons
+- `glassDecoration()` - Glass-morphism effect
 
-**Component Usage Guidelines**:
-- **List items**: Use `FloatingCard` for clean white backgrounds
-- **Quick actions**: Use `GradientCard` with appropriate gradient
-- **Progress indicators**: Replace `LinearProgressIndicator` with `GradientProgressBar`
-- **Buttons**: Use `GradientButton` for primary actions
-- **Badges/Tags**: Use `Container` with gradient decoration for level/category badges
-
-**Layout Considerations**:
-- Use appropriate padding for GridView cards (14-16px recommended)
-- Add `mainAxisSize: MainAxisSize.min` to prevent overflow in constrained layouts
-- Test font sizes for overflow: titles (14-15px), labels (13px), descriptions (11-12px)
-- Use `maxLines` and `overflow: TextOverflow.ellipsis` for text in cards
-- For Stack widgets with cards, wrap first child with `SizedBox.expand()` to ensure proper sizing
+**UI Component Guidelines**:
+- Cards use borders instead of heavy shadows
+- Navigation bar with green indicator on selection
+- Buttons with green accent or dark gray fill
+- Clean typography with clear hierarchy
+- Minimal use of gradients (only for special emphasis)
 
 **Theme Configuration** (`main.dart`):
-- Active: `ModernTheme.lightTheme` (gradient-based modern design)
-- Alternative: `AppTheme.lightTheme` (classic Italian flag colors)
-- Switch by uncommenting appropriate theme in `main.dart`
-
-**Recent UI Modernization** (November 2025):
-All major screens have been updated with the modern gradient-based design:
-- Grammar list/detail screens - Level badges with gradients, FloatingCard for content
-- Vocabulary list/learning/review screens - Mastery progress bars with gradients, expandable text areas
-- Reading list/detail screens - Question cards with FloatingCard, gradient submit buttons
-- AI conversation screen - Message bubbles with gradients, gradient avatars
-- Phrase list screen - Tabbed interface with gradient category badges, TTS integration
-- Home screen quick actions - Properly sized GradientCards with badges
+```dart
+theme: OpenAITheme.lightTheme,
+```
 
 ### Data Sources
 
@@ -1193,7 +1194,7 @@ If you need to add more vocabulary or grammar:
 
 This app provides a **complete, structured path from zero to A2 Italian proficiency**. With 1,422 high-quality vocabulary words, 14 comprehensive grammar points, 20 reading passages, and integrated four-skills training, learners can achieve functional Italian communication ability in 9-18 months with consistent daily practice.
 
-**Current Content Summary** (as of November 2025):
+**Current Content Summary** (as of December 2025):
 - **Vocabulary**: 1,469 words (492 A1 + 930 A2 + 47 B1-C2) - 95% CEFR coverage ✅
 - **Grammar**: 14 points with 140 exercises - 100% A1-A2 coverage ✅
 - **Reading**: 20 passages (7 A1 + 13 A2) with 100 questions - Complete diversity ✅

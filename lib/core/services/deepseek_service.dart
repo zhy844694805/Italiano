@@ -61,9 +61,12 @@ class DeepSeekService {
 
         // Parse corrections if included in response
         final corrections = _parseCorrections(aiMessage);
+        // Parse translation if included in response
+        final translation = _parseTranslation(aiMessage);
 
         return ChatResponse(
           message: _cleanMessage(aiMessage),
+          translation: translation,
           corrections: corrections,
           success: true,
         );
@@ -103,11 +106,12 @@ Linee guida per la conversazione:
 4. Fai domande per mantenere viva la conversazione
 5. Incoraggia lo studente a usare frasi complete
 6. Se necessario, fornisci suggerimenti di vocabolario utile per la situazione
+7. IMPORTANTE: Alla fine di ogni tua risposta, aggiungi sempre una traduzione in cinese usando il formato: [TRADUZIONE: 翻译内容]
 
-Esempio di correzione:
-Studente: "Io voglio mangiare pasta"
-Tu: "Ottima scelta! Quale tipo di pasta preferisci? Abbiamo carbonara, amatriciana, e aglio e olio.
-[CORREZIONE: "Io voglio" → "Vorrei" - In italiano formale al ristorante si usa il condizionale]"''';
+Esempio di risposta completa:
+"Ottima scelta! Quale tipo di pasta preferisci? Abbiamo carbonara, amatriciana, e aglio e olio.
+[CORREZIONE: "Io voglio" → "Vorrei" - In italiano formale al ristorante si usa il condizionale]
+[TRADUZIONE: 很好的选择！你喜欢哪种意大利面？我们有培根蛋面、番茄培根面和蒜香油面。]"''';
   }
 
   String _getLevelGuidance(String level) {
@@ -164,12 +168,27 @@ Tu: "Ottima scelta! Quale tipo di pasta preferisci? Abbiamo carbonara, amatricia
     return corrections.isEmpty ? null : corrections;
   }
 
-  /// Remove correction markers from message
+  /// Parse Chinese translation from AI response
+  String? _parseTranslation(String message) {
+    final translationRegex = RegExp(
+      r'\[TRADUZIONE:\s*(.+?)\]',
+      multiLine: true,
+      dotAll: true,
+    );
+
+    final match = translationRegex.firstMatch(message);
+    if (match != null) {
+      return match.group(1)?.trim();
+    }
+    return null;
+  }
+
+  /// Remove correction and translation markers from message
   String _cleanMessage(String message) {
-    return message.replaceAll(
-      RegExp(r'\[CORREZIONE:.*?\]', multiLine: true),
-      '',
-    ).trim();
+    return message
+        .replaceAll(RegExp(r'\[CORREZIONE:.*?\]', multiLine: true), '')
+        .replaceAll(RegExp(r'\[TRADUZIONE:.*?\]', multiLine: true, dotAll: true), '')
+        .trim();
   }
 
   String _handleDioError(DioException e) {
@@ -200,12 +219,14 @@ Tu: "Ottima scelta! Quale tipo di pasta preferisci? Abbiamo carbonara, amatricia
 /// Response from chat completion API
 class ChatResponse {
   final String message;
+  final String? translation;
   final List<GrammarCorrection>? corrections;
   final bool success;
   final String? error;
 
   ChatResponse({
     required this.message,
+    this.translation,
     required this.corrections,
     required this.success,
     this.error,

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/grammar.dart';
 import '../../shared/providers/grammar_provider.dart';
+import '../../shared/providers/achievement_provider.dart';
+import '../../shared/widgets/achievement_unlock_dialog.dart';
 import '../../core/theme/openai_theme.dart';
-import '../../shared/widgets/gradient_card.dart';
 
 class GrammarDetailScreen extends ConsumerStatefulWidget {
   final GrammarPoint grammarPoint;
@@ -17,111 +18,180 @@ class GrammarDetailScreen extends ConsumerStatefulWidget {
   ConsumerState<GrammarDetailScreen> createState() => _GrammarDetailScreenState();
 }
 
-class _GrammarDetailScreenState extends ConsumerState<GrammarDetailScreen> with SingleTickerProviderStateMixin {
-  late TabController _tabController;
+class _GrammarDetailScreenState extends ConsumerState<GrammarDetailScreen> {
+  int _currentStep = 0; // 0: 规则, 1: 例句, 2: 练习
   int _currentExerciseIndex = 0;
-  Map<String, String> _userAnswers = {};
+  final Map<String, String> _userAnswers = {};
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: widget.grammarPoint.exercises.isEmpty ? 2 : 3, vsync: this);
-
     // 标记为已学习
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(grammarProgressProvider.notifier).markAsStudied(widget.grammarPoint.id);
     });
   }
 
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
+  Future<void> _markAsCompleted() async {
+    ref.read(grammarProgressProvider.notifier).markAsCompleted(widget.grammarPoint.id);
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('已标记为完成'),
+        backgroundColor: OpenAITheme.openaiGreen,
+      ),
+    );
+    // 检查成就解锁
+    final achievement = await checkAchievements(ref);
+    if (achievement != null && mounted) {
+      await AchievementUnlockDialog.show(context, achievement);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
     final progress = ref.watch(grammarProgressProvider)[widget.grammarPoint.id];
+    final isCompleted = progress?.completed ?? false;
 
     return Scaffold(
+      backgroundColor: OpenAITheme.bgPrimary,
       appBar: AppBar(
+        backgroundColor: OpenAITheme.bgPrimary,
         title: Text(widget.grammarPoint.title),
         actions: [
-          IconButton(
-            icon: Icon(
-              progress?.isFavorite ?? false ? Icons.favorite : Icons.favorite_border,
-              color: progress?.isFavorite ?? false ? Colors.red : null,
-            ),
-            onPressed: () {
-              ref.read(grammarProgressProvider.notifier).toggleFavorite(widget.grammarPoint.id);
-            },
-          ),
-          if (!(progress?.completed ?? false))
-            IconButton(
-              icon: const Icon(Icons.check_circle_outline),
-              tooltip: '标记为已完成',
-              onPressed: () {
-                ref.read(grammarProgressProvider.notifier).markAsCompleted(widget.grammarPoint.id);
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('✓ 已标记为完成')),
-                );
-              },
+          if (!isCompleted)
+            TextButton(
+              onPressed: () => _markAsCompleted(),
+              child: const Text(
+                '完成',
+                style: TextStyle(color: OpenAITheme.openaiGreen),
+              ),
             ),
         ],
-        bottom: TabBar(
-          controller: _tabController,
-          tabs: [
-            const Tab(icon: Icon(Icons.menu_book), text: '规则'),
-            const Tab(icon: Icon(Icons.lightbulb_outline), text: '例句'),
-            if (widget.grammarPoint.exercises.isNotEmpty)
-              const Tab(icon: Icon(Icons.quiz_outlined), text: '练习'),
-          ],
-        ),
       ),
-      body: TabBarView(
-        controller: _tabController,
+      body: Column(
         children: [
-          _buildRulesTab(theme, colorScheme),
-          _buildExamplesTab(theme, colorScheme),
-          if (widget.grammarPoint.exercises.isNotEmpty)
-            _buildExercisesTab(theme, colorScheme),
+          // 步骤指示器
+          _buildStepIndicator(),
+
+          // 内容区域
+          Expanded(
+            child: _currentStep == 0
+                ? _buildRulesView()
+                : _currentStep == 1
+                    ? _buildExamplesView()
+                    : _buildExercisesView(),
+          ),
+
+          // 底部导航
+          _buildBottomNavigation(),
         ],
       ),
     );
   }
 
-  Widget _buildRulesTab(ThemeData theme, ColorScheme colorScheme) {
+  Widget _buildStepIndicator() {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      child: Row(
+        children: [
+          _buildStepDot(0, '规则'),
+          _buildStepLine(0),
+          _buildStepDot(1, '例句'),
+          if (widget.grammarPoint.exercises.isNotEmpty) ...[
+            _buildStepLine(1),
+            _buildStepDot(2, '练习'),
+          ],
+        ],
+      ),
+    );
+  }
+
+  Widget _buildStepDot(int step, String label) {
+    final isActive = _currentStep >= step;
+    final isCurrent = _currentStep == step;
+
+    return Expanded(
+      child: GestureDetector(
+        onTap: () {
+          if (step == 2 && widget.grammarPoint.exercises.isEmpty) return;
+          setState(() => _currentStep = step);
+        },
+        child: Column(
+          children: [
+            Container(
+              width: 32,
+              height: 32,
+              decoration: BoxDecoration(
+                color: isActive ? OpenAITheme.openaiGreen : OpenAITheme.bgSecondary,
+                shape: BoxShape.circle,
+                border: isCurrent
+                    ? Border.all(color: OpenAITheme.openaiGreen, width: 2)
+                    : null,
+              ),
+              child: Center(
+                child: isActive && !isCurrent
+                    ? const Icon(Icons.check, color: Colors.white, size: 18)
+                    : Text(
+                        '${step + 1}',
+                        style: TextStyle(
+                          color: isActive ? Colors.white : OpenAITheme.textTertiary,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+              ),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 12,
+                color: isCurrent ? OpenAITheme.openaiGreen : OpenAITheme.textTertiary,
+                fontWeight: isCurrent ? FontWeight.w600 : FontWeight.normal,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildStepLine(int afterStep) {
+    final isActive = _currentStep > afterStep;
+    return Container(
+      width: 40,
+      height: 2,
+      margin: const EdgeInsets.only(bottom: 20),
+      color: isActive ? OpenAITheme.openaiGreen : OpenAITheme.borderLight,
+    );
+  }
+
+  // ========== 规则页面 ==========
+  Widget _buildRulesView() {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // 描述
+          // 简介卡片
           Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]),
-              borderRadius: BorderRadius.circular(16),
-              boxShadow: [
-                BoxShadow(
-                  color: OpenAITheme.openaiGreen.withValues(alpha: 0.2),
-                  blurRadius: 12,
-                  offset: const Offset(0, 4),
-                ),
-              ],
-            ),
             padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: OpenAITheme.openaiGreen.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: OpenAITheme.openaiGreen.withValues(alpha: 0.3)),
+            ),
             child: Row(
               children: [
-                const Icon(Icons.info_outline, color: Colors.white),
+                const Icon(Icons.lightbulb_outline, color: OpenAITheme.openaiGreen),
                 const SizedBox(width: 12),
                 Expanded(
                   child: Text(
                     widget.grammarPoint.description,
-                    style: theme.textTheme.bodyLarge?.copyWith(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      color: OpenAITheme.textPrimary,
+                      height: 1.5,
                     ),
                   ),
                 ),
@@ -134,210 +204,240 @@ class _GrammarDetailScreenState extends ConsumerState<GrammarDetailScreen> with 
           ...widget.grammarPoint.rules.asMap().entries.map((entry) {
             final index = entry.key;
             final rule = entry.value;
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Text(
-                        '${index + 1}',
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            rule.title,
-                            style: theme.textTheme.titleLarge?.copyWith(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(height: 8),
-                          Text(
-                            rule.content,
-                            style: theme.textTheme.bodyLarge,
-                          ),
-                          if (rule.points != null && rule.points!.isNotEmpty) ...[
-                            const SizedBox(height: 12),
-                            ...rule.points!.map((point) => Padding(
-                              padding: const EdgeInsets.only(bottom: 8),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    margin: const EdgeInsets.only(top: 8),
-                                    width: 6,
-                                    height: 6,
-                                    decoration: BoxDecoration(
-                                      color: colorScheme.primary,
-                                      shape: BoxShape.circle,
-                                    ),
-                                  ),
-                                  const SizedBox(width: 8),
-                                  Expanded(
-                                    child: Text(
-                                      point,
-                                      style: theme.textTheme.bodyMedium,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            )),
-                          ],
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 24),
-              ],
-            );
+            return _buildRuleCard(index, rule);
           }),
         ],
       ),
     );
   }
 
-  Widget _buildExamplesTab(ThemeData theme, ColorScheme colorScheme) {
-    return ListView.builder(
+  Widget _buildRuleCard(int index, GrammarRule rule) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(16),
-      itemCount: widget.grammarPoint.examples.length,
-      itemBuilder: (context, index) {
-        final example = widget.grammarPoint.examples[index];
-        return Padding(
-          padding: const EdgeInsets.only(bottom: 16),
-          child: FloatingCard(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(colors: [OpenAITheme.info, Color(0xFF2563EB)]),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Text(
-                        '例 ${index + 1}',
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ],
+      decoration: BoxDecoration(
+        color: OpenAITheme.white,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: OpenAITheme.borderLight),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // 标题行
+          Row(
+            children: [
+              Container(
+                width: 28,
+                height: 28,
+                decoration: BoxDecoration(
+                  color: OpenAITheme.bgSecondary,
+                  shape: BoxShape.circle,
                 ),
-                const SizedBox(height: 12),
-                // 意大利语
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(Icons.flag, color: Colors.green, size: 20),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        example.italian,
-                        style: theme.textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.w600,
-                          color: colorScheme.primary,
-                        ),
-                      ),
+                child: Center(
+                  child: Text(
+                    '${index + 1}',
+                    style: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      color: OpenAITheme.textSecondary,
                     ),
-                  ],
+                  ),
                 ),
-                const SizedBox(height: 8),
-                // 中文
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(Icons.translate, color: Colors.red, size: 20),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        example.chinese,
-                        style: theme.textTheme.bodyLarge,
-                      ),
-                    ),
-                  ],
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  rule.title,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: OpenAITheme.textPrimary,
+                  ),
                 ),
-                if (example.english != null) ...[
-                  const SizedBox(height: 8),
-                  // 英语
-                  Row(
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+
+          // 内容
+          Text(
+            rule.content,
+            style: const TextStyle(
+              fontSize: 14,
+              color: OpenAITheme.textSecondary,
+              height: 1.6,
+            ),
+          ),
+
+          // 要点列表
+          if (rule.points != null && rule.points!.isNotEmpty) ...[
+            const SizedBox(height: 12),
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: OpenAITheme.bgSecondary,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: rule.points!.map((point) => Padding(
+                  padding: const EdgeInsets.only(bottom: 6),
+                  child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(Icons.language, color: Colors.blue, size: 20),
+                      Container(
+                        margin: const EdgeInsets.only(top: 6),
+                        width: 5,
+                        height: 5,
+                        decoration: const BoxDecoration(
+                          color: OpenAITheme.openaiGreen,
+                          shape: BoxShape.circle,
+                        ),
+                      ),
                       const SizedBox(width: 8),
                       Expanded(
                         child: Text(
-                          example.english!,
-                          style: theme.textTheme.bodyMedium?.copyWith(
-                            color: colorScheme.onSurface.withValues(alpha: 0.7),
+                          point,
+                          style: const TextStyle(
+                            fontSize: 13,
+                            color: OpenAITheme.textPrimary,
+                            height: 1.4,
                           ),
                         ),
                       ),
                     ],
                   ),
-                ],
-                if (example.highlight != null) ...[
-                  const SizedBox(height: 12),
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      color: colorScheme.tertiaryContainer,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(Icons.highlight, color: colorScheme.tertiary, size: 16),
-                        const SizedBox(width: 8),
-                        Text(
-                          '重点: ${example.highlight}',
-                          style: TextStyle(
-                            color: colorScheme.onTertiaryContainer,
-                            fontSize: 12,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ],
+                )).toList(),
+              ),
             ),
-          ),
-        );
+          ],
+        ],
+      ),
+    );
+  }
+
+  // ========== 例句页面 ==========
+  Widget _buildExamplesView() {
+    return ListView.builder(
+      padding: const EdgeInsets.all(16),
+      itemCount: widget.grammarPoint.examples.length,
+      itemBuilder: (context, index) {
+        final example = widget.grammarPoint.examples[index];
+        return _buildExampleCard(index, example);
       },
     );
   }
 
-  Widget _buildExercisesTab(ThemeData theme, ColorScheme colorScheme) {
+  Widget _buildExampleCard(int index, GrammarExample example) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 12),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: OpenAITheme.white,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: OpenAITheme.borderLight),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // 例句序号
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                decoration: BoxDecoration(
+                  color: OpenAITheme.bgSecondary,
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: Text(
+                  '例 ${index + 1}',
+                  style: const TextStyle(
+                    fontSize: 11,
+                    fontWeight: FontWeight.w600,
+                    color: OpenAITheme.textSecondary,
+                  ),
+                ),
+              ),
+              if (example.highlight != null) ...[
+                const Spacer(),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                  decoration: BoxDecoration(
+                    color: OpenAITheme.openaiGreen.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: Text(
+                    example.highlight!,
+                    style: const TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w600,
+                      color: OpenAITheme.openaiGreen,
+                    ),
+                  ),
+                ),
+              ],
+            ],
+          ),
+          const SizedBox(height: 12),
+
+          // 意大利语
+          Text(
+            example.italian,
+            style: const TextStyle(
+              fontSize: 17,
+              fontWeight: FontWeight.w600,
+              color: OpenAITheme.textPrimary,
+            ),
+          ),
+          const SizedBox(height: 8),
+
+          // 中文翻译
+          Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: OpenAITheme.bgSecondary,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Text(
+              example.chinese,
+              style: const TextStyle(
+                fontSize: 14,
+                color: OpenAITheme.textSecondary,
+              ),
+            ),
+          ),
+
+          // 英文翻译（如果有）
+          if (example.english != null) ...[
+            const SizedBox(height: 8),
+            Text(
+              example.english!,
+              style: const TextStyle(
+                fontSize: 13,
+                color: OpenAITheme.textTertiary,
+                fontStyle: FontStyle.italic,
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+
+  // ========== 练习页面 ==========
+  Widget _buildExercisesView() {
     if (widget.grammarPoint.exercises.isEmpty) {
       return Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.quiz_outlined, size: 64, color: colorScheme.primary.withValues(alpha: 0.5)),
-            const SizedBox(height: 16),
+          children: const [
+            Icon(Icons.quiz_outlined, size: 48, color: OpenAITheme.textTertiary),
+            SizedBox(height: 12),
             Text(
               '暂无练习题',
-              style: theme.textTheme.titleLarge?.copyWith(
-                color: colorScheme.onSurface.withValues(alpha: 0.6),
+              style: TextStyle(
+                fontSize: 16,
+                color: OpenAITheme.textSecondary,
               ),
             ),
           ],
@@ -350,236 +450,430 @@ class _GrammarDetailScreenState extends ConsumerState<GrammarDetailScreen> with 
     final hasAnswered = userAnswer != null;
     final isCorrect = hasAnswered && userAnswer == exercise.answer;
 
-    return Padding(
+    return SingleChildScrollView(
       padding: const EdgeInsets.all(16),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // 进度指示器
+          // 进度显示
           Row(
             children: [
               Text(
-                '${_currentExerciseIndex + 1} / ${widget.grammarPoint.exercises.length}',
-                style: theme.textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
+                '第 ${_currentExerciseIndex + 1} 题 / ${widget.grammarPoint.exercises.length}',
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  color: OpenAITheme.textPrimary,
                 ),
               ),
               const Spacer(),
-              TextButton.icon(
+              TextButton(
                 onPressed: () {
                   setState(() {
                     _currentExerciseIndex = 0;
                     _userAnswers.clear();
                   });
                 },
-                icon: const Icon(Icons.refresh),
-                label: const Text('重置'),
+                child: const Text(
+                  '重置',
+                  style: TextStyle(color: OpenAITheme.textTertiary),
+                ),
               ),
             ],
           ),
           const SizedBox(height: 8),
-          GradientProgressBar(
-            progress: (_currentExerciseIndex + 1) / widget.grammarPoint.exercises.length,
-            height: 8,
-            gradient: LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]),
+
+          // 进度条
+          Container(
+            height: 6,
+            decoration: BoxDecoration(
+              color: OpenAITheme.gray100,
+              borderRadius: BorderRadius.circular(3),
+            ),
+            child: FractionallySizedBox(
+              alignment: Alignment.centerLeft,
+              widthFactor: (_currentExerciseIndex + 1) / widget.grammarPoint.exercises.length,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: OpenAITheme.openaiGreen,
+                  borderRadius: BorderRadius.circular(3),
+                ),
+              ),
+            ),
           ),
-          const SizedBox(height: 24),
+          const SizedBox(height: 20),
 
           // 题目卡片
-          Expanded(
-            child: SingleChildScrollView(
-              child: FloatingCard(
-                padding: const EdgeInsets.all(20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // 题型标签
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(colors: [OpenAITheme.warning, Color(0xFFD97706)]),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      child: Text(
-                        _getExerciseTypeName(exercise.type),
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+          Container(
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: OpenAITheme.white,
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: OpenAITheme.borderLight),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // 题型标签
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: OpenAITheme.bgSecondary,
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  child: Text(
+                    _getExerciseTypeName(exercise.type),
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: OpenAITheme.textSecondary,
                     ),
-                      const SizedBox(height: 16),
+                  ),
+                ),
+                const SizedBox(height: 16),
 
-                      // 题目
-                      Text(
-                        exercise.question,
-                        style: theme.textTheme.titleLarge?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 24),
+                // 题目
+                Text(
+                  exercise.question,
+                  style: const TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w600,
+                    color: OpenAITheme.textPrimary,
+                    height: 1.4,
+                  ),
+                ),
+                const SizedBox(height: 20),
 
-                      // 选项或输入框
-                      if (exercise.type == 'choice' && exercise.options != null)
-                        ...exercise.options!.map((option) {
-                          final isSelected = userAnswer == option;
-                          final showResult = hasAnswered;
-                          final isCorrectOption = option == exercise.answer;
+                // 选项
+                if (exercise.type == 'choice' && exercise.options != null)
+                  ...exercise.options!.map((option) {
+                    final isSelected = userAnswer == option;
+                    final isCorrectOption = option == exercise.answer;
 
-                          Color? cardColor;
-                          if (showResult) {
-                            if (isSelected && isCorrect) {
-                              cardColor = Colors.green.withValues(alpha: 0.1);
-                            } else if (isSelected && !isCorrect) {
-                              cardColor = Colors.red.withValues(alpha: 0.1);
-                            } else if (isCorrectOption) {
-                              cardColor = Colors.green.withValues(alpha: 0.1);
-                            }
-                          }
+                    Color bgColor = OpenAITheme.bgSecondary;
+                    Color borderColor = Colors.transparent;
 
-                          return Padding(
-                            padding: const EdgeInsets.only(bottom: 12),
-                            child: InkWell(
-                              onTap: hasAnswered ? null : () {
-                                setState(() {
-                                  _userAnswers[exercise.id] = option;
-                                });
-                                _checkAnswer(exercise, option);
-                              },
-                              borderRadius: BorderRadius.circular(12),
-                              child: Container(
-                                padding: const EdgeInsets.all(16),
-                                decoration: BoxDecoration(
-                                  color: cardColor ?? colorScheme.surfaceContainerHighest,
-                                  borderRadius: BorderRadius.circular(12),
-                                  border: Border.all(
-                                    color: isSelected
-                                        ? colorScheme.primary
-                                        : Colors.transparent,
-                                    width: 2,
+                    if (hasAnswered) {
+                      if (isCorrectOption) {
+                        bgColor = OpenAITheme.openaiGreen.withValues(alpha: 0.1);
+                        borderColor = OpenAITheme.openaiGreen;
+                      } else if (isSelected && !isCorrect) {
+                        bgColor = const Color(0xFFEF4444).withValues(alpha: 0.1);
+                        borderColor = const Color(0xFFEF4444);
+                      }
+                    } else if (isSelected) {
+                      borderColor = OpenAITheme.openaiGreen;
+                    }
+
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          onTap: hasAnswered ? null : () {
+                            setState(() {
+                              _userAnswers[exercise.id] = option;
+                            });
+                            _checkAnswer(exercise, option);
+                          },
+                          borderRadius: BorderRadius.circular(10),
+                          child: Container(
+                            padding: const EdgeInsets.all(14),
+                            decoration: BoxDecoration(
+                              color: bgColor,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(color: borderColor, width: borderColor == Colors.transparent ? 0 : 2),
+                            ),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    option,
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      color: OpenAITheme.textPrimary,
+                                    ),
                                   ),
                                 ),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: Text(
-                                        option,
-                                        style: theme.textTheme.bodyLarge,
-                                      ),
-                                    ),
-                                    if (showResult && isCorrectOption)
-                                      const Icon(Icons.check_circle, color: Colors.green),
-                                    if (showResult && isSelected && !isCorrect)
-                                      const Icon(Icons.cancel, color: Colors.red),
-                                  ],
-                                ),
-                              ),
+                                if (hasAnswered && isCorrectOption)
+                                  const Icon(Icons.check_circle, color: OpenAITheme.openaiGreen, size: 20),
+                                if (hasAnswered && isSelected && !isCorrect)
+                                  const Icon(Icons.cancel, color: Color(0xFFEF4444), size: 20),
+                              ],
                             ),
-                          );
-                        })
-                      else
-                        TextField(
-                          decoration: InputDecoration(
-                            hintText: '请输入答案',
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            suffixIcon: hasAnswered
-                                ? Icon(
-                                    isCorrect ? Icons.check_circle : Icons.cancel,
-                                    color: isCorrect ? Colors.green : Colors.red,
-                                  )
-                                : null,
                           ),
-                          enabled: !hasAnswered,
-                          onSubmitted: (value) {
-                            setState(() {
-                              _userAnswers[exercise.id] = value;
-                            });
-                            _checkAnswer(exercise, value);
-                          },
                         ),
+                      ),
+                    );
+                  })
+                else
+                  // 填空题输入框
+                  TextField(
+                    decoration: InputDecoration(
+                      hintText: '请输入答案',
+                      hintStyle: const TextStyle(color: OpenAITheme.textTertiary),
+                      filled: true,
+                      fillColor: OpenAITheme.bgSecondary,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(color: OpenAITheme.borderLight),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(color: OpenAITheme.borderLight),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(color: OpenAITheme.openaiGreen),
+                      ),
+                      suffixIcon: hasAnswered
+                          ? Icon(
+                              isCorrect ? Icons.check_circle : Icons.cancel,
+                              color: isCorrect ? OpenAITheme.openaiGreen : const Color(0xFFEF4444),
+                            )
+                          : null,
+                    ),
+                    enabled: !hasAnswered,
+                    onSubmitted: (value) {
+                      setState(() {
+                        _userAnswers[exercise.id] = value;
+                      });
+                      _checkAnswer(exercise, value);
+                    },
+                  ),
 
-                      // 解析
-                      if (hasAnswered && exercise.explanation != null) ...[
-                        const SizedBox(height: 16),
-                        Container(
-                          padding: const EdgeInsets.all(12),
-                          decoration: BoxDecoration(
-                            color: colorScheme.tertiaryContainer,
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Row(
+                // 解析
+                if (hasAnswered && exercise.explanation != null) ...[
+                  const SizedBox(height: 16),
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFF59E0B).withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Icon(Icons.lightbulb_outline, color: Color(0xFFF59E0B), size: 18),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Icon(Icons.lightbulb, color: colorScheme.tertiary),
-                              const SizedBox(width: 8),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      '解析',
-                                      style: TextStyle(
-                                        color: colorScheme.onTertiaryContainer,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    const SizedBox(height: 4),
-                                    Text(
-                                      exercise.explanation!,
-                                      style: TextStyle(
-                                        color: colorScheme.onTertiaryContainer,
-                                      ),
-                                    ),
-                                  ],
+                              const Text(
+                                '解析',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xFFF59E0B),
+                                  fontSize: 13,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                exercise.explanation!,
+                                style: const TextStyle(
+                                  color: OpenAITheme.textPrimary,
+                                  fontSize: 13,
+                                  height: 1.4,
                                 ),
                               ),
                             ],
                           ),
                         ),
                       ],
-                    ],
+                    ),
                   ),
-                ),
-              ),
+                ],
+              ],
             ),
-
-          // 导航按钮
+          ),
           const SizedBox(height: 16),
+
+          // 题目导航按钮
           Row(
             children: [
               if (_currentExerciseIndex > 0)
                 Expanded(
-                  child: OutlinedButton.icon(
-                    onPressed: () {
-                      setState(() {
-                        _currentExerciseIndex--;
-                      });
-                    },
-                    icon: const Icon(Icons.arrow_back),
-                    label: const Text('上一题'),
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: () => setState(() => _currentExerciseIndex--),
+                      borderRadius: BorderRadius.circular(10),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(color: OpenAITheme.borderLight),
+                        ),
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.arrow_back, color: OpenAITheme.textSecondary, size: 18),
+                            SizedBox(width: 6),
+                            Text(
+                              '上一题',
+                              style: TextStyle(
+                                color: OpenAITheme.textSecondary,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               if (_currentExerciseIndex > 0 && _currentExerciseIndex < widget.grammarPoint.exercises.length - 1)
-                const SizedBox(width: 16),
+                const SizedBox(width: 12),
               if (_currentExerciseIndex < widget.grammarPoint.exercises.length - 1)
                 Expanded(
-                  child: ElevatedButton.icon(
-                    onPressed: hasAnswered
-                        ? () {
-                            setState(() {
-                              _currentExerciseIndex++;
-                            });
-                          }
-                        : null,
-                    icon: const Icon(Icons.arrow_forward),
-                    label: const Text('下一题'),
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: hasAnswered ? () => setState(() => _currentExerciseIndex++) : null,
+                      borderRadius: BorderRadius.circular(10),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        decoration: BoxDecoration(
+                          color: hasAnswered ? OpenAITheme.openaiGreen : OpenAITheme.gray100,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              '下一题',
+                              style: TextStyle(
+                                color: hasAnswered ? Colors.white : OpenAITheme.textTertiary,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const SizedBox(width: 6),
+                            Icon(
+                              Icons.arrow_forward,
+                              color: hasAnswered ? Colors.white : OpenAITheme.textTertiary,
+                              size: 18,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
                 ),
             ],
           ),
+        ],
+      ),
+    );
+  }
+
+  // ========== 底部导航 ==========
+  Widget _buildBottomNavigation() {
+    final maxStep = widget.grammarPoint.exercises.isEmpty ? 1 : 2;
+
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: const BoxDecoration(
+        color: OpenAITheme.white,
+        border: Border(top: BorderSide(color: OpenAITheme.borderLight)),
+      ),
+      child: Row(
+        children: [
+          if (_currentStep > 0)
+            Expanded(
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: () => setState(() => _currentStep--),
+                  borderRadius: BorderRadius.circular(10),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: OpenAITheme.borderLight),
+                    ),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.arrow_back, color: OpenAITheme.textSecondary, size: 18),
+                        SizedBox(width: 6),
+                        Text(
+                          '上一步',
+                          style: TextStyle(
+                            color: OpenAITheme.textSecondary,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          if (_currentStep > 0 && _currentStep < maxStep)
+            const SizedBox(width: 12),
+          if (_currentStep < maxStep)
+            Expanded(
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: () => setState(() => _currentStep++),
+                  borderRadius: BorderRadius.circular(10),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    decoration: BoxDecoration(
+                      color: OpenAITheme.openaiGreen,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          _currentStep == 0 ? '看例句' : '做练习',
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        const SizedBox(width: 6),
+                        const Icon(Icons.arrow_forward, color: Colors.white, size: 18),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          if (_currentStep == maxStep)
+            Expanded(
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: () => Navigator.pop(context),
+                  borderRadius: BorderRadius.circular(10),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    decoration: BoxDecoration(
+                      color: OpenAITheme.openaiGreen,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.check, color: Colors.white, size: 18),
+                        SizedBox(width: 6),
+                        Text(
+                          '完成学习',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
         ],
       ),
     );
@@ -607,8 +901,8 @@ class _GrammarDetailScreenState extends ConsumerState<GrammarDetailScreen> with 
     // 显示反馈
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text(isCorrect ? '✓ 回答正确！' : '✗ 回答错误，正确答案是: ${exercise.answer}'),
-        backgroundColor: isCorrect ? Colors.green : Colors.orange,
+        content: Text(isCorrect ? '回答正确！' : '回答错误，正确答案是: ${exercise.answer}'),
+        backgroundColor: isCorrect ? OpenAITheme.openaiGreen : const Color(0xFFF59E0B),
         duration: const Duration(seconds: 2),
       ),
     );

@@ -1,9 +1,11 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/word.dart';
 import '../../core/database/learning_record_repository.dart';
 import '../../core/database/learning_statistics_repository.dart';
+import 'statistics_provider.dart';
 
 // 词汇服务
 class VocabularyService {
@@ -13,7 +15,7 @@ class VocabularyService {
       final List<dynamic> jsonData = json.decode(jsonString);
       return jsonData.map((json) => Word.fromJson(json)).toList();
     } catch (e) {
-      print('Error loading words: $e');
+      debugPrint('Error loading words: $e');
       return [];
     }
   }
@@ -61,8 +63,9 @@ final learningRecordRepositoryProvider = Provider<LearningRecordRepository>((ref
 class LearningProgressNotifier extends StateNotifier<Map<String, LearningRecord>> {
   final LearningRecordRepository _repository;
   final LearningStatisticsRepository _statsRepo = LearningStatisticsRepository();
+  final void Function() _onStatsUpdated;
 
-  LearningProgressNotifier(this._repository) : super({}) {
+  LearningProgressNotifier(this._repository, this._onStatsUpdated) : super({}) {
     _loadFromDatabase();
   }
 
@@ -110,6 +113,9 @@ class LearningProgressNotifier extends StateNotifier<Map<String, LearningRecord>
     } else {
       await _statsRepo.incrementWordsReviewed(DateTime.now(), 1);
     }
+
+    // 刷新统计 providers，让首页能看到最新数据
+    _onStatsUpdated();
   }
 
   // 切换收藏状态
@@ -120,6 +126,7 @@ class LearningProgressNotifier extends StateNotifier<Map<String, LearningRecord>
         wordId: wordId,
         lastReviewed: DateTime.now(),
         isFavorite: true,
+        nextReviewDate: DateTime.now(), // 设置默认复习时间，允许立即复习
       );
 
     // 更新状态
@@ -191,7 +198,11 @@ class LearningProgressNotifier extends StateNotifier<Map<String, LearningRecord>
 
 final learningProgressProvider = StateNotifierProvider<LearningProgressNotifier, Map<String, LearningRecord>>((ref) {
   final repository = ref.watch(learningRecordRepositoryProvider);
-  return LearningProgressNotifier(repository);
+  return LearningProgressNotifier(repository, () {
+    // 刷新统计 providers
+    ref.invalidate(statisticsProvider);
+    ref.invalidate(todayStatisticsProvider);
+  });
 });
 
 // Provider for words that need review

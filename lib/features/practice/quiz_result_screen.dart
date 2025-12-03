@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/quiz.dart';
+import '../../core/theme/openai_theme.dart';
 import 'package:confetti/confetti.dart';
 
 class QuizResultScreen extends ConsumerStatefulWidget {
@@ -23,7 +24,6 @@ class _QuizResultScreenState extends ConsumerState<QuizResultScreen> {
     super.initState();
     _confettiController = ConfettiController(duration: const Duration(seconds: 3));
 
-    // 如果得分>=80,播放庆祝动画
     if (widget.session.score >= 80) {
       Future.delayed(const Duration(milliseconds: 500), () {
         _confettiController.play();
@@ -39,15 +39,14 @@ class _QuizResultScreenState extends ConsumerState<QuizResultScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
     final session = widget.session;
-
     final scoreColor = _getScoreColor(session.score);
     final feedback = _getScoreFeedback(session.score);
 
     return Scaffold(
+      backgroundColor: OpenAITheme.bgPrimary,
       appBar: AppBar(
+        backgroundColor: OpenAITheme.bgPrimary,
         title: const Text('测验结果'),
         leading: IconButton(
           icon: const Icon(Icons.close),
@@ -62,65 +61,93 @@ class _QuizResultScreenState extends ConsumerState<QuizResultScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 // 分数卡片
-                Card(
-                  color: scoreColor.withValues(alpha: 0.1),
-                  child: Padding(
-                    padding: const EdgeInsets.all(32),
-                    child: Column(
-                      children: [
-                        Icon(
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 24),
+                  decoration: BoxDecoration(
+                    color: OpenAITheme.white,
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(color: OpenAITheme.borderLight),
+                  ),
+                  child: Column(
+                    children: [
+                      // 图标
+                      Container(
+                        width: 72,
+                        height: 72,
+                        decoration: BoxDecoration(
+                          color: scoreColor.withValues(alpha: 0.1),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
                           _getScoreIcon(session.score),
-                          size: 80,
+                          size: 40,
                           color: scoreColor,
                         ),
-                        const SizedBox(height: 16),
-                        Text(
-                          '${session.score}',
-                          style: theme.textTheme.displayLarge?.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: scoreColor,
-                            fontSize: 72,
+                      ),
+                      const SizedBox(height: 20),
+
+                      // 分数
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            '${session.score}',
+                            style: TextStyle(
+                              fontSize: 56,
+                              fontWeight: FontWeight.w700,
+                              color: scoreColor,
+                              height: 1,
+                            ),
                           ),
-                        ),
-                        Text(
-                          '分',
-                          style: theme.textTheme.titleLarge?.copyWith(
-                            color: scoreColor,
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 8),
+                            child: Text(
+                              '分',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500,
+                                color: scoreColor,
+                              ),
+                            ),
                           ),
+                        ],
+                      ),
+                      const SizedBox(height: 12),
+
+                      // 评价
+                      Text(
+                        feedback,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          color: OpenAITheme.textSecondary,
                         ),
-                        const SizedBox(height: 16),
-                        Text(
-                          feedback,
-                          style: theme.textTheme.titleMedium?.copyWith(
-                            color: colorScheme.onSurfaceVariant,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
                 ),
 
-                const SizedBox(height: 24),
+                const SizedBox(height: 20),
 
                 // 统计信息
                 Row(
                   children: [
                     Expanded(
                       child: _StatCard(
-                        icon: Icons.check_circle,
+                        icon: Icons.check_circle_outline,
                         label: '正确',
                         value: '${session.correctCount}',
-                        color: Colors.green,
+                        color: OpenAITheme.openaiGreen,
                       ),
                     ),
                     const SizedBox(width: 12),
                     Expanded(
                       child: _StatCard(
-                        icon: Icons.cancel,
+                        icon: Icons.cancel_outlined,
                         label: '错误',
                         value: '${session.totalQuestions - session.correctCount}',
-                        color: Colors.red,
+                        color: OpenAITheme.error,
                       ),
                     ),
                   ],
@@ -134,51 +161,59 @@ class _QuizResultScreenState extends ConsumerState<QuizResultScreen> {
                       child: _StatCard(
                         icon: Icons.percent,
                         label: '正确率',
-                        value: '${(session.accuracy * 100).toStringAsFixed(1)}%',
-                        color: colorScheme.primary,
+                        value: '${(session.accuracy * 100).toStringAsFixed(0)}%',
+                        color: OpenAITheme.info,
                       ),
                     ),
                     const SizedBox(width: 12),
                     Expanded(
                       child: _StatCard(
-                        icon: Icons.timer,
+                        icon: Icons.timer_outlined,
                         label: '用时',
                         value: _formatDuration(
                           session.completedAt!.difference(session.startedAt),
                         ),
-                        color: colorScheme.secondary,
+                        color: OpenAITheme.gray500,
                       ),
                     ),
                   ],
                 ),
 
-                const SizedBox(height: 24),
+                const SizedBox(height: 28),
 
-                // 答题回顾
-                Text(
+                // 答题回顾标题
+                const Text(
                   '答题回顾',
-                  style: theme.textTheme.titleLarge?.copyWith(
-                    fontWeight: FontWeight.bold,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    color: OpenAITheme.textPrimary,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                const Text(
+                  '点击查看每道题的详细解析',
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: OpenAITheme.textTertiary,
                   ),
                 ),
                 const SizedBox(height: 16),
 
+                // 题目回顾列表
                 ...session.questions.asMap().entries.map((entry) {
                   final index = entry.key;
                   final question = entry.value;
                   final result = session.results[index];
 
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: 12),
-                    child: _QuestionReviewCard(
-                      questionNumber: index + 1,
-                      question: question,
-                      result: result,
-                    ),
+                  return _QuestionReviewCard(
+                    questionNumber: index + 1,
+                    question: question,
+                    result: result,
                   );
                 }),
 
-                const SizedBox(height: 80), // 底部留白
+                const SizedBox(height: 80),
               ],
             ),
           ),
@@ -195,11 +230,10 @@ class _QuizResultScreenState extends ConsumerState<QuizResultScreen> {
               gravity: 0.1,
               shouldLoop: false,
               colors: const [
-                Colors.green,
-                Colors.blue,
-                Colors.pink,
-                Colors.orange,
-                Colors.purple,
+                OpenAITheme.openaiGreen,
+                OpenAITheme.info,
+                OpenAITheme.warning,
+                Color(0xFF8B5CF6),
               ],
             ),
           ),
@@ -208,39 +242,55 @@ class _QuizResultScreenState extends ConsumerState<QuizResultScreen> {
       bottomNavigationBar: Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: colorScheme.surface,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.05),
-              blurRadius: 10,
-              offset: const Offset(0, -2),
-            ),
-          ],
+          color: OpenAITheme.white,
+          border: Border(
+            top: BorderSide(color: OpenAITheme.borderLight),
+          ),
         ),
         child: SafeArea(
           child: Row(
             children: [
               Expanded(
                 child: OutlinedButton(
-                  onPressed: () =>
-                      Navigator.of(context).popUntil((route) => route.isFirst),
+                  onPressed: () => Navigator.of(context).popUntil((route) => route.isFirst),
                   style: OutlinedButton.styleFrom(
                     minimumSize: const Size.fromHeight(50),
+                    side: const BorderSide(color: OpenAITheme.borderMedium),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
-                  child: const Text('返回首页'),
+                  child: const Text(
+                    '返回首页',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: OpenAITheme.textPrimary,
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(width: 12),
               Expanded(
-                child: FilledButton(
+                child: ElevatedButton(
                   onPressed: () {
-                    // TODO: 再来一次
                     Navigator.of(context).popUntil((route) => route.isFirst);
                   },
-                  style: FilledButton.styleFrom(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: OpenAITheme.openaiGreen,
+                    foregroundColor: OpenAITheme.white,
                     minimumSize: const Size.fromHeight(50),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                   ),
-                  child: const Text('再来一次'),
+                  child: const Text(
+                    '再来一次',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ),
               ),
             ],
@@ -251,36 +301,37 @@ class _QuizResultScreenState extends ConsumerState<QuizResultScreen> {
   }
 
   Color _getScoreColor(int score) {
-    if (score >= 90) return Colors.green;
-    if (score >= 80) return Colors.blue;
-    if (score >= 60) return Colors.orange;
-    return Colors.red;
+    if (score >= 90) return OpenAITheme.openaiGreen;
+    if (score >= 80) return OpenAITheme.info;
+    if (score >= 60) return OpenAITheme.warning;
+    return OpenAITheme.error;
   }
 
   IconData _getScoreIcon(int score) {
-    if (score >= 90) return Icons.emoji_events;
-    if (score >= 80) return Icons.sentiment_very_satisfied;
-    if (score >= 60) return Icons.sentiment_satisfied;
-    return Icons.sentiment_dissatisfied;
+    if (score >= 90) return Icons.emoji_events_outlined;
+    if (score >= 80) return Icons.sentiment_very_satisfied_outlined;
+    if (score >= 60) return Icons.sentiment_satisfied_outlined;
+    return Icons.sentiment_dissatisfied_outlined;
   }
 
   String _getScoreFeedback(int score) {
-    if (score >= 90) return '优秀!继续保持!';
-    if (score >= 80) return '很好!再接再厉!';
-    if (score >= 60) return '不错!还有提升空间!';
-    return '继续努力!多加练习!';
+    if (score >= 90) return '太棒了！你已经掌握得很好了';
+    if (score >= 80) return '做得不错！继续保持';
+    if (score >= 60) return '还不错，再努力一下';
+    return '继续加油，多练习会更好';
   }
 
   String _formatDuration(Duration duration) {
     final minutes = duration.inMinutes;
     final seconds = duration.inSeconds % 60;
     if (minutes > 0) {
-      return '$minutes分${seconds}秒';
+      return '$minutes分$seconds秒';
     }
     return '$seconds秒';
   }
 }
 
+// 统计卡片
 class _StatCard extends StatelessWidget {
   final IconData icon;
   final String label;
@@ -296,37 +347,41 @@ class _StatCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            Icon(icon, size: 32, color: color),
-            const SizedBox(height: 8),
-            Text(
-              value,
-              style: theme.textTheme.headlineSmall?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: color,
-              ),
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: OpenAITheme.white,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: OpenAITheme.borderLight),
+      ),
+      child: Column(
+        children: [
+          Icon(icon, size: 24, color: color),
+          const SizedBox(height: 8),
+          Text(
+            value,
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.w600,
+              color: color,
             ),
-            const SizedBox(height: 4),
-            Text(
-              label,
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
-              ),
+          ),
+          const SizedBox(height: 2),
+          Text(
+            label,
+            style: const TextStyle(
+              fontSize: 12,
+              color: OpenAITheme.textTertiary,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 }
 
-class _QuestionReviewCard extends StatelessWidget {
+// 题目回顾卡片
+class _QuestionReviewCard extends StatefulWidget {
   final int questionNumber;
   final QuizQuestion question;
   final QuizResult result;
@@ -338,192 +393,213 @@ class _QuestionReviewCard extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
-    final isCorrect = result.isCorrect;
+  State<_QuestionReviewCard> createState() => _QuestionReviewCardState();
+}
 
-    return Card(
-      color: isCorrect
-          ? Colors.green.withValues(alpha: 0.05)
-          : Colors.red.withValues(alpha: 0.05),
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Container(
-                  width: 32,
-                  height: 32,
-                  decoration: BoxDecoration(
-                    color: isCorrect ? Colors.green : Colors.red,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Center(
-                    child: Text(
-                      '$questionNumber',
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Icon(
-                  isCorrect ? Icons.check_circle : Icons.cancel,
-                  color: isCorrect ? Colors.green : Colors.red,
-                  size: 24,
-                ),
-                const Spacer(),
-                _TypeChip(
-                  label: _getTypeLabel(question.type),
-                  color: _getTypeColor(question.type),
-                ),
-              ],
-            ),
-            const SizedBox(height: 12),
-            Text(
-              question.question,
-              style: theme.textTheme.bodyLarge?.copyWith(
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            const SizedBox(height: 12),
-            if (!isCorrect) ...[
-              Row(
-                children: [
-                  Icon(Icons.close, size: 16, color: Colors.red),
-                  const SizedBox(width: 4),
-                  Text(
-                    '你的答案: ',
-                    style: theme.textTheme.bodyMedium?.copyWith(
-                      color: Colors.red,
-                    ),
-                  ),
-                  Expanded(
-                    child: Text(
-                      result.userAnswer,
-                      style: theme.textTheme.bodyMedium?.copyWith(
-                        color: Colors.red,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 4),
-            ],
-            Row(
-              children: [
-                Icon(Icons.check, size: 16, color: Colors.green),
-                const SizedBox(width: 4),
-                Text(
-                  '正确答案: ',
-                  style: theme.textTheme.bodyMedium?.copyWith(
-                    color: Colors.green,
-                  ),
-                ),
-                Expanded(
-                  child: Text(
-                    question.correctAnswer,
-                    style: theme.textTheme.bodyMedium?.copyWith(
-                      color: Colors.green,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            if (question.explanation != null) ...[
-              const SizedBox(height: 12),
-              Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: colorScheme.surfaceContainerHighest,
-                  borderRadius: BorderRadius.circular(8),
-                ),
+class _QuestionReviewCardState extends State<_QuestionReviewCard> {
+  bool _expanded = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final isCorrect = widget.result.isCorrect;
+
+    return Container(
+      margin: const EdgeInsets.only(bottom: 12),
+      decoration: BoxDecoration(
+        color: OpenAITheme.white,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: OpenAITheme.borderLight),
+      ),
+      child: Column(
+        children: [
+          // 头部 - 可点击展开
+          Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: () => setState(() => _expanded = !_expanded),
+              borderRadius: BorderRadius.circular(12),
+              child: Padding(
+                padding: const EdgeInsets.all(16),
                 child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Icon(
-                      Icons.lightbulb_outline,
-                      size: 16,
-                      color: colorScheme.onSurfaceVariant,
-                    ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        question.explanation!,
-                        style: theme.textTheme.bodySmall?.copyWith(
-                          color: colorScheme.onSurfaceVariant,
+                    // 题号
+                    Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                        color: isCorrect
+                            ? OpenAITheme.openaiGreen.withValues(alpha: 0.1)
+                            : OpenAITheme.error.withValues(alpha: 0.1),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Center(
+                        child: Text(
+                          '${widget.questionNumber}',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                            color: isCorrect ? OpenAITheme.openaiGreen : OpenAITheme.error,
+                          ),
                         ),
                       ),
+                    ),
+                    const SizedBox(width: 12),
+
+                    // 题目预览
+                    Expanded(
+                      child: Text(
+                        widget.question.question,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: OpenAITheme.textPrimary,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+
+                    // 对错图标
+                    Icon(
+                      isCorrect ? Icons.check_circle : Icons.cancel,
+                      size: 20,
+                      color: isCorrect ? OpenAITheme.openaiGreen : OpenAITheme.error,
+                    ),
+                    const SizedBox(width: 8),
+
+                    // 展开图标
+                    Icon(
+                      _expanded ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
+                      size: 20,
+                      color: OpenAITheme.textTertiary,
                     ),
                   ],
                 ),
               ),
-            ],
+            ),
+          ),
+
+          // 展开内容
+          if (_expanded) ...[
+            const Divider(height: 1, color: OpenAITheme.borderLight),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // 完整题目
+                  Text(
+                    widget.question.question,
+                    style: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                      color: OpenAITheme.textPrimary,
+                      height: 1.5,
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+
+                  // 你的答案（如果错了）
+                  if (!isCorrect) ...[
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Icon(
+                          Icons.close,
+                          size: 16,
+                          color: OpenAITheme.error,
+                        ),
+                        const SizedBox(width: 8),
+                        const Text(
+                          '你的答案: ',
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: OpenAITheme.error,
+                          ),
+                        ),
+                        Expanded(
+                          child: Text(
+                            widget.result.userAnswer,
+                            style: const TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600,
+                              color: OpenAITheme.error,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 8),
+                  ],
+
+                  // 正确答案
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Icon(
+                        Icons.check,
+                        size: 16,
+                        color: OpenAITheme.openaiGreen,
+                      ),
+                      const SizedBox(width: 8),
+                      const Text(
+                        '正确答案: ',
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: OpenAITheme.openaiGreen,
+                        ),
+                      ),
+                      Expanded(
+                        child: Text(
+                          widget.question.correctAnswer,
+                          style: const TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600,
+                            color: OpenAITheme.openaiGreen,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  // 解析
+                  if (widget.question.explanation != null) ...[
+                    const SizedBox(height: 16),
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: OpenAITheme.bgSecondary,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Icon(
+                            Icons.lightbulb_outline,
+                            size: 16,
+                            color: OpenAITheme.textTertiary,
+                          ),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              widget.question.explanation!,
+                              style: const TextStyle(
+                                fontSize: 13,
+                                color: OpenAITheme.textSecondary,
+                                height: 1.5,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
           ],
-        ),
-      ),
-    );
-  }
-
-  String _getTypeLabel(QuizType type) {
-    switch (type) {
-      case QuizType.vocabulary:
-        return '词汇';
-      case QuizType.grammar:
-        return '语法';
-      case QuizType.translation:
-        return '翻译';
-      case QuizType.listening:
-        return '听力';
-    }
-  }
-
-  Color _getTypeColor(QuizType type) {
-    switch (type) {
-      case QuizType.vocabulary:
-        return Colors.blue;
-      case QuizType.grammar:
-        return Colors.green;
-      case QuizType.translation:
-        return Colors.purple;
-      case QuizType.listening:
-        return Colors.orange;
-    }
-  }
-}
-
-class _TypeChip extends StatelessWidget {
-  final String label;
-  final Color color;
-
-  const _TypeChip({
-    required this.label,
-    required this.color,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
-      ),
-      child: Text(
-        label,
-        style: TextStyle(
-          color: color,
-          fontSize: 10,
-          fontWeight: FontWeight.bold,
-        ),
+        ],
       ),
     );
   }

@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/word.dart';
 import '../../shared/widgets/swipeable_word_card.dart';
+import '../../shared/widgets/achievement_unlock_dialog.dart';
 import '../../shared/providers/vocabulary_provider.dart';
 import '../../shared/providers/tts_provider.dart';
 import '../../shared/providers/voice_preference_provider.dart';
+import '../../shared/providers/achievement_provider.dart';
 import '../../core/theme/openai_theme.dart';
-import '../../shared/widgets/gradient_card.dart';
 
 class VocabularyLearningScreen extends ConsumerStatefulWidget {
   final String? level;
@@ -31,19 +32,16 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
-
     // 根据模式选择不同的Provider
     final wordsAsync = widget.newWordsOnly
         ? ref.watch(newWordsProvider)
         : ref.watch(allWordsProvider);
 
     return Scaffold(
-      backgroundColor: colorScheme.surfaceContainerHighest,
+      backgroundColor: OpenAITheme.bgPrimary,
       appBar: AppBar(
         title: Text(widget.newWordsOnly ? '学习新词' : '学习单词'),
-        backgroundColor: colorScheme.surfaceContainerHighest,
+        backgroundColor: OpenAITheme.bgPrimary,
         elevation: 0,
         actions: [
           IconButton(
@@ -60,22 +58,28 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
       ),
       body: wordsAsync.when(
         loading: () => const Center(
-          child: CircularProgressIndicator(),
+          child: CircularProgressIndicator(color: OpenAITheme.openaiGreen),
         ),
         error: (error, stack) => Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.error_outline, size: 64, color: colorScheme.error),
+              const Icon(Icons.error_outline, size: 64, color: OpenAITheme.textTertiary),
               const SizedBox(height: 16),
-              Text(
+              const Text(
                 '加载失败',
-                style: theme.textTheme.headlineMedium,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: OpenAITheme.textPrimary,
+                ),
               ),
               const SizedBox(height: 8),
               Text(
                 error.toString(),
-                style: theme.textTheme.bodyMedium,
+                style: const TextStyle(
+                  color: OpenAITheme.textSecondary,
+                ),
                 textAlign: TextAlign.center,
               ),
             ],
@@ -83,37 +87,7 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
         ),
         data: (words) {
           if (words.isEmpty) {
-            return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    widget.newWordsOnly ? Icons.check_circle_outline : Icons.library_books,
-                    size: 64,
-                    color: colorScheme.primary,
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    widget.newWordsOnly ? '🎉 太棒了！' : '暂无单词',
-                    style: theme.textTheme.headlineMedium,
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    widget.newWordsOnly
-                        ? '所有单词都已学习过了'
-                        : '请先添加一些单词数据',
-                  ),
-                  if (widget.newWordsOnly) ...[
-                    const SizedBox(height: 24),
-                    ElevatedButton.icon(
-                      onPressed: () => Navigator.pop(context),
-                      icon: const Icon(Icons.arrow_back),
-                      label: const Text('返回首页'),
-                    ),
-                  ],
-                ],
-              ),
-            );
+            return _buildEmptyScreen();
           }
 
           // 初始化剩余单词列表
@@ -134,10 +108,10 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
             child: Column(
               children: [
                 // 进度条
-                _buildProgressBar(theme, colorScheme, words.length, progress),
+                _buildProgressBar(words.length, progress),
 
                 // 统计信息
-                _buildStats(theme, colorScheme, words.length),
+                _buildStats(),
 
                 const SizedBox(height: 20),
 
@@ -151,8 +125,8 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
                   padding: const EdgeInsets.all(16),
                   child: Text(
                     '点击卡片翻转 | 左滑不认识 | 右滑认识',
-                    style: theme.textTheme.bodyMedium?.copyWith(
-                      color: colorScheme.onSurface.withValues(alpha: 0.6),
+                    style: const TextStyle(
+                      color: OpenAITheme.textTertiary,
                     ),
                   ),
                 ),
@@ -166,7 +140,82 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
     );
   }
 
-  Widget _buildProgressBar(ThemeData theme, ColorScheme colorScheme, int total, double progress) {
+  Widget _buildEmptyScreen() {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(32),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(24),
+              decoration: BoxDecoration(
+                color: OpenAITheme.openaiGreen.withValues(alpha: 0.1),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(
+                widget.newWordsOnly ? Icons.check_circle_outline : Icons.library_books,
+                size: 64,
+                color: OpenAITheme.openaiGreen,
+              ),
+            ),
+            const SizedBox(height: 24),
+            Text(
+              widget.newWordsOnly ? '太棒了！' : '暂无单词',
+              style: const TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: OpenAITheme.textPrimary,
+              ),
+            ),
+            const SizedBox(height: 12),
+            Text(
+              widget.newWordsOnly
+                  ? '所有单词都已学习过了'
+                  : '请先添加一些单词数据',
+              style: const TextStyle(
+                fontSize: 16,
+                color: OpenAITheme.textSecondary,
+              ),
+            ),
+            if (widget.newWordsOnly) ...[
+              const SizedBox(height: 32),
+              Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: () => Navigator.pop(context),
+                  borderRadius: BorderRadius.circular(10),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+                    decoration: BoxDecoration(
+                      color: OpenAITheme.charcoal,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.arrow_back, color: Colors.white, size: 18),
+                        SizedBox(width: 8),
+                        Text(
+                          '返回首页',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildProgressBar(int total, double progress) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       child: Column(
@@ -176,34 +225,49 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
               Expanded(
                 child: Text(
                   '已学习 $_currentIndex / $total',
-                  style: theme.textTheme.titleMedium?.copyWith(
-                    color: colorScheme.onSurface,
+                  style: const TextStyle(
+                    fontSize: 16,
                     fontWeight: FontWeight.w600,
+                    color: OpenAITheme.textPrimary,
                   ),
                 ),
               ),
               const SizedBox(width: 16),
               Text(
                 '剩余 ${_remainingWords.length}',
-                style: theme.textTheme.titleMedium?.copyWith(
-                  color: colorScheme.primary,
+                style: const TextStyle(
+                  fontSize: 16,
                   fontWeight: FontWeight.w600,
+                  color: OpenAITheme.openaiGreen,
                 ),
               ),
             ],
           ),
           const SizedBox(height: 12),
-          GradientProgressBar(
-            progress: progress,
-            height: 10,
-            gradient: LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]),
+          // OpenAI 风格进度条
+          Container(
+            height: 8,
+            decoration: BoxDecoration(
+              color: OpenAITheme.gray100,
+              borderRadius: BorderRadius.circular(4),
+            ),
+            child: FractionallySizedBox(
+              alignment: Alignment.centerLeft,
+              widthFactor: progress,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: OpenAITheme.openaiGreen,
+                  borderRadius: BorderRadius.circular(4),
+                ),
+              ),
+            ),
           ),
         ],
       ),
     );
   }
 
-  Widget _buildStats(ThemeData theme, ColorScheme colorScheme, int total) {
+  Widget _buildStats() {
     final progressNotifier = ref.watch(learningProgressProvider.notifier);
 
     return FutureBuilder<Map<String, dynamic>>(
@@ -220,21 +284,21 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
                 icon: Icons.star,
                 label: '掌握度',
                 value: '${(stats['averageMastery'] * 100).toStringAsFixed(0)}%',
-                color: colorScheme.tertiary,
+                color: OpenAITheme.openaiGreen,
               ),
               const SizedBox(width: 12),
               _buildStatCard(
                 icon: Icons.favorite,
                 label: '收藏',
                 value: '${stats['favoriteWords']}',
-                color: Colors.red,
+                color: const Color(0xFFEF4444),
               ),
               const SizedBox(width: 12),
               _buildStatCard(
                 icon: Icons.repeat,
                 label: '待复习',
                 value: '${stats['wordsToReview']}',
-                color: colorScheme.secondary,
+                color: OpenAITheme.charcoal,
               ),
             ],
           ),
@@ -253,9 +317,9 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
       child: Container(
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: color.withValues(alpha: 0.3)),
+          color: OpenAITheme.white,
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: OpenAITheme.borderLight),
         ),
         child: Column(
           children: [
@@ -271,8 +335,8 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
             ),
             Text(
               label,
-              style: TextStyle(
-                color: color.withValues(alpha: 0.8),
+              style: const TextStyle(
+                color: OpenAITheme.textTertiary,
                 fontSize: 10,
               ),
             ),
@@ -287,7 +351,7 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
 
     return Stack(
       children: [
-        // 下一张卡片的占位符（显示堆叠效果）
+        // 下一张卡片的占位符（显示堆叠效果）- OpenAI 风格
         if (_remainingWords.length > 1)
           Positioned.fill(
             child: Padding(
@@ -296,8 +360,9 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
                 scale: 0.95,
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.circular(24),
+                    color: OpenAITheme.bgSecondary,
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(color: OpenAITheme.borderLight),
                   ),
                 ),
               ),
@@ -350,15 +415,21 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
           content: Text(correct ? '✓ 认识！继续加油' : '✗ 不认识，稍后会再次复习'),
           duration: const Duration(milliseconds: 800),
           behavior: SnackBarBehavior.floating,
-          backgroundColor: correct ? Colors.green : Colors.orange,
+          backgroundColor: correct ? OpenAITheme.openaiGreen : const Color(0xFFF59E0B),
         ),
       );
+    }
+
+    // 检查成就解锁
+    if (mounted) {
+      final achievement = await checkAchievements(ref);
+      if (achievement != null && mounted) {
+        await AchievementUnlockDialog.show(context, achievement);
+      }
     }
   }
 
   Widget _buildCompletionScreen(int total) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
     final progressNotifier = ref.watch(learningProgressProvider.notifier);
 
     return Center(
@@ -367,64 +438,66 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // OpenAI 风格图标
             Container(
-              padding: const EdgeInsets.all(32),
+              padding: const EdgeInsets.all(24),
               decoration: BoxDecoration(
-                color: colorScheme.primaryContainer,
+                color: OpenAITheme.openaiGreen.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.celebration,
-                size: 80,
-                color: colorScheme.primary,
+                size: 64,
+                color: OpenAITheme.openaiGreen,
               ),
             ),
-            const SizedBox(height: 32),
-            Text(
-              '🎉 太棒了！',
-              style: theme.textTheme.displayMedium?.copyWith(
-                color: colorScheme.primary,
+            const SizedBox(height: 24),
+            const Text(
+              '太棒了！',
+              style: TextStyle(
+                fontSize: 28,
                 fontWeight: FontWeight.bold,
+                color: OpenAITheme.textPrimary,
               ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 12),
             Text(
               '你已经完成了 $total 个单词的学习',
-              style: theme.textTheme.titleLarge?.copyWith(
-                color: colorScheme.onSurface,
+              style: const TextStyle(
+                fontSize: 16,
+                color: OpenAITheme.textSecondary,
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 32),
 
-            // 统计摘要
+            // OpenAI 风格统计摘要
             FutureBuilder<Map<String, dynamic>>(
               future: progressNotifier.getStatistics(),
               builder: (context, snapshot) {
                 if (!snapshot.hasData) {
-                  return const CircularProgressIndicator();
+                  return const CircularProgressIndicator(color: OpenAITheme.openaiGreen);
                 }
 
                 final stats = snapshot.data!;
-                return FloatingCard(
-                  padding: const EdgeInsets.all(24),
+                return Container(
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: OpenAITheme.white,
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: OpenAITheme.borderLight),
+                  ),
                   child: Column(
                     children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Text(
-                          '学习统计',
-                          style: theme.textTheme.titleLarge?.copyWith(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
+                      const Text(
+                        '学习统计',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: OpenAITheme.textPrimary,
                         ),
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 16),
                       _buildStatRow('总学习单词', '${stats['totalWords']}'),
                       _buildStatRow('平均掌握度', '${(stats['averageMastery'] * 100).toStringAsFixed(1)}%'),
                       _buildStatRow('收藏单词', '${stats['favoriteWords']}'),
@@ -435,33 +508,74 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
               },
             ),
 
-            const SizedBox(height: 40),
+            const SizedBox(height: 32),
 
+            // OpenAI 风格按钮
             Row(
               children: [
                 Expanded(
-                  child: OutlinedButton.icon(
-                    onPressed: () => Navigator.pop(context),
-                    icon: const Icon(Icons.arrow_back),
-                    label: const Text('返回'),
-                    style: OutlinedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 16),
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: () => Navigator.pop(context),
+                      borderRadius: BorderRadius.circular(10),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(color: OpenAITheme.borderLight),
+                        ),
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.arrow_back, color: OpenAITheme.textSecondary, size: 18),
+                            SizedBox(width: 8),
+                            Text(
+                              '返回',
+                              style: TextStyle(
+                                color: OpenAITheme.textSecondary,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ),
-                const SizedBox(width: 16),
+                const SizedBox(width: 12),
                 Expanded(
-                  child: ElevatedButton.icon(
-                    onPressed: () {
-                      setState(() {
-                        _currentIndex = 0;
-                        _isInitialized = false;
-                      });
-                    },
-                    icon: const Icon(Icons.refresh),
-                    label: const Text('重新学习'),
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 16),
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          _currentIndex = 0;
+                          _isInitialized = false;
+                        });
+                      },
+                      borderRadius: BorderRadius.circular(10),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        decoration: BoxDecoration(
+                          color: OpenAITheme.openaiGreen,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.refresh, color: Colors.white, size: 18),
+                            SizedBox(width: 8),
+                            Text(
+                              '重新学习',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -475,14 +589,24 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
 
   Widget _buildStatRow(String label, String value) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.symmetric(vertical: 6),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(label),
+          Text(
+            label,
+            style: const TextStyle(
+              color: OpenAITheme.textSecondary,
+              fontSize: 14,
+            ),
+          ),
           Text(
             value,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(
+              fontWeight: FontWeight.w600,
+              color: OpenAITheme.textPrimary,
+              fontSize: 14,
+            ),
           ),
         ],
       ),

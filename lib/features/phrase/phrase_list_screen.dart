@@ -4,7 +4,6 @@ import '../../shared/models/phrase.dart';
 import '../../shared/providers/phrase_provider.dart';
 import '../../shared/providers/tts_provider.dart';
 import '../../core/theme/openai_theme.dart';
-import '../../shared/widgets/gradient_card.dart';
 
 class PhraseListScreen extends ConsumerStatefulWidget {
   const PhraseListScreen({super.key});
@@ -37,51 +36,37 @@ class _PhraseListScreenState extends ConsumerState<PhraseListScreen>
     final ttsService = ref.watch(ttsServiceProvider);
 
     return Scaffold(
+      backgroundColor: OpenAITheme.bgPrimary,
       appBar: AppBar(
-        title: Text(
-          '意大利语口语 🇮🇹',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: OpenAITheme.openaiGreen,
-          ),
-        ),
+        backgroundColor: OpenAITheme.bgPrimary,
+        title: const Text('意大利语口语'),
         bottom: TabBar(
           controller: _tabController,
           indicatorColor: OpenAITheme.openaiGreen,
+          indicatorWeight: 2,
           labelColor: OpenAITheme.openaiGreen,
-          unselectedLabelColor: Colors.grey,
+          unselectedLabelColor: OpenAITheme.textTertiary,
+          labelStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 13),
+          unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.w500, fontSize: 13),
           tabs: const [
-            Tab(
-              icon: Icon(Icons.star, color: Colors.orange),
-              text: '夸人',
-            ),
-            Tab(
-              icon: Icon(Icons.warning, color: Colors.red),
-              text: '骂人',
-            ),
-            Tab(
-              icon: Icon(Icons.chat, color: Colors.blue),
-              text: '日常',
-            ),
-            Tab(
-              icon: Icon(Icons.local_fire_department, color: Colors.purple),
-              text: '热门',
-            ),
+            Tab(text: '夸人'),
+            Tab(text: '骂人'),
+            Tab(text: '日常'),
+            Tab(text: '热门'),
           ],
         ),
       ),
       body: TabBarView(
         controller: _tabController,
         children: [
-          _buildPhraseList(complimentPhrases, '夸人用语', ttsService),
-          _buildPhraseList(insultPhrases, '骂人用语', ttsService),
-          _buildPhraseList(casualPhrases, '日常用语', ttsService),
+          _buildPhraseList(complimentPhrases, '夸人用语', ttsService, Icons.favorite_outline),
+          _buildPhraseList(insultPhrases, '骂人用语', ttsService, Icons.sentiment_dissatisfied_outlined),
+          _buildPhraseList(casualPhrases, '日常用语', ttsService, Icons.chat_bubble_outline),
           _buildPhraseList(
-            complimentPhrases +
-            insultPhrases +
-            casualPhrases,
+            complimentPhrases + insultPhrases + casualPhrases,
             '热门用语',
             ttsService,
+            Icons.local_fire_department_outlined,
             isPopular: true,
           ),
         ],
@@ -89,10 +74,16 @@ class _PhraseListScreenState extends ConsumerState<PhraseListScreen>
     );
   }
 
-  Widget _buildPhraseList(List<ItalianPhrase> phrases, String title, ttsService, {bool isPopular = false}) {
+  Widget _buildPhraseList(
+    List<ItalianPhrase> phrases,
+    String title,
+    dynamic ttsService,
+    IconData icon, {
+    bool isPopular = false,
+  }) {
     final displayPhrases = isPopular
-      ? phrases.where((p) => p.isPopular).toList()
-      : phrases;
+        ? phrases.where((p) => p.isPopular).toList()
+        : phrases;
 
     if (displayPhrases.isEmpty) {
       return Center(
@@ -101,16 +92,15 @@ class _PhraseListScreenState extends ConsumerState<PhraseListScreen>
           children: [
             Icon(
               Icons.hourglass_empty,
-              size: 64,
-              color: Colors.grey.shade400,
+              size: 48,
+              color: OpenAITheme.textTertiary,
             ),
-            const SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 12),
+            const Text(
               '正在加载...',
               style: TextStyle(
-                fontSize: 18,
-                color: Colors.grey.shade600,
-                fontWeight: FontWeight.w500,
+                fontSize: 16,
+                color: OpenAITheme.textSecondary,
               ),
             ),
           ],
@@ -120,58 +110,54 @@ class _PhraseListScreenState extends ConsumerState<PhraseListScreen>
 
     return Column(
       children: [
-        // 统计信息卡片
+        // OpenAI 风格统计信息卡片
         Container(
           margin: const EdgeInsets.all(16),
-          child: FloatingCard(
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Row(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      gradient: isPopular ? LinearGradient(colors: [OpenAITheme.openaiGreen, OpenAITheme.openaiGreenDark]) :
-                        title.contains('夸人') ? LinearGradient(colors: [OpenAITheme.warning, Color(0xFFD97706)]) :
-                        title.contains('骂人') ? LinearGradient(colors: [OpenAITheme.error, Color(0xFFDC2626)]) :
-                        LinearGradient(colors: [OpenAITheme.info, Color(0xFF2563EB)]),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Icon(
-                      title.contains('夸人') ? Icons.favorite :
-                      title.contains('骂人') ? Icons.warning :
-                      title.contains('日常') ? Icons.chat :
-                      Icons.local_fire_department,
-                      color: Colors.white,
-                      size: 24,
-                    ),
-                  ),
-                  const SizedBox(width: 16),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          title,
-                          style: const TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          '${displayPhrases.length} 条实用表达',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.grey.shade600,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: OpenAITheme.white,
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: OpenAITheme.borderLight),
+          ),
+          child: Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: OpenAITheme.openaiGreen.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Icon(
+                  icon,
+                  color: OpenAITheme.openaiGreen,
+                  size: 22,
+                ),
               ),
-            ),
+              const SizedBox(width: 14),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: OpenAITheme.textPrimary,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      '${displayPhrases.length} 条实用表达',
+                      style: const TextStyle(
+                        fontSize: 13,
+                        color: OpenAITheme.textTertiary,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
 
@@ -204,204 +190,165 @@ class _PhraseCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
-      child: FloatingCard(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: OpenAITheme.white,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: OpenAITheme.borderLight),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // 顶部标签栏 - OpenAI 风格
+          Row(
             children: [
-              // 顶部标签栏
-              Row(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: _getCategoryColor(phrase.category).withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(
-                        color: _getCategoryColor(phrase.category),
-                        width: 1,
-                      ),
-                    ),
-                    child: Text(
-                      _getCategoryName(phrase.category),
-                      style: TextStyle(
-                        color: _getCategoryColor(phrase.category),
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade200,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Text(
-                      phrase.level.toUpperCase(),
-                      style: TextStyle(
-                        color: Colors.grey.shade700,
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  if (phrase.isPopular) ...[
-                    const SizedBox(width: 8),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                      decoration: BoxDecoration(
-                        color: Colors.orange.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: Colors.orange, width: 1),
-                      ),
-                      child: const Text(
-                        '🔥 热门',
-                        style: TextStyle(
-                          color: Colors.orange,
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ],
-                  const Spacer(),
-                  // TTS播放按钮
-                  GestureDetector(
-                    onTap: () async {
-                      try {
-                        await ttsService.speak(phrase.italian);
-                      } catch (e) {
-                        print('TTS播放失败: $e');
-                      }
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: OpenAITheme.openaiGreen.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Icon(
-                        Icons.volume_up,
-                        color: OpenAITheme.openaiGreen,
-                        size: 20,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-
-              const SizedBox(height: 12),
-
-              // 意大利语和emoji
-              Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      phrase.italian,
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: OpenAITheme.textPrimary,
-                      ),
-                    ),
-                  ),
-                  if (phrase.emoji != null) ...[
-                    const SizedBox(width: 8),
-                    Text(
-                      phrase.emoji!,
-                      style: const TextStyle(fontSize: 24),
-                    ),
-                  ],
-                ],
-              ),
-
-              const SizedBox(height: 4),
-
-              // 音标标注
-              Text(
-                phrase.phonetic,
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.grey.shade600,
-                  fontStyle: FontStyle.italic,
-                ),
-              ),
-
-              const SizedBox(height: 8),
-
-              // 中文翻译
+              // 级别标签
               Container(
-                padding: const EdgeInsets.all(12),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                 decoration: BoxDecoration(
-                  color: Colors.grey.shade50,
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: Colors.grey.shade200),
+                  color: OpenAITheme.bgSecondary,
+                  borderRadius: BorderRadius.circular(6),
                 ),
                 child: Text(
-                  phrase.chinese,
+                  phrase.level.toUpperCase(),
                   style: const TextStyle(
-                    fontSize: 16,
-                    color: OpenAITheme.textPrimary,
-                    fontWeight: FontWeight.w500,
+                    color: OpenAITheme.textSecondary,
+                    fontSize: 11,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
-
-              const SizedBox(height: 12),
-
-              // 使用场景
-              Row(
-                children: [
-                  Icon(
-                    Icons.info_outline,
-                    size: 16,
-                    color: Colors.grey.shade600,
+              if (phrase.isPopular) ...[
+                const SizedBox(width: 8),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                  decoration: BoxDecoration(
+                    color: OpenAITheme.openaiGreen.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(6),
                   ),
-                  const SizedBox(width: 4),
-                  Expanded(
-                    child: Text(
-                      phrase.context,
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.grey.shade600,
-                      ),
+                  child: const Text(
+                    '热门',
+                    style: TextStyle(
+                      color: OpenAITheme.openaiGreen,
+                      fontSize: 11,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
-                ],
+                ),
+              ],
+              const Spacer(),
+              // TTS 播放按钮 - OpenAI 风格
+              Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: () async {
+                    try {
+                      await ttsService.speak(phrase.italian);
+                    } catch (e) {
+                      debugPrint('TTS播放失败: $e');
+                    }
+                  },
+                  borderRadius: BorderRadius.circular(8),
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: OpenAITheme.borderLight),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: const Icon(
+                      Icons.volume_up,
+                      color: OpenAITheme.textSecondary,
+                      size: 18,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
-        ),
+
+          const SizedBox(height: 14),
+
+          // 意大利语和 emoji
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Text(
+                  phrase.italian,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    color: OpenAITheme.textPrimary,
+                  ),
+                ),
+              ),
+              if (phrase.emoji != null) ...[
+                const SizedBox(width: 8),
+                Text(
+                  phrase.emoji!,
+                  style: const TextStyle(fontSize: 22),
+                ),
+              ],
+            ],
+          ),
+
+          const SizedBox(height: 4),
+
+          // 音标标注
+          Text(
+            phrase.phonetic,
+            style: const TextStyle(
+              fontSize: 13,
+              color: OpenAITheme.textTertiary,
+              fontStyle: FontStyle.italic,
+            ),
+          ),
+
+          const SizedBox(height: 12),
+
+          // 中文翻译 - OpenAI 风格
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: OpenAITheme.bgSecondary,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Text(
+              phrase.chinese,
+              style: const TextStyle(
+                fontSize: 15,
+                color: OpenAITheme.textPrimary,
+              ),
+            ),
+          ),
+
+          const SizedBox(height: 12),
+
+          // 使用场景
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Icon(
+                Icons.lightbulb_outline,
+                size: 16,
+                color: OpenAITheme.textTertiary,
+              ),
+              const SizedBox(width: 6),
+              Expanded(
+                child: Text(
+                  phrase.context,
+                  style: const TextStyle(
+                    fontSize: 13,
+                    color: OpenAITheme.textSecondary,
+                    height: 1.4,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
-  }
-
-  Color _getCategoryColor(String category) {
-    switch (category) {
-      case 'compliment':
-        return Colors.orange;
-      case 'insult':
-        return Colors.red;
-      case 'casual':
-        return Colors.blue;
-      default:
-        return Colors.grey;
-    }
-  }
-
-  String _getCategoryName(String category) {
-    switch (category) {
-      case 'compliment':
-        return '夸人';
-      case 'insult':
-        return '骂人';
-      case 'casual':
-        return '日常';
-      default:
-        return '其他';
-    }
   }
 }

@@ -4,7 +4,6 @@ import '../../shared/models/daily_conversation.dart';
 import '../../shared/providers/daily_conversation_provider.dart';
 import '../../shared/providers/tts_provider.dart';
 import '../../core/theme/openai_theme.dart';
-import '../../shared/widgets/gradient_card.dart';
 import 'daily_conversation_detail_screen.dart';
 
 class DailyConversationListScreen extends ConsumerStatefulWidget {
@@ -35,44 +34,27 @@ class _DailyConversationListScreenState extends ConsumerState<DailyConversationL
 
   @override
   Widget build(BuildContext context) {
-    final conversationsAsync = ref.watch(dailyConversationProvider);
     final ttsService = ref.watch(ttsServiceProvider);
 
     return Scaffold(
+      backgroundColor: OpenAITheme.bgPrimary,
       appBar: AppBar(
-        title: Text(
-          '日常对话 🗣️',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: OpenAITheme.openaiGreen,
-          ),
-        ),
+        backgroundColor: OpenAITheme.bgPrimary,
+        title: const Text('日常对话'),
         bottom: TabBar(
           controller: _tabController,
           indicatorColor: OpenAITheme.openaiGreen,
+          indicatorWeight: 2,
           labelColor: OpenAITheme.openaiGreen,
-          unselectedLabelColor: Colors.grey,
+          unselectedLabelColor: OpenAITheme.textTertiary,
+          labelStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 13),
+          unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.w500, fontSize: 13),
           tabs: const [
-            Tab(
-              icon: Icon(Icons.star, color: Colors.orange),
-              text: '热门',
-            ),
-            Tab(
-              icon: Icon(Icons.restaurant, color: Colors.red),
-              text: '餐厅',
-            ),
-            Tab(
-              icon: Icon(Icons.shopping_bag, color: Colors.blue),
-              text: '购物',
-            ),
-            Tab(
-              icon: Icon(Icons.family_restroom, color: Colors.green),
-              text: '家庭',
-            ),
-            Tab(
-              icon: Icon(Icons.article, color: Colors.orange),
-              text: '阅读',
-            ),
+            Tab(text: '热门'),
+            Tab(text: '餐厅'),
+            Tab(text: '购物'),
+            Tab(text: '家庭'),
+            Tab(text: '阅读'),
           ],
         ),
       ),
@@ -89,12 +71,12 @@ class _DailyConversationListScreenState extends ConsumerState<DailyConversationL
     );
   }
 
-  Widget _buildConversationList(ttsService, {bool? isPopular, String? category}) {
+  Widget _buildConversationList(dynamic ttsService, {bool? isPopular, String? category}) {
     final conversationsAsync = ref.watch(dailyConversationProvider);
 
     if (conversationsAsync is AsyncLoading) {
       return const Center(
-        child: CircularProgressIndicator(),
+        child: CircularProgressIndicator(color: OpenAITheme.openaiGreen),
       );
     }
 
@@ -103,44 +85,43 @@ class _DailyConversationListScreenState extends ConsumerState<DailyConversationL
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
+            const Icon(
               Icons.error_outline,
-              size: 64,
-              color: Colors.red.shade400,
+              size: 48,
+              color: OpenAITheme.textTertiary,
             ),
-            const SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 12),
+            const Text(
               '加载对话失败',
               style: TextStyle(
-                fontSize: 18,
-                color: Colors.red.shade600,
+                fontSize: 16,
+                color: OpenAITheme.textSecondary,
                 fontWeight: FontWeight.w500,
               ),
             ),
-            const SizedBox(height: 8),
-            Container(
-              padding: const EdgeInsets.all(12),
-              margin: const EdgeInsets.symmetric(horizontal: 32),
-              decoration: BoxDecoration(
-                color: Colors.red.shade50,
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: Colors.red.shade200),
-              ),
-              child: Text(
-                conversationsAsync.error.toString(),
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.red.shade700,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
             const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {
-                ref.read(dailyConversationProvider.notifier).reloadConversations();
-              },
-              child: const Text('重试'),
+            Material(
+              color: Colors.transparent,
+              child: InkWell(
+                onTap: () {
+                  ref.read(dailyConversationProvider.notifier).reloadConversations();
+                },
+                borderRadius: BorderRadius.circular(8),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: OpenAITheme.borderLight),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: const Text(
+                    '重试',
+                    style: TextStyle(
+                      color: OpenAITheme.textSecondary,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ),
             ),
           ],
         ),
@@ -169,19 +150,18 @@ class _DailyConversationListScreenState extends ConsumerState<DailyConversationL
       return Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: const [
             Icon(
               Icons.chat_bubble_outline,
-              size: 64,
-              color: Colors.grey.shade400,
+              size: 48,
+              color: OpenAITheme.textTertiary,
             ),
-            const SizedBox(height: 16),
+            SizedBox(height: 12),
             Text(
               '暂无对话',
               style: TextStyle(
-                fontSize: 18,
-                color: Colors.grey.shade600,
-                fontWeight: FontWeight.w500,
+                fontSize: 16,
+                color: OpenAITheme.textSecondary,
               ),
             ),
           ],
@@ -191,20 +171,30 @@ class _DailyConversationListScreenState extends ConsumerState<DailyConversationL
 
     return Column(
       children: [
-        // 搜索栏
+        // OpenAI 风格搜索栏
         Container(
           margin: const EdgeInsets.all(16),
           child: TextField(
             controller: _searchController,
             decoration: InputDecoration(
               hintText: '搜索对话...',
-              prefixIcon: const Icon(Icons.search),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide.none,
-              ),
+              hintStyle: const TextStyle(color: OpenAITheme.textTertiary),
+              prefixIcon: const Icon(Icons.search, color: OpenAITheme.textTertiary),
               filled: true,
-              fillColor: Colors.grey.shade100,
+              fillColor: OpenAITheme.bgSecondary,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: const BorderSide(color: OpenAITheme.borderLight),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: const BorderSide(color: OpenAITheme.borderLight),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: const BorderSide(color: OpenAITheme.openaiGreen),
+              ),
+              contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             ),
             onChanged: (value) {
               setState(() {
@@ -258,68 +248,54 @@ class _ConversationCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
-      child: FloatingCard(
+      child: Material(
+        color: Colors.transparent,
         child: InkWell(
           onTap: onTap,
-          borderRadius: BorderRadius.circular(16),
-          child: Padding(
+          borderRadius: BorderRadius.circular(12),
+          child: Container(
             padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: OpenAITheme.white,
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: OpenAITheme.borderLight),
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // 顶部标签栏
+                // 顶部标签栏 - OpenAI 风格
                 Row(
                   children: [
+                    // 级别标签
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                       decoration: BoxDecoration(
-                        color: _getCategoryColor(conversation.category).withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(
-                          color: _getCategoryColor(conversation.category),
-                          width: 1,
-                        ),
-                      ),
-                      child: Text(
-                        _getCategoryName(conversation.category),
-                        style: TextStyle(
-                          color: _getCategoryColor(conversation.category),
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                      decoration: BoxDecoration(
-                        color: Colors.grey.shade200,
-                        borderRadius: BorderRadius.circular(12),
+                        color: OpenAITheme.bgSecondary,
+                        borderRadius: BorderRadius.circular(6),
                       ),
                       child: Text(
                         conversation.level.toUpperCase(),
-                        style: TextStyle(
-                          color: Colors.grey.shade700,
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
+                        style: const TextStyle(
+                          color: OpenAITheme.textSecondary,
+                          fontSize: 11,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                     ),
                     if (conversation.isPopular) ...[
                       const SizedBox(width: 8),
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                         decoration: BoxDecoration(
-                          color: Colors.orange.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: Colors.orange, width: 1),
+                          color: OpenAITheme.openaiGreen.withValues(alpha: 0.1),
+                          borderRadius: BorderRadius.circular(6),
                         ),
                         child: const Text(
-                          '🔥 热门',
+                          '热门',
                           style: TextStyle(
-                            color: Colors.orange,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
+                            color: OpenAITheme.openaiGreen,
+                            fontSize: 11,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                       ),
@@ -327,66 +303,56 @@ class _ConversationCard extends StatelessWidget {
                     const Spacer(),
                     Text(
                       conversation.emoji,
-                      style: const TextStyle(fontSize: 24),
+                      style: const TextStyle(fontSize: 22),
                     ),
                   ],
+                ),
+
+                const SizedBox(height: 14),
+
+                // 标题
+                Text(
+                  conversation.title,
+                  style: const TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w600,
+                    color: OpenAITheme.textPrimary,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                // 描述
+                Text(
+                  conversation.description,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    color: OpenAITheme.textSecondary,
+                  ),
                 ),
 
                 const SizedBox(height: 12),
 
-                // 标题和描述
-                Row(
-                  children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            conversation.title,
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: OpenAITheme.textPrimary,
-                            ),
-                          ),
-                          const SizedBox(height: 4),
-                          Text(
-                            conversation.description,
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.grey.shade600,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-
-                const SizedBox(height: 8),
-
-                // 场景描述
+                // 场景描述 - OpenAI 风格
                 Container(
+                  width: double.infinity,
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: Colors.grey.shade50,
+                    color: OpenAITheme.bgSecondary,
                     borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.grey.shade200),
                   ),
                   child: Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.location_on_outlined,
                         size: 16,
-                        color: Colors.grey.shade600,
+                        color: OpenAITheme.textTertiary,
                       ),
-                      const SizedBox(width: 4),
+                      const SizedBox(width: 6),
                       Expanded(
                         child: Text(
                           conversation.scenario,
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.grey.shade600,
+                          style: const TextStyle(
+                            fontSize: 13,
+                            color: OpenAITheme.textSecondary,
                           ),
                         ),
                       ),
@@ -399,38 +365,38 @@ class _ConversationCard extends StatelessWidget {
                 // 底部信息
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.chat_outlined,
-                      size: 16,
-                      color: Colors.grey.shade600,
+                      size: 15,
+                      color: OpenAITheme.textTertiary,
                     ),
                     const SizedBox(width: 4),
                     Text(
                       '${conversation.messages.length} 句对话',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.grey.shade600,
+                      style: const TextStyle(
+                        fontSize: 13,
+                        color: OpenAITheme.textTertiary,
                       ),
                     ),
-                    const SizedBox(width: 16),
-                    Icon(
+                    const SizedBox(width: 14),
+                    const Icon(
                       Icons.bookmark_outline,
-                      size: 16,
-                      color: Colors.grey.shade600,
+                      size: 15,
+                      color: OpenAITheme.textTertiary,
                     ),
                     const SizedBox(width: 4),
                     Text(
                       '${conversation.vocabulary.length} 个词汇',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.grey.shade600,
+                      style: const TextStyle(
+                        fontSize: 13,
+                        color: OpenAITheme.textTertiary,
                       ),
                     ),
                     const Spacer(),
-                    Icon(
+                    const Icon(
                       Icons.arrow_forward_ios,
-                      size: 16,
-                      color: Colors.grey.shade400,
+                      size: 14,
+                      color: OpenAITheme.textTertiary,
                     ),
                   ],
                 ),
@@ -440,39 +406,5 @@ class _ConversationCard extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  Color _getCategoryColor(String category) {
-    switch (category) {
-      case 'restaurant':
-        return Colors.red;
-      case 'shopping':
-        return Colors.blue;
-      case 'family':
-        return Colors.green;
-      case 'travel':
-        return Colors.purple;
-      case 'reading':
-        return Colors.orange;
-      default:
-        return Colors.grey;
-    }
-  }
-
-  String _getCategoryName(String category) {
-    switch (category) {
-      case 'restaurant':
-        return '餐厅';
-      case 'shopping':
-        return '购物';
-      case 'family':
-        return '家庭';
-      case 'travel':
-        return '旅行';
-      case 'reading':
-        return '阅读';
-      default:
-        return '其他';
-    }
   }
 }
