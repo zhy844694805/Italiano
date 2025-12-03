@@ -1,7 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/foundation.dart';
 import 'dart:io';
+import 'dart:async';
 import 'package:path_provider/path_provider.dart';
+import '../config/api_config.dart';
 
 /// KOKORO TTS 服务
 /// API兼容OpenAI格式，使用意大利语语音
@@ -9,18 +12,42 @@ class TTSService {
   static final TTSService instance = TTSService._init();
   TTSService._init();
 
-  final Dio _dio = Dio(BaseOptions(
-    baseUrl: 'https://newapi.maiduoduo.it/v1',
-    connectTimeout: const Duration(seconds: 30),
-    receiveTimeout: const Duration(seconds: 60),
-    headers: {
-      'Authorization': 'Bearer REDACTED_TTS_API_KEY',
-      'Content-Type': 'application/json',
-    },
-  ));
+  Dio? _dio;
+  bool _initialized = false;
+
+  /// 初始化 Dio 客户端（延迟加载 API 密钥）
+  Future<Dio> _getDio() async {
+    if (_dio == null || !_initialized) {
+      final apiKey = await ApiConfig.getTtsApiKey();
+      _dio = Dio(BaseOptions(
+        baseUrl: ApiConfig.ttsBaseUrl,
+        connectTimeout: const Duration(seconds: 30),
+        receiveTimeout: const Duration(seconds: 60),
+        headers: {
+          'Authorization': 'Bearer $apiKey',
+          'Content-Type': 'application/json',
+        },
+      ));
+      _initialized = true;
+    }
+    return _dio!;
+  }
 
   final AudioPlayer _audioPlayer = AudioPlayer();
   bool _isPlaying = false;
+  StreamSubscription<void>? _playerCompleteSubscription;
+  File? _currentTempFile;
+
+  /// 初始化播放完成监听器
+  void _initPlayerCompleteListener() {
+    _playerCompleteSubscription?.cancel();
+    _playerCompleteSubscription = _audioPlayer.onPlayerComplete.listen((_) {
+      _isPlaying = false;
+      // 删除临时文件
+      _currentTempFile?.delete().catchError((_) => _currentTempFile!);
+      _currentTempFile = null;
+    });
+  }
 
   /// 可用的意大利语语音
   static const String voiceNicola = 'im_nicola'; // 男声
@@ -37,7 +64,8 @@ class TTSService {
 
     try {
       // 调用 KOKORO TTS API
-      final response = await _dio.post(
+      final dio = await _getDio();
+      final response = await dio.post(
         '/audio/speech',
         data: {
           'model': 'kokoro',
@@ -56,16 +84,11 @@ class TTSService {
         final audioFile = File('${tempDir.path}/tts_${DateTime.now().millisecondsSinceEpoch}.mp3');
         await audioFile.writeAsBytes(response.data);
 
-        // 播放音频
+        // 初始化监听器并播放音频
+        _initPlayerCompleteListener();
+        _currentTempFile = audioFile;
         _isPlaying = true;
         await _audioPlayer.play(DeviceFileSource(audioFile.path));
-
-        // 监听播放完成
-        _audioPlayer.onPlayerComplete.listen((_) {
-          _isPlaying = false;
-          // 删除临时文件
-          audioFile.delete().catchError((_) => audioFile);
-        });
 
         return true;
       }
@@ -101,6 +124,8 @@ class TTSService {
 
   /// 释放资源
   Future<void> dispose() async {
+    _playerCompleteSubscription?.cancel();
+    _playerCompleteSubscription = null;
     await _audioPlayer.dispose();
   }
 
@@ -110,7 +135,8 @@ class TTSService {
     if (text.isEmpty) return null;
 
     try {
-      final response = await _dio.post(
+      final dio = await _getDio();
+      final response = await dio.post(
         '/audio/speech',
         data: {
           'model': 'kokoro',
@@ -156,12 +182,10 @@ class TTSService {
       final audioFile = File('${appDir.path}/tts_cache/$fileName');
 
       if (await audioFile.exists()) {
+        _initPlayerCompleteListener();
+        _currentTempFile = null; // 缓存文件不删除
         _isPlaying = true;
         await _audioPlayer.play(DeviceFileSource(audioFile.path));
-
-        _audioPlayer.onPlayerComplete.listen((_) {
-          _isPlaying = false;
-        });
 
         return true;
       }

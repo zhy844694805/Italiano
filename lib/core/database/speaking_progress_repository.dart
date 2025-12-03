@@ -5,6 +5,15 @@ import '../../shared/models/speaking.dart';
 
 /// 口语练习进度数据库存储库
 class SpeakingProgressRepository {
+  // 单例模式
+  static final SpeakingProgressRepository _instance = SpeakingProgressRepository._internal();
+  static SpeakingProgressRepository get instance => _instance;
+
+  SpeakingProgressRepository._internal();
+
+  // 保留旧的构造函数以保持向后兼容，但实际使用单例
+  factory SpeakingProgressRepository() => _instance;
+
   Future<Database> get _database async => await DatabaseService.instance.database;
 
   /// 添加口语练习记录

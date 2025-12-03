@@ -211,8 +211,11 @@ final wordsToReviewProvider = FutureProvider<List<Word>>((ref) async {
   final progressNotifier = ref.watch(learningProgressProvider.notifier);
   final wordIdsToReview = await progressNotifier.getWordsToReview();
 
+  // 转换为 Set 以获得 O(1) 的查找性能
+  final wordIdsToReviewSet = wordIdsToReview.toSet();
+
   // 过滤出需要复习的单词
-  return allWords.where((word) => wordIdsToReview.contains(word.id)).toList();
+  return allWords.where((word) => wordIdsToReviewSet.contains(word.id)).toList();
 });
 
 // Provider for new/unstudied words

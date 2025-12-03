@@ -2,13 +2,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/services/deepseek_service.dart';
 import '../../core/database/conversation_history_repository.dart';
 import '../../core/database/learning_statistics_repository.dart';
+import '../../core/config/api_config.dart';
 import '../models/conversation.dart';
 
-/// Provider for DeepSeek service
-final deepSeekServiceProvider = Provider<DeepSeekService>((ref) {
+/// Provider for DeepSeek service (异步初始化)
+final deepSeekServiceProvider = FutureProvider<DeepSeekService>((ref) async {
+  final apiKey = await ApiConfig.getDeepSeekApiKey();
   return DeepSeekService(
-    apiKey: 'REDACTED_DEEPSEEK_API_KEY',
-    baseUrl: 'https://api.deepseek.com',
+    apiKey: apiKey,
+    baseUrl: ApiConfig.deepSeekBaseUrl,
   );
 });
 
@@ -16,7 +18,12 @@ final deepSeekServiceProvider = Provider<DeepSeekService>((ref) {
 final conversationProvider =
     StateNotifierProvider.family<ConversationNotifier, ConversationState, ConversationScenario>(
   (ref, scenario) {
-    final service = ref.watch(deepSeekServiceProvider);
+    final serviceAsync = ref.watch(deepSeekServiceProvider);
+    // 使用 maybeWhen 处理异步加载状态
+    final service = serviceAsync.maybeWhen(
+      data: (s) => s,
+      orElse: () => null,
+    );
     return ConversationNotifier(service, scenario);
   },
 );
@@ -60,7 +67,7 @@ class ConversationState {
 
 /// Conversation state notifier
 class ConversationNotifier extends StateNotifier<ConversationState> {
-  final DeepSeekService _service;
+  final DeepSeekService? _service;
   final ConversationHistoryRepository _historyRepo = ConversationHistoryRepository();
   final LearningStatisticsRepository _statsRepo = LearningStatisticsRepository();
 
@@ -71,8 +78,13 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
           scenario: scenario,
           role: AIRole.fromScenario(scenario),
         )) {
-    _loadHistory();
+    if (_service != null) {
+      _loadHistory();
+    }
   }
+
+  /// 检查服务是否可用
+  bool get isServiceAvailable => _service != null;
 
   /// Load conversation history from database
   Future<void> _loadHistory() async {
@@ -94,6 +106,10 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
 
   /// Initialize conversation with greeting from AI
   Future<void> _initConversation() async {
+    if (_service == null) {
+      state = state.copyWith(error: 'AI 服务未初始化，请稍后重试');
+      return;
+    }
     state = state.copyWith(isLoading: true);
 
     try {
@@ -138,6 +154,10 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
   /// Send user message and get AI response
   Future<void> sendMessage(String userMessage) async {
     if (userMessage.trim().isEmpty) return;
+    if (_service == null) {
+      state = state.copyWith(error: 'AI 服务未初始化，请稍后重试');
+      return;
+    }
 
     // Add user message
     final userMsg = ConversationMessage(

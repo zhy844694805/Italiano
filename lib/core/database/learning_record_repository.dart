@@ -3,6 +3,15 @@ import '../../shared/models/word.dart';
 import 'database_service.dart';
 
 class LearningRecordRepository {
+  // 单例模式
+  static final LearningRecordRepository _instance = LearningRecordRepository._internal();
+  static LearningRecordRepository get instance => _instance;
+
+  LearningRecordRepository._internal();
+
+  // 保留旧的构造函数以保持向后兼容，但实际使用单例
+  factory LearningRecordRepository() => _instance;
+
   final DatabaseService _dbService = DatabaseService.instance;
 
   // 保存或更新学习记录

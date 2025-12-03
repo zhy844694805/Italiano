@@ -5,6 +5,15 @@ import '../../shared/models/learning_guide.dart';
 
 /// 学习路径进度数据库存储库
 class LearningGuideProgressRepository {
+  // 单例模式
+  static final LearningGuideProgressRepository _instance = LearningGuideProgressRepository._internal();
+  static LearningGuideProgressRepository get instance => _instance;
+
+  LearningGuideProgressRepository._internal();
+
+  // 保留旧的构造函数以保持向后兼容，但实际使用单例
+  factory LearningGuideProgressRepository() => _instance;
+
   Future<Database> get _database async => await DatabaseService.instance.database;
 
   /// 添加学习路径进度

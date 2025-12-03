@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/database/grammar_progress_repository.dart';
@@ -13,7 +14,7 @@ class GrammarService {
       final List<dynamic> jsonData = json.decode(jsonString);
       return jsonData.map((json) => GrammarPoint.fromJson(json)).toList();
     } catch (e) {
-      print('Error loading grammar points: $e');
+      debugPrint('Error loading grammar points: $e');
       return [];
     }
   }

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/daily_conversation.dart';
@@ -53,36 +54,36 @@ class DailyConversationService {
     }
 
     try {
-      print('Loading daily conversations from assets...');
+      debugPrint('Loading daily conversations from assets...');
       final String jsonString = await rootBundle.loadString('assets/data/daily_conversations.json');
-      print('JSON file loaded successfully, parsing...');
+      debugPrint('JSON file loaded successfully, parsing...');
 
       final Map<String, dynamic> data = json.decode(jsonString);
-      print('JSON decoded successfully, extracting conversations...');
+      debugPrint('JSON decoded successfully, extracting conversations...');
 
       if (!data.containsKey('conversations')) {
         throw Exception('JSON file missing "conversations" key');
       }
 
       final conversationsList = data['conversations'] as List<dynamic>;
-      print('Found ${conversationsList.length} conversations');
+      debugPrint('Found ${conversationsList.length} conversations');
 
       _conversations = conversationsList
           .map((json) {
             try {
               return DailyConversation.fromJson(json);
             } catch (e) {
-              print('Error parsing conversation: $e');
-              print('Conversation data: $json');
+              debugPrint('Error parsing conversation: $e');
+              debugPrint('Conversation data: $json');
               rethrow;
             }
           })
           .toList();
 
-      print('Successfully parsed ${_conversations.length} daily conversations');
+      debugPrint('Successfully parsed ${_conversations.length} daily conversations');
       return _conversations;
     } catch (e) {
-      print('Error loading daily conversations: $e');
+      debugPrint('Error loading daily conversations: $e');
       throw Exception('Failed to load daily conversations: $e');
     }
   }

@@ -1,11 +1,24 @@
+import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class AudioPlayerService {
   final AudioPlayer _audioPlayer = AudioPlayer();
   bool _isPlaying = false;
+  StreamSubscription<PlayerState>? _playerStateSubscription;
 
   bool get isPlaying => _isPlaying;
+
+  // 初始化监听器（仅调用一次）
+  void _initListener() {
+    _playerStateSubscription?.cancel();
+    _playerStateSubscription = _audioPlayer.playerStateStream.listen((state) {
+      if (state.processingState == ProcessingState.completed) {
+        _isPlaying = false;
+      }
+    });
+  }
 
   // 播放本地音频文件
   Future<void> playLocalAudio(String assetPath) async {
@@ -14,17 +27,12 @@ class AudioPlayerService {
         await stop();
       }
 
+      _initListener();
       await _audioPlayer.setAsset(assetPath);
       _isPlaying = true;
       await _audioPlayer.play();
-
-      _audioPlayer.playerStateStream.listen((state) {
-        if (state.processingState == ProcessingState.completed) {
-          _isPlaying = false;
-        }
-      });
     } catch (e) {
-      print('Error playing audio: $e');
+      debugPrint('Error playing audio: $e');
       _isPlaying = false;
     }
   }
@@ -36,17 +44,12 @@ class AudioPlayerService {
         await stop();
       }
 
+      _initListener();
       await _audioPlayer.setUrl(url);
       _isPlaying = true;
       await _audioPlayer.play();
-
-      _audioPlayer.playerStateStream.listen((state) {
-        if (state.processingState == ProcessingState.completed) {
-          _isPlaying = false;
-        }
-      });
     } catch (e) {
-      print('Error playing network audio: $e');
+      debugPrint('Error playing network audio: $e');
       _isPlaying = false;
     }
   }
@@ -62,7 +65,7 @@ class AudioPlayerService {
   Future<void> playTextToSpeech(String text, {String language = 'it'}) async {
     // TODO: 集成 TTS 服务
     // 可以使用 flutter_tts 包或者调用在线 TTS API
-    print('TTS播放: $text (语言: $language)');
+    debugPrint('TTS播放: $text (语言: $language)');
   }
 
   // 停止播放
@@ -95,6 +98,8 @@ class AudioPlayerService {
 
   // 释放资源
   void dispose() {
+    _playerStateSubscription?.cancel();
+    _playerStateSubscription = null;
     _audioPlayer.dispose();
   }
 }

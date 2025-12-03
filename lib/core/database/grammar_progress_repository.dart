@@ -3,6 +3,15 @@ import '../../shared/models/grammar.dart';
 import 'database_service.dart';
 
 class GrammarProgressRepository {
+  // 单例模式
+  static final GrammarProgressRepository _instance = GrammarProgressRepository._internal();
+  static GrammarProgressRepository get instance => _instance;
+
+  GrammarProgressRepository._internal();
+
+  // 保留旧的构造函数以保持向后兼容，但实际使用单例
+  factory GrammarProgressRepository() => _instance;
+
   final DatabaseService _dbService = DatabaseService.instance;
 
   // 保存或更新语法进度

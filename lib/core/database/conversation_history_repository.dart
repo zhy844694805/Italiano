@@ -4,6 +4,15 @@ import '../../shared/models/conversation.dart';
 import 'database_service.dart';
 
 class ConversationHistoryRepository {
+  // 单例模式
+  static final ConversationHistoryRepository _instance = ConversationHistoryRepository._internal();
+  static ConversationHistoryRepository get instance => _instance;
+
+  ConversationHistoryRepository._internal();
+
+  // 保留旧的构造函数以保持向后兼容，但实际使用单例
+  factory ConversationHistoryRepository() => _instance;
+
   final DatabaseService _dbService = DatabaseService.instance;
 
   // 保存消息

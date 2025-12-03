@@ -403,6 +403,8 @@ class _VocabularyLearningScreenState extends ConsumerState<VocabularyLearningScr
     // 记录学习进度
     await ref.read(learningProgressProvider.notifier).recordWordStudied(word, correct);
 
+    if (!mounted) return;
+
     setState(() {
       _currentIndex++;
       _remainingWords.removeAt(0);

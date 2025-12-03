@@ -55,6 +55,15 @@ class DailyStatistics {
 }
 
 class LearningStatisticsRepository {
+  // 单例模式
+  static final LearningStatisticsRepository _instance = LearningStatisticsRepository._internal();
+  static LearningStatisticsRepository get instance => _instance;
+
+  LearningStatisticsRepository._internal();
+
+  // 保留旧的构造函数以保持向后兼容，但实际使用单例
+  factory LearningStatisticsRepository() => _instance;
+
   final DatabaseService _dbService = DatabaseService.instance;
 
   // 保存或更新每日统计

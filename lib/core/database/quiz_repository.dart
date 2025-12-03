@@ -3,6 +3,15 @@ import 'database_service.dart';
 import '../../shared/models/quiz.dart';
 
 class QuizRepository {
+  // 单例模式
+  static final QuizRepository _instance = QuizRepository._internal();
+  static QuizRepository get instance => _instance;
+
+  QuizRepository._internal();
+
+  // 保留旧的构造函数以保持向后兼容，但实际使用单例
+  factory QuizRepository() => _instance;
+
   final DatabaseService _dbService = DatabaseService.instance;
 
   // 初始化表(如果数据库升级需要)

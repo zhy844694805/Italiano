@@ -4,9 +4,16 @@ import 'database_service.dart';
 
 /// 阅读进度数据库仓储
 class ReadingProgressRepository {
-  final DatabaseService _databaseService;
+  // 单例模式
+  static final ReadingProgressRepository _instance = ReadingProgressRepository._internal();
+  static ReadingProgressRepository get instance => _instance;
 
-  ReadingProgressRepository(this._databaseService);
+  ReadingProgressRepository._internal();
+
+  // 保留旧的构造函数以保持向后兼容，但实际使用单例
+  factory ReadingProgressRepository([DatabaseService? databaseService]) => _instance;
+
+  final DatabaseService _databaseService = DatabaseService.instance;
 
   /// 保存阅读进度
   Future<void> saveProgress(ReadingProgress progress) async {

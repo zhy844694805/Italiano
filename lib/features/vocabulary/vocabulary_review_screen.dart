@@ -312,6 +312,8 @@ class _VocabularyReviewScreenState extends ConsumerState<VocabularyReviewScreen>
     // 记录学习进度
     await ref.read(learningProgressProvider.notifier).recordWordStudied(word, remembered);
 
+    if (!mounted) return;
+
     setState(() {
       _currentIndex++;
       _remainingWords.removeAt(0);
