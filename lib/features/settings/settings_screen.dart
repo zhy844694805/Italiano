@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/providers/voice_preference_provider.dart';
 import '../../core/services/tts_service.dart';
 import '../../core/theme/openai_theme.dart';
+import '../../core/config/api_config.dart';
 
 /// Settings screen for app preferences
 class SettingsScreen extends ConsumerWidget {
@@ -57,6 +58,46 @@ class SettingsScreen extends ConsumerWidget {
                     voice: selectedVoice,
                   );
                 },
+              ),
+            ],
+          ),
+
+          const SizedBox(height: 24),
+
+          // API 配置
+          const Text(
+            'API 配置',
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+              color: OpenAITheme.textSecondary,
+            ),
+          ),
+          const SizedBox(height: 8),
+          _SettingsCard(
+            children: [
+              _SettingsTile(
+                icon: Icons.key,
+                iconColor: OpenAITheme.warning,
+                title: 'TTS API 密钥',
+                subtitle: '配置语音合成服务',
+                onTap: () => _showApiKeyDialog(context, 'TTS'),
+              ),
+              const Divider(height: 1, indent: 56),
+              _SettingsTile(
+                icon: Icons.smart_toy,
+                iconColor: OpenAITheme.info,
+                title: 'DeepSeek API 密钥',
+                subtitle: '配置 AI 对话服务',
+                onTap: () => _showApiKeyDialog(context, 'DeepSeek'),
+              ),
+              const Divider(height: 1, indent: 56),
+              _SettingsTile(
+                icon: Icons.help_outline,
+                iconColor: OpenAITheme.textTertiary,
+                title: '如何获取 API 密钥',
+                subtitle: '查看详细指南',
+                onTap: () => _showApiGuide(context),
               ),
             ],
           ),
@@ -162,6 +203,386 @@ class SettingsScreen extends ConsumerWidget {
       context,
       MaterialPageRoute(
         builder: (context) => const UserGuideScreen(),
+      ),
+    );
+  }
+
+  void _showApiKeyDialog(BuildContext context, String type) {
+    final controller = TextEditingController();
+    final isDeepSeek = type == 'DeepSeek';
+
+    // 加载当前密钥
+    Future<String> loadKey() async {
+      if (isDeepSeek) {
+        return await ApiConfig.getDeepSeekApiKey();
+      } else {
+        return await ApiConfig.getTtsApiKey();
+      }
+    }
+
+    loadKey().then((currentKey) {
+      if (!context.mounted) return;
+
+      if (currentKey.isNotEmpty && currentKey.length >= 8) {
+        // 显示部分密钥
+        controller.text = '${currentKey.substring(0, 8)}...';
+      }
+
+      showDialog(
+        context: context,
+        builder: (dialogContext) => AlertDialog(
+          title: Text('配置 $type API 密钥'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                isDeepSeek
+                    ? '请输入您的 DeepSeek API 密钥，用于 AI 对话功能。'
+                    : '请输入您的 TTS API 密钥，用于语音合成功能。',
+                style: const TextStyle(
+                  fontSize: 14,
+                  color: OpenAITheme.textSecondary,
+                ),
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: controller,
+                decoration: InputDecoration(
+                  hintText: isDeepSeek ? 'sk-...' : '输入 API 密钥',
+                  border: const OutlineInputBorder(),
+                  suffixIcon: IconButton(
+                    icon: const Icon(Icons.clear),
+                    onPressed: () => controller.clear(),
+                  ),
+                ),
+                obscureText: true,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                currentKey.isEmpty ? '当前状态：未配置' : '当前状态：已配置',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: currentKey.isEmpty ? OpenAITheme.error : OpenAITheme.openaiGreen,
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(dialogContext),
+              child: const Text('取消'),
+            ),
+            TextButton(
+              onPressed: () async {
+                final newKey = controller.text.trim();
+                // 忽略占位符文本
+                if (newKey.isEmpty || newKey.contains('...')) {
+                  Navigator.pop(dialogContext);
+                  return;
+                }
+
+                if (isDeepSeek) {
+                  await ApiConfig.setDeepSeekApiKey(newKey);
+                } else {
+                  await ApiConfig.setTtsApiKey(newKey);
+                }
+
+                if (dialogContext.mounted) {
+                  Navigator.pop(dialogContext);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('$type API 密钥已保存'),
+                      backgroundColor: OpenAITheme.openaiGreen,
+                    ),
+                  );
+                }
+              },
+              child: const Text('保存'),
+            ),
+          ],
+        ),
+      );
+    });
+  }
+
+  void _showApiGuide(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const ApiGuideScreen(),
+      ),
+    );
+  }
+}
+
+/// API 获取指南页面 - OpenAI 极简风格
+class ApiGuideScreen extends StatelessWidget {
+  const ApiGuideScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: OpenAITheme.white,
+      appBar: AppBar(
+        backgroundColor: OpenAITheme.white,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: OpenAITheme.textPrimary),
+          onPressed: () => Navigator.pop(context),
+        ),
+        title: const Text(
+          'API 配置指南',
+          style: TextStyle(
+            color: OpenAITheme.textPrimary,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // 标题
+              const Text(
+                '开始使用 AI 对话',
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w700,
+                  color: OpenAITheme.textPrimary,
+                  height: 1.2,
+                ),
+              ),
+              const SizedBox(height: 12),
+              const Text(
+                '配置 DeepSeek API 密钥，解锁智能对话练习功能。',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: OpenAITheme.textSecondary,
+                  height: 1.5,
+                ),
+              ),
+
+              const SizedBox(height: 40),
+
+              // 步骤
+              _buildStep(
+                number: '1',
+                title: '访问 DeepSeek 平台',
+                description: '打开浏览器，访问 platform.deepseek.com',
+                action: 'platform.deepseek.com',
+              ),
+
+              _buildStep(
+                number: '2',
+                title: '注册或登录',
+                description: '使用邮箱注册新账号，或登录已有账号。',
+              ),
+
+              _buildStep(
+                number: '3',
+                title: '创建 API 密钥',
+                description: '进入「API Keys」页面，点击「Create new secret key」生成密钥。',
+              ),
+
+              _buildStep(
+                number: '4',
+                title: '复制密钥',
+                description: '密钥仅显示一次，请立即复制并妥善保存。格式为 sk-xxx...',
+                isLast: true,
+              ),
+
+              const SizedBox(height: 32),
+
+              // 提示卡片
+              Container(
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: OpenAITheme.bgSecondary,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.lightbulb_outline,
+                          size: 20,
+                          color: OpenAITheme.warning,
+                        ),
+                        const SizedBox(width: 8),
+                        const Text(
+                          '提示',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600,
+                            color: OpenAITheme.textPrimary,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 12),
+                    const Text(
+                      '• DeepSeek 提供免费额度，足够日常学习使用\n'
+                      '• API 密钥是私密信息，请勿分享给他人\n'
+                      '• 密钥存储在本地设备，不会上传到服务器',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: OpenAITheme.textSecondary,
+                        height: 1.6,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(height: 32),
+
+              // TTS 说明
+              const Text(
+                '关于 TTS 语音',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                  color: OpenAITheme.textPrimary,
+                ),
+              ),
+              const SizedBox(height: 12),
+              const Text(
+                'TTS（文字转语音）服务使用独立的 API 密钥。如需配置，请联系开发者获取密钥信息。',
+                style: TextStyle(
+                  fontSize: 15,
+                  color: OpenAITheme.textSecondary,
+                  height: 1.6,
+                ),
+              ),
+
+              const SizedBox(height: 48),
+
+              // 底部按钮
+              SizedBox(
+                width: double.infinity,
+                height: 52,
+                child: ElevatedButton(
+                  onPressed: () => Navigator.pop(context),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: OpenAITheme.textPrimary,
+                    foregroundColor: OpenAITheme.white,
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                  child: const Text(
+                    '我知道了',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 32),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildStep({
+    required String number,
+    required String title,
+    required String description,
+    String? action,
+    bool isLast = false,
+  }) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 24),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // 步骤编号
+          Column(
+            children: [
+              Container(
+                width: 32,
+                height: 32,
+                decoration: BoxDecoration(
+                  color: OpenAITheme.textPrimary,
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Text(
+                    number,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      color: OpenAITheme.white,
+                    ),
+                  ),
+                ),
+              ),
+              if (!isLast)
+                Container(
+                  width: 2,
+                  height: 48,
+                  color: OpenAITheme.borderLight,
+                ),
+            ],
+          ),
+          const SizedBox(width: 16),
+          // 步骤内容
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w600,
+                    color: OpenAITheme.textPrimary,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  description,
+                  style: const TextStyle(
+                    fontSize: 15,
+                    color: OpenAITheme.textSecondary,
+                    height: 1.5,
+                  ),
+                ),
+                if (action != null) ...[
+                  const SizedBox(height: 8),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 8,
+                    ),
+                    decoration: BoxDecoration(
+                      color: OpenAITheme.bgSecondary,
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    child: Text(
+                      action,
+                      style: const TextStyle(
+                        fontSize: 14,
+                        fontFamily: 'monospace',
+                        color: OpenAITheme.textPrimary,
+                      ),
+                    ),
+                  ),
+                ],
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
