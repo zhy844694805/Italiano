@@ -245,20 +245,17 @@ class _VocabularyListScreenState extends ConsumerState<VocabularyListScreen> {
                           ],
                         ),
                       )
-                    : ListView.builder(
+                    : ListView.separated(
                         padding: const EdgeInsets.all(16),
                         itemCount: filteredWords.length,
-                        itemExtent: 180, // 优化：固定高度提升滚动性能
                         addAutomaticKeepAlives: false, // 优化：减少内存占用
+                        separatorBuilder: (context, index) => const SizedBox(height: 12),
                         itemBuilder: (context, index) {
                           final word = filteredWords[index];
-                          return Padding(
-                            padding: const EdgeInsets.only(bottom: 12),
-                            child: _WordListItemOptimized(
-                              key: ValueKey(word.id), // 优化：添加 Key 避免不必要重建
-                              word: word,
-                              onTap: () => _showWordDetail(context, word, learningProgress[word.id]),
-                            ),
+                          return _WordListItemOptimized(
+                            key: ValueKey(word.id), // 优化：添加 Key 避免不必要重建
+                            word: word,
+                            onTap: () => _showWordDetail(context, word, learningProgress[word.id]),
                           );
                         },
                       ),
