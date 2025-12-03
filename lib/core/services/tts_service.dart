@@ -58,6 +58,14 @@ class TTSService {
   /// [voice] 语音类型，默认使用 Sara（女声）
   Future<bool> speak(String text, {String voice = voiceSara}) async {
     if (text.isEmpty) return false;
+
+    // 检查 API 密钥是否配置
+    final apiKey = await ApiConfig.getTtsApiKey();
+    if (apiKey.isEmpty) {
+      debugPrint('TTS API key not configured');
+      return false;
+    }
+
     if (_isPlaying) {
       await stop();
     }
@@ -133,6 +141,13 @@ class TTSService {
   /// 下载音频但不播放，返回文件路径
   Future<String?> preloadAudio(String text, {String voice = voiceSara}) async {
     if (text.isEmpty) return null;
+
+    // 检查 API 密钥是否配置
+    final apiKey = await ApiConfig.getTtsApiKey();
+    if (apiKey.isEmpty) {
+      debugPrint('TTS API key not configured');
+      return null;
+    }
 
     try {
       final dio = await _getDio();

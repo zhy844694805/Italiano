@@ -6,8 +6,12 @@ import '../../core/config/api_config.dart';
 import '../models/conversation.dart';
 
 /// Provider for DeepSeek service (异步初始化)
-final deepSeekServiceProvider = FutureProvider<DeepSeekService>((ref) async {
+/// 如果 API 密钥未配置，返回 null
+final deepSeekServiceProvider = FutureProvider<DeepSeekService?>((ref) async {
   final apiKey = await ApiConfig.getDeepSeekApiKey();
+  if (apiKey.isEmpty) {
+    return null; // API 密钥未配置
+  }
   return DeepSeekService(
     apiKey: apiKey,
     baseUrl: ApiConfig.deepSeekBaseUrl,
