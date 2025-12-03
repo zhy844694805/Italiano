@@ -245,17 +245,20 @@ class _VocabularyListScreenState extends ConsumerState<VocabularyListScreen> {
                           ],
                         ),
                       )
-                    : ListView.separated(
+                    : ListView.builder(
                         padding: const EdgeInsets.all(16),
                         itemCount: filteredWords.length,
-                        separatorBuilder: (context, index) => const SizedBox(height: 12),
+                        itemExtent: 180, // 优化：固定高度提升滚动性能
+                        addAutomaticKeepAlives: false, // 优化：减少内存占用
                         itemBuilder: (context, index) {
                           final word = filteredWords[index];
-                          final record = learningProgress[word.id];
-                          return _WordListItem(
-                            word: word,
-                            record: record,
-                            onTap: () => _showWordDetail(context, word, record),
+                          return Padding(
+                            padding: const EdgeInsets.only(bottom: 12),
+                            child: _WordListItemOptimized(
+                              key: ValueKey(word.id), // 优化：添加 Key 避免不必要重建
+                              word: word,
+                              onTap: () => _showWordDetail(context, word, learningProgress[word.id]),
+                            ),
                           );
                         },
                       ),
@@ -415,14 +418,14 @@ class _VocabularyListScreenState extends ConsumerState<VocabularyListScreen> {
   }
 }
 
-class _WordListItem extends ConsumerWidget {
+// 优化版本：使用 select 只监听特定单词的学习记录
+class _WordListItemOptimized extends ConsumerWidget {
   final Word word;
-  final LearningRecord? record;
   final VoidCallback onTap;
 
-  const _WordListItem({
+  const _WordListItemOptimized({
+    super.key,
     required this.word,
-    required this.record,
     required this.onTap,
   });
 
@@ -430,6 +433,11 @@ class _WordListItem extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
+
+    // 优化：使用 select 只监听当前单词的记录，避免其他单词更新时重建
+    final record = ref.watch(
+      learningProgressProvider.select((progress) => progress[word.id])
+    );
     final mastery = record?.mastery ?? 0.0;
     final isFavorite = record?.isFavorite ?? false;
 

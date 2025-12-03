@@ -122,40 +122,27 @@ class LearningRecordRepository {
     );
   }
 
-  // 获取学习统计
+  // 获取学习统计 - 优化：合并为单次查询
   Future<Map<String, dynamic>> getStatistics() async {
     final db = await _dbService.database;
-
-    // 总学习单词数
-    final totalCount = Sqflite.firstIntValue(
-      await db.rawQuery('SELECT COUNT(*) FROM learning_records'),
-    ) ?? 0;
-
-    // 收藏单词数
-    final favoriteCount = Sqflite.firstIntValue(
-      await db.rawQuery('SELECT COUNT(*) FROM learning_records WHERE isFavorite = 1'),
-    ) ?? 0;
-
-    // 需要复习的单词数
     final now = DateTime.now().toIso8601String();
-    final reviewCount = Sqflite.firstIntValue(
-      await db.rawQuery(
-        'SELECT COUNT(*) FROM learning_records WHERE nextReviewDate <= ?',
-        [now],
-      ),
-    ) ?? 0;
 
-    // 平均掌握度
-    final avgMastery = await db.rawQuery(
-      'SELECT AVG(mastery) as avgMastery FROM learning_records',
-    );
-    final averageMastery = (avgMastery.first['avgMastery'] as double?) ?? 0.0;
+    // 单次查询获取所有统计数据
+    final result = await db.rawQuery('''
+      SELECT
+        COUNT(*) as totalCount,
+        SUM(CASE WHEN isFavorite = 1 THEN 1 ELSE 0 END) as favoriteCount,
+        SUM(CASE WHEN nextReviewDate <= ? THEN 1 ELSE 0 END) as reviewCount,
+        AVG(mastery) as avgMastery
+      FROM learning_records
+    ''', [now]);
 
+    final row = result.first;
     return {
-      'totalWords': totalCount,
-      'favoriteWords': favoriteCount,
-      'wordsToReview': reviewCount,
-      'averageMastery': averageMastery,
+      'totalWords': (row['totalCount'] as int?) ?? 0,
+      'favoriteWords': (row['favoriteCount'] as int?) ?? 0,
+      'wordsToReview': (row['reviewCount'] as int?) ?? 0,
+      'averageMastery': (row['avgMastery'] as double?) ?? 0.0,
     };
   }
 

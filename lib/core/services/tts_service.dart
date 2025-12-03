@@ -53,21 +53,44 @@ class TTSService {
   static const String voiceNicola = 'im_nicola'; // 男声
   static const String voiceSara = 'if_sara';     // 女声
 
+  /// 获取缓存文件路径
+  Future<File> _getCacheFile(String text, String voice) async {
+    final appDir = await getApplicationDocumentsDirectory();
+    final cacheDir = Directory('${appDir.path}/tts_cache');
+    if (!await cacheDir.exists()) {
+      await cacheDir.create(recursive: true);
+    }
+    final fileName = '${text.hashCode}_$voice.mp3';
+    return File('${cacheDir.path}/$fileName');
+  }
+
   /// 文本转语音并播放
   /// [text] 要朗读的意大利语文本
   /// [voice] 语音类型，默认使用 Sara（女声）
+  /// 优化：优先使用缓存，减少 API 调用
   Future<bool> speak(String text, {String voice = voiceSara}) async {
     if (text.isEmpty) return false;
+
+    if (_isPlaying) {
+      await stop();
+    }
+
+    // 优化：先检查缓存
+    final cacheFile = await _getCacheFile(text, voice);
+    if (await cacheFile.exists()) {
+      debugPrint('TTS: Playing from cache');
+      _initPlayerCompleteListener();
+      _currentTempFile = null; // 缓存文件不删除
+      _isPlaying = true;
+      await _audioPlayer.play(DeviceFileSource(cacheFile.path));
+      return true;
+    }
 
     // 检查 API 密钥是否配置
     final apiKey = await ApiConfig.getTtsApiKey();
     if (apiKey.isEmpty) {
       debugPrint('TTS API key not configured');
       return false;
-    }
-
-    if (_isPlaying) {
-      await stop();
     }
 
     try {
@@ -87,16 +110,14 @@ class TTSService {
       );
 
       if (response.statusCode == 200) {
-        // 保存音频到临时文件
-        final tempDir = await getTemporaryDirectory();
-        final audioFile = File('${tempDir.path}/tts_${DateTime.now().millisecondsSinceEpoch}.mp3');
-        await audioFile.writeAsBytes(response.data);
+        // 优化：保存到缓存目录（持久化）
+        await cacheFile.writeAsBytes(response.data);
 
         // 初始化监听器并播放音频
         _initPlayerCompleteListener();
-        _currentTempFile = audioFile;
+        _currentTempFile = null; // 缓存文件不删除
         _isPlaying = true;
-        await _audioPlayer.play(DeviceFileSource(audioFile.path));
+        await _audioPlayer.play(DeviceFileSource(cacheFile.path));
 
         return true;
       }

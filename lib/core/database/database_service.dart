@@ -26,7 +26,7 @@ class DatabaseService {
 
     return await openDatabase(
       dbFilePath,
-      version: 6,
+      version: 7,
       onCreate: _createDB,
       onUpgrade: _upgradeDB,
     );
@@ -190,6 +190,23 @@ class DatabaseService {
     await db.execute('''
       CREATE INDEX idx_learning_guide_completed ON learning_guide_progress(isCompleted)
     ''');
+
+    // 优化：添加复合索引提升查询性能 (v7)
+    await db.execute('''
+      CREATE INDEX idx_learning_records_mastery ON learning_records(mastery)
+    ''');
+
+    await db.execute('''
+      CREATE INDEX idx_grammar_completed ON grammar_progress(completedAt)
+    ''');
+
+    await db.execute('''
+      CREATE INDEX idx_conversation_scenario_time ON conversation_history(scenarioId, timestamp DESC)
+    ''');
+
+    await db.execute('''
+      CREATE INDEX idx_reading_favorite ON reading_progress(is_favorite)
+    ''');
   }
 
   Future _upgradeDB(Database db, int oldVersion, int newVersion) async {
@@ -351,6 +368,29 @@ class DatabaseService {
 
       await db.execute('''
         CREATE INDEX idx_learning_guide_completed ON learning_guide_progress(isCompleted)
+      ''');
+    }
+
+    if (oldVersion < 7) {
+      // 优化：添加复合索引提升查询性能
+      // 学习记录表：复合索引用于统计查询
+      await db.execute('''
+        CREATE INDEX IF NOT EXISTS idx_learning_records_mastery ON learning_records(mastery)
+      ''');
+
+      // 语法进度表：完成状态索引
+      await db.execute('''
+        CREATE INDEX IF NOT EXISTS idx_grammar_completed ON grammar_progress(completedAt)
+      ''');
+
+      // 会话历史表：场景+时间复合索引（用于排序查询）
+      await db.execute('''
+        CREATE INDEX IF NOT EXISTS idx_conversation_scenario_time ON conversation_history(scenarioId, timestamp DESC)
+      ''');
+
+      // 阅读进度表：收藏索引
+      await db.execute('''
+        CREATE INDEX IF NOT EXISTS idx_reading_favorite ON reading_progress(is_favorite)
       ''');
     }
   }

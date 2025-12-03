@@ -75,6 +75,17 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
   final ConversationHistoryRepository _historyRepo = ConversationHistoryRepository();
   final LearningStatisticsRepository _statsRepo = LearningStatisticsRepository();
 
+  // 优化：限制内存中的消息数量，避免长对话时内存增长
+  static const int _maxMessagesInMemory = 50;
+
+  /// 限制消息数量，保留最新的消息
+  List<ConversationMessage> _trimMessages(List<ConversationMessage> messages) {
+    if (messages.length > _maxMessagesInMemory) {
+      return messages.sublist(messages.length - _maxMessagesInMemory);
+    }
+    return messages;
+  }
+
   ConversationNotifier(this._service, ConversationScenario scenario)
       : super(ConversationState(
           messages: [],
@@ -175,7 +186,7 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
     await _historyRepo.saveMessage(state.scenario.id, userMsg);
 
     state = state.copyWith(
-      messages: [...state.messages, userMsg],
+      messages: _trimMessages([...state.messages, userMsg]),
       isLoading: true,
       error: null,
     );
@@ -205,7 +216,7 @@ class ConversationNotifier extends StateNotifier<ConversationState> {
         await _statsRepo.incrementConversationMessages(DateTime.now(), 2); // user + AI
 
         state = state.copyWith(
-          messages: [...state.messages, aiMessage],
+          messages: _trimMessages([...state.messages, aiMessage]),
           isLoading: false,
         );
       } else {
