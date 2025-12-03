@@ -283,19 +283,4 @@ class _ReadingListScreenState extends ConsumerState<ReadingListScreen> {
       ),
     );
   }
-
-  Color _getLevelColor(String level) {
-    switch (level) {
-      case 'A1':
-        return Colors.green;
-      case 'A2':
-        return Colors.blue;
-      case 'B1':
-        return Colors.orange;
-      case 'B2':
-        return Colors.red;
-      default:
-        return Colors.grey;
-    }
-  }
 }

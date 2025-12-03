@@ -558,7 +558,7 @@ class _WordListItemOptimized extends ConsumerWidget {
                 const SizedBox(height: 8),
                 Builder(
                   builder: (context) {
-                    final rec = record!;
+                    final rec = record;
                     return Text(
                       '已学习 ${rec.reviewCount} 次 · 正确 ${rec.correctCount} 次',
                       style: theme.textTheme.bodySmall?.copyWith(

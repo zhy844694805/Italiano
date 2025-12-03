@@ -6,27 +6,23 @@ import '../../core/database/grammar_progress_repository.dart';
 import '../../core/database/learning_statistics_repository.dart';
 import '../models/grammar.dart';
 
-// 语法服务
+// 语法服务（单次加载，缓存结果）
 class GrammarService {
+  List<GrammarPoint>? _cachedGrammar;
+
   Future<List<GrammarPoint>> loadGrammarPoints() async {
+    // 优化：使用缓存避免重复解析 JSON
+    if (_cachedGrammar != null) return _cachedGrammar!;
+
     try {
       final String jsonString = await rootBundle.loadString('assets/data/sample_grammar.json');
       final List<dynamic> jsonData = json.decode(jsonString);
-      return jsonData.map((json) => GrammarPoint.fromJson(json)).toList();
+      _cachedGrammar = jsonData.map((json) => GrammarPoint.fromJson(json)).toList();
+      return _cachedGrammar!;
     } catch (e) {
       debugPrint('Error loading grammar points: $e');
       return [];
     }
-  }
-
-  Future<List<GrammarPoint>> getGrammarByCategory(String category) async {
-    final grammarPoints = await loadGrammarPoints();
-    return grammarPoints.where((point) => point.category == category).toList();
-  }
-
-  Future<List<GrammarPoint>> getGrammarByLevel(String level) async {
-    final grammarPoints = await loadGrammarPoints();
-    return grammarPoints.where((point) => point.level == level).toList();
   }
 }
 
@@ -41,16 +37,16 @@ final allGrammarProvider = FutureProvider<List<GrammarPoint>>((ref) async {
   return service.loadGrammarPoints();
 });
 
-// Provider for grammar by category
+// Provider for grammar by category（优化：从缓存的 allGrammar 过滤）
 final grammarByCategoryProvider = FutureProvider.family<List<GrammarPoint>, String>((ref, category) async {
-  final service = ref.watch(grammarServiceProvider);
-  return service.getGrammarByCategory(category);
+  final allGrammar = await ref.watch(allGrammarProvider.future);
+  return allGrammar.where((point) => point.category == category).toList();
 });
 
-// Provider for grammar by level
+// Provider for grammar by level（优化：从缓存的 allGrammar 过滤）
 final grammarByLevelProvider = FutureProvider.family<List<GrammarPoint>, String>((ref, level) async {
-  final service = ref.watch(grammarServiceProvider);
-  return service.getGrammarByLevel(level);
+  final allGrammar = await ref.watch(allGrammarProvider.future);
+  return allGrammar.where((point) => point.level == level).toList();
 });
 
 // Grammar progress provider

@@ -118,79 +118,6 @@ class DatabaseService {
       )
     ''');
 
-    // 创建听力练习进度表
-    await db.execute('''
-      CREATE TABLE listening_progress (
-        exerciseId $idType,
-        completedAt $textType,
-        isCorrect $boolType,
-        selectedAnswer $textType,
-        attempts $intType,
-        completionTime $intType,
-        isFavorite $boolType
-      )
-    ''');
-
-    await db.execute('''
-      CREATE INDEX idx_listening_exercise ON listening_progress(exerciseId)
-    ''');
-
-    await db.execute('''
-      CREATE INDEX idx_listening_completed ON listening_progress(completedAt)
-    ''');
-
-    // 创建口语练习进度表
-    await db.execute('''
-      CREATE TABLE speaking_progress (
-        exerciseId $idType,
-        practicedAt $textType,
-        recordingDuration $intType,
-        recordingPath TEXT,
-        score REAL,
-        detailedScore TEXT,
-        isPassed $boolType,
-        attempts $intType,
-        feedback TEXT,
-        isFavorite $boolType
-      )
-    ''');
-
-    await db.execute('''
-      CREATE INDEX idx_speaking_exercise ON speaking_progress(exerciseId)
-    ''');
-
-    await db.execute('''
-      CREATE INDEX idx_speaking_practiced ON speaking_progress(practicedAt)
-    ''');
-
-    // 创建学习路径进度表
-    await db.execute('''
-      CREATE TABLE learning_guide_progress (
-        guideId $idType,
-        startedAt $textType,
-        lastActiveDate TEXT,
-        currentDay $intType,
-        completedDays TEXT,
-        completedTasks TEXT,
-        achievedMilestones TEXT,
-        totalMinutesSpent $intType,
-        isCompleted $boolType,
-        isFavorite $boolType
-      )
-    ''');
-
-    await db.execute('''
-      CREATE INDEX idx_learning_guide ON learning_guide_progress(guideId)
-    ''');
-
-    await db.execute('''
-      CREATE INDEX idx_learning_guide_active ON learning_guide_progress(lastActiveDate)
-    ''');
-
-    await db.execute('''
-      CREATE INDEX idx_learning_guide_completed ON learning_guide_progress(isCompleted)
-    ''');
-
     // 优化：添加复合索引提升查询性能 (v7)
     await db.execute('''
       CREATE INDEX idx_learning_records_mastery ON learning_records(mastery)
@@ -408,8 +335,5 @@ class DatabaseService {
     await db.delete('grammar_progress');
     await db.delete('learning_statistics');
     await db.delete('reading_progress');
-    await db.delete('listening_progress');
-    await db.delete('speaking_progress');
-    await db.delete('learning_guide_progress');
   }
 }

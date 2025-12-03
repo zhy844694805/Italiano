@@ -7,27 +7,23 @@ import '../../core/database/learning_record_repository.dart';
 import '../../core/database/learning_statistics_repository.dart';
 import 'statistics_provider.dart';
 
-// 词汇服务
+// 词汇服务（单次加载，缓存结果）
 class VocabularyService {
+  List<Word>? _cachedWords;
+
   Future<List<Word>> loadWords() async {
+    // 优化：使用缓存避免重复解析 JSON
+    if (_cachedWords != null) return _cachedWords!;
+
     try {
       final String jsonString = await rootBundle.loadString('assets/data/sample_words.json');
       final List<dynamic> jsonData = json.decode(jsonString);
-      return jsonData.map((json) => Word.fromJson(json)).toList();
+      _cachedWords = jsonData.map((json) => Word.fromJson(json)).toList();
+      return _cachedWords!;
     } catch (e) {
       debugPrint('Error loading words: $e');
       return [];
     }
-  }
-
-  Future<List<Word>> getWordsByLevel(String level) async {
-    final words = await loadWords();
-    return words.where((word) => word.level == level).toList();
-  }
-
-  Future<List<Word>> getWordsByCategory(String category) async {
-    final words = await loadWords();
-    return words.where((word) => word.category == category).toList();
   }
 }
 
@@ -42,16 +38,16 @@ final allWordsProvider = FutureProvider<List<Word>>((ref) async {
   return service.loadWords();
 });
 
-// Provider for words by level
+// Provider for words by level（优化：从缓存的 allWords 过滤）
 final wordsByLevelProvider = FutureProvider.family<List<Word>, String>((ref, level) async {
-  final service = ref.watch(vocabularyServiceProvider);
-  return service.getWordsByLevel(level);
+  final allWords = await ref.watch(allWordsProvider.future);
+  return allWords.where((word) => word.level == level).toList();
 });
 
-// Provider for words by category
+// Provider for words by category（优化：从缓存的 allWords 过滤）
 final wordsByCategoryProvider = FutureProvider.family<List<Word>, String>((ref, category) async {
-  final service = ref.watch(vocabularyServiceProvider);
-  return service.getWordsByCategory(category);
+  final allWords = await ref.watch(allWordsProvider.future);
+  return allWords.where((word) => word.category == category).toList();
 });
 
 // Repository provider
