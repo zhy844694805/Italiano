@@ -226,17 +226,18 @@ Uses **Riverpod** (`flutter_riverpod`) as the state management solution:
 - Automatic JSON loading with error handling
 
 **Conversation Providers** (`lib/shared/providers/conversation_provider.dart`):
-- `deepSeekServiceProvider` - Singleton DeepSeek API service with credentials
+- `deepSeekServiceProvider` - FutureProvider for DeepSeek API service (nullable if API key not configured)
 - `conversationProvider` - StateNotifierProvider.family for scenario-specific conversation state
   - Each scenario maintains independent conversation history
   - Manages messages, loading state, errors, user level
   - Auto-initializes with AI greeting message
   - Handles real-time grammar correction parsing
+  - Memory optimization: Limits to 50 messages max per conversation
 
 Use `ConsumerWidget` or `ConsumerStatefulWidget` for widgets that need to watch providers
 
 ### Data Persistence
-SQLite database (v2 schema) managed through:
+SQLite database (v7 schema) managed through:
 - `DatabaseService` (`lib/core/database/database_service.dart`) - Database initialization and schema management with migrations
 - `LearningRecordRepository` (`lib/core/database/learning_record_repository.dart`) - CRUD operations for vocabulary learning records
 - `GrammarProgressRepository` (`lib/core/database/grammar_progress_repository.dart`) - Grammar study progress and exercise results
@@ -344,13 +345,17 @@ Powered by **KOKORO TTS API** with OpenAI-compatible format (`lib/core/services/
 
 **Features**:
 - Real-time text-to-speech conversion for Italian text
-- Audio caching system for improved performance
+- **Smart caching system** for improved performance:
+  - Checks cache before making API calls
+  - Cache stored in `{app_documents}/tts_cache/`
+  - File naming: `{text.hashCode}_{voice}.mp3`
   - `preloadAudio()` - Download and cache audio without playing
   - `playFromCache()` - Play cached audio instantly
   - `clearCache()` - Clean up cached audio files
 - Playback controls: play, pause, stop, resume
 - Integration with `audioplayers` package for audio playback
 - Used across vocabulary learning, review, list, and reading screens
+- Returns `false` if API key not configured (graceful degradation)
 
 **Provider** (`lib/shared/providers/tts_provider.dart`):
 - `ttsServiceProvider` - Singleton TTSService instance
@@ -783,19 +788,30 @@ theme: OpenAITheme.lightTheme,
 
 ## API Configuration
 
+### API Key Management (`lib/core/config/api_config.dart`)
+All API keys are stored securely via SharedPreferences:
+- `ApiConfig.getDeepSeekApiKey()` / `setDeepSeekApiKey()` - DeepSeek API key
+- `ApiConfig.getTtsApiKey()` / `setTtsApiKey()` - TTS API key
+- `ApiConfig.isConfigured()` - Check if both keys are configured
+- **Settings UI**: Users configure API keys via Settings → API 配置
+- **Guide Screen**: `ApiGuideScreen` provides step-by-step instructions for obtaining DeepSeek API key
+
 ### DeepSeek API (AI Conversation)
 The app uses DeepSeek's conversational AI for language practice:
-- **API Key**: Stored in `conversation_provider.dart`
+- **API Key**: User-configured via Settings screen, stored in SharedPreferences
 - **Base URL**: `https://api.deepseek.com`
 - **Model**: `deepseek-chat`
 - **Endpoint**: `/chat/completions` (OpenAI-compatible)
 - **Timeouts**: 30s connect, 60s receive
-- **Rate Limits**: Follow DeepSeek's standard rate limits
 - **Error Handling**: Network errors, timeout errors, API errors gracefully handled with user feedback
 - **IMPORTANT**: Requires `INTERNET` and `ACCESS_NETWORK_STATE` permissions in `AndroidManifest.xml`
 
 ### KOKORO TTS API
-See "Text-to-Speech (TTS) System" section above for complete configuration details.
+- **API Key**: User-configured via Settings screen
+- **Base URL**: `https://newapi.maiduoduo.it/v1`
+- **Endpoint**: `/audio/speech`
+- **Smart Caching**: TTS responses cached locally to reduce API calls
+- See "Text-to-Speech (TTS) System" section for complete details.
 
 ### Android Permissions Required
 Add to `android/app/src/main/AndroidManifest.xml`:
@@ -926,7 +942,13 @@ User profile management (`lib/shared/providers/user_profile_provider.dart`):
 - Phrase data structure includes phonetics, context, examples, and usage scenarios
 - UI organized in tabbed interface with category statistics and search functionality
 
-### Database Schema (Version 3)
+### Database Schema (Version 7)
+
+**Performance Indexes (v7)**:
+- `idx_learning_records_mastery` - For mastery statistics queries
+- `idx_grammar_completed` - For grammar completion queries
+- `idx_conversation_scenario_time` - Compound index for conversation history
+- `idx_reading_favorite` - For reading favorites queries
 
 **learning_records** (vocabulary learning progress):
 - wordId (TEXT PRIMARY KEY)
