@@ -1,8 +1,10 @@
 import 'dart:io';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:file_selector/file_selector.dart';
 import '../../shared/providers/statistics_provider.dart';
 import '../../shared/providers/user_profile_provider.dart';
 import '../../core/database/learning_statistics_repository.dart';
@@ -422,7 +424,65 @@ class ProfileScreen extends ConsumerWidget {
   }
 
   Future<void> _pickAvatar(BuildContext context, WidgetRef ref) async {
+    // 检查是否是桌面平台
+    final isDesktop = !kIsWeb && (Platform.isMacOS || Platform.isWindows || Platform.isLinux);
+
+    if (isDesktop) {
+      // 桌面平台使用 file_selector
+      await _pickAvatarDesktop(context, ref);
+    } else {
+      // 移动平台使用 image_picker
+      await _pickAvatarMobile(context, ref);
+    }
+  }
+
+  Future<void> _pickAvatarDesktop(BuildContext context, WidgetRef ref) async {
+    final hasAvatar = ref.read(userProfileProvider).avatarPath != null;
+
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: OpenAITheme.white,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      builder: (context) => SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ListTile(
+              leading: const Icon(Icons.photo_library_outlined),
+              title: const Text('选择图片'),
+              onTap: () async {
+                Navigator.pop(context);
+                const typeGroup = XTypeGroup(
+                  label: 'images',
+                  extensions: ['jpg', 'jpeg', 'png', 'gif', 'webp'],
+                );
+                final file = await openFile(acceptedTypeGroups: [typeGroup]);
+                if (file != null) {
+                  await ref.read(userProfileProvider.notifier).setAvatar(file.path);
+                }
+              },
+            ),
+            if (hasAvatar)
+              ListTile(
+                leading: const Icon(Icons.delete_outline, color: Colors.red),
+                title: const Text('删除头像', style: TextStyle(color: Colors.red)),
+                onTap: () async {
+                  Navigator.pop(context);
+                  await ref.read(userProfileProvider.notifier).clearAvatar();
+                },
+              ),
+            const SizedBox(height: 8),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Future<void> _pickAvatarMobile(BuildContext context, WidgetRef ref) async {
     final picker = ImagePicker();
+    final hasAvatar = ref.read(userProfileProvider).avatarPath != null;
 
     showModalBottomSheet(
       context: context,
@@ -466,7 +526,7 @@ class ProfileScreen extends ConsumerWidget {
                 }
               },
             ),
-            if (ref.read(userProfileProvider).avatarPath != null)
+            if (hasAvatar)
               ListTile(
                 leading: const Icon(Icons.delete_outline, color: Colors.red),
                 title: const Text('删除头像', style: TextStyle(color: Colors.red)),

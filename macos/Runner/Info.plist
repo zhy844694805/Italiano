@@ -28,5 +28,9 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>需要访问相册以选择头像图片</string>
+	<key>NSCameraUsageDescription</key>
+	<string>需要使用相机拍摄头像</string>
 </dict>
 </plist>

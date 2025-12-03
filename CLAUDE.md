@@ -640,7 +640,9 @@ lib/
 │   ├── settings/
 │   │   └── settings_screen.dart
 │   └── profile/
-│       └── profile_screen.dart
+│       ├── profile_screen.dart
+│       ├── achievements_screen.dart    # View all achievements
+│       └── favorites_screen.dart       # View favorite words/grammar
 └── shared/
     ├── models/
     │   ├── word.dart
@@ -656,12 +658,15 @@ lib/
     │   ├── conversation_provider.dart
     │   ├── statistics_provider.dart
     │   ├── voice_preference_provider.dart
-    │   └── tts_provider.dart
+    │   ├── tts_provider.dart
+    │   ├── achievement_provider.dart     # Achievement tracking
+    │   └── user_profile_provider.dart    # User profile (nickname, avatar)
     └── widgets/
         ├── flip_card.dart
         ├── swipeable_word_card.dart
         ├── word_card.dart
-        └── gradient_card.dart
+        ├── gradient_card.dart
+        └── achievement_unlock_dialog.dart  # Achievement popup
 ```
 
 ### Theme System
@@ -773,6 +778,8 @@ theme: OpenAITheme.lightTheme,
 - `intl` (^0.20.1) - Internationalization utilities
 - `path` (^1.9.0) - Path manipulation utilities
 - `fl_chart` (^0.69.0) - Charts for statistics visualization
+- `image_picker` (^1.0.7) - Image selection for mobile platforms (iOS/Android)
+- `file_selector` (^1.0.3) - File selection for desktop platforms (macOS/Windows/Linux)
 
 ## API Configuration
 
@@ -850,6 +857,50 @@ Without these permissions, both AI conversation and TTS features will fail with 
 - To add new scenarios: Update `ConversationScenario.all` in `conversation.dart`
 - To modify AI behavior: Edit system prompts in `AIRole.fromScenario()`
 - Level changes apply immediately to next message (no reset required)
+
+### Achievement System
+The app includes a gamification system to motivate learners (`lib/shared/providers/achievement_provider.dart`):
+
+**Achievement Categories** (16 total achievements):
+- **Study Streak**: 7-day, 30-day, 100-day consecutive learning
+- **Vocabulary Milestones**: 100, 500, 1000 words learned
+- **Mastery Goals**: 50, 200, 500 words mastered (≥80% accuracy)
+- **Grammar Progress**: 5, 10, 14 grammar points completed
+- **First Steps**: First word, first grammar lesson
+
+**Implementation**:
+- `AchievementNotifier` - StateNotifier tracking unlocked achievements
+- `AchievementDefinitions.all` - List of all achievement definitions
+- `checkAndUnlock()` - Check and unlock new achievements based on progress
+- Achievement state persisted via SharedPreferences
+
+**Achievement Unlock Dialog** (`lib/shared/widgets/achievement_unlock_dialog.dart`):
+- OpenAI minimalist style popup
+- Shows achievement icon, title, and description
+- Animated entrance with scale animation
+- Called automatically after vocabulary learning, review, and grammar completion
+
+**Integration Pattern**:
+```dart
+// Check achievements after learning activity
+final achievement = await checkAchievements(ref);
+if (achievement != null && mounted) {
+  await AchievementUnlockDialog.show(context, achievement);
+}
+```
+
+### User Profile System
+User profile management (`lib/shared/providers/user_profile_provider.dart`):
+- **UserProfile** model with nickname and avatarPath
+- `setNickname()` - Update user's display name
+- `setAvatar()` - Set avatar image path
+- `clearAvatar()` - Remove custom avatar
+- Persisted to SharedPreferences
+
+**Platform-Specific Image Picking** (`lib/features/profile/profile_screen.dart`):
+- **Mobile (iOS/Android)**: Uses `image_picker` package for gallery/camera access
+- **Desktop (macOS/Windows/Linux)**: Uses `file_selector` package for native file dialog
+- Automatic platform detection via `Platform.isMacOS`, etc.
 
 ### Working with Statistics
 - Statistics are tracked automatically across all learning activities
@@ -1159,7 +1210,7 @@ Based on CEFR A2 requirements and user feedback:
 - **B1 Level Content**: Begin intermediate level (500+ words)
 - **Cultural Notes**: Italian culture, customs, etiquette
 - **Flashcard Games**: Make vocabulary review more engaging
-- **Achievements System**: Badges, milestones, rewards
+- ~~**Achievements System**: Badges, milestones, rewards~~ ✅ **IMPLEMENTED**
 - **Social Features**: Study groups, leaderboards
 - **Export Progress**: PDF reports, certificates
 
