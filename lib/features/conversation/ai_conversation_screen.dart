@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/conversation.dart';
 import '../../shared/providers/conversation_provider.dart';
-import '../../shared/providers/tts_provider.dart';
 import '../../shared/providers/voice_preference_provider.dart';
 import '../../core/theme/openai_theme.dart';
+import '../../core/utils/api_check_helper.dart';
 
 /// AI Conversation screen with chat interface
 class AIConversationScreen extends ConsumerStatefulWidget {
@@ -31,9 +31,13 @@ class _AIConversationScreenState extends ConsumerState<AIConversationScreen> {
     super.dispose();
   }
 
-  void _sendMessage() {
+  Future<void> _sendMessage() async {
     final message = _messageController.text.trim();
     if (message.isEmpty) return;
+
+    // 检查 DeepSeek API 是否已配置
+    final isConfigured = await ApiCheckHelper.checkDeepSeekApi(context);
+    if (!isConfigured) return;
 
     ref
         .read(conversationProvider(widget.scenario).notifier)
@@ -328,9 +332,12 @@ class _MessageBubbleState extends ConsumerState<_MessageBubble> {
     setState(() => _isPlaying = true);
 
     try {
-      final ttsService = ref.read(ttsServiceProvider);
       final selectedVoice = ref.read(voicePreferenceProvider);
-      await ttsService.speak(widget.message.content, voice: selectedVoice);
+      await ApiCheckHelper.speakWithCheck(
+        context,
+        widget.message.content,
+        voice: selectedVoice,
+      );
     } finally {
       if (mounted) {
         setState(() => _isPlaying = false);

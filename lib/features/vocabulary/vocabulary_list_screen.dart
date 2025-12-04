@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/word.dart';
 import '../../shared/providers/vocabulary_provider.dart';
-import '../../shared/providers/tts_provider.dart';
 import '../../shared/providers/voice_preference_provider.dart';
 import '../../core/theme/openai_theme.dart';
+import '../../core/utils/api_check_helper.dart';
 import '../../shared/widgets/gradient_card.dart';
 import 'vocabulary_learning_screen.dart';
 
@@ -491,9 +491,8 @@ class _WordListItemOptimized extends ConsumerWidget {
                   IconButton(
                     icon: const Icon(Icons.volume_up),
                     onPressed: () async {
-                      final ttsService = ref.read(ttsServiceProvider);
                       final selectedVoice = ref.read(voicePreferenceProvider);
-                      await ttsService.speak(word.italian, voice: selectedVoice);
+                      await ApiCheckHelper.speakWithCheck(context, word.italian, voice: selectedVoice);
                     },
                   ),
 
@@ -625,7 +624,6 @@ class _WordDetailSheet extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
-    final ttsService = ref.watch(ttsServiceProvider);
 
     return DraggableScrollableSheet(
       initialChildSize: 0.7,
@@ -688,7 +686,7 @@ class _WordDetailSheet extends ConsumerWidget {
                     iconSize: 32,
                     onPressed: () async {
                       final selectedVoice = ref.read(voicePreferenceProvider);
-                      await ttsService.speak(word.italian, voice: selectedVoice);
+                      await ApiCheckHelper.speakWithCheck(context, word.italian, voice: selectedVoice);
                     },
                   ),
                 ],

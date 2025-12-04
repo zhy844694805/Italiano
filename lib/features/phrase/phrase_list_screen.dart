@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/phrase.dart';
 import '../../shared/providers/phrase_provider.dart';
-import '../../shared/providers/tts_provider.dart';
 import '../../core/theme/openai_theme.dart';
+import '../../core/utils/api_check_helper.dart';
 
 class PhraseListScreen extends ConsumerStatefulWidget {
   const PhraseListScreen({super.key});
@@ -33,7 +33,6 @@ class _PhraseListScreenState extends ConsumerState<PhraseListScreen>
     final complimentPhrases = ref.watch(complimentPhrasesProvider);
     final insultPhrases = ref.watch(insultPhrasesProvider);
     final casualPhrases = ref.watch(casualPhrasesProvider);
-    final ttsService = ref.watch(ttsServiceProvider);
 
     return Scaffold(
       backgroundColor: OpenAITheme.bgPrimary,
@@ -59,13 +58,12 @@ class _PhraseListScreenState extends ConsumerState<PhraseListScreen>
       body: TabBarView(
         controller: _tabController,
         children: [
-          _buildPhraseList(complimentPhrases, '夸人用语', ttsService, Icons.favorite_outline),
-          _buildPhraseList(insultPhrases, '骂人用语', ttsService, Icons.sentiment_dissatisfied_outlined),
-          _buildPhraseList(casualPhrases, '日常用语', ttsService, Icons.chat_bubble_outline),
+          _buildPhraseList(complimentPhrases, '夸人用语', Icons.favorite_outline),
+          _buildPhraseList(insultPhrases, '骂人用语', Icons.sentiment_dissatisfied_outlined),
+          _buildPhraseList(casualPhrases, '日常用语', Icons.chat_bubble_outline),
           _buildPhraseList(
             complimentPhrases + insultPhrases + casualPhrases,
             '热门用语',
-            ttsService,
             Icons.local_fire_department_outlined,
             isPopular: true,
           ),
@@ -77,7 +75,6 @@ class _PhraseListScreenState extends ConsumerState<PhraseListScreen>
   Widget _buildPhraseList(
     List<ItalianPhrase> phrases,
     String title,
-    dynamic ttsService,
     IconData icon, {
     bool isPopular = false,
   }) {
@@ -168,7 +165,7 @@ class _PhraseListScreenState extends ConsumerState<PhraseListScreen>
             itemCount: displayPhrases.length,
             itemBuilder: (context, index) {
               final phrase = displayPhrases[index];
-              return _PhraseCard(phrase: phrase, ttsService: ttsService);
+              return _PhraseCard(phrase: phrase);
             },
           ),
         ),
@@ -179,11 +176,9 @@ class _PhraseListScreenState extends ConsumerState<PhraseListScreen>
 
 class _PhraseCard extends StatelessWidget {
   final ItalianPhrase phrase;
-  final dynamic ttsService;
 
   const _PhraseCard({
     required this.phrase,
-    required this.ttsService,
   });
 
   @override
@@ -242,11 +237,7 @@ class _PhraseCard extends StatelessWidget {
                 color: Colors.transparent,
                 child: InkWell(
                   onTap: () async {
-                    try {
-                      await ttsService.speak(phrase.italian);
-                    } catch (e) {
-                      debugPrint('TTS播放失败: $e');
-                    }
+                    await ApiCheckHelper.speakWithCheck(context, phrase.italian);
                   },
                   borderRadius: BorderRadius.circular(8),
                   child: Container(

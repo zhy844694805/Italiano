@@ -617,6 +617,7 @@ lib/
 │   ├── theme/
 │   │   └── openai_theme.dart   # OpenAI-style minimalist theme
 │   └── utils/
+│       └── api_check_helper.dart  # API configuration check helper
 ├── features/
 │   ├── home/
 │   │   └── home_screen.dart
@@ -642,6 +643,8 @@ lib/
 │   │   └── quiz_result_screen.dart
 │   ├── phrase/
 │   │   └── phrase_list_screen.dart
+│   ├── onboarding/
+│   │   └── onboarding_screen.dart   # First-time setup wizard
 │   ├── settings/
 │   │   └── settings_screen.dart
 │   └── profile/
@@ -665,12 +668,14 @@ lib/
     │   ├── voice_preference_provider.dart
     │   ├── tts_provider.dart
     │   ├── achievement_provider.dart     # Achievement tracking
-    │   └── user_profile_provider.dart    # User profile (nickname, avatar)
+    │   ├── user_profile_provider.dart    # User profile (nickname, avatar)
+    │   └── onboarding_provider.dart      # First-launch detection
     └── widgets/
         ├── flip_card.dart
         ├── swipeable_word_card.dart
         ├── word_card.dart
         ├── gradient_card.dart
+        ├── api_config_dialog.dart        # API key configuration dialog
         └── achievement_unlock_dialog.dart  # Achievement popup
 ```
 
@@ -793,8 +798,29 @@ All API keys are stored securely via SharedPreferences:
 - `ApiConfig.getDeepSeekApiKey()` / `setDeepSeekApiKey()` - DeepSeek API key
 - `ApiConfig.getTtsApiKey()` / `setTtsApiKey()` - TTS API key
 - `ApiConfig.isConfigured()` - Check if both keys are configured
+- `ApiConfig.isTtsConfigured()` / `ApiConfig.isDeepSeekConfigured()` - Check individual API status
 - **Settings UI**: Users configure API keys via Settings → API 配置
 - **Guide Screen**: `ApiGuideScreen` provides step-by-step instructions for obtaining DeepSeek API key
+
+### Onboarding System (`lib/features/onboarding/`)
+First-time user onboarding with API configuration:
+- **OnboardingScreen** - 3-page wizard: Welcome → Features → API Configuration
+- **onboarding_provider.dart** - Tracks onboarding completion via SharedPreferences
+- Users can skip API configuration and configure later in Settings
+- Onboarding status persisted via `onboarding_completed` key
+
+### API Check Helper (`lib/core/utils/api_check_helper.dart`)
+Centralized utility for checking API configuration before use:
+```dart
+// For TTS playback - shows config dialog if not configured
+await ApiCheckHelper.speakWithCheck(context, text, voice: selectedVoice);
+
+// For DeepSeek API - shows config dialog if not configured
+final isConfigured = await ApiCheckHelper.checkDeepSeekApi(context);
+```
+- Automatically prompts users to configure API when needed
+- Graceful degradation - features work after configuration
+- Used across all TTS and AI conversation screens
 
 ### DeepSeek API (AI Conversation)
 The app uses DeepSeek's conversational AI for language practice:

@@ -4,6 +4,7 @@ import '../../shared/providers/voice_preference_provider.dart';
 import '../../core/services/tts_service.dart';
 import '../../core/theme/openai_theme.dart';
 import '../../core/config/api_config.dart';
+import '../../core/utils/api_check_helper.dart';
 
 /// Settings screen for app preferences
 class SettingsScreen extends ConsumerWidget {
@@ -52,8 +53,8 @@ class SettingsScreen extends ConsumerWidget {
                 title: '试听语音',
                 subtitle: '测试当前选择的语音效果',
                 onTap: () async {
-                  final ttsService = TTSService.instance;
-                  await ttsService.speak(
+                  await ApiCheckHelper.speakWithCheck(
+                    context,
                     'Ciao! Sono la voce italiana.',
                     voice: selectedVoice,
                   );
@@ -142,7 +143,6 @@ class SettingsScreen extends ConsumerWidget {
 
   void _showVoiceSelectionDialog(BuildContext context, WidgetRef ref, String currentVoice) {
     final voiceNotifier = ref.read(voicePreferenceProvider.notifier);
-    final ttsService = TTSService.instance;
 
     showModalBottomSheet(
       context: context,
@@ -150,7 +150,7 @@ class SettingsScreen extends ConsumerWidget {
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
       ),
-      builder: (context) => SafeArea(
+      builder: (sheetContext) => SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(
@@ -174,8 +174,12 @@ class SettingsScreen extends ConsumerWidget {
                 isSelected: currentVoice == TTSService.voiceSara,
                 onTap: () async {
                   await voiceNotifier.setVoice(TTSService.voiceSara);
-                  await ttsService.speak('Ciao! Sono Sara.', voice: TTSService.voiceSara);
-                  if (context.mounted) Navigator.pop(context);
+                  await ApiCheckHelper.speakWithCheck(
+                    sheetContext,
+                    'Ciao! Sono Sara.',
+                    voice: TTSService.voiceSara,
+                  );
+                  if (sheetContext.mounted) Navigator.pop(sheetContext);
                 },
               ),
               const SizedBox(height: 12),
@@ -187,8 +191,12 @@ class SettingsScreen extends ConsumerWidget {
                 isSelected: currentVoice == TTSService.voiceNicola,
                 onTap: () async {
                   await voiceNotifier.setVoice(TTSService.voiceNicola);
-                  await ttsService.speak('Ciao! Sono Nicola.', voice: TTSService.voiceNicola);
-                  if (context.mounted) Navigator.pop(context);
+                  await ApiCheckHelper.speakWithCheck(
+                    sheetContext,
+                    'Ciao! Sono Nicola.',
+                    voice: TTSService.voiceNicola,
+                  );
+                  if (sheetContext.mounted) Navigator.pop(sheetContext);
                 },
               ),
             ],

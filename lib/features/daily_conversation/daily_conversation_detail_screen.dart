@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/daily_conversation.dart';
-import '../../shared/providers/tts_provider.dart';
 import '../../core/theme/openai_theme.dart';
+import '../../core/utils/api_check_helper.dart';
 
 class DailyConversationDetailScreen extends ConsumerStatefulWidget {
   final DailyConversation conversation;
@@ -103,8 +103,6 @@ class _DailyConversationDetailScreenState extends ConsumerState<DailyConversatio
 
   @override
   Widget build(BuildContext context) {
-    final ttsService = ref.watch(ttsServiceProvider);
-
     return Scaffold(
       backgroundColor: OpenAITheme.bgPrimary,
       appBar: AppBar(
@@ -115,13 +113,12 @@ class _DailyConversationDetailScreenState extends ConsumerState<DailyConversatio
           IconButton(
             icon: const Icon(Icons.volume_up, color: OpenAITheme.openaiGreen),
             onPressed: () async {
-              try {
-                // Play first message as example
-                if (widget.conversation.messages.isNotEmpty) {
-                  await ttsService.speak(widget.conversation.messages.first.italian);
-                }
-              } catch (e) {
-                debugPrint('TTS播放失败: $e');
+              // Play first message as example
+              if (widget.conversation.messages.isNotEmpty) {
+                await ApiCheckHelper.speakWithCheck(
+                  context,
+                  widget.conversation.messages.first.italian,
+                );
               }
             },
           ),

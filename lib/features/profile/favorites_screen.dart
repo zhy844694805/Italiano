@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/providers/vocabulary_provider.dart';
 import '../../shared/providers/grammar_provider.dart';
-import '../../shared/providers/tts_provider.dart';
 import '../../shared/models/word.dart';
 import '../../shared/models/grammar.dart';
 import '../../core/theme/openai_theme.dart';
+import '../../core/utils/api_check_helper.dart';
 import '../grammar/grammar_detail_screen.dart';
 
 class FavoritesScreen extends ConsumerStatefulWidget {
@@ -69,7 +69,6 @@ class _FavoriteWordsTab extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final allWordsAsync = ref.watch(allWordsProvider);
     final learningProgress = ref.watch(learningProgressProvider);
-    final ttsService = ref.watch(ttsServiceProvider);
 
     return allWordsAsync.when(
       data: (allWords) {
@@ -101,7 +100,6 @@ class _FavoriteWordsTab extends ConsumerWidget {
             return _FavoriteWordCard(
               word: word,
               mastery: record?.mastery ?? 0.0,
-              ttsService: ttsService,
               onUnfavorite: () {
                 ref.read(learningProgressProvider.notifier).toggleFavorite(word.id);
               },
@@ -239,13 +237,11 @@ class _EmptyState extends StatelessWidget {
 class _FavoriteWordCard extends StatelessWidget {
   final Word word;
   final double mastery;
-  final dynamic ttsService;
   final VoidCallback onUnfavorite;
 
   const _FavoriteWordCard({
     required this.word,
     required this.mastery,
-    required this.ttsService,
     required this.onUnfavorite,
   });
 
@@ -287,12 +283,8 @@ class _FavoriteWordCard extends StatelessWidget {
                 IconButton(
                   icon: const Icon(Icons.volume_up, size: 20),
                   color: OpenAITheme.textSecondary,
-                  onPressed: () {
-                    try {
-                      ttsService.speak(word.italian);
-                    } catch (e) {
-                      debugPrint('TTS error: $e');
-                    }
+                  onPressed: () async {
+                    await ApiCheckHelper.speakWithCheck(context, word.italian);
                   },
                 ),
                 // 取消收藏按钮

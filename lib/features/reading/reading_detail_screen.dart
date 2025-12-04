@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../shared/models/reading.dart';
 import '../../shared/providers/reading_provider.dart';
-import '../../shared/providers/tts_provider.dart';
 import '../../shared/providers/voice_preference_provider.dart';
 import '../../core/theme/openai_theme.dart';
+import '../../core/utils/api_check_helper.dart';
 import '../../shared/widgets/gradient_card.dart';
 
 class ReadingDetailScreen extends ConsumerStatefulWidget {
@@ -150,8 +150,6 @@ class _ReadingDetailScreenState extends ConsumerState<ReadingDetailScreen> {
   }
 
   Widget _buildHeader() {
-    final ttsService = ref.watch(ttsServiceProvider);
-
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(16),
@@ -193,15 +191,11 @@ class _ReadingDetailScreenState extends ConsumerState<ReadingDetailScreen> {
                 tooltip: '朗读全文',
                 onPressed: () async {
                   final selectedVoice = ref.read(voicePreferenceProvider);
-                  final success = await ttsService.speak(widget.passage.content, voice: selectedVoice);
-                  if (!success && mounted) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('语音播放失败'),
-                        duration: Duration(seconds: 1),
-                      ),
-                    );
-                  }
+                  await ApiCheckHelper.speakWithCheck(
+                    context,
+                    widget.passage.content,
+                    voice: selectedVoice,
+                  );
                 },
               ),
             ],

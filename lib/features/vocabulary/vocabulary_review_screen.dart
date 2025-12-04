@@ -4,10 +4,10 @@ import '../../shared/models/word.dart';
 import '../../shared/widgets/swipeable_word_card.dart';
 import '../../shared/widgets/achievement_unlock_dialog.dart';
 import '../../shared/providers/vocabulary_provider.dart';
-import '../../shared/providers/tts_provider.dart';
 import '../../shared/providers/voice_preference_provider.dart';
 import '../../shared/providers/achievement_provider.dart';
 import '../../core/theme/openai_theme.dart';
+import '../../core/utils/api_check_helper.dart';
 
 class VocabularyReviewScreen extends ConsumerStatefulWidget {
   const VocabularyReviewScreen({super.key});
@@ -256,8 +256,6 @@ class _VocabularyReviewScreenState extends ConsumerState<VocabularyReviewScreen>
   }
 
   Widget _buildCardStack(Word currentWord) {
-    final ttsService = ref.watch(ttsServiceProvider);
-
     return Stack(
       children: [
         // 下一张卡片的占位符（显示堆叠效果）- OpenAI 风格
@@ -287,17 +285,13 @@ class _VocabularyReviewScreenState extends ConsumerState<VocabularyReviewScreen>
               word: currentWord,
               showAudioButton: true,
               onAudioTap: () async {
-                // 使用KOKORO TTS播放意大利语单词发音
+                // 使用KOKORO TTS播放意大利语单词发音（带API检查）
                 final selectedVoice = ref.read(voicePreferenceProvider);
-                final success = await ttsService.speak(currentWord.italian, voice: selectedVoice);
-                if (!success && mounted) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('语音播放失败'),
-                      duration: Duration(seconds: 1),
-                    ),
-                  );
-                }
+                await ApiCheckHelper.speakWithCheck(
+                  context,
+                  currentWord.italian,
+                  voice: selectedVoice,
+                );
               },
               onSwipeLeft: () => _handleSwipe(currentWord, false),
               onSwipeRight: () => _handleSwipe(currentWord, true),
